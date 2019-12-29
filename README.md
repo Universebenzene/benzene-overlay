@@ -23,6 +23,6 @@ x11-libs/lain               | (live version)               |
 dev-python/astropy          | 2.0.14; 2.0.16; 3.0.5; 3.1.2 | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy#note-for-astropy) for details
 dev-python/astropy-helpers  | 2.0.11; 3.0.2; 3.1.1         | With patches for better doc building. Same as the [AUR](https://aur.archlinux.org/packages/python-astropy-helpers/) ones
 dev-python/pytest-astropy   | 0.7.0                        | Test plugins for astropy. Dependencies are also in this overlay but not list here
-dev-python/sphinx-astropy   | 1.2                          | Modules for building astropy related packages. Dependencies are also in this overlay but not list here
+dev-python/sphinx-astropy   | 1.2                          | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not list here
 dev-python/asdf             | 1.3.3; 2.5.0                 |
 sci-astronomy/astrometry    | 0.78                         | Add USE for switching the netpbm support

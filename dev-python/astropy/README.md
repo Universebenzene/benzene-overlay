@@ -1,5 +1,5 @@
 # Note for astropy
-I haven't updated the astropy package in this overlay to the newest version yet, as some dependencies in the official portage are not up-to-date. For now (2019-12-28), the newest version of following dependencies in the portage are:
+I haven't updated the astropy package in this overlay to the newest version yet, as some dependencies in the official portage are not up-to-date. For now (2019-12-29), the newest version of following dependencies in the portage are:
 
 cfitsio: 3.410; erfa: 1.4.0; wcslib: 5.16
 
