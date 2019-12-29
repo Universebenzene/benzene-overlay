@@ -1,0 +1,16 @@
+diff -ura a/gpaint.desktop b/gpaint.desktop
+--- a/gpaint.desktop	2005-01-04 01:37:58.000000000 +0800
++++ b/gpaint.desktop	2019-07-17 14:44:07.135233518 +0800
+@@ -5,9 +5,7 @@
+ Comment[pt_BR]=Um pequeno programa de desenho para o GNOME, o Desktop GNU
+ TryExec=gpaint-2
+ Exec=gpaint-2
+-Icon=gnome-logo-icon-transparent.png
+-Terminal=0
++Icon=gpaint-2
++Terminal=false
+ Type=Application
+-
+-
+-
++Categories=Graphics;2DGraphics;RasterGraphics;

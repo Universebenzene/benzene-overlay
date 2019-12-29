@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universbenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<use>
+		<flag name="curl">Use the net-misc/curl for supporting IMAP, MPD and weather widgets</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">lcpz/lain</remote-id>
+	</upstream>
+</pkgmetadata>

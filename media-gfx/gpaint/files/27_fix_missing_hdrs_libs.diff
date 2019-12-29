@@ -1,0 +1,71 @@
+Index: gpaint-0.3.3/src/image.c
+===================================================================
+--- gpaint-0.3.3.orig/src/image.c	2013-04-21 10:13:06.029569664 -0400
++++ gpaint-0.3.3/src/image.c	2013-04-21 10:13:23.209284134 -0400
+@@ -28,6 +28,8 @@
+ #include "image.h"
+ #include "debug.h"
+ #include <math.h>
++#include <string.h>
++#include <libintl.h>
+ #include <gdk/gdk.h>
+ #include <gdk/gdkx.h>  /* for gdk_root_parent */
+ #include <gdk-pixbuf/gdk-pixbuf.h>
+Index: gpaint-0.3.3/src/text.c
+===================================================================
+--- gpaint-0.3.3.orig/src/text.c	2013-04-21 10:13:06.009569962 -0400
++++ gpaint-0.3.3/src/text.c	2013-04-21 10:13:23.209284134 -0400
+@@ -26,6 +26,8 @@
+ #  include <config.h>
+ #endif
+ 
++#include <ctype.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #ifdef HAVE_STRING_H
+@@ -76,6 +78,7 @@
+ static void text_draw_string(gpaint_text *text);
+ static gint text_handle_timeout(gpaint_text *text);
+ static void text_draw_current_string(gpaint_tool *tool);
++extern void convert_color(const GdkColor *color, unsigned char *r, unsigned char *g, unsigned char *b);
+ 
+ gpaint_tool *text_create(const char *name)
+ {
+Index: gpaint-0.3.3/src/main.c
+===================================================================
+--- gpaint-0.3.3.orig/src/main.c	2013-04-21 10:13:06.017569892 -0400
++++ gpaint-0.3.3/src/main.c	2013-04-21 10:13:23.209284134 -0400
+@@ -36,6 +36,7 @@
+ 
+ static GList *window_list = 0;
+ static void create_window(void);
++extern void text_set_fontpicker(gpaint_tool *tool, GtkFontButton *fontpicker);
+ 
+ 
+ 
+Index: gpaint-0.3.3/src/Makefile.am
+===================================================================
+--- gpaint-0.3.3.orig/src/Makefile.am	2013-04-21 10:15:52.766801609 -0400
++++ gpaint-0.3.3/src/Makefile.am	2013-04-21 10:16:09.014530578 -0400
+@@ -67,6 +67,6 @@
+ 
+ 
+ gpaint_2_CFLAGS = -I$(srcdir)
+-gpaint_2_LDADD = $(GUI_LIBS) $(PRINT_LIBS)
++gpaint_2_LDADD = $(GUI_LIBS) $(PRINT_LIBS) -lm
+ gpaint_2_LDFLAGS = -Wl,--export-dynamic
+ 
+Index: gpaint-0.3.3/src/Makefile.in
+===================================================================
+--- gpaint-0.3.3.orig/src/Makefile.in	2013-04-21 10:15:59.014697621 -0400
++++ gpaint-0.3.3/src/Makefile.in	2013-04-21 10:16:16.050413141 -0400
+@@ -168,7 +168,7 @@
+ 
+ 
+ gpaint_2_CFLAGS = -I$(srcdir)
+-gpaint_2_LDADD = $(GUI_LIBS) $(PRINT_LIBS)
++gpaint_2_LDADD = $(GUI_LIBS) $(PRINT_LIBS) -lm
+ gpaint_2_LDFLAGS = -Wl,--export-dynamic
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 

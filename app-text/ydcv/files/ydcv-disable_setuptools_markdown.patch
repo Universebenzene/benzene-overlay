@@ -1,0 +1,18 @@
+--- a/setup.py	2019-04-24 13:27:50.000000000 +0800
++++ b/setup.py	2019-07-15 16:48:32.344999592 +0800
+@@ -3,15 +3,11 @@
+ from setuptools import setup
+ 
+ setup_requires = ['setuptools_scm']
+-if sys.argv[-1] in ('sdist', 'bdist_wheel'):
+-    setup_requires.append('setuptools-markdown')
+-
+ 
+ setup(
+     name="ydcv",
+     version="0.0.1",
+     description="YouDao Console Version, a simple wrapper for Youdao API",
+-    long_description_markdown_filename='README.md',
+     author="Felix Yan",
+     author_email="felixonmars@archlinux.org",
+     url="https://github.com/felixonmars/ydcv",

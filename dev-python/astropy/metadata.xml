@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci-astronomy@gentoo.org</email>
+		<name>Gentoo Astronomy Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universbenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Astropy is a community-driven package intended to contain much of
+		the core functionality and some common tools needed for performing
+		astronomy and astrophysics with Python.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">astropy</remote-id>
+	</upstream>
+	<use>
+		<flag name="doc">Build extra documentation (the network-sandbox FEATURE need to be temporarily disabled)</flag>
+	</use>
+</pkgmetadata>
