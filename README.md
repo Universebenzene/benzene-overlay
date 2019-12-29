@@ -25,4 +25,5 @@ dev-python/astropy-helpers  | 2.0.11; 3.0.2; 3.1.1         | With patches for be
 dev-python/pytest-astropy   | 0.7.0                        | Test plugins for astropy. Dependencies are also in this overlay but not list here
 dev-python/sphinx-astropy   | 1.2                          | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not list here
 dev-python/asdf             | 1.3.3; 2.5.0                 |
+dev-python/astlib           | 0.8.0; 0.11.3                |
 sci-astronomy/astrometry    | 0.78                         | Add USE for switching the netpbm support

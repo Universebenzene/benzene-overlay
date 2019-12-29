@@ -36,7 +36,7 @@ RDEPEND="${DEPEND}
 	sys-libs/zlib:0=
 "
 BDEPEND="
-	>=dev-python/astropy-helpers-2.0.11[${PYTHON_USEDEP}]
+	~dev-python/astropy-helpers-2.0.11[${PYTHON_USEDEP}]
 	>=dev-python/cython-0.29.13[${PYTHON_USEDEP}]
 	virtual/pkgconfig
 	doc? (
