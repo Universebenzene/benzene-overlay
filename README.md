@@ -7,7 +7,7 @@ Alternative building of astropy related packages (more improvement for the doc b
 
 Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-testlay), with some packages testing. You can add it for interest.
 
-This overlay is available on [Gentoo repositories](https://overlays.gentoo.org). You can add it simply by several tools (e.g. via layman: `layman -a benzene-overlay`).
+This overlay is available on [Gentoo repositories](https://overlays.gentoo.org). You can add it simply through several tools (e.g. via layman: `layman -a benzene-overlay`).
 
 ### Available packages
 

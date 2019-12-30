@@ -46,7 +46,12 @@ distutils_enable_tests setup.py
 python_prepare_all() {
 	# use system astropy-helpers instead of bundled one
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
+	export mydistutilsargs=( --offline )
 	distutils-r1_python_prepare_all
+}
+
+python_compile() {
+	distutils-r1_python_compile --use-system-libraries
 }
 
 python_compile_all() {
