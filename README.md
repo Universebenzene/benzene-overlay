@@ -3,11 +3,11 @@ Universebenzene's personal Gentoo overlay.
 
 Including some old software that no longer supported by official portage.
 
-Alternative building of astropy related packages (more improvement for the doc building, though some of them only works when the `network-sandbox` FEATURE is diabled, see the USE discriptions for details).
+Alternative building of astropy related packages (more improvement for the doc building, though some of them only work when the `network-sandbox` FEATURE is diabled, see the USE discriptions for details).
 
 Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-testlay), with some packages testing. You can add it for interest.
 
-To add this overlay, just run `layman -o https://raw.githubusercontent.com/Universebenzene/benzene-overlay/master/repositories.xml -f -a benzene-overlay`. (Planned be able to use `layman -a` in the future)
+This overlay is available on [Gentoo repositories](https://overlays.gentoo.org). You can add it simply by several tools (e.g. via layman: `layman -a benzene-overlay`).
 
 ### Available packages
 
