@@ -23,7 +23,7 @@ DEPEND="x11-libs/gdk-pixbuf:2
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 PATCHES=( "${FILESDIR}" )
 

@@ -32,6 +32,6 @@ BDEPEND="dev-python/setuptools[$PYTHON_USEDEP]
 	)
 "
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 distutils_enable_tests pytest
