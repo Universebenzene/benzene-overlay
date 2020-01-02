@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universbenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">astropy-healpix</remote-id>
+	</upstream>
+	<use>
+		<flag name="doc">Build extra documentation (build will pass with warning. Disable the network-sandbox FEATURE to get better doc building)</flag>
+	</use>
+</pkgmetadata>
