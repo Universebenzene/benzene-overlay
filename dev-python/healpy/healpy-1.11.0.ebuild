@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-BDEPEND="$>=dev-python/cython-0.16[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/cython-0.16[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/pytest-runner[${PYTHON_USEDEP}]
 	virtual/pkgconfig
