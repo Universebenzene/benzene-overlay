@@ -1,0 +1,19 @@
+--- a/astroscrappy/utils/setup_package.py	2018-12-19 02:43:32.000000000 +0800
++++ b/astroscrappy/utils/setup_package.py	2020-01-04 01:05:49.816741950 +0800
+@@ -76,14 +76,12 @@
+                     sources=med_sources,
+                     include_dirs=include_dirs,
+                     libraries=libraries,
+-                    language="c",
+-                    extra_compile_args=extra_compile_args)
++                    language="c")
+     ext_im = Extension(name=str("astroscrappy.utils.image_utils"),
+                     sources=im_sources,
+                     include_dirs=include_dirs,
+                     libraries=libraries,
+-                    language="c",
+-                    extra_compile_args=extra_compile_args)
++                    language="c")
+ 
+     has_openmp, outputs = check_openmp()
+     if has_openmp:

@@ -4,26 +4,24 @@
 EAPI=7
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python2_7 python3_{5,6,7,8} )
+PYTHON_COMPAT=( python{2_7,3_{5,6,7,8}} )
 
 inherit distutils-r1
 
-DESCRIPTION="BSD-licensed HEALPix for Astropy"
-HOMEPAGE="http://astropy-healpix.readthedocs.io"
+DESCRIPTION="Optimized cosmic ray annihilation astropy python module"
+HOMEPAGE="https://astroscrappy.readthedocs.io"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="doc"
-#RESTRICT="network-sandbox"
+IUSE="doc openmp"
 RESTRICT="!test? ( test )"
 
-RDEPEND="
-	>=dev-python/numpy-1.10[${PYTHON_USEDEP}]
-	>=dev-python/astropy-1.2[${PYTHON_USEDEP}]
-"
-BDEPEND="<dev-python/astropy-helpers-3.2[${PYTHON_USEDEP}]
+RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
+BDEPEND="dev-python/cython[${PYTHON_USEDEP}]
+	<dev-python/astropy-helpers-3.2[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
@@ -31,20 +29,23 @@ BDEPEND="<dev-python/astropy-helpers-3.2[${PYTHON_USEDEP}]
 	test? (
 		${RDEPEND}
 		dev-python/pytest-astropy[${PYTHON_USEDEP}]
-		!dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/healpy[${PYTHON_USEDEP}]
-		dev-python/hypothesis[${PYTHON_USEDEP}]
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}"/fix_deprecation_warning.patch
-)
+DOCS=( README.rst CHANGES.rst )
+
+PATCHES=( "${FILESDIR}/${P}-respect-user-flag.patch" )
 
 distutils_enable_tests setup.py
 
 python_prepare_all() {
+	# use astropy-helpers from system
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
+	# if the user explicitely does not want openmp, do not forcefully use it
+	if ! use openmp; then
+		sed -e 's/if has_openmp/if False/' \
+			-i astroscrappy/utils/setup_package.py || die
+	fi
 	export mydistutilsargs=( --offline )
 	distutils-r1_python_prepare_all
 }
@@ -54,11 +55,7 @@ python_compile() {
 }
 
 python_compile_all() {
-	if use doc; then
-		python_setup
-		PYTHONPATH="${BUILD_DIR}"/lib \
-			esetup.py build_docs --no-intersphinx
-	fi
+	use doc && esetup.py build_docs --no-intersphinx
 }
 
 python_install_all() {
