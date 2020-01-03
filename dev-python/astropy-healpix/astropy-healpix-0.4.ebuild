@@ -31,6 +31,7 @@ BDEPEND="<dev-python/astropy-helpers-3.2[${PYTHON_USEDEP}]
 	test? (
 		${RDEPEND}
 		dev-python/pytest-astropy[${PYTHON_USEDEP}]
+		dev-python/healpy[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 	)
 "
