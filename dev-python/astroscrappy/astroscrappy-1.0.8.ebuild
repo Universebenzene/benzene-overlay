@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/cython[${PYTHON_USEDEP}]
-	<dev-python/astropy-helpers-3.2[${PYTHON_USEDEP}]
+	dev-python/astropy-helpers[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
