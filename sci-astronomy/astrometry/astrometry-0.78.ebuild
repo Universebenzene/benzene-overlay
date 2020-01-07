@@ -37,7 +37,9 @@ RDEPEND="
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}
 	dev-lang/swig:0
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	netpbm? ( media-libs/netpbm )
+"
 
 S="${WORKDIR}/${MYP}"
 
@@ -54,11 +56,17 @@ src_prepare() {
 		-e '/-fomit-frame-pointer/d' \
 		-i util/makefile.common || die
 
+	# compile & link netpbm
 	if use netpbm; then
 		sed -e 's/NETPBM_INC\ ?=/NETPBM_INC\ ?=\ -I\/usr\/include\/netpbm/g' \
 			-i util/makefile.netpbm || die
-		sed -e 's/-L.\ -lnetpbm/-L\/usr\/lib64\ -lnetpbm/g' \
-			-i util/makefile.netpbm || die
+		if use amd64 || use amd64-linux; then
+			sed -e 's/-L.\ -lnetpbm/-L\/usr\/lib64\ -lnetpbm/g' \
+				-i util/makefile.netpbm || die
+		else
+			sed -e 's/-L.\ -lnetpbm/-L\/usr\/lib\ -lnetpbm/g' \
+				-i util/makefile.netpbm || die
+		fi
 	fi
 
 	# fix underlinking
