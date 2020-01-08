@@ -57,7 +57,7 @@ python_compile_all() {
 	if use doc; then
 		python_setup
 		PYTHONPATH="${BUILD_DIR}"/lib \
-			esetup.py build_docs --no-intersphinx
+			esetup.py build_docs
 	fi
 }
 

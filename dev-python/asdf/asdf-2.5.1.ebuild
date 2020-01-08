@@ -39,7 +39,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 "
 
 PATCHES=(
-	"${FILESDIR}"/${P}-Disable-test-that-require-http-server.patch
+	"${FILESDIR}"/${PN}-2.5.0-Disable-test-that-require-http-server.patch
 )
 
 distutils_enable_tests pytest
