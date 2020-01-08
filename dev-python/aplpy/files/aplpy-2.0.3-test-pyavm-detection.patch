@@ -1,0 +1,11 @@
+--- a/aplpy/conftest.py	2019-02-19 19:20:49.000000000 +0800
++++ b/aplpy/conftest.py	2020-01-08 20:34:16.537416636 +0800
+@@ -41,7 +41,7 @@
+ try:
+     PYTEST_HEADER_MODULES['Astropy'] = 'astropy'
+     PYTEST_HEADER_MODULES['pyregion'] = 'pyregion'
+-    PYTEST_HEADER_MODULES['PyAVM'] = 'PyAVM'
++    PYTEST_HEADER_MODULES['PyAVM'] = 'pyavm'
+     PYTEST_HEADER_MODULES['reproject'] = 'reproject'
+     del PYTEST_HEADER_MODULES['h5py']
+ except (NameError, KeyError):

@@ -8,6 +8,7 @@ dev-python/astropy-helpers  | 2.0.11; 3.0.2; 3.1.1         | With patches for be
 dev-python/pytest-astropy   | 0.7.0                        | Test plugins for astropy. Dependencies are also in this overlay but not list in this table
 dev-python/sphinx-astropy   | 1.2                          | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not list in this table
 dev-python/sphinx-asdf      | 0.1.0\_rc8                   |
+dev-python/aplpy            | 1.1.1; 2.0.3                 | Other overlays might needed for newest version. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for details
 dev-python/asdf             | 1.3.3; 2.5.0; 2.5.1          |
 dev-python/astropy-healpix  | 0.4                          | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy-healpix#note-for-astropy-healpix) for details
 dev-python/astroscrappy     | 1.0.8                        |
