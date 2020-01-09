@@ -1,0 +1,13 @@
+--- a/docs/conf.py	2013-11-09 22:35:32.000000000 +0800
++++ b/docs/conf.py	2020-01-09 13:56:28.276817313 +0800
+@@ -28,8 +28,8 @@
+ extensions = ['matplotlib.sphinxext.plot_directive',
+               'sphinx.ext.autodoc',
+               'sphinx.ext.intersphinx',
+-              'astropy.sphinx.ext.numpydoc',
+-              'astropy.sphinx.ext.astropyautosummary'
++              'astropy_helpers.sphinx.ext.numpydoc',
++              'astropy_helpers.sphinx.ext.astropyautosummary'
+              ]
+ 
+ autosummary_generate = True
