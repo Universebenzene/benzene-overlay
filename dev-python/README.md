@@ -23,4 +23,5 @@ dev-python/montage-wrapper  | 0.9.9                        |
 dev-python/pyavm            | 0.9.4                        |
 dev-python/pyregion         | 2.0                          |
 dev-python/pyvo             | 0.9.3                        | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/pyvo#note-for-pyvo) for details
+dev-python/regions          | 0.4                          |
 dev-python/reproject        | 0.5.1                        | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/reproject#note-for-reproject) for details

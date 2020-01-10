@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci-astronomy@gentoo.org</email>
+		<name>Gentoo Astronomy Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		The goal is to merge the functionality from pyregion and photutils apertures and then after some time propose this package for inclusion in the Astropy core.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">regions</remote-id>
+	</upstream>
+	<use>
+		<flag name="doc">Build extra documentation (build will pass with warning. Disable the network-sandbox FEATURE to get better doc building)</flag>
+	</use>
+</pkgmetadata>
