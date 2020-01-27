@@ -6,7 +6,7 @@ EAPI=7
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYTHON_COMPAT=( python{2_7,3_{5,6,7,8}} )
 
-inherit distutils-r1
+inherit distutils-r1 eutils
 
 DESCRIPTION="Collection of packages to access online astronomical resources"
 HOMEPAGE="https://github.com/astropy/astroquery"
@@ -69,4 +69,10 @@ python_compile_all() {
 python_install_all() {
 	use doc && local HTML_DOCS=( docs/_build/html/. )
 	distutils-r1_python_install_all
+}
+
+pkg_postinst() {
+	optfeature "running the tests"							dev-python/pytest-astropy
+	optfeature "the full functionality of the alma module"	dev-python/aplpy dev/pyregion
+	optfeature "the full functionality of the cds module"	dev-python/astropy-healpix dev/regions
 }
