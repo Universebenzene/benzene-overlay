@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci-astronomy@gentoo.org</email>
+		<name>Gentoo Astronomy Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Astroplan is an observation planning package for astronomers that can help
+		you plan for everything but the clouds.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">astroplan</remote-id>
+		<remote-id type="github">astropy/astroplan</remote-id>
+	</upstream>
+	<use>
+		<flag name="doc">Build extra documentation (build will pass with warning. Disable the network-sandbox FEATURE to get better doc building)</flag>
+	</use>
+</pkgmetadata>

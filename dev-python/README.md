@@ -14,6 +14,7 @@ dev-python/astrodendro      | 0.2.0                        | Old package, so the
 dev-python/astroml          | 0.3; 0.4.1                   |
 dev-python/astroml-addons   | 0.2.2                        | Only for astroml<0.4
 dev-python/astropy-healpix  | 0.4                          | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy-healpix#note-for-astropy-healpix) for details
+dev-python/astroplan        | 0.6                          |
 dev-python/astroquery       | 0.3.10; 0.4                  |
 dev-python/astroscrappy     | 1.0.8                        |
 dev-python/atpy             | 0.9.7                        | Old package, so the test phase may fail
