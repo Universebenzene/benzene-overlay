@@ -23,9 +23,11 @@ IUSE="examples +netpbm"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
-	dev-python/astropy[${PYTHON_USEDEP}]
-	dev-python/fitsio[${PYTHON_USEDEP}]
-	dev-python/numpy[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '
+		dev-python/astropy[${PYTHON_MULTI_USEDEP}]
+		dev-python/fitsio[${PYTHON_MULTI_USEDEP}]
+		dev-python/numpy[${PYTHON_MULTI_USEDEP}]
+	')
 	media-libs/libpng:0
 	media-libs/netpbm
 	sci-astronomy/wcslib:0=
