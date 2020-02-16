@@ -13,7 +13,8 @@ This overlay is available on [Gentoo repositories](https://overlays.gentoo.org).
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-app-text/ydcv               | 0.7            | Need the [HomeAssistantRepository](https://git.edevau.net/onkelbeh/HomeAssistantRepository) overlay if you enable `pkg-info` use. Some other issues [here](https://forums.gentoo.org/viewtopic-p-8352006.html)
+app-office/wps-office       | 11.1.0.9080                  | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go))
+app-text/ydcv               | 0.7                          | Need the [HomeAssistantRepository](https://git.edevau.net/onkelbeh/HomeAssistantRepository) overlay if you enable `pkg-info` use. Some other issues [here](https://forums.gentoo.org/viewtopic-p-8352006.html)
 media-video/gnome-mplayer   | 1.0.9-r1                     | Dropped by official portage
 media-gfx/gpaint            | 0.3.3                        | With patches from Debian
 net-misc/baidunetdisk       | 2.0.1; 2.0.2; 3.0.1          | Converted from [AUR](https://aur.archlinux.org/packages/baidunetdisk-bin) (Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here)
