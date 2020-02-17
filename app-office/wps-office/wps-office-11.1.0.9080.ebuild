@@ -145,7 +145,6 @@ src_install() {
 	done
 	use l10n_ja && doins -r "${S}/${PN}-mui-${PV}"/ja_JP
 	use l10n_uk && doins -r "${S}/${PN}-mui-${PV}"/uk_UA
-
 }
 
 pkg_postinst() {
