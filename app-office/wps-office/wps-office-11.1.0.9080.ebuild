@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit xdg
+inherit xdg eutils
 
 MY_PV="$(ver_cut 4)"
 MY_P="${PN}_${PV}"
@@ -145,4 +145,9 @@ src_install() {
 	use l10n_ja && doins -r "${S}/${PN}-mui-${PV}"/ja_JP
 	use l10n_uk && doins -r "${S}/${PN}-mui-${PV}"/uk_UA
 
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+	optfeature "FZ TTF fonts provided by wps community "	media-fonts/wps-office-fonts
 }
