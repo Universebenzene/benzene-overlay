@@ -21,7 +21,7 @@ SRC_URI="http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_P
 SLOT="0"
 RESTRICT="strip mirror" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
-IUSE="cn mime l10n_zh-CN"
+IUSE="cn +mime l10n_zh-CN"
 LANGS="de-DE en-GB es-ES es-MX fr fr-CA ja pl pt-BR pt-PT ru th uk zh-HK zh-MO zh-TW"
 for X in ${LANGS}; do
 	IUSE="${IUSE} l10n_${X}"
