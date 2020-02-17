@@ -72,7 +72,7 @@ RDEPEND="
 	sys-apps/attr
 "
 DEPEND=""
-BDEPEND=""
+BDEPEND="app-arch/p7zip"
 
 S="${WORKDIR}"
 
