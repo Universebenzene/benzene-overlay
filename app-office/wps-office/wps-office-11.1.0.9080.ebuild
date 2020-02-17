@@ -126,7 +126,7 @@ src_install() {
 	export MUIDIR="opt/kingsoft/wps-office/office6/mui"
 
 	if use cn; then
-		use l10n_zh-CN || rm -r "${ED%/}/${MUIDIR}"/{en_US/resource/help,zh_CN} || die "remove zh_CN support from cn version failed!"
+		use l10n_zh-CN || ( rm -r "${ED%/}/${MUIDIR}"/{en_US/resource/help,zh_CN} || die "remove zh_CN support from cn version failed!" )
 	else
 		insinto /"${MUIDIR}"/en_US/resource
 		use l10n_zh-CN && doins -r "${S}/${PN}-cn/${MUIDIR}"/en_US/resource/help
