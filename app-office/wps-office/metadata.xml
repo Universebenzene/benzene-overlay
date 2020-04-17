@@ -17,7 +17,7 @@
 		<flag name="cn">Use CN version of WPS Office (including WPS Cloud, WPS account login and other functions)</flag>
 		<flag name="mime">Use mime files provided by WPS</flag>
 		<flag name="l10n_zh-HK">Chinese (Traditional, Hong Kong S.A.R.)</flag>
-		<flag name="l10n_zh-MO">Chinese (Macao)</flag>
+		<flag name="l10n_zh-MO">Chinese (Traditional, Macao S.A.R.)</flag>
 	</use>
 </pkgmetadata>
 

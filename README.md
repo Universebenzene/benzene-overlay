@@ -13,7 +13,7 @@ This overlay is available on [Gentoo repositories](https://overlays.gentoo.org).
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-app-office/wps-office        | 11.1.0.9080; 11.1.0.9126     | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go))
+app-office/wps-office        | 11.1.0.9080; 11.1.0.9126 11.1.0.9505 | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go))
 app-text/ydcv                | 0.7                          | Need the [HomeAssistantRepository](https://git.edevau.net/onkelbeh/HomeAssistantRepository) overlay if you enable `pkg-info` use. Some other issues [here](https://forums.gentoo.org/viewtopic-p-8352006.html)
 media-fonts/wps-office-fonts | 1.0                          |
 media-gfx/gpaint             | 0.3.3                        | With patches from Debian
