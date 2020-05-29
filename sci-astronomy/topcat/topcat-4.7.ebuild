@@ -34,6 +34,5 @@ src_install() {
 	fi
 	domenu "${FILESDIR}"/${PN}.desktop
 	doicon "${FILESDIR}"/${PN}.png
-	doicon -s 72 "${FILESDIR}"/${PN}-72x72.png
-	doicon -s 192 "${FILESDIR}"/${PN}-192x192.png
+	doicon -s 72 "${FILESDIR}"/72x72/${PN}.png
 }
