@@ -27,7 +27,7 @@ src_prepare() {
 }
 
 src_install() {
-	java-pkg_newjar ${MY_PN}.jar ${MY_PN}.jar
+	java-pkg_dojar ${MY_PN}.jar
 	newbin ${MY_PN} ${PN}
 
 	domenu "${FILESDIR}"/${PN}.desktop
