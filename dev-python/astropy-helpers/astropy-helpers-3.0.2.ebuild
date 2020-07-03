@@ -20,12 +20,7 @@ python_prepare() {
 	_pyver() {
 		"${PYTHON}" -c 'import sys; print(sys.version[:3])'
 	}
-
-	if use amd64 || use amd64-linux; then
-		eapply "${FILESDIR}/${P}-py$(_pyver)-system-path-amd64.patch"
-	else
-		eapply "${FILESDIR}/${P}-py$(_pyver)-system-path.patch"
-	fi
+	eapply "${FILESDIR}/${P}-py$(_pyver)-system-path.patch"
 
 	sed -e '/import ah_bootstrap/d' \
 		-i setup.py || die "Removing ah_bootstrap failed"
