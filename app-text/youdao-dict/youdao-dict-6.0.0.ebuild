@@ -17,6 +17,7 @@ SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -42,6 +43,7 @@ RDEPEND="${DEPEND}
 		app-text/tessdata_best[l10n_en,l10n_zh]
 		app-text/tessdata_legacy[l10n_en,l10n_zh]
 	)
+	${PYTHON_DEPS}
 "
 BDEPEND=""
 
