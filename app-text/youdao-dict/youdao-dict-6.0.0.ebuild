@@ -53,7 +53,7 @@ src_prepare() {
 	use amd64 && pushd "${P}-${ARCH}" || die
 	sed -i -e "/PREFIX=/cROOT=${ED%/}\nPREFIX=\$ROOT/usr" \
 		-e 's/\/etc/$ROOT\/etc/g' \
-		-e 's/ln -sf $PREFIX/ln -sf \/usr/g' install.sh
+		-e 's/ln -sf $PREFIX/ln -sf \/usr/g' install.sh || die
 	default
 }
 
