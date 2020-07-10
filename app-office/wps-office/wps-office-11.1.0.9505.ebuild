@@ -100,10 +100,7 @@ src_install() {
 
 	exeinto /usr/bin
 	exeopts -m0755
-	doexe "${WS}"/usr/bin/wps
-	doexe "${WS}"/usr/bin/wpp
-	doexe "${WS}"/usr/bin/et
-	doexe "${WS}"/usr/bin/wpspdf
+	doexe "${WS}"/usr/bin/*
 
 	insinto /usr/share
 	doins -r "${WS}"/usr/share/{applications,desktop-directories,icons,fonts,templates}
