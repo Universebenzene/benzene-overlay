@@ -7,7 +7,7 @@ inherit xdg eutils
 
 MY_PV="$(ver_cut 4)"
 MY_P="${PN}_${PV}"
-#MUI_PV="$(ver_cut 1-3).9080"
+MUI_PV="$(ver_cut 1-3).9604"
 
 DESCRIPTION="WPS Office is an office productivity suite"
 HOMEPAGE="http://www.wps.cn/product/wpslinux/ http://wps-community.org/"
@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 
 SRC_URI="http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_PV}/${MY_P}.XA_amd64.deb
 	https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb
-	https://github.com/timxx/wps-office-mui/archive/${PV}.tar.gz -> ${PN}-mui-${PV}.tar.gz
+	https://github.com/timxx/wps-office-mui/archive/${MUI_PV}.tar.gz -> ${PN}-mui-${MUI_PV}.tar.gz
 "
 
 SLOT="0"
@@ -89,8 +89,8 @@ src_unpack() {
 	unpack ./data.tar.*
 	popd || die
 
-	unpack ${PN}-mui-${PV}.tar.gz
-	pushd ${PN}-mui-${PV} || die
+	unpack ${PN}-mui-${MUI_PV}.tar.gz
+	pushd ${PN}-mui-${MUI_PV} || die
 	unpack mui/*.7z
 	popd || die
 }
@@ -136,13 +136,13 @@ src_install() {
 	LANGF="de-DE en-GB es-ES es-MX fr-CA pt-BR pt-PT zh-HK zh-MO zh-TW"
 	LANGG="fr pl ru th"
 	for LU in ${LANGF}; do
-		use l10n_${LU} && doins -r "${S}/${PN}-mui-${PV}"/"${LU/-/_}"
+		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}"/"${LU/-/_}"
 	done
 	for LU in ${LANGG}; do
-		use l10n_${LU} && doins -r "${S}/${PN}-mui-${PV}"/"${LU}_${LU^^}"
+		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}"/"${LU}_${LU^^}"
 	done
-	use l10n_ja && doins -r "${S}/${PN}-mui-${PV}"/ja_JP
-	use l10n_uk && doins -r "${S}/${PN}-mui-${PV}"/uk_UA
+	use l10n_ja && doins -r "${S}/${PN}-mui-${MUI_PV}"/ja_JP
+	use l10n_uk && doins -r "${S}/${PN}-mui-${MUI_PV}"/uk_UA
 }
 
 pkg_postinst() {
