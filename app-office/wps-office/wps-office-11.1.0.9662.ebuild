@@ -7,7 +7,7 @@ inherit xdg eutils
 
 MY_PV="$(ver_cut 4)"
 MY_P="${PN}_${PV}"
-MUI_PV="$(ver_cut 1-3).9505"
+MUI_PV="$(ver_cut 1-3).9604"
 
 DESCRIPTION="WPS Office is an office productivity suite"
 HOMEPAGE="http://www.wps.cn/product/wpslinux/ http://wps-community.org/"
