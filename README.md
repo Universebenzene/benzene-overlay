@@ -22,6 +22,7 @@ media-video/gnome-mplayer    | 1.0.9-r1                | Dropped by official por
 net-misc/baidunetdisk        | 3.0.1; 3.4.1            | Converted from [AUR](https://aur.archlinux.org/packages/baidunetdisk-bin) (Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here)
 net-misc/baidupcs-go         | 3.6.2; (live)           | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here
 net-misc/baidupcs-go-bin     | 3.6.2                   |
+net-misc/xunlei-download     | 1.0.0.1                 | Converted from [AUR](https://aur.archlinux.org/packages/xunlei-bin/)
 x11-libs/lain                | (live version)          |
 dev-python/astlib            | 0.8.0; 0.11.3           |
 sci-astronomy/aladin         | 11.024                  |
