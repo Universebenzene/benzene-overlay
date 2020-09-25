@@ -48,7 +48,7 @@ src_install() {
 
 	insinto /opt/"${PN}"
 	doins -r opt/apps/"${MY_PN}"/files/*
-	fperms +x /opt/"${PN}"/{start.sh,thunder,libnode.so,resources/bin/*}
+	fperms +x /opt/"${PN}"/{start.sh,thunder,libnode.so,resources/bin/{ThunderHelper.node,ThunderKernel.node}}
 
 	domenu opt/apps/"${MY_PN}"/entries/applications/"${MY_PN}".desktop
 	dosym /opt/"${PN}"/start.sh /usr/bin/"${PN}"
