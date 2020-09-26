@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}
 	<dev-python/pytest-4.0[${PYTHON_USEDEP}]
 	dev-libs/libxml2[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
-	sci-libs/scipy[${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
 	sys-libs/zlib:0=
 "
 BDEPEND="

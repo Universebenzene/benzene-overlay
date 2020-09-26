@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}
 	dev-python/astropy[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
-	>=sci-libs/scipy-0.18.1[${PYTHON_USEDEP}]
+	>=dev-python/scipy-0.18.1[${PYTHON_USEDEP}]
 "
 BEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-lang/swig

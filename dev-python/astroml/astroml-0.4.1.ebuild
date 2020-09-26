@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 RDEPEND=">=dev-python/astropy-1.2[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-2.1.1[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.8[${PYTHON_USEDEP}]
-	>=sci-libs/scipy-0.11[${PYTHON_USEDEP}]
+	>=dev-python/scipy-0.11[${PYTHON_USEDEP}]
 	>=sci-libs/scikits_learn-0.18[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]

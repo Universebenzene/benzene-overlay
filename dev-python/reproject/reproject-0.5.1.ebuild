@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 
 RDEPEND=">=dev-python/astropy-2.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-healpix-0.2[${PYTHON_USEDEP}]
-	>=sci-libs/scipy-0.9[${PYTHON_USEDEP}]
+	>=dev-python/scipy-0.9[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.10[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "

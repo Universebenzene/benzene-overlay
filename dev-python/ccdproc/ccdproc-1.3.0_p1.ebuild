@@ -25,7 +25,7 @@ RDEPEND=">=dev-python/astropy-1.0[${PYTHON_USEDEP}]
 	sci-libs/scikits_image[${PYTHON_USEDEP}]
 	dev-python/astroscrappy[${PYTHON_USEDEP}]
 	dev-python/reproject[${PYTHON_USEDEP}]
-	sci-libs/scipy[${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}
 	<dev-python/astropy-helpers-3.2[${PYTHON_USEDEP}]
