@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit xdg eutils
+inherit xdg optfeature
 
 MY_PV="$(ver_cut 4)"
 MY_P="${PN}_${PV}"
