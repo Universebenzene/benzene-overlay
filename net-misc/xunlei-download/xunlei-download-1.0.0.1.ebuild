@@ -35,9 +35,9 @@ S="${WORKDIR}"
 QA_PREBUILT="opt/${PN}/* opt/${PN}/resources/bin/*"
 
 src_prepare() {
-	sed -e '/Cate/s/net/Network/' -e '4c Exec=xunlei-download %U' \
-		-i opt/apps/"${MY_PN}"/entries/applications/"${MY_PN}".desktop
-	sed "s/apps\/${MY_PN}\/files/${PN}/" -i opt/apps/"${MY_PN}"/files/start.sh
+	sed -i -e '/Cate/s/net/Network/' -e '4c Exec=xunlei-download %U' \
+		opt/apps/"${MY_PN}"/entries/applications/"${MY_PN}".desktop || die
+	sed -i "s/apps\/${MY_PN}\/files/${PN}/" opt/apps/"${MY_PN}"/files/start.sh || die
 	mv opt/apps/"${MY_PN}"/entries/icons/hicolor/scalable/apps/{com.thunder.download.svg,"${MY_PN}".svg} || die
 	default
 }
