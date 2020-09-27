@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit unpacker xdg
+inherit unpacker desktop xdg
 
 DESCRIPTION="Baidu Net Disk is a cloud storage client (Linux Version)"
 HOMEPAGE="https:/pan.baidu.com"
@@ -25,13 +25,13 @@ BDEPEND=""
 S="${WORKDIR}"
 
 src_install() {
-	mv usr/share/doc/{${PN},${PF}} || die
-	gzip -d usr/share/doc/${PF}/*.gz || die
-
-	insinto /usr
-	doins -r usr/share
-
 	insinto /opt
-	doins -r opt/${PN}
-	fperms +x /opt/${PN}/${PN}
+	doins -r opt/"${PN}"
+	fperms +x /opt/"${PN}"/"${PN}"
+
+	gzip -d usr/share/doc/"${PN}"/*.gz || die
+	dodoc usr/share/doc/"${PN}"/*
+
+	domenu usr/share/applications/"${PN}".desktop
+	doicon -s scalable usr/share/icons/hicolor/scalable/apps/"${PN}".svg
 }
