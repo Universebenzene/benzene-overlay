@@ -7,7 +7,7 @@ inherit xdg optfeature
 
 MY_PV="$(ver_cut 4)"
 MY_P="${PN}_${PV}"
-MUI_PV="$(ver_cut 1-3).9604"
+MUI_PV="$(ver_cut 1-3).8865"
 
 DESCRIPTION="WPS Office is an office productivity suite"
 HOMEPAGE="http://www.wps.cn/product/wpslinux/ http://wps-community.org/"
@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 
 SRC_URI="http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_PV}/${MY_P}.XA_amd64.deb
 	https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb
-	https://github.com/timxx/wps-office-mui/archive/${MUI_PV}.tar.gz -> ${PN}-mui-${MUI_PV}.tar.gz
+	https://github.com/gromko/wps-office-mui/archive/${MUI_PV}.tar.gz -> ${PN}-mui-${MUI_PV}.tar.gz
 "
 
 SLOT="0"
