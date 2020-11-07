@@ -3,9 +3,9 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{5,6,7,8} )
+PYTHON_COMPAT=( python3_{6,7,8,9} )
 
-inherit distutils-r1 eutils
+inherit distutils-r1 eutils optfeature
 
 DESCRIPTION="Python library for the Advanced Scientific Data Format"
 HOMEPAGE="https://asdf.readthedocs.io"

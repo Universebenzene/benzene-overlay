@@ -4,9 +4,9 @@
 EAPI=7
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python3_{5,6,7,8} )
+PYTHON_COMPAT=( python3_{6,7,8,9} )
 
-inherit distutils-r1 virtualx
+inherit distutils-r1 virtualx optfeature
 
 MY_PN=APLpy
 MY_P=${MY_PN}-${PV}

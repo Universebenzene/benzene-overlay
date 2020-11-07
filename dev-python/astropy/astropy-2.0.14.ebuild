@@ -6,7 +6,7 @@ EAPI=7
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYTHON_COMPAT=( python2_7 python3_{5,6,7} )
 
-inherit distutils-r1 xdg-utils eutils
+inherit distutils-r1 xdg-utils eutils optfeature
 
 DESCRIPTION="Core functionality for performing astrophysics with Python"
 HOMEPAGE="https://www.astropy.org/"

@@ -3,10 +3,10 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python{2_7,3_{5,6,7,8}} )
+PYTHON_COMPAT=( python{2_7,3_{6,7,8,9}} )
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
-inherit distutils-r1 virtualx eutils
+inherit distutils-r1 virtualx eutils optfeature
 
 DESCRIPTION="Observation planning package for astronomers"
 HOMEPAGE="https://astroplan.readthedocs.org/"

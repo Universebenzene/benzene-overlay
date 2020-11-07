@@ -6,7 +6,7 @@ EAPI=6
 # this could be a multiple python package
 # but the way it is packaged makes it very time consuming.
 
-PYTHON_COMPAT=( python3_{5,6,7,8} )
+PYTHON_COMPAT=( python3_{6,7,8,9} )
 
 inherit eutils toolchain-funcs python-single-r1
 
