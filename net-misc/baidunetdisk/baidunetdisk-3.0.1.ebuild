@@ -8,7 +8,7 @@ MY_PV=${PV}.2
 inherit unpacker xdg
 
 DESCRIPTION="Baidu Net Disk is a cloud storage client (Linux Version)"
-HOMEPAGE="https:/pan.baidu.com"
+HOMEPAGE="https://pan.baidu.com"
 SRC_URI="https://issuecdn.baidupcs.com/issue/netdisk/LinuxGuanjia/${PV}/${PN}_linux_${MY_PV}.deb"
 
 LICENSE=""
