@@ -15,7 +15,8 @@ Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 app-office/wps-office        | 11.1.0.9711; 11.1.0.9719 | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go))
 app-text/ydcv                | 0.7                     | Need the [HomeAssistantRepository](https://git.edevau.net/onkelbeh/HomeAssistantRepository) overlay if you enable `pkg-info` use. Some other issues [here](https://forums.gentoo.org/viewtopic-p-8352006.html)
-app-text/youdao-dict         | 6.0.0                   | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict), but REALLY BUGGY right now. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/app-text/youdao-dict#note-for-youdao-dict) for details and HOPE ANY ONE CAN HELP ME with it
+app-text/youdao-dict         | 6.0.0                   | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict).In order to use this you **must use the patched QtWebkit in this overlay instead of the official one**
+dev-qt/qtwebkit              | 5.212.0_pre20200309-r1  | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work
 media-fonts/wps-office-fonts | 1.0                     |
 media-gfx/gpaint             | 0.3.3                   | With patches from Debian
 media-video/gnome-mplayer    | 1.0.9-r1                | Dropped by official portage
