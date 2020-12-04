@@ -9,7 +9,7 @@ DESCRIPTION="Baidu Net Disk is a cloud storage client (Linux Version)"
 HOMEPAGE="https://pan.baidu.com"
 SRC_URI="http://wppkg.baidupcs.com/issue/netdisk/Linuxguanjia/${PV}/${PN}_${PV}_amd64.deb"
 
-LICENSE=""
+LICENSE="BaiduNetDisk"
 SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64"

@@ -12,9 +12,9 @@ SRC_URI="
 	amd64? ( http://codown.youdao.com/cidian/linux/${P}-amd64.tar.gz )
 	x86? ( http://codown.youdao.com/cidian/linux/${PN}_${PV}_i386.tar.gz )
 "
-LICENSE=""
+LICENSE="youdaodict-proprietary GPL-3+ PSF-2"
 SLOT="0"
-RESTRICT="strip"
+RESTRICT="strip mirror"
 KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"

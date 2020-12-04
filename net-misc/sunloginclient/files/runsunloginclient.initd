@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+# Copyright 1999-2020 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="check running sunloginclinet loop"
+
+depend() {
+    need net
+}
+
+start() {
+    ebegin "Starting runsunloginclient"
+    start-stop-daemon --background --start --exec /opt/sunlogin/bin/oray_rundaemon -- -e 'bash /opt/sunlogin/etc/watch.sh'
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping runsunloginclient"
+    start-stop-daemon --stop --exec /opt/sunlogin/bin/oray_rundaemon
+
+    psid=$(ps -ef | grep sunloginclient | grep -v grep | grep -v $0 | awk '{print $2}')
+    if [ -n "$psid" ]; then
+        killall sunloginclient
+    fi
+    eend $?
+}

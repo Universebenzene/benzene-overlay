@@ -16,13 +16,14 @@ Package name | Available version | Additional information
 app-office/wps-office        | 11.1.0.9711; 11.1.0.9719 | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go))
 app-text/ydcv                | 0.7                     | Need the [HomeAssistantRepository](https://git.edevau.net/onkelbeh/HomeAssistantRepository) overlay if you enable `pkg-info` use. Some other issues [here](https://forums.gentoo.org/viewtopic-p-8352006.html)
 app-text/youdao-dict         | 6.0.0                   | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict). In order to use this you **must use the patched QtWebkit in this overlay INSTEAD OF THE OFFICIAL ONE**
-dev-qt/qtwebkit              | 5.212.0_pre20200309-r1  | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work
+dev-qt/qtwebkit              | 5.212.0\_pre20200309-r1  | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work
 media-fonts/wps-office-fonts | 1.0                     |
 media-gfx/gpaint             | 0.3.3                   | With patches from Debian
 media-video/gnome-mplayer    | 1.0.9-r1                | Dropped by official portage
 net-misc/baidunetdisk        | 3.0.1; 3.4.1; 3.5.0     | Converted from [AUR](https://aur.archlinux.org/packages/baidunetdisk-bin) (Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here)
 net-misc/baidupcs-go         | 3.6.2; (live)           | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here
 net-misc/baidupcs-go-bin     | 3.6.2                   |
+net-misc/sunloginclient      | 10.1.1.38139            | Converted from [AUR](https://aur.archlinux.org/packages/sunloginclient)
 net-misc/xunlei-download     | 1.0.0.1; 1.0.0.1-r1     | Converted from [AUR](https://aur.archlinux.org/packages/xunlei-bin/)
 x11-libs/lain                | (live version)          |
 dev-python/astlib            | 0.8.0; 0.11.3           |

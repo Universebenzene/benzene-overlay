@@ -14,7 +14,7 @@ SRC_URI="
 	arm64? ( http://archive.kylinos.cn/kylin/partner/pool/${MY_PN}_${PV}_arm64.deb -> ${PF}_arm64.deb )
 "
 
-LICENSE=""
+LICENSE="com.xunlei.download"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 IUSE=""

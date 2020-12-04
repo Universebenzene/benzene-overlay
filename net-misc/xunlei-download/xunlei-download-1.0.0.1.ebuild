@@ -14,7 +14,7 @@ SRC_URI="
 	arm64? ( https://cdn-package-store6.deepin.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_arm64.deb )
 "
 
-LICENSE=""
+LICENSE="com.xunlei.download"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 IUSE=""
