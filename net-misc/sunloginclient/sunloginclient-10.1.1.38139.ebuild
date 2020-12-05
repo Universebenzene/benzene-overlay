@@ -72,6 +72,13 @@ pkg_postinst() {
 	elog "# systemctl start runsunloginclient.service"
 	elog "# systemctl enable runsunloginclient.service"
 	elog
+	elog "You may also need to run \`xhost +\` before remote controlling"
+	elog "your computer from others"
+	elog
+	ewarn
+	ewarn "For OpenRC+elogind users, remote controlling from others may"
+	ewarn "not work, which is still an unsolved problem"
+	ewarn
 
 	xdg_pkg_postinst
 }
