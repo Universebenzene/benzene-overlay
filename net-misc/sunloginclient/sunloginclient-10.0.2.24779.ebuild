@@ -10,8 +10,8 @@ MY_P="${MY_PN}-${PV}"
 MY_PPN="${PN%client}"
 
 DESCRIPTION="Sunlogin Remote Control for mobile devices, Win, Mac, Linux, etc. (GUI version)"
-HOMEPAGE="https://sunlogin.oray.com/"
-SRC_URI="http://dl-cdn.oray.com/sunlogin/linux/${MY_P}_amd64.deb"
+HOMEPAGE="https://sunlogin.oray.com"
+SRC_URI="http://download.oray.com/sunlogin/linux/${MY_P}_amd64.deb"
 
 RESTRICT="mirror"
 LICENSE="Sunlogin"
@@ -78,11 +78,6 @@ pkg_postinst() {
 	elog "You may also need to run \`xhost +\` before remote controlling"
 	elog "your computer from others"
 	elog
-	ewarn
-	ewarn "For OpenRC+elogind users, remote controlling from others may"
-	ewarn "not work on newer version. For OpenRC users please install"
-	ewarn "the older version 10.0.2.24779"
-	ewarn
 
 	xdg_pkg_postinst
 }
