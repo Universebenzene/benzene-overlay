@@ -44,7 +44,7 @@ src_prepare() {
 	sed -e "s#/usr/local/sunlogin/res/icon/%s.ico\x0#/opt/sunlogin/res/icon/%s.ico\x0\x0\x0\x0\x0\x0\x0#g" \
 		-e "s#/usr/local/sunlogin\x0#/opt/sunlogin\x0\x0\x0\x0\x0\x0\x0#g" -i "${LS}"/bin/"${PN}" || die
 	sed -e "/^process=/c process=$\(ps -ef | tr -s \" \" | cut -d \" \" -f 2,8 | grep sunloginclient | awk \'{print \$1}\'\)" \
-		-i "${LS}"/etc/watch.sh
+		-i "${LS}"/etc/watch.sh || die
 	default
 }
 
