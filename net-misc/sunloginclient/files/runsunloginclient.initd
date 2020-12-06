@@ -9,13 +9,13 @@ depend() {
 }
 
 start() {
-    ebegin "Starting runsunloginclient"
+    ebegin "Starting ${RC_SVCNAME}"
     start-stop-daemon --background --start --exec /opt/sunlogin/bin/oray_rundaemon -- -e 'bash /opt/sunlogin/etc/watch.sh'
     eend $?
 }
 
 stop() {
-    ebegin "Stopping runsunloginclient"
+    ebegin "Stopping ${RC_SVCNAME}"
     start-stop-daemon --stop --exec /opt/sunlogin/bin/oray_rundaemon
 
     psid=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep sunloginclient | grep -v $0 | awk '{print $1}')
