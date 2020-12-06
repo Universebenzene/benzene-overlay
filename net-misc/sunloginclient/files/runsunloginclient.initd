@@ -18,7 +18,7 @@ stop() {
     ebegin "Stopping runsunloginclient"
     start-stop-daemon --stop --exec /opt/sunlogin/bin/oray_rundaemon
 
-    psid=$(ps -ef | grep sunloginclient | grep -v grep | grep -v $0 | awk '{print $2}')
+    psid=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep sunloginclient | grep -v $0 | awk '{print $1}')
     if [ -n "$psid" ]; then
         killall sunloginclient
     fi

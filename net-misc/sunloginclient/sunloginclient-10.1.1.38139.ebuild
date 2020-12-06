@@ -7,6 +7,7 @@ inherit unpacker systemd desktop xdg
 
 MY_PN="SunloginClient"
 MY_P="${MY_PN}-${PV}"
+MY_PPN="${PN%client}"
 
 DESCRIPTION="Sunlogin Remote Control for mobile devices, Win, Mac, Linux, etc. (GUI version)"
 HOMEPAGE="https://sunlogin.oray.com/"
@@ -29,36 +30,38 @@ DEPEND=""
 BDEPEND=""
 
 S="${WORKDIR}/usr"
-LS="${S}/local/${PN%client}"
+LS="${S}/local/${MY_PPN}"
 
-QA_PREBUILT="opt/${PN%client}/bin/*"
-#QA_DESKTOP_FILE="usr/share/applications/${PN%client}.desktop"
+QA_PREBUILT="opt/${MY_PPN}/bin/*"
+#QA_DESKTOP_FILE="usr/share/applications/${MY_PPN}.desktop"
 
 src_prepare() {
 	sed -i 's#/usr/local/#/opt/#g' "${LS}"/etc/watch.sh || die
 	sed -e "s#/usr/local/#/opt/#g" -e '2a\Requires=network-online.target\nAfter=network-online.target' \
 		-i "${LS}"/scripts/run"${PN}".service || die
 	sed	-e 's#Icon=/usr/local/sunlogin/res/icon/sunlogin_client.png#Icon=sunloginclient#g' \
-		-e 's#Exec=/usr/local/sunlogin/#Exec=/usr/#g' -i share/applications/"${PN%client}".desktop || die
+		-e 's#Exec=/usr/local/sunlogin/#Exec=/usr/#g' -i share/applications/"${MY_PPN}".desktop || die
 	sed	-e "s#/usr/local/sunlogin/res/icon/%s.ico\x0#/opt/sunlogin/res/icon/%s.ico\x0\x0\x0\x0\x0\x0\x0#g" \
 		-e "s#/usr/local/sunlogin\x0#/opt/sunlogin\x0\x0\x0\x0\x0\x0\x0#g" -i "${LS}"/bin/"${PN}" || die
+	sed -e "/^process=/c process=$\(ps -ef | tr -s \" \" | cut -d \" \" -f 2,8 | grep sunloginclient | awk \'{print \$1}\'\)" \
+		-i "${LS}"/etc/watch.sh
 	default
 }
 
 src_install() {
-	insinto /opt/"${PN%client}"
+	insinto /opt/"${MY_PPN}"
 	doins -r "${LS}"/{bin,etc,res}
-	fperms +x /opt/"${PN%client}"/bin/{oray_rundaemon,"${PN}"}
-	fperms 666 /opt/"${PN%client}"/res/font/wqy-zenhei.ttc
-	fperms 666 /opt/"${PN%client}"/res/skin/{desktopcontrol.skin,remotecamera.skin,remotecmd.skin,remotefile.skin,skin.skin}
-	dosym {/opt/"${PN%client}",usr}/bin/oray_rundaemon
-	dosym {/opt/"${PN%client}",usr}/bin/"${PN}"
+	fperms +x /opt/"${MY_PPN}"/bin/{oray_rundaemon,"${PN}"}
+	fperms 666 /opt/"${MY_PPN}"/res/font/wqy-zenhei.ttc
+	fperms 666 /opt/"${MY_PPN}"/res/skin/{desktopcontrol.skin,remotecamera.skin,remotecmd.skin,remotefile.skin,skin.skin}
+	dosym {/opt/"${MY_PPN}",/usr}/bin/oray_rundaemon
+	dosym {/opt/"${MY_PPN}",/usr}/bin/"${PN}"
 
 	newinitd "${FILESDIR}"/run"${PN}".initd run"${PN}"
 	systemd_dounit "${LS}"/scripts/run"${PN}".service
 
 	newicon -s 128 ${LS}/res/icon/sunlogin_client.png "${PN}".png
-	domenu share/applications/"${PN%client}".desktop
+	domenu share/applications/"${MY_PPN}".desktop
 }
 
 pkg_postinst() {
