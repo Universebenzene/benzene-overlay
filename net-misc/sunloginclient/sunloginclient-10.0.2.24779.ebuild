@@ -40,7 +40,7 @@ src_prepare() {
 	sed -e "s#/usr/local/#/opt/#g" -e '2a\Requires=network-online.target\nAfter=network-online.target' \
 		-i "${LS}"/scripts/run"${PN}".service || die
 	sed -e 's#Icon=/usr/local/sunlogin/res/icon/sunlogin_client.png#Icon=sunloginclient#g' \
-		-e 's#Exec=/usr/local/sunlogin/#Exec=/usr/#g' -i share/applications/"${MY_PPN}".desktop || die
+		-e 's#Exec=/usr/local/sunlogin/bin/#Exec=#g' -i share/applications/"${MY_PPN}".desktop || die
 	sed -e "s#/usr/local/sunlogin/res/icon/%s.ico\x0#/opt/sunlogin/res/icon/%s.ico\x0\x0\x0\x0\x0\x0\x0#g" \
 		-e "s#/usr/local/sunlogin\x0#/opt/sunlogin\x0\x0\x0\x0\x0\x0\x0#g" -i "${LS}"/bin/"${PN}" || die
 	default
