@@ -52,8 +52,8 @@ src_install() {
 	fperms +x /opt/"${MY_PPN}"/bin/{oray_rundaemon,"${PN}"}
 	fperms 666 /opt/"${MY_PPN}"/res/font/wqy-zenhei.ttc
 	fperms 666 /opt/"${MY_PPN}"/res/skin/{desktopcontrol.skin,remotecamera.skin,remotecmd.skin,remotefile.skin,skin.skin}
-	dosym {/opt/"${MY_PPN}",/usr}/bin/oray_rundaemon
-	dosym {/opt/"${MY_PPN}",/usr}/bin/"${PN}"
+	dosym {/opt/"${MY_PPN}",/opt}/bin/oray_rundaemon
+	dosym {/opt/"${MY_PPN}",/opt}/bin/"${PN}"
 
 	newinitd "${FILESDIR}"/run"${PN}".initd run"${PN}"
 	systemd_dounit "${LS}"/scripts/run"${PN}".service
