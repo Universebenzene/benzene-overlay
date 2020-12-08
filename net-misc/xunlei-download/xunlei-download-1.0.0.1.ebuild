@@ -44,7 +44,7 @@ src_install() {
 	insinto /opt/"${PN}"
 	doins -r files/*
 	fperms +x /opt/"${PN}"/{start.sh,thunder,libnode.so,resources/bin/{ThunderHelper.node,ThunderKernel.node}}
-	dosym /opt/"${PN}"/start.sh /usr/bin/"${PN}"
+	dosym ../"${PN}"/start.sh /opt/bin/"${PN}"
 
 	for si in 16 24 32 48 128 256; do
 		doicon -s ${si} entries/icons/hicolor/${si}x${si}/apps/"${MY_PN}".png
