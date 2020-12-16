@@ -29,6 +29,7 @@ src_install() {
 	insinto /opt
 	doins -r opt/"${PN}"
 	fperms +x /opt/"${PN}"/"${PN}"
+	dosym ../"${PN}"/"${PN}" /opt/bin/"${PN}"
 
 	gzip -d usr/share/doc/"${PN}"/*.gz || die
 	dodoc usr/share/doc/"${PN}"/*

@@ -36,7 +36,6 @@ QA_PREBUILT="opt/${MY_PPN}/bin/*"
 #QA_DESKTOP_FILE="usr/share/applications/${MY_PPN}.desktop"
 
 src_prepare() {
-	sed -i 's#/usr/local/#/opt/#g' "${LS}"/etc/watch.sh || die
 	sed -e "s#/usr/local/#/opt/#g" -e '2a\Requires=network-online.target\nAfter=network-online.target' \
 		-i "${LS}"/scripts/run"${PN}".service || die
 	sed -e 's#Icon=/usr/local/sunlogin/res/icon/sunlogin_client.png#Icon=sunloginclient#g' \
@@ -44,7 +43,7 @@ src_prepare() {
 	sed -e "s#/usr/local/sunlogin/res/icon/%s.ico\x0#/opt/sunlogin/res/icon/%s.ico\x0\x0\x0\x0\x0\x0\x0#g" \
 		-e "s#/usr/local/sunlogin\x0#/opt/sunlogin\x0\x0\x0\x0\x0\x0\x0#g" -i "${LS}"/bin/"${PN}" || die
 	sed -e "/^process=/c process=$\(ps -ef | tr -s \" \" | cut -d \" \" -f 2,8 | grep sunloginclient | awk \'{print \$1}\'\)" \
-		-i "${LS}"/etc/watch.sh || die
+		-e 's#/usr/local/#/opt/#g' -i "${LS}"/etc/watch.sh || die
 	default
 }
 
