@@ -12,7 +12,8 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE="+curl luajit"
+IUSE="+curl luajit test"
+RESTRICT="!test? ( test )"
 
 DEPEND="!luajit? ( >=dev-lang/lua-5.1:0= )
 	luajit? ( dev-lang/luajit:2= )
@@ -21,9 +22,18 @@ RDEPEND="${DEPEND}
 	>=x11-wm/awesome-4.0[luajit=]
 	curl? ( net-misc/curl )
 "
-BDEPEND="virtual/pkgconfig"
+BDEPEND="virtual/pkgconfig
+	test? (
+		${RDEPEND}
+		dev-lua/busted
+	)
+"
 
 DOCS=( ISSUE_TEMPLATE.md README.rst )
+
+src_test() {
+	busted -o gtest lain-scm-1.rockspec || die
+}
 
 src_install() {
 	insinto "$($(tc-getPKG_CONFIG) --variable INSTALL_LMOD $(usex luajit 'luajit' 'lua'))"/${PN}
