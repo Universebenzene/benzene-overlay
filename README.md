@@ -20,6 +20,7 @@ dev-qt/qtwebkit              | 5.212.0\_pre20200309-r1    | Add [patch](https://
 media-fonts/wps-office-fonts | 1.0                        |
 media-gfx/gpaint             | 0.3.3                      | With patches from Debian
 media-video/gnome-mplayer    | 1.0.9-r1                   | Dropped by official portage
+net-im/electronic-wechat-bin | 2.3.1                      | Converted from [AUR](https://aur.archlinux.org/packages/electronic-wechat-bin)
 net-misc/baidunetdisk        | 3.0.1; 3.4.1; 3.5.0        | Converted from [AUR](https://aur.archlinux.org/packages/baidunetdisk-bin) (Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here)
 net-misc/baidupcs-go         | 3.6.2; (live)              | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here
 net-misc/baidupcs-go-bin     | 3.6.2                      |
