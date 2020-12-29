@@ -37,7 +37,7 @@ src_prepare() {
 src_install() {
 	insinto /opt/"${PN}"
 	doins -r .
-	fperms +x /opt/"${PN}"/{${MY_PN},libEGL.so,libffmpeg.so,libGLESv2.so,libVkICD_mock_icd.so}
+	fperms +x /opt/"${PN}"/{"${MY_PN}",libEGL.so,libffmpeg.so,libGLESv2.so,libVkICD_mock_icd.so}
 	fperms +x /opt/"${PN}"/swiftshader/{libEGL.so,libGLESv2.so}
 	dosym ../../opt/"${PN}"/"${MY_PN}" /usr/bin/"${MY_PN}"
 
