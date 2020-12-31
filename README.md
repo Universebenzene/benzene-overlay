@@ -22,7 +22,7 @@ media-gfx/gpaint             | 0.3.3                      | With patches from De
 media-video/gnome-mplayer    | 1.0.9-r1                   | Dropped by official portage
 net-im/electron-wechat-bin   | 1.0.0                      | Newer project of Electron-built WeChat
 net-im/electronic-wechat-bin | 2.3.1                      | Converted from [AUR](https://aur.archlinux.org/packages/electronic-wechat-bin)
-net-im/wechat-uos            | 2.0.0                      | Converted from [AUR](https://aur.archlinux.org/packages/wechat-uos). **Not recommended, unless your account was banned by Web WeChat**
+net-im/wechat-uos            | 2.0.0                      | Converted from [AUR](https://aur.archlinux.org/packages/wechat-uos). Depends on [lsb-release](https://packages.gentoo.org/packages/sys-apps/lsb-release). **Not recommended, unless your account was banned by Web WeChat**
 net-misc/baidunetdisk        | 3.0.1; 3.4.1; 3.5.0        | Converted from [AUR](https://aur.archlinux.org/packages/baidunetdisk-bin) (Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here)
 net-misc/baidupcs-go         | 3.6.2; (live)              | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here
 net-misc/baidupcs-go-bin     | 3.6.2                      |
