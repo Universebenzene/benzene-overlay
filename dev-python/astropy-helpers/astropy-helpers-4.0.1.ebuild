@@ -13,17 +13,9 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 python_prepare() {
-	if [[ "${EPYTHON}" == "python2.7" ]] && use amd64; then
-		eapply "${FILESDIR}/${P}-${EPYTHON}-system-path-amd64.patch"
-	else
-		eapply "${FILESDIR}/${P}-${EPYTHON}-system-path.patch"
-	fi
-
-	sed -e '/import ah_bootstrap/d' \
-		-i setup.py || die "Removing ah_bootstrap failed"
+	eapply "${FILESDIR}/${P}-${EPYTHON}-system-path.patch"
 	xdg_environment_reset
 }
