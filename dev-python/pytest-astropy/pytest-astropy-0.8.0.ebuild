@@ -14,7 +14,6 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 RDEPEND=">=dev-python/hypothesis-5.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-astropy-header-0.1.2[${PYTHON_USEDEP}]
 	>=dev-python/pytest-arraydiff-0.1[${PYTHON_USEDEP}]

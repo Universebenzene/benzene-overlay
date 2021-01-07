@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+RESTRICT="!test? ( test )"
 RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
 "
