@@ -7,16 +7,17 @@ PYTHON_COMPAT=( python3_{6..9} )
 
 inherit distutils-r1
 
-DESCRIPTION="Pytest plugin for filtering based on sub-packages"
-HOMEPAGE="https://github.com/astropy/pytest-filter-subpackage"
+DESCRIPTION="Pytest plugin to check for files left open at the end of a test run"
+HOMEPAGE="https://github.com/astropy/pytest-openfiles"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"
-RDEPEND=">=dev-python/pytest-3.0[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/psutil[${PYTHON_USEDEP}]
+	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
+"
 DEPEND="${RDEPEND}"
-BDEPEND="test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )"
+BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

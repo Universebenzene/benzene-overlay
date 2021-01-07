@@ -7,16 +7,18 @@ PYTHON_COMPAT=( python3_{6..9} )
 
 inherit distutils-r1
 
-DESCRIPTION="Pytest plugin for filtering based on sub-packages"
-HOMEPAGE="https://github.com/astropy/pytest-filter-subpackage"
+DESCRIPTION="Pytest plugin with advanced doctest features"
+HOMEPAGE="https://github.com/astropy/pytest-doctestplus"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"
-RDEPEND=">=dev-python/pytest-3.0[${PYTHON_USEDEP}]"
+IUSE=""
+RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
+"
 DEPEND="${RDEPEND}"
-BDEPEND="test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )"
+BDEPEND="test? ( dev-python/pip[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
