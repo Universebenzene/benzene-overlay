@@ -24,8 +24,8 @@ net-im/electron-wechat-bin   | 1.0.0                      | Newer project of Ele
 net-im/electronic-wechat-bin | 2.3.1                      | Converted from [AUR](https://aur.archlinux.org/packages/electronic-wechat-bin)
 net-im/wechat-uos            | 2.0.0                      | Converted from [AUR](https://aur.archlinux.org/packages/wechat-uos). Depends on [lsb-release](https://packages.gentoo.org/packages/sys-apps/lsb-release). **Not recommended, unless your account was banned by Web WeChat**
 net-misc/baidunetdisk        | 3.0.1; 3.4.1; 3.5.0        | Converted from [AUR](https://aur.archlinux.org/packages/baidunetdisk-bin) (Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here)
-net-misc/baidupcs-go         | 3.6.2; 3.7.1; (live)       | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here (live version was from the old repo, cause the newest commit in new repo has some problem)
-net-misc/baidupcs-go-bin     | 3.6.2; 3.7.1               |
+net-misc/baidupcs-go         | 3.6.2; 3.7.2; (live)       | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here (live version was from the old repo, cause the newest commit in new repo has some problem)
+net-misc/baidupcs-go-bin     | 3.6.2; 3.7.2               |
 net-misc/sunloginclient      | 10.0.2.24779; 10.1.1.38139 | Converted from [AUR](https://aur.archlinux.org/packages/sunloginclient), but **versions ABOVE `10.0.2.24779` have some problem with OpenRC users** . See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/net-misc/sunloginclient#note-for-sunloginclient) for details
 net-misc/xunlei-download     | 1.0.0.1; 1.0.0.1-r1        | Converted from [AUR](https://aur.archlinux.org/packages/xunlei-bin/)
 www-plugins/adobe-flash      | 32.0.0.465                 | Dropped by official portage

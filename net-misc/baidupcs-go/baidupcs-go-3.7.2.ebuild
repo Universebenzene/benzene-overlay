@@ -4,7 +4,7 @@
 EAPI=7
 
 EGO_VENDOR=(
-	"github.com/qjfoidnh/Baidu-Login v1.3.9"
+	"github.com/qjfoidnh/Baidu-Login v1.4.0"
 	"github.com/qjfoidnh/baidu-tools dfa5778abeede61f84ef0b927f8aea088b6e982e"
 	"github.com/tidwall/gjson v1.6.4"
 	"github.com/tidwall/match v1.0.1"
