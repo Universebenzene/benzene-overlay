@@ -1,34 +1,34 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-MY_PN="BaiduPCS-Go"
-EGO_PN="github.com/felixonmars/${MY_PN}"
-
-if [[ ${PV} == *9999 ]]; then
-	inherit golang-build golang-vcs
-else
-	inherit golang-build golang-vcs-snapshot
-
-	SRC_URI="https://${EGO_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86 ~arm ~arm64 ~mips"
-fi
+inherit git-r3 go-module
 
 DESCRIPTION="The terminal utility for Baidu Network Disk (Golang Version)."
-HOMEPAGE="https://github.com/felixonmars/BaiduPCS-Go"
+HOMEPAGE="https://github.com/qjfoidnh/BaiduPCS-Go"
+EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="Apache-2.0"
 SLOT="0"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}
 	!net-misc/baidupcs-go-bin
 "
-BDEPEND=""
+
+src_unpack() {
+	git-r3_src_unpack
+	rm -r "${S}/vendor" || die
+	go-module_live_vendor
+}
+src_compile() {
+	go build -o ${PN} || die
+}
 
 src_install() {
-	newbin ${MY_PN} ${PN}
-	dodoc src/${EGO_PN}/README*
+	default
+	dobin ${PN}
 }

@@ -21,7 +21,7 @@ else
 
 	SRC_URI="https://${EGO_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 		${EGO_VENDOR_URI}"
-	KEYWORDS="~amd64 ~arm ~arm64 ~mips ~x86"
+	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 fi
 
 DESCRIPTION="The terminal utility for Baidu Network Disk (Golang Version)."
