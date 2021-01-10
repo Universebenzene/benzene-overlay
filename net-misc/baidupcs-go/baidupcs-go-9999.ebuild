@@ -23,6 +23,7 @@ src_unpack() {
 	rm -r "${S}/vendor" || die
 	go-module_live_vendor
 }
+
 src_compile() {
 	go build -o ${PN} || die
 }
