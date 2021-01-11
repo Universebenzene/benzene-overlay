@@ -1,10 +1,10 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_{6..9} )
 
 inherit distutils-r1 xdg-utils eutils optfeature
 
@@ -45,7 +45,7 @@ BDEPEND="
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP},jpeg(+)]
-		sci-libs/scikits_image[${PYTHON_USEDEP}]
+		sci-libs/scikit-image[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
 	test? (
@@ -90,7 +90,7 @@ pkg_postinst() {
 	optfeature "Faster SCEngine indexing engine with Table, although this may still be slower in some cases than the \
 default indexing engine."																		dev-python/sortedcontainers
 	optfeature "To provide plotting functionality that astropy.visualization enhances"			dev-python/matplotlib
-	optfeature "To downsample a data array in astropy.nddata.utils"								sci-libs/scikits_image
+	optfeature "To downsample a data array in astropy.nddata.utils"								sci-libs/scikit-image
 	optfeature "Used for the ‘kraft-burrows-nousek’ interval in poisson_conf_interval"			dev-python/mpmath
 	optfeature "Used only in tests to test for reference leaks"									dev-python/objgraph
 	optfeature "Enables the serialization of various Astropy classes into a portable, hierarchical, human-readable \

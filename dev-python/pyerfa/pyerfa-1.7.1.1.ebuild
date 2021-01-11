@@ -36,9 +36,8 @@ BDEPEND="${RDEPEND}
 
 distutils_enable_sphinx docs dev-python/sphinx-astropy
 
-src_prepare() {
+python_configure_all() {
 	export PYERFA_USE_SYSTEM_LIBERFA=1
-	distutils-r1_src_prepare
 }
 
 python_test() {
