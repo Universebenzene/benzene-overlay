@@ -83,25 +83,25 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "To power a variety of features in several modules" dev-python/scipy
+	optfeature "To power a variety of features in several modules" ">=dev-python/scipy-1.1"
 	optfeature "To read/write Table objects from/to HDF5 files" dev-python/h5py
 	optfeature "To read Table objects from HTML files" dev-python/beautifulsoup
 	optfeature "To read Table objects from HTML files using the pandas reader" dev-python/html5lib
 	optfeature "Used to sanitize text when disabling HTML escaping in the Table HTML writer" dev-python/bleach
 	optfeature "To read/write Table objects from/to the Enhanced CSV ASCII table format nd to serialize mixins \
-for various formats" dev-python/pyyaml
+for various formats" ">=dev-python/pyyaml-3.13"
 	optfeature " To validate VOTABLE XML files. This is a command line tool installed outside of Python" dev-libs/libxml2
 	optfeature "To convert Table objects from/to pandas DataFrame objects" dev-python/pandas
 	optfeature "Faster SCEngine indexing engine with Table, although this may still be slower in some cases than the \
 default indexing engine" dev-python/sortedcontainers
 	optfeature "To specify and convert between timezones" dev-python/pytz
 	optfeature "To retrieve JPL ephemeris of Solar System objects" dev-python/jplephem
-	optfeature "To provide plotting functionality that astropy.visualization enhances" dev-python/matplotlib
+	optfeature "To provide plotting functionality that astropy.visualization enhances" ">=dev-python/matplotlib-3.0"
 	optfeature "Used for discovery of entry points which are used to insert fitters into \
 astropy.modeling.fitting" dev-python/setuptools
 	optfeature "Used for the ‘kraft-burrows-nousek’ interval in poisson_conf_interval" dev-python/mpmath
 	optfeature "Enables the serialization of various Astropy classes into a portable, hierarchical, human-readable \
-representation" dev-python/asdf
+representation" ">=dev-python/asdf-2.6.0"
 	optfeature "Improves the performance of sigma-clipping and other functionality that may require computing statistics \
 on arrays with NaN values." dev-python/bottleneck
 	optfeature "Used for testing with Matplotlib figures" dev-python/pytest-mpl
