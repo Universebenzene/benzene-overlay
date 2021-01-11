@@ -18,7 +18,7 @@ Some of the dependencies in the portage are always older than the bundled ones, 
 
 If you still want the newest version, try the ones in [this overlay](https://github.com/Universebenzene/benzene-testlay/), which are even less tested.a -->
 
-Updated to newest version as the `cfitsio` and `wcslib` are up-to-date now, while `erfa` is still using the one in [sciense](https://wiki.gentoo.org/wiki/Project:Science) overlay.
+Update to newest version as the `cfitsio` and `wcslib` in official portage are up-to-date now, while `erfa` is still using the one in [sciense](https://wiki.gentoo.org/wiki/Project:Science) overlay.
 
 Old versions in this overlay might be removed in the future.
 
