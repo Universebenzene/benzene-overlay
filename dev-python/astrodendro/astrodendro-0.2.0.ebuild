@@ -1,9 +1,9 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python{2_7,3_{5,6,7,8}} )
+PYTHON_COMPAT=( python3_{6..9} )
 
 inherit distutils-r1
 
@@ -20,8 +20,7 @@ RESTRICT="!test? ( test )"
 RDEPEND=">=dev-python/astropy-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/h5py-0.2.0[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( ${RDEPEND} )
+BDEPEND="doc? ( ${RDEPEND} )
 	test? (
 		${RDEPEND}
 		dev-python/matplotlib[${PYTHON_USEDEP}]

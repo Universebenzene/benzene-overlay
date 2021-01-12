@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -30,6 +30,6 @@ src_install() {
 	dosym ${PN}-${TSUFFIX} /usr/bin/${PN}
 
 	domenu "${FILESDIR}"/${PN}.desktop
-	doicon "${FILESDIR}"/${PN}.png
-	doicon -s 72 "${FILESDIR}"/72x72/${PN}.png
+	doicon -s scalable "${FILESDIR}"/${PN}.svg
+	doicon -s 72 "${FILESDIR}"/${PN}.png
 }

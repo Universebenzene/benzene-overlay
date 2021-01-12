@@ -3,9 +3,9 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_{6..9} )
 
-inherit distutils-r1 virtualx eutils
+inherit distutils-r1 virtualx optfeature
 
 MY_PN=astroML
 MY_P=${MY_PN}-${PV}
@@ -27,8 +27,7 @@ RDEPEND=">=dev-python/astropy-1.2[${PYTHON_USEDEP}]
 	>=dev-python/scipy-0.11[${PYTHON_USEDEP}]
 	>=sci-libs/scikits_learn-0.18[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-	test? (
+BDEPEND="test? (
 		${RDEPEND}
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 	)
