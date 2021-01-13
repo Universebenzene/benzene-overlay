@@ -31,6 +31,7 @@ net-misc/xunlei-download     | 1.0.0.1; 1.0.0.1-r1        | Converted from [AUR]
 www-plugins/adobe-flash      | 32.0.0.465                 | Dropped by official portage
 x11-libs/lain                | (live version)             | 9999 for old ebuild without lua targets support; 9999-r100 with the new `lua-single` eclass
 dev-python/astlib            | 0.8.0; 0.11.3              |
+dev-python/pytest-mpl        | 0.12                       |
 sci-astronomy/aladin         | 11.024                     |
 sci-astronomy/astrometry     | 0.78; 0.80                 | Add USE for switching the netpbm support
 sci-astronomy/topcat         | 4.7.2; 4.7.3               |

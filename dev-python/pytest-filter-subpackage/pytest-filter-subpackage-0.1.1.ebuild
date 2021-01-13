@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"
+RESTRICT="!test? ( test )"	#Test phase runs with fails
 RDEPEND=">=dev-python/pytest-3.0[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
 BDEPEND="test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )"
