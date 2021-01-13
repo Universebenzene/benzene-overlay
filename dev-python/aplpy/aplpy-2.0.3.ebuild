@@ -28,7 +28,7 @@ RDEPEND=">=dev-python/astropy-3.1[${PYTHON_USEDEP}]
 	>=dev-python/pyavm-0.9.4[${PYTHON_USEDEP}]
 	>=dev-python/pyregion-2.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-4.0[${PYTHON_USEDEP}]
-	>=sci-libs/scikits_image-0.14[${PYTHON_USEDEP}]
+	>=sci-libs/scikit-image-0.14[${PYTHON_USEDEP}]
 	dev-python/imageio[${PYTHON_USEDEP}]
 	>=sci-libs/Shapely-1.6[${PYTHON_USEDEP}]
 "

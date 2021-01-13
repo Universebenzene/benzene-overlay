@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_{6..9} )
 
 inherit distutils-r1
 
@@ -19,7 +19,7 @@ RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-python/astropy-2.0[${PYTHON_USEDEP}]
-	sci-libs/scikits_image[${PYTHON_USEDEP}]
+	sci-libs/scikit-image[${PYTHON_USEDEP}]
 	>=dev-python/astroscrappy-1.0.5[${PYTHON_USEDEP}]
 	>=dev-python/reproject-0.5[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]

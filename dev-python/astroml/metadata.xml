@@ -19,7 +19,4 @@
 	<upstream>
 		<remote-id type="pypi">astroML</remote-id>
 	</upstream>
-	<use>
-		<flag name="doc">Enable dependencies and/or preparations necessary to run tests (test fill fail unless the network-sandbox FEATURE is disabled)</flag>
-	</use>
 </pkgmetadata>
