@@ -1,21 +1,21 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python{2_7,3_{5,6,7,8}} )
+PYTHON_COMPAT=( python3_{7,8} )
 
 inherit distutils-r1
 
 DESCRIPTION="Optimized cosmic ray annihilation astropy python module"
 HOMEPAGE="https://astroscrappy.readthedocs.io"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="doc openmp"
+IUSE="doc +openmp"
 RESTRICT="!test? ( test )"
 
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
@@ -24,6 +24,7 @@ BDEPEND="dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
+		<dev-python/astropy-helpers-3[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
 	test? (

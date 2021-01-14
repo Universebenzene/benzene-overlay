@@ -42,7 +42,7 @@ python_prepare_all() {
 }
 
 python_test() {
-	virtx pytest -vv "${MY_PN}"
+	virtx pytest -vv "${BUILD_DIR}/lib"
 }
 
 python_install_all() {
