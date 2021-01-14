@@ -25,7 +25,7 @@ BDEPEND="dev-python/cython[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		<dev-python/astropy-helpers-3[${PYTHON_USEDEP}]
-		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
 	test? (
 		${RDEPEND}
