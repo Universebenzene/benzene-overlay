@@ -3,19 +3,21 @@
 
 EAPI=7
 
+DISTUTILS_USE_SETUPTOOLS=rdepend
 PYTHON_COMPAT=( python3_{6..9} )
 
 inherit distutils-r1
 
-DESCRIPTION="Helpers to assist with building Python pkgs with compiled C/Cython extensions"
-HOMEPAGE="https://extension-helpers.readthedocs.io"
+DESCRIPTION="Pytest plugin with advanced doctest features"
+HOMEPAGE="https://github.com/astropy/pytest-doctestplus"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
+REQUIRED_USE="${PYTHON_REQUIRED_USE}
+	test? ( !$(python_gen_useflags python3_9) )"	# Test may abort with py3.9
+RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-automodapi

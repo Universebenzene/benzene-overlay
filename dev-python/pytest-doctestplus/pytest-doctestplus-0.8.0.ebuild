@@ -15,10 +15,8 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="!test? ( test )"
-RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pytest-4.0[${PYTHON_USEDEP}]
+	dev-python/pip[${PYTHON_USEDEP}]
 "
-DEPEND="${RDEPEND}"
-BDEPEND="test? ( dev-python/pip[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest

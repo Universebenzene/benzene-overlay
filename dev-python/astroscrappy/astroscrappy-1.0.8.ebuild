@@ -16,7 +16,6 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="BSD"
 SLOT="0"
 IUSE="doc +openmp"
-RESTRICT="!test? ( test )"
 
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/cython[${PYTHON_USEDEP}]

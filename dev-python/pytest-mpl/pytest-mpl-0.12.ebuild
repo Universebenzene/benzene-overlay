@@ -20,7 +20,6 @@ RESTRICT="!test? ( test )"	# Test phase runs with fails
 RDEPEND="dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( ${RDEPEND} )"
 
 DOCS=( CHANGES.md README.rst )
 

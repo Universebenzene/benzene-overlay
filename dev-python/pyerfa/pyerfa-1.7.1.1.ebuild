@@ -16,9 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RESTRICT="!test? ( test )"
-#network-sandbox
-
 RDEPEND="
 	>=sci-astronomy/erfa-1.7.1:0=
 	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
