@@ -12,7 +12,7 @@ dev-python/aplpy             | 1.1.1; 2.0.3                | Other overlays migh
 dev-python/asdf              | 1.3.3; 2.5.0; 2.5.1         |
 dev-python/astrodendro       | 0.2.0                       | Old package, so the test and doc building may fail
 dev-python/astroml           | 0.4.1                       |
-dev-python/astropy-healpix   | 0.4                         | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy-healpix#note-for-astropy-healpix) for details
+dev-python/astropy-healpix   | 0.5                         |
 dev-python/astroplan         | 0.6                         |
 dev-python/astroquery        | 0.3.10; 0.4                 |
 dev-python/astroscrappy      | 1.0.8                       |

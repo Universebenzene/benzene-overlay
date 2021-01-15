@@ -15,7 +15,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples test"
-RESTRICT="!test? ( test )"	#Test phase runs with fails
+RESTRICT="!test? ( test )"	# Test phase runs with fails
 
 RDEPEND="dev-python/pytest[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]

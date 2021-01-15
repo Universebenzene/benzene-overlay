@@ -18,7 +18,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples test"
-RESTRICT="!test? ( test )"	#Test phase runs with fails
+RESTRICT="!test? ( test )"	# Test phase runs with fails
 
 RDEPEND=">=dev-python/astropy-1.2[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-2.1.1[${PYTHON_USEDEP}]

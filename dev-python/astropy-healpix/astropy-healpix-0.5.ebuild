@@ -1,29 +1,28 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python2_7 python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_{7..9} )
 
 inherit distutils-r1
 
 DESCRIPTION="BSD-licensed HEALPix for Astropy"
 HOMEPAGE="http://astropy-healpix.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
+	doc? ( https://lambda.gsfc.nasa.gov/data/map/dr3/skymaps/5yr//wmap_band_imap_r9_5yr_K_v3.fits )"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc"
-#RESTRICT="network-sandbox"
-RESTRICT="!test? ( test )"
+RESTRICT="!test? ( test )"	# Test may abort while running
 
 RDEPEND="
-	>=dev-python/numpy-1.10[${PYTHON_USEDEP}]
-	>=dev-python/astropy-1.2[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.11[${PYTHON_USEDEP}]
+	>=dev-python/astropy-2.0[${PYTHON_USEDEP}]
 "
-BDEPEND="<dev-python/astropy-helpers-3.2[${PYTHON_USEDEP}]
+BDEPEND="dev-python/astropy-helpers[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
@@ -31,21 +30,18 @@ BDEPEND="<dev-python/astropy-helpers-3.2[${PYTHON_USEDEP}]
 	test? (
 		${RDEPEND}
 		dev-python/pytest-astropy[${PYTHON_USEDEP}]
-		!dev-python/pytest-cov[${PYTHON_USEDEP}]
-		dev-python/healpy[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}"/fix_deprecation_warning.patch
-)
+PATCHES=( "${FILESDIR}"/${P}-doc-use-local-fits.patch )
 
 distutils_enable_tests setup.py
 
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
 	export mydistutilsargs=( --offline )
+	use doc && { cp "${DISTDIR}"/wmap_band_imap_r9_5yr_K_v3.fits "${S}"/docs || die ; }
 	distutils-r1_python_prepare_all
 }
 
@@ -54,11 +50,7 @@ python_compile() {
 }
 
 python_compile_all() {
-	if use doc; then
-		python_setup
-		PYTHONPATH="${BUILD_DIR}"/lib \
-			esetup.py build_docs
-	fi
+	use doc && esetup.py build_docs --no-intersphinx
 }
 
 python_install_all() {
