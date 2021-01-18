@@ -5,7 +5,7 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{7..9} )
 
-inherit distutils-r1
+inherit distutils-r1 optfeature
 
 DESCRIPTION="BSD-licensed HEALPix for Astropy"
 HOMEPAGE="http://astropy-healpix.readthedocs.io"
@@ -56,4 +56,8 @@ python_compile_all() {
 python_install_all() {
 	use doc && local HTML_DOCS=( docs/_build/html/. )
 	distutils-r1_python_install_all
+}
+
+pkg_postinst() {
+	optfeature "testing (not really required, and the tests may fail if healpy is installed)" dev-python/healpy
 }

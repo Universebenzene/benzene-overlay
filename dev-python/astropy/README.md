@@ -22,4 +22,4 @@ Update to newest version as the `cfitsio` and `wcslib` in official portage are u
 
 Old versions in this overlay might be removed in the future.
 
-Doc building will fail with version `4.2`. Still no idea how to fix it.
+Doc building fail with version `4.2`. Still no idea how to fix it.

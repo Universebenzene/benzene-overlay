@@ -12,7 +12,7 @@ dev-python/aplpy             | 1.1.1; 2.0.3                | Other overlays migh
 dev-python/asdf              | 1.3.3; 2.5.0; 2.5.1         |
 dev-python/astrodendro       | 0.2.0                       | Old package, so the test and doc building may fail
 dev-python/astroml           | 0.4.1                       |
-dev-python/astropy-healpix   | 0.5                         |
+dev-python/astropy-healpix   | 0.5                         | Compiling can pass but with some problem. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy-healpix#note-for-astropy-healpix) for details
 dev-python/astroplan         | 0.6                         |
 dev-python/astroquery        | 0.3.10; 0.4                 |
 dev-python/astroscrappy      | 1.0.8                       |
@@ -25,6 +25,6 @@ dev-python/montage-wrapper   | 0.9.9                       |
 dev-python/pyavm             | 0.9.4                       |
 dev-python/pyerfa            | 1.7.1.1                     | Fixed test phase. One of the deps of `astropy`. Need the [science](https://wiki.gentoo.org/wiki/Project:Science) overlay for `>=sci-astronomy/erfa-1.7.1`
 dev-python/pyregion          | 2.0                         |
-dev-python/pyvo              | 0.9.3                       | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/pyvo#note-for-pyvo) for details
+dev-python/pyvo              | 1.1                         | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building
 dev-python/regions           | 0.4                         |
-dev-python/reproject         | 0.5.1                       | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/reproject#note-for-reproject) for details
+dev-python/reproject         | 0.5.1; 0.7.1                | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building. Some modules cannot work due to the compiling problem of `astropy-healpix`. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/reproject#note-for-reproject) for details

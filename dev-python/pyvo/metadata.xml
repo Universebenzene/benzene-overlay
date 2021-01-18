@@ -9,17 +9,8 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
-	<longdescription lang="en">
-		This is a package to reproject astronomical images using various techniques
-		via a uniform interface. Reprojection means the re-gridding of images from
-		one world coordinate system to another (for example changing the pixel
-		resolution, orientation, coordinate system). Currently implemented are
-		reprojection of celestial images by interpolation, as well as by finding the
-		exact overlap between pixels on the celestial sphere. It can also reproject
-		to/from HEALPIX projections.
-	</longdescription>
 	<upstream>
-		<remote-id type="pypi">reproject</remote-id>
+		<remote-id type="pypi">pyvo</remote-id>
 	</upstream>
 	<use>
 		<flag name="doc">Add extra documentation. Disable the network-sandbox FEATURE to use intersphinx linking. Recommended to enable per package instead of globally</flag>

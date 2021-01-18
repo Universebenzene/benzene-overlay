@@ -1,0 +1,2 @@
+# Note for astropy-healpix
+Though the compiling can pass, there're still some problem which cause the test phase aborted, and might be the reason that cause those packages that depend on astropy-healpix, such as `repoject`, work with problems. This seems **only** happen on Gentoo but not on other distributions. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/reproject#note-for-reproject) for an example

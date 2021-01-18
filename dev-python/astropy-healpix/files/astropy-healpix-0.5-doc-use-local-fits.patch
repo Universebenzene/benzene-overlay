@@ -1,16 +1,5 @@
 --- a/docs/interpolation.rst	2018-07-02 21:32:42.390297000 +0800
 +++ b/docs/interpolation.rst	2021-01-15 14:50:10.578665985 +0800
-@@ -41,7 +41,9 @@
- downloading and opening this map with Astropy::
- 
-     >>> from astropy.io import fits
--    >>> hdulist = fits.open('https://lambda.gsfc.nasa.gov/data/map/dr3/skymaps/5yr//wmap_band_imap_r9_5yr_K_v3.fits')  # doctest: +REMOTE_DATA
-+    >>> try: hdulist = fits.open('https://lambda.gsfc.nasa.gov/data/map/dr3/skymaps/5yr//wmap_band_imap_r9_5yr_K_v3.fits')  # doctest: +REMOTE_DATA
-+    ... except Exception: hdulist = fits.open('wmap_band_imap_r9_5yr_K_v3.fits')  # use local fits if no network
-+    ...
-     Downloading https://lambda.gsfc.nasa.gov/data/map/dr3/skymaps/5yr//wmap_band_imap_r9_5yr_K_v3.fits [Done]
-     >>> hdulist.info()  # doctest: +REMOTE_DATA
-     Filename: ...
 @@ -116,9 +118,10 @@
  .. plot::
     :include-source:
