@@ -34,6 +34,6 @@ dev-python/astlib            | 0.8.0; 0.11.3              |
 dev-python/pytest-mpl        | 0.12                       |
 sci-astronomy/aladin         | 11.024                     |
 sci-astronomy/astrometry     | 0.78; 0.80                 | Add USE for switching the netpbm support
-sci-astronomy/topcat         | 4.7.2; 4.7.3               |
+sci-astronomy/topcat         | 4.7.3; 4.8                 |
 
 Informations for some of the astropy related packages are listed [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages).
