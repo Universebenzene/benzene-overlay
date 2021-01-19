@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -120,7 +120,7 @@ src_unpack() {
 }
 
 src_install() {
-	use cn && export WS="${S}/${PN}-cn" || export WS="${S}/${PN}"
+	export WS="${S}/${PN}$(usex cn '-cn' '')"
 
 	exeinto /usr/bin
 	exeopts -m0755
@@ -148,22 +148,22 @@ src_install() {
 	export MUIDIR="opt/kingsoft/wps-office/office6/mui"
 
 	if use cn; then
-		use l10n_zh-CN || ( rm -r "${ED%/}/${MUIDIR}"/{en_US/resource/help,zh_CN} || die "remove zh_CN support from cn version failed!" )
+		use l10n_zh-CN || { rm -r "${ED%/}/${MUIDIR}"/{en_US/resource/help,zh_CN} || die "remove zh_CN support from cn version failed!" ; }
 	else
-		insinto /"${MUIDIR}"/en_US/resource
+		insinto /${MUIDIR}/en_US/resource
 		use l10n_zh-CN && doins -r "${S}/${PN}-cn/${MUIDIR}"/en_US/resource/help
-		insinto /"${MUIDIR}"
+		insinto /${MUIDIR}
 		use l10n_zh-CN && doins -r "${S}/${PN}-cn/${MUIDIR}"/zh_CN
 	fi
 
-	insinto /"${MUIDIR}"
+	insinto /${MUIDIR}
 	LANGF="de-DE en-GB es-ES es-MX fr-CA pt-BR pt-PT zh-HK zh-MO zh-TW"
 	LANGG="fr pl ru th"
 	for LU in ${LANGF}; do
-		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}"/"${LU/-/_}"
+		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/${LU/-/_}"
 	done
 	for LU in ${LANGG}; do
-		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}"/"${LU}_${LU^^}"
+		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/${LU}_${LU^^}"
 	done
 	use l10n_ja && doins -r "${S}/${PN}-mui-${MUI_PV}"/ja_JP
 	use l10n_uk && doins -r "${S}/${PN}-mui-${MUI_PV}"/uk_UA
@@ -171,5 +171,5 @@ src_install() {
 
 pkg_postinst() {
 	xdg_pkg_postinst
-	optfeature "FZ TTF fonts provided by wps community "	media-fonts/wps-office-fonts
+	optfeature "FZ TTF fonts provided by wps community " media-fonts/wps-office-fonts
 }
