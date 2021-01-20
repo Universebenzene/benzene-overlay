@@ -9,7 +9,7 @@ dev-python/pytest-astropy    | 0.8.0                       | Test plugins for as
 dev-python/sphinx-astropy    | 1.2                         | Old version of astropy related doc modules. Better use the one in [science](https://wiki.gentoo.org/wiki/Project:Science) overlay instead
 dev-python/sphinx-asdf       | 0.1.0\_rc8                  |
 dev-python/aplpy             | 1.1.1; 2.0.3                | Other overlays might needed for newest version. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for details
-dev-python/asdf              | 1.3.3; 2.5.0; 2.5.1         |
+dev-python/asdf              | 2.7.1; 2.7.2                | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building
 dev-python/astrodendro       | 0.2.0                       | Old package, so the test and doc building may fail
 dev-python/astroml           | 0.4.1                       |
 dev-python/astropy-healpix   | 0.5                         | Compiling can pass but with some problem. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy-healpix#note-for-astropy-healpix) for details
@@ -19,7 +19,7 @@ dev-python/astroscrappy      | 1.0.8                       |
 dev-python/atpy              | 0.9.7                       | Old package, so the test phase may fail
 dev-python/ccdproc           | 1.3.0\_p1; 2.1.0            |
 dev-python/extension-helpers | 0.1                         |
-dev-python/gwcs              | 0.8.0; 0.10.0               | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/gwcs#note-for-gwcs) for details
+dev-python/gwcs              | 0.16.1                      | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building
 dev-python/healpy            | 1.11.0                      | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/healpy#note-for-healpy) for details
 dev-python/montage-wrapper   | 0.9.9                       |
 dev-python/pyavm             | 0.9.4                       |

@@ -21,4 +21,7 @@
 		<remote-id type="pypi">gwcs</remote-id>
 		<remote-id type="github">spacetelescope/gwcs</remote-id>
 	</upstream>
+	<use>
+		<flag name="doc">Add extra documentation. Disable the network-sandbox FEATURE to use intersphinx linking. Recommended to enable per package instead of globally</flag>
+	</use>
 </pkgmetadata>
