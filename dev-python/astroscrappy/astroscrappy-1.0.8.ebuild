@@ -26,10 +26,7 @@ BDEPEND="dev-python/cython[${PYTHON_USEDEP}]
 		<dev-python/astropy-helpers-3[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
-	test? (
-		${RDEPEND}
-		dev-python/pytest-astropy[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/pytest-astropy[${PYTHON_USEDEP}] )
 "
 
 DOCS=( README.rst CHANGES.rst )

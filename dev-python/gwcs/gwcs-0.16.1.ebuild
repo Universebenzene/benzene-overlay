@@ -16,8 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 #RESTRICT="network-sandbox"	# To use intersphinx linking
 
-RDEPEND="
-	dev-python/asdf[${PYTHON_USEDEP}]
+RDEPEND="dev-python/asdf[${PYTHON_USEDEP}]
 	>=dev-python/astropy-4.1[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
@@ -28,9 +27,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		${RDEPEND}
 		media-gfx/graphviz
 	)
-	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
 "
 
 distutils_enable_tests pytest

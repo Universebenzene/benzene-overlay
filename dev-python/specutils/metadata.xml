@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci-astronomy@gentoo.org</email>
+		<name>Gentoo Astronomy Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		specutils is a package to implement utilities and data structures to
+		analyse astronomical spectra within python. It extends NDData from Astropy
+		into a class with special handling of 1D spectra.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">specutils</remote-id>
+		<remote-id type="github">astropy/specutils</remote-id>
+	</upstream>
+	<use>
+		<flag name="doc">Add extra documentation (cannot build figures). Disable the network-sandbox FEATURE to use intersphinx linking. Recommended to enable per package instead of globally</flag>
+	</use>
+</pkgmetadata>

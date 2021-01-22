@@ -19,8 +19,7 @@ IUSE="doc test"
 
 RESTRICT="doc? ( network-sandbox )"	# Doc build can't start without disabling network-sandbox
 
-RDEPEND="
-	>=dev-libs/expat-2.2.9:0=
+RDEPEND=">=dev-libs/expat-2.2.9:0=
 	>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
 	>=dev-python/pyerfa-1.7[${PYTHON_USEDEP}]
 	>=sci-astronomy/wcslib-7.3:0=

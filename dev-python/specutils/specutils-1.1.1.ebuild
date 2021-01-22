@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -8,20 +8,20 @@ PYTHON_COMPAT=( python3_{7..9} )
 
 inherit distutils-r1
 
-DESCRIPTION="Astropy affiliated package for accessing Virtual Observatory data and services"
-HOMEPAGE="https://pyvo.readthedocs.io"
+DESCRIPTION="Python package for astronomy spectral operations"
+HOMEPAGE="https://specutils.readthedocs.org/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
-#RESTRICT="network-sandbox"	# To use intersphinx linking
 RESTRICT="!test? ( test )"	# Test phase runs with fails
+#RESTRICT="network-sandbox"	# To use intersphinx linking
 
-RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]
-	dev-python/python-mimeparse[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-4.0[${PYTHON_USEDEP}]
+	>=dev-python/gwcs-0.12[${PYTHON_USEDEP}]
+	dev-python/scipy[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/astropy-helpers[${PYTHON_USEDEP}]
 	doc? (
@@ -31,15 +31,14 @@ BDEPEND="dev-python/astropy-helpers[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-astropy[${PYTHON_USEDEP}]
-		dev-python/requests-mock[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests setup.py
 
 python_prepare_all() {
-	sed -e '/auto_use/s/True/False/' -e 's/mimeparse/python-mimeparse/' \
-		-i setup.cfg || die
+	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
 	export mydistutilsargs=( --offline )
 	distutils-r1_python_prepare_all
 }

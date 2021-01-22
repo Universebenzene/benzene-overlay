@@ -18,8 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 RESTRICT="!test? ( test )"	# Test may abort while running
 
-RDEPEND="
-	>=dev-python/numpy-1.11[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.11[${PYTHON_USEDEP}]
 	>=dev-python/astropy-2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/astropy-helpers[${PYTHON_USEDEP}]
