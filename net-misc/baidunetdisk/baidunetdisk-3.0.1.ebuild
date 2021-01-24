@@ -15,7 +15,6 @@ LICENSE="BaiduNetDisk"
 SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64"
-IUSE=""
 
 RDEPEND="x11-libs/gtk+:3
 	x11-libs/libXScrnSaver

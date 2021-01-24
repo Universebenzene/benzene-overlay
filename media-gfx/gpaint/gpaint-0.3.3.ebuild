@@ -15,7 +15,6 @@ SRC_URI="mirror://gnu-alpha/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="x11-libs/gdk-pixbuf:2
 	gnome-base/libglade:2.0

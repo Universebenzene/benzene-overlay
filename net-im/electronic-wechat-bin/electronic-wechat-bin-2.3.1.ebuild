@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64"
-IUSE=""
 
 RDEPEND="x11-libs/gtk+:3[cups]
 	x11-libs/libXScrnSaver

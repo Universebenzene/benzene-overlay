@@ -12,7 +12,6 @@ SRC_URI="https://github.com/Universebenzene/wps-office-fonts/archive/v${PV}.tar.
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="amd64 arm ppc ppc64 x86 ~x86-fbsd"
-IUSE=""
 
 FONT_SUFFIX="TTF"
 FONT_PN="${PN/-fonts/}"

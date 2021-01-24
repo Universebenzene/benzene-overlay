@@ -17,7 +17,6 @@ SRC_URI="
 LICENSE="com.xunlei.download"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
-IUSE=""
 
 RDEPEND="dev-libs/dbus-glib
 	net-libs/nodejs

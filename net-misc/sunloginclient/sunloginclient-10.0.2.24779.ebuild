@@ -17,7 +17,6 @@ RESTRICT="mirror"
 LICENSE="Sunlogin"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE=""
 
 RDEPEND="app-text/aspell
 	app-text/hunspell

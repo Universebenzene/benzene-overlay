@@ -17,7 +17,6 @@ LICENSE="MIT"
 SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64"
-IUSE=""
 
 RDEPEND="sys-apps/bubblewrap
 	gnome-base/gconf:2

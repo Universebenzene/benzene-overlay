@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64"
-IUSE=""
 
 RDEPEND="gnome-base/gconf:2
 	x11-libs/libnotify

@@ -16,7 +16,6 @@ LICENSE="youdaodict-proprietary GPL-3+ PSF-2"
 SLOT="0"
 RESTRICT="strip mirror"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND=""
