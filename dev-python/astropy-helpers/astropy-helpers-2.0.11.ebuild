@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6..9} )
+PYTHON_COMPAT=( python3_{7..9} )
 
 inherit distutils-r1 xdg-utils
 
@@ -16,12 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 python_prepare() {
-	if [[ "${EPYTHON}" == "python2.7" ]] && use amd64; then
-		eapply "${FILESDIR}/${P}-${EPYTHON}-system-path-amd64.patch"
-	else
-		eapply "${FILESDIR}/${P}-${EPYTHON}-system-path.patch"
-	fi
-
+	sed -e "/astropy_helpers/s:astropy_helpers:$(python_get_sitedir)/astropy_helpers:" \
+		-i "astropy_helpers/commands/build_sphinx.py" || die
 	sed -e '/import ah_bootstrap/d' \
 		-i setup.py || die "Removing ah_bootstrap failed"
 	xdg_environment_reset

@@ -60,14 +60,8 @@ src_prepare() {
 	# compile & link netpbm
 	if use netpbm; then
 		sed -e 's/NETPBM_INC\ ?=/NETPBM_INC\ ?=\ -I\/usr\/include\/netpbm/g' \
+			-e "s/-L.\ -lnetpbm/-L\/usr\/$(get_libdir)\ -lnetpbm/g" \
 			-i util/makefile.netpbm || die
-		if use amd64; then
-			sed -e 's/-L.\ -lnetpbm/-L\/usr\/lib64\ -lnetpbm/g' \
-				-i util/makefile.netpbm || die
-		else
-			sed -e 's/-L.\ -lnetpbm/-L\/usr\/lib\ -lnetpbm/g' \
-				-i util/makefile.netpbm || die
-		fi
 	fi
 
 	# fix underlinking

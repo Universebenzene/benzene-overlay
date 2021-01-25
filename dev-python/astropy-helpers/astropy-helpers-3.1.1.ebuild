@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 python_prepare() {
-	eapply "${FILESDIR}/${P}-${EPYTHON}-system-path.patch"
-
+	sed -e "/astropy_helpers/s:astropy_helpers:$(python_get_sitedir)/astropy_helpers:" \
+		-i "astropy_helpers/commands/build_sphinx.py" || die
 	sed -e '/import ah_bootstrap/d' \
 		-i setup.py || die "Removing ah_bootstrap failed"
 	xdg_environment_reset

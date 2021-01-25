@@ -16,6 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 python_prepare() {
-	eapply "${FILESDIR}/${P}-${EPYTHON}-system-path.patch"
+	sed -e "/astropy_helpers/s:astropy_helpers:$(python_get_sitedir)/astropy_helpers:" \
+		-i "astropy_helpers/commands/build_sphinx.py" || die
 	xdg_environment_reset
 }
