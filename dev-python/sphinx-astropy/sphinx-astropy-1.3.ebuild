@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python2_7 python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_{7..9} )
 
 inherit distutils-r1
 
@@ -13,7 +13,9 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86"
+RESTRICT="!test? ( test )"	# Test phase runs with fails
+#RESTRICT="network-sandbox"	# Test will pass with network
 RDEPEND=">=dev-python/sphinx-1.7[${PYTHON_USEDEP}]
 	dev-python/astropy-sphinx-theme[${PYTHON_USEDEP}]
 	dev-python/numpydoc[${PYTHON_USEDEP}]
@@ -21,5 +23,5 @@ RDEPEND=">=dev-python/sphinx-1.7[${PYTHON_USEDEP}]
 	dev-python/sphinx-automodapi[${PYTHON_USEDEP}]
 	dev-python/sphinx-gallery[${PYTHON_USEDEP}]
 "
-DEPEND="${RDEPEND}"
-BDEPEND="dev-python/setuptools[$PYTHON_USEDEP]"
+
+distutils_enable_tests pytest

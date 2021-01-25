@@ -3,7 +3,7 @@ Universebenzene's personal Gentoo overlay.
 
 Including some old software that no longer supported by official portage.
 
-Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled, see the USE discriptions for details. However you still have to enable the [science](https://wiki.gentoo.org/wiki/Project:Science) overlay along with these, as the newer version of `sci-astronomy/erfa` is not yet available in official portage (2021-01)).
+Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled, see the USE discriptions for details. However you still have to enable the [science](https://wiki.gentoo.org/wiki/Project:Science) overlay along with these, as the newer version of `sci-astronomy/erfa` is not yet available in official portage (2021-01)). [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages)
 
 Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-testlay), with some packages testing. You can add it for interest.
 
