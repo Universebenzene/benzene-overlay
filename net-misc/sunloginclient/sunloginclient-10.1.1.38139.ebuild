@@ -1,4 +1,4 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -54,7 +54,7 @@ src_install() {
 	fperms 666 /opt/"${MY_PPN}"/res/skin/{desktopcontrol.skin,remotecamera.skin,remotecmd.skin,remotefile.skin,skin.skin}
 	dosym {/opt/"${MY_PPN}",/opt}/bin/"${PN}"
 
-	newinitd "${FILESDIR}"/run"${PN}".initd run"${PN}"
+	newinitd "${FILESDIR}"/run${PN}-10.0.2.24779.initd run"${PN}"
 	systemd_dounit "${LS}"/scripts/run"${PN}".service
 
 	newicon -s 128 ${LS}/res/icon/sunlogin_client.png "${PN}".png
