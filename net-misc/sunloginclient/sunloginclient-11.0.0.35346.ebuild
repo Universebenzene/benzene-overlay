@@ -16,11 +16,7 @@ LICENSE="Sunlogin"
 SLOT="0"
 KEYWORDS="-* ~amd64"
 
-RDEPEND="app-text/aspell
-	app-text/hunspell
-	app-text/nuspell
-	dev-libs/libappindicator:3
-	dev-libs/libvoikko
+RDEPEND="dev-libs/libappindicator:3
 	x11-apps/xhost
 "
 DEPEND=""
