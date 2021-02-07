@@ -3,7 +3,7 @@ Universebenzene's personal Gentoo overlay.
 
 Including some old software that no longer supported by official portage.
 
-Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled, see the USE discriptions for details. However you still have to enable the [science](https://wiki.gentoo.org/wiki/Project:Science) overlay along with these, as the newer version of `sci-astronomy/erfa` is not yet available in official portage (2021-01)). [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages)
+Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled, see the USE discriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages)
 
 Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-testlay), with some packages testing. You can add it for interest.
 
@@ -34,6 +34,7 @@ dev-python/astlib            | 0.8.0; 0.11.3                            |
 dev-python/pytest-mpl        | 0.12                                     |
 sci-astronomy/aladin         | 11.024                                   |
 sci-astronomy/astrometry     | 0.78; 0.80; 0.82                         | Add USE for switching the netpbm support
+sci-astronomy/erfa           | 1.7.2                                    |
 sci-astronomy/topcat         | 4.7.3; 4.8                               |
 
 Informations for some of the astropy related packages are listed [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages).
