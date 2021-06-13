@@ -19,6 +19,7 @@ app-text/youdao-dict         | 6.0.0                       | Converted from [AUR
 dev-qt/qtwebkit              | 5.212.0\_pre20200309-r1     | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work
 media-fonts/wps-office-fonts | 1.0                         |
 media-gfx/gpaint             | 0.3.3                       | With patches from Debian
+media-libs/gmtk              | 1.0.9                       | Dropped by official portage. Dependency of media-video/gnome-mplayer
 media-video/gnome-mplayer    | 1.0.9-r1                    | Dropped by official portage
 net-im/electron-wechat-bin   | 1.0.0                       | Newer project of Electron-built WeChat
 net-im/electronic-wechat-bin | 2.3.1                       | Converted from [AUR](https://aur.archlinux.org/packages/electronic-wechat-bin)

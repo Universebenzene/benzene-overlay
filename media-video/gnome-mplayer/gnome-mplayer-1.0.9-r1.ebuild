@@ -1,8 +1,8 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-inherit gnome2-utils xdg-utils
+EAPI=7
+inherit gnome2-utils flag-o-matic xdg-utils
 
 DESCRIPTION="A GTK+ interface to MPlayer"
 HOMEPAGE="https://code.google.com/p/gnome-mplayer/"
@@ -36,6 +36,7 @@ DOCS="ChangeLog README DOCS/*.txt DOCS/tech/*.txt"
 
 src_configure() {
 	# TODO: temporarily --disable-nemo only because it's untested and new feature in 1.0.9
+	append-flags -fcommon
 	econf \
 		--enable-gtk3 \
 		$(use_enable gnome nautilus) \
@@ -63,13 +64,13 @@ pkg_preinst() {
 pkg_postinst() {
 	xdg_desktop_database_update
 	xdg_mimeinfo_database_update
-	gnome2_icon_cache_update
+	xdg_icon_cache_update
 	gnome2_schemas_update
 }
 
 pkg_postrm() {
 	xdg_desktop_database_update
 	xdg_mimeinfo_database_update
-	gnome2_icon_cache_update
+	xdg_icon_cache_update
 	gnome2_schemas_update
 }
