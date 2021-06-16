@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -11,7 +11,7 @@ HOMEPAGE="
 	https://helpx.adobe.com/security/products/flash-player.html
 "
 
-AF_URI="https://fpdownload.adobe.com/pub/flashplayer/pdc/${PV}"
+AF_URI="https://web.archive.org/web/20210126102538if_/https://fpdownload.adobe.com/pub/flashplayer/pdc/${PV}"
 AF_NP_32_URI="${AF_URI}/flash_player_npapi_linux.i386.tar.gz -> ${P}-npapi.i386.tar.gz"
 AF_NP_64_URI="${AF_URI}/flash_player_npapi_linux.x86_64.tar.gz -> ${P}-npapi.x86_64.tar.gz"
 AF_PP_32_URI="${AF_URI}/flash_player_ppapi_linux.i386.tar.gz -> ${P}-ppapi.i386.tar.gz"
