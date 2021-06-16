@@ -23,11 +23,11 @@ DEPEND=""
 S="${WORKDIR}"
 
 src_install() {
-	export TSUFFIX=$(usex minimal lite full)
-
-	java-pkg_newjar "${DISTDIR}"/${P}-${TSUFFIX}.jar ${PN}-${TSUFFIX}.jar
-	java-pkg_dolauncher ${PN}-${TSUFFIX}
-	dosym ${PN}-${TSUFFIX} /usr/bin/${PN}
+	java-pkg_newjar "${DISTDIR}"/${P}-lite.jar ${PN}-lite.jar
+	java-pkg_dolauncher ${PN}-lite
+	use minimal || ( java-pkg_newjar "${DISTDIR}"/${P}-full.jar ${PN}-full.jar; \
+		java-pkg_dolauncher ${PN}-full --jar ${PN}-full.jar )
+	dosym ${PN}-$(usex minimal lite full) /usr/bin/${PN}
 
 	domenu "${FILESDIR}"/${PN}.desktop
 	doicon -s scalable "${FILESDIR}"/${PN}.svg
