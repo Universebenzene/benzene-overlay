@@ -17,5 +17,9 @@
 		used for non-astronomical data as well. It understands a number of
 		different astronomically important formats (including FITS and
 		VOTable) and more formats can be added.
-</longdescription>
+	</longdescription>
+	<use>
+		<flag name="standard">Install the stardard version</flag>
+		<flag name="extra">Install the bloated version including Parquet file format support</flag>
+	</use>
 </pkgmetadata>
