@@ -1,4 +1,4 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -30,7 +30,7 @@ S="${WORKDIR}/${MY_PN}-linux-x64"
 src_prepare() {
 	sed -e "/Exec/c Exec=${MY_PN}" -e "/Icon/c Icon=${MY_PN}" -e '$a StartupNotify=true' \
 		-e '/Cate/s/$/InstantMessaging;Application;/' -i "${MY_PN}".desktop || die
-	default
+	xdg_src_prepare
 }
 
 src_install() {

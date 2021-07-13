@@ -1,4 +1,4 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -36,7 +36,7 @@ src_prepare() {
 	sed -e '/Cate/s/net/Network/' -e '4c Exec=xunlei-download %U' \
 		-e '5c Icon=com.xunlei.download' -i entries/applications/"${MY_PN}".desktop || die
 	sed -i "s/apps\/${MY_PN}\/files/${PN}/" files/start.sh || die
-	default
+	xdg_src_prepare
 }
 
 src_install() {

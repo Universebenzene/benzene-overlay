@@ -1,4 +1,4 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -32,7 +32,7 @@ S="${WORKDIR}"
 
 src_prepare() {
 	sed -i '/Exec/s/\/opt\/Freechat\///' usr/share/applications/"${MY_PN}".desktop
-	default
+	xdg_src_prepare
 }
 
 src_install() {
