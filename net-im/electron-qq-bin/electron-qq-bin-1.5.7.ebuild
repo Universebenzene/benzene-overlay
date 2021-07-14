@@ -11,7 +11,7 @@ DESCRIPTION="A cross-platform QQ made with Electron"
 HOMEPAGE="https://github.com/Clansty/electron-qq"
 SRC_URI="${HOMEPAGE}/releases/download/v${PV}/${MY_PN}_${PV}_amd64.deb"
 
-LICENSE="MIT"
+LICENSE="GPL-3"
 SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64"
