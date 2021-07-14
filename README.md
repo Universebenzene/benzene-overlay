@@ -21,6 +21,7 @@ media-fonts/wps-office-fonts | 1.0                         |
 media-gfx/gpaint             | 0.3.3                       | With patches from Debian
 media-libs/gmtk              | 1.0.9                       | Dropped by official portage. Dependency of media-video/gnome-mplayer
 media-video/gnome-mplayer    | 1.0.9-r1                    | Dropped by official portage
+net-im/electron-qq-bin       | 1.5.7                       |
 net-im/electron-wechat-bin   | 1.0.0                       | Newer project of Electron-built WeChat
 net-im/electronic-wechat-bin | 2.3.1                       | Converted from [AUR](https://aur.archlinux.org/packages/electronic-wechat-bin)
 net-im/wechat-uos            | 2.0.0                       | Converted from [AUR](https://aur.archlinux.org/packages/wechat-uos). Depends on [lsb-release](https://packages.gentoo.org/packages/sys-apps/lsb-release). **Not recommended, unless your account was banned by Web WeChat**

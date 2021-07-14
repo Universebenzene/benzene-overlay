@@ -31,7 +31,7 @@ BDEPEND=""
 S="${WORKDIR}"
 
 src_prepare() {
-	sed -i '/Exec/s/\/opt\/Freechat\///' usr/share/applications/"${MY_PN}".desktop
+	sed -i '/Exec/s/\/opt\/Freechat\///' usr/share/applications/"${MY_PN}".desktop || die
 	xdg_src_prepare
 }
 
