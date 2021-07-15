@@ -44,7 +44,7 @@ src_install() {
 	fperms 666 /opt/${MY_PN}/res/skin/{desktopcontrol.skin,remotecamera.skin,remotecmd.skin,remotefile.skin,skin.skin}
 	dosym {/opt/${MY_PN},/opt}/bin/${PN}
 
-	newinitd "${FILESDIR}"/run${P}.initd run${PN}
+	newinitd "${FILESDIR}"/run${PN}-11.0.0.35346.initd run${PN}
 	systemd_dounit "${FILESDIR}"/run${PN}.service
 
 	newicon -s 128 ${LS}/res/icon/sunlogin_client.png ${PN}.png

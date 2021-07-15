@@ -11,7 +11,7 @@ depend() {
 start() {
     ebegin "Starting ${RC_SVCNAME}"
     start-stop-daemon --background --start --exec /opt/sunlogin/bin/oray_rundaemon -- -m server
-    /opt/sunlogin/bin/sunloginclient -m service
+    /opt/sunlogin/bin/sunloginclient -m service &
     eend $?
 }
 
