@@ -15,7 +15,7 @@ Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 app-office/wps-office        | 11.1.0.9719; 11.1.0.10161   | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go))
 app-text/ydcv                | 0.7                         | Need the [HomeAssistantRepository](https://git.edevau.net/onkelbeh/HomeAssistantRepository) overlay if you enable `pkg-info` use. Some other issues [here](https://forums.gentoo.org/viewtopic-p-8352006.html)
-app-text/youdao-dict         | 6.0.0                       | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict). In order to use this you **must use the patched QtWebkit in this overlay INSTEAD OF THE OFFICIAL ONE**
+app-text/youdao-dict         | 6.0.0                       | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict). In order to use this you **must use the patched QtWebkit and PyQt5 with `webkit` USE flag in this overlay INSTEAD OF THE OFFICIAL ONE**
 dev-qt/qtwebkit              | 5.212.0\_pre20200309-r1     | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work
 media-fonts/wps-office-fonts | 1.0                         |
 media-gfx/gpaint             | 0.3.3                       | With patches from Debian
@@ -33,6 +33,7 @@ net-misc/xunlei-download     | 1.0.0.1; 1.0.0.1-r1         | Converted from [AUR
 www-plugins/adobe-flash      | 32.0.0.465                  | Dropped by official portage
 x11-libs/lain                | (live version)              | 9999 for old ebuild without lua targets support (masked); 9999-r100 with the new `lua-single` eclass
 dev-python/astlib            | 0.8.0; 0.11.3               |
+dev-python/PyQt5             | 5.15.4-r1                   | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pytest-mpl        | 0.12                        |
 sci-astronomy/aladin         | 11.024                      |
 sci-astronomy/astrometry     | 0.78; 0.80; 0.82            | Add USE for switching the netpbm support

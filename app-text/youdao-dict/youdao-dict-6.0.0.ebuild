@@ -66,7 +66,8 @@ pkg_postinst() {
 	elog
 	elog "To make this package work, make sure you have installed the QtWebKit with this patch:"
 	elog "https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch"
-	elog "You can simply do this by running \`emerge --oneshot qtwebkit::benzene-overlay\`"
+	elog "and PyQt5 with webkit USE flag enabled"
+	elog "You can simply do this by running \`emerge --oneshot qtwebkit::benzene-overlay PyQt5::benzene-overlay\`"
 	elog
 
 	xdg_pkg_postinst
