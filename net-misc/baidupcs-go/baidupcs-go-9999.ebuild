@@ -19,7 +19,6 @@ RDEPEND="${DEPEND}
 
 src_unpack() {
 	git-r3_src_unpack
-	rm -r "${S}/vendor" || die
 	go-module_live_vendor
 }
 
