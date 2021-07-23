@@ -12,7 +12,7 @@
 # Reusable functions that promote sharing of netscape/moz plugins, also provides
 # share_plugins_dir function for mozilla applications.
 
-inherit eutils multilib versionator mozextension
+inherit eutils multilib mozextension
 
 PLUGINS_DIR="nsbrowser/plugins"
 
