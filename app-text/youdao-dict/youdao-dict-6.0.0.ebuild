@@ -21,17 +21,15 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 DEPEND=""
 RDEPEND="${DEPEND}
 	x11-themes/hicolor-icon-theme
-	$(python_gen_cond_dep '
-		dev-python/PyQt5[${PYTHON_USEDEP},webkit,declarative]
-		dev-python/requests[${PYTHON_USEDEP}]
-		dev-python/python-xlib[${PYTHON_USEDEP}]
-		dev-python/pygobject[${PYTHON_USEDEP}]
-		dev-python/pyopengl[${PYTHON_USEDEP}]
-		dev-python/pillow[${PYTHON_USEDEP}]
-		dev-python/pyquery[${PYTHON_USEDEP}]
-		dev-python/webob[${PYTHON_USEDEP}]
-		dev-python/pyxdg[${PYTHON_USEDEP}]
-	')
+	dev-python/PyQt5[${PYTHON_USEDEP},webkit,declarative]
+	dev-python/requests[${PYTHON_USEDEP}]
+	dev-python/python-xlib[${PYTHON_USEDEP}]
+	dev-python/pygobject[${PYTHON_USEDEP}]
+	dev-python/pyopengl[${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/pyquery[${PYTHON_USEDEP}]
+	dev-python/webob[${PYTHON_USEDEP}]
+	dev-python/pyxdg[${PYTHON_USEDEP}]
 	dev-qt/qtwebkit:5
 	dev-qt/qtgraphicaleffects:5
 	dev-qt/qtquickcontrols:5
@@ -49,7 +47,7 @@ BDEPEND=""
 S="${WORKDIR}"
 
 src_prepare() {
-	use amd64 && pushd "${P}-${ARCH}" || die
+	use amd64 && { pushd "${P}-${ARCH}" || die ; }
 	sed -i -e "/PREFIX=/cROOT=${ED%/}\nPREFIX=\$ROOT/usr" \
 		-e 's/\/etc/$ROOT\/etc/g' \
 		-e 's/ln -sf $PREFIX/ln -sf \/usr/g' install.sh || die
@@ -57,7 +55,7 @@ src_prepare() {
 }
 
 src_install() {
-	use amd64 && pushd "${P}-${ARCH}" || die
+	use amd64 && { pushd "${P}-${ARCH}" || die ; }
 	sh install.sh || die "Running install script failed"
 	default
 }
