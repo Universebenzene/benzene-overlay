@@ -1,26 +1,21 @@
 #!/sbin/openrc-run
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 description="check running sunloginclinet loop"
+command="/opt/sunlogin/bin/oray_rundaemon"
+command_args="-e 'bash /opt/sunlogin/etc/watch.sh'"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"
 
 depend() {
-    need net
+	need net
 }
 
-start() {
-    ebegin "Starting ${RC_SVCNAME}"
-    start-stop-daemon --background --start --exec /opt/sunlogin/bin/oray_rundaemon -- -e 'bash /opt/sunlogin/etc/watch.sh'
-    eend $?
-}
-
-stop() {
-    ebegin "Stopping ${RC_SVCNAME}"
-    start-stop-daemon --stop --exec /opt/sunlogin/bin/oray_rundaemon
-
-    psid=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep sunloginclient | grep -v $0 | awk '{print $1}')
-    if [ -n "$psid" ]; then
-        killall sunloginclient
-    fi
-    eend $?
+stop_post() {
+	psid=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep sunloginclient | grep -v $0 | awk '{print $1}')
+	if [ -n "$psid" ]; then
+		killall sunloginclient
+	fi
+	eend $?
 }

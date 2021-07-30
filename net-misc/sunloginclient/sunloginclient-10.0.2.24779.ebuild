@@ -24,6 +24,7 @@ RDEPEND="app-text/aspell
 	dev-libs/libappindicator:3
 	dev-libs/libvoikko
 	x11-apps/xhost
+	virtual/libcrypt:=
 "
 DEPEND=""
 BDEPEND=""

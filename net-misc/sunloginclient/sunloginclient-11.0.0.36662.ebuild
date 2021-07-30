@@ -18,6 +18,7 @@ KEYWORDS="-* ~amd64"
 
 RDEPEND="dev-libs/libappindicator:3
 	x11-apps/xhost
+	virtual/libcrypt:=
 "
 DEPEND=""
 BDEPEND=""
