@@ -1,14 +1,14 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 # this could be a multiple python package
 # but the way it is packaged makes it very time consuming.
 
 PYTHON_COMPAT=( python3_{7..10} )
 
-inherit eutils toolchain-funcs python-single-r1
+inherit toolchain-funcs python-single-r1
 
 MYP=${PN}.net-${PV}
 
@@ -24,9 +24,9 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
 	$(python_gen_cond_dep '
-		dev-python/astropy[${PYTHON_MULTI_USEDEP}]
-		dev-python/fitsio[${PYTHON_MULTI_USEDEP}]
-		dev-python/numpy[${PYTHON_MULTI_USEDEP}]
+		dev-python/astropy[${PYTHON_USEDEP}]
+		dev-python/fitsio[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
 	')
 	media-libs/libpng:0
 	media-libs/netpbm
@@ -46,8 +46,8 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MYP}"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-soname.patch
-	"${FILESDIR}"/${P}-dynlink.patch
+	"${FILESDIR}"/${PN}-0.82-soname.patch
+	"${FILESDIR}"/${PN}-0.82-dynlink.patch
 )
 
 src_prepare() {
