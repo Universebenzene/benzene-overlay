@@ -42,7 +42,7 @@ RDEPEND="
 	dev-libs/expat
 	dev-libs/glib:2
 	dev-libs/libbsd
-	dev-libs/libffi
+	|| ( dev-libs/libffi:0/7 dev-libs/libffi-compat:7 )
 	dev-libs/libgcrypt:0
 	dev-libs/libgpg-error
 	dev-libs/libpcre:3
@@ -56,7 +56,6 @@ RDEPEND="
 	media-libs/libogg
 	media-libs/libsndfile
 	media-libs/libvorbis
-	media-libs/libpng-compat:1.2
 	media-libs/libpng:0
 	media-sound/pulseaudio
 	net-libs/libasyncns
@@ -120,7 +119,7 @@ src_unpack() {
 }
 
 src_install() {
-	export WS="${S}/${PN}$(usex cn '-cn' '')"
+	local WS="${S}/${PN}$(usex cn '-cn' '')"
 
 	exeinto /usr/bin
 	exeopts -m0755
@@ -145,7 +144,7 @@ src_install() {
 
 	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,wpsd,parsecloudfiletool,promecefpluginhost,transerr}
 
-	export MUIDIR="opt/kingsoft/wps-office/office6/mui"
+	local MUIDIR="opt/kingsoft/wps-office/office6/mui"
 
 	if use cn; then
 		use l10n_zh-CN || { rm -r "${ED%/}/${MUIDIR}"/{en_US/resource/help,zh_CN} || die "remove zh_CN support from cn version failed!" ; }
