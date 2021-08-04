@@ -42,7 +42,7 @@ RDEPEND="
 	dev-libs/expat
 	dev-libs/glib:2
 	dev-libs/libbsd
-	dev-libs/libffi
+	|| ( dev-libs/libffi:0/7 dev-libs/libffi-compat:7 )
 	dev-libs/libgcrypt:0
 	dev-libs/libgpg-error
 	dev-libs/libpcre:3
@@ -56,7 +56,6 @@ RDEPEND="
 	media-libs/libogg
 	media-libs/libsndfile
 	media-libs/libvorbis
-	media-libs/libpng-compat:1.2
 	media-libs/libpng:0
 	media-sound/pulseaudio
 	net-libs/libasyncns
@@ -120,15 +119,15 @@ src_unpack() {
 }
 
 src_install() {
-	use cn && export WS="${S}/${PN}-cn" || export WS="${S}/${PN}"
+	local WS="${S}/${PN}$(usex cn '-cn' '')"
 
 	exeinto /usr/bin
 	exeopts -m0755
-	doexe "${WS}"/usr/bin/*
+	doexe ${WS}/usr/bin/*
 
 	insinto /usr/share
-	doins -r "${WS}"/usr/share/{applications,desktop-directories,icons,fonts,templates}
-	use mime && doins -r "${WS}"/usr/share/mime
+	doins -r ${WS}/usr/share/{applications,desktop-directories,icons,fonts,templates}
+	use mime && doins -r ${WS}/usr/share/mime
 
 	for _file in ${WS}/usr/share/icons/hicolor/*; do
 		if [ -e ${_file}/mimetypes/wps-office2019-etmain.png ]; then
@@ -138,38 +137,47 @@ src_install() {
 	done
 
 	insinto /opt/kingsoft/wps-office
-	doins -r "${WS}"/opt/kingsoft/wps-office/{office6,templates}
+	rm ${WS}/opt/kingsoft/wps-office/office6/libdbus-1.so* || die
+	doins -r ${WS}/opt/kingsoft/wps-office/{office6,templates}
 
 	insinto /etc/xdg/menus/applications-merged
-	doins "${WS}"/etc/xdg/menus/applications-merged/wps-office.menu
+	doins ${WS}/etc/xdg/menus/applications-merged/wps-office.menu
 
 	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,wpsd,parsecloudfiletool,promecefpluginhost,transerr}
 
-	export MUIDIR="opt/kingsoft/wps-office/office6/mui"
+	local MUIDIR="opt/kingsoft/wps-office/office6/mui"
 
 	if use cn; then
 		use l10n_zh-CN || { rm -r "${ED%/}/${MUIDIR}"/{en_US/resource/help,zh_CN} || die "remove zh_CN support from cn version failed!" ; }
 	else
-		insinto /"${MUIDIR}"/en_US/resource
-		use l10n_zh-CN && doins -r "${S}/${PN}-cn/${MUIDIR}"/en_US/resource/help
-		insinto /"${MUIDIR}"
-		use l10n_zh-CN && doins -r "${S}/${PN}-cn/${MUIDIR}"/zh_CN
+		insinto /${MUIDIR}/en_US/resource
+		use l10n_zh-CN && doins -r "${S}/${PN}-cn/${MUIDIR}/en_US/resource/help"
+		insinto /${MUIDIR}
+		use l10n_zh-CN && doins -r "${S}/${PN}-cn/${MUIDIR}/zh_CN"
 	fi
 
-	insinto /"${MUIDIR}"
+	insinto /${MUIDIR}
 	LANGF="de-DE en-GB es-ES es-MX fr-CA pt-BR pt-PT zh-HK zh-MO zh-TW"
 	LANGG="fr pl ru th"
 	for LU in ${LANGF}; do
-		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}"/"${LU/-/_}"
+		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/${LU/-/_}"
 	done
 	for LU in ${LANGG}; do
-		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}"/"${LU}_${LU^^}"
+		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/${LU}_${LU^^}"
 	done
-	use l10n_ja && doins -r "${S}/${PN}-mui-${MUI_PV}"/ja_JP
-	use l10n_uk && doins -r "${S}/${PN}-mui-${MUI_PV}"/uk_UA
+	use l10n_ja && doins -r "${S}/${PN}-mui-${MUI_PV}/ja_JP"
+	use l10n_uk && doins -r "${S}/${PN}-mui-${MUI_PV}/uk_UA"
 }
 
 pkg_postinst() {
+	elog
+	elog "From the version 11.1.0.10702 it's getting harder to switch languages inside the WPS softwares"
+	elog "For multi-language users (especially for non en_US or zh_CN users) you need to change the locale outside WPS to switch languages"
+	elog "e.g. for Russian users, if you didn't set your system locale as Russian, you can run in the command line:"
+	elog "LANG=ru_RU.UTF-8 wps"
+	elog "then you'll get Russian support in WPS Writer."
+	elog
+
 	xdg_pkg_postinst
-	optfeature "FZ TTF fonts provided by wps community "	media-fonts/wps-office-fonts
+	optfeature "FZ TTF fonts provided by wps community " media-fonts/wps-office-fonts
 }
