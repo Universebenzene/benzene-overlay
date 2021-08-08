@@ -170,14 +170,14 @@ src_install() {
 }
 
 pkg_postinst() {
+	xdg_pkg_postinst
+
 	elog
 	elog "From the version 11.1.0.10702 it's getting harder to switch languages inside the WPS softwares"
 	elog "For multi-language users (especially for non en_US or zh_CN users) you need to change the locale outside WPS to switch languages"
 	elog "e.g. for Russian users, if you didn't set your system locale as Russian, you can run in the command line:"
-	elog "LANG=ru_RU.UTF-8 wps"
+	elog "  LANG=ru_RU.UTF-8 wps"
 	elog "then you'll get Russian support in WPS Writer."
 	elog
-
-	xdg_pkg_postinst
 	optfeature "FZ TTF fonts provided by wps community " media-fonts/wps-office-fonts
 }
