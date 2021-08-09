@@ -7,11 +7,11 @@ inherit desktop java-pkg-2 xdg
 MY_PV=$(ver_rs 2 -)
 
 DESCRIPTION="Interactive graphical viewer and editor for astronomical tables"
-HOMEPAGE="http://www.star.bris.ac.uk/~mbt/topcat/"
+HOMEPAGE="http://www.star.bris.ac.uk/~mbt/topcat"
 SRC_COM="ftp://andromeda.star.bris.ac.uk/pub/star/${PN}/v${MY_PV}"
-SRC_URI="${SRC_COM}/${PN}-lite.jar -> ${P}-lite.jar
-	standard? ( ${SRC_COM}/${PN}-full.jar -> ${P}-full.jar )
-	extra? ( ${SRC_COM}/${PN}-extra.jar -> ${P}-extra.jar )"
+SRC_URI="${HOMEPAGE}/${PN}-lite.jar -> ${P}-lite.jar
+	standard? ( ${HOMEPAGE}/${PN}-full.jar -> ${P}-full.jar )
+	extra? ( ${HOMEPAGE}/${PN}-extra.jar -> ${P}-extra.jar )"
 
 LICENSE="GPL-2"
 SLOT="0"
