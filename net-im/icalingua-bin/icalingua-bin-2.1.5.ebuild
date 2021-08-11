@@ -6,13 +6,13 @@ EAPI=7
 inherit unpacker desktop xdg optfeature
 
 MY_PN="${PN/-bin}"
-MY_PPN="Icalingua"
+MY_P="${MY_PN}_${PV}"
 
-DESCRIPTION="A cross-platform QQ made with Electron(Deprecated. Moved to Icalingua)"
+DESCRIPTION="A Linux client for QQ and more. Previously called Electron QQ"
 HOMEPAGE="https://github.com/Clansty/Icalingua"
-SRC_URI="amd64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_PN}_${PV}_amd64.deb )
-	x86? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_PN}_${PV}_i386.deb )
-	arm64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_PN}_${PV}_arm64.deb )
+SRC_URI="amd64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_P}_amd64.deb )
+	x86? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_P}_i386.deb )
+	arm64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_P}_arm64.deb )
 "
 
 LICENSE="GPL-3"
@@ -34,8 +34,8 @@ S="${WORKDIR}"
 src_install() {
 	insinto /opt
 	doins -r opt/*
-	fperms +x /opt/${MY_PPN}/${MY_PN}
-	dosym ../../opt/${MY_PPN}/${MY_PN} /usr/bin/${MY_PN}
+	fperms +x /opt/${MY_PN^}/${MY_PN}
+	dosym ../../opt/${MY_PN^}/${MY_PN} /usr/bin/${MY_PN}
 
 	gzip -d usr/share/doc/${MY_PN}/*.gz || die
 	dodoc usr/share/doc/${MY_PN}/*

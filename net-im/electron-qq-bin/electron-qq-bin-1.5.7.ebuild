@@ -7,7 +7,7 @@ inherit unpacker desktop xdg
 
 MY_PN="${PN/-bin}"
 
-DESCRIPTION="A cross-platform QQ made with Electron"
+DESCRIPTION="A cross-platform QQ made with Electron (Deprecated. Moved to Icalingua)"
 HOMEPAGE="https://github.com/Clansty/electron-qq"
 SRC_URI="${HOMEPAGE}/releases/download/v${PV}/${MY_PN}_${PV}_amd64.deb"
 
