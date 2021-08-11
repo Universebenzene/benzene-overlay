@@ -24,6 +24,7 @@ RDEPEND="x11-libs/gtk+:3[cups]
 	x11-libs/libXScrnSaver
 	dev-libs/nss
 	app-crypt/p11-kit
+	dev-libs/libappindicator:3
 "
 DEPEND=""
 BDEPEND=""
