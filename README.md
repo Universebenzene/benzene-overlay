@@ -14,6 +14,7 @@ This overlay is available on [Gentoo repositories](https://overlays.gentoo.org).
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 app-office/wps-office        | 11.1.0.10161; 11.1.0.10702          | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go)). From `11.1.0.10702` you need to set locale outside to get multi-language support. **Please focus on the output after merging the package**
+app-pda/i4tools              | 1.0.038                             |
 app-text/ydcv                | 0.7                                 | Need other overlays (like [guru](https://wiki.gentoo.org/wiki/Project:GURU) or [HomeAssistantRepository](https://git.edevau.net/onkelbeh/HomeAssistantRepository)) if you enable `pkg-info` use. Some other issues [here](https://forums.gentoo.org/viewtopic-p-8352006.html)
 app-text/youdao-dict         | 6.0.0                               | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict). In order to use this you **must use the patched QtWebkit and PyQt5 with `webkit` USE flag in this overlay INSTEAD OF THE OFFICIAL ONE**
 dev-qt/qtwebkit              | 5.212.0\_pre20200309-r1             | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work
