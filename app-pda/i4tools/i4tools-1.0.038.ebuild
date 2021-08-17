@@ -5,7 +5,7 @@ EAPI=7
 
 inherit unpacker desktop udev xdg
 
-DESCRIPTION="A third-party tool for managing iOS devices"
+DESCRIPTION="A third-party tool for managing Apple (iOS) devices"
 HOMEPAGE="https://www.i4.cn"
 SRC_URI="https://d-updater.i4.cn/i4linux/deb/i4tools_v${PV}.deb"
 
@@ -33,7 +33,6 @@ src_install() {
 	doins -r usr/share/polkit-1
 
 	local USD="usr/share/${PN}"
-
 	insinto /${USD}
 	doins -r ${USD}/{files,${PN}.png,qt.conf,resources,translations}
 
