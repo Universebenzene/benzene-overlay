@@ -1,7 +1,7 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{6..10} )
 
@@ -14,7 +14,6 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
 LICENSE="BSD"
 SLOT="0"
-RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=dev-python/astropy-2.0[${PYTHON_USEDEP}]
@@ -23,14 +22,13 @@ RDEPEND="
 	>=dev-python/reproject-0.5[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
 "
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
-		${RDEPEND}
 		dev-python/pytest-astropy[${PYTHON_USEDEP}]
 	)
 "

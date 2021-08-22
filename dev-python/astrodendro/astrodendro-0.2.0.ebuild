@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{7..10} )
 
@@ -14,14 +14,12 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-RESTRICT="!test? ( test )"
 
 RDEPEND=">=dev-python/astropy-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/h5py-0.2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="doc? ( ${RDEPEND} )
 	test? (
-		${RDEPEND}
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/mock[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]

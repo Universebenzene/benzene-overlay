@@ -8,7 +8,7 @@ inherit unpacker desktop xdg optfeature
 MY_PN="${PN/-bin}"
 MY_PPN="Icalingua"
 
-DESCRIPTION="A cross-platform QQ made with Electron(Deprecated. Moved to Icalingua)"
+DESCRIPTION="A cross-platform QQ made with Electron (Deprecated. Moved to Icalingua)"
 HOMEPAGE="https://github.com/Clansty/Icalingua"
 SRC_URI="amd64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_PN}_${PV}_amd64.deb )
 	x86? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_PN}_${PV}_i386.deb )

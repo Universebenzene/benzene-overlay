@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 MY_PN=${PN}-2
 MY_P=${MY_PN}-${PV}
@@ -10,7 +10,8 @@ inherit desktop xdg
 
 DESCRIPTION="A small easy-to-use paint program for the GNOME Desktop"
 HOMEPAGE="https://savannah.gnu.org/projects/gpaint/"
-SRC_URI="mirror://gnu-alpha/${PN}/${MY_P}.tar.gz"
+#SRC_URI="mirror://gnu-alpha/${PN}/${MY_P}.tar.gz"
+SRC_URI="ftp://alpha.gnu.org/gnu/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"

@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 PYTHON_COMPAT=( python3_{8..10} )
 
 inherit python-r1 xdg
@@ -51,7 +51,8 @@ src_prepare() {
 	sed -i -e "/PREFIX=/cROOT=${ED%/}\nPREFIX=\$ROOT/usr" \
 		-e 's/\/etc/$ROOT\/etc/g' \
 		-e 's/ln -sf $PREFIX/ln -sf \/usr/g' install.sh || die
-	xdg_src_prepare
+#	xdg_src_prepare
+	default
 }
 
 src_install() {

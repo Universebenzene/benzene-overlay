@@ -1,10 +1,10 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python3_{6,7,8,9} )
+PYTHON_COMPAT=( python3_{6..10} )
 
 inherit distutils-r1 virtualx optfeature
 
@@ -30,7 +30,7 @@ RDEPEND=">=dev-python/astropy-3.1[${PYTHON_USEDEP}]
 	>=dev-python/pillow-4.0[${PYTHON_USEDEP}]
 	>=sci-libs/scikit-image-0.14[${PYTHON_USEDEP}]
 	dev-python/imageio[${PYTHON_USEDEP}]
-	>=sci-libs/Shapely-1.6[${PYTHON_USEDEP}]
+	>=sci-libs/shapely-1.6[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/astropy-helpers[${PYTHON_USEDEP}]
 	doc? (

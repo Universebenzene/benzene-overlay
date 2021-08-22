@@ -31,7 +31,8 @@ net-misc/baidunetdisk        | 3.0.1; 3.4.1; 3.5.0                 | Converted f
 net-misc/baidupcs-go         | 3.6.2; 3.8.1; 3.8.2-r1; (live)      | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here. **Proxy may needed if you use the `9999` version**, as the [proxy.golang.org](https://proxy.golang.org) is banned in some regions
 net-misc/baidupcs-go-bin     | 3.6.2; 3.8.2-r1                     |
 net-misc/sunloginclient      | 10.0.2.24779; 11.0.0.36662          | Converted from [AUR](https://aur.archlinux.org/packages/sunloginclient), but **versions ABOVE `10.0.2.24779` have some problem with OpenRC users** . See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/net-misc/sunloginclient#note-for-sunloginclient) for details
-net-misc/xunlei-download     | 1.0.0.1; 1.0.0.1-r1                 | Converted from [AUR](https://aur.archlinux.org/packages/xunlei-bin/)
+net-misc/xunlei-download     | 1.0.0.1; 1.0.0.1-r1                 | Converted from [AUR](https://aur.archlinux.org/packages/xunlei-bin)
+net-proxy/v2raya-bin         | 1.4.4                               | Converted from [AUR](https://aur.archlinux.org/packages/v2raya-bin). Needs other overlays like [gentoo-zh](https://github.com/microcai/gentoo-zh)
 www-plugins/adobe-flash      | 32.0.0.465                          | Dropped by official portage
 x11-libs/lain                | (live version)                      | 9999 for old ebuild without lua targets support (masked); 9999-r100 with the new `lua-single` eclass
 dev-python/astlib            | 0.8.0; 0.11.3                       |
