@@ -5,7 +5,7 @@
 name="v2rayA"
 description="A Linux web GUI client of Project V which supports V2Ray, Xray, SS, SSR, Trojan and Pingtunnel"
 command="/usr/bin/v2raya"
-command_args=""
+command_args="${V2RAYA_OPTS}"
 pidfile="/run/${RC_SVCNAME}.pid"
 command_background="yes"
 

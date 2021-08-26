@@ -50,6 +50,7 @@ src_install() {
 	doins -r web
 
 	newinitd "${FILESDIR}"/${MY_PN}.initd ${MY_PN}
+	newconfd "${FILESDIR}"/${MY_PN}.confd ${MY_PN}
 	systemd_dounit "${FILESDIR}"/${MY_PN}.service
 
 	newicon -s 512 web/img/icons/android-chrome-512x512.png ${MY_PN}.png
@@ -66,6 +67,8 @@ pkg_postinst() {
 	elog "Systemd:"
 	elog "# systemctl start v2raya.service"
 	elog "# systemctl enable v2raya.service"
+	elog
+	elog "Options passed to v2raya daemon can be set in /etc/conf.d/v2raya"
 	elog
 
 	xdg_pkg_postinst
