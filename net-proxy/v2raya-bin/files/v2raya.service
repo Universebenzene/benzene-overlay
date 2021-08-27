@@ -11,7 +11,7 @@ LimitNPROC=500
 LimitNOFILE=1000000
 Environment="GODEBUG=madvdontneed=1"
 EnvironmentFile=-/etc/conf.d/v2raya
-ExecStart=/usr/bin/v2raya "${V2RAYA_OPTS}"
+ExecStart=/bin/sh -c '/usr/bin/v2raya "${V2RAYA_OPTS}"'
 Restart=on-failure
 
 [Install]

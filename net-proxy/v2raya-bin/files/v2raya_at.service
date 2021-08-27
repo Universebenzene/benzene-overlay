@@ -8,7 +8,7 @@ Wants=network.target
 Type=simple
 User=%i
 EnvironmentFile=-/etc/conf.d/v2raya-user
-ExecStart=/usr/bin/v2raya --passcheckroot --config=${CONFIGD:-$HOME/.config/v2raya} "${V2RAYA_OPTS}"
+ExecStart=/bin/sh -c '/usr/bin/v2raya --passcheckroot --config=${CONFIGD:-$HOME/.config/v2raya} "${V2RAYA_OPTS}"'
 Restart=on-failure
 
 [Install]
