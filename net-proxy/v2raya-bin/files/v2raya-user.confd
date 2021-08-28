@@ -5,10 +5,12 @@
 #CONFIGD="/home/<user>/.config/v2raya"
 
 # If you want to pass any options while running the v2raya daemon, you can do so here by setting the ${V2RAYA_OPT} variable.
-# e.g.: V2RAYA_OPTS="--address "0.0.0.0:2017" --v2ray-bin "/usr/bin/v2ray""
+# e.g.: V2RAYA_OPTS="--address 0.0.0.0:2017 --v2ray-bin /usr/bin/v2ray"
 #
 V2RAYA_OPTS=""
 
+# Note: Quotes is not encouraged in the variables here.
+#
 # Available options:
 # -a, --address string                          Listening address (default "0.0.0.0:2017")
 #     --v2ray-bin string                        Executable v2ray binary path. Auto-detect if put it empty.
