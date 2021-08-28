@@ -47,6 +47,8 @@ RDEPEND="
 	dev-libs/libgpg-error
 	dev-libs/libpcre:3
 
+	dev-libs/libxslt
+
 	dev-libs/nspr
 	dev-libs/nss
 
