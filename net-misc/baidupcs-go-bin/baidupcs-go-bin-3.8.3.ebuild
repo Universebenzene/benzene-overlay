@@ -22,7 +22,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	!net-misc/baidupcs-go
 "
-BDEPEND=""
+BDEPEND="app-arch/unzip"
 
 S="${WORKDIR}/${MY_P}-linux-${ARCH/x86/386}"
 

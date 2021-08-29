@@ -25,11 +25,11 @@ media-video/gnome-mplayer    | 1.0.9-r1                            | Dropped by 
 net-im/electron-qq-bin       | 1.5.7; 2.1.4                        | Already renamed as Icalingua (also in this overlay)
 net-im/electron-wechat-bin   | 1.0.0                               | Newer project of Electron-built WeChat, a.k.a. Freechat
 net-im/electronic-wechat-bin | 2.3.1                               | Converted from [AUR](https://aur.archlinux.org/packages/electronic-wechat-bin)
-net-im/icalingua-bin         | 2.2.0                               | Previously called Electron QQ
+net-im/icalingua-bin         | 2.2.1                               | Previously called Electron QQ
 net-im/wechat-uos            | 2.0.0                               | Converted from [AUR](https://aur.archlinux.org/packages/wechat-uos). Depends on [lsb-release](https://packages.gentoo.org/packages/sys-apps/lsb-release). **Not recommended, unless your account was banned by Web WeChat**
 net-misc/baidunetdisk        | 3.0.1; 3.4.1; 3.5.0                 | Converted from [AUR](https://aur.archlinux.org/packages/baidunetdisk-bin) (Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here)
-net-misc/baidupcs-go         | 3.6.2; 3.8.1; 3.8.2-r1; (live)      | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here. **Proxy may needed if you use the `9999` version**, as the [proxy.golang.org](https://proxy.golang.org) is banned in some regions
-net-misc/baidupcs-go-bin     | 3.6.2; 3.8.2-r1                     |
+net-misc/baidupcs-go         | 3.6.2; 3.8.1; 3.8.3; (live)         | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here. **Proxy may needed if you use the `9999` version**, as the [proxy.golang.org](https://proxy.golang.org) is banned in some regions
+net-misc/baidupcs-go-bin     | 3.6.2; 3.8.3                        |
 net-misc/sunloginclient      | 10.0.2.24779; 11.0.0.36662          | Converted from [AUR](https://aur.archlinux.org/packages/sunloginclient), but **versions ABOVE `10.0.2.24779` have some problem with OpenRC users** . See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/net-misc/sunloginclient#note-for-sunloginclient) for details
 net-misc/xunlei-download     | 1.0.0.1; 1.0.0.1-r1                 | Converted from [AUR](https://aur.archlinux.org/packages/xunlei-bin)
 net-proxy/v2raya-bin         | 1.4.4-r1; 1.5.1                     | Converted from [AUR](https://aur.archlinux.org/packages/v2raya-bin). Needs other overlays like [gentoo-zh](https://github.com/microcai/gentoo-zh)
