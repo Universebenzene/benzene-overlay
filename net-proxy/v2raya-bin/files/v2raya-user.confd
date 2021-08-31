@@ -1,6 +1,7 @@
 # /etc/conf.d/v2raya-user: config file for /etc/init.d/v2raya-user.<user> and /lib/systemd/system/v2raya@<user>.service
 #
-# If you want to change the v2rayA configuration directory, you can do so here by setting the ${CONFIGD} variable (default ${HOME}/.config/v2raya)
+# If you want to change the v2rayA configuration directory, you can do so here by setting the ${CONFIGD} variable (default $HOME/.config/v2raya)
+# Note: absolute path is recommended here.
 #
 #CONFIGD="/home/<user>/.config/v2raya"
 
