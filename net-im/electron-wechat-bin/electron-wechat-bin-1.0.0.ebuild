@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit unpacker desktop xdg
 
@@ -31,22 +31,23 @@ BDEPEND=""
 S="${WORKDIR}"
 
 src_prepare() {
-	sed -i '/Exec/s/\/opt\/Freechat\///' usr/share/applications/"${MY_PN}".desktop || die
-	xdg_src_prepare
+	sed -i '/Exec/s/\/opt\/Freechat\///' usr/share/applications/${MY_PN}.desktop || die
+#	xdg_src_prepare
+	default
 }
 
 src_install() {
 	insinto /opt
 	doins -r opt/*
-	fperms +x /opt/Freechat/{"${MY_PN}",chrome-sandbox,libEGL.so,libffmpeg.so,libGLESv2.so}
+	fperms +x /opt/Freechat/{${MY_PN},chrome-sandbox,libEGL.so,libffmpeg.so,libGLESv2.so}
 	fperms +x /opt/Freechat/swiftshader/{libEGL.so,libGLESv2.so}
-	dosym ../../opt/Freechat/"${MY_PN}" /usr/bin/"${MY_PN}"
+	dosym -r /opt/Freechat/${MY_PN} /usr/bin/${MY_PN}
 
-	gzip -d usr/share/doc/"${MY_PN}"/*.gz || die
-	dodoc usr/share/doc/"${MY_PN}"/*
+	gzip -d usr/share/doc/${MY_PN}/*.gz || die
+	dodoc usr/share/doc/${MY_PN}/*
 
 	for si in 16 32 48 64 128 256 512; do
-		doicon -s ${si} usr/share/icons/hicolor/${si}x${si}/apps/"${MY_PN}".png
+		doicon -s ${si} usr/share/icons/hicolor/${si}x${si}/apps/${MY_PN}.png
 	done
-	domenu usr/share/applications/"${MY_PN}".desktop
+	domenu usr/share/applications/${MY_PN}.desktop
 }

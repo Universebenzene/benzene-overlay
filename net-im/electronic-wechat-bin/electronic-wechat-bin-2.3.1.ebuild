@@ -29,18 +29,18 @@ S="${WORKDIR}/${MY_PN}-linux-x64"
 
 src_prepare() {
 	sed -e "/Exec/c Exec=${MY_PN}" -e "/Icon/c Icon=${MY_PN}" -e '$a StartupNotify=true' \
-		-e '/Cate/s/$/InstantMessaging;Application;/' -i "${MY_PN}".desktop || die
+		-e '/Cate/s/$/InstantMessaging;Application;/' -i ${MY_PN}.desktop || die
 #	xdg_src_prepare
 	default
 }
 
 src_install() {
-	insinto /opt/"${PN}"
+	insinto /opt/${PN}
 	doins -r .
-	fperms +x /opt/"${PN}"/{"${MY_PN}",libEGL.so,libffmpeg.so,libGLESv2.so,libVkICD_mock_icd.so}
-	fperms +x /opt/"${PN}"/swiftshader/{libEGL.so,libGLESv2.so}
-	dosym -r /opt/"${PN}"/"${MY_PN}" /usr/bin/"${MY_PN}"
+	fperms +x /opt/${PN}/{${MY_PN},libEGL.so,libffmpeg.so,libGLESv2.so,libVkICD_mock_icd.so}
+	fperms +x /opt/${PN}/swiftshader/{libEGL.so,libGLESv2.so}
+	dosym -r /opt/${PN}/${MY_PN} /usr/bin/${MY_PN}
 
-	domenu "${MY_PN}".desktop
-	newicon -s 512 assets/icon.png "${MY_PN}".png
+	domenu ${MY_PN}.desktop
+	newicon -s 512 assets/icon.png ${MY_PN}.png
 }

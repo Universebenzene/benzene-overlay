@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit unpacker systemd desktop xdg
 
@@ -35,7 +35,8 @@ src_prepare() {
 	sed -e "s#/usr/local/sunlogin/res/icon/%s.ico\x0#/opt/sunlogin/res/icon/%s.ico\x0\x0\x0\x0\x0\x0\x0#g" \
 		-e "s#/usr/local/sunlogin\x0#/opt/sunlogin\x0\x0\x0\x0\x0\x0\x0#g" -i ${LS}/bin/${PN} || die
 	sed -i "s#/usr/local/sunlogin\x0#/opt/sunlogin\x0\x0\x0\x0\x0\x0\x0#g" ${LS}/bin/oray_rundaemon || die
-	xdg_src_prepare
+#	xdg_src_prepare
+	default
 }
 
 src_install() {
@@ -44,7 +45,7 @@ src_install() {
 	doins -r ${LS}/{bin,res}
 	fperms +x /opt/${MY_PN}/bin/{oray_rundaemon,${PN}}
 	fperms 666 /opt/${MY_PN}/res/skin/{desktopcontrol.skin,remotecamera.skin,remotecmd.skin,remotefile.skin,skin.skin}
-	dosym {/opt/${MY_PN},/opt}/bin/${PN}
+	dosym -r /opt/{${MY_PN},}/bin/${PN}
 
 	newinitd "${FILESDIR}"/run${PN}-11.0.0.35346.initd run${PN}
 	systemd_dounit "${FILESDIR}"/run${PN}.service

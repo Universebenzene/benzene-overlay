@@ -1,9 +1,9 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit xdg optfeature
+inherit unpacker xdg optfeature
 
 MY_PV="$(ver_cut 4)"
 MY_P="${PN}_${PV}"
@@ -20,7 +20,7 @@ SRC_URI="http://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_P
 "
 
 SLOT="0"
-RESTRICT="strip mirror" # mirror as explained at bug #547372
+RESTRICT="strip mirror bindist" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
 IUSE="cn +mime l10n_zh-CN"
 LANGS="de-DE en-GB es-ES es-MX fr fr-CA ja pl pt-BR pt-PT ru th uk zh-HK zh-MO zh-TW"
@@ -115,8 +115,8 @@ src_unpack() {
 	popd || die
 
 	unpack ${PN}-mui-${MUI_PV}.tar.gz
-	pushd ${PN}-mui-${MUI_PV} || die
-	unpack mui/*.7z
+	pushd ${PN}-mui-${MUI_PV}/mui || die
+	for zs in *.7z; do unpack_7z ${zs}; done
 	popd || die
 }
 
@@ -162,13 +162,13 @@ src_install() {
 	LANGF="de-DE en-GB es-ES es-MX fr-CA pt-BR pt-PT zh-HK zh-MO zh-TW"
 	LANGG="fr pl ru th"
 	for LU in ${LANGF}; do
-		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/${LU/-/_}"
+		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/mui/${LU/-/_}"
 	done
 	for LU in ${LANGG}; do
-		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/${LU}_${LU^^}"
+		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/mui/${LU}_${LU^^}"
 	done
-	use l10n_ja && doins -r "${S}/${PN}-mui-${MUI_PV}/ja_JP"
-	use l10n_uk && doins -r "${S}/${PN}-mui-${MUI_PV}/uk_UA"
+	use l10n_ja && doins -r "${S}/${PN}-mui-${MUI_PV}/mui/ja_JP"
+	use l10n_uk && doins -r "${S}/${PN}-mui-${MUI_PV}/mui/uk_UA"
 }
 
 pkg_postinst() {

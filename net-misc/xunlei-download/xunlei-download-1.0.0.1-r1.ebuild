@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit unpacker desktop xdg
 
@@ -34,20 +34,21 @@ QA_PREBUILT="opt/${PN}/* opt/${PN}/resources/bin/*"
 
 src_prepare() {
 	sed -e '/Cate/s/net/Network/' -e '4c Exec=xunlei-download %U' \
-		-e '5c Icon=com.xunlei.download' -i entries/applications/"${MY_PN}".desktop || die
+		-e '5c Icon=com.xunlei.download' -i entries/applications/${MY_PN}.desktop || die
 	sed -i "s/apps\/${MY_PN}\/files/${PN}/" files/start.sh || die
-	xdg_src_prepare
+#	xdg_src_prepare
+	default
 }
 
 src_install() {
-	insinto /opt/"${PN}"
+	insinto /opt/${PN}
 	doins -r files/*
-	fperms +x /opt/"${PN}"/{start.sh,thunder,libnode.so,resources/bin/{ThunderHelper.node,ThunderKernel.node}}
-	dosym ../"${PN}"/start.sh /opt/bin/"${PN}"
+	fperms +x /opt/${PN}/{start.sh,thunder,libnode.so,resources/bin/{ThunderHelper.node,ThunderKernel.node}}
+	dosym -r /opt/{${PN}/start.sh,bin/${PN}}
 
 	for si in 16 24 32 48 128 256; do
-		doicon -s ${si} entries/icons/hicolor/${si}x${si}/apps/"${MY_PN}".png
+		doicon -s ${si} entries/icons/hicolor/${si}x${si}/apps/${MY_PN}.png
 	done
-	newicon -s scalable entries/icons/hicolor/scalable/apps/com.thunder.download.svg "${MY_PN}".svg
-	domenu entries/applications/"${MY_PN}".desktop
+	newicon -s scalable entries/icons/hicolor/scalable/apps/com.thunder.download.svg ${MY_PN}.svg
+	domenu entries/applications/${MY_PN}.desktop
 }

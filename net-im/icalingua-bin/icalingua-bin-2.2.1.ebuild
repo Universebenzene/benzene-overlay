@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit unpacker desktop xdg optfeature
 
@@ -35,7 +35,7 @@ src_install() {
 	insinto /opt
 	doins -r opt/*
 	fperms +x /opt/${MY_PN^}/${MY_PN}
-	dosym ../../opt/${MY_PN^}/${MY_PN} /usr/bin/${MY_PN}
+	dosym -r /opt/${MY_PN^}/${MY_PN} /usr/bin/${MY_PN}
 
 	gzip -d usr/share/doc/${MY_PN}/*.gz || die
 	dodoc usr/share/doc/${MY_PN}/*
