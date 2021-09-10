@@ -25,7 +25,7 @@ BDEPEND=""
 S="${WORKDIR}"
 
 src_prepare() {
-	sed -i '/Name/a Name[zh_CN]=百度网盘' usr/share/applications/baidunetdisk.desktop || die
+	sed -i '/Name/a Name[zh_CN]=百度网盘' usr/share/applications/${PN}.desktop || die
 	default
 }
 
