@@ -14,8 +14,9 @@ SLOT="0"
 RESTRICT="strip"
 KEYWORDS="~amd64"
 
-RDEPEND="media-video/ffmpeg[iec61883,ieee1394,jack,libcaca,librtmp,speex,twolame]
+RDEPEND="media-video/ffmpeg[iec61883,ieee1394,jack,libcaca,librtmp,sdl,speex,twolame]
 	app-pda/usbmuxd
+	dev-libs/libcdio-paranoia
 	media-libs/libwebp
 	media-sound/wavpack
 	net-nds/openldap
