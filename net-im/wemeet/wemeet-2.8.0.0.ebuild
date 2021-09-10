@@ -72,7 +72,7 @@ src_install() {
 	use bundled-libs && doins -r opt/${PN}/{icons,lib,plugins} || { insinto /opt/${PN}/lib ; \
 		doins -r opt/${PN}/lib/{libtquic.so,libwemeet*,libxcast.so,libxnn*} ; }
 	fperms +x /opt/${PN}/{${PN}app.sh,bin/{crashpad_handler,${PN}app}}
-	dosym -r /opt/${PN}/${PN}app.sh /usr/bin/wemeet
+	dosym -r /opt/${PN}/${PN}app.sh /usr/bin/${PN}
 
 	newicon opt/${PN}/splash_logo3x.png ${PN}app.png
 	for si in 16 32 64 128 256; do
