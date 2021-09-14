@@ -26,7 +26,7 @@ net-im/electron-qq-bin                                                          
 [net-im/electron-wechat-bin](https://github.com/eNkru/freechat)                   | 1.0.0                               | Newer project of Electron-built WeChat, a.k.a. Freechat
 [net-im/electronic-wechat-bin](https://github.com/kooritea/electronic-wechat)     | 2.3.1                               | Converted from [AUR](https://aur.archlinux.org/packages/electronic-wechat-bin)
 [net-im/icalingua-bin](https://github.com/Clansty/Icalingua)                      | 2.2.1                               | Previously called Electron QQ
-[net-im/wemeet](https://source.meeting.qq.com/download-center.html)               | 2.8.0.0                             | Encouraged by [AUR](https://aur.archlinux.org/packages/wemeet-bin)
+[net-im/wemeet](https://source.meeting.qq.com/download-center.html)               | 2.8.0.1                             | Encouraged by [AUR](https://aur.archlinux.org/packages/wemeet-bin)
 [net-misc/baidunetdisk](https://pan.baidu.com/download)                           | 3.0.1; 3.4.1; 3.5.0                 | Converted from [AUR](https://aur.archlinux.org/packages/baidunetdisk-bin) (Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here)
 [net-misc/baidupcs-go](https://github.com/qjfoidnh/BaiduPCS-Go)                   | 3.6.2; 3.8.1; 3.8.3; (live)         | Also in [gentoo-zh](https://github.com/microcai/gentoo-zh) overlay, while upgrade will be faster here. **Proxy may needed if you use the `9999` version**, as the [proxy.golang.org](https://proxy.golang.org) is banned in some regions
 net-misc/baidupcs-go-bin                                                          | 3.6.2; 3.8.3                        |

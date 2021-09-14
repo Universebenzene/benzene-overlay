@@ -69,9 +69,9 @@ pkg_postinst() {
 	elog "your computer from others"
 	elog
 	ewarn
-	ewarn "For OpenRC users, remote controlling from others may not work on"
-	ewarn "the newest version of sunloginclient, as newer version depends on libsystemd.so"
-	ewarn "For OpenRC users please install the older version 10.0.2.24779"
+	ewarn "For OpenRC users, remote controlling from others may not work with the"
+	ewarn "newest version of sunloginclient, as newer versions depends on libsystemd.so"
+	ewarn "For OpenRC users PLEASE install the OLDER version 10.0.2.24779"
 	ewarn
 
 	xdg_pkg_postinst
