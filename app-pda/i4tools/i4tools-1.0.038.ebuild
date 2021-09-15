@@ -51,5 +51,6 @@ src_install() {
 	doins -r ${USD}/lib/openssl/{*so*,engines-1.1}
 
 	dosym libwebp.so /usr/$(get_libdir)/libwebp.so.6
+	dosym -r /${USD}/${PN}linux.sh /usr/bin/${PN}
 	domenu usr/share/applications/${PN}.desktop
 }
