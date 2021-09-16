@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-DISABLE_AUTOFORMATTING=true
+
 inherit font
 
 DESCRIPTION="The wps-office-fonts package contains Founder Chinese fonts"
