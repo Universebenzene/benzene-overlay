@@ -25,6 +25,9 @@ RDEPEND="x11-libs/gtk+:3[cups]
 	dev-libs/nss
 	app-crypt/p11-kit
 	dev-libs/libappindicator:3
+	app-accessibility/at-spi2-core[X]
+	app-crypt/libsecret
+	x11-libs/libnotify
 "
 DEPEND=""
 BDEPEND=""
