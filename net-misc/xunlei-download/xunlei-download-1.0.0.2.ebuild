@@ -10,8 +10,8 @@ MY_PN="com.${PN/-/.}"
 DESCRIPTION="Xunlei download"
 HOMEPAGE="https://www.xunlei.com"
 SRC_URI="
-	amd64? ( http://archive.kylinos.cn/kylin/partner/pool/${MY_PN}_${PV}_amd64.deb -> ${PF}_amd64.deb )
-	arm64? ( http://archive.kylinos.cn/kylin/partner/pool/${MY_PN}_${PV}_arm64.deb -> ${PF}_arm64.deb )
+	amd64? ( https://cdn-package-store6.deepin.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_amd64.deb )
+	arm64? ( https://cdn-package-store6.deepin.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_amd64.deb )
 "
 
 LICENSE="com.xunlei.download"
@@ -19,7 +19,6 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 
 RDEPEND="dev-libs/dbus-glib
-	net-libs/nodejs
 	x11-libs/libXtst
 	x11-libs/gtk+:2
 	x11-libs/libXScrnSaver
@@ -36,7 +35,6 @@ src_prepare() {
 	sed -e '/Cate/s/net/Network/' -e '4c Exec=xunlei-download %U' \
 		-e '5c Icon=com.xunlei.download' -i entries/applications/${MY_PN}.desktop || die
 	sed -i "s/apps\/${MY_PN}\/files/${PN}/" files/start.sh || die
-#	xdg_src_prepare
 	default
 }
 
