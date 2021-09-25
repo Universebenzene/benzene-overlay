@@ -144,7 +144,7 @@ src_install() {
 	insinto /etc/xdg/menus/applications-merged
 	doins ${WS}/etc/xdg/menus/applications-merged/wps-office.menu
 
-	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,wpsd,parsecloudfiletool,promecefpluginhost,transerr}
+	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,wpsd,parsecloudfiletool,promecefpluginhost,transerr,ksolaunch,wpscloudsvr}
 
 	local MUIDIR="opt/kingsoft/wps-office/office6/mui"
 
