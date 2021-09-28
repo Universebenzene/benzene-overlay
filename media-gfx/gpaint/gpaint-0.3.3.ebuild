@@ -27,9 +27,14 @@ S="${WORKDIR}/${MY_P}"
 
 PATCHES=( "${FILESDIR}" )
 
+src_unpack() {
+	default
+	gzip -cd "${FILESDIR}"/${MY_PN}.svg.gz > "${S}"/${MY_PN}.svg || die
+}
+
 src_install() {
 	default
 	domenu ${PN}.desktop
 	doicon "${FILESDIR}"/${MY_PN}.xpm
-	doicon -s scalable "${FILESDIR}"/${MY_PN}.svg
+	doicon -s scalable ${MY_PN}.svg
 }

@@ -21,6 +21,11 @@ DEPEND=""
 
 S="${WORKDIR}/${MY_PN}"
 
+src_unpack() {
+	default
+	xz -cd "${FILESDIR}"/${PN}.svg.xz > "${S}"/${PN}.svg || die
+}
+
 src_prepare() {
 	sed -i -e "/prog/s/\\$\0/\/usr\/share\/${PN}\/lib\/${MY_PN}.jar/" ${MY_PN} || die
 	xdg_src_prepare
@@ -32,7 +37,7 @@ src_install() {
 
 	domenu "${FILESDIR}"/${PN}.desktop
 	doicon -s 192 "${FILESDIR}"/${PN}.png
-	doicon -s scalable "${FILESDIR}"/${PN}.svg
+	doicon -s scalable ${PN}.svg
 	use doc && HTML_DOCS=( *.html )
 	default
 }
