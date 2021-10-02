@@ -26,3 +26,4 @@ V2RAYA_OPTS="--log-disable-timestamp"
 #     --log-max-days int                        Maximum number of days to keep log files (default 3)
 #     --log-disable-color
 #     --log-disable-timestamp
+#     --report string                           Print report

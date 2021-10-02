@@ -28,3 +28,4 @@ V2RAYA_OPTS="--log-disable-timestamp"
 #     --log-disable-color
 #     --log-disable-timestamp
 #     --lite                                    Lite mode for non-root and non-linux users#
+#     --report string                           Print report
