@@ -27,7 +27,7 @@ S="${WORKDIR}"
 
 src_prepare() {
 	sed -i 's#usr/share#opt#g' \
-		usr/share/{applications/${PN}.desktop,polkit-1/actions/org.${PN}linux.policy,${PN}/${PN}linux.sh}
+		usr/share/{applications/${PN}.desktop,polkit-1/actions/org.${PN}linux.policy,${PN}/${PN}linux.sh} || die
 	default
 }
 
