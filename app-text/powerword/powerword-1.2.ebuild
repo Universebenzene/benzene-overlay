@@ -16,7 +16,6 @@ SRC_URI="amd64? ( https://docs.deepin.com/d/90f1e57130/files/?p=/sign.Powerword_
 LICENSE="iciba-EULA"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
-#IUSE="ibus wayland bundled-libs"
 
 RDEPEND="media-libs/alsa-lib
 	x11-libs/libX11
