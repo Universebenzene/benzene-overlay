@@ -22,9 +22,9 @@ SLOT="0"
 KEYWORDS="amd64 arm arm64 ~ppc ~ppc64 ~riscv x86"
 
 # TODO: QtNfc, QtQuick3D, QtRemoteObjects
-IUSE="bluetooth dbus debug declarative designer examples gles2-only gui help location
-	multimedia network opengl positioning printsupport sensors serialport speech
-	sql +ssl svg testlib webchannel +webkit websockets widgets x11extras xmlpatterns"
+IUSE="bluetooth dbus debug declarative designer examples gles2-only +gui help location
+	multimedia +network opengl positioning +printsupport sensors serialport speech
+	sql +ssl svg testlib webchannel +webkit websockets +widgets x11extras xmlpatterns"
 
 # The requirements below were extracted from configure.py
 # and from the output of 'grep -r "%Import " ${S}/sip'

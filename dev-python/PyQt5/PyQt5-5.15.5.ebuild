@@ -24,7 +24,7 @@ KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 # TODO: QtNfc, QtQuick3D, QtRemoteObjects
 IUSE="bluetooth dbus debug declarative designer examples gles2-only +gui help location
 	multimedia +network opengl positioning +printsupport sensors serialport speech
-	sql svg testlib webchannel +webkit websockets +widgets x11extras xmlpatterns"
+	sql +ssl svg testlib webchannel +webkit websockets +widgets x11extras xmlpatterns"
 
 # The requirements below were extracted from the qmake_QT declarations
 # in project.py and from the output of 'grep -r "%Import " ${S}/sip'
@@ -68,7 +68,7 @@ DEPEND="${PYTHON_DEPS}
 	help? ( >=dev-qt/qthelp-${QT_PV} )
 	location? ( >=dev-qt/qtlocation-${QT_PV} )
 	multimedia? ( >=dev-qt/qtmultimedia-${QT_PV}[widgets?] )
-	network? ( >=dev-qt/qtnetwork-${QT_PV}[ssl] )
+	network? ( >=dev-qt/qtnetwork-${QT_PV}[ssl=] )
 	opengl? ( >=dev-qt/qtopengl-${QT_PV} )
 	positioning? ( >=dev-qt/qtpositioning-${QT_PV} )
 	printsupport? ( >=dev-qt/qtprintsupport-${QT_PV} )
@@ -90,22 +90,10 @@ RDEPEND="${DEPEND}
 "
 BDEPEND="
 	>=dev-python/PyQt-builder-1.10[${PYTHON_USEDEP}]
-	>=dev-python/sip-6.2.0_pre2106291255[${PYTHON_USEDEP}]
+	>=dev-python/sip-6.2[${PYTHON_USEDEP}]
 	>=dev-qt/qtcore-${QT_PV}
 	dbus? ( virtual/pkgconfig )
 "
-
-src_prepare() {
-	default
-
-	if use gles2-only; then
-		# sip-build doesn't have a command line option for this
-		cat >> pyproject.toml <<-_EOF_ || die
-			[tool.sip.bindings.QtCore]
-			disabled-features = ["PyQt_Desktop_OpenGL"]
-		_EOF_
-	fi
-}
 
 src_configure() {
 	pyqt_use_enable() {
@@ -129,15 +117,19 @@ src_configure() {
 			--qmake="$(qt5_get_bindir)"/qmake
 			--no-make
 			$(usev debug '--debug --qml-debug --tracing')
+			$(usev !dbus --no-dbus-python)
+			$(usev !declarative --no-qml-plugin)
+			$(usev !designer --no-designer-plugin)
+			$(usev gles2-only --disabled-feature=PyQt_Desktop_OpenGL)
+			$(usev !ssl --disabled-feature=PyQt_SSL)
+			--enable=pylupdate
+			--enable=pyrcc
 			--enable=Qt
 			$(pyqt_use_enable bluetooth)
 			--enable=QtCore
 			$(pyqt_use_enable dbus QtDBus)
-			$(usex dbus '' --no-dbus-python)
 			$(pyqt_use_enable declarative QtQml QtQuick $(usev widgets QtQuickWidgets))
-			$(usex declarative '' --no-qml-plugin)
 			$(pyqt_use_enable designer)
-			$(usex designer '' --no-designer-plugin)
 			$(pyqt_use_enable gui)
 			$(pyqt_use_enable gui $(use gles2-only && echo _QOpenGLFunctions_ES2 || echo _QOpenGLFunctions_{2_0,2_1,4_1_Core}))
 			$(pyqt_use_enable help)
@@ -160,8 +152,6 @@ src_configure() {
 			$(pyqt_use_enable x11extras QtX11Extras)
 			--enable=QtXml
 			$(pyqt_use_enable xmlpatterns QtXmlPatterns)
-			--enable=pylupdate
-			--enable=pyrcc
 		)
 		echo "${myconf[@]}"
 		"${myconf[@]}" || die
