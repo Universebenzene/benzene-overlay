@@ -8,10 +8,10 @@ MY_PV=$(ver_rs 2 -)
 
 DESCRIPTION="Interactive graphical viewer and editor for astronomical tables"
 HOMEPAGE="http://www.star.bris.ac.uk/~mbt/topcat"
-SRC_COM="ftp://andromeda.star.bris.ac.uk/pub/star/${PN}/v${MY_PV}"
-SRC_URI="${HOMEPAGE}/${PN}-lite.jar -> ${P}-lite.jar
-	standard? ( ${HOMEPAGE}/${PN}-full.jar -> ${P}-full.jar )
-	extra? ( ${HOMEPAGE}/${PN}-extra.jar -> ${P}-extra.jar )"
+SRC_COM="http://andromeda.star.bristol.ac.uk/releases/topcat/v${MY_PV}"
+SRC_URI="${SRC_COM}/${PN}-lite.jar -> ${P}-lite.jar
+	standard? ( ${SRC_COM}/${PN}-full.jar -> ${P}-full.jar )
+	extra? ( ${SRC_COM}/${PN}-extra.jar -> ${P}-extra.jar )"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -27,9 +27,9 @@ S="${WORKDIR}"
 src_install() {
 	java-pkg_newjar "${DISTDIR}"/${P}-lite.jar ${PN}-lite.jar
 	java-pkg_dolauncher ${PN}-lite
-	use !minimal && ( java-pkg_newjar "${DISTDIR}"/${P}-$(usex extra extra full).jar ${PN}-$(usex extra extra full).jar; \
+	use !minimal && { java-pkg_newjar "${DISTDIR}"/${P}-$(usex extra extra full).jar ${PN}-$(usex extra extra full).jar; \
 		java-pkg_dolauncher ${PN}-$(usex extra extra full) --jar ${PN}-$(usex extra extra full).jar; \
-		dosym ${PN}-$(usex extra extra full) /usr/bin/${PN} ) || dosym ${PN}-lite /usr/bin/${PN}
+		dosym ${PN}-$(usex extra extra full) /usr/bin/${PN} ; } || dosym ${PN}-lite /usr/bin/${PN}
 
 	domenu "${FILESDIR}"/${PN}.desktop
 	doicon -s scalable "${FILESDIR}"/${PN}.svg

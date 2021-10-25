@@ -8,7 +8,7 @@ inherit desktop java-pkg-2 xdg
 
 DESCRIPTION="Interactive graphical viewer and editor for astronomical tables"
 HOMEPAGE="http://www.star.bris.ac.uk/~mbt/topcat/"
-SRC_COM="ftp://andromeda.star.bris.ac.uk/pub/star/${PN}/v${PV}"
+SRC_COM="http://andromeda.star.bristol.ac.uk/releases/topcat/v${PV}"
 SRC_URI="${SRC_COM}/${PN}-lite.jar -> ${P}-lite.jar
 	!minimal? ( ${SRC_COM}/${PN}-full.jar -> ${P}-full.jar )"
 
