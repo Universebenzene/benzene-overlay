@@ -32,7 +32,7 @@ QA_PREBUILT="opt/${PN}/*"
 
 src_prepare() {
 	sed -i "s|/usr/share/${MY_PN}/AppRun|${PN}|g" usr/share/applications/${MY_PN}.desktop || die
-	sed -i "/^Prefix/c Prefix = $(qt5_get_libdir)/qt5" -i usr/share/${MY_PN}/qt.conf || die
+	sed -i "/^Prefix/c Prefix = $(qt5_get_libdir)/qt5" usr/share/${MY_PN}/qt.conf || die
 	default
 }
 
