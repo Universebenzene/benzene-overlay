@@ -25,7 +25,7 @@ fi
 
 inherit bash-completion-r1 linux-info meson-multilib ninja-utils pam python-any-r1 toolchain-funcs #systemd udev usr-ldscript
 
-DESCRIPTION="System and service manager for Linux"
+DESCRIPTION="A standalone package to provide libsystemd.so without systemd"
 HOMEPAGE="https://www.freedesktop.org/wiki/Software/systemd"
 
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
