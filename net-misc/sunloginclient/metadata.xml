@@ -14,5 +14,8 @@
 		operations, remote power on/off, download files, AFK, and so on. Download
 		Sunlogin and explore more exciting features!
 	</longdescription>
+	<use>
+		<flag name="libsystemd">Use standalone <pkg>sys-libs/libsystemd</pkg> package to provide libsystemd.so for working non-systemd systems.</flag>
+	</use>
 </pkgmetadata>
 

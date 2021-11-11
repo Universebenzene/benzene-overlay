@@ -6,7 +6,7 @@
 		<name>Astro Benzene</name>
 	</maintainer>
 	<use>
-		<flag name="curl">Use the net-misc/curl for supporting IMAP, MPD and weather widgets</flag>
+		<flag name="curl">Use the <pkg>net-misc/curl</pkg> for supporting IMAP, MPD and weather widgets</flag>
 	</use>
 	<upstream>
 		<remote-id type="github">lcpz/lain</remote-id>

@@ -24,6 +24,7 @@
 		<flag name="cn">Use CN version of WPS Office (including WPS Cloud, WPS account login and other functions)</flag>
 		<flag name="mime">Use mime files provided by WPS</flag>
 		<flag name="systemd">Use bundled dbus that depends on <pkg>sys-apps/systemd</pkg></flag>
+		<flag name="libsystemd">Use standalone <pkg>sys-libs/libsystemd</pkg> package to provide libsystemd.so for working non-systemd systems.</flag>
 		<flag name="l10n_zh-HK">Chinese (Traditional, Hong Kong S.A.R.)</flag>
 		<flag name="l10n_zh-MO">Chinese (Traditional, Macao S.A.R.)</flag>
 	</use>
