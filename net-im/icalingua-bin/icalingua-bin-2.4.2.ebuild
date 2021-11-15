@@ -55,8 +55,7 @@ pkg_postinst() {
 	optfeature "Use redis" dev-db/redis
 
 	ewarn
-	ewarn "For users who upgrade from 2.3.2 you might get some problem with sqlite."
-	ewarn "You can have a look at this issue: https://github.com/Icalingua/Icalingua/issues/322,"
-	ewarn "or you can just delete your chag log by removing ~/.config/icalingua/databases/eqq<you qq number>.db"
+	ewarn "For users who get problem after upgrading from 2.3.2 please have a look at this issue:"
+	ewarn "https://github.com/Icalingua/Icalingua/issues/322"
 	ewarn
 }
