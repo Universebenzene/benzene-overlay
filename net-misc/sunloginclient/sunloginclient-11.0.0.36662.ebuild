@@ -15,7 +15,7 @@ RESTRICT="mirror"
 LICENSE="Sunlogin"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE="libsystemd"
+IUSE="libsystemd supervise-daemon"
 
 RDEPEND="dev-libs/libappindicator:3
 	x11-apps/xhost
@@ -49,7 +49,8 @@ src_install() {
 	fperms 666 /opt/${MY_PN}/res/skin/{desktopcontrol.skin,remotecamera.skin,remotecmd.skin,remotefile.skin,skin.skin}
 	dosym -r /opt/{${MY_PN},}/bin/${PN}
 
-	newinitd "${FILESDIR}"/run${PN}-11.0.0.35346.initd run${PN}
+	local scriptx="$(usex supervise-daemon '-super' '')"
+	newinitd "${FILESDIR}"/run${PN}-11.0.0.35346${scriptx}.initd run${PN}
 	systemd_dounit "${FILESDIR}"/run${PN}.service
 
 	newicon -s 128 ${LS}/res/icon/sunlogin_client.png ${PN}.png
@@ -76,6 +77,16 @@ pkg_postinst() {
 		ewarn "newest version of sunloginclient, as newer versions depends on libsystemd.so"
 		ewarn "You can try enabling the libsystemd USE flag to get a trial standalone libsystemd package"
 		ewarn "or install the OLDER version 10.0.2.24779 if you use OpenRC system"
+		ewarn
+	fi
+	if use supervise-daemon; then
+		ewarn
+		ewarn "Users who enable the supervise-daemon USE flag may find that"
+		ewarn "runsunloginclient daemon stops automatically after system sleeps and wakes up."
+		ewarn "To restart the daemon after waking up automatically you can try this script:"
+		ewarn "https://github.com/Universebenzene/dotfiles/blob/master/allconfig/lib64/elogind/system-sleep/rerunsunloginclient"
+		ewarn "You can check this link for more details:"
+		ewarn "https://wiki.gentoo.org/wiki/Elogind#Hook_scripts_to_be_run_when_suspending.2Fhibernating_and.2For_when_resuming.2Fthawing"
 		ewarn
 	fi
 
