@@ -298,5 +298,8 @@ multilib_src_compile() {
 }
 
 multilib_src_install() {
+	use split-usr && into /
 	dolib.so libsystemd.so{,*.0}
+
+	use split-usr && dosym -r /$(get_libdir)/libsystemd.so.0 /usr/$(get_libdir)/libsystemd.so
 }
