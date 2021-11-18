@@ -16,7 +16,6 @@
 	</longdescription>
 	<use>
 		<flag name="libsystemd">Use standalone <pkg>sys-libs/libsystemd</pkg> package to provide libsystemd.so for working non-systemd systems.</flag>
-		<flag name="supervise-daemon">Use OpenRC supervise-daemon to handle the runsunloginclient daemon (for OpenRC users only)</flag>
 	</use>
 </pkgmetadata>
 
