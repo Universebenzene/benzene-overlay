@@ -15,7 +15,7 @@ SRC_URI="amd64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_P}_amd64.deb )
 	arm64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_P}_arm64.deb )
 "
 
-LICENSE="GPL-3"
+LICENSE="AGPL-3"
 SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64 ~arm64 ~x86"
