@@ -1,2 +1,5 @@
 # awesome-4.3-r2.ebuild deleted
 =x11-libs/lain-9999
+
+# electron-qq: replaced by icalingua
+net-im/electron-qq-bin
