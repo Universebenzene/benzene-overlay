@@ -16,7 +16,7 @@ SRC_URI="
 	arm? ( https://apt.v2raya.mzz.pub/pool/main/${MY_PN:0:1}/${MY_PN}/${MY_PN}_linux_arm_v${PV} -> ${P}-arm )
 	https://github.com/v2rayA/v2rayA/archive/refs/tags/v${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz
 "
-LICENSE="GPL-3"
+LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm ~arm64 ~x86"
 IUSE="+v2ray xray"
