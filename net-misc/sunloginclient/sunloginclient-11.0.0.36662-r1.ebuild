@@ -15,7 +15,7 @@ RESTRICT="mirror"
 LICENSE="Sunlogin"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE="libsystemd"
+IUSE="libsystemd keep-server"
 
 RDEPEND="dev-libs/libappindicator:3
 	x11-apps/xhost
@@ -32,10 +32,14 @@ QA_PREBUILT="opt/${MY_PN}/bin/*"
 
 src_prepare() {
 	local LS="${S}/local/${MY_PN}"
+	sed -e "s#/usr/local/#/opt/#g" -e '/^Descrip/a Requires=network-online.target\nAfter=network-online.target' \
+		-i ${LS}/scripts/run${PN}.service || die
 	sed -e 's#Icon=/usr/local/sunlogin/res/icon/sunlogin_client.png#Icon=sunloginclient#g' \
 		-e 's#Exec=/usr/local/sunlogin/bin/#Exec=#g' -i share/applications/${MY_PN}.desktop || die
 	sed -e "s#/usr/local/sunlogin/res/icon/%s.ico\x0#/opt/sunlogin/res/icon/%s.ico\x0\x0\x0\x0\x0\x0\x0#g" \
 		-e "s#/usr/local/sunlogin\x0#/opt/sunlogin\x0\x0\x0\x0\x0\x0\x0#g" -i ${LS}/bin/${PN} || die
+	use keep-server || { sed "s#\x48\xB8/usr/loc\x48\x89\x45\xD0\x48\xB8al#\x48\xB8///////o\x48\x89\x45\xD0\x48\xB8pt#g" \
+		-i ${LS}/bin/oray_rundaemon || die ; }
 #	xdg_src_prepare
 	default
 }
@@ -48,9 +52,9 @@ src_install() {
 	fperms 666 /opt/${MY_PN}/res/skin/{desktopcontrol.skin,remotecamera.skin,remotecmd.skin,remotefile.skin,skin.skin}
 	dosym -r /opt/{${MY_PN},}/bin/${PN}
 
-	newinitd "${FILESDIR}"/runoraydaemon.initd runoraydaemon
-	newinitd "${FILESDIR}"/run${P}.initd run${PN}
-	systemd_dounit "${FILESDIR}"/run${PN}.service
+	use keep-server && newinitd "${FILESDIR}"/runoraydaemon.initd runoraydaemon
+	newinitd "${FILESDIR}"/run${P}$(usex keep-server '-keep' '').initd run${PN}
+	systemd_dounit $(usex keep-server "${FILESDIR}" "${LS}/scripts")/run${PN}.service
 
 	newicon -s 128 ${LS}/res/icon/sunlogin_client.png ${PN}.png
 	domenu share/applications/${MY_PN}.desktop

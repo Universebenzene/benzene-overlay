@@ -10,5 +10,4 @@ pidfile="/run/${RC_SVCNAME}.pid"
 
 depend() {
 	need net
-	before runsum
 }
