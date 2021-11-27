@@ -60,7 +60,7 @@ src_install() {
 	dosym -r /usr/$(get_libdir)/libwebp.so /${OPD}/lib/libwebp.so.6
 	for imu in fcitx fcitx5 ibus; do
 		use ${imu} && dosym -r \
-			{$(qt5_get_plugindir),${OPD}/plugins}/platforminputcontexts/lib${imu}platforminputcontextplugin.so
+			{$(qt5_get_plugindir),/${OPD}/plugins}/platforminputcontexts/lib${imu}platforminputcontextplugin.so
 	done
 	dosym -r /${OPD}/${PN}linux.sh /usr/bin/${PN}
 	domenu usr/share/applications/${PN}.desktop
