@@ -40,7 +40,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
 
 python_test() {
-	pytest -vv "${BUILD_DIR}/lib" || die "Tests fail with ${EPYTHON}"
+	epytest "${BUILD_DIR}/lib"
 }
 
 pkg_postinst() {

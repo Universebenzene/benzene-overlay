@@ -38,5 +38,5 @@ python_configure_all() {
 }
 
 python_test() {
-	pytest -vv "${BUILD_DIR}/lib" || die "Tests fail with ${EPYTHON}"
+	epytest "${BUILD_DIR}/lib"
 }

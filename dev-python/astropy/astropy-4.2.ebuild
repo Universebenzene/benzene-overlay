@@ -79,7 +79,7 @@ python_compile_all() {
 
 python_test() {
 	esetup.py build_ext --inplace
-	pytest -vv "${BUILD_DIR}/lib" || die "Tests fail with ${EPYTHON}"
+	epytest "${BUILD_DIR}/lib"
 }
 
 pkg_postinst() {
