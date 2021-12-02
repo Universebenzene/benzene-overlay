@@ -1,9 +1,9 @@
-# Copyright 2020 Gentoo Foundation
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python{2_7,3_{5,6,7,8}} )
+PYTHON_COMPAT=( python3_{8..10} )
 PYTHON_REQ_USE="sqlite"
 
 inherit distutils-r1
@@ -17,7 +17,8 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 RDEPEND=">=dev-python/astropy-0.2[${PYTHON_USEDEP}]
 	hdf5? ( >=dev-python/h5py-1.3[${PYTHON_USEDEP}] )
-	mysql? ( >=dev-python/mysql-python-1.2.2[${PYTHON_USEDEP}] )
+	mysql? ( || ( >=dev-python/mysql-python-1.2.2[${PYTHON_USEDEP}]
+		dev-python/mysqlclient[${PYTHON_USEDEP}] ) )
 	postgres? ( >=dev-python/pygresql-3.8.1 )
 "
 BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
