@@ -26,7 +26,6 @@ RDEPEND=">=dev-python/hypothesis-5.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 "
 # attrs already satisfied by pytest
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
-	test? ( ${RDEPEND} )"
+BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests setup.py
