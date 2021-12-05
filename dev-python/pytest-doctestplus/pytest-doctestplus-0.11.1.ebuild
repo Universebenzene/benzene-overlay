@@ -16,6 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
+RESTRICT="test"
 RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
