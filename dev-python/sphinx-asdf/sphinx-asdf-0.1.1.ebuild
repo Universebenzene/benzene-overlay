@@ -3,16 +3,13 @@
 
 EAPI=8
 
-MY_PV=$(ver_rs 3 '')
-MY_P=${PN}-${MY_PV}
-
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
 DESCRIPTION="Sphinx plugin for generating documentation from ASDF schemas"
 HOMEPAGE="https://github.com/spacetelescope/sphinx-asdf"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -27,7 +24,5 @@ BDEPEND="dev-python/setuptools_scm[$PYTHON_USEDEP]
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
 "
-
-S="${WORKDIR}/${MY_P}"
 
 distutils_enable_tests pytest
