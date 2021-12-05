@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1 virtualx
 
@@ -23,9 +23,11 @@ RDEPEND="dev-python/pytest[${PYTHON_USEDEP}]
 
 DOCS=( CHANGES.md README.rst )
 
+#distutils_enable_tests pytest
+
 python_test() {
 	echo "backend : Agg" > "${T}"/matplotlibrc || die
-	MPLCONFIGDIR="${T}" virtx pytest -vv
+	MPLCONFIGDIR="${T}" virtx epytest
 }
 
 python_install_all() {
