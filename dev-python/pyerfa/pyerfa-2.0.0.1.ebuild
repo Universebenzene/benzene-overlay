@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
@@ -17,14 +17,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-RDEPEND=">=sci-astronomy/erfa-1.7.2:0=
-	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]
+RDEPEND=">=sci-astronomy/erfa-2.0.0:0=
+	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
 BDEPEND="${RDEPEND}
 	dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		>=dev-python/pytest-doctestplus-0.7[${PYTHON_USEDEP}]
 	)
 	doc? (
 		media-gfx/graphviz
