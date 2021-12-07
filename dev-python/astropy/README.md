@@ -27,3 +27,5 @@ We still keep `dev-python/pyerfa-1.7.2` in this overlay, as astropy 4.2.1 releas
 Old versions in this overlay might be removed in the future.
 
 Doc building fail with version `4.2.1`. Still no idea how to fix it.
+
+Test phase aborts while running with `4.2.1`. Seems caused by erfa, but not sure.
