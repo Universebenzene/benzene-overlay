@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/mistune[${PYTHON_USEDEP}]
+	~dev-python/mistune-0.8.4[${PYTHON_USEDEP}]
 	dev-python/sphinx-bootstrap-theme[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools_scm[$PYTHON_USEDEP]

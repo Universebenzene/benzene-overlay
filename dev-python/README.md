@@ -7,7 +7,7 @@ dev-python/astropy           | 2.0.16; 3.0.5; 3.1.2; 4.2   | Build with system l
 dev-python/astropy-helpers   | 2.0.11; 3.0.2; 3.1.1; 4.0.1 | With patches for better doc building. Same as the [AUR](https://aur.archlinux.org/packages/python-astropy-helpers/) ones
 dev-python/pytest-astropy    | 0.8.0; 0.9.0                | Test plugins for astropy. Dependencies are also in this overlay but not list in this table
 dev-python/sphinx-astropy    | 1.6.0                       | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not list in this table
-dev-python/sphinx-asdf       | 0.1.1                       |
+dev-python/sphinx-asdf       | 0.1.2                       |
 dev-python/aplpy             | 1.1.1; 2.0.3                | Other overlays might needed for newest version. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for details
 dev-python/asdf              | 2.7.1; 2.7.2                | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building
 dev-python/astrodendro       | 0.2.0                       | Old package, so the test and doc building may fail
@@ -24,7 +24,7 @@ dev-python/healpy            | 1.11.0                      | See [here](https://
 dev-python/montage-wrapper   | 0.9.9                       |
 dev-python/photutils         | 1.0.2                       | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building. While the doc building needs lots of online data, you may not get the figures in the doc built
 dev-python/pyavm             | 0.9.5                       |
-dev-python/pyerfa            | 2.0.0.1                     | Fixed test phase. One of the deps of `astropy`.
+dev-python/pyerfa            | 1.7.2; 2.0.0.1              | Fixed test phase. One of the deps of `astropy`.
 dev-python/pyregion          | 2.0                         |
 dev-python/pyvo              | 1.1                         | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building
 dev-python/regions           | 0.4                         |
