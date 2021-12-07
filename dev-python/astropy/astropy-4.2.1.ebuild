@@ -3,8 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1 optfeature
 
@@ -17,11 +16,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
-RESTRICT="doc? ( network-sandbox )"	# Doc build can't start without disabling network-sandbox
+# Doc build can't start without disabling network-sandbox
+# Test abort at about 89%
+RESTRICT="test
+	doc? ( network-sandbox )"
 
 RDEPEND=">=dev-libs/expat-2.2.9:0=
 	>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
 	>=dev-python/pyerfa-1.7[${PYTHON_USEDEP}]
+	>=sci-astronomy/erfa-1.7:0=
 	>=sci-astronomy/wcslib-7.3:0=
 	>=sci-libs/cfitsio-3.490:0=
 	sys-libs/zlib:0=
@@ -50,7 +53,7 @@ BDEPEND="${RDEPEND}
 	)
 "
 
-PATCHES=( "${FILESDIR}"/${P}-fix-doc-full-version.patch )
+PATCHES=( "${FILESDIR}"/${PN}-4.2-fix-doc-full-version.patch )
 
 # TODO: Fix this
 # NameError: name 'disabled_intersphinx_mapping' is not defined
@@ -64,7 +67,7 @@ python_configure_all() {
 	export ASTROPY_USE_SYSTEM_ALL=1
 }
 
-# Doc build will fail at about 82%
+# Doc build will fail at about 83%
 python_compile_all() {
 	if use doc; then
 		pushd docs || die
@@ -78,8 +81,9 @@ python_compile_all() {
 }
 
 python_test() {
-	esetup.py build_ext --inplace
-	epytest "${BUILD_DIR}/lib"
+	pushd "${BUILD_DIR}/lib" || die
+	epytest
+	popd || die
 }
 
 pkg_postinst() {
@@ -107,5 +111,5 @@ on arrays with NaN values." dev-python/bottleneck
 	optfeature "code coverage measurements" dev-python/coverage
 	optfeature "automate testing and documentation builds" dev-python/tox
 #	skyfield: testing Solar System coordinates.
-#	spgp4: testing satellite positions.
+#	spg4: testing satellite positions.
 }
