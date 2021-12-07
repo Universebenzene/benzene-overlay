@@ -29,4 +29,5 @@ dev-python/pyregion          | 2.0                         |
 dev-python/pyvo              | 1.1                         | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building
 dev-python/regions           | 0.4                         |
 dev-python/reproject         | 0.5.1; 0.7.1                | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building. Some modules cannot work due to the compiling problem of `astropy-healpix`. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/reproject#note-for-reproject) for details
+dev-python/sgp4              | 2.20                        |
 dev-python/specutils         | 1.1.1                       | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building. Doc building needs SDSS online data, but SDSS servers are down, so you may not get the figures in the doc built

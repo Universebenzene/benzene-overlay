@@ -111,5 +111,5 @@ on arrays with NaN values." dev-python/bottleneck
 	optfeature "code coverage measurements" dev-python/coverage
 	optfeature "automate testing and documentation builds" dev-python/tox
 #	skyfield: testing Solar System coordinates.
-#	spg4: testing satellite positions.
+	optfeature "testing satellite positions" dev-python/sgp4
 }
