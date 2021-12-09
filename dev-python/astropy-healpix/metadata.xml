@@ -12,4 +12,7 @@
 	<upstream>
 		<remote-id type="pypi">astropy-healpix</remote-id>
 	</upstream>
+	<use>
+		<flag name="intersphinx">Enable intersphinx for while doc building.</flag>
+	</use>
 </pkgmetadata>
