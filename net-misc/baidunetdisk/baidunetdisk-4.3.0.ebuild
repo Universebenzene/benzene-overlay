@@ -1,7 +1,7 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit unpacker desktop xdg
 
@@ -24,14 +24,20 @@ BDEPEND=""
 
 S="${WORKDIR}"
 
+src_prepare() {
+	sed -i '/Name/a Name[zh_CN]=百度网盘' usr/share/applications/${PN}.desktop || die
+	default
+}
+
 src_install() {
 	insinto /opt
-	doins -r opt/"${PN}"
-	fperms +x /opt/"${PN}"/"${PN}"
+	doins -r opt/${PN}
+	fperms +x /opt/${PN}/${PN}
+	dosym -r /opt/{${PN}/${PN},bin/${PN}}
 
-	gzip -d usr/share/doc/"${PN}"/*.gz || die
-	dodoc usr/share/doc/"${PN}"/*
+	gzip -d usr/share/doc/${PN}/*.gz || die
+	dodoc usr/share/doc/${PN}/*
 
-	domenu usr/share/applications/"${PN}".desktop
-	doicon -s scalable usr/share/icons/hicolor/scalable/apps/"${PN}".svg
+	domenu usr/share/applications/${PN}.desktop
+	doicon -s scalable usr/share/icons/hicolor/scalable/apps/${PN}.svg
 }
