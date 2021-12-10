@@ -56,3 +56,14 @@ src_install() {
 	newicon -s 512 gui/public/img/icons/android-chrome-512x512.png ${MY_PN}.png
 	domenu "${FILESDIR}"/${MY_PN}.desktop
 }
+
+pkg_postinst() {
+	ewarn
+	ewarn "Notes for users upgrade from 1.5.4 or earlier:"
+	ewarn "The database has been replaced with boltdb to try to solve the problem of database corruption.(Issue #267)"
+	ewarn "Note that the data will not be migrated, but the previous data will be retained."
+	ewarn "If you need the previous data, just downgrade v2rayA (v1.5.4)."
+	ewarn
+
+	xdg_pkg_postinst
+}
