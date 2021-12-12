@@ -290,6 +290,10 @@ RDEPEND="${DEPEND}
 "
 
 src_compile() {
+	export GOFLAGS="-buildmode=pie -trimpath"
+	export CGO_LDFLAGS="${LDFLAGS}"
+	export CGO_CFLAGS="${CFLAGS}"
+	export CGO_CPPFLAGS="${CPPFLAGS}"
 	go build -o ${PN} || die
 }
 
