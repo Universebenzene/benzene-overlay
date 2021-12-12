@@ -24,6 +24,8 @@ BDEPEND=""
 
 S="${WORKDIR}"
 
+QA_PREBUILT="opt/${PN}/*"
+
 src_prepare() {
 	sed -i '/Name/a Name[zh_CN]=百度网盘' usr/share/applications/${PN}.desktop || die
 	default
