@@ -60,7 +60,8 @@ src_prepare() {
 	sed 'N;2aName[zh_CN]=腾讯会议\nComment=Tencent Meeting Linux Client\nComment[zh_CN]=腾讯会议Linux客户端\nKeywords=wemeet;tencent;meeting;' -i usr/share/applications/${PN}app.desktop || die
 	use bundled-libs || { sed "/QT_PLUGIN/c QT_PLUGIN_PATH=\"$(qt5_get_plugindir)\"" -i opt/${PN}/${PN}app.sh || die ; \
 		sed "/^Prefix/c Prefix = $(qt5_get_libdir)/qt5" -i opt/${PN}/bin/qt.conf || die ; }
-	use wayland && { sed '/QT_PLUGIN/a export XDG_SESSION_TYPE=x11\nexport QT_QPA_PLATFORM=xcb\nunset WAYLAND_DISPLAY' \
+	use wayland && { sed \
+		'/QT_PLUGIN/a export XDG_SESSION_TYPE=x11\nexport QT_QPA_PLATFORM=xcb\nexport QT_AUTO_SCREEN_SCALE_FACTOR=1\nunset WAYLAND_DISPLAY' \
 		-i opt/${PN}/${PN}app.sh || die ; }
 	default
 }
