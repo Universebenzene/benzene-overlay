@@ -299,6 +299,8 @@ else
 		"github.com/kr/text v0.2.0/go.mod"
 		"github.com/leodido/go-urn v1.2.0"
 		"github.com/leodido/go-urn v1.2.0/go.mod"
+		"github.com/lixiangzhong/dnsutil v1.4.0"
+		"github.com/lixiangzhong/dnsutil v1.4.0/go.mod"
 		"github.com/lunixbochs/vtclean v0.0.0-20180621232353-2d01aacdc34a"
 		"github.com/lunixbochs/vtclean v0.0.0-20180621232353-2d01aacdc34a/go.mod"
 		"github.com/magiconair/properties v1.8.5"
@@ -319,6 +321,10 @@ else
 		"github.com/mattn/go-runewidth v0.0.9/go.mod"
 		"github.com/miekg/dns v1.0.14/go.mod"
 		"github.com/miekg/dns v1.1.26/go.mod"
+		"github.com/miekg/dns v1.1.40"
+		"github.com/miekg/dns v1.1.40/go.mod"
+		"github.com/miekg/dns v1.1.43"
+		"github.com/miekg/dns v1.1.43/go.mod"
 		"github.com/mitchellh/cli v1.0.0/go.mod"
 		"github.com/mitchellh/cli v1.1.0/go.mod"
 		"github.com/mitchellh/copystructure v1.2.0"
@@ -607,6 +613,7 @@ else
 		"golang.org/x/sys v0.0.0-20210104204734-6f8348627aad/go.mod"
 		"golang.org/x/sys v0.0.0-20210119212857-b64e53b001e4/go.mod"
 		"golang.org/x/sys v0.0.0-20210220050731-9a76102bfb43/go.mod"
+		"golang.org/x/sys v0.0.0-20210303074136-134d130e1a04/go.mod"
 		"golang.org/x/sys v0.0.0-20210305230114-8fe3ee5dd75b/go.mod"
 		"golang.org/x/sys v0.0.0-20210315160823-c6e025ad8005/go.mod"
 		"golang.org/x/sys v0.0.0-20210320140829-1e4c9ba3b0c4/go.mod"
@@ -662,6 +669,7 @@ else
 		"golang.org/x/tools v0.0.0-20191119224855-298f0cb1881e/go.mod"
 		"golang.org/x/tools v0.0.0-20191125144606-a911d9008d1f/go.mod"
 		"golang.org/x/tools v0.0.0-20191130070609-6e064ea0cf2d/go.mod"
+		"golang.org/x/tools v0.0.0-20191216052735-49a3e744a425/go.mod"
 		"golang.org/x/tools v0.0.0-20191216173652-a0e659d51361/go.mod"
 		"golang.org/x/tools v0.0.0-20191227053925-7b8e75db28f4/go.mod"
 		"golang.org/x/tools v0.0.0-20200117161641-43d50277825c/go.mod"
@@ -866,7 +874,7 @@ else
 	)
 go-module_set_globals
 
-	SRC_URI="https://${EGO_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
+	SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 		${EGO_SUM_SRC_URI}"
 fi
 
