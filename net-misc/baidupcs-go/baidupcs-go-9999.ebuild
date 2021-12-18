@@ -278,7 +278,7 @@ else
 	)
 go-module_set_globals
 
-	SRC_URI="https://${EGO_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
+	SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 		${EGO_SUM_SRC_URI}"
 
 	S="${WORKDIR}/${MY_PN}-${PV}"
