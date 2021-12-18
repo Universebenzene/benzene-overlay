@@ -3,8 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
@@ -15,15 +14,17 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
-#RESTRICT="network-sandbox"	# To use intersphinx linking
-RESTRICT="!test? ( test )"	# Test phase runs with fails
+IUSE="doc intersphinx"
+PROPERTIES="test_network"
+RESTRICT="test
+	intersphinx? ( network-sandbox )"
+REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/python-mimeparse[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/astropy-helpers[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/astropy-helpers-3.2.1[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
@@ -40,7 +41,7 @@ distutils_enable_tests setup.py
 python_prepare_all() {
 	sed -e '/auto_use/s/True/False/' -e 's/mimeparse/python-mimeparse/' \
 		-i setup.cfg || die
-	export mydistutilsargs=( --offline )
+	DISTUTILS_ARGS=( --offline )
 	distutils-r1_python_prepare_all
 }
 
@@ -49,7 +50,7 @@ python_compile() {
 }
 
 python_compile_all() {
-	use doc && esetup.py build_docs #--no-intersphinx
+	use doc && esetup.py build_docs $(usex intersphinx '' '--no-intersphinx')
 }
 
 python_install_all() {
