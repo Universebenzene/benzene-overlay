@@ -15,7 +15,8 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
-RESTRICT="!test? ( test )"	# Test phase runs with fails
+PROPERTIES="test_network"
+RESTRICT="test"
 #RESTRICT="network-sandbox"	# To use intersphinx linking
 
 RDEPEND=">=dev-python/astropy-4.0[${PYTHON_USEDEP}]
@@ -27,6 +28,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		<dev-python/docutils-0.18[${PYTHON_USEDEP}]
 		sci-libs/scikit-learn[${PYTHON_USEDEP}]
 		sci-libs/scikit-image[${PYTHON_USEDEP}]
 		media-gfx/graphviz
