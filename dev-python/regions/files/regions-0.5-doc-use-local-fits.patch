@@ -1,0 +1,35 @@
+--- a/docs/masks.rst	2021-07-20 06:56:17.000000000 +0800
++++ b/docs/masks.rst	2021-12-19 19:55:03.198756534 +0800
+@@ -206,7 +206,8 @@
+     from regions.core import PixCoord
+     from regions.shapes.circle import CirclePixelRegion
+ 
+-    filename = get_pkg_data_filename('photometry/M6707HH.fits')
++    try: filename = get_pkg_data_filename('photometry/M6707HH.fits')
++    except Exception: filename = '_static/M6707HH.fits'  # use local fits as no network while doc building
+     hdulist = fits.open(filename)
+     hdu = hdulist[0]
+     center = PixCoord(158.5, 1053.5)
+@@ -245,7 +246,8 @@
+     from regions.core import PixCoord
+     from regions.shapes.circle import CirclePixelRegion
+ 
+-    filename = get_pkg_data_filename('photometry/M6707HH.fits')
++    try: filename = get_pkg_data_filename('photometry/M6707HH.fits')
++    except Exception: filename = '_static/M6707HH.fits'  # use local fits as no network while doc building
+     hdulist = fits.open(filename)
+     hdu = hdulist[0]
+     center = PixCoord(158.5, 1053.5)
+--- a/docs/plot_reg.py	2021-07-07 06:58:35.000000000 +0800
++++ b/docs/plot_reg.py	2021-12-19 19:49:25.832396258 +0800
+@@ -8,7 +8,9 @@
+ from regions import Regions
+ 
+ 
+-image_file = get_pkg_data_filename('tutorials/FITS-images/HorseHead.fits')
++# use local fits if no network while doc building
++try: image_file = get_pkg_data_filename('tutorials/FITS-images/HorseHead.fits')
++except Exception: image_file = '_static/HorseHead.fits'
+ print(image_file)
+ image_data = fits.getdata(image_file, ext=0, memmap=False)
+ 
