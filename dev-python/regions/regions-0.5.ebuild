@@ -41,10 +41,8 @@ BDEPEND="${RDEPEND}
 "
 
 python_prepare_all() {
-#	Disable intersphinx
 	use doc && { cp "${DISTDIR}"/*.fits* docs/_static || die ; }
-	use intersphinx || { sed -i '/^SPHINXOPTS/s/$/& -D disable_intersphinx=1/' docs/Makefile || die; \
-		eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch ; }
+	use intersphinx || eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch
 	distutils-r1_python_prepare_all
 }
 
@@ -52,7 +50,7 @@ python_compile_all() {
 	if use doc; then
 		pushd docs || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/lib \
-			emake html
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
 		popd || die
 		HTML_DOCS=( docs/_build/html/. )
 	fi
