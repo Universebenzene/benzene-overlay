@@ -14,8 +14,10 @@ KEYWORDS="~amd64 ~x86"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="test"
-RESTRICT="!test? ( test )"
+IUSE="doc intersphinx test"
+RESTRICT="!test? ( test )
+	intersphinx? ( network-sandbox )"
+REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
@@ -30,7 +32,15 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 
 DOCS=( README.rst CHANGES.rst )
 
-distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
+python_compile_all() {
+if use doc; then
+	pushd docs || die
+	VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/lib \
+		emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
+	popd || die
+	HTML_DOCS=( docs/_build/html/. )
+fi
+}
 
 python_test() {
 	epytest "${BUILD_DIR}/lib"
