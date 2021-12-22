@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
@@ -15,9 +15,9 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="!test? ( test )"	# Test phase runs with fails
-RDEPEND=">=dev-python/pytest-3.1[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 "
-DEPEND="${RDEPEND}"
+BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
