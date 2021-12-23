@@ -16,8 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
-RDEPEND=">=dev-python/sphinx-1.7[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/sphinx-2[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
-BDEPEND="test? ( media-gfx/graphviz )"
+BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+	test? ( media-gfx/graphviz )"
 
 distutils_enable_tests pytest
+distutils_enable_sphinx docs dev-python/sphinx_rtd_theme
