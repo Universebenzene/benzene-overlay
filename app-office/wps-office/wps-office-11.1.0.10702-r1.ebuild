@@ -53,6 +53,9 @@ RDEPEND="
 	dev-libs/nspr
 	dev-libs/nss
 
+	dev-qt/qtnetwork:5
+	dev-qt/qtwidgets:5
+
 	media-libs/fontconfig:1.0
 	media-libs/freetype:2
 	media-libs/flac
@@ -103,6 +106,9 @@ DEPEND=""
 BDEPEND="app-arch/p7zip"
 
 S="${WORKDIR}"
+
+QA_PREBUILT="opt/kingsoft/${PN}/office6/*"
+QA_FLAGS_IGNORED="opt/kingsoft/${PN}/office6/*"
 
 src_unpack() {
 	mkdir ${PN} ${PN}-cn || die
