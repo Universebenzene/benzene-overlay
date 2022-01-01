@@ -1,7 +1,7 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 inherit gnome2-utils flag-o-matic xdg-utils
 
 DESCRIPTION="A GTK+ interface to MPlayer"
@@ -10,7 +10,7 @@ SRC_URI="https://${PN}.googlecode.com/svn/packages/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ppc ~ppc64 x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~ppc ~ppc64 x86"
 IUSE="alsa +dbus +dconf gda gnome ipod libnotify pulseaudio"
 
 COMMON_DEPEND=">=dev-libs/glib-2.30
