@@ -9,7 +9,7 @@ Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-te
 
 This overlay is available on [Gentoo repositories](https://overlays.gentoo.org). You can add it simply through several tools (e.g.: `layman -a benzene-overlay` or `eselect repository enable benzene-overlay`).
 
-### Available packages
+### Available packages (some dependencies are not listed here)
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
@@ -25,14 +25,13 @@ dev-python/aioftp                                                               
 dev-python/astlib                                                                 | 0.11.3                          |
 dev-python/PyQt5                                                                  | 5.15.4-r1; 5.15.6               | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pytest-mpl                                                             | 0.13                            |
-dev-python/siosocks                                                               | 0.2.0                           |
 dev-qt/qtwebkit                                                                   | 5.212.0\_pre20200309-{r1,r2}    | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work (the -r2 is a test for upgrade EAPI to 8, and might be a little buggy with youdao-dict.)
 media-fonts/wps-office-fonts                                                      | [1.0](https://github.com/Universebenzene/benzene-overlay/blob/master/media-fonts/wps-office-fonts/wps-office-fonts-1.0.ebuild)           | WPS Linux旧版自带方正系字体
 [media-gfx/gpaint](https://savannah.gnu.org/projects/gpaint)                      | [0.3.3](https://github.com/Universebenzene/benzene-overlay/blob/master/media-gfx/gpaint/gpaint-0.3.3.ebuild)                             | With patches from Debian
 media-libs/gmtk                                                                   | 1.0.9                           | Dropped by official portage. Dependency of media-video/gnome-mplayer
 [media-video/gnome-mplayer](https://sites.google.com/site/kdekorte2/gnomemplayer) | [1.0.9-r1](https://github.com/Universebenzene/benzene-overlay/blob/master/media-video/gnome-mplayer/gnome-mplayer-1.0.9-r1.ebuild)       | Dropped by official portage
 media-sound/ting-{[de](https://www.eudic.net/v4/de/app/ting),[en](https://www.eudic.net/v4/en/app/ting),[es](https://www.eudic.net/v4/es/app/ting),[fr](https://www.eudic.net/v4/fr/app/ting)}}-bin                          | [9.4.1](https://github.com/Universebenzene/benzene-overlay/tree/master/media-sound) | 欧路每日德语/英语/西语/法语听力
-net-im/electron-qq-bin                                                            | 1.5.7; 2.1.4                    | Already deprecated and renamed as Icalingua (also in this overlay)
+net-im/electron-qq-bin (masked)                                                   | 1.5.7; 2.1.4                    | Already deprecated and renamed as Icalingua (also in this overlay)
 [net-im/electron-wechat-bin](https://github.com/eNkru/freechat)                   | [1.0.0](https://github.com/Universebenzene/benzene-overlay/blob/master/net-im/electron-wechat-bin/electron-wechat-bin-1.0.0.ebuild)      | Newer project of Electron-built WeChat, a.k.a. Freechat
 [net-im/electronic-wechat-bin](https://github.com/kooritea/electronic-wechat)     | [2.3.1](https://github.com/Universebenzene/benzene-overlay/tree/master/net-im/electronic-wechat-bin)                                     | Converted from [AUR](https://aur.archlinux.org/packages/electronic-wechat-bin)
 [net-im/icalingua-bin](https://github.com/Clansty/Icalingua)                      | [2.4.5](https://github.com/Universebenzene/benzene-overlay/blob/master/net-im/icalingua-bin/icalingua-bin-2.4.5.ebuild)                  | Previously called Electron QQ. Users who upgrade from `2.3.2` to higher versions might get problems. **Please focus on the output after merging the package**
@@ -46,7 +45,6 @@ net-misc/baidupcs-go-bin                                                        
 [net-proxy/v2raya-bin](https://v2raya.org)                                        | 1.5.2; 1.5.4; [1.5.5](https://github.com/Universebenzene/benzene-overlay/blob/master/net-proxy/v2raya-bin/v2raya-bin-1.5.5.ebuild)       | Converted from [AUR](https://aur.archlinux.org/packages/v2raya-bin). Needs other overlays like [gentoo-zh](https://github.com/microcai/gentoo-zh)
 [sci-astronomy/aladin](https://aladin.u-strasbg.fr/aladin.gml)                    | [11.024](https://github.com/Universebenzene/benzene-overlay/blob/master/sci-astronomy/aladin/aladin-11.024.ebuild)                       |
 [sci-astronomy/astrometry](https://astrometry.net)                                | 0.78; 0.80; [0.85](https://github.com/Universebenzene/benzene-overlay/blob/master/sci-astronomy/astrometry/astrometry-0.85.ebuild)       | Add USE for switching the netpbm support
-sci-astronomy/erfa                                                                | 1.7.2; [2.0.0](https://github.com/Universebenzene/benzene-overlay/blob/master/sci-astronomy/erfa/erfa-2.0.0.ebuild)                      |
 [sci-astronomy/topcat](http://www.star.bris.ac.uk/~mbt/topcat)                    | 4.8; [4.8.2](https://github.com/Universebenzene/benzene-overlay/blob/master/sci-astronomy/topcat/topcat-4.8.2.ebuild)                    |
 sys-libs/libsystemd                                                               | 249.6-r1; 249.7; 250-r1; (live) | A standalone package to provide `libsystemd.so` for packages depend on the lib on non-systemd system. [Still on trial](https://github.com/Universebenzene/benzene-overlay/tree/master/sys-libs/libsystemd). **IF YOU HAVE ANY IDEA TO IMPROVE THIS PACKAGE JUST BRING ISSUES OR PULL REQUESTS.**
 www-plugins/adobe-flash                                                           | [32.0.0.465](https://github.com/Universebenzene/benzene-overlay/blob/master/www-plugins/adobe-flash/adobe-flash-32.0.0.465.ebuild)       | Dropped by official portage
