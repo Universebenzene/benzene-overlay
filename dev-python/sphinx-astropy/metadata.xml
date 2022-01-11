@@ -9,4 +9,8 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="pypi">sphinx-astropy</remote-id>
+		<remote-id type="github">astropy/sphinx-astropy</remote-id>
+	</upstream>
 </pkgmetadata>
