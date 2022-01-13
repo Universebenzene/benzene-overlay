@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,6 +20,5 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 DEPEND="${RDEPEND}"
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	test? ( dev-python/astropy[${PYTHON_USEDEP}] )"
-PDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
