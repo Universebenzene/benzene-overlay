@@ -11,6 +11,7 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="pypi">pyvo</remote-id>
+		<remote-id type="github">astropy/pyvo</remote-id>
 	</upstream>
 	<use>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>

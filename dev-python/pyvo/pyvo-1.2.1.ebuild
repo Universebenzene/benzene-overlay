@@ -39,8 +39,7 @@ BDEPEND=">=dev-python/astropy-helpers-3.2.1[${PYTHON_USEDEP}]
 distutils_enable_tests setup.py
 
 python_prepare_all() {
-	sed -e '/auto_use/s/True/False/' -e 's/mimeparse/python-mimeparse/' \
-		-i setup.cfg || die
+	sed -e '/auto_use/s/True/False/' -i setup.cfg || die
 	DISTUTILS_ARGS=( --offline )
 	distutils-r1_python_prepare_all
 }

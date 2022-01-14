@@ -27,7 +27,7 @@ dev-python/photutils          | 1.0.2; 1.2.0                | Disable `network-s
 dev-python/pyavm              | 0.9.5                       |
 dev-python/pyerfa             | 1.7.2; 2.0.0.1              | Fixed test phase. One of the deps of `astropy`.
 dev-python/pyregion           | 2.0                         |
-dev-python/pyvo               | 1.2                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/pyvo               | 1.2.1                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/regions            | 0.4; 0.5                    | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/reproject          | 0.5.1; 0.7.1                | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building. Some modules cannot work due to the compiling problem of `astropy-healpix`. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/reproject#note-for-reproject) for details
 dev-python/sgp4               | 2.20                        |
