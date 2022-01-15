@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -9,7 +9,8 @@ MY_PN="${PN%client}"
 
 DESCRIPTION="Sunlogin Remote Control for mobile devices, Win, Mac, Linux, etc. (GUI version)"
 HOMEPAGE="https://sunlogin.oray.com"
-SRC_URI="https://down.oray.com/${MY_PN}/linux/${P}-amd64.deb"
+SRC_URI="amd64? ( https://down.oray.com/${MY_PN}/linux/${P}-amd64.deb )
+	arm64? ( https://down.oray.com/${MY_PN}/linux/${P/-/_}_arm.deb )"
 
 RESTRICT="mirror"
 LICENSE="Sunlogin"
