@@ -184,6 +184,7 @@ src_prepare() {
 
 	# Add local patches here
 	PATCHES+=(
+		"${FILESDIR}/249.9-cross-compile.patch"
 	)
 
 	if ! use vanilla; then
