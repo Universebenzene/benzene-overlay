@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -48,10 +48,10 @@ S="${WORKDIR}"
 
 src_prepare() {
 	use amd64 && { pushd "${P}-${ARCH}" || die ; }
-	sed -i -e "/PREFIX=/cROOT=${ED%/}\nPREFIX=\$ROOT/usr" \
-		-e 's/\/etc/$ROOT\/etc/g' \
+	eapply "${FILESDIR}/${P}-fix-window-center-value.patch"
+	sed -i -e "/PREFIX=/cDEST=${ED%/}\nPREFIX=\$DEST/usr" \
+		-e 's/\/etc/$DEST\/etc/g' \
 		-e 's/ln -sf $PREFIX/ln -sf \/usr/g' install.sh || die
-#	xdg_src_prepare
 	default
 }
 
