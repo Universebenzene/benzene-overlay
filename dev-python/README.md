@@ -9,7 +9,7 @@ dev-python/pytest-astropy     | 0.8.0; 0.9.0                | Test plugins for a
 dev-python/sphinx-astropy     | 1.6.0; 1.7.0                | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not list in this table
 dev-python/sphinx-asdf        | 0.1.2                       |
 dev-python/aplpy              | 1.1.1; 2.0.3                | Other overlays might needed for newest version. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for details
-dev-python/asdf               | 2.7.2; 2.8.3                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/asdf               | 2.7.2; 2.9.1                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/astrodendro        | 0.2.0                       | Old package, so the test and doc building may fail
 dev-python/astroml            | 0.4.1                       |
 dev-python/astropy-healpix    | 0.5; 0.6                    | Compiling can pass but with some problem. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy-healpix#note-for-astropy-healpix) for details
@@ -21,6 +21,7 @@ dev-python/ccdproc            | 1.3.0\_p1; 2.1.0            |
 dev-python/extension-helpers  | 0.1                         |
 dev-python/gwcs               | 0.16.1; 0.17.1              | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/healpy             | 1.11.0                      | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/healpy#note-for-healpy) for details
+dev-python/jsonschema         | 3.2.0-r1                    | Old version for dev-python/asdf
 dev-python/montage-wrapper    | 0.9.9                       |
 dev-python/mpl-animator       | 1.0.1                       |
 dev-python/photutils          | 1.0.2; 1.2.0                | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building. While the doc building needs lots of online data, you may not get the figures in the doc built
