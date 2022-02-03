@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="BSD"
 SLOT="0"
 
-RDEPEND=">=dev-python/matplotlib-3.2[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/matplotlib-3.2.0[${PYTHON_USEDEP}]"
 BDEPEND="${RDEPEND}
 	dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
@@ -34,5 +34,5 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/sunpy-sphinx-theme dev-python/astropy
 
 pkg_postinst() {
-	optfeature "WCS support" ">=dev-python/astropy-4.2"
+	optfeature "WCS support" ">=dev-python/astropy-4.2.0"
 }
