@@ -37,7 +37,9 @@ src_install() {
 	fperms +x /opt/${PN}/bin/${PN}{,c,d}
 	keepdir /opt/${PN}/config
 	rm -r ${ED%/}/opt/${PN}/res/fonts || die
-	dobin usr/local/bin/${PN}
+
+	exeinto /opt/bin
+	doexe usr/local/bin/${PN}
 
 	newinitd "${FILESDIR}"/${PN}d.initd ${PN}d
 	systemd_dounit etc/systemd/system/${PN}d.service
