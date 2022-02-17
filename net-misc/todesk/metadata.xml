@@ -6,7 +6,7 @@
 		<name>Astro Benzene</name>
 	</maintainer>
 	<use>
-		<flag name="fonts">Install the bundled Noto fonts for CJK users.</flag>
+		<flag name="fonts">Install the bundled Noto fonts for CJK users (Not needed if <pkg>media-font/noto-cjk</pkg> is already installed)</flag>
 	</use>
 </pkgmetadata>
 
