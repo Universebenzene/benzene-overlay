@@ -5,4 +5,8 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="pypi">pytest-mpl</remote-id>
+		<remote-id type="github">matplotlib/pytest-mpl</remote-id>
+	</upstream>
 </pkgmetadata>
