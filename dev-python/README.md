@@ -20,7 +20,7 @@ dev-python/astroscrappy       | 1.0.8; 1.1.0                | `network-sandbox` 
 dev-python/atpy               | 0.9.7                       | Old package, so the test phase may fail
 dev-python/ccdproc            | 1.3.0\_p1; 2.1.0            |
 dev-python/extension-helpers  | 0.1                         |
-dev-python/gwcs               | 0.16.1; 0.17.1              | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/gwcs               | 0.17.1; 0.18.0              | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/healpy             | 1.11.0                      | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/healpy#note-for-healpy) for details
 dev-python/jsonschema         | 3.2.0-r1                    | Old version for dev-python/asdf
 dev-python/montage-wrapper    | 0.9.9                       |
