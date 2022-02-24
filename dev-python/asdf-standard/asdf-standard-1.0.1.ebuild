@@ -18,7 +18,6 @@ SRC_URI="mirror://pypi/${PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+doc"
 
 RDEPEND="$(python_gen_cond_dep '
 		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
