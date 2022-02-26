@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -68,6 +68,8 @@ else
 		"cloud.google.com/go/storage v1.8.0/go.mod"
 		"cloud.google.com/go/storage v1.10.0/go.mod"
 		"dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod"
+		"ekyu.moe/leb128 v0.0.0-20190626180622-d3722dc409a8"
+		"ekyu.moe/leb128 v0.0.0-20190626180622-d3722dc409a8/go.mod"
 		"github.com/1lann/promptui v0.0.0-20201231203810-3d80f6bc68f3"
 		"github.com/1lann/promptui v0.0.0-20201231203810-3d80f6bc68f3/go.mod"
 		"github.com/AlecAivazis/survey/v2 v2.3.2"
