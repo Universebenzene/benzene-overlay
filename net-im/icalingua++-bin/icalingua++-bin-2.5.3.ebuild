@@ -5,11 +5,11 @@ EAPI=8
 
 inherit unpacker desktop xdg optfeature
 
-MY_PN="${PN/-bin}"
+MY_PN="${PN/++-bin}"
 MY_P="${MY_PN}_${PV}"
 
-DESCRIPTION="A Linux client for QQ and more. Previously called Electron QQ"
-HOMEPAGE="https://github.com/Clansty/Icalingua"
+DESCRIPTION="A Linux client for QQ and more (forked branch). Previously called Electron QQ"
+HOMEPAGE="https://github.com/Icalingua-plus-plus/Icalingua-plus-plus"
 SRC_URI="amd64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_P}_amd64.deb )
 	x86? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_P}_i386.deb )
 	arm64? ( ${HOMEPAGE}/releases/download/v${PV}/${MY_P}_arm64.deb )
@@ -37,8 +37,8 @@ S="${WORKDIR}"
 src_install() {
 	insinto /opt
 	doins -r opt/*
-	fperms +x /opt/${MY_PN^}/${MY_PN}
-	dosym -r /opt/${MY_PN^}/${MY_PN} /usr/bin/${MY_PN}
+	fperms +x /opt/${MY_PN^}++/${MY_PN}
+	dosym -r /opt/${MY_PN^}++/${MY_PN} /usr/bin/${MY_PN}
 
 	gzip -d usr/share/doc/${MY_PN}/*.gz || die
 	dodoc usr/share/doc/${MY_PN}/*
