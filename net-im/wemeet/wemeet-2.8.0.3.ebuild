@@ -67,9 +67,8 @@ S="${WORKDIR}"
 QA_PREBUILT="opt/${PN}/*"
 
 src_prepare() {
-	sed	-e "/Exec/c Exec=${PN} %u" -e "/Icon/c Icon=${PN}" \
-		-e '$i Comment=Tencent Meeting Linux Client\nComment[zh_CN]=腾讯会议Linux客户端\nKeywords=wemeet;tencent;meeting;' \
-		-i usr/share/applications/${PN}app.desktop || die
+	sed	-e '$i Comment=Tencent Meeting Linux Client\nComment[zh_CN]=腾讯会议Linux客户端\nKeywords=wemeet;tencent;meeting;' \
+		-e "/Exec/c Exec=${PN} %u" -e "/Icon/c Icon=${PN}" -i usr/share/applications/${PN}app.desktop || die
 	use bundled-libs || { sed "/QT_PLUGIN/c export QT_PLUGIN_PATH=\"$(qt5_get_plugindir)\"" -i opt/${PN}/${PN}app.sh || die ; \
 		sed "/^Prefix/c Prefix = $(qt5_get_libdir)/qt5" -i opt/${PN}/bin/qt.conf || die ; }
 	sed '/QT_PLUGIN/a export QT_AUTO_SCREEN_SCALE_FACTOR=1\nexport QT_STYLE_OVERRIDE=fusion' -i opt/${PN}/${PN}app.sh || die
