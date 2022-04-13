@@ -5,7 +5,7 @@ Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/astropy            | 2.0.16; 3.0.5; 3.1.2; 4.2.1  | Build with system libs. Tests phase fails to complete. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy#note-for-astropy) for more details
 dev-python/astropy-helpers    | 2.0.11; 3.0.2; 3.1.1; 4.0.1  | With patches for better doc building. Same as the [AUR](https://aur.archlinux.org/packages/python-astropy-helpers/) ones
-dev-python/pytest-astropy     | 0.8.0; 0.9.0                 | Test plugins for astropy. Dependencies are also in this overlay but not list in this table
+dev-python/pytest-astropy     | 0.8.0; 0.10.0                | Test plugins for astropy. Dependencies are also in this overlay but not list in this table
 dev-python/sphinx-astropy     | 1.6.0; 1.7.0                 | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not list in this table
 dev-python/sphinx-asdf        | 0.1.2                        |
 dev-python/aplpy              | 1.1.1; 2.0.3                 | Other overlays might needed for newest version. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for details
