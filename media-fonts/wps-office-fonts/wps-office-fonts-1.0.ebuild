@@ -1,7 +1,7 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit font
 
@@ -11,7 +11,7 @@ SRC_URI="https://github.com/Universebenzene/wps-office-fonts/archive/v${PV}.tar.
 
 LICENSE="WPS-EULA"
 SLOT="0"
-KEYWORDS="amd64 arm ppc ppc64 x86 ~x86-fbsd"
+KEYWORDS="amd64 arm ppc ppc64 x86"
 
 FONT_SUFFIX="TTF"
 FONT_PN="${PN/-fonts/}"
