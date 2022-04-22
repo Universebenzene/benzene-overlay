@@ -9,4 +9,7 @@
 		<remote-id type="pypi">aioftp</remote-id>
 		<remote-id type="github">aio-libs/aioftp</remote-id>
 	</upstream>
+	<use>
+		<flag name="socks">Client socks proxy via <pkg>dev-python/siosocks</pkg></flag>
+	</use>
 </pkgmetadata>
