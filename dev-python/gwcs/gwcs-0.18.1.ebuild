@@ -22,7 +22,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 RDEPEND=">=dev-python/asdf-2.8.1[${PYTHON_USEDEP}]
 	dev-python/asdf_wcs_schemas[${PYTHON_USEDEP}]
 	>=dev-python/asdf-astropy-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/astropy-4.1[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 "
 
@@ -42,12 +42,6 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-asdf
-
-EPYTEST_IGNORE=(
-	# some modules only available for astropy>=5.0
-	gwcs/converters/tests/test_transforms.py
-	gwcs/tests/test_geometry.py
-)
 
 python_compile_all() {
 	if use doc; then
