@@ -20,12 +20,15 @@ If you still want the newest version, try the ones in [this overlay](https://git
 
 <!--Update to newest version as the `cfitsio` and `wcslib` in official portage are up-to-date now, while `erfa` is still using the one in [sciense](https://wiki.gentoo.org/wiki/Project:Science) overlay.-->
 
-Versions above `4.2.1` are not included in the overlay, as newest version of wcslib in the main tree is still `7.4` (2021-12), while astropy>=4.3.1 officially bundle the `7.7`.
+Versions above `5.0.2` are not included in the overlay, as newest version of cfitsio in the main tree is still `4.0.0` (2022-04), while astropy>=5.0.3 officially bundle the `4.0.1`.
 
-We still keep `dev-python/pyerfa-1.7.2` in this overlay, as astropy 4.2.1 released before pyerfa 1.7.3 released.
+<!--Versions above `4.2.1` are not included in the overlay, as newest version of wcslib in the main tree is still `7.4` (2021-12), while astropy>=4.3.1 officially bundle the `7.7`.-->
+
+Ebuilds of versions of `4.2.1` and below might only be template now. You'd better ignore them.
+<!--We still keep `dev-python/pyerfa-1.7.2` in this overlay, as astropy 4.2.1 released before pyerfa 1.7.3 released.
 
 Old versions in this overlay might be removed in the future.
 
 Doc building fail with version `4.2.1`. Still no idea how to fix it.
 
-Test phase aborts while running with `4.2.1`. Seems caused by erfa, but not sure.
+Test phase aborts while running with `4.2.1`. Seems caused by erfa, but not sure.-->
