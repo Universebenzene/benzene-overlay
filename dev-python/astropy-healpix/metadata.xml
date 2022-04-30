@@ -11,6 +11,7 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="pypi">astropy-healpix</remote-id>
+		<remote-id type="github">astropy/astropy-healpix</remote-id>
 	</upstream>
 	<use>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>

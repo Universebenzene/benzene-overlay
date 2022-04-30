@@ -1,8 +1,9 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1 optfeature
@@ -19,10 +20,8 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc test intersphinx"
-RESTRICT="!test? ( test )
-	intersphinx? ( network-sandbox )
-"
-# Test may abort while running
+RESTRICT="intersphinx? ( network-sandbox )"
+
 # Intersphinx needs network
 REQUIRED_USE="intersphinx? ( doc )"
 
@@ -48,8 +47,6 @@ PATCHES=( "${FILESDIR}"/${PN}-0.5-doc-use-local-fits.patch )
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
 
 python_prepare_all() {
-#	Disable intersphinx
-	use intersphinx || { sed -i '/^SPHINXOPTS/s/$/& -D disable_intersphinx=1/' "${S}"/docs/Makefile || die ; }
 	use doc && { cp "${DISTDIR}"/wmap_band_imap_r9_5yr_K_v3.fits "${S}"/docs || die ; }
 	distutils-r1_python_prepare_all
 }
@@ -57,15 +54,15 @@ python_prepare_all() {
 python_compile_all() {
 	if use doc; then
 		pushd docs || die
-		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/lib \
-			emake html
+		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
 		popd || die
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
 
 python_test() {
-	epytest "${BUILD_DIR}/lib"
+	epytest "${BUILD_DIR}"/install/$(python_get_sitedir)
 }
 
 pkg_postinst() {
