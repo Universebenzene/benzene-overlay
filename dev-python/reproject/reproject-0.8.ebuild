@@ -1,9 +1,10 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7..10} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
@@ -27,14 +28,15 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc test"
-RESTRICT="!test? ( test )"
-#RESTRICT="network-sandbox"	# To use intersphinx linking
+IUSE="doc test intersphinx"
+RESTRICT="!test? ( test )
+	intersphinx? ( network-sandbox )"
+REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/astropy-3.2[${PYTHON_USEDEP}]
-	>=dev-python/astropy-healpix-0.2[${PYTHON_USEDEP}]
+	>=dev-python/astropy-healpix-0.6[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.13[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.14[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
@@ -52,8 +54,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 "
 
 PATCHES=(
-	"${FILESDIR}"/0001-${P}-fix-mosaicking-doc.patch
-	"${FILESDIR}"/0002-${P}-doc-use-local-fits.patch
+	"${FILESDIR}"/0002-${PN}-0.7.1-doc-use-local-fits.patch
 )
 
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/pyvo
@@ -61,21 +62,19 @@ PATCHES=(
 python_prepare_all() {
 	use doc && { cp "${DISTDIR}"/*.fits* "${S}"/docs || die ; }
 
-#	Disable intersphinx
-#	sed -i '/^SPHINXOPTS/s/$/& -D disable_intersphinx=1/' "${S}"/docs/Makefile || die
 	distutils-r1_python_prepare_all
 }
 
 python_compile_all() {
 	if use doc; then
 		pushd docs || die
-		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/lib \
-			emake html
+		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
 		popd || die
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
 
 python_test() {
-	epytest "${BUILD_DIR}/lib"
+	epytest "${BUILD_DIR}"/install/$(python_get_sitedir)
 }

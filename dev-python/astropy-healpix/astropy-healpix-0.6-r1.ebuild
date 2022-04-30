@@ -22,8 +22,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc test intersphinx"
 RESTRICT="!test? ( test )
 	intersphinx? ( network-sandbox )"
-
-# Intersphinx needs network
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/numpy-1.11[${PYTHON_USEDEP}]
