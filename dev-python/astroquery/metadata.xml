@@ -15,10 +15,10 @@
 		to support many services with a uniform API.
 	</longdescription>
 	<upstream>
-		<remote-id type="github">astropy/astroquery</remote-id>
 		<remote-id type="pypi">astroquery</remote-id>
+		<remote-id type="github">astropy/astroquery</remote-id>
 	</upstream>
 	<use>
-		<flag name="doc">Build extra documentation (build will pass with warning. Disable the network-sandbox FEATURE to get better doc building)</flag>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 	</use>
 </pkgmetadata>
