@@ -25,7 +25,7 @@ dev-python/healpy             | 1.11.0                       | See [here](https:
 dev-python/jsonschema         | 3.2.0-r1                     | Old version for dev-python/asdf
 dev-python/montage-wrapper    | 0.9.9                        |
 dev-python/mpl-animator       | 1.0.1                        |
-dev-python/photutils          | 1.0.2; 1.2.0                 | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building. While the doc building needs lots of online data, you may not get the figures in the doc built
+dev-python/photutils          | 1.4.0                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building may lose figures, as it needs lots of online data.
 dev-python/pyavm              | 0.9.5                        |
 dev-python/pyerfa             | 1.7.2; 2.0.0.1               | Fixed test phase. One of the deps of `astropy`.
 dev-python/pyregion           | 2.0                          |
