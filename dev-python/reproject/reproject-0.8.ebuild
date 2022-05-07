@@ -28,9 +28,8 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc test intersphinx"
-RESTRICT="!test? ( test )
-	intersphinx? ( network-sandbox )"
+IUSE="doc intersphinx"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/astropy-3.2[${PYTHON_USEDEP}]
@@ -57,6 +56,7 @@ PATCHES=(
 	"${FILESDIR}"/0002-${PN}-0.7.1-doc-use-local-fits.patch
 )
 
+distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/pyvo
 
 python_prepare_all() {

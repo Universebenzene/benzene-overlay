@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,9 +14,8 @@ KEYWORDS="~amd64 ~x86"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="doc intersphinx test"
-RESTRICT="!test? ( test )
-	intersphinx? ( network-sandbox )"
+IUSE="doc intersphinx"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
@@ -31,6 +30,8 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 "
 
 DOCS=( README.rst CHANGES.rst )
+
+distutils_enable_tests pytest
 
 python_compile_all() {
 if use doc; then

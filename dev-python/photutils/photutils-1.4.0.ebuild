@@ -15,9 +15,8 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc intersphinx test"
-RESTRICT="!test? ( test )
-	intersphinx? ( network-sandbox )"
+IUSE="doc intersphinx"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/astropy-5.0[${PYTHON_USEDEP}]
@@ -44,7 +43,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	)
 "
 
-#distutils_enable_tests pytest
+distutils_enable_tests pytest
 # TODO: Fix this
 # NameError: name 'disabled_intersphinx_mapping' is not defined
 #distutils_enable_sphinx docs \

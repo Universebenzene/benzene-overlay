@@ -15,7 +15,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc test"
+IUSE="doc"
 
 # Doc build can't start without disabling network-sandbox
 # 1 test failed
@@ -66,7 +66,7 @@ BDEPEND="${RDEPEND}
 #	dev-python/scipy \
 #	dev-python/pytest
 
-#distutils_enable_tests pytest
+distutils_enable_tests pytest
 
 python_configure_all() {
 	export ASTROPY_USE_SYSTEM_ALL=1

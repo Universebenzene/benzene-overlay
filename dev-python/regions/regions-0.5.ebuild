@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,9 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 LICENSE="BSD"
 
-IUSE="doc intersphinx test"
-RESTRICT="!test? ( test )
-	intersphinx? ( network-sandbox )"
+IUSE="doc intersphinx"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 RDEPEND=">=dev-python/numpy-1.16[${PYTHON_USEDEP}]
 	>=dev-python/astropy-3.2[${PYTHON_USEDEP}]
@@ -39,6 +38,8 @@ BDEPEND="${RDEPEND}
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 	)
 "
+
+distutils_enable_tests pytest
 
 python_prepare_all() {
 	use doc && { cp "${DISTDIR}"/*.fits* docs/_static || die ; }
