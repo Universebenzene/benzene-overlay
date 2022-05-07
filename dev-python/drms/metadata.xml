@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">drms</remote-id>
+		<remote-id type="github">sunpy/drms</remote-id>
+	</upstream>
+	<use>
+		<flag name="examples">Build examples in documentation which needs online data.</flag>
+	</use>
+</pkgmetadata>
