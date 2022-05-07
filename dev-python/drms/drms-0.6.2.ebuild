@@ -42,14 +42,9 @@ distutils_enable_sphinx docs \
 	dev-python/sunpy-sphinx-theme \
 	dev-python/astropy
 
-python_configure_all() {
-	sed "/# html_static_path/c html_static_path = ['$(python_get_sitedir)/sunpy_sphinx_theme/sunpy/static']" \
-		-i docs/conf.py || die
-}
-
 python_prepare_all() {
 	sed -i "/^os.environ/c os.environ[\"JSOC_EMAIL\"] = \"universebenzene@gmail.com\"" docs/conf.py || die
-	sed -i "/20201101/s/20201101/$(date +%Y%m%d)/" examples/export_from_id.py || die
+	sed -i "/20201101/s/20201101/$(date -d yesterday +%Y%m%d)/" examples/export_from_id.py || die
 	mkdir -p changelog || die
 
 	distutils-r1_python_prepare_all
