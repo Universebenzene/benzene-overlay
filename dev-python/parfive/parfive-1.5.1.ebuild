@@ -14,11 +14,13 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="ftp"
 PROPERTIES="test_network"
 RESTRICT="test"
 
 RDEPEND="dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
+	ftp? ( dev-python/aioftp[${PYTHON_USEDEP}] )
 "
 
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
