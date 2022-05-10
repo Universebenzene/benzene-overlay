@@ -12,15 +12,14 @@ DESCRIPTION="Astropy affiliated package for reducing optical/IR CCD data"
 HOMEPAGE="https://ccdproc.readthedocs.io"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc test intersphinx"
+IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 LICENSE="BSD"
 SLOT="0"
 
-RDEPEND="
-	>=dev-python/astropy-4.0.6[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-4.0.6[${PYTHON_USEDEP}]
 	sci-libs/scikit-image[${PYTHON_USEDEP}]
 	>=dev-python/astroscrappy-1.0.8[${PYTHON_USEDEP}]
 	>=dev-python/reproject-0.7[${PYTHON_USEDEP}]
