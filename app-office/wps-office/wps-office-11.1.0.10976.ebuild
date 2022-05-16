@@ -20,7 +20,7 @@ SRC_URI="https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_
 "
 
 SLOT="0"
-RESTRICT="strip mirror bindist" # mirror as explained at bug #547372
+RESTRICT="bindist strip mirror" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
 IUSE="cn +mime systemd libsystemd l10n_zh-CN"
 LANGS="de en-GB es-ES es-MX fr fr-CA ja pl pt-BR pt-PT ru th uk zh-HK zh-MO zh-TW"
