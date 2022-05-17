@@ -5,6 +5,11 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<longdescription lang="en">
+		The ADAL for Python library makes it easy for python application to authenticate to
+		Azure Active Directory (AAD) in order to access AAD protected web resources.
+		Note: This library is already replaced by MSAL Python.
+	</longdescription>
 	<upstream>
 		<remote-id type="pypi">adal</remote-id>
 		<remote-id type="github">AzureAD/azure-activedirectory-library-for-python</remote-id>
