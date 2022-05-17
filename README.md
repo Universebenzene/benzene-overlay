@@ -25,6 +25,7 @@ dev-python/adal                                                                 
 dev-python/aioftp                                                                    | 0.21.2                                                        |
 dev-python/astlib                                                                    | 0.11.3                                                        |
 dev-python/glymur                                                                    | 0.9.6; 0.9.8; 0.9.9                                           |
+dev-python/msrest                                                                    | 0.6.21                                                        |
 dev-python/oldest-supported-numpy                                                    | 2022.4.18                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
 dev-python/parfive                                                                   | 1.5.1                                                         |
 dev-python/PyQt5                                                                     | 5.15.4-r1; 5.15.6                                             | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work

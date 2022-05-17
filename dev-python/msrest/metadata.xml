@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">msrest</remote-id>
+		<remote-id type="github">Azure/msrest-for-python</remote-id>
+	</upstream>
+	<use>
+		<flag name="async">Extra async support</flag>
+	</use>
+</pkgmetadata>
