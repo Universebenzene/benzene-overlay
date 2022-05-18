@@ -23,6 +23,7 @@ dev-python/cdflib             | 0.4.4                        | SunPy releated.
 dev-python/drms               | 0.6.2                        | SunPy releated. `network-sandbox` FEATURE will be disabled if you enable `examples` flag for doc building
 dev-python/extension-helpers  | 0.1                          |
 dev-python/gwcs               | 0.17.1; 0.18.1               | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
+dev-python/h5netcdf           | 1.0.0                        |
 dev-python/h5pyd              | 0.10.1                       |
 dev-python/healpy             | 1.11.0                       | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/healpy#note-for-healpy) for details
 dev-python/jsonschema         | 3.2.0-r1                     | Old version for dev-python/asdf
