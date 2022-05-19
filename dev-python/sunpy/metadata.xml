@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">sunpy</remote-id>
+		<remote-id type="github">sunpy/sunpy</remote-id>
+	</upstream>
+	<use>
+		<flag name="asdf">Extra asdf support via <pkg>dev-python/asdf-astropy</pkg></flag>
+		<flag name="dask">Extra dask support via <pkg>dev-python/dask</pkg></flag>
+		<flag name="database">Extra database support via <pkg>dev-python/sqlalchemy</pkg></flag>
+		<flag name="image">Extra image support</flag>
+		<flag name="jpeg2k">Extra JPEG 2000 support via <pkg>dev-python/glymur</pkg></flag>
+		<flag name="map">Extra map support</flag>
+		<flag name="net">Extra net support</flag>
+		<flag name="timeseries">Extra timeseries support</flag>
+		<flag name="visualization">Extra visualization support</flag>
+	</use>
+</pkgmetadata>
