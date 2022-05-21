@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		ndcube is an open-source SunPy affiliated package for manipulating,
+		inspecting and visualizing multi-dimensional contiguous and non-contiguous
+		coordinate-aware data arrays.
+		It combines data, uncertainties, units, metadata, masking, and coordinate
+		transformations into classes with unified slicing and generic coordinate
+		transformations and plotting/animation capabilities. It is designed to
+		handle data of any number of dimensions and axis types (e.g. spatial,
+		temporal, spectral, etc.) whose relationship between the array elements and
+		the real world can be described by World Coordinate System (WCS) translations.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">ndcube</remote-id>
+		<remote-id type="github">sunpy/ndcube</remote-id>
+	</upstream>
+	<use>
+		<flag name="plotting">Extra plotting support</flag>
+		<flag name="reproject">Extra reproject support via <pkg>dev-python/reproject</pkg></flag>
+	</use>
+</pkgmetadata>
