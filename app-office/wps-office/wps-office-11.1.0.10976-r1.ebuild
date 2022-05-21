@@ -147,6 +147,8 @@ src_install() {
 
 	insinto /opt/kingsoft/wps-office
 	use systemd || use libsystemd || { rm ${WS}/opt/kingsoft/wps-office/office6/libdbus-1.so* || die ; }
+	# Fix for icu>=71.1
+	rm ${WS}/opt/kingsoft/wps-office/office6/libstdc++.so* || die
 	doins -r ${WS}/opt/kingsoft/wps-office/{office6,templates}
 
 	insinto /etc/xdg/menus/applications-merged
