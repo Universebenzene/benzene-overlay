@@ -39,7 +39,10 @@ src_install() {
 	rm -r ${ED%/}/opt/${PN}/res/fonts || die
 
 	exeinto /opt/bin
-	doexe usr/local/bin/${PN} $(usex keep-server "${FILESDIR}/${PN}-hold" "")
+	doexe usr/local/bin/${PN}
+
+	exeinto /opt/${PN}/bin
+	use keep-server && doexe "${FILESDIR}"/${PN}-hold
 
 	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-keep.initd" "${PN}d.initd") ${PN}d
 	use keep-server && newinitd "${FILESDIR}"/${PN}-switch.initd ${PN}-switch
