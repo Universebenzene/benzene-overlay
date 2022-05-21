@@ -1,0 +1,48 @@
+#!/sbin/openrc-run
+# Copyright 2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name=${RC_SVCNAME}
+description="ToDesk Daemon Service"
+supervisor="supervise-daemon"
+healthcheck_delay=5
+healthcheck_timer=1
+respawn_max=0
+command="/opt/todesk/bin/todeskd"
+command_args="-f /opt/todesk/config/todeskd.conf"
+
+depend() {
+	after display-manager
+	need net
+	need todesk-switch
+}
+
+healthcheck() {
+	psidt=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep todesk | grep -v todeskd | grep -v $0 | awk '{print $1}')
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep todesk-hold | grep -v grep | grep -v $0 | awk '{print $1}')
+	[[ -n $psidt ]] || [[ -n $psidr ]] || return 1
+}
+
+unhealthy() {
+	start_hold
+}
+
+start_hold() {
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep todesk-hold | grep -v grep | grep -v $0 | awk '{print $1}')
+	[[ -n $psidr ]] || /opt/todesk/bin/todesk-hold &
+
+	return 0
+}
+
+start_pre() {
+	start_hold
+
+	eend $?
+}
+
+stop_post() {
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep todesk-hold | grep -v grep | grep -v $0 | awk '{print $1}')
+	[[ ! -n $psidr ]] || /bin/kill $psidr
+
+	eend $?
+}

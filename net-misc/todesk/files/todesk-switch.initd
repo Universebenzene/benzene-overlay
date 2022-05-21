@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+# Copyright 2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name=${RC_SVCNAME}
+description="kill todesk-running when todesk run"
+supervisor="supervise-daemon"
+healthcheck_delay=5
+healthcheck_timer=1
+respawn_max=0
+command="/usr/bin/sleep"
+command_args="infinity"
+
+depend() {
+	after display-manager
+}
+
+healthcheck() {
+	psidt=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep todesk | grep -v todeskd | grep -v $0 | awk '{print $1}')
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep todesk-hold | grep -v grep | grep -v $0 | awk '{print $1}')
+	[[ ! -n $psidt ]] || [[ ! -n $psidr ]] || return 1
+}
+
+unhealthy() {
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep todesk-hold | grep -v grep | grep -v $0 | awk '{print $1}')
+	/bin/kill $psidr
+}

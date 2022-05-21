@@ -17,7 +17,7 @@ RESTRICT="mirror"
 LICENSE="ToDesk"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm ~arm64"
-IUSE="+fonts"
+IUSE="+fonts keep-server"
 
 RDEPEND="x11-libs/gtk+:3"
 DEPEND=""
@@ -39,9 +39,10 @@ src_install() {
 	rm -r ${ED%/}/opt/${PN}/res/fonts || die
 
 	exeinto /opt/bin
-	doexe usr/local/bin/${PN}
+	doexe usr/local/bin/${PN} $(usex keep-server "${FILESDIR}/${PN}-hold" "")
 
-	newinitd "${FILESDIR}"/${PN}d.initd ${PN}d
+	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-keep.initd" "${PN}d.initd") ${PN}d
+	use keep-server && newinitd "${FILESDIR}"/${PN}-switch.initd ${PN}-switch
 	systemd_dounit etc/systemd/system/${PN}d.service
 
 	for si in 16 24 32 48 64 128 256 512; do
