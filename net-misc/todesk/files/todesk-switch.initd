@@ -17,11 +17,11 @@ depend() {
 
 healthcheck() {
 	psidt=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep todesk | grep -v todeskd | grep -v $0 | awk '{print $1}')
-	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep todesk-hold | grep -v grep | grep -v $0 | awk '{print $1}')
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep 'sh /opt/todesk/bin/todesk-hold' | grep -v grep | grep -v $0 | awk '{print $1}')
 	[[ ! -n $psidt ]] || [[ ! -n $psidr ]] || return 1
 }
 
 unhealthy() {
-	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep todesk-hold | grep -v grep | grep -v $0 | awk '{print $1}')
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep 'sh /opt/todesk/bin/todesk-hold' | grep -v grep | grep -v $0 | awk '{print $1}')
 	/bin/kill $psidr
 }
