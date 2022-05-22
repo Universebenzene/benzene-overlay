@@ -3,7 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 name=${RC_SVCNAME}
-description="kill todesk-running when todesk run"
+description="kill todesk-hold when todesk desktop running"
 supervisor="supervise-daemon"
 healthcheck_delay=5
 healthcheck_timer=1
