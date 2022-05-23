@@ -38,6 +38,6 @@ dev-python/pyvo               | 1.2.1; 1.3                   | `network-sandbox`
 dev-python/regions            | 0.4; 0.5                     | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/reproject          | 0.5.1; 0.8                   | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sgp4               | 2.20                         |
-dev-python/specutils          | 1.1.1                        | Disable `network-sandbox` FEATURE to use intersphinx linking in doc building. Doc building needs SDSS online data, but SDSS servers are down, so you may not get the figures in the doc built
+dev-python/specutils          | 1.1.1; 1.7.0                 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sunpy              | 4.0.0                        | Testing and doc building are really hard to run, so not supported right now.
 dev-python/sunpy-sphinx-theme | 1.2.29                       |

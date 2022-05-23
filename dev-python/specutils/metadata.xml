@@ -19,6 +19,6 @@
 		<remote-id type="github">astropy/specutils</remote-id>
 	</upstream>
 	<use>
-		<flag name="doc">Add extra documentation (cannot build figures). Disable the network-sandbox FEATURE to use intersphinx linking. Recommended to enable per package instead of globally</flag>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 	</use>
 </pkgmetadata>
