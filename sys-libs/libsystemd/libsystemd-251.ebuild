@@ -188,6 +188,7 @@ src_prepare() {
 
 	# Add local patches here
 	PATCHES+=(
+		"${FILESDIR}/251-format-string.patch"
 	)
 
 	if ! use vanilla; then
