@@ -18,6 +18,8 @@
 		<remote-id type="github">astropy/astroplan</remote-id>
 	</upstream>
 	<use>
-		<flag name="doc">Build extra documentation (build will pass with warning. Disable the network-sandbox FEATURE to get better doc building)</flag>
+		<flag name="doc">Add extra documentation (building may not complete as it needs lots of online data).</flag>
+		<flag name="intersphinx">Enable intersphinx and online data while doc building.</flag>
+		<flag name="plotting">Extra plotting support</flag>
 	</use>
 </pkgmetadata>

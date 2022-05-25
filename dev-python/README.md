@@ -14,7 +14,7 @@ dev-python/asdf-astropy       | 0.2.0                        | Dependencies are 
 dev-python/astrodendro        | 0.2.0                        | Old package, so the test and doc building may fail
 dev-python/astroml            | 0.4.1                        |
 dev-python/astropy-healpix    | 0.5; 0.6-r1                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/astroplan          | 0.6                          |
+dev-python/astroplan          | 0.6; 0.8                     | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building may not complete, as it needs lots of online data.
 dev-python/astroquery         | 0.3.10; 0.4.6                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/astroscrappy       | 1.0.8; 1.1.0                 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/atpy               | 0.9.7                        | Old package, so the test phase may fail
