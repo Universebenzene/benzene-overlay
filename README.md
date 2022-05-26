@@ -33,6 +33,7 @@ dev-python/oldest-supported-numpy                                               
 dev-python/parfive                                                                   | 1.5.1                                                         |
 dev-python/PyQt5                                                                     | 5.15.4-r1; 5.15.6                                             | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pytest-mpl                                                                | 0.13; 0.15.1                                                  |
+dev-python/pytest-socket                                                             | 0.5.0; 0.5.1                                                  |
 dev-python/sphinx-autobuild                                                          | 2022.3.14                                                     |
 dev-python/sphinx-book-theme                                                         | 0.2.0                                                         |
 dev-python/sphinx-changelog                                                          | 1.1.2                                                         |
