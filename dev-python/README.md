@@ -33,7 +33,7 @@ dev-python/ndcube             | 2.0.2                        | SunPy releated.
 dev-python/photutils          | 1.4.0                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building may lose figures, as it needs lots of online data.
 dev-python/pyavm              | 0.9.5                        |
 dev-python/pyerfa             | 1.7.2; 2.0.0.1               | Fixed test phase. One of the deps of `astropy`.
-dev-python/pyregion           | 2.0                          |
+dev-python/pyregion           | 2.0; 2.1.1                   | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/pyvo               | 1.2.1; 1.3                   | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/regions            | 0.4; 0.5                     | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/reproject          | 0.5.1; 0.8                   | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
