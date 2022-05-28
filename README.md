@@ -9,7 +9,7 @@ Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-te
 
 This overlay is available on [Gentoo repositories](https://overlays.gentoo.org). You can add it simply through several tools (e.g.: `layman -a benzene-overlay` or `eselect repository enable benzene-overlay`).
 
-Also it's recommended to mask the whole overlay and then unmask just the packages you need, [like this](https://wiki.gentoo.org/wiki/Ebuild_repository#Masking_enabled_ebuild_repositories).
+Also it's recommended to mask the whole overlay and then unmask just the packages you need, in order not to get mixed up with other overlays with same packages. (e.g. for using wps-office: `echo "*/*::benzene-overlay" > /etc/portage/package.mask/benzene-overlay; echo "app-office/wps-office::benzene-overlay" >> /etc/portage/package.unmask/benzene-overlay`)
 
 ### Available packages (some dependencies are not listed here)
 
