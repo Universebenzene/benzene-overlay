@@ -33,12 +33,17 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		<dev-python/astropy-5.1[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
+
+python_prepare_all() {
+	use test && { sed "/PYTEST_HEADER_MODULES/s/astropy.tests.plugins/pytest_astropy_header/" \
+		-i ${PN/-/_}/conftest.py || die ; }
+	distutils-r1_python_prepare_all
+}
 
 python_compile_all() {
 	if use doc; then
