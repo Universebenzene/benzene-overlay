@@ -15,5 +15,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="pypi">PyAVM</remote-id>
+		<remote-id type="github">astrofrog/pyavm</remote-id>
 	</upstream>
 </pkgmetadata>
