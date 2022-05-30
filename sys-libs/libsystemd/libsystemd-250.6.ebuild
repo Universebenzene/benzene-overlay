@@ -26,7 +26,7 @@ fi
 inherit bash-completion-r1 flag-o-matic linux-info meson-multilib ninja-utils pam python-any-r1 toolchain-funcs #systemd udev usr-ldscript
 
 DESCRIPTION="A standalone package to provide libsystemd.so without systemd"
-HOMEPAGE="https://www.freedesktop.org/wiki/Software/systemd"
+HOMEPAGE="http://systemd.io/"
 
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/2"
