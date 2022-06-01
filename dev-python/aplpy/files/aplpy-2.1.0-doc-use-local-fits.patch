@@ -1,0 +1,35 @@
+--- a/docs/fitsfigure/slicing.rst	2020-02-15 01:17:58.000000000 +0800
++++ b/docs/fitsfigure/slicing.rst	2022-06-01 00:47:05.564447428 +0800
+@@ -59,7 +59,9 @@
+    :include-source:
+ 
+     from astropy.utils.data import get_pkg_data_filename
+-    co_cube = get_pkg_data_filename('l1448/l1448_13co.fits')
++    # use local fits if no network
++    try: co_cube = get_pkg_data_filename('l1448/l1448_13co.fits')
++    except Exception: co_cube = 'l1448_13co.fits'
+ 
+     import aplpy
+ 
+@@ -74,7 +76,9 @@
+    :include-source:
+ 
+     from astropy.utils.data import get_pkg_data_filename
+-    co_cube = get_pkg_data_filename('l1448/l1448_13co.fits')
++    # use local fits if no network
++    try: co_cube = get_pkg_data_filename('l1448/l1448_13co.fits')
++    except Exception: co_cube = 'l1448_13co.fits'
+ 
+     import aplpy
+ 
+@@ -90,7 +94,9 @@
+    :include-source:
+ 
+     from astropy.utils.data import get_pkg_data_filename
+-    co_cube = get_pkg_data_filename('l1448/l1448_13co.fits')
++    # use local fits if no network
++    try: co_cube = get_pkg_data_filename('l1448/l1448_13co.fits')
++    except Exception: co_cube = 'l1448_13co.fits'
+ 
+     import aplpy
+ 
