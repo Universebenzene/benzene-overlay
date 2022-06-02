@@ -25,7 +25,7 @@ stop_hold() {
 	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep 'sh /opt/todesk/bin/todesk-hold' | grep -v grep | grep -v $0 | awk '{print $1}')
 	psids=`pstree -p ${psidr} | cut -d '(' -f 3`
 	[[ ! -n $psidr ]] || /bin/kill $psidr &
-	[[ ! -n $psids ]] || /bin/kill ${psids%)} &
+	[[ ! -n $psids ]] || /bin/kill ${psids%%*)} &
 
 	return 0
 }
