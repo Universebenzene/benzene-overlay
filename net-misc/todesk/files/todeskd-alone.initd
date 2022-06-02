@@ -18,8 +18,8 @@ depend() {
 
 healthcheck() {
 	psidt=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt.*bin/todesk' | grep -v todeskd | grep -v $0 | awk '{print $1}')
-	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep 'sh /opt/todesk/bin/todesk-hold' | grep -v grep | grep -v $0 | awk '{print $1}')
-	[[ ! -n $psidt ]] || [[ ! -n $psidr ]] || stop_hold
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt/todesk/bin/todesk-hold' | grep -v $0 | awk '{print $1}')
+	[[ ! -n $psidt ]] || [[ ! -n $psidr ]] || /bin/kill ${psidr}
 	[[ -n $psidt ]] || [[ -n $psidr ]] || return 1
 }
 
@@ -29,17 +29,8 @@ unhealthy() {
 
 start_hold() {
 	psidt=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt.*bin/todesk' | grep -v todeskd | grep -v $0 | awk '{print $1}')
-	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep 'sh /opt/todesk/bin/todesk-hold' | grep -v grep | grep -v $0 | awk '{print $1}')
-	[[ -n $psidt ]] || [[ -n $psidr ]] || /opt/todesk/bin/todesk-hold &
-
-	return 0
-}
-
-stop_hold() {
-	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8,9 | grep 'sh /opt/todesk/bin/todesk-hold' | grep -v grep | grep -v $0 | awk '{print $1}')
-	psids=`pstree -p ${psidr} | cut -d '(' -f 3`
-	[[ ! -n $psidr ]] || /bin/kill $psidr &
-	[[ ! -n $psids ]] || /bin/kill ${psids%%)*} &
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt/todesk/bin/todesk-hold' | grep -v $0 | awk '{print $1}')
+	[[ -n $psidt ]] || [[ -n $psidr ]] || /opt/todesk/bin/todesk-hold infinity &
 
 	return 0
 }
@@ -51,7 +42,8 @@ start_pre() {
 }
 
 stop_post() {
-	stop_hold
+	psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt/todesk/bin/todesk-hold' | grep -v $0 | awk '{print $1}')
+	[[ ! -n $psidr ]] || /bin/kill $psidr
 
 	eend $?
 }

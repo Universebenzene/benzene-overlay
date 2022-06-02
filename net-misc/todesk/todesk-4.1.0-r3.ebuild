@@ -42,7 +42,7 @@ src_install() {
 	doexe usr/local/bin/${PN}
 
 	exeinto /opt/${PN}/bin
-	use keep-server && doexe "${FILESDIR}"/${PN}-hold
+	use keep-server && dosym -r /usr/bin/sleep /opt/${PN}/bin/${PN}-hold
 
 	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-alone.initd" "${PN}d.initd") ${PN}d
 	systemd_dounit etc/systemd/system/${PN}d.service
