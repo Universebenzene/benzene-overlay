@@ -24,6 +24,7 @@ dev-python/cdflib             | 0.4.4                        | SunPy releated.
 dev-python/drms               | 0.6.2                        | SunPy releated. `network-sandbox` FEATURE will be disabled if you enable `examples` flag for doc building
 dev-python/echo               | 0.6                          | Glueviz releated.
 dev-python/extension-helpers  | 0.1                          |
+dev-python/fast-histogram     | 0.11                         | Glueviz releated.
 dev-python/gwcs               | 0.17.1; 0.18.1               | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/h5netcdf           | 1.0.0                        |
 dev-python/h5pyd              | 0.10.1                       |
