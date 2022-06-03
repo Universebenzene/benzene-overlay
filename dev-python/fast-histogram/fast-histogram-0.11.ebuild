@@ -8,13 +8,14 @@ PYTHON_COMPAT=( python3_{8..10} )
 
 inherit distutils-r1
 
-DESCRIPTION="ADAL for Python"
+DESCRIPTION="Fast 1D and 2D histogram functions in Python"
 HOMEPAGE="https://github.com/astrofrog/fast-histogram"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="examples"
 
 DEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
@@ -26,6 +27,11 @@ BDEPEND="${DEPEND}
 "
 
 distutils_enable_tests pytest
+
+python_install_all() {
+	use examples && DOCS+=( README.rst comparison/ )
+	distutils-r1_python_install_all
+}
 
 python_test() {
 	epytest "${BUILD_DIR}"
