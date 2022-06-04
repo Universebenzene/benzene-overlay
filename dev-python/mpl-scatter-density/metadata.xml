@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		The mpl-scatter-density mini-package provides functionality to make it easy to make
+		your own scatter density maps, both for interactive and non-interactive use. Fast.
+		The following animation shows real-time interactive use with 10 million points, but
+		interactive performance is still good even with 100 million points (and more if you
+		have enough RAM).
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">mpl-scatter-density</remote-id>
+		<remote-id type="github">astrofrog/mpl-scatter-density</remote-id>
+	</upstream>
+</pkgmetadata>
