@@ -22,8 +22,7 @@ RDEPEND=">=dev-python/colorspacious-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/more-itertools-8.4[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10.0.2[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/pytest-mpl[${PYTHON_USEDEP}] )
-"
+BDEPEND="test? ( dev-python/pytest-mpl[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 
