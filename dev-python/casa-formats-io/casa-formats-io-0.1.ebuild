@@ -26,8 +26,8 @@ BDEPEND="${DEPEND}
 	dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		dev-python/sphinx-automodapi
-		dev-python/numpydoc
+		dev-python/sphinx-automodapi[${PYTHON_USEDEP}]
+		dev-python/numpydoc[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
