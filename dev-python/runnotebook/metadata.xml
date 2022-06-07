@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">RunNotebook</remote-id>
+		<remote-id type="github">ngoldbaum/RunNotebook</remote-id>
+	</upstream>
+	<use>
+		<flag name="doc">Add an example documentation</flag>
+	</use>
+</pkgmetadata>
