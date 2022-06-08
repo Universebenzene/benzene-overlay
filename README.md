@@ -3,20 +3,20 @@ Universebenzene's personal Gentoo overlay.
 
 Including some old software that no longer supported by official portage.
 
-Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled, see the USE discriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages)
+Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled. See the USE discriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages)
 
 Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-testlay), with some packages testing. You can add it for interest.
 
 This overlay is available on [Gentoo repositories](https://overlays.gentoo.org). You can add it simply through several tools (e.g.: `layman -a benzene-overlay` or `eselect repository enable benzene-overlay`).
 
-Also it's recommended to mask the whole overlay and then unmask just the packages you need, in order not to get mixed up with other overlays with same packages. (e.g. for using wps-office: `echo "*/*::benzene-overlay" > /etc/portage/package.mask/benzene-overlay; echo "app-office/wps-office::benzene-overlay" >> /etc/portage/package.unmask/benzene-overlay`)
+It's recommended to mask the whole overlay and then unmask just the packages you need, in order not to get mixed up with other overlays with same packages. (e.g. for using wps-office: `echo "*/*::benzene-overlay" > /etc/portage/package.mask/benzene-overlay; echo "app-office/wps-office::benzene-overlay" >> /etc/portage/package.unmask/benzene-overlay`)
 
 ### Available packages (some dependencies are not listed here)
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 app-i18n/fcitx-table-other                                                           | 0.2.4                                                         | Not included in official portage or other overlays
-app-office/wps-office                                                                | 11.1.0.10920; [11.1.0.10976-r1](https://github.com/Universebenzene/benzene-overlay/blob/master/app-office/wps-office/wps-office-11.1.0.10976-r1.ebuild) | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go)). From `11.1.0.10702` you need to set locale outside to get multi-language support. **Please focus on the output after merging the package**
+app-office/wps-office                                                                | 11.1.0.10976-r1; [11.1.0.11664](https://github.com/Universebenzene/benzene-overlay/blob/master/app-office/wps-office/wps-office-11.1.0.11664.ebuild) | Add CN version and more language support (encouraged by [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=wps-office&outdated=&SB=n&SO=a&PP=50&do_Search=Go)). From `11.1.0.10702` you need to set locale outside to get multi-language support. **Please focus on the output after merging the package**
 [app-pda/i4tools](https://www.i4.cn/pro_pc.html)                                     | 1.0.038{,-r1}; 1.0.055{,[-r1](https://github.com/Universebenzene/benzene-overlay/blob/master/app-pda/i4tools/i4tools-1.0.055-r1.ebuild)} | 爱思助手
 app-text/{[de](https://www.eudic.net/v4/de/app/download),[es](https://www.eudic.net/v4/es/app/download),[fr](https://www.eudic.net/v4/fr/app/download)}helper | [12.6.7](https://github.com/Universebenzene/benzene-overlay/tree/master/app-text) | Converted from [AUR](https://aur.archlinux.org/packages/frhelper) （欧路德语/西语/法语助手）
 [app-text/eudic](https://www.eudic.net/v4/en/app/download)                           | [12.6.7](https://github.com/Universebenzene/benzene-overlay/blob/master/app-text/eudic/eudic-12.6.7.ebuild)                              | Converted from [AUR](https://aur.archlinux.org/packages/eudic) （欧路词典）
