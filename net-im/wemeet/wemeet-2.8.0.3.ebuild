@@ -20,18 +20,21 @@ RDEPEND="dev-libs/nss
 	x11-libs/libX11
 	!bundled-libs? (
 		app-crypt/p11-kit[asn1,libffi]
+		dev-lang/orc
 		dev-libs/boost[icu]
 		dev-libs/capnproto
 		dev-libs/glib:2
 		dev-libs/libbsd
 		dev-libs/libxslt[crypt]
+		dev-libs/openssl:=
 		dev-libs/protobuf
 		media-libs/alsa-lib
 		media-libs/libglvnd
 		media-libs/libjpeg-turbo
 		media-libs/libpng
 		media-plugins/gst-plugins-meta:1.0[flac,vorbis]
-		media-sound/pulseaudio[X,asyncns,orc,ssl,tcpd,udev,zeroconf]
+		|| ( media-sound/pulseaudio[X,asyncns,orc,ssl,tcpd,udev,zeroconf] media-libs/libpulse[X,asyncns,tcpd] )
+		net-dns/avahi[dbus]
 		net-libs/libproxy
 		net-print/cups[dbus,ssl]
 		sys-libs/libapparmor
