@@ -3,3 +3,6 @@
 
 # electron-qq: replaced by icalingua
 net-im/electron-qq-bin
+
+# astropy<5: only for templates
+<dev-python/astropy-5
