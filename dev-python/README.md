@@ -10,7 +10,7 @@ dev-python/sphinx-astropy      | 1.6.0; 1.7.0                 | Modules for buil
 dev-python/sphinx-asdf         | 0.1.2; 0.1.3                 |
 dev-python/aplpy               | 2.1.0                        | Versions below 2.1.0 are included but not recommended. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for more details. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/asdf                | 2.7.2; 2.9.2; 2.10.1; 2.12.0 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/asdf-astropy        | 0.2.0                        | Dependencies are also in this overlay but not list in this table. Version above 0.2.0 needs astropy>=5.0.4, but not in this overlay yet
+dev-python/asdf-astropy        | 0.2.0; 0.2.1                 | Dependencies are also in this overlay but not list in this table.
 dev-python/astrodendro         | 0.2.0                        | Old package, so the test and doc building may fail
 dev-python/astroml             | 0.4.1                        |
 dev-python/astropy-healpix     | 0.5; 0.6-r1                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
