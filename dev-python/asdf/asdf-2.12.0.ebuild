@@ -35,7 +35,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		dev-python/astropy[${PYTHON_USEDEP}]
+		>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
@@ -58,6 +58,10 @@ python_compile_all() {
 		popd || die
 		HTML_DOCS=( docs/_build/html/. )
 	fi
+}
+
+python_test() {
+	epytest --remote-data
 }
 
 pkg_postinst() {
