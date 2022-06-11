@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		The package is a Python implementation of the math that standard JPL ephemerides
+		use to predict raw (x,y,z) planetary positions. It is one of the foundations of
+		the Skyfield astronomy library for Python
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">jplephem</remote-id>
+		<remote-id type="github">brandon-rhodes/python-jplephem</remote-id>
+	</upstream>
+</pkgmetadata>
