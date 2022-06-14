@@ -6,3 +6,6 @@ net-im/electron-qq-bin
 
 # astropy<5: only for templates
 <dev-python/astropy-5
+
+# aplpy<=2.0.1: only for templates
+<=dev-python/aplpy-2.0.1
