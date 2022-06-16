@@ -32,7 +32,7 @@ dev-python/msrestazure                                                          
 dev-python/oldest-supported-numpy                                                    | 2022.5.28                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
 dev-python/parfive                                                                   | 1.5.1                                                         |
 dev-python/PyQt5                                                                     | 5.15.4-r1; 5.15.6                                             | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
-dev-python/pytest-mpl                                                                | 0.13; 0.15.1                                                  |
+dev-python/pytest-mpl                                                                | 0.13; 0.16.0                                                  |
 dev-python/pytest-socket                                                             | 0.5.0; 0.5.1                                                  |
 dev-python/runnotebook                                                               | 0.3.1; (live)                                                 |
 dev-python/sphinx-autobuild                                                          | 2022.3.14                                                     |
