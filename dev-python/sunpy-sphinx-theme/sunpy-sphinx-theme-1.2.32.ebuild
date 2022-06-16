@@ -21,4 +21,4 @@ RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools_scm[$PYTHON_USEDEP]"
 
-distutils_enable_tests setup.py
+distutils_enable_tests nose
