@@ -9,11 +9,13 @@ description="A Linux web GUI client of Project V which supports V2Ray, Xray, SS,
 command="/usr/bin/v2raya"
 command_user="${USER}"
 command_args="--lite ${V2RAYA_OPTS} --log-file ${HOME}/.config/v2raya/v2raya.log"
+error_log="${HOME}/.config/v2raya/error.log"
 pidfile="/run/${RC_SVCNAME}.pid"
 command_background="yes"
 
 depend() {
 	need net
+	after net
 }
 
 start_pre() {
