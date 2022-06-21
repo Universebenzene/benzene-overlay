@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+# Copyright 2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+USER="${RC_SVCNAME##*.}"
+HOME="$(eval echo ~${USER})"
+name="libaxon for ${USER}"
+description="A oicq backend"
+command="/usr/bin/libaxon"
+command_user="${USER}"
+command_args="-c ${HOME}/.cache/libaxon"
+pidfile="/run/${RC_SVCNAME}.pid"
+command_background="yes"
+
+depend() {
+	need net
+}
+
+start_pre() {
+	if [ "$USER" = "libaxon-user" ]; then
+		eerror "You are not supposed to run this script directly."
+		eerror "Create a symlink for this script:"
+		eerror "  ln -s ${RC_SVCNAME} /etc/init.d/${RC_SVCNAME}.<user>"
+		return 1
+	fi
+}
