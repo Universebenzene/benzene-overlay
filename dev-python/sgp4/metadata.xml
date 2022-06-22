@@ -5,4 +5,8 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="pypi">sgp4</remote-id>
+		<remote-id type="github">brandon-rhodes/python-sgp4</remote-id>
+	</upstream>
 </pkgmetadata>
