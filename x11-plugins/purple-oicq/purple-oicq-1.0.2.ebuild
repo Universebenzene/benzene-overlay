@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit xdg
-
 DESCRIPTION="libpurple protocol support for oicq"
 HOMEPAGE="https://github.com/axon-oicq/purple-oicq"
 SRC_URI="https://github.com/axon-oicq/purple-oicq/archive/v${PV}.tar.gz -> ${P}.tar.gz"
@@ -15,7 +13,8 @@ KEYWORDS="~amd64 ~arm64"
 IUSE="+libaxon"
 
 RDEPEND="dev-libs/json-glib
-	net-im/pidgin:=
+	net-im/pidgin
 	libaxon? ( net-libs/libaxon-bin[purple] )
 "
+DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
