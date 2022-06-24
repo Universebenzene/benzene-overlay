@@ -117,7 +117,7 @@ the requests package)." dev-python/certifi
 	optfeature "testing with Matplotlib figures" dev-python/pytest-mpl
 	optfeature "code coverage measurements" dev-python/coverage
 	optfeature "automate testing and documentation builds" dev-python/tox
-#	skyfield: testing Solar System coordinates.
+	optfeature "testing Solar System coordinates" dev-python/skyfield
 	optfeature "testing satellite positions" dev-python/sgp4
 	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-5.0.0"
 }
