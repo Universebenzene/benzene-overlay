@@ -11,7 +11,9 @@ This overlay is available on [Gentoo repositories](https://overlays.gentoo.org).
 
 It's recommended to mask the whole overlay and then unmask just the packages you need, in order not to get mixed up with other overlays with same packages. (e.g. for using wps-office: `echo "*/*::benzene-overlay" > /etc/portage/package.mask/benzene-overlay; echo "app-office/wps-office::benzene-overlay" >> /etc/portage/package.unmask/benzene-overlay`)
 
-### Available packages (some dependencies are not listed here. Doc/sphinx related packages are listed in a saperate table below, in order to simplify the main table)
+### Available packages (some dependencies are not listed here)
+
+Doc/sphinx related packages are listed in a saperate table [below](https://github.com/Universebenzene/benzene-overlay#docsphinx-related-packages), in order to simplify the main table.
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
