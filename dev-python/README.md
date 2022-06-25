@@ -1,5 +1,5 @@
-# Informations for astropy related packages
-Table here will show informations for some of the astropy related packages.
+# Information for astropy related packages
+Table here will show information for some of the astropy related packages.
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------

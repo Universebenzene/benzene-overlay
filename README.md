@@ -3,7 +3,7 @@ Universebenzene's personal Gentoo overlay.
 
 Including some old software that no longer supported by official portage.
 
-Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled. See the USE discriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages)
+Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled. See the USE discriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages)
 
 Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-testlay), with some packages testing. You can add it for interest.
 
@@ -11,7 +11,7 @@ This overlay is available on [Gentoo repositories](https://overlays.gentoo.org).
 
 It's recommended to mask the whole overlay and then unmask just the packages you need, in order not to get mixed up with other overlays with same packages. (e.g. for using wps-office: `echo "*/*::benzene-overlay" > /etc/portage/package.mask/benzene-overlay; echo "app-office/wps-office::benzene-overlay" >> /etc/portage/package.unmask/benzene-overlay`)
 
-### Available packages (some dependencies are not listed here)
+### Available packages (some dependencies are not listed here. Doc/sphinx related packages are listed in a saperate table below, in order to simplify the main table)
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
@@ -34,10 +34,6 @@ dev-python/parfive                                                              
 dev-python/PyQt5                                                                     | 5.15.4-r1; 5.15.6                                             | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pytest-mpl                                                                | 0.13; 0.16.0                                                  |
 dev-python/pytest-socket                                                             | 0.5.0; 0.5.1                                                  |
-dev-python/runnotebook                                                               | 0.3.1; (live)                                                 |
-dev-python/sphinx-autobuild                                                          | 2022.3.14                                                     |
-dev-python/sphinx-book-theme                                                         | 0.2.0                                                         |
-dev-python/sphinx-changelog                                                          | 1.1.2                                                         |
 dev-python/cmyt                                                                      | 1.0.4                                                         | yt related
 dev-python/unyt                                                                      | 2.8.0                                                         | yt related
 dev-qt/qtwebkit                                                                      | 5.212.0\_pre20200309-{r1,r2}                                  | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work (the -r2 is a test for upgrade EAPI to 8, and might be a little buggy with youdao-dict.)
@@ -69,4 +65,22 @@ www-plugins/adobe-flash                                                         
 [x11-libs/lain](https://github.com/lcpz/lain)                                        | [(live version)](https://github.com/Universebenzene/benzene-overlay/blob/master/x11-libs/lain/lain-9999-r100.ebuild)                     | 9999 for old ebuild without lua targets support (masked); 9999-r100 with the new `lua-single` eclass
 [x11-plugins/purple-oicq](https://github.com/axon-oicq/purple-oicq)                  | [1.0.2](https://github.com/Universebenzene/benzene-overlay/blob/master/x11-plugins/purple-oicq/purple-oicq-1.0.2.ebuild)                 | OICQ plugin (Tencent QQ support) for Pidgin/libpurple.
 
-Informations for some of the astropy related packages are listed [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#informations-for-astropy-related-packages).
+Information for some of the astropy related packages are listed [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages).
+
+### Doc/sphinx related packages
+
+<!--<details>
+<summary>(Click to unfold)</summary>-->
+
+Package name | Available version | Additional information
+------------ | :---------------: | ----------------------
+dev-python/jupyter-cache      | 0.5.0         |
+dev-python/runnotebook        | 0.3.1; (live) |
+dev-python/sphinx-astropy     | 1.6.0; 1.7.0  | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
+dev-python/sphinx-asdf        | 0.1.2; 0.1.3  |
+dev-python/sphinx-autobuild   | 2022.3.14     |
+dev-python/sphinx-book-theme  | 0.2.0         |
+dev-python/sphinx-changelog   | 1.1.2         |
+dev-python/sunpy-sphinx-theme | 1.2.32        |
+
+<!--</details>-->
