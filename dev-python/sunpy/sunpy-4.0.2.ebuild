@@ -38,9 +38,10 @@ RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
 	)
 	jpeg2k? (
 		>dev-python/glymur-0.9.5[${PYTHON_USEDEP}]
+		>dev-python/lxml-4.8.0[${PYTHON_USEDEP}]
 	)
 	map? (
-		>=dev-python/matplotlib-3.2.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0.0[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.3.0[${PYTHON_USEDEP}]
@@ -56,11 +57,11 @@ RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
 		>dev-python/cdflib-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/h5netcdf-0.8.1[${PYTHON_USEDEP}]
 		>=dev-python/h5py-3.1.0[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.2.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
 		>=dev-python/pandas-1.0.0[${PYTHON_USEDEP}]
 	)
 	visualization? (
-		>=dev-python/matplotlib-3.2.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0.0[${PYTHON_USEDEP}]
 	)
 "
