@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">jupyter-sphinx</remote-id>
+		<remote-id type="github">jupyter/jupyter-sphinx</remote-id>
+	</upstream>
+	<longdescription lang="en">
+		jupyter-sphinx enables running code embedded in Sphinx documentation and
+		embedding output of that code into the resulting document. It has support for
+		rich output such as images and even Jupyter interactive widgets.
+	</longdescription>
+</pkgmetadata>
