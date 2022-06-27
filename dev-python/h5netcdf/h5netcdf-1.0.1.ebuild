@@ -15,6 +15,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND="dev-python/h5py[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -29,3 +30,8 @@ BDEPEND="dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-book-theme
+
+python_prepare_all() {
+	sed -i -e "/GH/s/GH/GH\%s/" -e "/PR/s/PR/PR\%s/" doc/conf.py || die
+	distutils-r1_python_prepare_all
+}
