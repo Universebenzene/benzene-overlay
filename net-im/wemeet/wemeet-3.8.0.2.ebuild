@@ -5,8 +5,8 @@ EAPI=8
 
 inherit unpacker qmake-utils desktop xdg
 
-# bundled 5.15.8, qtwebengine-5.15.4 doesn't work
-QT5_MIN="5.15.4"
+# bundled 5.15.8, qtwebengine-5.15.5 doesn't work
+QT5_MIN="5.15.5"
 
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
@@ -77,7 +77,7 @@ RDEPEND="dev-libs/nss
 		>=dev-qt/qtxml-${QT5_MIN}:5
 		>=dev-qt/qtxmlpatterns-${QT5_MIN}:5
 		>=dev-qt/qtwebchannel-${QT5_MIN}:5
-		>=dev-qt/qtwebengine-5.15.4:5
+		>=dev-qt/qtwebengine-5.15.5:5
 		>=dev-qt/qtwebsockets-${QT5_MIN}:5
 		>=dev-qt/qtwebview-${QT5_MIN}:5
 		>=dev-qt/qtwidgets-${QT5_MIN}:5
