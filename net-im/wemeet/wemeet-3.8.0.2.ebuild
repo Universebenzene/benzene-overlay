@@ -37,7 +37,8 @@ RDEPEND="dev-libs/nss
 		media-libs/libjpeg-turbo
 		media-libs/libpng
 		media-plugins/gst-plugins-meta:1.0[flac,vorbis]
-		media-libs/libpulse[X,asyncns,tcpd]
+		media-libs/libpulse[X,asyncns]
+		media-sound/pulseaudio-daemon[tcpd,zeroconf]
 		net-dns/avahi[dbus]
 		net-libs/libproxy
 		net-print/cups[dbus,ssl]
