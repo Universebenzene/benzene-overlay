@@ -85,6 +85,7 @@ dev-python/sphinx-asdf         | 0.1.2; 0.1.3  |
 dev-python/sphinx-autobuild    | 2022.3.14     |
 dev-python/sphinx-book-theme   | 0.2.0         |
 dev-python/sphinx-changelog    | 1.1.2         |
+dev-python/sphinx-copybutton   | 0.5.0         |
 dev-python/sphinx-togglebutton | 0.3.1         |
 dev-python/sphinx\_design      | 0.2.0         |
 dev-python/sunpy-sphinx-theme  | 1.2.32        |
