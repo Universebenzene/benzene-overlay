@@ -5,6 +5,10 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="pypi">ydcv</remote-id>
+		<remote-id type="github">felixonmars/ydcv</remote-id>
+	</upstream>
 	<use>
 		<flag name="pkg-info">Add discriptions to PKG-INFO file</flag>
 	</use>
