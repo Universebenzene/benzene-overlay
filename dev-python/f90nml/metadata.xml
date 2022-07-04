@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		f90nml is a Python module and command line tool that provides a simple interface
+		for the reading, writing, and modifying Fortran namelist files
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">f90nml</remote-id>
+		<remote-id type="github">marshallward/f90nml</remote-id>
+	</upstream>
+	<use>
+		<flag name="yaml">Extra yaml support</flag>
+	</use>
+</pkgmetadata>
