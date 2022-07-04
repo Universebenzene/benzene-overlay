@@ -28,7 +28,7 @@ app-text/{[de](https://www.eudic.net/v4/de/app/download),[es](https://www.eudic.
 dev-python/adal                                                                      | 1.2.7                                                         |
 dev-python/aioftp                                                                    | 0.21.2                                                        |
 dev-python/astlib                                                                    | 0.11.3                                                        |
-dev-python/glymur                                                                    | 0.9.6; 0.9.8; 0.9.9                                           |
+dev-python/glymur                                                                    | 0.9.6; 0.9.8; 0.10.1                                          |
 dev-python/msrest                                                                    | 0.6.21                                                        |
 dev-python/msrestazure                                                               | 0.6.4                                                         |
 dev-python/oldest-supported-numpy                                                    | 2022.5.28                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
