@@ -30,7 +30,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source
 
 python_prepare_all() {
-	use test && { for ejs in "${DISTDIR}"/*--*; do { cp ${ejs} "${S}"/tests/${ejs##*--} || die ; } done ; \
+	use test && { for ejs in "${DISTDIR}"/*--*; do { cp ${ejs} "${S}"/tests/${ejs##*--} || die ; } ; done ; \
 		touch "${S}"/tests/empty_file || die ; }
 	distutils-r1_python_prepare_all
 }
