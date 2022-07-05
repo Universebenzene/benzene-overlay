@@ -4,14 +4,15 @@
 EAPI=8
 
 DESCRIPTION="libpurple protocol support for oicq"
-HOMEPAGE="https://github.com/axon-oicq/purple-oicq"
+HOMEPAGE="https://codeberg.org/goodspeed/purple-oicq"
 
 if [[ ${PV} == *9999 ]]; then
-	EGIT_REPO_URI="https://github.com/axon-oicq/${PN}.git"
+	EGIT_REPO_URI="https://codeberg.org/goodspeed/${PN}.git"
 	inherit git-r3
 else
-	SRC_URI="https://github.com/axon-oicq/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://codeberg.org/goodspeed/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm64"
+	S="${WORKDIR}/${PN}"
 fi
 
 LICENSE="Unlicense"

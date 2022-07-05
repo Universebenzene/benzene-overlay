@@ -8,7 +8,7 @@ MY_PN="${PN/-bin}"
 inherit systemd
 
 DESCRIPTION="Nodejs backend for purple-oicq"
-HOMEPAGE="https://github.com/axon-oicq/axon"
+HOMEPAGE="https://codeberg.org/goodspeed/axon"
 SRC_URI="amd64? ( http://ci.hackflow.org/job/oicq-axon/16/artifact/dist/oicq-axon-linux-x64.gz -> ${P}-amd64.gz )
 	arm64? ( http://ci.hackflow.org/job/oicq-axon/16/artifact/dist/oicq-axon-linux-arm64.gz -> ${P}-arm64.gz )
 "
