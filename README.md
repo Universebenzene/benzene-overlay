@@ -29,6 +29,7 @@ dev-python/adal                                                                 
 dev-python/aioftp                                                                    | 0.21.2                                                        |
 dev-python/astlib                                                                    | 0.11.3                                                        |
 dev-python/f90nml                                                                    | 1.4.2                                                         |
+dev-python/fastcache                                                                 | 1.1.0                                                         |
 dev-python/glymur                                                                    | 0.9.6; 0.9.8; 0.10.1                                          |
 dev-python/msrest                                                                    | 0.6.21                                                        |
 dev-python/msrestazure                                                               | 0.6.4                                                         |
