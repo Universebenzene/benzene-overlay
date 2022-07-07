@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">python-socketio</remote-id>
+		<remote-id type="github">miguelgrinberg/python-socketio</remote-id>
+	</upstream>
+	<use>
+		<flag name="client">Use standard Python client</flag>
+		<flag name="asyncio-client">Use asyncio client</flag>
+	</use>
+</pkgmetadata>
