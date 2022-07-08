@@ -31,6 +31,7 @@ dev-python/astlib                                                               
 dev-python/bidict                                                                    | 0.22.0                                                        | Optional for yt
 dev-python/f90nml                                                                    | 1.4.2                                                         | Optional for yt
 dev-python/fastcache                                                                 | 1.1.0                                                         | Optional for yt
+dev-python/flask-socketio                                                            | 5.2.0                                                         | Optional for yt
 dev-python/glymur                                                                    | 0.9.6; 0.9.8; 0.10.1                                          |
 dev-python/msrest                                                                    | 0.6.21                                                        |
 dev-python/msrestazure                                                               | 0.6.4                                                         |
