@@ -98,5 +98,6 @@ dev-python/sphinx-togglebutton | 0.3.1            |
 dev-python/sphinx\_design      | 0.2.0            |
 dev-python/sunpy-sphinx-theme  | 1.2.32           |
 dev-python/mistune             | 0.8.4-r1         | Only for sphinx-asdf that depends on old version
+dev-python/nbconvert           | 6.4.5            | Depends on old mistune
 
 <!--</details>-->
