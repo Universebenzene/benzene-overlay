@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		libconf is a pure-Python reader/writer for configuration files in
+		libconfig format, which is often used in C/C++ projects. It's
+		interface is similar to the json module: the four main methods are
+		load(), loads(), dump(), and dumps().
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">libconf</remote-id>
+		<remote-id type="github">ChrisAichinger/python-libconf</remote-id>
+	</upstream>
+</pkgmetadata>
