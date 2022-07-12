@@ -12,10 +12,10 @@ DESCRIPTION="Fortran 90 namelist parser"
 HOMEPAGE="https://f90nml.readthedocs.io"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
 	test? (
-		https://raw.githubusercontent.com/marshallward/f90nml/7fbba7cedd02852be94832bb3de6151a385cebde/tests/types.json -> ${P}--types.json
-		https://raw.githubusercontent.com/marshallward/f90nml/7fbba7cedd02852be94832bb3de6151a385cebde/tests/vector.json -> ${P}--vector.json
-		https://raw.githubusercontent.com/marshallward/f90nml/7fbba7cedd02852be94832bb3de6151a385cebde/tests/cogroup.yaml -> ${P}--cogroup.yaml
-		https://raw.githubusercontent.com/marshallward/f90nml/7fbba7cedd02852be94832bb3de6151a385cebde/tests/types.yaml -> ${P}--types.yaml
+		https://raw.githubusercontent.com/marshallward/f90nml/v${PV}/tests/types.json -> ${P}--types.json
+		https://raw.githubusercontent.com/marshallward/f90nml/v${PV}/tests/vector.json -> ${P}--vector.json
+		https://raw.githubusercontent.com/marshallward/f90nml/v${PV}/tests/cogroup.yaml -> ${P}--cogroup.yaml
+		https://raw.githubusercontent.com/marshallward/f90nml/v${PV}/tests/types.yaml -> ${P}--types.yaml
 	)
 "
 

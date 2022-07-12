@@ -30,7 +30,7 @@ dev-python/adal                                                                 
 dev-python/aioftp                                                                    | 0.21.2                                                        |
 dev-python/astlib                                                                    | 0.11.3                                                        |
 dev-python/bidict                                                                    | 0.22.0                                                        | Optional for yt
-dev-python/f90nml                                                                    | 1.4.2                                                         | Optional for yt
+dev-python/f90nml                                                                    | 1.4.3                                                         | Optional for yt
 dev-python/fastcache                                                                 | 1.1.0                                                         | Optional for yt
 dev-python/firefly-viz                                                               | 2.0.4                                                         | Optional for yt
 dev-python/flask-socketio                                                            | 5.2.0                                                         | Optional for yt
