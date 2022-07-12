@@ -36,6 +36,7 @@ dev-python/firefly-viz                                                          
 dev-python/flask-socketio                                                            | 5.2.0                                                         | Optional for yt
 dev-python/glymur                                                                    | 0.9.6; 0.9.8; 0.10.1                                          |
 dev-python/libconf                                                                   | 2.0.1                                                         | Optional for yt
+dev-python/miniballcpp                                                               | 0.2.2                                                         | Optional for yt
 dev-python/msrest                                                                    | 0.6.21                                                        |
 dev-python/msrestazure                                                               | 0.6.4                                                         |
 dev-python/oldest-supported-numpy                                                    | 2022.5.28                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
