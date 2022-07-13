@@ -35,7 +35,7 @@ dev-python/montage-wrapper     | 0.9.9                        |
 dev-python/mpl-animator        | 1.0.1                        |
 dev-python/mpl-scatter-density | 0.7                          | Glueviz releated.
 dev-python/ndcube              | 2.0.2                        | SunPy releated.
-dev-python/photutils           | 1.4.0                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building may lose figures, as it needs lots of online data.
+dev-python/photutils           | 1.5.0                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pyavm               | 0.9.5                        |
 dev-python/pyerfa              | 1.7.2; 2.0.0.1               | Fixed test phase. One of the deps of `astropy`.
 dev-python/pyregion            | 2.0; 2.1.1                   | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building

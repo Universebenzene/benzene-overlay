@@ -19,7 +19,7 @@
 		<remote-id type="github">astropy/photutils</remote-id>
 	</upstream>
 	<use>
-		<flag name="doc">Add extra documentation (cannot build figures as the doc building needs lots of online data).</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+		<flag name="local-datasets">Add local data for photutils.datasets</flag>
 	</use>
 </pkgmetadata>
