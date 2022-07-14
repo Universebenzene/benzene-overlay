@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This module provides an IndexedBzip2File class, which can be used to seek inside
+		bzip2 files without having to decompress them first. Alternatively, you can use
+		this simply as a parallelized bzip2 decoder as a replacement for Python's builtin
+		bz2 module in order to fully utilize all your cores.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">indexed_bzip2</remote-id>
+		<remote-id type="github">mxmlnkn/indexed_bzip2</remote-id>
+	</upstream>
+</pkgmetadata>
