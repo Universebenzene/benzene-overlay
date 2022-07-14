@@ -34,6 +34,7 @@ dev-python/f90nml                                                               
 dev-python/fastcache                                                                 | 1.1.0                                                         | Optional for yt
 dev-python/firefly-viz                                                               | 2.0.4                                                         | Optional for yt
 dev-python/flask-socketio                                                            | 5.2.0                                                         | Optional for yt
+dev-python/fusepy                                                                    | 3.0.1                                                         | Optional for yt
 dev-python/glymur                                                                    | 0.9.6; 0.9.8; 0.10.1                                          |
 dev-python/libconf                                                                   | 2.0.1                                                         | Optional for yt
 dev-python/miniballcpp                                                               | 0.2.2                                                         | Optional for yt
