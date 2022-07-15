@@ -5,6 +5,11 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<longdescription lang="en">
+		A parallel file downloader using asyncio. parfive can handle downloading
+		multiple files in parallel as well as downloading each file in a number
+		of chunks.
+	</longdescription>
 	<upstream>
 		<remote-id type="pypi">parfive</remote-id>
 		<remote-id type="github">Cadair/parfive</remote-id>
