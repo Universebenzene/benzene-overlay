@@ -20,7 +20,7 @@ RESTRICT="test"	# test failed as no docutils<0.17
 
 RDEPEND="dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	>=dev-python/docutils-0.15[${PYTHON_USEDEP}]
-	<dev-python/sphinx-5[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
 	~dev-python/pydata-sphinx-theme-0.7.2[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
