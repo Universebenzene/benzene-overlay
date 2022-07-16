@@ -12,7 +12,7 @@
 		bz2 module in order to fully utilize all your cores.
 	</longdescription>
 	<upstream>
-		<remote-id type="pypi">indexed_bzip2</remote-id>
+		<remote-id type="pypi">indexed-bzip2</remote-id>
 		<remote-id type="github">mxmlnkn/indexed_bzip2</remote-id>
 	</upstream>
 </pkgmetadata>
