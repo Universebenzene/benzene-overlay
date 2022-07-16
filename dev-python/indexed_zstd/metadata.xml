@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This module provides an IndexedZstdFile class, which can be used to seek inside
+		zstd files without having to decompress them first.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">indexed-zstd</remote-id>
+		<remote-id type="github">martinellimarco/indexed_zstd</remote-id>
+	</upstream>
+</pkgmetadata>
