@@ -35,7 +35,7 @@ dev-python/fastcache                                                            
 dev-python/firefly-viz                                                               | 2.0.4                                                         | Optional for yt
 dev-python/flask-socketio                                                            | 5.2.0                                                         | Optional for yt
 dev-python/fusepy                                                                    | 3.0.1                                                         | Optional for yt
-dev-python/glymur                                                                    | 0.9.6; 0.9.8; 0.10.1                                          |
+dev-python/glymur                                                                    | 0.10.2                                                        |
 dev-python/indexed\_{bzip2,zstd}                                                     | 1.3.1 / 1.5.0                                                 | Optional for yt
 dev-python/libconf                                                                   | 2.0.1                                                         | Optional for yt
 dev-python/miniballcpp                                                               | 0.2.2                                                         | Optional for yt
