@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">ratarmountcore</remote-id>
+	</upstream>
+	<use>
+		<flag name="bzip2">Add extra support for bzip2</flag>
+		<flag name="full">Include all extra dependencies</flag>
+		<flag name="gzip">Add extra support for gzip</flag>
+		<flag name="rar">Add extra support for rar</flag>
+		<flag name="xz">Add extra support for xz</flag>
+		<flag name="zstd">Add extra support for zstd</flag>
+	</use>
+</pkgmetadata>
