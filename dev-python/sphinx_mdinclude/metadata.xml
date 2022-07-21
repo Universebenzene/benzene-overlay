@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		sphinx-mdinclude is a simple Sphinx extension that enables including
+		Markdown documents from within reStructuredText. It provides the
+		.. mdinclude:: directive, and automatically converts the content of
+		Markdown documents to reStructuredText format.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">sphinx_mdinclude</remote-id>
+		<remote-id type="github">jreese/sphinx-mdinclude</remote-id>
+	</upstream>
+</pkgmetadata>
