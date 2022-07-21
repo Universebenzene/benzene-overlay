@@ -19,7 +19,6 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/numpy-1.17.5[${PYTHON_USEDEP}]
 	>=dev-python/sympy-1.5[${PYTHON_USEDEP}]
 "
-
 BDEPEND="test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
