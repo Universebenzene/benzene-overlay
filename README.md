@@ -28,6 +28,7 @@ app-text/{[de](https://www.eudic.net/v4/de/app/download),[es](https://www.eudic.
 dev-python/abg\_python                                                               | 1.0.5                                                         | Optional for yt
 dev-python/adal                                                                      | 1.2.7                                                         |
 dev-python/aioftp                                                                    | 0.21.3                                                        |
+dev-python/aiobotocore                                                               | 2.3.4                                                         |
 dev-python/aioitertools                                                              | 0.10.0                                                        |
 dev-python/astlib                                                                    | 0.11.3                                                        |
 dev-python/bidict                                                                    | 0.22.0                                                        | Optional for yt
