@@ -15,11 +15,14 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="awscli boto3"
 
 RDEPEND=">=dev-python/aiohttp-3.3.1[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
 	dev-python/botocore[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.10.10[${PYTHON_USEDEP}]
+	awscli? ( app-admin/awscli[${PYTHON_USEDEP}] )
+	boto3? ( dev-python/boto3[${PYTHON_USEDEP}] )
 "
 
 distutils_enable_tests nose

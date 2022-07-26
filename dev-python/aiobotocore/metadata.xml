@@ -9,4 +9,8 @@
 		<remote-id type="pypi">aiobotocore</remote-id>
 		<remote-id type="github">aio-libs/aiobotocore</remote-id>
 	</upstream>
+	<use>
+		<flag name="awscli">Extra require via <pkg>app-admin/awscli</pkg></flag>
+		<flag name="boto3">Extra require via <pkg>dev-python/boto3</pkg></flag>
+	</use>
 </pkgmetadata>
