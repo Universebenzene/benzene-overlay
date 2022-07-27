@@ -1,0 +1,18 @@
+--- a/docs/source/index.rst	2022-04-30 04:04:50.000000000 +0800
++++ b/docs/source/index.rst	2022-07-26 00:31:32.437172753 +0800
+@@ -194,6 +194,7 @@
+ For a self-hosted MinIO instance:
+ 
+ .. code-block:: python
++
+    # When relying on auto discovery for credentials
+    >>> s3 = s3fs.S3FileSystem(
+          anon=False,
+@@ -201,6 +202,7 @@
+             'endpoint_url': 'https://...'
+          }
+       )
++
+    # Or passing the credentials directly
+    >>> s3 = s3fs.S3FileSystem(
+          key='miniokey...',
