@@ -42,5 +42,6 @@
 	</use>
 	<upstream>
 		<remote-id type="github">systemd/systemd</remote-id>
+		<remote-id type="github">systemd/systemd-stable</remote-id>
 	</upstream>
 </pkgmetadata>
