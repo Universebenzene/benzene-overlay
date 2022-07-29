@@ -53,7 +53,7 @@ dev-python/PyQt5                                                                
 dev-python/pytest-mpl                                                                | 0.13; 0.16.1                                                  |
 dev-python/pytest-socket                                                             | 0.5.0; 0.5.1                                                  |
 dev-python/ratarmount                                                                | 0.11.3                                                        | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
-dev-python/s3fs                                                                      | 2022.5.0                                                      |
+dev-python/s3fs                                                                      | 2022.7.1                                                      |
 dev-python/cmyt                                                                      | 1.1.2                                                         | yt related
 dev-python/unyt                                                                      | 2.9.2                                                         | yt related
 dev-qt/qtwebkit                                                                      | 5.212.0\_pre20200309-{r1,r2}                                  | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work (the -r2 is a test for upgrade EAPI to 8, and might be a little buggy with youdao-dict.)

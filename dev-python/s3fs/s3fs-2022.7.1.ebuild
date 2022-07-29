@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="awscli boto3"
-#PROPERTIES="test_network"
+PROPERTIES="test_network"
 RESTRICT="test" # Test phase runs with fails
 
 RDEPEND="dev-python/aiobotocore[${PYTHON_USEDEP},awscli?,boto3?]
@@ -32,7 +32,7 @@ BDEPEND="test? (
 	)
 "
 
-PATCHES=( "${FILESDIR}/${P}-fix-doc-missing-blank-line.patch" )
+PATCHES=( "${FILESDIR}/${PN}-2022.5.0-fix-doc-missing-blank-line.patch" )
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx_rtd_theme dev-python/numpydoc
