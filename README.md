@@ -30,6 +30,7 @@ dev-python/adal                                                                 
 dev-python/aioftp                                                                    | 0.21.3                                                        |
 dev-python/aiobotocore                                                               | 2.3.4                                                         |
 dev-python/aioitertools                                                              | 0.10.0                                                        |
+dev-python/asciitree                                                                 | 0.3.3                                                         |
 dev-python/astlib                                                                    | 0.11.3                                                        |
 dev-python/bidict                                                                    | 0.22.0                                                        | Optional for yt
 dev-python/f90nml                                                                    | 1.4.3                                                         | Optional for yt
