@@ -15,7 +15,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="msgpack"
+IUSE="examples msgpack"
 RESTRICT="test"	#Fatal Python error: Aborted
 
 RDEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]
@@ -35,6 +35,12 @@ python_compile_all() {
 	use doc && { cp "${BUILD_DIR}"/lib/${PN}/{_shuffle,blosc,compat_ext,lz4,vlen,zstd}.cpython*so "${S}/${PN}" || die ; }
 
 	sphinx_compile_all
+}
+
+python_install_all() {
+	use examples && DOCS+=( README.rst notebooks/ )
+
+	distutils-r1_python_install_all
 }
 
 python_test() {
