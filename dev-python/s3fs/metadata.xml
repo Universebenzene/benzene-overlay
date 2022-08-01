@@ -7,7 +7,7 @@
 	</maintainer>
 	<upstream>
 		<remote-id type="pypi">s3fs</remote-id>
-		<remote-id type="github">fsspec/s3fs/</remote-id>
+		<remote-id type="github">fsspec/s3fs</remote-id>
 	</upstream>
 	<use>
 		<flag name="awscli">Extra awscli support</flag>

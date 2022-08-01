@@ -38,7 +38,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx_rtd_theme dev-python/numpydoc
 
 python_prepare_all() {
-	use doc && { sed -i -e "/github/s/PR\ \#/PR\ \%s\#/" docs/source/conf.py || die ; \
+	use doc && { sed -i "/github/s/PR\ \#/PR\ \%s\#/" docs/source/conf.py || die ; \
 		mkdir -p docs/source/_static || die ; }
 
 	distutils-r1_python_prepare_all
