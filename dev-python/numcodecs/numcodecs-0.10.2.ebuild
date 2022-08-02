@@ -32,7 +32,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/sphinx_rtd_theme dev-python/numpydoc
 
 python_compile_all() {
-	use doc && { cp "${BUILD_DIR}"/lib/${PN}/{_shuffle,blosc,compat_ext,lz4,vlen,zstd}.cpython*so "${S}/${PN}" || die ; }
+	use doc && { cp "${BUILD_DIR}"/lib/${PN}/*.cpython*so "${S}/${PN}" || die ; }
 
 	sphinx_compile_all
 }
