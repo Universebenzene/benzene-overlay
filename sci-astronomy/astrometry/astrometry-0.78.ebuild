@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -6,14 +6,14 @@ EAPI=6
 # this could be a multiple python package
 # but the way it is packaged makes it very time consuming.
 
-PYTHON_COMPAT=( python3_{5,6,7,8} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit eutils toolchain-funcs python-single-r1
 
 MYP=${PN}.net-${PV}
 
 DESCRIPTION="Automated astrometric calibration programs and service"
-HOMEPAGE="http://astrometry.net/"
+HOMEPAGE="http://astrometry.net"
 SRC_URI="https://github.com/dstndstn/astrometry.net/releases/download/${PV}/${MYP}.tar.gz"
 
 LICENSE="BSD GPL-2 GPL-3"
@@ -24,9 +24,9 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
 	$(python_gen_cond_dep '
-		dev-python/astropy[${PYTHON_MULTI_USEDEP}]
-		dev-python/fitsio[${PYTHON_MULTI_USEDEP}]
-		dev-python/numpy[${PYTHON_MULTI_USEDEP}]
+		dev-python/astropy[${PYTHON_USEDEP}]
+		dev-python/fitsio[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
 	')
 	media-libs/libpng:0
 	media-libs/netpbm
@@ -61,14 +61,8 @@ src_prepare() {
 	# compile & link netpbm
 	if use netpbm; then
 		sed -e 's/NETPBM_INC\ ?=/NETPBM_INC\ ?=\ -I\/usr\/include\/netpbm/g' \
+			-e "s/-L.\ -lnetpbm/-L\/usr\/$(get_libdir)\ -lnetpbm/g" \
 			-i util/makefile.netpbm || die
-		if use amd64 || use amd64-linux; then
-			sed -e 's/-L.\ -lnetpbm/-L\/usr\/lib64\ -lnetpbm/g' \
-				-i util/makefile.netpbm || die
-		else
-			sed -e 's/-L.\ -lnetpbm/-L\/usr\/lib\ -lnetpbm/g' \
-				-i util/makefile.netpbm || die
-		fi
 	fi
 
 	# fix underlinking
