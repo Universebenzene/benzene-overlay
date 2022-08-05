@@ -21,7 +21,7 @@ RESTRICT="test"
 RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
-	dev-python/parfive[${PYTHON_USEDEP},ftp]
+	>=dev-python/parfive-1.2.0[${PYTHON_USEDEP},ftp]
 	asdf? (
 		>=dev-python/asdf-2.8.0[${PYTHON_USEDEP}]
 		>=dev-python/asdf-astropy-0.1.1[${PYTHON_USEDEP}]
