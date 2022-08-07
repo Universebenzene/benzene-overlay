@@ -3,28 +3,23 @@
 
 EAPI=8
 
-inherit unpacker systemd font desktop xdg
+inherit unpacker systemd desktop optfeature xdg
 
-MY_P="${PN}_${PV}"
+MY_P="${PN}-v${PV}"
 
 DESCRIPTION="Remote control and team work"
 HOMEPAGE="https://www.todesk.com"
-SRC_URI="amd64? ( https://dl.todesk.com/linux/${MY_P}_amd64.deb )
-	arm? ( https://dl.todesk.com/linux/${MY_P}_armv7l.deb )
-	arm64? ( https://dl.todesk.com/linux/${MY_P}_aarch64.deb )"
+SRC_URI="amd64? ( https://dl.todesk.com/linux/${MY_P}-amd64.deb )"
 
 RESTRICT="mirror"
 LICENSE="ToDesk"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~arm ~arm64"
-IUSE="+fonts keep-server"
+KEYWORDS="-* ~amd64"
+IUSE="keep-server"
 
 RDEPEND="x11-libs/gtk+:3"
 DEPEND=""
 BDEPEND=""
-
-FONT_S="opt/${PN}/res/fonts"
-FONT_SUFFIX="ttc"
 
 S="${WORKDIR}"
 
@@ -33,27 +28,23 @@ QA_PREBUILT="opt/${PN}/*"
 
 src_install() {
 	insinto /opt
+	insopts -m755
 	doins -r opt/${PN}
-	fperms +x /opt/${PN}/bin/${PN}{,c,d}
-	keepdir /opt/${PN}/config
-	rm -r ${ED%/}/opt/${PN}/res/fonts || die
+	fperms -x /opt/${PN}/res/fake.png
 
 	exeinto /opt/bin
 	doexe usr/local/bin/${PN}
 
 	exeinto /opt/${PN}/bin
-	use keep-server && doexe "${FILESDIR}"/${PN}-hold
+	use keep-server && dosym -r /usr/bin/sleep /opt/${PN}/bin/${PN}-hold
 
-	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-keep.initd" "${PN}d.initd") ${PN}d
-	use keep-server && newinitd "${FILESDIR}"/${PN}-switch.initd ${PN}-switch
+	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-alone-${PV}.initd" "${PN}d-${PV}.initd") ${PN}d
 	systemd_dounit etc/systemd/system/${PN}d.service
 
 	for si in 16 24 32 48 64 128 256 512; do
 		doicon -s ${si} usr/share/icons/hicolor/${si}x${si}/apps/${PN}.png
 	done
 	domenu usr/share/applications/${PN}.desktop
-
-	use fonts && font_src_install
 }
 
 pkg_postinst() {
@@ -67,12 +58,7 @@ pkg_postinst() {
 	elog "# systemctl start todeskd.service"
 	elog "# systemctl enable todeskd.service"
 	elog
+	optfeature "better Chinese font appearance for GUI client" media-fonts/noto-cjk
 
 	xdg_pkg_postinst
-	use fonts && font_pkg_postinst
-}
-
-pkg_postrm() {
-	xdg_pkg_postrm
-	use fonts && font_pkg_postrm
 }

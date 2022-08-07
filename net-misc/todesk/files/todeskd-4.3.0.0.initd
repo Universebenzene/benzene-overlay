@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+# Copyright 2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name=${RC_SVCNAME}
+description="ToDesk Daemon Service"
+supervisor="supervise-daemon"
+command="/opt/todesk/bin/ToDesk_Service"
+export LIBVA_DRIVER_NAME="iHD"
+export LIBVA_DRIVERS_PATH="/opt/todesk/bin"
+
+depend() {
+	after display-manager
+	need net
+}
