@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples msgpack"
-RESTRICT="test"	#Fatal Python error: Aborted
+RESTRICT="test"	# Fatal Python error: Aborted
 
 RDEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]
 	dev-python/entrypoints[${PYTHON_USEDEP}]
