@@ -47,7 +47,11 @@ python_compile_all() {
 }
 
 python_install_all() {
-	use examples && DOCS+=( README.rst notebooks/ )
+	if use examples; then
+		docompress -x "/usr/share/doc/${PF}/notebooks"
+		docinto notebooks
+		dodoc -r notebooks/.
+	fi
 
 	distutils-r1_python_install_all
 }
