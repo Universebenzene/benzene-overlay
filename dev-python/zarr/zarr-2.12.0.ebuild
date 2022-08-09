@@ -15,7 +15,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="jupyter"
+IUSE="examples jupyter"
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
@@ -87,6 +87,16 @@ EPYTEST_DESELECT=(
 	zarr/tests/test_core.py::TestArrayWithFSStoreV3Nested::test_object_arrays_vlen_bytes
 	zarr/tests/test_core.py::TestArrayWithFSStoreV3NestedPartialRead::test_object_arrays_vlen_bytes
 )
+
+python_install_all() {
+	if use examples; then
+		docompress -x "/usr/share/doc/${PF}/notebooks"
+		docinto notebooks
+		dodoc -r notebooks/.
+	fi
+
+	distutils-r1_python_install_all
+}
 
 python_test() {
 	ZARR_TEST_ABS=1 ZARR_TEST_MONGO=1 ZARR_TEST_REDIS=1 \
