@@ -16,7 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples msgpack"
-RESTRICT="test"	# Fatal Python error: Aborted
+#RESTRICT="test"	# Fatal Python error: Aborted
 
 RDEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]
 	dev-python/entrypoints[${PYTHON_USEDEP}]
@@ -26,10 +26,19 @@ RDEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]
 BDEPEND=">dev-python/setuptools_scm-1.5.4[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	doc? ( dev-libs/zfp[python] )
+	test? (
+		dev-python/msgpack[${PYTHON_USEDEP}]
+		dev-libs/zfp[python]
+	)
 "
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/sphinx_rtd_theme dev-python/numpydoc
+
+EPYTEST_DESELECT=(
+	# Fatal Python error: Aborted
+	numcodecs/tests/test_vlen_bytes.py::test_encode_none
+)
 
 python_compile_all() {
 	use doc && { cp "${BUILD_DIR}"/lib/${PN}/*.cpython*so "${S}/${PN}" || die ; }
@@ -44,5 +53,7 @@ python_install_all() {
 }
 
 python_test() {
-	epytest "${BUILD_DIR}"
+	pushd "${BUILD_DIR}"/lib || die
+	epytest
+	popd || die
 }
