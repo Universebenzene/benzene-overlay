@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Zarr is a Python package providing an implementation of compressed, chunked,
+		N-dimensional arrays, designed for use in parallel computing.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">zarr</remote-id>
+		<remote-id type="github">zarr-developers/zarr-python</remote-id>
+	</upstream>
+	<use>
+		<flag name="jupyter">Extra jupyter support</flag>
+	</use>
+</pkgmetadata>
