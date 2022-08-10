@@ -32,7 +32,13 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 distutils_enable_tests pytest
 
 python_install_all() {
-	use examples && DOCS+=( README.rst examples/ images/ )
+	if use examples; then
+		DOCS+=( README.rst images/ )
+		docompress -x "/usr/share/doc/${PF}/examples"
+		docinto examples
+		dodoc -r examples/.
+	fi
+
 	distutils-r1_python_install_all
 }
 
