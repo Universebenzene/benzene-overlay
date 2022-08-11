@@ -13,7 +13,7 @@ It's recommended to mask the whole overlay and then unmask just the packages you
 
 ### Available packages (some dependencies are not listed here)
 
-Some science related miscellaneous python package are listed in a saperate table [below](https://github.com/Universebenzene/benzene-overlay#some-science-releated-miscellaneous-python-packages), in order to simplify the main table.
+Some science related miscellaneous python package are listed in a saperate table [below](https://github.com/Universebenzene/benzene-overlay#some-science-related-miscellaneous-python-packages), in order to simplify the main table.
 
 Doc/sphinx related packages are listed in [another saperate table](https://github.com/Universebenzene/benzene-overlay#docsphinx-related-packages)
 
