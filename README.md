@@ -13,7 +13,9 @@ It's recommended to mask the whole overlay and then unmask just the packages you
 
 ### Available packages (some dependencies are not listed here)
 
-Doc/sphinx related packages are listed in a saperate table [below](https://github.com/Universebenzene/benzene-overlay#docsphinx-related-packages), in order to simplify the main table.
+Some science related miscellaneous python package are listed in a saperate table [below](https://github.com/Universebenzene/benzene-overlay#some-science-releated-miscellaneous-python-packages), in order to simplify the main table.
+
+Doc/sphinx related packages are listed in [another saperate table](https://github.com/Universebenzene/benzene-overlay#docsphinx-related-packages)
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
@@ -25,38 +27,14 @@ app-text/{[de](https://www.eudic.net/v4/de/app/download),[es](https://www.eudic.
 [app-text/powerword](http://www.iciba.com)                                           | [1.2](https://github.com/Universebenzene/benzene-overlay/blob/master/app-text/powerword/powerword-1.2.ebuild)                               | Encouraged by [AUR](https://aur.archlinux.org/packages/powerword-bin) （金山词霸）
 [app-text/ydcv](https://github.com/felixonmars/ydcv)                                 | [0.7](https://github.com/Universebenzene/benzene-overlay/blob/master/app-text/ydcv/ydcv-0.7.ebuild); (live)                                 | Need other overlays (like [guru](https://wiki.gentoo.org/wiki/Project:GURU) or [HomeAssistantRepository](https://git.edevau.net/onkelbeh/HomeAssistantRepository)) if you enable `pkg-info` use. Some other issues [here](https://forums.gentoo.org/viewtopic-p-8352006.html) （有道词典命令行-python版）
 [app-text/youdao-dict](https://cidian.youdao.com/multi.html#linuxAll)                | [6.0.0-r1](https://github.com/Universebenzene/benzene-overlay/blob/master/app-text/youdao-dict/youdao-dict-6.0.0-r1.ebuild)                 | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict). In order to use this you **must use the patched QtWebkit and PyQt5 with `webkit` USE flag in this overlay INSTEAD OF THE OFFICIAL ONE** （有道词典）
-dev-python/abg\_python                                                               | 1.0.5                                                         | Optional for yt
-dev-python/adal                                                                      | 1.2.7                                                         |
 dev-python/aioftp                                                                    | 0.21.3                                                        |
-dev-python/aiobotocore                                                               | 2.3.4                                                         |
-dev-python/aioitertools                                                              | 0.10.0                                                        |
-dev-python/asciitree                                                                 | 0.3.3                                                         |
 dev-python/astlib                                                                    | 0.11.3                                                        |
-dev-python/bidict                                                                    | 0.22.0                                                        | Optional for yt
-dev-python/f90nml                                                                    | 1.4.3                                                         | Optional for yt
-dev-python/fastcache                                                                 | 1.1.0                                                         | Optional for yt
-dev-python/firefly-viz                                                               | 2.0.4                                                         | Optional for yt
-dev-python/flask-socketio                                                            | 5.2.0                                                         | Optional for yt
-dev-python/fusepy                                                                    | 3.0.1                                                         | Optional for yt
 dev-python/glymur                                                                    | 0.10.2                                                        |
-dev-python/indexed\_{bzip2,zstd}                                                     | 1.3.1 / 1.5.0                                                 | Optional for yt
-dev-python/libconf                                                                   | 2.0.1                                                         | Optional for yt
-dev-python/miniballcpp                                                               | 0.2.2                                                         | Optional for yt
-dev-python/msrest                                                                    | 0.6.21                                                        |
-dev-python/msrestazure                                                               | 0.6.4                                                         |
-dev-python/numcodecs                                                                 | 0.10.2                                                        |
 dev-python/oldest-supported-numpy                                                    | 2022.5.28                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
-dev-python/pykdtree                                                                  | 1.3.5                                                         | Optional for yt
-dev-python/python-socketio                                                           | 5.7.1                                                         | Optional for yt
-dev-python/python-xz                                                                 | 0.4.0                                                         | Optional for yt
 dev-python/parfive                                                                   | 1.5.1; 2.0.1                                                  |
 dev-python/PyQt5                                                                     | 5.15.4-r1; 5.15.6                                             | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pytest-mpl                                                                | 0.13; 0.16.1                                                  |
 dev-python/pytest-socket                                                             | 0.5.0; 0.5.1                                                  |
-dev-python/ratarmount                                                                | 0.11.3                                                        | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
-dev-python/s3fs                                                                      | 2022.7.1                                                      |
-dev-python/cmyt                                                                      | 1.1.2                                                         | yt related
-dev-python/unyt                                                                      | 2.9.2                                                         | yt related
 dev-python/zarr                                                                      | 2.12.0                                                        |
 dev-qt/qtwebkit                                                                      | 5.212.0\_pre20200309-{r1,r2}                                  | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work (the -r2 is a test for upgrade EAPI to 8, and might be a little buggy with youdao-dict.)
 media-fonts/wps-office-fonts                                                         | [1.0](https://github.com/Universebenzene/benzene-overlay/blob/master/media-fonts/wps-office-fonts/wps-office-fonts-1.0.ebuild)              | WPS Linux旧版自带方正系字体
@@ -89,6 +67,43 @@ www-plugins/adobe-flash                                                         
 [x11-plugins/purple-oicq](https://codeberg.org/goodspeed/purple-oicq)                | [1.0.2](https://github.com/Universebenzene/benzene-overlay/blob/master/x11-plugins/purple-oicq/purple-oicq-1.0.2.ebuild); (live)            | OICQ plugin (Tencent QQ support) for Pidgin/libpurple.
 
 Information for some of the astropy related packages are listed [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages).
+
+### Some science related miscellaneous python packages
+
+Packages in this table might just be pulled in as dependencies by some sicense related python packages.
+
+<!--<details>
+<summary>(Click to unfold)</summary>-->
+
+Package name | Available version | Additional information
+------------ | :---------------: | ----------------------
+dev-python/adal                  | 1.2.7         | SunPy, h5pyd related
+dev-python/abg\_python           | 1.0.5         | Optional for yt
+dev-python/aiobotocore           | 2.3.4         | Pulled in by zarr
+dev-python/aioitertools          | 0.10.0        | Pulled in by zarr
+dev-python/asciitree             | 0.3.3         | Pulled in by zarr
+dev-python/bidict                | 0.22.0        | Optional for yt
+dev-python/f90nml                | 1.4.3         | Optional for yt
+dev-python/fastcache             | 1.1.0         | Optional for yt
+dev-python/firefly-viz           | 2.0.4         | Optional for yt
+dev-python/flask-socketio        | 5.2.0         | Optional for yt
+dev-python/fusepy                | 3.0.1         | Optional for yt
+dev-python/heapdict              | 1.0.1         | Pulled in by zict and distributed
+dev-python/indexed\_{bzip2,zstd} | 1.3.1 / 1.5.0 | Optional for yt
+dev-python/libconf               | 2.0.1         | Optional for yt
+dev-python/miniballcpp           | 0.2.2         | Optional for yt
+dev-python/msrest                | 0.6.21        | SunPy, h5pyd related
+dev-python/msrestazure           | 0.6.4         | SunPy, h5pyd related
+dev-python/numcodecs             | 0.10.2        | Pulled in by zarr
+dev-python/pykdtree              | 1.3.5         | Optional for yt
+dev-python/python-socketio       | 5.7.1         | Optional for yt
+dev-python/python-xz             | 0.4.0         | Optional for yt
+dev-python/ratarmount            | 0.11.3        | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
+dev-python/s3fs                  | 2022.7.1      | Test dependency for zarr
+dev-python/cmyt                  | 1.1.2         | yt related
+dev-python/unyt                  | 2.9.2         | yt related
+
+<!--</details>-->
 
 ### Doc/sphinx related packages
 
