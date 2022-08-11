@@ -13,7 +13,7 @@ It's recommended to mask the whole overlay and then unmask just the packages you
 
 ### Available packages (some dependencies are not listed here)
 
-Some science related miscellaneous python package are listed in a saperate table [below](https://github.com/Universebenzene/benzene-overlay#some-science-related-miscellaneous-python-packages), in order to simplify the main table.
+Some science related miscellaneous python package are listed in a separate table [below](https://github.com/Universebenzene/benzene-overlay#some-science-related-miscellaneous-python-packages), in order to simplify the main table.
 
 Doc/sphinx related packages are listed in [another saperate table](https://github.com/Universebenzene/benzene-overlay#docsphinx-related-packages)
 
@@ -102,6 +102,7 @@ dev-python/ratarmount            | 0.11.3        | Optional for yt. Dependency r
 dev-python/s3fs                  | 2022.7.1      | Test dependency for zarr
 dev-python/cmyt                  | 1.1.2         | yt related
 dev-python/unyt                  | 2.9.2         | yt related
+dev-python/zict                  | 2.2.0         | Pulled in by distributed
 
 <!--</details>-->
 
