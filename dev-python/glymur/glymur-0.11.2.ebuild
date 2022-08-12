@@ -14,7 +14,10 @@ MY_P=${MY_PN}-${PV}
 DESCRIPTION="Tools for accessing JPEG2000 files"
 HOMEPAGE="https://glymur.readthedocs.org"
 SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz
-	doc? ( https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.10.rst -> ${P}-d-0.10.rst )
+	doc? (
+		https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.10.rst -> ${P}-d-0.10.rst
+		https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.11.rst -> ${P}-d-0.11.rst
+	)
 	test? (
 		https://github.com/quintusdias/glymur/raw/v${PV}/tests/data/0220000800_uuid.dat -> ${P}-t-0220000800_uuid.dat
 		https://github.com/quintusdias/glymur/raw/v${PV}/tests/data/issue549.dat -> ${P}-t-issue549.dat
@@ -46,7 +49,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx_rtd_theme
 
 python_prepare_all() {
-	use doc && { cp "${DISTDIR}"/${P}-d-0.10.rst "${S}"/docs/source/whatsnew/0.10.rst || die ; \
+	use doc && { for dst in "${DISTDIR}"/*-d-*; do { cp ${dst} "${S}"/docs/source/whatsnew/${dst##*-d-} || die ; } ; done ; \
 		mkdir docs/source/_static || die ; }
 	use test && { for tdata in "${DISTDIR}"/*-t-*; do { cp ${tdata} "${S}"/tests/data/${tdata##*-t-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
