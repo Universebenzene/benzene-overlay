@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This is the official Sphinx theme for Dask documentation. It extends
+		the sphinx-book-theme project, but adds custom styling and a navigation
+		bar to additional Dask subprojects.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">dask-sphinx-theme</remote-id>
+		<remote-id type="github">dask/dask-sphinx-theme</remote-id>
+	</upstream>
+</pkgmetadata>
