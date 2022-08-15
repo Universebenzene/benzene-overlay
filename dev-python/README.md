@@ -45,7 +45,7 @@ dev-python/regions             | 0.4; 0.5                     | `network-sandbox
 dev-python/reproject           | 0.5.1; 0.8                   | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sgp4                | 2.21                         |
 dev-python/skyfield            | 1.42                         |
-dev-python/spectral-cube       | 0.6.0                        |
+dev-python/spectral-cube       | 0.6.0                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/specutils           | 1.1.1; 1.7.0                 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sunpy               | 4.0.4                        | Testing and doc building are really hard to run, so not supported right now.
 dev-python/sunpy-sphinx-theme  | 1.2.32                       |
