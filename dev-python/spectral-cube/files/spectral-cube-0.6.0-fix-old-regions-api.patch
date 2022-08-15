@@ -1,0 +1,45 @@
+--- a/docs/manipulating.rst	2021-10-01 00:04:12.000000000 +0800
++++ b/docs/manipulating.rst	2022-07-03 16:52:06.726331549 +0800
+@@ -93,11 +93,11 @@
+ parsing.  CRTF regions may also contain spectral cutout information.
+ 
+ This example shows extraction of a subcube from a ds9 region file ``file.reg``.
+-`~regions.read_ds9` parses the ds9 file and converts it to a list of
++`~regions.Regions.read` parses the ds9 file and converts it to a list of
+ `~regions.Region` objects::
+ 
+     >>> import regions # doctest: +SKIP
+-    >>> region_list = regions.read_ds9('file.reg')  # doctest: +SKIP
++    >>> region_list = regions.Regions.read('file.reg')  # doctest: +SKIP
+     >>> sub_cube = cube.subcube_from_regions(region_list)  # doctest: +SKIP
+ 
+ This one shows extraction of a subcube from a CRTF region file ``file.crtf``,
+@@ -110,7 +110,7 @@
+ If you want to loop over individual regions with a single region file, you need
+ to convert the individual regions to lists of that region::
+ 
+-    >>> region_list = regions.read_ds9('file.reg')  #doctest: +SKIP
++    >>> region_list = regions.Regions.read('file.reg')  #doctest: +SKIP
+     >>> for region in region_list: #doctest: +SKIP
+     >>>     sub_cube = cube.subcube_from_regions([region]) #doctest: +SKIP
+     
+--- a/spectral_cube/tests/test_subcubes.py	2021-10-01 00:04:12.000000000 +0800
++++ b/spectral_cube/tests/test_subcubes.py	2022-07-03 16:46:50.971107638 +0800
+@@ -107,7 +107,7 @@
+     # specific test for correctness
+     cube, data = cube_and_raw(data_255, use_dask=use_dask)
+ 
+-    shapelist = regions.read_ds9(path(regfile))
++    shapelist = regions.Regions.read(path(regfile))
+ 
+     subcube = cube.subcube_from_regions(shapelist)
+     assert_array_equal(subcube[0, :, :].value,
+@@ -130,7 +130,7 @@
+ def test_ds9region_new(regfile, result, data_adv, use_dask):
+     cube, data = cube_and_raw(data_adv, use_dask=use_dask)
+ 
+-    regionlist = regions.read_ds9(path(regfile))
++    regionlist = regions.Regions.read(path(regfile))
+ 
+     if isinstance(result, type) and issubclass(result, Exception):
+         with pytest.raises(result):

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci-astronomy@gentoo.org</email>
+		<name>Gentoo Astronomy Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		The spectral-cube package provides an easy way to read, manipulate,
+		analyze, and write data cubes with two positional dimensions and
+		one spectral dimension, optionally with Stokes parameters.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">spectral-cube</remote-id>
+		<remote-id type="github">radio-astro-tools/spectral-cube</remote-id>
+	</upstream>
+	<use>
+		<flag name="all">Full function support</flag>
+		<flag name="novis">Extra novis support</flag>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
+</pkgmetadata>
