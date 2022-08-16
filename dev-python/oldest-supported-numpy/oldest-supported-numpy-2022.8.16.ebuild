@@ -4,7 +4,7 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{8..11} )
 
 inherit distutils-r1
 
@@ -18,6 +18,8 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 
+#distutils_enable_tests nose
+
 python_prepare() {
-	sed -i "/${EPYTHON#python}/s/==/>=/" setup.cfg
+	sed -i "/${EPYTHON#python}/s/==/>=/" setup.cfg || die
 }

@@ -32,7 +32,7 @@ dev-python/astlib                                                               
 dev-python/distributed                                                               | 2022.8.0                                                      |
 dev-python/glymur                                                                    | 0.11.2                                                        |
 dev-python/hsluv                                                                     | 5.0.3                                                         |
-dev-python/oldest-supported-numpy                                                    | 2022.5.28                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
+dev-python/oldest-supported-numpy                                                    | 2022.8.16                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
 dev-python/parfive                                                                   | 1.5.1; 2.0.1                                                  |
 dev-python/PyQt5                                                                     | 5.15.4-r1; 5.15.6                                             | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pytest-mpl                                                                | 0.13; 0.16.1                                                  |
