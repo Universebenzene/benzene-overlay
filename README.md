@@ -30,7 +30,7 @@ app-text/{[de](https://www.eudic.net/v4/de/app/download),[es](https://www.eudic.
 dev-python/aioftp                                                                    | 0.21.3                                                        |
 dev-python/astlib                                                                    | 0.11.3                                                        |
 dev-python/distributed                                                               | 2022.8.0                                                      |
-dev-python/glymur                                                                    | 0.11.2                                                        |
+dev-python/glymur                                                                    | 0.11.3                                                        |
 dev-python/hsluv                                                                     | 5.0.3                                                         |
 dev-python/oldest-supported-numpy                                                    | 2022.8.16                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
 dev-python/parfive                                                                   | 1.5.1; 2.0.1                                                  |
