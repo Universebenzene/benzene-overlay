@@ -46,7 +46,7 @@ distutils_enable_sphinx docs dev-python/furo
 python_prepare_all() {
 	use doc && { for epy in "${DISTDIR}"/*-e-*; do { cp ${epy} "${S}"/examples/${epy##*-e-} || die ; } ; done ; \
 		sed -i -e "/GH/s/GH/GH\%s/" -e "/PR/s/PR/PR\%s/" docs/conf.py || die ; }
-	use test && eapply "${FILESDIR}"/fix-h5type-test-${PV}.patch
+	use test && eapply "${FILESDIR}"/${P}-fix-h5type-test.patch
 
 	distutils-r1_python_prepare_all
 }

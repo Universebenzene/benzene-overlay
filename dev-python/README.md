@@ -27,7 +27,7 @@ dev-python/extension-helpers   | 0.1                                  |
 dev-python/fast-histogram      | 0.11                                 | Glueviz releated.
 dev-python/gwcs                | 0.17.1; 0.18.1                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/h5netcdf            | 1.0.2                                |
-dev-python/h5pyd               | 0.10.1                               |
+dev-python/h5pyd               | 0.10.3                               |
 dev-python/healpy              | 1.11.0                               | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/healpy#note-for-healpy) for details
 dev-python/jplephem            | 2.17                                 |
 dev-python/jsonschema          | 3.2.0-r1                             | Old version for dev-python/asdf
