@@ -46,9 +46,10 @@ distutils_enable_sphinx docs
 
 python_install_all() {
 	if use examples; then
-		insinto /usr/share/doc/${PF}
-		use examples && doins -r examples
-		gzip -d ${ED%/}/usr/share/doc/${PF}/examples/*.gz || die
+		docompress -x "/usr/share/doc/${PF}/examples"
+		docinto examples
+		dodoc -r examples/.
 	fi
+
 	distutils-r1_python_install_all
 }
