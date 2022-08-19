@@ -30,7 +30,7 @@ RDEPEND="${DEPEND}
 	dev-python/pillow[${PYTHON_USEDEP}]
 	>=dev-python/scipy-0.18.1[${PYTHON_USEDEP}]
 "
-BEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-lang/swig
 "
 

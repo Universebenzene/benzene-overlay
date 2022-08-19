@@ -16,6 +16,8 @@
 		bundled one.
 	</longdescription>
 	<upstream>
+		<remote-id type="pypi">astLib</remote-id>
+		<remote-id type="github">mattyowl/astLib</remote-id>
 		<remote-id type="sourceforge">astlib</remote-id>
 	</upstream>
 </pkgmetadata>
