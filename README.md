@@ -29,7 +29,7 @@ app-text/{[de](https://www.eudic.net/v4/de/app/download),[es](https://www.eudic.
 [app-text/youdao-dict](https://cidian.youdao.com/multi.html#linuxAll)                | [6.0.0-r1](https://github.com/Universebenzene/benzene-overlay/blob/master/app-text/youdao-dict/youdao-dict-6.0.0-r1.ebuild)                 | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict). In order to use this you **must use the patched QtWebkit and PyQt5 with `webkit` USE flag in this overlay INSTEAD OF THE OFFICIAL ONE** （有道词典）
 dev-python/aioftp                                                                    | 0.21.3                                                        |
 dev-python/astlib                                                                    | 0.11.3; 0.11.8                                                |
-dev-python/distributed                                                               | 2022.8.0                                                      |
+dev-python/distributed                                                               | 2022.8.1                                                      |
 dev-python/glymur                                                                    | 0.11.3                                                        |
 dev-python/hsluv                                                                     | 5.0.3                                                         |
 dev-python/oldest-supported-numpy                                                    | 2022.8.16                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
