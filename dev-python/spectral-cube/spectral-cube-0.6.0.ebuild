@@ -57,7 +57,9 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		dev-python/zarr[${PYTHON_USEDEP}]
 	)
 "
-#PDEPEND="novis? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
+PDEPEND="novis? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
+	test? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
+"
 #		all? (
 #			dev-python/glue-core[${PYTHON_USEDEP}]
 #			dev-python/yt[${PYTHON_USEDEP}]
@@ -66,7 +68,6 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 #			dev-python/glue-core[${PYTHON_USEDEP}]
 #		)
 #"
-##			dev-python/pvextractor[${PYTHON_USEDEP}]
 
 PATCHES=( "${FILESDIR}/${P}-fix-old-regions-api.patch" )
 
