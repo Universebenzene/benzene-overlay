@@ -15,5 +15,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="pypi">astrodendro</remote-id>
+		<remote-id type="github">dendrograms/astrodendro</remote-id>
 	</upstream>
 </pkgmetadata>
