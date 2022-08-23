@@ -12,7 +12,7 @@ MY_PN=${PN/-/_}
 MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="ASDF serialization support for astropy"
-HOMEPAGE="https://github.com/astropy/asdf-astropy"
+HOMEPAGE="https://asdf-astropy.readthedocs.io"
 SRC_URI="mirror://pypi/${PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
@@ -25,7 +25,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 RDEPEND=">=dev-python/asdf-2.8.0[${PYTHON_USEDEP}]
 	dev-python/asdf_coordinates_schemas[${PYTHON_USEDEP}]
 	>=dev-python/asdf_transform_schemas-0.2.2[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
 	' python3_8)
@@ -35,12 +35,11 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
+		dev-python/sphinx-asdf[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		dev-python/astropy[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 	)
@@ -49,7 +48,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 S="${WORKDIR}/${MY_P}"
 
 distutils_enable_tests pytest
-#distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
+#distutils_enable_sphinx docs dev-python/sphinx-asdf dev-python/sphinx-astropy
 
 python_compile_all() {
 	if use doc; then
