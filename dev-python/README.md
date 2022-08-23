@@ -7,7 +7,7 @@ dev-python/astropy             | 5.0.2; 5.0.4; 5.1                    | Versions
 dev-python/astropy-helpers     | 2.0.11; 3.0.2; 3.1.1; 4.0.1          | With patches for better doc building. Same as the [AUR](https://aur.archlinux.org/packages/python-astropy-helpers/) ones
 dev-python/pytest-astropy      | 0.8.0; 0.10.0                        | Test plugins for astropy. Dependencies are also in this overlay but not list in this table
 dev-python/sphinx-astropy      | 1.6.0; 1.7.0                         | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not list in this table
-dev-python/sphinx-asdf         | 0.1.2; 0.1.3                         |
+dev-python/sphinx-asdf         | 0.1.3; 0.1.4                         |
 dev-python/aplpy               | 2.1.0                                | Versions below 2.1.0 are included but masked. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for more details. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/asdf                | 2.7.2; 2.9.2; 2.10.1; 2.12.0; 2.13.0 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building should only be enabled for re-merge to prevent circular depenencies.
 dev-python/asdf-astropy        | 0.2.0; 0.2.1                         | Dependencies are also in this overlay but not list in this table.
