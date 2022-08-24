@@ -20,8 +20,6 @@ IUSE="plotting reproject"
 RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/astropy-4.2[${PYTHON_USEDEP}]
 	>=dev-python/gwcs-0.15[${PYTHON_USEDEP}]
-"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	plotting? (
 		>=dev-python/matplotlib-3.2[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0[${PYTHON_USEDEP}]
@@ -29,6 +27,8 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	reproject? (
 		>=dev-python/reproject-0.7.1[${PYTHON_USEDEP}]
 	)
+"
+BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
 		media-gfx/graphviz
 	)
