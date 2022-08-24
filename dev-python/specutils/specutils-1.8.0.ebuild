@@ -46,7 +46,7 @@ distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; }
+	use doc && { eapply "${FILESDIR}"/${PN}-1.7.0-doc-use-local-fits.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; }
 	distutils-r1_python_prepare_all
 }
 
