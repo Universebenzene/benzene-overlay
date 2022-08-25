@@ -9,12 +9,13 @@ MY_P="${PN}-v${PV}"
 
 DESCRIPTION="Remote control and team work"
 HOMEPAGE="https://www.todesk.com"
-SRC_URI="amd64? ( https://dl.todesk.com/linux/${MY_P}-amd64.deb )"
+SRC_URI="amd64? ( https://dl.todesk.com/linux/${MY_P}-amd64.deb )
+	arm64? ( https://dl.todesk.com/linux/${MY_P}-arm64.deb )"
 
 RESTRICT="mirror"
 LICENSE="ToDesk"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 IUSE="keep-server"
 
 RDEPEND="x11-libs/gtk+:3"
@@ -38,7 +39,7 @@ src_install() {
 	exeinto /opt/${PN}/bin
 	use keep-server && dosym -r /usr/bin/sleep /opt/${PN}/bin/${PN}-hold
 
-	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-alone-${PV}.initd" "${PN}d-${PV}.initd") ${PN}d
+	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-alone-4.3.0.0.initd" "${PN}d-4.3.0.0.initd") ${PN}d
 	systemd_dounit etc/systemd/system/${PN}d.service
 
 	for si in 16 24 32 48 64 128 256 512; do
