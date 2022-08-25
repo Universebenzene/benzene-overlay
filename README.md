@@ -81,7 +81,7 @@ Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/adal                  | 1.2.7         | SunPy, h5pyd related
 dev-python/abg\_python           | 1.0.5         | Optional for yt
-dev-python/aiobotocore           | 2.3.4         | Pulled in by zarr
+dev-python/aiobotocore           | 2.4.0         | Pulled in by zarr
 dev-python/aioitertools          | 0.10.0        | Pulled in by zarr
 dev-python/asciitree             | 0.3.3         | Pulled in by zarr
 dev-python/bidict                | 0.22.0        | Optional for yt
