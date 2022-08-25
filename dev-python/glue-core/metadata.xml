@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">glue-core</remote-id>
+		<remote-id type="github">glue-viz/glue</remote-id>
+	</upstream>
+	<use>
+		<flag name="all">Most function support</flag>
+		<flag name="astronomy">More astronomy support</flag>
+		<flag name="qt">Include PyQt5 library</flag>
+		<flag name="recommended">Slightly more function support</flag>
+	</use>
+</pkgmetadata>

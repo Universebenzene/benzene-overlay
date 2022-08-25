@@ -25,6 +25,7 @@ dev-python/drms                | 0.6.2                                | SunPy re
 dev-python/echo                | 0.6                                  | Glueviz releated.
 dev-python/extension-helpers   | 0.1                                  |
 dev-python/fast-histogram      | 0.11                                 | Glueviz releated.
+dev-python/glueviz             | (glue-core: 1.5.0)                   | Both meta package and core package versions are shown.
 dev-python/gwcs                | 0.17.1; 0.18.1                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/h5netcdf            | 1.0.2                                |
 dev-python/h5pyd               | 0.10.3                               |
