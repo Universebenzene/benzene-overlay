@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{8..10} )
 
-inherit distutils-r1
+inherit distutils-r1 virtualx
 
 DESCRIPTION="Library for reading and analyzing astrophysical spectral data cubes"
 HOMEPAGE="https://spectral-cube.readthedocs.io"
@@ -57,15 +57,18 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		dev-python/zarr[${PYTHON_USEDEP}]
 	)
 "
-PDEPEND="novis? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
-	test? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
+PDEPEND="all? ( dev-python/glue-core[${PYTHON_USEDEP},qt] )
+	novis? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
+	test? (
+		dev-python/glue-core[${PYTHON_USEDEP},qt]
+		dev-python/pvextractor[${PYTHON_USEDEP}]
+	)
 "
 #		all? (
-#			dev-python/glue-core[${PYTHON_USEDEP}]
 #			dev-python/yt[${PYTHON_USEDEP}]
 #		)
 #		test? (
-#			dev-python/glue-core[${PYTHON_USEDEP}]
+#			dev-python/yt[${PYTHON_USEDEP}]
 #		)
 #"
 
@@ -82,4 +85,8 @@ python_compile_all() {
 		popd || die
 		HTML_DOCS=( docs/_build/html/. )
 	fi
+}
+
+python_test() {
+	virtx epytest
 }
