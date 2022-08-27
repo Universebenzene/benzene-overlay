@@ -132,7 +132,7 @@ dev-python/sphinx-inline-tabs   | 2022.1.2\_beta11 |
 dev-python/sphinx-togglebutton  | 0.3.1            |
 dev-python/sphinx\_contributors | 0.2.6            |
 dev-python/sphinx\_design       | 0.2.0            |
-dev-python/sphinx\_mdinclude    | 0.5.1            |
+dev-python/sphinx\_mdinclude    | 0.5.2            |
 dev-python/dask-sphinx-theme    | 3.0.3            |
 dev-python/sunpy-sphinx-theme   | 1.2.34           |
 dev-python/mistune              | 0.8.4-r1         | Only for sphinx-asdf that depends on old version
