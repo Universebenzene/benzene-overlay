@@ -9,8 +9,8 @@ inherit systemd
 
 DESCRIPTION="Nodejs backend for purple-oicq"
 HOMEPAGE="https://codeberg.org/goodspeed/axon"
-SRC_URI="amd64? ( http://ci.hackflow.org/job/oicq-axon/16/artifact/dist/oicq-axon-linux-x64.gz -> ${P}-amd64.gz )
-	arm64? ( http://ci.hackflow.org/job/oicq-axon/16/artifact/dist/oicq-axon-linux-arm64.gz -> ${P}-arm64.gz )
+SRC_URI="amd64? ( https://codeberg.org/attachments/08fc278d-816f-476f-94d1-a46706fd48bc -> ${P}-amd64.gz )
+	arm64? ( https://codeberg.org/attachments/37aa4575-a2f2-4c03-ae98-5c73e58ac958 -> ${P}-arm64.gz )
 "
 LICENSE="Unlicense"
 SLOT="0"
