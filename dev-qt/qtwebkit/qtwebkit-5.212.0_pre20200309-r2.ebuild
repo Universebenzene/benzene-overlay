@@ -14,7 +14,7 @@ else
 	S="${WORKDIR}/${MY_P}"
 fi
 PYTHON_COMPAT=( python3_{8..10} )
-USE_RUBY="ruby26 ruby27 ruby30 ruby31"
+USE_RUBY="ruby27 ruby30 ruby31"
 inherit check-reqs cmake flag-o-matic python-any-r1 qmake-utils ruby-single toolchain-funcs
 
 DESCRIPTION="WebKit rendering library for the Qt5 framework (deprecated)"
@@ -136,10 +136,8 @@ src_configure() {
 		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby31) )
 	elif has_version "virtual/rubygems[ruby_targets_ruby30]"; then
 		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby30) )
-	elif has_version "virtual/rubygems[ruby_targets_ruby27]"; then
-		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby27) )
 	else
-		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby26) )
+		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby27) )
 	fi
 
 	cmake_src_configure
