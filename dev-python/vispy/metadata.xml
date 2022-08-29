@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		VisPy is a high-performance interactive 2D/3D data visualization library.
+		VisPy leverages the computational power of modern Graphics Processing Units (GPUs)
+		through the OpenGL library to display very large datasets.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">vispy</remote-id>
+		<remote-id type="github">vispy/vispy</remote-id>
+	</upstream>
+	<use>
+		<flag name="io">Extra io support</flag>
+		<flag name="ipython-static">ipython-static support via <pkg>dev-python/ipython</pkg></flag>
+		<flag name="pyglet">Enable support for pyglet backend via <pkg>dev-python/pyglet</pkg></flag>
+		<flag name="pyqt5">Enable support for pyqt5 backend via <pkg>dev-python/PyQt5</pkg></flag>
+		<flag name="pyqt6">Enable support for pyqt6 backend via <pkg>dev-python/PyQt6</pkg></flag>
+		<flag name="pyside2">Enable support for pyside2 backend via <pkg>dev-python/pyside2</pkg></flag>
+		<flag name="pyside6">Enable support for pyside6 backend via <pkg>dev-python/pyside6</pkg></flag>
+		<flag name="sdl2">Enable support for sdl backend via <pkg>dev-python/PySDL2</pkg></flag>
+		<flag name="wx">Enable support for wx backend via <pkg>dev-python/wxpython</pkg></flag>
+	</use>
+</pkgmetadata>
