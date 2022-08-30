@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">glue-vispy-viewers</remote-id>
+		<remote-id type="github">glue-viz/glue-vispy-viewers</remote-id>
+	</upstream>
+	<use>
+		<flag name="qt">Extra qt support via <pkg>dev-python/PyQt5</pkg></flag>
+	</use>
+</pkgmetadata>
