@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci-astronomy@gentoo.org</email>
+		<name>Gentoo Astronomy Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		glueviz is a Python library for data interaction. It blurs the boundary
+		between GUI-centric and code-centric data exploration.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">glueviz</remote-id>
+		<remote-id type="github">glue-viz/glueviz</remote-id>
+	</upstream>
+</pkgmetadata>
