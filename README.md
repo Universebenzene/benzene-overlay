@@ -99,6 +99,7 @@ dev-python/miniballcpp           | 0.2.2         | Optional for yt
 dev-python/msrest                | 0.6.21        | SunPy, h5pyd related
 dev-python/msrestazure           | 0.6.4         | SunPy, h5pyd related
 dev-python/numcodecs             | 0.10.2        | Pulled in by zarr
+dev-python/pyaml                 | 21.10.1       | Optional for yt
 dev-python/pykdtree              | 1.3.5         | Optional for yt
 dev-python/python-socketio       | 5.7.1         | Optional for yt
 dev-python/python-xz             | 0.4.0         | Optional for yt
