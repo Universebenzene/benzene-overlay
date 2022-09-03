@@ -24,15 +24,12 @@ RDEPEND="dev-python/aiobotocore[${PYTHON_USEDEP},awscli?,boto3?]
 	dev-python/fsspec[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
-		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/flask[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
 	)
 "
-
-PATCHES=( "${FILESDIR}/${PN}-2022.5.0-fix-doc-missing-blank-line.patch" )
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx_rtd_theme dev-python/numpydoc
