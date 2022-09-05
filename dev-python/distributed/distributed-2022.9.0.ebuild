@@ -6,17 +6,24 @@ EAPI=8
 #DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{8..10} )
 
+GIT_RAW_URI="https://github.com/dask/distributed/raw/${PV}"
+
 inherit distutils-r1
 
 DESCRIPTION="Distributed scheduler for Dask"
 HOMEPAGE="https://distributed.dask.org"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
 	doc? (
-		https://raw.githubusercontent.com/dask/distributed/${PV}/docs/source/conf.py -> ${P}-conf.py
-		https://raw.githubusercontent.com/dask/distributed/${PV}/docs/source/images/task-state.svg -> ${P}-d-task-state.svg
-		https://raw.githubusercontent.com/dask/distributed/${PV}/docs/source/images/worker-task-state.svg -> ${P}-d-worker-task-state.svg
-		https://raw.githubusercontent.com/dask/distributed/${PV}/docs/source/images/worker-dep-state.svg -> ${P}-d-worker-dep-state.svg
-		https://raw.githubusercontent.com/dask/distributed/${PV}/docs/source/images/memory-sampler.svg -> ${P}-d-memory-sampler.svg
+		${GIT_RAW_URI}/docs/source/conf.py -> ${P}-conf.py
+		${GIT_RAW_URI}/docs/source/images/task-state.svg -> ${P}-d-task-state.svg
+		${GIT_RAW_URI}/docs/source/images/worker-cancel-state1.svg -> ${P}-d-worker-worker-state1.svg
+		${GIT_RAW_URI}/docs/source/images/worker-cancel-state2.svg -> ${P}-d-worker-worker-state2.svg
+		${GIT_RAW_URI}/docs/source/images/worker-dep-state.svg -> ${P}-d-worker-dep-state.svg
+		${GIT_RAW_URI}/docs/source/images/worker-execute-state.svg -> ${P}-d-worker-execute-state.svg
+		${GIT_RAW_URI}/docs/source/images/worker-forget-state.svg -> ${P}-d-worker-forget-state.svg
+		${GIT_RAW_URI}/docs/source/images/worker-scatter-state.svg -> ${P}-d-worker-scatter-state.svg
+		${GIT_RAW_URI}/docs/source/images/worker-state-machine.svg -> ${P}-d-worker-state-machine.svg
+		${GIT_RAW_URI}/docs/source/images/memory-sampler.svg -> ${P}-d-memory-sampler.svg
 	)
 "
 
@@ -52,7 +59,8 @@ distutils_enable_sphinx docs/source dev-python/dask-sphinx-theme dev-python/nump
 
 python_prepare_all() {
 	use doc && { cp {"${DISTDIR}"/${P}-,"${S}"/docs/source/}conf.py || die ; mkdir -p "${S}"/docs/source/images || die ; \
-		for ivg in "${DISTDIR}"/*-d-*; do { cp ${ivg} "${S}"/docs/source/images/${ivg##*-d-} || die ; } ; done ; }
+		for ivg in "${DISTDIR}"/*-d-*; do { cp ${ivg} "${S}"/docs/source/images/${ivg##*-d-} || die ; } ; done ; \
+		sed -i -e "/github/s/GH\#/GH\%s\#/" docs/source/conf.py || die ; }
 
 	distutils-r1_python_prepare_all
 }
