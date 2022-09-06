@@ -44,7 +44,7 @@ src_compile() {
 	export CGO_CXXFLAGS="${CXXFLAGS}"
 	export CGO_LDFLAGS="${LDFLAGS}"
 	export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
-	ego build -mod vendor -v -x -ldflags="-X github.com/mzz2017/gg/cmd.Version=${PV} -linkmode=external" -o . ./...
+	ego build ${VENDOROPT} -v -x -ldflags="-X github.com/mzz2017/gg/cmd.Version=${PV} -linkmode=external" -o . ./...
 }
 
 src_test() {
