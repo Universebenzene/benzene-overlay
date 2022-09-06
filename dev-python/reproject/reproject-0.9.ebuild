@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{8..10} )
 
-inherit distutils-r1
+inherit distutils-r1 optfeature
 
 DESCRIPTION="Reproject astronomical images with Python"
 HOMEPAGE="https://reproject.readthedocs.io"
@@ -32,10 +32,11 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/astropy-3.2[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]"
+RDEPEND="${DEPEND}
+	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-healpix-0.6[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.14[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
@@ -46,21 +47,22 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		dev-python/pyvo[${PYTHON_USEDEP}]
 	)
 	test? (
-		${RDEPEND}
-		dev-python/pytest-astropy[${PYTHON_USEDEP}]
-		sci-libs/shapely[${PYTHON_USEDEP}]
+		dev-python/pytest-arraydiff[${PYTHON_USEDEP}]
+		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
+		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		dev-python/gwcs[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/sunpy[${PYTHON_USEDEP}]
+		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 "
-
-PATCHES=(
-	"${FILESDIR}"/0002-${PN}-0.7.1-doc-use-local-fits.patch
-)
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/pyvo
 
 python_prepare_all() {
-	use doc && { cp "${DISTDIR}"/*.fits* "${S}"/docs || die ; }
+	use doc && { eapply "${FILESDIR}"/0002-${PN}-0.7.1-doc-use-local-fits.patch ; cp "${DISTDIR}"/*.fits* "${S}"/docs || die ; }
+	sed -i "/NaNs/a \	ignore:Subclassing validator classes is not intended:DeprecationWarning" setup.cfg || die
 
 	distutils-r1_python_prepare_all
 }
@@ -76,5 +78,9 @@ python_compile_all() {
 }
 
 python_test() {
-	epytest "${BUILD_DIR}"/install/$(python_get_sitedir)
+	epytest "${BUILD_DIR}"
+}
+
+pkg_postinst() {
+	optfeature "some of the mosaicking functionality" ">=dev-python/shapely-1.6"
 }
