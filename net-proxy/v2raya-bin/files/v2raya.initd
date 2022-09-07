@@ -14,3 +14,9 @@ depend() {
 	need net
 	after net
 }
+
+start_pre() {
+	mkdir -p /var/log/v2raya
+
+	eend $?
+}
