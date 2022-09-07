@@ -23,7 +23,7 @@ dev-python/casa-formats-io     | 0.1                                  |
 dev-python/cdflib              | 0.4.7                                | SunPy releated.
 dev-python/drms                | 0.6.2                                | SunPy releated. `network-sandbox` FEATURE will be disabled if you enable `examples` flag for doc building
 dev-python/echo                | 0.6                                  | Glueviz releated.
-dev-python/extension-helpers   | 0.1                                  |
+dev-python/extension-helpers   | 1.0.0                                |
 dev-python/fast-histogram      | 0.11                                 | Glueviz releated.
 dev-python/glueviz             | 1.2.0 (glue-core: 1.5.0)             | Both meta package and core package versions are shown.
 dev-python/glue-vispy-viewers  | 1.0.5                                |
