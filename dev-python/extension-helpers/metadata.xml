@@ -15,4 +15,8 @@
 		It is developed by the Astropy project but is intended to be general
 		and usable by any Python package.
 	</longdescription>
+	<upstream>
+		<remote-id type="pypi">extension-helpers</remote-id>
+		<remote-id type="github">astropy/extension-helpers</remote-id>
+	</upstream>
 </pkgmetadata>
