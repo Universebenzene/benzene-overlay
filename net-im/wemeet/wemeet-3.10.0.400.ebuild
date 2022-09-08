@@ -9,7 +9,7 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.5:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="https://updatecdn.meeting.qq.com/OTRhY2YwZTUtMzE5Ni00NDQyLTg0MTMtOTBjYzQzNzcxYTQz/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb"
+SRC_URI="https://updatecdn.meeting.qq.com/cos/60bbaecfb3bf32615331b07d46001353/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
@@ -36,6 +36,7 @@ RDEPEND="dev-libs/nss
 		net-dns/avahi[dbus]
 		net-print/cups[dbus,ssl]
 		sys-libs/libapparmor
+		sys-libs/libunwind
 		sys-libs/zlib[minizip]
 		virtual/krb5
 		virtual/udev
@@ -87,7 +88,6 @@ QA_PREBUILT="opt/${PN}/*"
 src_prepare() {
 	sed	-e '$i Comment=Tencent Meeting Linux Client\nComment[zh_CN]=腾讯会议Linux客户端\nKeywords=wemeet;tencent;meeting;' \
 		-e "/Exec/c Exec=${PN} %u" -e "/Icon/c Icon=${PN}" -i usr/share/applications/${PN}app.desktop || die
-	use bundled-qt || { sed "/^Prefix/c Prefix = $(qt5_get_libdir)/qt5" -i opt/${PN}/bin/qt.conf || die ; }
 	default
 }
 
@@ -99,9 +99,9 @@ src_install() {
 	use bundled-qt && { use bundled-libs && { doins -r opt/${PN}/{icons,lib,plugins,resources,translations}; fperms +x \
 		/opt/${PN}/bin/QtWebEngineProcess ; } || { fperms +x /opt/${PN}/bin/QtWebEngineProcess ; doins -r \
 		opt/${PN}/{plugins,resources,translations} ; insinto /opt/${PN}/lib ; doins -r \
-		opt/${PN}/lib/{libui*,libwemeet*,libxcast*,libxnn*,libdesktop*,libImSDK.so,libnxui*,libicu*,libQt5*} ; } ; } \
-		|| { rm "${ED%/}"/opt/${PN}/bin/QtWebEngineProcess || die ; insinto /opt/${PN}/lib ; \
-		doins -r opt/${PN}/lib/{libui*,libwemeet*,libxcast*,libxnn*,libdesktop_common.so,libImSDK.so,libnxui*} ; }
+		opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,bugly*,crbase*} ; } ; } \
+		|| { rm "${ED%/}"/opt/${PN}/bin/{QtWebEngineProcess,qt.conf} || die ; insinto /opt/${PN}/lib ; \
+		doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop_common.so,ImSDK.so,nxui*,qt_*,bugly*,crbase*} ; }
 	fperms +x /opt/${PN}/{${PN}app.sh,bin/${PN}app}
 	dosym -r /opt/${PN}/${PN}app.sh /usr/bin/${PN}
 	dosym {raw,/opt/${PN}/bin}/xcast.conf
