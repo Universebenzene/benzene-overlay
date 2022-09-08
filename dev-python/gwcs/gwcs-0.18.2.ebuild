@@ -22,11 +22,11 @@ REQUIRED_USE="intersphinx? ( doc )"
 RDEPEND=">=dev-python/asdf-2.8.1[${PYTHON_USEDEP}]
 	dev-python/asdf_wcs_schemas[${PYTHON_USEDEP}]
 	>=dev-python/asdf-astropy-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 "
 
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools_scm-3.4[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
@@ -35,7 +35,6 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/typeguard[${PYTHON_USEDEP}]
 	)
 "
