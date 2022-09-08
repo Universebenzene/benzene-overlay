@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		yt is an open-source, permissively-licensed Python library for
+		analyzing and visualizing volumetric data. yt supports structured,
+		variable-resolution meshes, unstructured meshes, and discrete or sampled
+		data such as particles. Focused on driving physically-meaningful inquiry,
+		yt has been applied in domains such as astrophysics, seismology, nuclear
+		engineering, molecular dynamics, and oceanography.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">yt</remote-id>
+		<remote-id type="github">yt-project/yt</remote-id>
+	</upstream>
+	<use>
+		<flag name="doc">Add extra documentation (full doc building needs huge amount of data. Can complete locally).</flag>
+		<flag name="full">Include all dependencies for full function</flag>
+	</use>
+</pkgmetadata>
