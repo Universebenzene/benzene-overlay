@@ -25,7 +25,6 @@ RDEPEND=">=dev-python/asdf-2.8.1[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 "
-
 BDEPEND=">=dev-python/setuptools_scm-3.4[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
