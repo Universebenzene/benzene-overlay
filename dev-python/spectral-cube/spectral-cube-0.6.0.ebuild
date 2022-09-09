@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"	# no x86 KEYWORD for yt, glueviz
 IUSE="doc intersphinx novis all"
 # Test phase runs with fails
 RESTRICT="test
@@ -57,20 +57,17 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		dev-python/zarr[${PYTHON_USEDEP}]
 	)
 "
-PDEPEND="all? ( dev-python/glue-core[${PYTHON_USEDEP},qt] )
+PDEPEND="all? (
+		dev-python/glue-core[${PYTHON_USEDEP},qt]
+		dev-python/yt[${PYTHON_USEDEP}]
+	)
 	novis? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
 	test? (
 		dev-python/glue-core[${PYTHON_USEDEP},qt]
 		dev-python/pvextractor[${PYTHON_USEDEP}]
+		dev-python/yt[${PYTHON_USEDEP}]
 	)
 "
-#		all? (
-#			dev-python/yt[${PYTHON_USEDEP}]
-#		)
-#		test? (
-#			dev-python/yt[${PYTHON_USEDEP}]
-#		)
-#"
 
 PATCHES=( "${FILESDIR}/${P}-fix-old-regions-api.patch" )
 
