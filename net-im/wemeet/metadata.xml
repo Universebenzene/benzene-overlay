@@ -13,5 +13,6 @@
 		<flag name="bundled-libs">Use the upstream provided bundled libraries.</flag>
 		<flag name="bundled-qt">Use bundled Qt and icu instead of system-wide libs.</flag>
 		<flag name="ibus">Enable support for <pkg>app-i18n/ibus</pkg></flag>
+		<flag name="pipewire">Use native <pkg>media-video/pipewire</pkg> audio backend</flag>
 	</use>
 </pkgmetadata>

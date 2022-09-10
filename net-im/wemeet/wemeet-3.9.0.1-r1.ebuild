@@ -14,7 +14,7 @@ SRC_URI="https://updatecdn.meeting.qq.com/OTRhY2YwZTUtMzE5Ni00NDQyLTg0MTMtOTBjYz
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE="ibus wayland bundled-libs bundled-qt"
+IUSE="ibus wayland bundled-libs bundled-qt pipewire"
 REQUIRED_USE="bundled-libs? ( bundled-qt )"
 
 RDEPEND="dev-libs/nss
@@ -32,9 +32,9 @@ RDEPEND="dev-libs/nss
 		media-libs/libjpeg-turbo
 		media-libs/libvorbis
 		media-libs/libpulse[X,asyncns]
-		media-sound/pulseaudio-daemon[tcpd,zeroconf]
 		net-dns/avahi[dbus]
 		net-print/cups[dbus,ssl]
+		sys-apps/tcp-wrappers
 		sys-libs/libapparmor
 		sys-libs/zlib[minizip]
 		virtual/krb5
@@ -76,6 +76,9 @@ RDEPEND="dev-libs/nss
 		>=dev-qt/qtwebview-${QT5_MIN}
 		>=dev-qt/qtwidgets-${QT5_MIN}
 	)
+	pipewire? (
+		media-video/pipewire[sound-server]
+	)
 "
 DEPEND=""
 BDEPEND=""
@@ -93,7 +96,7 @@ src_prepare() {
 src_install() {
 	insinto /opt/${PN}
 	doins -r opt/${PN}/{bin,${PN}.svg}
-	newins "${FILESDIR}"/$(usex bundled-qt 'bundled-' '')${PN}-3.8.0.2-app.sh ${PN}app.sh
+	newins "${FILESDIR}"/$(usex bundled-qt 'bundled-' '')${PN}$(usex pipewire '-pipewire' '')-3.8.0.2-app.sh ${PN}app.sh
 
 	use bundled-qt && { use bundled-libs && { doins -r opt/${PN}/{icons,lib,plugins,resources,translations}; fperms +x \
 		/opt/${PN}/bin/QtWebEngineProcess ; } || { fperms +x /opt/${PN}/bin/QtWebEngineProcess ; doins -r \

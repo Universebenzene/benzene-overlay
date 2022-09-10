@@ -35,10 +35,10 @@ RDEPEND="dev-libs/nss
 		media-libs/libpng
 		media-plugins/gst-plugins-meta:1.0[flac,vorbis]
 		|| ( media-libs/libpulse[X,asyncns] media-sound/pulseaudio[X,asyncns,orc,ssl,tcpd,udev,zeroconf] )
-		media-sound/pulseaudio-daemon[tcpd,zeroconf]
 		net-dns/avahi[dbus]
 		net-libs/libproxy
 		net-print/cups[dbus,ssl]
+		sys-apps/tcp-wrappers
 		sys-libs/libapparmor
 		sys-libs/zlib
 		virtual/krb5
