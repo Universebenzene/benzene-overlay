@@ -12,7 +12,7 @@ MY_P=${MY_PN}-${PV}
 inherit distutils-r1
 
 DESCRIPTION="Easy to use Python module to extract Exif metadata from digital image files"
-HOMEPAGE="https://github.com/ageller/Firefly"
+HOMEPAGE="https://github.com/ianare/exif-py"
 SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
