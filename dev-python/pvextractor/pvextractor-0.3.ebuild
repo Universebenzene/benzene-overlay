@@ -24,12 +24,12 @@ RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
 	dev-python/QtPy[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 	dev-python/spectral-cube[${PYTHON_USEDEP}]
+"
+BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
-"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
