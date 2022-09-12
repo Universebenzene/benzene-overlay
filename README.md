@@ -93,7 +93,7 @@ dev-python/bidict                | 0.22.0        | Optional for yt
 dev-python/f90nml                | 1.4.3         | Optional for yt
 dev-python/fastcache             | 1.1.0         | Optional for yt
 dev-python/firefly-viz           | 2.0.4         | Optional for yt
-dev-python/flask-socketio        | 5.2.0         | Optional for yt
+dev-python/flask-socketio        | 5.3.1         | Optional for yt
 dev-python/freetype-py           | 2.3.0         | Pulled in py vispy
 dev-python/fusepy                | 3.0.1         | Optional for yt
 dev-python/heapdict              | 1.0.1         | Pulled in by zict and distributed
