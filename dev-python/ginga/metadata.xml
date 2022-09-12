@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci-astronomy@gentoo.org</email>
+		<name>Gentoo Astronomy Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Ginga is a toolkit designed for building viewers for scientific image
+		data in Python, visualizing 2D pixel data in numpy arrays.
+		It can view astronomical data such as contained in files based on the
+		FITS (Flexible Image Transport System) file format.  It is written and
+		is maintained by software engineers at the Subaru Telescope, National
+		Astronomical Observatory of Japan.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">ginga</remote-id>
+		<remote-id type="github">ejeschke/ginga</remote-id>
+	</upstream>
+	<use>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+		<flag name="gtk3">Enable support for GTK3 backend</flag>
+		<flag name="qt5">Enable support for Qt5 backend via <pkg>dev-python/PyQt5</pkg></flag>
+		<flag name="recommended">Recommended for more features</flag>
+		<flag name="tk">Enable support for Tk backend via <pkg>dev-python/aggdraw</pkg></flag>
+		<flag name="web">Enable support for web backend via <pkg>www-servers/tornado</pkg></flag>
+	</use>
+</pkgmetadata>
