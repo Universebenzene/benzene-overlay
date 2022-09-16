@@ -22,7 +22,7 @@ if [[ ${PV} == *9999* ]]; then
 else
 	KEYWORDS="~amd64 ~arm ~arm64"
 	SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz
-		https://github.com/Universebenzene/ebuild-vendors/archive/refs/tags/${PN}-vendor-${PV}.tar.gz"
+		https://github.com/Universebenzene/ebuild-vendors/archive/refs/tags/${P}.tar.gz -> ${P}-vendor.tar.gz"
 	VENDOROPT="-mod vendor"
 fi
 
@@ -33,7 +33,7 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	if [[ ${PV} != *9999* ]]; then
-		mv "${WORKDIR}"/ebuild-vendors-${PN}-vendor-${PV}/vendor "${S}" || die
+		mv "${WORKDIR}"/ebuild-vendors-${P}/vendor "${S}" || die
 	fi
 	default
 }

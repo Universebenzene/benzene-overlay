@@ -5,5 +5,8 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">mzz2017/gg</remote-id>
+	</upstream>
 </pkgmetadata>
 
