@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Library for efficient spherical harmonic transforms at arbitrary
+		spins, supporting CPU vectorization, OpenMP and MPI.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">Libsharp/libsharp</remote-id>
+	</upstream>
+</pkgmetadata>
