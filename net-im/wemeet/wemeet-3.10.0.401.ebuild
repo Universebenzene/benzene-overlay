@@ -9,7 +9,7 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.5:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="https://updatecdn.meeting.qq.com/cos/60bbaecfb3bf32615331b07d46001353/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb"
+SRC_URI="https://updatecdn.meeting.qq.com/cos/249fc9a44733d846162296934bbf52fa/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
@@ -77,9 +77,7 @@ RDEPEND="dev-libs/nss
 		>=dev-qt/qtwebview-${QT5_MIN}
 		>=dev-qt/qtwidgets-${QT5_MIN}
 	)
-	pipewire? (
-		media-video/pipewire[sound-server]
-	)
+	pipewire? ( media-video/pipewire[sound-server] )
 "
 DEPEND=""
 BDEPEND=""

@@ -76,9 +76,7 @@ RDEPEND="dev-libs/nss
 		>=dev-qt/qtwebview-${QT5_MIN}
 		>=dev-qt/qtwidgets-${QT5_MIN}
 	)
-	pipewire? (
-		media-video/pipewire[sound-server]
-	)
+	pipewire? ( media-video/pipewire[sound-server] )
 "
 DEPEND=""
 BDEPEND=""
