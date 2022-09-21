@@ -31,7 +31,7 @@ dev-python/glue-vispy-viewers  | 1.0.5                                |
 dev-python/gwcs                | 0.17.1; 0.18.2                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/h5netcdf            | 1.0.2                                |
 dev-python/h5pyd               | 0.10.3                               |
-dev-python/healpy              | 1.11.0                               | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/healpy#note-for-healpy) for details
+dev-python/healpy              | 1.16.1                               |
 dev-python/jplephem            | 2.17                                 |
 dev-python/jsonschema          | 3.2.0-r1                             | Old version for dev-python/asdf
 dev-python/montage-wrapper     | 0.9.9                                |

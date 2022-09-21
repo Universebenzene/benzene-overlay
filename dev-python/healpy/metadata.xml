@@ -5,6 +5,10 @@
 		<email>sci-astronomy@gentoo.org</email>
 		<name>Gentoo Astronomy Project</name>
 	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
 	<longdescription lang="en">
 		Healpy provides a python package to manipulate healpix maps. It is
 		based on the standard numeric and visualisation tools for Python,
