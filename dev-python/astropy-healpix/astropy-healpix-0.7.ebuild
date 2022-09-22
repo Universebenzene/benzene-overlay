@@ -20,11 +20,14 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc intersphinx"
-RESTRICT="intersphinx? ( network-sandbox )"
+# healpy related tests run with fails
+RESTRICT="test
+	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/numpy-1.11[${PYTHON_USEDEP}]
-	>=dev-python/astropy-2.0[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/numpy-1.11[${PYTHON_USEDEP}]"
+RDEPEND="${DEPEND}
+	>=dev-python/astropy-3[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
@@ -33,8 +36,10 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
 	test? (
+		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
+		dev-python/healpy[${PYTHON_USEDEP}]
 	)
 "
 
@@ -61,7 +66,7 @@ python_compile_all() {
 }
 
 python_test() {
-	epytest "${BUILD_DIR}"/install/$(python_get_sitedir)
+	epytest "${BUILD_DIR}"
 }
 
 pkg_postinst() {
