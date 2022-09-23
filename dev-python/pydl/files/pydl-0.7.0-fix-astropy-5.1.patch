@@ -1,0 +1,62 @@
+Author: Vincent Prat <vivi@debian.org>
+Description: ensure compatibility with astropy 5.1
+Forwarded: not-needed
+--- a/pydl/pydlutils/tests/test_bspline.py	2019-02-23 07:39:20.000000000 +0800
++++ b/pydl/pydlutils/tests/test_bspline.py	2022-09-12 13:37:31.881053015 +0800
+@@ -1,6 +1,7 @@
+ # Licensed under a 3-clause BSD style license - see LICENSE.rst
+ # -*- coding: utf-8 -*-
+ import numpy as np
++import pytest
+ from astropy.tests.helper import catch_warnings, raises
+ from .. import PydlutilsUserWarning
+ from ..bspline import cholesky_band, cholesky_solve, iterfit
+@@ -60,7 +61,7 @@
+         i, ll = cholesky_band(ab)
+         assert np.allclose(l, ll)
+         ab[0, 0] = 1.0e-6
+-        with catch_warnings(PydlutilsUserWarning) as w:
++        with pytest.warns(PydlutilsUserWarning) as w:
+             i, ll = cholesky_band(ab, mininf=1.0e-5)
+         assert len(w) > 0
+         assert str(w[0].message) == "Bad entries: [0]"
+--- a/pydl/pydlutils/tests/test_sdss.py	2018-05-03 01:25:31.000000000 +0800
++++ b/pydl/pydlutils/tests/test_sdss.py	2022-09-12 13:46:09.537238061 +0800
+@@ -2,7 +2,8 @@
+ # -*- coding: utf-8 -*-
+ import numpy as np
+ import pydl.pydlutils.sdss
+-from astropy.tests.helper import remote_data, raises
++import pytest
++from astropy.tests.helper import raises
+ from astropy.utils.data import get_pkg_data_filename
+ from ..sdss import (default_skyversion, sdss_flagexist, sdss_flagname,
+                     sdss_flagval, set_maskbits, sdss_astrombad,
+@@ -115,7 +116,7 @@
+             foo = sdss_astrombad(np.array([77, 85, 251]), np.array([1, 2, 3]),
+                                 np.array([20]))
+ 
+-    @remote_data
++    @pytest.mark.remote_data
+     def test_sdss_astrombad_remote(self):
+         pydl.pydlutils.sdss.opbadfields = None
+         assert not sdss_astrombad(77, 1, 20)
+--- a/pydl/pydlutils/tests/test_spheregroup.py	2017-03-21 06:43:44.000000000 +0800
++++ b/pydl/pydlutils/tests/test_spheregroup.py	2022-09-12 13:38:32.145499089 +0800
+@@ -1,6 +1,7 @@
+ # Licensed under a 3-clause BSD style license - see LICENSE.rst
+ # -*- coding: utf-8 -*-
+ import numpy as np
++import pytest
+ from astropy.tests.helper import raises, catch_warnings
+ from astropy.utils.data import get_pkg_data_filename
+ from ..spheregroup import spheregroup, spherematch
+@@ -70,7 +71,7 @@
+         #
+         # warnings
+         #
+-        with catch_warnings(PydlutilsUserWarning) as w:
++        with pytest.warns(PydlutilsUserWarning) as w:
+             group = spheregroup(ra, dec, linklength, chunksize=linklength)
+         # w = recwarn.pop(PydlutilsUserWarning)
+         assert "chunksize changed to" in str(w[0].message)
