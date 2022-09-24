@@ -21,7 +21,7 @@
 		<remote-id type="github">weaverba137/pydl</remote-id>
 	</upstream>
 	<use>
-		<!--<flag name="all">More function support</flag>-->
+		<flag name="all">More function support</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 	</use>
 </pkgmetadata>

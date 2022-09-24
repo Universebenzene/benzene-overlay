@@ -42,7 +42,7 @@ dev-python/photutils           | 1.5.0                                | `network
 dev-python/pvextractor         | 0.3                                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pyavm               | 0.9.5                                |
 dev-python/pyerfa              | 1.7.2; 2.0.0.1                       | Fixed test phase. One of the deps of `astropy`.
-dev-python/pydl                | 0.7.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
+dev-python/pydl                | 0.7.0; 1.0.0\_rc2                    | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pyregion            | 2.0; 2.1.1                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/pyvo                | 1.2.1; 1.3                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/radio-beam          | 0.3.3                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
