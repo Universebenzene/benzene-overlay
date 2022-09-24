@@ -33,7 +33,7 @@ dev-python/h5netcdf            | 1.0.2                                |
 dev-python/h5pyd               | 0.10.3                               |
 dev-python/healpy              | 1.16.1                               |
 dev-python/jplephem            | 2.17                                 |
-dev-python/jsonschema          | 3.2.0-r1                             | Old version for dev-python/asdf
+dev-python/jsonschema          | 3.2.0-r1; 4.9.1                      | Old version for dev-python/asdf
 dev-python/montage-wrapper     | 0.9.9                                |
 dev-python/mpl-animator        | 1.0.1                                |
 dev-python/mpl-scatter-density | 0.7                                  | Glueviz releated.
