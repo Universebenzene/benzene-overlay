@@ -26,6 +26,7 @@ RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	)
 	reproject? (
 		>=dev-python/reproject-0.7.1[${PYTHON_USEDEP}]
+		<dev-python/reproject-0.10[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
@@ -44,17 +45,14 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinx-changelog \
 	dev-python/sunpy-sphinx-theme \
-	dev-python/matplotlib \
 	dev-python/mpl-animators \
 	dev-python/pytest-doctestplus
 
-#EPYTEST_DESELECT=(
-#	# astropy<=5.0.4 may not compatible with pillow>=9.1.0, which will cause the following test failed:
-#	docs/visualization.rst::visualization.rst
-#)
-
 python_prepare_all() {
 	use doc && { mkdir -p changelog || die ; }
+#	use test && { sed -i -e '/ignore:distutils/a \	ignore:"order" was deprecated in version 0.9' \
+#		-e "/ignore:distutils/a \	ignore:The default kernel will change from 'Hann' to  'Gaussian'" \
+#		-e "/ignore:distutils/a \	ignore:The default boundary mode will change from 'ignore' to  'strict'" setup.cfg || die ; }
 
 	distutils-r1_python_prepare_all
 }
