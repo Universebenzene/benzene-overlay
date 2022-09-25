@@ -21,7 +21,7 @@ RESTRICT="test"	# Test phase runs with fails
 RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.7[${PYTHON_USEDEP}]
 	dev-python/fasteners[${PYTHON_USEDEP}]
-	>=dev-python/numcodecs-0.6.4[${PYTHON_USEDEP}]
+	>=dev-python/numcodecs-0.10.0[${PYTHON_USEDEP}]
 "
 BDEPEND=">dev-python/setuptools_scm-1.5.4[${PYTHON_USEDEP}]
 	jupyter? ( dev-python/notebook[${PYTHON_USEDEP}] )
@@ -40,7 +40,10 @@ BDEPEND=">dev-python/setuptools_scm-1.5.4[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/numpydoc dev-python/sphinx-issues dev-python/sphinx_rtd_theme
+distutils_enable_sphinx docs dev-python/numpydoc \
+	dev-python/sphinx-copybutton \
+	dev-python/sphinx-issues \
+	dev-python/sphinx_rtd_theme
 
 # Reported upsream
 # https://github.com/zarr-developers/zarr-python/issues/961
@@ -86,6 +89,7 @@ EPYTEST_DESELECT=(
 	zarr/tests/test_core.py::TestArrayWithFSStoreV3PartialRead::test_object_arrays_vlen_bytes
 	zarr/tests/test_core.py::TestArrayWithFSStoreV3Nested::test_object_arrays_vlen_bytes
 	zarr/tests/test_core.py::TestArrayWithFSStoreV3NestedPartialRead::test_object_arrays_vlen_bytes
+	zarr/tests/test_core.py::TestArrayV3::test_object_arrays_vlen_bytes
 )
 
 python_install_all() {
