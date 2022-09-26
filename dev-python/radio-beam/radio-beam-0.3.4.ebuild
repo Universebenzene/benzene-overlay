@@ -15,7 +15,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc intersphinx"
+IUSE="all doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
@@ -23,6 +23,10 @@ RDEPEND=">=dev-python/numpy-1.8.0[${PYTHON_USEDEP}]
 	dev-python/astropy[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
+	all? (
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+	)
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
@@ -30,20 +34,13 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
 	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
+		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
-#distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
-
-python_prepare_all() {
-	use test && { sed "/PYTEST_HEADER_MODULES/s/astropy.tests.plugins/pytest_astropy_header/" \
-		-i ${PN/-/_}/conftest.py || die ; }
-	distutils-r1_python_prepare_all
-}
+#distutils_enable_sphinx docs dev-python/sphinx-astropy
 
 python_compile_all() {
 	if use doc; then

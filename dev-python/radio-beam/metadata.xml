@@ -10,6 +10,7 @@
 		<remote-id type="github">radio-astro-tools/radio-beam</remote-id>
 	</upstream>
 	<use>
+		<flag name="all">Full function support</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 	</use>
 </pkgmetadata>
