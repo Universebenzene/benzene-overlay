@@ -14,44 +14,32 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+KEYWORDS="~amd64"	# no x86 KEYWORD for glue-core, spectral-cube
 
 DEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
-	>=dev-python/dask-1.0[${PYTHON_USEDEP}]
+	>=dev-python/dask-2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="${DEPEND}
 	dev-python/setuptools_scm[${PYTHON_USEDEP}]
-	doc? (
-		${RDEPEND}
-		dev-python/sphinx-automodapi[${PYTHON_USEDEP}]
-		dev-python/numpydoc[${PYTHON_USEDEP}]
-	)
-	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-openfiles[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/pytest-openfiles[${PYTHON_USEDEP}] )
 "
+PDEPEND="test? ( dev-python/glue-core[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
-# No module named 'casa_formats_io._casa_chunking'
-#distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/numpydoc
+distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/numpydoc
 
 python_prepare_all() {
-	mkdir -p docs/_static || die
+	use doc && { sed -i "/casa_io_formats.image_to_dask/s/_io_formats/_formats_io/" docs/index.rst || die ; }
+
 	distutils-r1_python_prepare_all
 }
 
 python_compile_all() {
-	if use doc; then
-		pushd docs || die
-		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake html
-		popd || die
-		HTML_DOCS=( docs/_build/html/. )
-	fi
+	use doc && { cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN//-/_}/*casa*.so "${S}/${PN//-/_}" || die ; }
+
+	sphinx_compile_all
 }
 
 python_test() {
