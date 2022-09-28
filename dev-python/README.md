@@ -30,7 +30,7 @@ dev-python/glueviz             | 1.2.0 (glue-core: 1.5.0)             | Both met
 dev-python/glue-vispy-viewers  | 1.0.5                                |
 dev-python/gwcs                | 0.17.1; 0.18.2                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/h5netcdf            | 1.0.2                                |
-dev-python/h5pyd               | 0.10.3                               |
+dev-python/h5pyd               | 0.11.0                               |
 dev-python/healpy              | 1.16.1                               |
 dev-python/jplephem            | 2.17                                 |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                      | Old version for dev-python/asdf
