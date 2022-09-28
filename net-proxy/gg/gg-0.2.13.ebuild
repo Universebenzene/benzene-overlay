@@ -33,8 +33,7 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	if [[ ${PV} != *9999* ]]; then
-		mv "${WORKDIR}"/ebuild-vendors-${P}/{vendor,*.diff} "${S}" || die
-		eapply ${P}-go-mod-sum.diff
+		mv "${WORKDIR}"/ebuild-vendors-${P}/vendor "${S}" || die
 	fi
 	default
 }
