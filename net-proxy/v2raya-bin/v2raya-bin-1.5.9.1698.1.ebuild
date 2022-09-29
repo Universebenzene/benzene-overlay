@@ -25,14 +25,10 @@ REQUIRED_USE="|| ( v2ray xray )"
 DEPEND=""
 RDEPEND="${DEPEND}
 	v2ray? ( || (
-		>=net-proxy/v2ray-4.37.0
-		<net-proxy/v2ray-5
-		>=net-proxy/v2ray-core-4.37.0
-		<net-proxy/v2ray-core-5
-		>=net-proxy/v2ray-bin-4.37.0
-		<net-proxy/v2ray-bin-5
-		>=net-proxy/v2ray-core-bin-4.37.0
-		<net-proxy/v2ray-core-bin-5
+		( >=net-proxy/v2ray-4.37.0 <net-proxy/v2ray-5 )
+		( >=net-proxy/v2ray-core-4.37.0 <net-proxy/v2ray-core-5 )
+		( >=net-proxy/v2ray-bin-4.37.0 <net-proxy/v2ray-bin-5 )
+		( >=net-proxy/v2ray-core-bin-4.37.0 <net-proxy/v2ray-core-bin-5 )
 	) )
 	!v2ray? (
 		!net-proxy/v2ray
