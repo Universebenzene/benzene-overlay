@@ -22,7 +22,7 @@ dev-python/ccdproc             | 1.3.0\_p1; 2.3.1                     | `network
 dev-python/casa-formats-io     | 0.2                                  |
 dev-python/cdflib              | 0.4.7                                | SunPy releated.
 dev-python/drms                | 0.6.2                                | SunPy releated. `network-sandbox` FEATURE will be disabled if you enable `examples` flag for doc building
-dev-python/echo                | 0.6                                  | Glueviz releated.
+dev-python/echo                | 0.7                                  | Glueviz releated.
 dev-python/extension-helpers   | 1.0.0                                |
 dev-python/fast-histogram      | 0.11                                 | Glueviz releated.
 dev-python/ginga               | 3.4.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
