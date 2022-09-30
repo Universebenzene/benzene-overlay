@@ -12,8 +12,8 @@ DESCRIPTION="Python version of NASA DE4xx ephemerides"
 HOMEPAGE="https://github.com/brandon-rhodes/python-jplephem"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
 	test? (
-		https://github.com/brandon-rhodes/python-jplephem/raw/4263883e73ff7c1c0339cdebfebc9b131582313d/ci/de405.bsp -> ${P}-de405.bsp
-		https://github.com/brandon-rhodes/python-jplephem/raw/4263883e73ff7c1c0339cdebfebc9b131582313d/ci/de421.bsp -> ${P}-de421.bsp
+		https://github.com/brandon-rhodes/python-jplephem/raw/${PV}/ci/de405.bsp -> ${P}-de405.bsp
+		https://github.com/brandon-rhodes/python-jplephem/raw/${PV}/ci/de421.bsp -> ${P}-de421.bsp
 	)
 "
 
@@ -28,5 +28,6 @@ distutils_enable_tests nose
 
 python_prepare_all() {
 	use test && { for ebsp in "${DISTDIR}"/${P}*.bsp; do { cp ${ebsp} "${S}"/${ebsp##*-} || die ; } done }
+
 	distutils-r1_python_prepare_all
 }
