@@ -44,9 +44,9 @@ RDEPEND=">dev-python/click-6.6[${PYTHON_USEDEP}]
 	>dev-python/sortedcontainers-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/tblib-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/toolz-0.8.2[${PYTHON_USEDEP}]
+	dev-python/tornado[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
 	>=dev-python/zict-0.1.3[${PYTHON_USEDEP}]
-	www-servers/tornado[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/bokeh[${PYTHON_USEDEP}]
