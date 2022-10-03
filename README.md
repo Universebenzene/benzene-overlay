@@ -125,7 +125,7 @@ Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/jupyter-cache        | 0.5.0            |
 dev-python/jupyter\_sphinx      | 0.4.0            |
-dev-python/myst\_nb             | 0.16.0           |
+dev-python/myst\_nb             | 0.17.1           |
 dev-python/runnotebook          | 0.3.1; (live)    |
 dev-python/sphinx-astropy       | 1.6.0; 1.7.0     | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
 dev-python/sphinx-asdf          | 0.1.3; 0.1.4     |

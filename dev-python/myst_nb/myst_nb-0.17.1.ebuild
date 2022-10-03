@@ -28,7 +28,6 @@ RDEPEND="dev-python/importlib_metadata[${PYTHON_USEDEP}]
 	dev-python/myst_parser[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/sphinx-togglebutton[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 "
@@ -39,7 +38,7 @@ distutils_enable_tests nose
 
 pkg_postinst() {
 	optfeature "extra rtd support" "dev-python/alabaster dev-python/altair dev-python/bokeh dev-python/ipykernel \
-		dev-python/ipywidgets dev-python/jupytext dev-python/numpy dev-python/matplotlib dev-python/pandas dev-python/plotly \
-		dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/sphinx_design dev-python/sphinxcontrib-bibtex \
-		dev-python/sympy"
+		dev-python/ipywidgets>=8 dev-python/jupytext dev-python/numpy dev-python/matplotlib<3.6 dev-python/pandas \
+		dev-python/plotly dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/sphinx_design \
+		dev-python/sphinxcontrib-bibtex dev-python/sympy>=1.10.1"
 }
