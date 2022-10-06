@@ -49,6 +49,7 @@ dev-python/pyvo                | 1.2.1; 1.4                           | `network
 dev-python/radio-beam          | 0.3.4                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/regions             | 0.4; 0.5                             | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/reproject           | 0.5.1; 0.9                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/sep                 | 1.2.1                                |
 dev-python/sgp4                | 2.21                                 |
 dev-python/skyfield            | 1.45                                 |
 dev-python/spectral-cube       | 0.6.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
