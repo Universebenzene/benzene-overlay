@@ -12,7 +12,7 @@ dev-python/aplpy               | 2.1.0                                | Versions
 dev-python/asdf                | 2.7.2; 2.9.2; 2.10.1; 2.12.0; 2.13.0 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building should only be enabled for re-merge to prevent circular depenencies.
 dev-python/asdf-astropy        | 0.2.1; 0.2.2                         | Dependencies are also in this overlay but not list in this table. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/astrodendro         | 0.2.0-r1; (live)                     | 0.2.0 was really old. Live version should be much better.
-dev-python/astroml             | 0.4.1                                |
+dev-python/astroml             | 0.4.1; 1.0.2\_p1                     |
 dev-python/astropy-healpix     | 0.5; 0.7                             | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/astroplan           | 0.6; 0.8                             | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building may not complete, as it needs lots of online data.
 dev-python/astroquery          | 0.3.10; 0.4.6                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
