@@ -32,6 +32,7 @@ dev-python/gwcs                | 0.17.1; 0.18.2                       | `network
 dev-python/h5netcdf            | 1.0.2                                |
 dev-python/h5pyd               | 0.11.0                               |
 dev-python/healpy              | 1.16.1                               |
+dev-python/imexam              | 0.9.1                                | With [my issue](https://github.com/spacetelescope/imexam/issues/252) unsolved
 dev-python/jplephem            | 2.18                                 |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                      | Old version for dev-python/asdf
 dev-python/montage-wrapper     | 0.9.9                                |
