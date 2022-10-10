@@ -18,10 +18,9 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/mistune-2.0.4[${PYTHON_USEDEP}]
 	<dev-python/docutils-1.0[${PYTHON_USEDEP}]
+	>=dev-python/pygments-2.8[${PYTHON_USEDEP}]
 "
 BDEPEND="test? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
-
-PATCHES=( "${FILESDIR}/${P}-fix-changlog-highlight.patch" )
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
