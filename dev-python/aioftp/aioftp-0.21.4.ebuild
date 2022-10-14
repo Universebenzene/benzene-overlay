@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 RDEPEND="socks? ( >=dev-python/siosocks-0.2.0[${PYTHON_USEDEP}] )"
 BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/async-timeout[${PYTHON_USEDEP}]
+		>=dev-python/async-timeout-4.0.2[${PYTHON_USEDEP}]
 		dev-python/trustme[${PYTHON_USEDEP}]
 		dev-python/siosocks[${PYTHON_USEDEP}]
 	)
