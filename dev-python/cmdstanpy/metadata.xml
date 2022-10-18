@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		CmdStanPy is a lightweight pure-Python interface to CmdStan which provides
+		access to the Stan compiler and all inference algorithms. It supports both
+		development and production workflows. Because model development and testing
+		may require many iterations, the defaults favor development mode and therefore
+		output files are stored on a temporary filesystem. Non-default options allow
+		all aspects of a run to be specified so that scripts can be used to distributed
+		analysis jobs across nodes and machines.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">cmdStanpy</remote-id>
+		<remote-id type="github">stan-dev/cmdstanpy</remote-id>
+	</upstream>
+	<use>
+		<flag name="all">More function support with<pkg>dev-python/xarray</pkg></flag>
+	</use>
+</pkgmetadata>

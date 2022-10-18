@@ -91,6 +91,7 @@ dev-python/aiobotocore           | 2.4.0         | Pulled in by zarr
 dev-python/aioitertools          | 0.11.0        | Pulled in by zarr
 dev-python/asciitree             | 0.3.3         | Pulled in by zarr
 dev-python/bidict                | 0.22.0        | Optional for yt
+dev-python/cmdstanpy             | 1.0.7         | Test dependency for arviz
 dev-python/f90nml                | 1.4.3         | Optional for yt
 dev-python/fastcache             | 1.1.0         | Optional for yt
 dev-python/firefly-viz           | 2.0.4         | Optional for yt
