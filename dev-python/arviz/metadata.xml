@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		ArviZ (pronounced "AR-vees") is a Python package for exploratory analysis of
+		Bayesian models. Includes functions for posterior analysis, data storage,
+		model checking, comparison and diagnostics.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">arviz</remote-id>
+		<remote-id type="github">zarr-developers/numcodecs</remote-id>
+	</upstream>
+	<use>
+		<flag name="all">further enhanced ArviZ with all of optional dependencies</flag>
+	</use>
+</pkgmetadata>
