@@ -26,7 +26,7 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/astropy-4.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-5.1[${PYTHON_USEDEP}]
 	>=dev-python/gwcs-0.17.0[${PYTHON_USEDEP}]
 	>dev-python/asdf-2.12.0[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
@@ -50,6 +50,8 @@ distutils_enable_tests pytest
 
 python_prepare_all() {
 	use doc && { eapply "${FILESDIR}"/${PN}-1.7.0-doc-use-local-fits.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; }
+#	use test && { sed "/astropy.utils.exceptions/a \	ignore:Subclassing validator classes is not intended:DeprecationWarning" \
+#		-i setup.cfg || die ; }
 
 	distutils-r1_python_prepare_all
 }
