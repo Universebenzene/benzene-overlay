@@ -29,6 +29,7 @@ app-text/{[de](https://www.eudic.net/v4/de/app/download),[es](https://www.eudic.
 [app-text/youdao-dict](https://cidian.youdao.com/multi.html#linuxAll)                | [6.0.0-r1](https://github.com/Universebenzene/benzene-overlay/blob/master/app-text/youdao-dict/youdao-dict-6.0.0-r1.ebuild)                                | Converted from [AUR](https://aur.archlinux.org/packages/youdao-dict). In order to use this you **must use the patched QtWebkit and PyQt5 with `webkit` USE flag in this overlay INSTEAD OF THE OFFICIAL ONE** （有道词典）
 dev-python/aioftp                                                                    | 0.21.4                                                        |
 dev-python/astlib                                                                    | 0.11.3; 0.11.8                                                |
+dev-python/corner                                                                    | 2.2.1                                                         |
 dev-python/exifread                                                                  | 3.0.0                                                         |
 dev-python/distributed                                                               | 2022.9.0; 2022.9.1; 2022.9.2; 2022.10.0                       |
 dev-python/glymur                                                                    | 0.11.5; 0.11.7                                                |
