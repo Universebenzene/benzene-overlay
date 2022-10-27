@@ -37,7 +37,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
-		sci-libs/gdal[python,${PYTHON_USEDEP}]
+		sci-libs/gdal[python]
 		sci-libs/scikit-image[${PYTHON_USEDEP}]
 		media-libs/openjpeg:2
 	)
