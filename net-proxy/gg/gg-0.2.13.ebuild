@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit go-module bash-completion-r1
+inherit go-module-vendor bash-completion-r1
 
 DESCRIPTION="Command-line tool for one-click proxy without v2ray or others (A.k.a. go-craft)."
 HOMEPAGE="https://github.com/mzz2017/gg"
@@ -17,12 +17,13 @@ if [[ ${PV} == *9999* ]]; then
 
 	src_unpack() {
 		git-r3_src_unpack
-		go-module_live_vendor
+		go-module-vendor_live_vendor
 	}
 else
 	KEYWORDS="~amd64 ~arm ~arm64"
 	SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 		https://github.com/Universebenzene/ebuild-vendors/archive/refs/tags/${P}.tar.gz -> ${P}-vendor.tar.gz"
+	EGO_VENDOR_DIR="ebuild-vendors-${P}"
 	VENDOROPT="-mod vendor"
 fi
 
@@ -30,13 +31,6 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	!net-proxy/gg-bin
 "
-
-src_prepare() {
-	if [[ ${PV} != *9999* ]]; then
-		mv "${WORKDIR}"/ebuild-vendors-${P}/vendor "${S}" || die
-	fi
-	default
-}
 
 src_compile() {
 	export CGO_CPPFLAGS="${CPPFLAGS}"

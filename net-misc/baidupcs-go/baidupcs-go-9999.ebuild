@@ -5,7 +5,7 @@ EAPI=8
 
 MY_PN="BaiduPCS-Go"
 
-inherit go-module
+inherit go-module-vendor
 
 DESCRIPTION="The terminal utility for Baidu Network Disk (Golang Version)."
 HOMEPAGE="https://github.com/qjfoidnh/BaiduPCS-Go"
@@ -19,12 +19,13 @@ if [[ ${PV} == *9999* ]]; then
 
 	src_unpack() {
 		git-r3_src_unpack
-		go-module_live_vendor
+		go-module-vendor_live_vendor
 	}
 else
 	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 	SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 		https://github.com/Universebenzene/ebuild-vendors/archive/refs/tags/${P}.tar.gz -> ${P}-vendor.tar.gz"
+	EGO_VENDOR_DIR="ebuild-vendors-${P}"
 	VENDOROPT="-mod vendor"
 
 	S="${WORKDIR}/${MY_PN}-${PV}"
@@ -34,13 +35,6 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	!net-misc/baidupcs-go-bin
 "
-
-src_prepare() {
-	if [[ ${PV} != *9999* ]]; then
-		mv "${WORKDIR}"/ebuild-vendors-${P}/vendor "${S}" || die
-	fi
-	default
-}
 
 src_compile() {
 	export GOFLAGS="-buildmode=pie -trimpath"
