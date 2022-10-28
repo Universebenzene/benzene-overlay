@@ -23,7 +23,6 @@ else
 	KEYWORDS="~amd64 ~arm ~arm64"
 	SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 		https://github.com/Universebenzene/ebuild-vendors/archive/refs/tags/${P}.tar.gz -> ${P}-vendor.tar.gz"
-	EGO_VENDOR_DIR="ebuild-vendors-${P}"
 	VENDOROPT="-mod vendor"
 fi
 

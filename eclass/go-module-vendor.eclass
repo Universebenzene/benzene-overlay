@@ -4,9 +4,11 @@
 # @ECLASS: go-module-vendor.eclass
 # @MAINTAINER:
 # William Hubbs <williamh@gentoo.org>
+# Ryan Qian <i@bitbili.net>
 # @AUTHOR:
 # William Hubbs <williamh@gentoo.org>
 # Robin H. Johnson <robbat2@gentoo.org>
+# Ryan Qian <i@bitbili.net>
 # @SUPPORTED_EAPIS: 7 8
 # @BLURB: basic eclass for building software written as go modules
 # @DESCRIPTION:
@@ -70,7 +72,7 @@ if [[ ! ${GO_OPTIONAL} ]]; then
 	# once when pkgcheck is improved.
 	BDEPEND+=" app-arch/unzip"
 
-	EXPORT_FUNCTIONS src_unpack src_prepare
+	EXPORT_FUNCTIONS src_unpack
 fi
 
 # Force go to build in module mode.
@@ -186,11 +188,6 @@ declare -A -g _GOMODULE_GOSUM_REVERSE_MAP
 # ebuild will be considered optional. No dependencies will be added and
 # no phase functions will be exported. You will need to set BDEPEND and
 # call go-module-vendor_src_unpack in your ebuild.
-
-# @ECLASS_VARIABLE: EGO_VENDOR_DIR
-# @DEFAULT_UNSET
-# @DESCRIPTION:
-# Set the name of the vendor directory name extracted in ${WORKDIR}
 
 # @FUNCTION: ego
 # @USAGE: [<args>...]
@@ -338,6 +335,29 @@ go-module-vendor_setup_proxy() {
 	_go-module-vendor_src_unpack_verify_gosum
 }
 
+# @FUNCTION: go_setup_vendor
+# @DESCRIPTION:
+# setup vendor directory
+go_setup_vendor() {
+	debug-print-function "${FUNCNAME}" "${@}"
+
+	if [[ ! -d "${S}/vendor" ]]; then
+		local -a vendors
+		local vendor go_mod_sum_diff
+		vendors=($(find "${WORKDIR}" -maxdepth 2 -name 'vendor' 2>/dev/null || true))
+		if [[ ${#vendors[@]} -gt 0 ]]; then
+			vendor="${vendors[0]}"
+			mv "${vendor}" "${S}" || die
+			go_mod_sum_diff="$(dirname ${vendor})/go-mod-sum.diff"
+			if [[ -f "${go_mod_sum_diff}" ]]; then
+				pushd "${S}" &>/dev/null || die
+				eapply "${go_mod_sum_diff}"
+				popd
+			fi
+		fi
+	fi
+}
+
 # @FUNCTION: go-module-vendor_src_unpack
 # @DESCRIPTION:
 # If EGO_SUM is set, unpack the base tarball(s) and set up the
@@ -354,7 +374,9 @@ go-module-vendor_src_unpack() {
 		eerror "${EBUILD} is using EGO_VENDOR which is no longer supported"
 		die "Please update this ebuild"
 	else
+		# prepare vendor directory
 		default
+		go_setup_vendor
 	fi
 }
 
@@ -509,17 +531,3 @@ _go-module-vendor_gomod_encode() {
 }
 
 fi
-
-# @FUNCTION: go-module-vendor_src_prepare
-# @DESCRIPTION:
-# extract vendor tarball to the source directory
-go-module-vendor_src_prepare() {
-	if [[ -n ${EGO_VENDOR_DIR} ]]; then
-		local VENDORDIR="${WORKDIR}/${EGO_VENDOR_DIR}"
-		if [[ ${PV} != *9999* ]]; then
-			mv "${VENDORDIR}"/vendor "${S}" || die
-			[[ -f ${VENDORDIR}/go-mod-sum.diff ]] && eapply "${VENDORDIR}"/go-mod-sum.diff
-		fi
-	fi
-	default
-}
