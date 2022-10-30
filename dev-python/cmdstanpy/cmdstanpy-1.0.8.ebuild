@@ -21,7 +21,6 @@ RESTRICT="test"	# Missing test data
 RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
-	dev-python/ujson[${PYTHON_USEDEP}]
 	all? ( dev-python/xarray[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? ( dev-python/testfixtures[${PYTHON_USEDEP}] )"
