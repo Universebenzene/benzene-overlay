@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{8..11} )
 
-inherit distutils-r1
+inherit distutils-r1 optfeature
 
 DESCRIPTION="A HTTP and FTP parallel file downloader"
 HOMEPAGE="https://parfive.readthedocs.io"
@@ -22,14 +22,11 @@ RESTRICT="test"
 RDEPEND=">=dev-python/tqdm-4.27.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	ftp? ( dev-python/aioftp[${PYTHON_USEDEP}] )
+	ftp? ( >=dev-python/aioftp-0.17.1[${PYTHON_USEDEP}] )
 "
 
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
-	doc? (
-		${RDEPEND}
-		media-gfx/graphviz
-	)
+	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/aiofiles[${PYTHON_USEDEP}]
 		dev-python/aioftp[${PYTHON_USEDEP}]
@@ -44,3 +41,7 @@ distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinx-autodoc-typehints \
 	dev-python/sphinx-book-theme \
 	dev-python/sphinx_contributors
+
+pkg_postinst() {
+	optfeature "using aiofiles to write downloaded data to disk using a separate thread pool" dev-python/aiofiles
+}
