@@ -63,9 +63,7 @@ KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
-	>=dev-python/attrs-19.2.0[${PYTHON_USEDEP}]
-"
+RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
