@@ -4,12 +4,13 @@
 EAPI=8
 
 MY_PN="eusoft-${PN}"
+PD="2022-10-31"
 
 inherit unpacker qmake-utils desktop xdg
 
 DESCRIPTION="Proprietary English dictionary software for linux"
 HOMEPAGE="https://www.eudic.net/v4/en/app/eudic"
-SRC_URI="https://www.eudic.net/download/${PN}.deb?v=2021-09-29 -> ${P}_amd64.deb"
+SRC_URI="https://www.eudic.net/download/${PN}.deb?v=${PD} -> ${P}_amd64.deb"
 
 LICENSE="eudic"
 SLOT="0"
