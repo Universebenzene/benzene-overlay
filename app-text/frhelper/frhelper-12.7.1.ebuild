@@ -1,15 +1,16 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 MY_PN="eusoft-${PN}"
+PD="2022-10-31"
 
 inherit unpacker qmake-utils desktop xdg
 
 DESCRIPTION="Proprietary French dictionary software for linux"
 HOMEPAGE="https://www.eudic.net/v4/fr/app/frhelper"
-SRC_URI="https://www.eudic.net/download/${PN}.deb?v=2021-09-29 -> ${P}_amd64.deb"
+SRC_URI="https://www.eudic.net/download/${PN}.deb?v=${PD} -> ${P}_amd64.deb"
 
 LICENSE="eudic"
 SLOT="0"
