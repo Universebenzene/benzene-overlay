@@ -55,5 +55,5 @@ dev-python/sgp4                | 2.21                                 |
 dev-python/skyfield            | 1.45                                 |
 dev-python/spectral-cube       | 0.6.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/specutils           | 1.1.1; 1.9.0                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/sunpy               | 4.0.5                                | Testing and doc building are really hard to run, so not supported right now.
+dev-python/sunpy               | 4.0.6                                | Testing and doc building are really hard to run, so not supported right now.
 dev-python/sunpy-sphinx-theme  | 1.2.32                               |

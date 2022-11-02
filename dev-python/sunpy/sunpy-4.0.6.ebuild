@@ -15,7 +15,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="asdf dask database image jpeg2k map net timeseries visualization"
+IUSE="asdf dask database examples image jpeg2k map net timeseries visualization"
 RESTRICT="test"
 
 RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
@@ -26,19 +26,15 @@ RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
 		>=dev-python/asdf-2.8.0[${PYTHON_USEDEP}]
 		>=dev-python/asdf-astropy-0.1.1[${PYTHON_USEDEP}]
 	)
-	dask? (
-		>=dev-python/dask-2.0.0[${PYTHON_USEDEP}]
-	)
-	database? (
-		>=dev-python/sqlalchemy-1.3.4[${PYTHON_USEDEP}]
-	)
+	dask? ( >=dev-python/dask-2.0.0[${PYTHON_USEDEP}] )
+	database? ( >=dev-python/sqlalchemy-1.3.4[${PYTHON_USEDEP}] )
 	image? (
 		>=dev-python/scipy-1.3.0[${PYTHON_USEDEP}]
 		>=sci-libs/scikit-image-0.16.0[${PYTHON_USEDEP}]
 	)
 	jpeg2k? (
 		>dev-python/glymur-0.9.5[${PYTHON_USEDEP}]
-		>dev-python/lxml-4.8.0[${PYTHON_USEDEP}]
+		>=dev-python/lxml-4.8.0[${PYTHON_USEDEP}]
 	)
 	map? (
 		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
@@ -73,3 +69,13 @@ BDEPEND=">=dev-python/setuptools_scm-6.2[${PYTHON_USEDEP}]
 # Tests and doc building are really hard to run. Might fix in far future
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sunpy-sphinx-theme
+
+python_install_all() {
+	if use examples; then
+		docompress -x "/usr/share/doc/${PF}/examples"
+		docinto examples
+		dodoc -r examples/.
+	fi
+
+	distutils-r1_python_install_all
+}
