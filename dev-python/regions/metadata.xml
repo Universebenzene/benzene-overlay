@@ -10,12 +10,14 @@
 		<name>Astro Benzene</name>
 	</maintainer>
 	<longdescription lang="en">
-		The goal is to merge the functionality from pyregion and photutils apertures and then after some time propose this package for inclusion in the Astropy core.
+		The goal is to merge the functionality from pyregion and photutils apertures and then after
+		some time propose this package for inclusion in the Astropy core.
 	</longdescription>
 	<upstream>
 		<remote-id type="pypi">regions</remote-id>
 	</upstream>
 	<use>
+		<flag name="all">Full functionality</flag>
 		<flag name="intersphinx">Enable intersphinx and online data while doc building.</flag>
 	</use>
 </pkgmetadata>

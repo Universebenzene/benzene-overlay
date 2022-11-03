@@ -30,7 +30,7 @@ BDEPEND="${RDEPEND}
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		sci-libs/shapely[${PYTHON_USEDEP}]
+		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 	test? (
 		${RDEPEND}

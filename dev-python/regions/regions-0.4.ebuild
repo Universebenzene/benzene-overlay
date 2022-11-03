@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -31,7 +31,7 @@ BDEPEND="${RDEPEND}
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
-		sci-libs/shapely[${PYTHON_USEDEP}]
+		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-astropy[${PYTHON_USEDEP}]
