@@ -27,7 +27,7 @@ RDEPEND="dev-libs/nss
 		dev-libs/libbsd
 		dev-libs/libxslt[crypt]
 		dev-libs/openssl:=
-		media-libs/flac
+		|| ( media-libs/flac-compat:8.3.0 media-libs/flac:0/0 )
 		media-libs/libglvnd
 		media-libs/libjpeg-turbo
 		media-libs/libvorbis

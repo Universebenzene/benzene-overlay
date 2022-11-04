@@ -9,7 +9,7 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.5:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="https://updatecdn.meeting.qq.com/OTRhY2YwZTUtMzE5Ni00NDQyLTg0MTMtOTBjYzQzNzcxYTQz/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb"
+SRC_URI="https://updatecdn.meeting.qq.com/cos/9b74d4127a16a011db8cb6300fa5fbc9/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
@@ -18,26 +18,25 @@ IUSE="ibus wayland bundled-libs bundled-qt pipewire"
 REQUIRED_USE="bundled-libs? ( bundled-qt )"
 
 RDEPEND="dev-libs/nss
-	dev-libs/wayland
 	media-sound/pulseaudio
 	x11-libs/libX11
 	!bundled-libs? (
-		app-crypt/p11-kit[asn1,libffi]
-		dev-libs/glib:2
+		app-crypt/p11-kit[libffi]
 		dev-libs/libbsd
-		dev-libs/libxslt[crypt]
+		dev-libs/libgcrypt:0
+		dev-libs/libpcre:3
+		dev-libs/libxml2
 		dev-libs/openssl:=
-		media-libs/flac
+		|| ( media-libs/flac-compat:8.3.0 media-libs/flac:0/0 )
 		media-libs/libglvnd
 		media-libs/libjpeg-turbo
+		media-libs/libsndfile
 		media-libs/libvorbis
 		media-libs/libpulse[X,asyncns]
-		net-dns/avahi[dbus]
-		net-print/cups[dbus,ssl]
+		sys-apps/dbus
 		sys-apps/tcp-wrappers
-		sys-libs/libapparmor
+		sys-libs/libunwind
 		sys-libs/zlib[minizip]
-		virtual/krb5
 		virtual/udev
 		x11-libs/libXcomposite
 		x11-libs/libXdamage
@@ -46,6 +45,7 @@ RDEPEND="dev-libs/nss
 		x11-libs/libXinerama
 		x11-libs/libXrandr
 		x11-libs/libxkbcommon
+		x11-libs/xcb-util
 	)
 	!bundled-qt? (
 		dev-libs/icu
@@ -63,7 +63,7 @@ RDEPEND="dev-libs/nss
 		>=dev-qt/qtprintsupport-${QT5_MIN}[cups]
 		>=dev-qt/qtquickcontrols2-${QT5_MIN}
 		>=dev-qt/qtscript-${QT5_MIN}[scripttools]
-		>=dev-qt/qtsql-${QT5_MIN}[sqlite]
+		>=dev-qt/qtsql-${QT5_MIN}
 		>=dev-qt/qtscxml-${QT5_MIN}
 		>=dev-qt/qtsvg-${QT5_MIN}
 		>=dev-qt/qtspeech-${QT5_MIN}
@@ -99,9 +99,9 @@ src_install() {
 	use bundled-qt && { use bundled-libs && { doins -r opt/${PN}/{icons,lib,plugins,resources,translations}; fperms +x \
 		/opt/${PN}/bin/QtWebEngineProcess ; } || { fperms +x /opt/${PN}/bin/QtWebEngineProcess ; doins -r \
 		opt/${PN}/{plugins,resources,translations} ; insinto /opt/${PN}/lib ; doins -r \
-		opt/${PN}/lib/{libui*,libwemeet*,libxcast*,libxnn*,libdesktop*,libImSDK.so,libnxui*,libicu*,libQt5*} ; } ; } \
+		opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,bugly*,crbase*} ; } ; } \
 		|| { rm "${ED%/}"/opt/${PN}/bin/{QtWebEngineProcess,qt.conf} || die ; insinto /opt/${PN}/lib ; \
-		doins -r opt/${PN}/lib/{libui*,libwemeet*,libxcast*,libxnn*,libdesktop_common.so,libImSDK.so,libnxui*} ; }
+		doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop_common.so,ImSDK.so,nxui*,qt_*,bugly*,crbase*} ; }
 	fperms +x /opt/${PN}/{${PN}app.sh,bin/${PN}app}
 	dosym -r /opt/${PN}/${PN}app.sh /usr/bin/${PN}
 	dosym {raw,/opt/${PN}/bin}/xcast.conf
