@@ -52,6 +52,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/photutils[${PYTHON_USEDEP}]
+		>dev-python/regions-0.5[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/astlib[${PYTHON_USEDEP}]
 	)
