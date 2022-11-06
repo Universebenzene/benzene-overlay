@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Sherpa is a modeling and fitting application for Python. It contains a
+		powerful language for combining simple models into complex expressions
+		that can be fit to the data using a variety of statistics and optimization
+		methods. It is easily extensible to include user models, statistics, and
+		optimization methods. It provides a high-level User Interface for interactive
+		data-analysis work, such as within a Jupyter notebook, and it can also be
+		used as a library component, providing fitting and modeling capabilities
+		to an application.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">sherpa</remote-id>
+		<remote-id type="github">sherpa/sherpa</remote-id>
+	</upstream>
+	<use>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+		<!--<flag name="photometry">Enable photometry features of the imexam() analysis via <pkg>dev-python/photutils</pkg></flag>-->
+	</use>
+</pkgmetadata>
