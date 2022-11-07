@@ -38,6 +38,7 @@ dev-python/jsonschema          | 3.2.0-r1; 4.9.1                      | Old vers
 dev-python/montage-wrapper     | 0.9.9                                |
 dev-python/mpl-animator        | 1.0.1                                |
 dev-python/mpl-scatter-density | 0.7                                  | Glueviz releated.
+dev-python/naima               | 0.10.0                               |
 dev-python/ndcube              | 2.0.3                                | SunPy releated.
 dev-python/photutils           | 1.5.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pvextractor         | 0.3                                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.

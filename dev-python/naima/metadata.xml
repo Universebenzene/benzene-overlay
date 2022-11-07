@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci-astronomy@gentoo.org</email>
+		<name>Gentoo Astronomy Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		naima is a Python package for computation of non-thermal radiation
+		from relativistic particle populations. It includes tools to
+		perform MCMC fitting of radiative models to X-ray, GeV, and TeV
+		spectra using emcee, an affine-invariant ensemble sampler for
+		Markov Chain Monte Carlo.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">naima</remote-id>
+		<remote-id type="github">zblz/naima</remote-id>
+	</upstream>
+	<use>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
+</pkgmetadata>
