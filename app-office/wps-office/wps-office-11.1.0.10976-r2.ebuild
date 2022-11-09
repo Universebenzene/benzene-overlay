@@ -22,12 +22,11 @@ SRC_URI="https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_
 SLOT="0"
 RESTRICT="bindist strip mirror" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
-IUSE="cn +mime systemd libsystemd l10n_zh-CN"
+IUSE="cn +mime libsystemd l10n_zh-CN"
 LANGS="de en-GB es-ES es-MX fr fr-CA ja pl pt-BR pt-PT ru th uk zh-HK zh-MO zh-TW"
 for X in ${LANGS}; do
 	IUSE="${IUSE} l10n_${X}"
 done
-REQUIRED_USE="libsystemd? ( !systemd )"
 
 # Deps got from this (listed in order):
 # rpm -qpR wps-office-10.1.0.5707-1.a21.x86_64.rpm
@@ -68,10 +67,10 @@ RDEPEND="
 	net-print/cups
 	sys-apps/attr
 	sys-apps/util-linux
-	sys-apps/dbus[systemd?]
+	sys-apps/dbus
 	sys-apps/tcp-wrappers
 	sys-libs/libcap
-	libsystemd? ( sys-libs/libsystemd )
+	libsystemd? ( virtual/libsystemd )
 	sys-libs/zlib:0
 
 	x11-libs/cairo
@@ -146,7 +145,7 @@ src_install() {
 	done
 
 	insinto /opt/kingsoft/wps-office
-	use systemd || use libsystemd || { rm ${WS}/opt/kingsoft/wps-office/office6/libdbus-1.so* || die ; }
+	use libsystemd || { rm ${WS}/opt/kingsoft/wps-office/office6/libdbus-1.so* || die ; }
 	# Fix for icu>=71.1
 	rm ${WS}/opt/kingsoft/wps-office/office6/libstdc++.so* || die
 	doins -r ${WS}/opt/kingsoft/wps-office/{office6,templates}
