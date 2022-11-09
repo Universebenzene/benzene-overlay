@@ -16,12 +16,12 @@ RESTRICT="mirror"
 LICENSE="Sunlogin"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
-IUSE="libsystemd keep-server"
+IUSE="keep-server systemd"
 
 RDEPEND="dev-libs/libappindicator:3
 	x11-apps/xhost
 	virtual/libcrypt:=
-	libsystemd? ( sys-libs/libsystemd )
+	virtual/libsystemd[systemd=]
 "
 DEPEND=""
 BDEPEND=""
