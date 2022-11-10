@@ -17,10 +17,13 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz
 	doc? (
 		https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.10.rst -> ${P}-d-0.10.rst
 		https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.11.rst -> ${P}-d-0.11.rst
+		https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.12.rst -> ${P}-d-0.12.rst
 	)
 	test? (
 		https://github.com/quintusdias/glymur/raw/v${PV}/tests/data/0220000800_uuid.dat -> ${P}-t-0220000800_uuid.dat
+		https://github.com/quintusdias/glymur/raw/v${PV}/tests/data/basn6a08.tif -> ${P}-t-basn6a08.tif
 		https://github.com/quintusdias/glymur/raw/v${PV}/tests/data/issue549.dat -> ${P}-t-issue549.dat
+		https://github.com/quintusdias/glymur/raw/v${PV}/tests/data/issue572.tif -> ${P}-t-issue572.tif
 		https://github.com/quintusdias/glymur/raw/v${PV}/tests/data/issue982.j2k -> ${P}-t-issue982.j2k
 		https://github.com/quintusdias/glymur/raw/v${PV}/tests/data/uint16.j2k -> ${P}-t-uint16.j2k
 		https://raw.githubusercontent.com/quintusdias/glymur/v${PV}/tests/data/issue555.xmp -> ${P}-t-issue555.xmp
@@ -53,9 +56,4 @@ python_prepare_all() {
 		mkdir docs/source/_static || die ; }
 	use test && { for tdata in "${DISTDIR}"/*-t-*; do { cp ${tdata} "${S}"/tests/data/${tdata##*-t-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
-}
-
-python_install() {
-	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/tests || die
-	distutils-r1_python_install
 }
