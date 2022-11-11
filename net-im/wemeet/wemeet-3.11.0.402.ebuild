@@ -9,11 +9,12 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.5:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="https://updatecdn.meeting.qq.com/cos/9b74d4127a16a011db8cb6300fa5fbc9/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb"
+SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/9b74d4127a16a011db8cb6300fa5fbc9/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
+	arm64? ( https://updatecdn.meeting.qq.com/cos/ce5d25cc8e8aae8ddd19295bc3b00d5e/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb  -> ${P}_arm64.deb )"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 IUSE="ibus wayland bundled-libs bundled-qt pipewire"
 REQUIRED_USE="bundled-libs? ( bundled-qt )"
 
@@ -91,6 +92,22 @@ src_prepare() {
 	default
 }
 
+install_libs() {
+	if use bundled-qt; then
+		if use arm64; then
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*}
+		else
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,bugly*,crbase*}
+		fi
+	else
+		if use arm64; then
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*}
+		else
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*,bugly*,crbase*}
+		fi
+	fi
+}
+
 src_install() {
 	insinto /opt/${PN}
 	doins -r opt/${PN}/{bin,${PN}.svg}
@@ -98,10 +115,8 @@ src_install() {
 
 	use bundled-qt && { use bundled-libs && { doins -r opt/${PN}/{icons,lib,plugins,resources,translations}; fperms +x \
 		/opt/${PN}/bin/QtWebEngineProcess ; } || { fperms +x /opt/${PN}/bin/QtWebEngineProcess ; doins -r \
-		opt/${PN}/{plugins,resources,translations} ; insinto /opt/${PN}/lib ; doins -r \
-		opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,bugly*,crbase*} ; } ; } \
-		|| { rm "${ED%/}"/opt/${PN}/bin/{QtWebEngineProcess,qt.conf} || die ; insinto /opt/${PN}/lib ; \
-		doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop_common.so,ImSDK.so,nxui*,qt_*,bugly*,crbase*} ; }
+		opt/${PN}/{plugins,resources,translations} ; insinto /opt/${PN}/lib ; install_libs ; } ; } \
+		|| { rm "${ED%/}"/opt/${PN}/bin/{QtWebEngineProcess,qt.conf} || die ; insinto /opt/${PN}/lib ; install_libs ; }
 	fperms +x /opt/${PN}/{${PN}app.sh,bin/${PN}app}
 	dosym -r /opt/${PN}/${PN}app.sh /usr/bin/${PN}
 	dosym {raw,/opt/${PN}/bin}/xcast.conf
