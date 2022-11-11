@@ -25,9 +25,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 "
 
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
-	doc? (
-		media-gfx/graphviz
-	)
+	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
@@ -43,13 +41,22 @@ distutils_enable_sphinx docs \
 	dev-python/astropy
 
 python_prepare_all() {
-	sed -i "/^os.environ/c os.environ[\"JSOC_EMAIL\"] = \"universebenzene@gmail.com\"" docs/conf.py || die
 	sed -i "/20201101/s/20201101/$(date -d yesterday +%Y%m%d)/" examples/export_from_id.py || die
 	mkdir -p changelog || die
 
 	distutils-r1_python_prepare_all
 }
 
+python_install_all() {
+	if use examples; then
+		docompress -x "/usr/share/doc/${PF}/examples"
+		docinto examples
+		dodoc -r examples/.
+	fi
+
+	distutils-r1_python_install_all
+}
+
 python_test() {
-	epytest --email "universebenzene@gmail.com"
+	JSOC_EMAIL="jsoc@sunpy.org" epytest --email "jsoc@sunpy.org"
 }
