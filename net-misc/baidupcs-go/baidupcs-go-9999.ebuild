@@ -40,7 +40,7 @@ src_compile() {
 	export CGO_LDFLAGS="${LDFLAGS}"
 	export CGO_CFLAGS="${CFLAGS}"
 	export CGO_CPPFLAGS="${CPPFLAGS}"
-	ego build ${VENDOROPT} -v -work -x -o ${PN}
+	ego build ${VENDOROPT} -v -work -x -ldflags="-s" -o ${PN}
 }
 
 src_install() {

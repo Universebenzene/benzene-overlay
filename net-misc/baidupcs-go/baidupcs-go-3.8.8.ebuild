@@ -54,6 +54,8 @@ RDEPEND="${DEPEND}
 "
 BDEPEND=""
 
+EGO_BUILD_FLAGS="-ldflags=-s"
+
 src_install() {
 	newbin ${MY_PN} ${PN}
 	dodoc src/${EGO_PN}/README*

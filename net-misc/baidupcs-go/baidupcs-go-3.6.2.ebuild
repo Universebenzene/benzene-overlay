@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -26,6 +26,8 @@ RDEPEND="${DEPEND}
 	!net-misc/baidupcs-go-bin
 "
 BDEPEND=""
+
+EGO_BUILD_FLAGS="-ldflags=-s"
 
 src_prepare() {
 	grep -rl iikira/BaiduPCS . | xargs sed -i 's#iikira/BaiduPCS#felixonmars/BaiduPCS#' || die
