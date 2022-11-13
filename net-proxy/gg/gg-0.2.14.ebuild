@@ -53,3 +53,11 @@ src_install() {
 		doins completion/${compdir%/*}/*
 	done
 }
+
+pkg_postinst() {
+	elog
+	elog "If you get any problems like \"operation not permitted\" while running with gg,"
+	elog "try setting correct capabilites by the following command:"
+	elog "# setcap cap_net_raw,cap_sys_ptrace+ep /usr/bin/gg"
+	elog
+}
