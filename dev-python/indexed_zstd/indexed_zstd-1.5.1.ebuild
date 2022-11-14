@@ -16,6 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
+RDEPEND="app-arch/zstd"
+BDEPEND="dev-python/cython[${PYTHON_USEDEP}]"
+
 distutils_enable_tests nose
 
 python_test() {

@@ -104,7 +104,7 @@ dev-python/flask-socketio        | 5.3.1         | Optional for yt
 dev-python/freetype-py           | 2.3.0         | Pulled in py vispy
 dev-python/fusepy                | 3.0.1         | Optional for yt
 dev-python/heapdict              | 1.0.1         | Pulled in by zict and distributed
-dev-python/indexed\_{bzip2,zstd} | 1.4.0 / 1.5.0 | Optional for yt
+dev-python/indexed\_{bzip2,zstd} | 1.4.0 / 1.5.1 | Optional for yt
 dev-python/libconf               | 2.0.1         | Optional for yt
 dev-python/miniballcpp           | 0.2.2         | Optional for yt
 dev-python/msrest                | 0.6.21        | SunPy, h5pyd related
