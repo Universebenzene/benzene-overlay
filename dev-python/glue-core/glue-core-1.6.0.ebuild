@@ -35,31 +35,25 @@ RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
 	>=dev-python/xlrd-1.2[${PYTHON_USEDEP}]
-	all? (
-		>dev-python/pillow-7.1.0[${PYTHON_USEDEP}]
-	)
+	all? ( >dev-python/pillow-7.1.0[${PYTHON_USEDEP}] )
 	astronomy? (
 		dev-python/pyavm[${PYTHON_USEDEP}]
 		dev-python/astrodendro[${PYTHON_USEDEP}]
 		dev-python/spectral-cube[${PYTHON_USEDEP}]
 	)
-	qt? (
-		>=dev-python/PyQt5-5.9[${PYTHON_USEDEP}]
-	)
-	recommended? (
-		sci-libs/scikit-image[${PYTHON_USEDEP}]
-	)
+	qt? ( >=dev-python/PyQt5-5.14[${PYTHON_USEDEP}] )
+	recommended? ( sci-libs/scikit-image[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-flake8[${PYTHON_USEDEP}]
+		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astrodendro[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/pyavm[${PYTHON_USEDEP}]
 		sci-libs/scikit-image[${PYTHON_USEDEP}]
 	)
 "
-
-PATCHES=( "${FILESDIR}"/${P}-fix-doc-underline-length.patch )
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-automodapi \
