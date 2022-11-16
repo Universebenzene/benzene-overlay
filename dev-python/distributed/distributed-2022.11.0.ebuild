@@ -32,7 +32,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="test"	# Test phase runs with fails
 
-RDEPEND=">dev-python/click-6.6[${PYTHON_USEDEP}]
+RDEPEND=">dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-1.5.0[${PYTHON_USEDEP}]
 	dev-python/dask[${PYTHON_USEDEP}]
 	dev-python/jinja[${PYTHON_USEDEP}]

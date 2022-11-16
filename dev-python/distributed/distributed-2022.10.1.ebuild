@@ -16,8 +16,8 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
 	doc? (
 		${GIT_RAW_URI}/docs/source/conf.py -> ${P}-conf.py
 		${GIT_RAW_URI}/docs/source/images/task-state.svg -> ${P}-d-task-state.svg
-		${GIT_RAW_URI}/docs/source/images/worker-cancel-state1.svg -> ${P}-d-worker-worker-state1.svg
-		${GIT_RAW_URI}/docs/source/images/worker-cancel-state2.svg -> ${P}-d-worker-worker-state2.svg
+		${GIT_RAW_URI}/docs/source/images/worker-cancel-state1.svg -> ${P}-d-worker-cancel-state1.svg
+		${GIT_RAW_URI}/docs/source/images/worker-cancel-state2.svg -> ${P}-d-worker-cancel-state2.svg
 		${GIT_RAW_URI}/docs/source/images/worker-dep-state.svg -> ${P}-d-worker-dep-state.svg
 		${GIT_RAW_URI}/docs/source/images/worker-execute-state.svg -> ${P}-d-worker-execute-state.svg
 		${GIT_RAW_URI}/docs/source/images/worker-forget-state.svg -> ${P}-d-worker-forget-state.svg
