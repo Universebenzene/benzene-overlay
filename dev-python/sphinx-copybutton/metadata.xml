@@ -11,5 +11,6 @@
 	</upstream>
 	<use>
 		<flag name="code_style">Extra code_style support for development</flag>
+		<flag name="rtd">Extra rtd support</flag>
 	</use>
 </pkgmetadata>
