@@ -31,7 +31,7 @@ dev-python/aioftp                                                               
 dev-python/astlib                                                                    | 0.11.3; 0.11.8                                                |
 dev-python/corner                                                                    | 2.2.1                                                         |
 dev-python/exifread                                                                  | 3.0.0                                                         |
-dev-python/distributed                                                               | 2022.9.2; 2022.10.0; 2022.10.1; 2022.10.2; 2022.11.0          |
+dev-python/distributed                                                               | 2022.9.2; 2022.10.0; 2022.10.1; 2022.11.0                     |
 dev-python/glymur                                                                    | 0.11.7; 0.12.0                                                |
 dev-python/hsluv                                                                     | 5.0.3                                                         |
 dev-python/oldest-supported-numpy                                                    | 2022.8.16                                                     | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
