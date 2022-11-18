@@ -38,6 +38,7 @@ RDEPEND="${DEPEND}
 	dev-python/freetype-py[${PYTHON_USEDEP}]
 	dev-python/hsluv[${PYTHON_USEDEP}]
 	dev-python/kiwisolver[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 	io? (
 		dev-python/meshio[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
@@ -62,6 +63,7 @@ BDEPEND="dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 		dev-python/meshio[${PYTHON_USEDEP}]
 		dev-python/networkx[${PYTHON_USEDEP}]
 		dev-python/numpydoc[${PYTHON_USEDEP}]
+		dev-python/pyopengl[${PYTHON_USEDEP}]
 		dev-python/sphinx-gallery[${PYTHON_USEDEP}]
 		media-libs/fontconfig
 		virtual/opengl
@@ -69,17 +71,19 @@ BDEPEND="dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
+# QThread: Destroyed while thread is still running
 distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/sphinxcontrib-apidoc \
 	dev-python/pydata-sphinx-theme \
 	dev-python/imageio \
+	dev-python/myst_parser \
 	dev-python/networkx \
 	dev-python/numpydoc \
+	dev-python/pyopengl \
 	dev-python/pytest
 
 python_prepare_all() {
-	sed -i "/Iterable/s/collections\.Iterable/collections\.abc\.Iterable/" ${PN}/visuals/tube.py || die
-	use doc && { eapply "${FILESDIR}"/${P}-use-local-demo-data.patch ; \
+	use doc && { eapply "${FILESDIR}"/${PN}-0.12.0-use-local-demo-data.patch ; \
 		for dat in "${DISTDIR}"/*-d-*; do { cp ${dat} "${S}"/examples/scene/${dat##*-d-} || die ; } ; done ; \
 		cp {"${DISTDIR}"/${PN}-${DATA_DATE}-d-,"${S}"/examples/plotting/}mri.npz || die ; }
 	xdg_environment_reset
