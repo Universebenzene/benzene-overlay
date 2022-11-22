@@ -21,7 +21,7 @@ IUSE="cxx doc idl java openmp static-libs test"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
-	>=sci-libs/cfitsio-3.440
+	>=sci-libs/cfitsio-3.440:=
 	cxx? ( sci-libs/libsharp:= )
 	idl? (
 		dev-lang/gdl
