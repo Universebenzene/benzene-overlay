@@ -106,7 +106,7 @@ dev-python/fusepy                | 3.0.1         | Optional for yt
 dev-python/heapdict              | 1.0.1         | Pulled in by zict and distributed
 dev-python/indexed\_{bzip2,zstd} | 1.4.0 / 1.5.1 | Optional for yt
 dev-python/libconf               | 2.0.1         | Optional for yt
-dev-python/miniballcpp           | 0.2.2         | Optional for yt
+dev-python/miniballcpp           | 0.2.3         | Optional for yt
 dev-python/msrest                | 0.6.21        | SunPy, h5pyd related
 dev-python/msrestazure           | 0.6.4         | SunPy, h5pyd related
 dev-python/numcodecs             | 0.10.2        | Pulled in by zarr
