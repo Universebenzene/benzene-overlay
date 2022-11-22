@@ -14,6 +14,7 @@ if [[ ${PV} == *9999* ]]; then
 else
 	SRC_URI="https://github.com/QuiteRSS/quiterss/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="amd64 ~arm x86 ~amd64-linux ~x86-linux"
+	PATCHES=( "${FILESDIR}/${P}-install-appdata.patch" )
 fi
 
 LICENSE="GPL-3"
@@ -35,8 +36,6 @@ DEPEND=">=dev-db/sqlite-3.11.1:3
 	dev-qt/qtxml:5
 "
 RDEPEND="${DEPEND}"
-
-PATCHES=( "${FILESDIR}/${P}-install-appdata.patch" )
 
 src_prepare() {
 	default
