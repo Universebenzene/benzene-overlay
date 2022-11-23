@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"	# no x86 KEYWORD for glue-core, spectral-cube
 
-DEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
 	>=dev-python/dask-2.0[${PYTHON_USEDEP}]
