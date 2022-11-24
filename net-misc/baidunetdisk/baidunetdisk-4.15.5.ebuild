@@ -14,10 +14,14 @@ SLOT="0"
 RESTRICT="strip"
 KEYWORDS="-* ~amd64"
 
-RDEPEND="x11-libs/gtk+:3[cups]
-	x11-libs/libXScrnSaver
-	dev-libs/nss
+RDEPEND="app-crypt/libsecret
 	app-crypt/p11-kit
+	dev-libs/nss
+	x11-libs/gtk+:3[cups]
+	x11-libs/libnotify
+	x11-libs/libXScrnSaver
+	x11-libs/libXtst
+	x11-misc/xdg-utils
 "
 DEPEND=""
 BDEPEND=""
