@@ -19,36 +19,43 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/numpy-1.10[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.18[${PYTHON_USEDEP}]
 	>=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/asdf_transform_schemas-0.2.2[${PYTHON_USEDEP}]
+	>=dev-python/asdf_unit_schemas-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-16.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
-		dev-python/six[${PYTHON_USEDEP}]
+		>=dev-python/importlib_metadata-3[${PYTHON_USEDEP}]
+	' python3_{8,9})
+	$(python_gen_cond_dep '
+		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
 	' python3_8)
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
-		media-gfx/graphviz
+		>=dev-python/sphinx-asdf-0.1.4[${PYTHON_USEDEP}]
+		dev-python/tomli[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/pytest-openfiles[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/fsspec[${PYTHON_USEDEP}]
 		dev-python/lz4[${PYTHON_USEDEP}]
+		dev-python/psutil[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
-#distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
+#distutils_enable_sphinx docs ">=dev-python/sphinx-asdf-0.1.4" dev-python/tomli
 
 python_compile_all() {
 	if use doc; then
