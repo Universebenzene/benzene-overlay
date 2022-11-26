@@ -1,0 +1,56 @@
+# Copyright 2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{8..10} )
+
+inherit distutils-r1
+
+DESCRIPTION="ASDF schemas for units"
+HOMEPAGE="https://asdf-unit-schemas.readthedocs.io"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+
+LICENSE="BSD"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="doc intersphinx"
+RESTRICT="intersphinx? ( network-sandbox )"
+REQUIRED_USE="intersphinx? ( doc )"
+
+RDEPEND=">=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '
+		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
+	' python3_8)"
+BDEPEND=">=dev-python/setuptools_scm-3.4[${PYTHON_USEDEP}]
+	doc? (
+		${RDEPEND}
+		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-asdf-0.1.3[${PYTHON_USEDEP}]
+		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
+		>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/tomli[${PYTHON_USEDEP}]
+		media-gfx/graphviz
+	)
+	test? ( dev-python/scipy[${PYTHON_USEDEP}] )
+"
+PDEPEND="test? (
+		>=dev-python/asdf-2.8.0[${PYTHON_USEDEP}]
+		dev-python/asdf-astropy[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
+#distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-asdf dev-python/asdf
+
+python_compile_all() {
+	if use doc; then
+		pushd docs || die
+		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
+		popd || die
+		HTML_DOCS=( docs/_build/html/. )
+	fi
+}
