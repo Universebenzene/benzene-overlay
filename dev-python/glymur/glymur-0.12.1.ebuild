@@ -22,12 +22,11 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 
 S="${WORKDIR}/${MY_P}"
 
-# no tests data since 0.11.6
+# no tests data since 0.12.1
 #distutils_enable_tests pytest
-# no docs dir since 0.11.6
+# no docs dir since 0.12.1
 #distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx_rtd_theme

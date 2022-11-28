@@ -37,7 +37,6 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		sci-libs/gdal[python]
