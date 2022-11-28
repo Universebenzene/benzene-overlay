@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{8..11} )
 
 MY_PN="${PN//-/_}"
 MY_PV="$(ver_cut 1-3)b$(ver_cut 5)"
