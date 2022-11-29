@@ -30,7 +30,7 @@ dev-python/glueviz             | 1.2.0 (glue-core: 1.6.0)             | Both met
 dev-python/glue-vispy-viewers  | 1.0.5                                |
 dev-python/gwcs                | 0.17.1; 0.18.2                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/h5netcdf            | 1.1.0                                |
-dev-python/h5pyd               | 0.11.0                               |
+dev-python/h5pyd               | 0.12.0                               |
 dev-python/healpy              | 1.16.1                               |
 dev-python/imexam              | 0.9.1                                | With [my issue](https://github.com/spacetelescope/imexam/issues/252) unsolved
 dev-python/jplephem            | 2.18                                 |
