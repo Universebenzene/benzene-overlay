@@ -91,7 +91,7 @@ Package name | Available version | Additional information
 dev-python/adal                  | 1.2.7         | SunPy, h5pyd related
 dev-python/abg\_python           | 1.1.3         | Optional for yt
 dev-python/aggdraw               | 1.3.15        | Optional for ginga
-dev-python/aiobotocore           | 2.4.0         | Pulled in by zarr
+dev-python/aiobotocore           | 2.4.1         | Pulled in by zarr
 dev-python/aioitertools          | 0.11.0        | Pulled in by zarr
 dev-python/arviz                 | 0.12.0        | Optional for corner.py. 0.12.1 not included for missing dep `xarray-einstats`
 dev-python/asciitree             | 0.3.3         | Pulled in by zarr
