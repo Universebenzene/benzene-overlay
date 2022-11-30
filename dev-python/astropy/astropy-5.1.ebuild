@@ -37,6 +37,9 @@ BDEPEND="${RDEPEND}
 	>=dev-python/setuptools_scm-6.2[${PYTHON_USEDEP}]
 	test? (
 		dev-libs/libxml2
+		dev-python/asdf[${PYTHON_USEDEP}]
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		dev-python/bleach[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
@@ -48,6 +51,7 @@ BDEPEND="${RDEPEND}
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
+		dev-python/skyfield[${PYTHON_USEDEP}]
 	)
 	doc? (
 		media-gfx/graphviz
@@ -86,7 +90,7 @@ python_compile_all() {
 
 python_test() {
 	pushd "${BUILD_DIR}/install/$(python_get_sitedir)" || die
-	epytest --remote-data
+	epytest --remote-data --run-slow
 	popd || die
 }
 
