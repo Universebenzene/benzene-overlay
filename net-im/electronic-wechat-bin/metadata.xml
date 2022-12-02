@@ -5,5 +5,7 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">Riceneeder/electronic-wechat</remote-id>
+	</upstream>
 </pkgmetadata>
-

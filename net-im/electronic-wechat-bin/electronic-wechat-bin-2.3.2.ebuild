@@ -3,17 +3,19 @@
 
 EAPI=8
 
-inherit desktop xdg optfeature
+inherit desktop unpacker xdg optfeature
 
 MY_PN="${PN/-bin}"
 
 DESCRIPTION="A better WeChat on macOS and Linux. Built with Electron"
 HOMEPAGE="https://github.com/Riceneeder/electronic-wechat"
-SRC_URI="${HOMEPAGE}/releases/download/v$(ver_cut 1-3).fix/${MY_PN}-linux-x64.tar.gz -> ${P}-x64.tar.gz"
+SRC_URI="amd64? ( ${HOMEPAGE}/releases/download/v${PV}-6/${MY_PN}_${PV}_amd64.deb )
+	arm64? ( ${HOMEPAGE}/releases/download/v${PV}-6/${MY_PN}_${PV}_arm64.deb )
+"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 RDEPEND="x11-libs/gtk+:3[cups]
 	x11-libs/libXScrnSaver
@@ -23,28 +25,29 @@ RDEPEND="x11-libs/gtk+:3[cups]
 "
 DEPEND=""
 
-S="${WORKDIR}/${MY_PN}-linux-x64"
+S="${WORKDIR}"
 
 src_unpack() {
-	default
+	unpacker_src_unpack
 	xz -cd "${FILESDIR}"/${MY_PN}.svg.xz > "${S}"/${MY_PN}.svg || die
 }
 
 src_prepare() {
-	sed -e "/Exec/c Exec=${MY_PN}" -e "/Icon/c Icon=${MY_PN}" -e '$a StartupNotify=true' \
-		-e '/Cate/s/$/InstantMessaging;Application;/' -i ${MY_PN}.desktop || die
+	sed -e '/Cate/s/$/InstantMessaging;Application;/' -i usr/share/applications/${MY_PN}.desktop || die
 	default
 }
 
 src_install() {
 	insinto /opt/${PN}
-	doins -r .
+	doins -r usr/lib/${MY_PN}/*
 	fperms +x /opt/${PN}/{${MY_PN},libEGL.so,libffmpeg.so,libGLESv2.so,libvk_swiftshader.so,libvulkan.so.1}
 	dosym -r /opt/${PN}/${MY_PN} /usr/bin/${MY_PN}
 
-	domenu ${MY_PN}.desktop
+	domenu usr/share/applications/${MY_PN}.desktop
 	doicon -s scalable ${MY_PN}.svg
-	newicon -s 512 assets/icon.png ${MY_PN}.png
+	newicon -s 512 usr/lib/${MY_PN}/assets/icon.png ${MY_PN}.png
+	doicon usr/share/pixmaps/${MY_PN}.png
+	dodoc usr/share/doc/${MY_PN}/*
 }
 
 pkg_postinst() {
