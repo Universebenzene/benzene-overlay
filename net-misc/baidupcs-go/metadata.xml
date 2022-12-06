@@ -5,5 +5,7 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">qjfoidnh/BaiduPCS-Go</remote-id>
+	</upstream>
 </pkgmetadata>
-
