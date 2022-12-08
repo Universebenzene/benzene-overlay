@@ -33,7 +33,7 @@ HOMEPAGE="http://systemd.io/"
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/2"
 IUSE="
-	acl apparmor audit build cgroup-hybrid cryptsetup curl +dns-over-tls elfutils
+	acl apparmor audit cgroup-hybrid cryptsetup curl +dns-over-tls elfutils
 	fido2 +gcrypt gnuefi gnutls homed http idn importd iptables +kmod
 	+lz4 lzma +openssl pam pcre pkcs11 policykit pwquality qrcode
 	+resolvconf +seccomp selinux split-usr +sysv-utils test tpm vanilla xkb +zstd
