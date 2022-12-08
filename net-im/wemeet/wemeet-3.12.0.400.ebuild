@@ -6,11 +6,11 @@ EAPI=8
 inherit unpacker qmake-utils desktop xdg
 
 # bundled 5.15.8
-QT5_MIN="5.15.5:5"
+QT5_MIN="5.15.7:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/9b74d4127a16a011db8cb6300fa5fbc9/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
-	arm64? ( https://updatecdn.meeting.qq.com/cos/ce5d25cc8e8aae8ddd19295bc3b00d5e/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb  -> ${P}_arm64.deb )"
+SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/e078bf97365540d9f0ff063f93372a9c/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
+	arm64? ( https://updatecdn.meeting.qq.com/cos/11814f6931a0a599f394d8845c223feb/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
@@ -56,7 +56,7 @@ RDEPEND="dev-libs/nss
 		>=dev-qt/qtdbus-${QT5_MIN}
 		>=dev-qt/qtdeclarative-${QT5_MIN}
 		>=dev-qt/qthelp-${QT5_MIN}
-		>=dev-qt/qtgui-${QT5_MIN}[X,eglfs,gif,jpeg,ibus?,linuxfb,vnc,wayland?]
+		>=dev-qt/qtgui-${QT5_MIN}[X,eglfs,jpeg,ibus?,linuxfb,vnc,wayland?]
 		>=dev-qt/qtlocation-${QT5_MIN}
 		>=dev-qt/qtnetwork-${QT5_MIN}[connman]
 		>=dev-qt/qtnetworkauth-${QT5_MIN}
@@ -95,15 +95,15 @@ src_prepare() {
 install_libs() {
 	if use bundled-qt; then
 		if use arm64; then
-			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*}
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,tms*,service*}
 		else
-			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,bugly*,crbase*}
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,tms*,service*,bugly*,crbase*}
 		fi
 	else
 		if use arm64; then
-			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*}
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*,tms*,service*}
 		else
-			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*,bugly*,crbase*}
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*,tms*,service*,bugly*,crbase*}
 		fi
 	fi
 }

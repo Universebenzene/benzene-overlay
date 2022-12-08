@@ -53,7 +53,7 @@ RDEPEND="dev-libs/nss
 		dev-qt/qtcore:5
 		dev-qt/qtdbus:5
 		dev-qt/qtdeclarative:5
-		dev-qt/qtgui:5[X,eglfs,gif,jpeg,ibus?,linuxfb,wayland?]
+		dev-qt/qtgui:5[X,eglfs,jpeg,ibus?,linuxfb,wayland?]
 		dev-qt/qtnetwork:5[connman]
 		dev-qt/qtopengl:5
 		dev-qt/qtprintsupport:5[cups]
