@@ -4,6 +4,9 @@
 # electron-qq: replaced by icalingua
 net-im/electron-qq-bin
 
+# electronic-wechat-bin: patched version by UOS header will affect your accounts
+>net-im/electronic-wechat-bin-2.3.1
+
 # astropy<5: only for templates
 <dev-python/astropy-5
 
