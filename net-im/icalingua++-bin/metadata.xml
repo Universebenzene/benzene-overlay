@@ -5,5 +5,7 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">Icalingua-plus-plus/Icalingua-plus-plus</remote-id>
+	</upstream>
 </pkgmetadata>
-
