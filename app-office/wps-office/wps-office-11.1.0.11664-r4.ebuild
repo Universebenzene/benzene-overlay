@@ -106,6 +106,8 @@ BDEPEND="app-arch/p7zip"
 
 S="${WORKDIR}"
 
+PATCHES=( "${FILESDIR}/${P}-fix-wps-python-parse.patch" )
+
 QA_PREBUILT="opt/kingsoft/${PN}/office6/*"
 QA_FLAGS_IGNORED="opt/kingsoft/${PN}/office6/*"
 
