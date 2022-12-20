@@ -32,6 +32,7 @@ RDEPEND="dev-libs/nss
 		media-libs/libjpeg-turbo
 		media-libs/libvorbis
 		media-libs/libpulse[X,asyncns]
+		|| ( media-libs/tiff-compat:4 media-libs/tiff:0/0 )
 		net-dns/avahi[dbus]
 		net-print/cups[dbus,ssl]
 		sys-apps/tcp-wrappers

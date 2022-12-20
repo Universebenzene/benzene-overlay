@@ -35,6 +35,7 @@ RDEPEND="dev-libs/nss
 		media-libs/libpng
 		media-plugins/gst-plugins-meta:1.0[flac,vorbis]
 		|| ( media-libs/libpulse[X,asyncns] media-sound/pulseaudio[X,asyncns,orc,ssl,tcpd,udev,zeroconf] )
+		|| ( media-libs/tiff-compat:4 media-libs/tiff:0/0 )
 		net-dns/avahi[dbus]
 		net-libs/libproxy
 		net-print/cups[dbus,ssl]

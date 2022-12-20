@@ -34,6 +34,7 @@ RDEPEND="dev-libs/nss
 		media-libs/libsndfile
 		media-libs/libvorbis
 		media-libs/libpulse[X,asyncns]
+		|| ( media-libs/tiff-compat:4 media-libs/tiff:0/0 )
 		sys-apps/dbus
 		sys-apps/tcp-wrappers
 		sys-libs/libunwind
