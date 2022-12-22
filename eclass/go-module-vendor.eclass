@@ -350,9 +350,9 @@ go_setup_vendor() {
 			mv "${vendor}" "${S}" || die
 			go_mod_sum_diff="$(dirname ${vendor})/go-mod-sum.diff"
 			if [[ -s "${go_mod_sum_diff}" ]]; then
-				pushd "${S}" &>/dev/null || die
+				pushd "${S}" >/dev/null || die
 				eapply "${go_mod_sum_diff}"
-				popd
+				popd >/dev/null || die
 			fi
 		fi
 	fi
