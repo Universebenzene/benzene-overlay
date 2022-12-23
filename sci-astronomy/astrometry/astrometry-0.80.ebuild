@@ -8,7 +8,7 @@ EAPI=6
 
 PYTHON_COMPAT=( python3_{8..10} )
 
-inherit eutils toolchain-funcs python-single-r1
+inherit toolchain-funcs python-single-r1
 
 MYP=${PN}.net-${PV}
 
