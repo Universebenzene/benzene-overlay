@@ -1,7 +1,7 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 inherit xdg-utils nsplugins multilib multilib-minimal
 
 DESCRIPTION="Adobe Flash Player"
@@ -39,7 +39,7 @@ LICENSE="AdobeFlash-11.x"
 RESTRICT="bindist mirror strip"
 
 NPAPI_RDEPEND="
-	dev-libs/atk[${MULTILIB_USEDEP}]
+	>=app-accessibility/at-spi2-core-2.46.0:2[${MULTILIB_USEDEP}]
 	dev-libs/glib:2[${MULTILIB_USEDEP}]
 	dev-libs/nspr[${MULTILIB_USEDEP}]
 	dev-libs/nss[${MULTILIB_USEDEP}]
