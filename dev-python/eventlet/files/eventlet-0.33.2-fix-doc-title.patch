@@ -1,0 +1,11 @@
+--- a/doc/modules/dagpool.rst	2021-11-17 03:59:32.000000000 +0800
++++ b/doc/modules/dagpool.rst	2022-12-10 22:57:37.551997389 +0800
+@@ -63,7 +63,7 @@
+ blocks until the next result can be delivered.
+ 
+ Tutorial
+-*******
++********
+ Example
+ -------
+ 

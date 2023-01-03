@@ -97,6 +97,7 @@ dev-python/arviz                 | 0.12.0        | Optional for corner.py. 0.12.
 dev-python/asciitree             | 0.3.3         | Pulled in by zarr
 dev-python/bidict                | 0.22.0        | Optional for yt
 dev-python/cmdstanpy             | 1.0.8         | Test dependency for arviz
+dev-python/eventlet              | 0.33.2        | Dropped by official portage. Required by firefly-viz
 dev-python/f90nml                | 1.4.3         | Optional for yt
 dev-python/fastcache             | 1.1.0         | Optional for yt
 dev-python/firefly-viz           | 2.0.4         | Optional for yt
