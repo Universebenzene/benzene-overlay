@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>dmenelkir@gmail.com</email>
+		<name>Daniel Menelkir</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">patjak/bcwc_pcie</remote-id>
+	</upstream>
+</pkgmetadata>
