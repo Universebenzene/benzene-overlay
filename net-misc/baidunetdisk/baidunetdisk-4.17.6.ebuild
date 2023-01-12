@@ -1,4 +1,4 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,8 +23,6 @@ RDEPEND="app-crypt/libsecret
 	x11-libs/libXtst
 	x11-misc/xdg-utils
 "
-DEPEND=""
-BDEPEND=""
 
 S="${WORKDIR}"
 
