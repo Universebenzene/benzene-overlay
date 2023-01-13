@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -29,8 +29,6 @@ BDEPEND="virtual/pkgconfig
 		${RDEPEND}
 	)
 "
-
-DOCS=( ISSUE_TEMPLATE.md README.rst )
 
 src_test() {
 	busted --lua=${ELUA} lain-scm-1.rockspec || die
