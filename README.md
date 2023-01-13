@@ -31,7 +31,6 @@ dev-python/aioftp                                                               
 dev-python/astlib                                                                    | 0.11.3; 0.11.8                                                |
 dev-python/corner                                                                    | 2.2.1                                                         |
 dev-python/exifread                                                                  | 3.0.0                                                         |
-dev-python/distributed                                                               | 2022.12.0; 2022.12.1                                          |
 dev-python/glymur                                                                    | 0.12.0; 0.12.1                                                |
 dev-python/hsluv                                                                     | 5.0.3                                                         |
 dev-python/oldest-supported-numpy                                                    | 2022.11.19                                                    | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
@@ -99,6 +98,7 @@ dev-python/arviz                 | 0.12.0        | Optional for corner.py. 0.12.
 dev-python/asciitree             | 0.3.3         | Pulled in by zarr
 dev-python/bidict                | 0.22.0        | Optional for yt
 dev-python/cmdstanpy             | 1.0.8         | Test dependency for arviz
+dev-python/distributed           | 2022.12.1     | Optional for arviz and spectral-cube
 dev-python/eventlet              | 0.33.2        | Dropped by official portage. Required by firefly-viz
 dev-python/f90nml                | 1.4.3         | Optional for yt
 dev-python/fastcache             | 1.1.0         | Optional for yt
