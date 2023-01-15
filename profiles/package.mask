@@ -12,3 +12,12 @@ net-im/electron-qq-bin
 
 # aplpy<=2.0.1: only for templates
 <=dev-python/aplpy-2.0.1
+
+# Really old package
+dev-python/montage-wrapper
+
+# astroscrappy<=1.0.8: only for templates
+<=dev-python/astroscrappy-1.0.8
+
+# ccdproc<2.0: only for templates
+<dev-python/ccdproc-2.0
