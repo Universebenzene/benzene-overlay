@@ -1,10 +1,10 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{9..10} )
 
 inherit distutils-r1 optfeature
 
@@ -27,9 +27,6 @@ RDEPEND=">=dev-python/numpy-1.10[${PYTHON_USEDEP}]
 	>=dev-python/packaging-16.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		dev-python/six[${PYTHON_USEDEP}]
-	' python3_8)
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
