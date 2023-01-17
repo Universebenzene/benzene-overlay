@@ -1,9 +1,9 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-PYTHON_COMPAT=( python{2_7,3_{7..10}} )
+PYTHON_COMPAT=( python{2_7,3_{9..10}} )
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
 inherit distutils-r1 virtualx eutils optfeature
