@@ -1,12 +1,11 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit unpacker qmake-utils desktop xdg
 
-# bundled 5.15.8
-QT5_MIN="5.15.5:5"
+QT5_MIN="5.15.8:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
 SRC_URI="https://updatecdn.meeting.qq.com/cos/249fc9a44733d846162296934bbf52fa/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb"
