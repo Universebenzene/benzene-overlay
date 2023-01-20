@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,7 +23,6 @@ else
 	KEYWORDS="~amd64 ~arm ~arm64"
 	SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 		https://github.com/Universebenzene/ebuild-vendors/archive/refs/tags/${P}.tar.gz -> ${P}-vendor.tar.gz"
-	VENDOROPT="-mod vendor"
 fi
 
 DEPEND=""
@@ -37,7 +36,7 @@ src_compile() {
 	export CGO_CXXFLAGS="${CXXFLAGS}"
 	export CGO_LDFLAGS="${LDFLAGS}"
 	export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
-	ego build ${VENDOROPT} -v -x -ldflags="-X github.com/mzz2017/gg/cmd.Version=${PV} -linkmode=external" -o . ./...
+	ego build -mod vendor -v -x -ldflags="-X github.com/mzz2017/gg/cmd.Version=${PV} -linkmode=external" -o . ./...
 }
 
 src_test() {

@@ -342,17 +342,44 @@ go_setup_vendor() {
 	debug-print-function "${FUNCNAME}" "${@}"
 
 	if [[ ! -d "${S}/vendor" ]]; then
-		local -a vendors
-		local vendor go_mod_sum_diff
-		vendors=($(find "${WORKDIR}" -maxdepth 2 -name 'vendor' 2>/dev/null || true))
-		if [[ ${#vendors[@]} -gt 0 ]]; then
-			vendor="${vendors[0]}"
-			mv "${vendor}" "${S}" || die
-			go_mod_sum_diff="$(dirname ${vendor})/go-mod-sum.diff"
-			if [[ -s "${go_mod_sum_diff}" ]]; then
-				pushd "${S}" >/dev/null || die
-				eapply "${go_mod_sum_diff}"
-				popd >/dev/null || die
+		if [[ ${PROPERTIES} =~ (^|[[:space:]])live([[:space:]]|$) ]]; then
+			local hp
+			local -a hps
+			if [[ -n $HTTP_PROXY ]]; then
+				hps+=( HTTP_PROXY )
+			elif [[ -n $http_proxy ]]; then
+				hps+=( http_proxy )
+			fi
+			if [[ -n $HTTPS_PROXY ]]; then
+				hps+=( HTTPS_PROXY )
+			elif [[ -n $https_proxy ]]; then
+				hps+=( https_proxy )
+			fi
+			for hp in "${hps[@]}"; do
+				if [[ -n ${!hp} ]] && [[ ${!hp} =~ ^socks5h:// ]]; then
+					set -- export ${hp}="socks5${!hp#socks5h}"
+					ewarn "golang does not support the 'socks5h://' schema for '${hp}', fallback to the 'socks5://' schema"
+					einfo "${@}"
+					"${@}"
+				fi
+			done
+			pushd "${S}" >/dev/null || die
+			edo go mod tidy
+			edo go mod vendor
+			popd >/dev/null || die
+		else
+			local -a vendors
+			local vendor go_mod_sum_diff
+			vendors=($(find "${WORKDIR}" -maxdepth 2 -name 'vendor' 2>/dev/null || true))
+			if [[ ${#vendors[@]} -gt 0 ]]; then
+				vendor="${vendors[0]}"
+				mv "${vendor}" "${S}" || die
+				go_mod_sum_diff="$(dirname ${vendor})/go-mod-sum.diff"
+				if [[ -s "${go_mod_sum_diff}" ]]; then
+					pushd "${S}" >/dev/null || die
+					eapply "${go_mod_sum_diff}"
+					popd >/dev/null || die
+				fi
 			fi
 		fi
 	fi
