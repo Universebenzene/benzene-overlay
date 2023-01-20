@@ -59,6 +59,8 @@ case ${EAPI} in
 	*) die "${ECLASS}: EAPI ${EAPI:-0} not supported" ;;
 esac
 
+inherit edo
+
 if [[ -z ${_GO_MODULE} ]]; then
 
 _GO_MODULE=1
