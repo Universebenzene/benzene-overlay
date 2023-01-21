@@ -1,0 +1,11 @@
+--- a/goldendict.pro	2022-09-26 18:51:37.735487441 +0700
++++ b/goldendict.pro	2022-09-26 18:54:17.320488799 +0700
+@@ -586,7 +586,7 @@
+ RESOURCES += resources.qrc \
+     scripts.qrc \
+     flags.qrc
+-TRANSLATIONS += locale/ru_RU.ts \
++TRANSLATIONS += locale/ru_RU.ts
+ # Build version file
+ !isEmpty( hasGit ) {
+   PRE_TARGETDEPS      += $$PWD/version.txt
