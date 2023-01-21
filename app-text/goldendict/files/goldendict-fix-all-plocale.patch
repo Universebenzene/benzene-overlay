@@ -1,0 +1,12 @@
+--- a/goldendict.pro	2023-01-21 14:33:22.357670945 +0800
++++ b/goldendict.pro	2023-01-21 14:46:48.356283679 +0800
+@@ -642,6 +642,9 @@
+     locale/fi_FI.ts \
+     locale/jb_JB.ts \
+     locale/hi_IN.ts \
++    locale/qt_es.ts \
++    locale/qt_it.ts \
++    locale/qt_lt.ts \
+     locale/ie_001.ts
+ 
+ # Build version file
