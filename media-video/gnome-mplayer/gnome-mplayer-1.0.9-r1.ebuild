@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -26,7 +26,6 @@ COMMON_DEPEND=">=dev-libs/glib-2.30
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	pulseaudio? ( >=media-sound/pulseaudio-0.9.14 )"
 RDEPEND="${COMMON_DEPEND}
-	x11-themes/gnome-icon-theme-symbolic
 	>=media-video/mplayer-1.0_rc4_p20100101[libass]"
 DEPEND="${COMMON_DEPEND}
 	sys-devel/gettext
