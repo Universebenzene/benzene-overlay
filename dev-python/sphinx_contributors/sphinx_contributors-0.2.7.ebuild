@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/sphinx-3[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/furo

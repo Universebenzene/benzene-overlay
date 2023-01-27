@@ -148,7 +148,7 @@ dev-python/sphinx-copybutton    | 0.5.1            | Doc build failed due to som
 dev-python/sphinx-examples      | 0.0.5            |
 dev-python/sphinx-inline-tabs   | 2022.1.2\_beta11 |
 dev-python/sphinx-togglebutton  | 0.3.1            |
-dev-python/sphinx\_contributors | 0.2.6            |
+dev-python/sphinx\_contributors | 0.2.7            |
 dev-python/sphinx\_design       | 0.3.0            |
 dev-python/sphinx\_mdinclude    | 0.5.3            |
 dev-python/sphinxcontrib-jquery | 3.0.0            |
