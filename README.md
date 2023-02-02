@@ -97,7 +97,7 @@ dev-python/aiobotocore           | 2.4.2               | Pulled in by zarr
 dev-python/aioitertools          | 0.11.0              | Pulled in by zarr
 dev-python/arviz                 | 0.12.0              | Optional for corner.py. 0.12.1 not included for missing dep `xarray-einstats`
 dev-python/asciitree             | 0.3.3               | Pulled in by zarr
-dev-python/bidict                | 0.22.0              | Optional for yt
+dev-python/bidict                | 0.22.0; 0.22.1      | Optional for yt
 dev-python/cmdstanpy             | 1.0.8               | Test dependency for arviz
 dev-python/distributed           | 2022.12.1; 2023.1.1 | Optional for arviz and spectral-cube
 dev-python/eventlet              | 0.33.2              | Dropped by official portage. Required by firefly-viz
