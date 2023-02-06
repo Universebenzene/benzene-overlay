@@ -17,7 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 RESTRICT="test"	# Test phase runs with fails
 
-RDEPEND=">=dev-python/astropy-0.2.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.24[${PYTHON_USEDEP}]
+	>=dev-python/astropy-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/h5py-0.2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
@@ -27,7 +28,8 @@ BDEPEND="test? (
 "
 
 PATCHES=(
-	"${FILESDIR}/${P}-fix-collection-py3.10.patch"
+	"${FILESDIR}/001-${P}-fix-collection-py3.10.patch"
+	"${FILESDIR}/002-${P}-fix-compability-to-numpy-1.24.patch"
 	"${FILESDIR}/${P}-new-doc-building.patch"
 )
 

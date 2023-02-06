@@ -1,0 +1,23 @@
+Description: Add try-except clause for importing Iterable pre/post Python 3.9.
+Origin: https://github.com/dendrograms/astrodendro/commit/3fde58f1e06bf7f966ed52712d1bf8929282be41.patch
+Author: nbrunett <nate.brunetti@gmail.com>
+Date: Tue, 15 Feb 2022 13:55:09 -0500
+Last-Update: 2022-04-10
+
+
+--- a/astrodendro/dendrogram.py
++++ b/astrodendro/dendrogram.py
+@@ -5,7 +5,12 @@
+ # - An ancestor is the largest structure that a structure is part of
+ 
+ import numpy as np
+-from collections import Iterable
++try:
++    # Python <= 3.9
++    from collections import Iterable
++except ImportError:
++    # Python > 3.9
++    from collections.abc import Iterable
+ import copy
+ import warnings
+ 

@@ -22,7 +22,7 @@ fi
 LICENSE="MIT"
 SLOT="0"
 
-RDEPEND=">dev-python/numpy-1.16[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	>dev-python/astropy-4[${PYTHON_USEDEP}]
 	>dev-python/h5py-3[${PYTHON_USEDEP}]
 	>dev-python/matplotlib-3[${PYTHON_USEDEP}]
