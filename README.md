@@ -39,7 +39,7 @@ dev-python/parfive                                                              
 dev-python/PyQt5                                                                     | 5.15.7                                                        | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pytest-cython                                                             | 0.2.0                                                         |
 dev-python/pytest-mpl                                                                | 0.13; 0.16.1                                                  |
-dev-python/pytest-socket                                                             | 0.5.0; 0.5.1                                                  |
+dev-python/pytest-socket                                                             | 0.5.0; 0.6.0                                                  |
 dev-python/vispy                                                                     | 0.11.0; 0.12.1                                                |
 dev-python/yt                                                                        | 4.0.5                                                         | Full doc building needs huge amount of data, so cannot complete locally.
 dev-python/zarr                                                                      | 2.13.3                                                        |

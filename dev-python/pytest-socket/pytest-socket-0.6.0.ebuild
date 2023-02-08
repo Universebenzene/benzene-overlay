@@ -6,11 +6,14 @@ EAPI=8
 DISTUTILS_USE_PEP517=poetry
 PYTHON_COMPAT=( python3_{9..11} )
 
+MY_PN=${PN/-/_}
+MY_P=${MY_PN}-${PV}
+
 inherit distutils-r1
 
 DESCRIPTION="Pytest Plugin to disable socket calls during tests"
 HOMEPAGE="https://github.com/miketheman/pytest-socket"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -27,11 +30,11 @@ BDEPEND="test? (
 	)
 "
 
+S="${WORKDIR}/${MY_P}"
+
 distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
-	# Connection reset by peer
-	tests/test_combinations.py::test_parametrize_with_socket_enabled_and_allow_hosts
 	# Fail in ebuild but pass outside
 	tests/test_restrict_hosts.py::test_help_message
 )
