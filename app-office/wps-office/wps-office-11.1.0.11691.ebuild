@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -105,7 +105,7 @@ BDEPEND="app-arch/p7zip"
 
 S="${WORKDIR}"
 
-PATCHES=( "${FILESDIR}/${PN}-11.1.0.11664-fix-wps-python-parse.patch" )
+PATCHES=( "${FILESDIR}/${P}-fix-wps-python-parse.patch" )
 
 QA_PREBUILT="opt/kingsoft/${PN}/office6/*"
 QA_FLAGS_IGNORED="opt/kingsoft/${PN}/office6/*"
@@ -154,7 +154,7 @@ src_install() {
 	insinto /etc/xdg/menus/applications-merged
 	doins ${WS}/etc/xdg/menus/applications-merged/wps-office.menu
 
-	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,wpsd,parsecloudfiletool,promecefpluginhost,transerr,ksolaunch,wpscloudsvr}
+	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,wpsd,promecefpluginhost,transerr,ksolaunch,wpscloudsvr,EverythingDaemon}
 
 	local MUIDIR="opt/kingsoft/wps-office/office6/mui"
 
@@ -166,10 +166,11 @@ src_install() {
 		insinto /${MUIDIR}
 		use l10n_zh-CN && doins -r "${S}/${PN}-cn/${MUIDIR}/zh_CN"
 	fi
+	use l10n_ru || { rm -r "${ED%/}/${MUIDIR}"/ru_RU || die "remove ru_RU support failed!" ; }
 
 	insinto /${MUIDIR}
 	LANGF="en-GB es-ES es-MX fr-CA pt-BR pt-PT zh-HK zh-MO zh-TW"
-	LANGG="de fr pl ru th"
+	LANGG="de fr pl th"
 	for LU in ${LANGF}; do
 		use l10n_${LU} && doins -r "${S}/${PN}-mui-${MUI_PV}/mui/${LU/-/_}"
 	done
