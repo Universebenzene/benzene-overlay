@@ -90,40 +90,40 @@ Packages in this table might just be pulled in as dependencies by some sicense r
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-dev-python/adal                  | 1.2.7               | SunPy, h5pyd related
-dev-python/abg\_python           | 1.1.3               | Optional for yt
-dev-python/aggdraw               | 1.3.15              | Optional for ginga
-dev-python/aiobotocore           | 2.4.2               | Pulled in by zarr
-dev-python/aioitertools          | 0.11.0              | Pulled in by zarr
-dev-python/arviz                 | 0.12.0              | Optional for corner.py. 0.12.1 not included for missing dep `xarray-einstats`
-dev-python/asciitree             | 0.3.3               | Pulled in by zarr
-dev-python/bidict                | 0.22.0; 0.22.1      | Optional for yt
-dev-python/cmdstanpy             | 1.0.8               | Test dependency for arviz
-dev-python/distributed           | 2022.12.1; 2023.1.1 | Optional for arviz and spectral-cube
-dev-python/eventlet              | 0.33.2              | Dropped by official portage. Required by firefly-viz
-dev-python/f90nml                | 1.4.3               | Optional for yt
-dev-python/fastcache             | 1.1.0               | Optional for yt
-dev-python/firefly-viz           | 2.0.4               | Optional for yt
-dev-python/flask-socketio        | 5.3.2               | Optional for yt
-dev-python/freetype-py           | 2.3.0               | Pulled in py vispy
-dev-python/fusepy                | 3.0.1               | Optional for yt
-dev-python/heapdict              | 1.0.1               | Pulled in by zict and distributed
-dev-python/indexed\_{bzip2,zstd} | 1.4.0 / 1.5.1       | Optional for yt
-dev-python/libconf               | 2.0.1               | Optional for yt
-dev-python/miniballcpp           | 0.2.3               | Optional for yt
-dev-python/msrest                | 0.6.21              | SunPy, h5pyd related
-dev-python/msrestazure           | 0.6.4               | SunPy, h5pyd related
-dev-python/numcodecs             | 0.10.2              | Pulled in by zarr
-dev-python/pyaml                 | 21.10.1             | Optional for yt
-dev-python/pykdtree              | 1.3.6               | Optional for yt
-dev-python/python-socketio       | 5.7.2               | Optional for yt
-dev-python/python-xz             | 0.4.0               | Optional for yt
-dev-python/ratarmount            | 0.12.0              | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
-dev-python/s3fs                  | 2022.11.2           | Test dependency for zarr
-dev-python/siosocks              | 0.3.0               | Optional for aioftp
-dev-python/cmyt                  | 1.1.2               | Pulled in by yt
-dev-python/unyt                  | 2.9.2               | Pulled in by yt
-dev-python/zict                  | 2.2.0               | Pulled in by distributed
+dev-python/adal                  | 1.2.7                         | SunPy, h5pyd related
+dev-python/abg\_python           | 1.1.3                         | Optional for yt
+dev-python/aggdraw               | 1.3.15                        | Optional for ginga
+dev-python/aiobotocore           | 2.4.2                         | Pulled in by zarr
+dev-python/aioitertools          | 0.11.0                        | Pulled in by zarr
+dev-python/arviz                 | 0.12.0                        | Optional for corner.py. 0.12.1 not included for missing dep `xarray-einstats`
+dev-python/asciitree             | 0.3.3                         | Pulled in by zarr
+dev-python/bidict                | 0.22.0; 0.22.1                | Optional for yt
+dev-python/cmdstanpy             | 1.0.8                         | Test dependency for arviz
+dev-python/distributed           | 2022.12.1; 2023.1.1; 2023.2.0 | Optional for arviz and spectral-cube
+dev-python/eventlet              | 0.33.2                        | Dropped by official portage. Required by firefly-viz
+dev-python/f90nml                | 1.4.3                         | Optional for yt
+dev-python/fastcache             | 1.1.0                         | Optional for yt
+dev-python/firefly-viz           | 2.0.4                         | Optional for yt
+dev-python/flask-socketio        | 5.3.2                         | Optional for yt
+dev-python/freetype-py           | 2.3.0                         | Pulled in py vispy
+dev-python/fusepy                | 3.0.1                         | Optional for yt
+dev-python/heapdict              | 1.0.1                         | Pulled in by zict and distributed
+dev-python/indexed\_{bzip2,zstd} | 1.4.0 / 1.5.1                 | Optional for yt
+dev-python/libconf               | 2.0.1                         | Optional for yt
+dev-python/miniballcpp           | 0.2.3                         | Optional for yt
+dev-python/msrest                | 0.6.21                        | SunPy, h5pyd related
+dev-python/msrestazure           | 0.6.4                         | SunPy, h5pyd related
+dev-python/numcodecs             | 0.10.2                        | Pulled in by zarr
+dev-python/pyaml                 | 21.10.1                       | Optional for yt
+dev-python/pykdtree              | 1.3.6                         | Optional for yt
+dev-python/python-socketio       | 5.7.2                         | Optional for yt
+dev-python/python-xz             | 0.4.0                         | Optional for yt
+dev-python/ratarmount            | 0.12.0                        | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
+dev-python/s3fs                  | 2022.11.2                     | Test dependency for zarr
+dev-python/siosocks              | 0.3.0                         | Optional for aioftp
+dev-python/cmyt                  | 1.1.2                         | Pulled in by yt
+dev-python/unyt                  | 2.9.2                         | Pulled in by yt
+dev-python/zict                  | 2.2.0                         | Pulled in by distributed
 
 <!--</details>-->
 
