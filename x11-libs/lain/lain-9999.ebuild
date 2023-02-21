@@ -11,7 +11,7 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
+#KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="+curl luajit test"
 RESTRICT="!test? ( test )"
 

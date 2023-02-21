@@ -14,7 +14,7 @@ SRC_URI="${HOMEPAGE}/releases/download/v${PV}/${MY_PN}_${PV}_amd64.deb"
 LICENSE="GPL-3"
 SLOT="0"
 RESTRICT="strip"
-KEYWORDS="-* ~amd64"
+#KEYWORDS="-* ~amd64"
 
 RDEPEND="x11-libs/gtk+:3[cups]
 	x11-libs/libXScrnSaver

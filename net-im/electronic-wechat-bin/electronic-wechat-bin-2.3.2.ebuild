@@ -1,4 +1,4 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,7 +15,7 @@ SRC_URI="amd64? ( ${HOMEPAGE}/releases/download/v${PV}-6/${MY_PN}_${PV}_amd64.de
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~arm64"
+#KEYWORDS="-* ~amd64 ~arm64"
 
 RDEPEND="x11-libs/gtk+:3[cups]
 	x11-libs/libXScrnSaver
@@ -58,4 +58,11 @@ pkg_postinst() {
 	optfeature "GNOME" sys-apps/xdg-desktop-portal-gnome
 	optfeature "KDE" kde-plasma/xdg-desktop-portal-kde
 	optfeature "LXQt" gui-libs/xdg-desktop-portal-lxqt
+
+	ewarn
+	ewarn "Version 2.3.2 is a fixed version by UOS header."
+	ewarn "HOWEVER TENCENT WILL PROBABLY LIMIT YOUR ACCOUNT IF YOU USE THIS VERSION."
+	ewarn "2.3.1 SHOULD BE MUCH SAFER. SEE HERE FOR MORE INFORMATION:"
+	ewarn "https://aur.archlinux.org/packages/electronic-wechat-uos-bin"
+	ewarn
 }
