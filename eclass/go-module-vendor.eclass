@@ -436,7 +436,7 @@ go-module-vendor_setup_vendor() {
 # - Otherwise do a normal unpack.
 go-module-vendor_src_unpack() {
 	if use amd64 || use arm || use arm64 ||
-		( use ppc64 && ! use big-endian ) || use s390 || use x86; then
+		( use ppc64 && [[ $(tc-endian) == "little" ]] ) || use s390 || use x86; then
 			GOFLAGS="-buildmode=pie ${GOFLAGS}"
 	fi
 	GOFLAGS="${GOFLAGS} -p=$(makeopts_jobs)"
