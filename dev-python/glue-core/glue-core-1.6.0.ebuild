@@ -58,7 +58,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-automodapi \
 	dev-python/sphinxcontrib-spelling \
-	dev-python/sphinx_rtd_theme \
+	dev-python/sphinx-rtd-theme \
 	dev-python/numpydoc
 
 python_install_all() {

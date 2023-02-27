@@ -33,7 +33,7 @@ BDEPEND=">dev-python/setuptools_scm-1.5.4[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/sphinx_rtd_theme dev-python/numpydoc
+distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/sphinx-rtd-theme dev-python/numpydoc
 
 EPYTEST_DESELECT=(
 	# Fatal Python error: Aborted

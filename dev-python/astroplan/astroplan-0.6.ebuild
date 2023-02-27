@@ -26,7 +26,7 @@ BDEPEND=">=dev-python/astropy-helpers-2.0.11[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
+		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (

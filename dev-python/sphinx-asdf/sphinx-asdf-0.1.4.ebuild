@@ -4,13 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYPI_NO_NORMALIZE=1
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Sphinx plugin for generating documentation from ASDF schemas"
 HOMEPAGE="https://github.com/spacetelescope/sphinx-asdf"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -23,7 +23,7 @@ RDEPEND="dev-python/asdf[${PYTHON_USEDEP}]
 	dev-python/myst_parser[${PYTHON_USEDEP}]
 	~dev-python/mistune-0.8.4[${PYTHON_USEDEP}]
 	dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-	dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
+	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 	dev-python/sphinx-bootstrap-theme[${PYTHON_USEDEP}]
 	dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
 	dev-python/toml[${PYTHON_USEDEP}]

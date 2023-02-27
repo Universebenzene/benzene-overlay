@@ -29,4 +29,4 @@ S="${WORKDIR}/${MY_P}"
 # no tests data since 0.12.1
 #distutils_enable_tests pytest
 # no docs dir since 0.12.1
-#distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx_rtd_theme
+#distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx-rtd-theme

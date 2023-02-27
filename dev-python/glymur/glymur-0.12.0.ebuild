@@ -48,7 +48,7 @@ BDEPEND="test? (
 S="${WORKDIR}/${MY_P}"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx_rtd_theme
+distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
 	use doc && { for dst in "${DISTDIR}"/*-d-*; do { cp ${dst} "${S}"/docs/source/whatsnew/${dst##*-d-} || die ; } ; done ; \

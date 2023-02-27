@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 RDEPEND=">=dev-python/sphinx-1.7[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
-BDEPEND="doc? ( dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}] )"
+BDEPEND="doc? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs --no-autodoc

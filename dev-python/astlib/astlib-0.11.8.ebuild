@@ -36,7 +36,7 @@ S="${WORKDIR}/${MY_P}"
 PATCHES=( "${FILESDIR}/${P}-system-wcstools.patch" )
 
 distutils_enable_tests nose
-distutils_enable_sphinx docs dev-python/sphinx-epytext dev-python/readthedocs-sphinx-ext dev-python/sphinx_rtd_theme
+distutils_enable_sphinx docs dev-python/sphinx-epytext dev-python/readthedocs-sphinx-ext dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
 	use doc && { mkdir -p docs/_static || die ; }

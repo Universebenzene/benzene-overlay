@@ -43,7 +43,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/numpydoc \
 	dev-python/sphinx-copybutton \
 	dev-python/sphinx-issues \
-	dev-python/sphinx_rtd_theme
+	dev-python/sphinx-rtd-theme
 
 # Reported upsream
 # https://github.com/zarr-developers/zarr-python/issues/961

@@ -4,33 +4,33 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1 optfeature
+inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Python library for the Advanced Scientific Data Format"
 HOMEPAGE="https://asdf.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc intersphinx"
+IUSE="all doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/numpy-1.18[${PYTHON_USEDEP}]
 	>=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
-	>=dev-python/asdf_transform_schemas-0.2.2[${PYTHON_USEDEP}]
+	>=dev-python/asdf_transform_schemas-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf_unit_schemas-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-16.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/importlib_metadata-3[${PYTHON_USEDEP}]
-	' python3_9)
+	>=dev-python/importlib_metadata-4.11.4[${PYTHON_USEDEP}]
+	all? (
+		>=dev-python/lz4-0.10[${PYTHON_USEDEP}]
+	)
 "
 BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
@@ -56,10 +56,8 @@ distutils_enable_tests pytest
 
 python_compile_all() {
 	if use doc; then
-		pushd docs || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-		popd || die
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }

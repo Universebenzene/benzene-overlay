@@ -75,7 +75,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx doc dev-python/astropy dev-python/sphinx-automodapi dev-python/sphinx_rtd_theme
+distutils_enable_sphinx doc dev-python/astropy dev-python/sphinx-automodapi dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
 	use test && { cp "${DISTDIR}"/{*cdf,*nc} "${S}" || die ; }

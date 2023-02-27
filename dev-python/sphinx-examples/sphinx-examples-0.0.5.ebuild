@@ -23,5 +23,5 @@ distutils_enable_tests nose
 
 pkg_postinst() {
 	optfeature "extra sphinx support" "dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/myst_parser \
-		dev-python/sphinx_rtd_theme dev-python/furo"
+		dev-python/sphinx-rtd-theme dev-python/furo"
 }

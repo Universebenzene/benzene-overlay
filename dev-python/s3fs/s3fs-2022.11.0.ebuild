@@ -35,7 +35,7 @@ BDEPEND="test? (
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs/source dev-python/sphinx_rtd_theme dev-python/numpydoc
+distutils_enable_sphinx docs/source dev-python/sphinx-rtd-theme dev-python/numpydoc
 
 python_prepare_all() {
 	use doc && { cp {"${DISTDIR}"/${P}-,"${S}"/docs/source/}conf.py || die ; \

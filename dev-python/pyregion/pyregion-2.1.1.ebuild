@@ -29,7 +29,7 @@ BDEPEND="${DEPEND}
 	dev-python/astropy-helpers[${PYTHON_USEDEP}]
 	doc? (
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
+		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 	)
 	test? (

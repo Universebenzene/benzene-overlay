@@ -26,7 +26,7 @@ RDEPEND="${DEPEND}"
 BDEPEND="doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
+		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		dev-python/nbsphinx[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 		virtual/pandoc
@@ -40,7 +40,7 @@ BDEPEND="doc? (
 "
 
 distutils_enable_tests pytest
-#distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx_rtd_theme dev-python/nbsphinx
+#distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-rtd-theme dev-python/nbsphinx
 
 python_prepare_all() {
 	sed -e "s|#fftw=local|fftw=local|" -e "s|#fftw-include[-_]dirs.*$|fftw-include_dirs=/usr/include|" \

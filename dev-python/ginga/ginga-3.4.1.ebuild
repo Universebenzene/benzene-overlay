@@ -46,7 +46,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
+		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
@@ -59,7 +59,7 @@ BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-#distutils_enable_sphinx doc dev-python/sphinx-astropy dev-python/sphinx_rtd_theme
+#distutils_enable_sphinx doc dev-python/sphinx-astropy dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
 	sed -i "/Exec/a Icon=ginga" ${PN}.desktop || die
