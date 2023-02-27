@@ -81,7 +81,7 @@ python_compile_all() {
 }
 
 pkg_postinst() {
-	optfeature "To read Table objects from HTML files"											dev-python/beautifulsoup
+	optfeature "To read Table objects from HTML files"											dev-python/beautifulsoup4
 	optfeature "Used to sanitize text when disabling HTML escaping in the Table HTML writer"	dev-python/bleach
 	optfeature "To read/write Table objects from/to the Enhanced CSV ASCII table format"		dev-python/pyyaml
 	optfeature "To read/write Table objects from/to pandas DataFrame objects"					dev-python/pandas

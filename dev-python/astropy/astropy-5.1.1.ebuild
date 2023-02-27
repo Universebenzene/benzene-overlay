@@ -111,7 +111,7 @@ python_test() {
 pkg_postinst() {
 	optfeature "power a variety of features in several modules" ">=dev-python/scipy-1.3"
 	optfeature "read/write Table objects from/to HDF5 files" dev-python/h5py
-	optfeature "read Table objects from HTML files" dev-python/beautifulsoup
+	optfeature "read Table objects from HTML files" dev-python/beautifulsoup4
 	optfeature "read Table objects from HTML files using the pandas reader" dev-python/html5lib
 	optfeature "Used to sanitize text when disabling HTML escaping in the Table HTML writer" dev-python/bleach
 	optfeature "validate VOTABLE XML files. This is a command line tool installed outside of Python" dev-libs/libxml2

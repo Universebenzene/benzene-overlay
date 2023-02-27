@@ -89,7 +89,7 @@ python_test() {
 pkg_postinst() {
 	optfeature "power a variety of features in several modules" ">=dev-python/scipy-1.1"
 	optfeature "read/write Table objects from/to HDF5 files" dev-python/h5py
-	optfeature "read Table objects from HTML files" dev-python/beautifulsoup
+	optfeature "read Table objects from HTML files" dev-python/beautifulsoup4
 	optfeature "read Table objects from HTML files using the pandas reader" dev-python/html5lib
 	optfeature "Used to sanitize text when disabling HTML escaping in the Table HTML writer" dev-python/bleach
 	optfeature "read/write Table objects from/to the Enhanced CSV ASCII table format nd to serialize mixins \
