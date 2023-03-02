@@ -152,6 +152,7 @@ dev-python/sphinx\_contributors | 0.2.7            |
 dev-python/sphinx\_design       | 0.3.0            |
 dev-python/sphinx\_mdinclude    | 0.5.3            |
 dev-python/sphinxcontrib-jquery | 3.0.0            |
+dev-python/sphinxext-opengraph  | 0.8.1            |
 dev-python/dask-sphinx-theme    | 3.0.3            |
 dev-python/sunpy-sphinx-theme   | 1.2.37           |
 dev-python/mistune              | 0.8.4-r1         | Only for sphinx-asdf that depends on old version
