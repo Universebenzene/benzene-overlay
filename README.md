@@ -142,7 +142,7 @@ dev-python/sphinx-astropy       | 1.6.0; 1.8.0     | See [here](https://github.c
 dev-python/sphinx-asdf          | 0.1.3; 0.1.4     |
 dev-python/sphinx-autobuild     | 2022.3.14        |
 dev-python/sphinx-book-theme    | 0.2.0            |
-dev-python/sphinx-changelog     | 1.2.0            |
+dev-python/sphinx-changelog     | 1.3.0            |
 dev-python/sphinx-click         | 4.4.0            |
 dev-python/sphinx-copybutton    | 0.5.1            | Doc build failed due to some version dismatched.
 dev-python/sphinx-examples      | 0.0.5            |
