@@ -7,7 +7,8 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{9..11} )
 
 H5PY_EXPV="3.8.0"
-COMMIT="878dd9e6f14b8f2a230f1aac61da709e6885a109"
+H5PY_EXP_URI="https://raw.githubusercontent.com/h5py/h5py/${H5PY_EXPV}/examples"
+COMMIT="463c960e1c4da7d1f3da33bcd7fdfb0e38133fea"
 
 inherit distutils-r1
 
@@ -15,9 +16,9 @@ DESCRIPTION="h5py distributed - Python client library for HDF Rest API"
 HOMEPAGE="https://github.com/HDFGroup/h5pyd"
 SRC_URI="https://github.com/HDFGroup/${PN}/archive/${COMMIT}.tar.gz -> ${P}.tar.gz
 	doc? (
-		https://raw.githubusercontent.com/h5py/h5py/${H5PY_EXPV}/examples/bytesio.py -> h5py-${H5PY_EXPV}-e-bytesio.py
-		https://raw.githubusercontent.com/h5py/h5py/${H5PY_EXPV}/examples/swmr_inotify_example.py -> h5py-${H5PY_EXPV}-e-swmr_inotify_example.py
-		https://raw.githubusercontent.com/h5py/h5py/${H5PY_EXPV}/examples/swmr_multiprocess.py -> h5py-${H5PY_EXPV}-e-swmr_multiprocess.py
+		${H5PY_EXP_URI}/bytesio.py -> h5py-${H5PY_EXPV}-e-bytesio.py
+		${H5PY_EXP_URI}/swmr_inotify_example.py -> h5py-${H5PY_EXPV}-e-swmr_inotify_example.py
+		${H5PY_EXP_URI}/swmr_multiprocess.py -> h5py-${H5PY_EXPV}-e-swmr_multiprocess.py
 	)
 "
 
