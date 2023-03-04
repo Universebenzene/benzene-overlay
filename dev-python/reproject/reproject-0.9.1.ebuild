@@ -38,7 +38,7 @@ RDEPEND="${DEPEND}
 	>=dev-python/astropy-healpix-0.6[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
 	doc? (

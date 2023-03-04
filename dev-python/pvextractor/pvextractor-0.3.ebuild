@@ -25,7 +25,7 @@ RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 	dev-python/spectral-cube[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]

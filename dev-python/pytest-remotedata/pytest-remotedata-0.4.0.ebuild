@@ -21,7 +21,7 @@ RESTRICT="test"
 RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]"
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 

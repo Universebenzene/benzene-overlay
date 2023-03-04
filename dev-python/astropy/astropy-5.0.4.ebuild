@@ -36,7 +36,7 @@ BDEPEND="${RDEPEND}
 	>=dev-python/cython-0.29.22[${PYTHON_USEDEP}]
 	>=dev-python/jinja-3.0.3[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-2.0.1[${PYTHON_USEDEP}]
-	>=dev-python/setuptools_scm-6.2[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	test? (
 		dev-libs/libxml2
 		dev-python/dask[${PYTHON_USEDEP}]

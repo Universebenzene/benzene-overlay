@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">=dev-python/setuptools-40.2[${PYTHON_USEDEP}]"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? ( dev-python/numpy[${PYTHON_USEDEP}] )
 "
 

@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND="media-libs/freetype:2"
 RDEPEND="${DEPEND}"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	app-arch/unzip
 "
 

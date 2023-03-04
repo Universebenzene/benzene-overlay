@@ -22,7 +22,7 @@ RDEPEND=">=sci-astronomy/erfa-1.7.2:0=
 "
 DEPEND="${RDEPEND}"
 BDEPEND="${RDEPEND}
-	dev-python/setuptools_scm[${PYTHON_USEDEP}]
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/pytest-doctestplus-0.7[${PYTHON_USEDEP}]
 	)

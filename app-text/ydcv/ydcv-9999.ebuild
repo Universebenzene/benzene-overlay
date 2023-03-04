@@ -23,7 +23,7 @@ IUSE="pkg-info"
 
 RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	pkg-info? (
 		dev-python/setuptools-markdown[${PYTHON_USEDEP}]
 		dev-python/pypandoc[${PYTHON_USEDEP}]

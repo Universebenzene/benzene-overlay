@@ -50,7 +50,7 @@ RDEPEND="${DEPEND}
 "
 BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 	>=dev-python/cython-0.29.30[${PYTHON_USEDEP}]
-	>=dev-python/setuptools_scm-6.2[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.6[${PYTHON_USEDEP}]

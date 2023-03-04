@@ -27,7 +27,7 @@ RDEPEND=">=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	>dev-python/h5py-3[${PYTHON_USEDEP}]
 	>dev-python/matplotlib-3[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]"
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/numpydoc dev-python/aplpy

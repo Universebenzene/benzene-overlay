@@ -19,7 +19,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? ( dev-python/astropy[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest

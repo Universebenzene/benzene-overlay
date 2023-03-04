@@ -29,7 +29,7 @@ RDEPEND=">=dev-python/astropy-4[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]

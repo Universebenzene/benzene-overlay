@@ -28,6 +28,6 @@ RDEPEND="dev-python/asdf[${PYTHON_USEDEP}]
 	dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
 	dev-python/toml[${PYTHON_USEDEP}]
 "
-BDEPEND=">=dev-python/setuptools_scm-3.4[$PYTHON_USEDEP]"
+BDEPEND=">=dev-python/setuptools-scm-3.4[$PYTHON_USEDEP]"
 
 distutils_enable_tests pytest

@@ -23,7 +23,7 @@ RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
 	dev-python/fasteners[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.10.0[${PYTHON_USEDEP}]
 "
-BDEPEND=">dev-python/setuptools_scm-1.5.4[${PYTHON_USEDEP}]
+BDEPEND=">dev-python/setuptools-scm-1.5.4[${PYTHON_USEDEP}]
 	jupyter? ( dev-python/notebook[${PYTHON_USEDEP}] )
 	test? (
 		dev-python/bsddb3[${PYTHON_USEDEP}]

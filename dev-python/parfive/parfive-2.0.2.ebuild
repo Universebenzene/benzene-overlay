@@ -25,7 +25,7 @@ RDEPEND=">=dev-python/tqdm-4.27.0[${PYTHON_USEDEP}]
 	ftp? ( >=dev-python/aioftp-0.17.1[${PYTHON_USEDEP}] )
 "
 
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/aiofiles[${PYTHON_USEDEP}]

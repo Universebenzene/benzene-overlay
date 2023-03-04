@@ -23,7 +23,7 @@ RDEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.7.4[${PYTHON_USEDEP}]
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 "
-BDEPEND=">dev-python/setuptools_scm-1.5.4[${PYTHON_USEDEP}]
+BDEPEND=">dev-python/setuptools-scm-1.5.4[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	doc? ( dev-libs/zfp[python] )
 	test? (

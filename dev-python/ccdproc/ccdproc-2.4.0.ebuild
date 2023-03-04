@@ -25,7 +25,7 @@ RDEPEND=">=dev-python/numpy-1.18[${PYTHON_USEDEP}]
 	>=dev-python/astroscrappy-1.0.8[${PYTHON_USEDEP}]
 	>=dev-python/reproject-0.7[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]

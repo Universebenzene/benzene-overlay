@@ -27,7 +27,7 @@ RDEPEND=">=dev-python/numpy-1.10[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-asdf[${PYTHON_USEDEP}]

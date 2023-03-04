@@ -42,7 +42,7 @@ RDEPEND=">=dev-python/numpy-1.14[${PYTHON_USEDEP}]
 	tk? ( dev-python/aggdraw[${PYTHON_USEDEP}] )
 	web? ( dev-python/tornado[${PYTHON_USEDEP}] )
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]

@@ -64,7 +64,7 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]

@@ -61,7 +61,7 @@ RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
 	)
 "
 
-BDEPEND=">=dev-python/setuptools_scm-6.2[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
 "
 

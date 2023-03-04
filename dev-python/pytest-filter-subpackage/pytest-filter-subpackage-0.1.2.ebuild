@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/pytest-3.0[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
 "
 

@@ -33,7 +33,7 @@ RDEPEND=">=dev-python/asdf-2.8.0[${PYTHON_USEDEP}]
 	' python3_8)
 	>=dev-python/packaging-16.0[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}

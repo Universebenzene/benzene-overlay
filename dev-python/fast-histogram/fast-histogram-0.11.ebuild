@@ -20,7 +20,7 @@ IUSE="examples"
 DEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 BDEPEND="${DEPEND}
-	dev-python/setuptools_scm[${PYTHON_USEDEP}]
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 	)

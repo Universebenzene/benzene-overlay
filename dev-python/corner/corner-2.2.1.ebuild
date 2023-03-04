@@ -19,7 +19,7 @@ IUSE="arviz"
 
 RDEPEND=">=dev-python/matplotlib-2.1[${PYTHON_USEDEP}]
 	arviz? ( >=dev-python/arviz-0.9[${PYTHON_USEDEP}] )"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]"
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests nose
 

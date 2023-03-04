@@ -18,7 +18,7 @@ PROPERTIES="test_network"
 RESTRICT="test"
 RDEPEND=">=dev-python/sphinx-2[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? ( media-gfx/graphviz )"
 
 distutils_enable_tests pytest

@@ -30,7 +30,7 @@ RDEPEND="${DEPEND}
 	photometry? ( dev-python/photutils[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/setuptools_scm[${PYTHON_USEDEP}]
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? ( dev-python/photutils[${PYTHON_USEDEP}] )
 "
 #	doc? (

@@ -29,7 +29,7 @@ DEPEND=">=dev-python/numpy-1.11[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-3[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}

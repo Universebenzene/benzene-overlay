@@ -21,7 +21,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.0[${PYTHON_USEDEP}]
 	>=dev-python/fast-histogram-0.3[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]

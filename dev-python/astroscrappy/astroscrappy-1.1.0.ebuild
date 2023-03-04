@@ -19,7 +19,7 @@ RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]

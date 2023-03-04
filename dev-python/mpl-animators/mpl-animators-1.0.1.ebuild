@@ -20,7 +20,7 @@ SLOT="0"
 
 RDEPEND=">=dev-python/matplotlib-3.2.0[${PYTHON_USEDEP}]"
 BDEPEND="${RDEPEND}
-	dev-python/setuptools_scm[${PYTHON_USEDEP}]
+	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]

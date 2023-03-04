@@ -29,7 +29,7 @@ RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
 		<dev-python/reproject-0.10[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		media-gfx/graphviz
 	)

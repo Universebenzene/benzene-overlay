@@ -30,7 +30,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=sci-libs/scikit-image-0.14[${PYTHON_USEDEP}]
 	>=sci-libs/shapely-1.7[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]

@@ -44,7 +44,7 @@ RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	qt? ( >=dev-python/PyQt5-5.14[${PYTHON_USEDEP}] )
 	recommended? ( sci-libs/scikit-image[${PYTHON_USEDEP}] )
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-flake8[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]

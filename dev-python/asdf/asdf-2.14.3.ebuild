@@ -32,7 +32,7 @@ RDEPEND=">=dev-python/numpy-1.18[${PYTHON_USEDEP}]
 		>=dev-python/lz4-0.10[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-asdf-0.1.4[${PYTHON_USEDEP}]

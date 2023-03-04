@@ -24,7 +24,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
 "
 
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]

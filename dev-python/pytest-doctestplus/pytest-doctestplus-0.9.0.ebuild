@@ -18,6 +18,6 @@ KEYWORDS="~amd64 ~x86"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
 	test? ( !$(python_gen_useflags python3_9) )"	# Test may abort with py3.9
 RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]"
-BDEPEND="dev-python/setuptools_scm[${PYTHON_USEDEP}]"
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest

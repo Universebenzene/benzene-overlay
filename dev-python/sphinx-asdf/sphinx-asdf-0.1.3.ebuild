@@ -21,6 +21,6 @@ RDEPEND="dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/sphinx-bootstrap-theme[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm[$PYTHON_USEDEP]"
+BDEPEND="dev-python/setuptools-scm[$PYTHON_USEDEP]"
 
 distutils_enable_tests pytest
