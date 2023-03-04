@@ -4,17 +4,15 @@
 EAPI=8
 
 MY_PN=astroML
-MY_PV=$(ver_cut 1-3).post$(ver_cut 5)
-MY_P=${MY_PN}-${MY_PV}
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1 optfeature
+inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Python Machine Learning library for astronomy"
 HOMEPAGE="http://www.astroml.org"
-SRC_URI="mirror://pypi/${PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="$(pypi_sdist_url --no-normalize ${MY_PN})"
 
 LICENSE="BSD"
 SLOT="0"
@@ -35,7 +33,7 @@ BDEPEND="test? (
 	)
 "
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${MY_PN}-$(pypi_translate_version ${PV})"
 
 distutils_enable_tests pytest
 
