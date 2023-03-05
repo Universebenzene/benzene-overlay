@@ -99,7 +99,7 @@ dev-python/arviz                 | 0.12.0                                       
 dev-python/asciitree             | 0.3.3                                             | Pulled in by zarr
 dev-python/bidict                | 0.22.0; 0.22.1                                    | Optional for yt
 dev-python/cmdstanpy             | 1.0.8                                             | Test dependency for arviz
-dev-python/distributed           | 2022.12.1; 2023.1.1; 2023.2.0; 2023.2.1; 2023.3.0 | Optional for arviz and spectral-cube
+dev-python/distributed           | 2023.2.1; 2023.3.0                                | Optional for arviz and spectral-cube
 dev-python/eventlet              | 0.33.2                                            | Dropped by official portage. Required by firefly-viz
 dev-python/f90nml                | 1.4.3                                             | Optional for yt
 dev-python/fastcache             | 1.1.0                                             | Optional for yt
