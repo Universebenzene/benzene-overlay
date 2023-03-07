@@ -112,7 +112,7 @@ dev-python/heapdict              | 1.0.1                                        
 dev-python/indexed\_{bzip2,zstd} | 1.4.0 / 1.5.1                                     | Optional for yt
 dev-python/libconf               | 2.0.1                                             | Optional for yt
 dev-python/miniballcpp           | 0.2.3                                             | Optional for yt
-dev-python/msrest                | 0.6.21                                            | SunPy, h5pyd related
+dev-python/msrest                | 0.7.1                                             | SunPy, h5pyd related
 dev-python/msrestazure           | 0.6.4                                             | SunPy, h5pyd related
 dev-python/numcodecs             | 0.10.2                                            | Pulled in by zarr
 dev-python/pyaml                 | 21.10.1                                           | Optional for yt

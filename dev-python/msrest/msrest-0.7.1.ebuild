@@ -6,27 +6,30 @@ EAPI=8
 #DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="AutoRest swagger generator Python client runtime"
 HOMEPAGE="https://github.com/Azure/msrest-for-python"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="$(pypi_sdist_url ${PN} ${PV} .zip)"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="async"
 
-RDEPEND="dev-python/requests-oauthlib[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/requests-oauthlib-0.5.0[${PYTHON_USEDEP}]
 	>=dev-python/isodate-0.6.0[${PYTHON_USEDEP}]
 	>=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
+	>=dev-python/azure-core-1.24.0[${PYTHON_USEDEP}]
 	async? (
 		>=dev-python/aiohttp-3.0[${PYTHON_USEDEP}]
 		dev-python/aiodns[${PYTHON_USEDEP}]
 	)
 "
 
-BDEPEND="test? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+BDEPEND="app-arch/unzip
+	test? (
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/httpretty[${PYTHON_USEDEP}]
 	)
