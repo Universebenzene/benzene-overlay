@@ -19,6 +19,7 @@
 		<remote-id type="github">astropy/photutils</remote-id>
 	</upstream>
 	<use>
+		<flag name="all">Including all optional dependencies for most function.</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 		<flag name="local-datasets">Add local data for photutils.datasets</flag>
 	</use>
