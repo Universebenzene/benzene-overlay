@@ -47,7 +47,7 @@ dev-python/pyerfa              | 1.7.2; 2.0.0.1                       | Fixed te
 dev-python/pydl                | 0.7.0; 1.0.0\_rc2                    | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pymoc               | 0.5.0                                |
 dev-python/pyregion            | 2.0; 2.1.1                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/pyvo                | 1.2.1; 1.4                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/pyvo                | 1.2.1; 1.4.1                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/radio-beam          | 0.3.4                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/regions             | 0.4; 0.7                             | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/reproject           | 0.5.1; 0.9.1                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
