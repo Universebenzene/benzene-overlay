@@ -50,7 +50,7 @@ distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/towncrier
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch ; \
+	use doc && { eapply "${FILESDIR}"/${PN}-2.1.0-doc-use-local-fits.patch ; \
 		cp "${DISTDIR}"/*.fits* examples || die ; mkdir -p changelog || die ; }
 #	use test && { sed -i -e '/ignore:distutils/a \	ignore:"order" was deprecated in version 0.9' \
 #		-e "/ignore:distutils/a \	ignore:The default kernel will change from 'Hann' to  'Gaussian'" \

@@ -39,7 +39,7 @@ dev-python/montage-wrapper     | 0.9.9                                |
 dev-python/mpl-animator        | 1.1.0                                |
 dev-python/mpl-scatter-density | 0.7                                  | Glueviz releated.
 dev-python/naima               | 0.10.0                               |
-dev-python/ndcube              | 2.1.0                                | SunPy releated. Dependency of specutils.
+dev-python/ndcube              | 2.1.1                                | SunPy releated. Dependency of specutils.
 dev-python/photutils           | 1.6.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pvextractor         | 0.3                                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pyavm               | 0.9.5                                |
