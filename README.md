@@ -36,7 +36,7 @@ dev-python/glymur                                                               
 dev-python/hsluv                                                                     | 5.0.3                                                         |
 dev-python/oldest-supported-numpy                                                    | 2022.11.19                                                    | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
 dev-python/parfive                                                                   | 1.5.1; 2.0.2                                                  |
-dev-python/PyQt5                                                                     | 5.15.7                                                        | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
+dev-python/PyQt5                                                                     | 5.15.7; 5.15.9                                                | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pytest-cython                                                             | 0.2.1                                                         |
 dev-python/pytest-mpl                                                                | 0.13; 0.16.1                                                  |
 dev-python/pytest-socket                                                             | 0.5.0; 0.6.0                                                  |
