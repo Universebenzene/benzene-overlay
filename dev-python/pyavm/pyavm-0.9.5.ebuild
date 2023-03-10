@@ -3,16 +3,17 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..10} )
+#DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 MY_PN=PyAVM
 MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="Simple pure-python AVM meta-data handling"
 HOMEPAGE="http://astrofrog.github.io/pyavm"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="$(pypi_sdist_url --no-normalize ${MY_PN})"
 
 LICENSE="MIT"
 SLOT="0"
