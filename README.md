@@ -114,7 +114,7 @@ dev-python/libconf               | 2.0.1                                        
 dev-python/miniballcpp           | 0.2.3                                             | Optional for yt
 dev-python/msrest                | 0.7.1                                             | SunPy, h5pyd related
 dev-python/msrestazure           | 0.6.4                                             | SunPy, h5pyd related
-dev-python/numcodecs             | 0.10.2                                            | Pulled in by zarr
+dev-python/numcodecs             | 0.11.0                                            | Pulled in by zarr
 dev-python/pyaml                 | 21.10.1                                           | Optional for yt
 dev-python/pykdtree              | 1.3.6                                             | Optional for yt
 dev-python/python-socketio       | 5.7.2                                             | Optional for yt

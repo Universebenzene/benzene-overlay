@@ -15,5 +15,6 @@
 	</upstream>
 	<use>
 		<flag name="msgpack">Extra MsgPack support via <pkg>dev-python/msgpack</pkg></flag>
+		<flag name="zfpy">Extra ZFPY support via <pkg>dev-python/zfp</pkg></flag>
 	</use>
 </pkgmetadata>
