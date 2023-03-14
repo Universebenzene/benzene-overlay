@@ -59,7 +59,7 @@ case ${EAPI} in
 	*) die "${ECLASS}: EAPI ${EAPI:-0} not supported" ;;
 esac
 
-inherit edo multiprocessing
+inherit edo multiprocessing toolchain-funcs
 
 if [[ -z ${_GO_MODULE} ]]; then
 
