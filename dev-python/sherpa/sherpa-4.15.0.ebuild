@@ -3,14 +3,13 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+DISTUTILS_USE_PEP517=standalone
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1 optfeature virtualx
+inherit distutils-r1 optfeature pypi virtualx
 
 DESCRIPTION="Modeling and fitting package for scientific data analysis"
 HOMEPAGE="https://sherpa.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -23,7 +22,8 @@ DEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]
 	sci-libs/fftw:3.0=
 "
 RDEPEND="${DEPEND}"
-BDEPEND="doc? (
+BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
@@ -51,11 +51,8 @@ python_prepare_all() {
 
 python_compile_all() {
 	if use doc; then
-		pushd docs || die
-#		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/lib \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-		popd || die
+		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
@@ -71,7 +68,7 @@ python_install_all() {
 }
 
 python_test() {
-	virtx epytest "${BUILD_DIR}/lib"
+	virtx epytest "${BUILD_DIR}"
 }
 
 pkg_postinst() {
