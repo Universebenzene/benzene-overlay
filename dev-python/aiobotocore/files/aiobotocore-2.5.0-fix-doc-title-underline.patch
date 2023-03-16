@@ -1,0 +1,10 @@
+diff --color -ura a/docs/examples/s3/basic_usage.rst b/docs/examples/s3/basic_usage.rst
+--- a/docs/examples/s3/basic_usage.rst	2023-03-07 12:03:26.000000000 +0800
++++ b/docs/examples/s3/basic_usage.rst	2023-03-14 21:51:44.985452823 +0800
+@@ -1,5 +1,5 @@
+ Put, Get and Delete
+------------
++-------------------
+ Simple put, get, delete example for S3 service:
+ 
+ .. literalinclude:: ../../../examples/simple.py
