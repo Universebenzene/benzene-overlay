@@ -1,0 +1,10 @@
+--- a/docs/source/index.rst	2023-03-05 03:38:47.000000000 +0800
++++ b/docs/source/index.rst	2023-03-06 20:35:41.672264377 +0800
+@@ -210,6 +210,7 @@
+ It is also possible to set credentials through envrironment variables:
+ 
+ .. code-block:: python
++
+    # export FSSPEC_S3_ENDPOINT_URL=https://...
+    # export FSSPEC_S3_KEY='miniokey...'
+    # export FSSPEC_S3_SECRET='asecretkey...'

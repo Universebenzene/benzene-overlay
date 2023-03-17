@@ -120,7 +120,7 @@ dev-python/pykdtree              | 1.3.6                                        
 dev-python/python-socketio       | 5.7.2                                             | Optional for yt
 dev-python/python-xz             | 0.5.0                                             | Optional for yt
 dev-python/ratarmount            | 0.13.0                                            | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
-dev-python/s3fs                  | 2022.11.2                                         | Test dependency for zarr
+dev-python/s3fs                  | 2023.3.0                                          | Test dependency for zarr
 dev-python/siosocks              | 0.3.0                                             | Optional for aioftp
 dev-python/cmyt                  | 1.1.2                                             | Pulled in by yt
 dev-python/unyt                  | 2.9.2                                             | Pulled in by yt
