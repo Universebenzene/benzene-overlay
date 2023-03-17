@@ -20,7 +20,7 @@ PROPERTIES="test_network"
 RESTRICT="test"	# missing tests data
 
 RDEPEND=">=dev-python/numpy-1.12[${PYTHON_USEDEP}]
-	dev-python/netcdf4-python[${PYTHON_USEDEP}]
+	dev-python/netcdf4[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/pandas-0.23[${PYTHON_USEDEP}]
 	>=dev-python/scipy-0.19[${PYTHON_USEDEP}]

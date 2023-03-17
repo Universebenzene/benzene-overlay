@@ -70,7 +70,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
-		dev-python/netcdf4-python[${PYTHON_USEDEP}]
+		dev-python/netcdf4[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
 	)
 "
