@@ -3,14 +3,13 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..10} )
-
 DISTUTILS_USE_PEP517=setuptools
-inherit distutils-r1
+PYTHON_COMPAT=( python3_{9..11} )
+
+inherit distutils-r1 pypi
 
 DESCRIPTION="Pythonic interface to netCDF4 via h5py"
 HOMEPAGE="https://h5netcdf.org"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -21,7 +20,7 @@ RDEPEND="dev-python/h5py[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 	test? (
-		dev-python/netcdf4-python[${PYTHON_USEDEP}]
+		dev-python/netcdf4[${PYTHON_USEDEP}]
 		dev-python/h5pyd[${PYTHON_USEDEP}]
 		>=sci-libs/hdf5-1.12.1
 	)
