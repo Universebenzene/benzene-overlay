@@ -76,7 +76,7 @@ distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/sphinxcontrib-apidoc \
 	dev-python/pydata-sphinx-theme \
 	dev-python/imageio \
-	dev-python/myst_parser \
+	dev-python/myst-parser \
 	dev-python/networkx \
 	dev-python/numpydoc \
 	dev-python/pyopengl \

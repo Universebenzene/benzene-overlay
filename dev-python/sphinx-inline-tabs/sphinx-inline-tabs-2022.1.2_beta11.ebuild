@@ -23,7 +23,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/sphinx-3[${PYTHON_USEDEP}]"
 
 distutils_enable_tests nose
-distutils_enable_sphinx docs dev-python/furo dev-python/myst_parser
+distutils_enable_sphinx docs dev-python/furo dev-python/myst-parser
 
 S="${WORKDIR}/${MY_P}"
 

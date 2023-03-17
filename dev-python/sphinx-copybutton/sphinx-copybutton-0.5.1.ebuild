@@ -33,7 +33,7 @@ distutils_enable_sphinx docs dev-python/sphinx-book-theme \
 	dev-python/sphinx-examples \
 	dev-python/ipython \
 	dev-python/myst_nb \
-	">=dev-python/myst_parser-0.18.0"
+	">=dev-python/myst-parser-0.18.0"
 
 python_prepare_all() {
 	use doc && { cp {"${DISTDIR}"/${P}-,"${S}"/}CHANGELOG.md || die ; \

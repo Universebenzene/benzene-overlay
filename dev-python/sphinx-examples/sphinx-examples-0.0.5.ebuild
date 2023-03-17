@@ -22,6 +22,6 @@ RDEPEND=">dev-python/sphinx-4[${PYTHON_USEDEP}]
 distutils_enable_tests nose
 
 pkg_postinst() {
-	optfeature "extra sphinx support" "dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/myst_parser \
+	optfeature "extra sphinx support" "dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/myst-parser \
 		dev-python/sphinx-rtd-theme dev-python/furo"
 }

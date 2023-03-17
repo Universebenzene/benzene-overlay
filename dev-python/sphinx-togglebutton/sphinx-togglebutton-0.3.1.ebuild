@@ -20,7 +20,7 @@ IUSE="sphinx"
 RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/wheel[${PYTHON_USEDEP}]
 	sphinx? (
-		dev-python/myst_parser[${PYTHON_USEDEP}]
+		dev-python/myst-parser[${PYTHON_USEDEP}]
 		dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
 		dev-python/sphinx_design[${PYTHON_USEDEP}]
 	)

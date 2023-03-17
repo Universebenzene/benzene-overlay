@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/pytest-4.6.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-py3doc-enhanced-theme dev-python/myst_parser
+distutils_enable_sphinx docs dev-python/sphinx-py3doc-enhanced-theme dev-python/myst-parser
 
 python_test() {
 	epytest tests
