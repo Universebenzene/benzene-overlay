@@ -10,12 +10,12 @@ inherit distutils-r1
 
 DESCRIPTION="Python Socket.IO server and client"
 HOMEPAGE="https://python-socketio.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/miguelgrinberg/python-socketio/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="asyncio-client client"
+IUSE="asyncio-client client examples"
 
 RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
 	>=dev-python/python-engineio-4.3.0[${PYTHON_USEDEP}]
@@ -25,5 +25,23 @@ RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
 	)
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
 "
+BDEPEND="test? ( dev-python/msgpack[${PYTHON_USEDEP}] )"
 
-distutils_enable_tests nose
+distutils_enable_tests pytest
+distutils_enable_sphinx docs
+
+#python_prepare_all() {
+#	use doc && { sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
+
+python_install_all() {
+	if use examples; then
+		docompress -x "/usr/share/doc/${PF}/examples"
+		docinto examples
+		dodoc -r examples/.
+	fi
+
+	distutils-r1_python_install_all
+}
