@@ -8,8 +8,8 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.8:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/e078bf97365540d9f0ff063f93372a9c/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
-	arm64? ( https://updatecdn.meeting.qq.com/cos/11814f6931a0a599f394d8845c223feb/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
+SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/1b001ef75914a1d6948decb8c2550b47/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
+	arm64? ( https://updatecdn.meeting.qq.com/cos/c62a1d83f5b1a2f4a4f2d189960fc02c/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
@@ -22,6 +22,7 @@ RDEPEND="dev-libs/nss
 	x11-libs/libX11
 	!bundled-libs? (
 		app-crypt/p11-kit[libffi]
+		|| ( dev-libs/openssl-compat:1.1.1 <dev-libs/openssl-3 )
 		dev-libs/libbsd
 		dev-libs/libgcrypt:0
 		dev-libs/libpcre:3
@@ -33,7 +34,7 @@ RDEPEND="dev-libs/nss
 		media-libs/libsndfile
 		media-libs/libvorbis
 		media-libs/libpulse[X,asyncns]
-		|| ( media-libs/tiff-compat:4 media-libs/tiff:0/0 )
+		media-libs/tiff-compat:4
 		sys-apps/dbus
 		sys-apps/tcp-wrappers
 		sys-libs/libunwind
