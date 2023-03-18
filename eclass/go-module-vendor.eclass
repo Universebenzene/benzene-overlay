@@ -60,7 +60,7 @@ case ${EAPI} in
 esac
 
 if [[ -z ${_GO_MODULE_ECLASS} ]]; then
-_GO_MODULE_ECLASS=
+_GO_MODULE_ECLASS=1
 
 inherit edo multiprocessing toolchain-funcs
 
