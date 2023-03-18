@@ -19,15 +19,24 @@ SRC_URI="
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm ~arm64 ~x86"
+IUSE="+v2ray xray"
+REQUIRED_USE="|| ( v2ray xray )"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	|| (
+	v2ray? ( || (
 		>=net-proxy/v2ray-5.0.0
 		>=net-proxy/v2ray-core-5.0.0
 		>=net-proxy/v2ray-bin-5.0.0
 		>=net-proxy/v2ray-core-bin-5.0.0
+	) )
+	!v2ray? (
+		!net-proxy/v2ray
+		!net-proxy/v2ray-core
+		!net-proxy/v2ray-bin
+		!net-proxy/v2ray-core-bin
 	)
+	xray? ( >=net-proxy/Xray-1.4.2 )
 "
 BDEPEND=""
 
