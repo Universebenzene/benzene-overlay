@@ -4,17 +4,16 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
 DATA_COM="5a3db8447d3e13ed402545662f20f5ff191a6d42"
 DATA_DATE="20190506"
 
-inherit distutils-r1 virtualx xdg-utils
+inherit distutils-r1 pypi virtualx xdg-utils
 
 DESCRIPTION="Interactive visualization in Python"
 HOMEPAGE="http://vispy.org"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
-	doc? (
+SRC_URI+=" doc? (
 		https://github.com/vispy/demo-data/raw/${DATA_COM}/mona_lisa/mona_lisa_sm.png -> ${PN}-${DATA_DATE}-d-mona_lisa_sm.png
 		https://github.com/vispy/demo-data/raw/${DATA_COM}/spot/spot.obj.gz -> ${PN}-${DATA_DATE}-d-spot.obj.gz
 		https://github.com/vispy/demo-data/raw/${DATA_COM}/spot/spot.png -> ${PN}-${DATA_DATE}-d-spot.png
