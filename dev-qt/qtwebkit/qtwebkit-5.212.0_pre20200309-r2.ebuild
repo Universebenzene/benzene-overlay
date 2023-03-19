@@ -89,6 +89,9 @@ PATCHES=(
 	"${FILESDIR}/${P}-python-3.9.patch" # bug 766303
 	"${FILESDIR}/${P}-glib-2.68.patch" # bug 777759
 	"${FILESDIR}/${P}-position.patch"
+	# From https://github.com/WebKit/WebKit/commit/c7d19a492d97f9282a546831beb918e03315f6ef
+	# Ruby 3.2 removes Object#=~ completely
+	"${FILESDIR}/${P}-webkit-offlineasm-warnings-ruby27.patch"
 )
 
 _check_reqs() {
