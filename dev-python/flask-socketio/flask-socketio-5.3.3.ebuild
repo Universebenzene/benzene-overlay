@@ -18,7 +18,7 @@ SRC_URI="$(pypi_sdist_url --no-normalize ${MY_PN})
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"	# bidict copybutton myst-nb no x86
 
 RDEPEND=">=dev-python/flask-0.9[${PYTHON_USEDEP}]
 	>=dev-python/python-socketio-5.0.2[${PYTHON_USEDEP}]

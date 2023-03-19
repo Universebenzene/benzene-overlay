@@ -15,14 +15,14 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"	# myst-nb, nbdime no x86
 IUSE="code_style rtd"
 
 RDEPEND=">=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 	rtd? (
 		dev-python/ipython[${PYTHON_USEDEP}]
-		dev-python/myst_nb[${PYTHON_USEDEP}]
+		dev-python/myst-nb[${PYTHON_USEDEP}]
 		dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
 		dev-python/sphinx-examples[${PYTHON_USEDEP}]
 	)
@@ -32,7 +32,7 @@ distutils_enable_tests nose
 distutils_enable_sphinx docs dev-python/sphinx-book-theme \
 	dev-python/sphinx-examples \
 	dev-python/ipython \
-	dev-python/myst_nb \
+	dev-python/myst-nb \
 	">=dev-python/myst-parser-0.18.0"
 
 python_prepare_all() {

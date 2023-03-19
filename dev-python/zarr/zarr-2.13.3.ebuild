@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"	# copybutton myst-nb no x86
 IUSE="examples jupyter"
 RESTRICT="test"	# Test phase runs with fails
 
@@ -33,7 +33,7 @@ BDEPEND=">dev-python/setuptools-scm-1.5.4[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
 		dev-python/pymongo[${PYTHON_USEDEP}]
-		dev-python/redis-py[${PYTHON_USEDEP}]
+		dev-python/redis[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 	)
