@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit gnome2-utils flag-o-matic xdg-utils
+inherit gnome2-utils flag-o-matic
 
 DESCRIPTION="A GTK+ interface to MPlayer"
 HOMEPAGE="https://code.google.com/p/gnome-mplayer/"
-SRC_URI="https://${PN}.googlecode.com/svn/packages/${P}.tar.gz"
+SRC_URI="https://github.com/kdekorte/gnome-mplayer/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
