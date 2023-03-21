@@ -9,4 +9,11 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="pypi">pyerfa</remote-id>
+		<remote-id type="github">liberfa/pyerfa</remote-id>
+	</upstream>
+	<use>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
 </pkgmetadata>
