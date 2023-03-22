@@ -13,4 +13,7 @@
 		<remote-id type="pypi">asdf-coordinates-schemas</remote-id>
 		<remote-id type="github">asdf-format/asdf-coordinates-schemas</remote-id>
 	</upstream>
+	<use>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
 </pkgmetadata>

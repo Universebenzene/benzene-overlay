@@ -19,7 +19,7 @@ RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-2.8.0[${PYTHON_USEDEP}]
-	dev-python/asdf_coordinates_schemas[${PYTHON_USEDEP}]
+	dev-python/asdf-coordinates-schemas[${PYTHON_USEDEP}]
 	>=dev-python/asdf_transform_schemas-0.2.2[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
