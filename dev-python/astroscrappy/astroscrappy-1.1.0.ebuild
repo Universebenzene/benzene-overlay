@@ -3,13 +3,13 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..10} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Optimized cosmic ray annihilation astropy python module"
 HOMEPAGE="https://astroscrappy.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 KEYWORDS="~amd64 ~x86"
 
 LICENSE="BSD"
@@ -18,11 +18,15 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
+DEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
+	doc? (
+		${RDEPEND}
+		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+	)
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
@@ -34,15 +38,13 @@ DOCS=( README.rst CHANGES.rst )
 distutils_enable_tests pytest
 
 python_compile_all() {
-if use doc; then
-	pushd docs || die
-	VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/lib \
-		emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-	popd || die
-	HTML_DOCS=( docs/_build/html/. )
-fi
+	if use doc; then
+		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
+		HTML_DOCS=( docs/_build/html/. )
+	fi
 }
 
 python_test() {
-	epytest "${BUILD_DIR}/lib"
+	epytest "${BUILD_DIR}"
 }
