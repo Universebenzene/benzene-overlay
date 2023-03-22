@@ -22,15 +22,13 @@ RDEPEND=">=dev-python/numpy-1.18[${PYTHON_USEDEP}]
 	>=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/asdf_transform_schemas-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf_unit_schemas-0.1.0[${PYTHON_USEDEP}]
-	>=dev-python/jsonschema-4.0.1[${PYTHON_USEDEP}]
+	<dev-python/jsonschema-4.18[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-16.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
 	>=dev-python/importlib_metadata-4.11.4[${PYTHON_USEDEP}]
-	all? (
-		>=dev-python/lz4-0.10[${PYTHON_USEDEP}]
-	)
+	all? ( >=dev-python/lz4-0.10[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
