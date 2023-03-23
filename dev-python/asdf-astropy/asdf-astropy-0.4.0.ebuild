@@ -4,6 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{9..11} )
 
 inherit distutils-r1 pypi
@@ -15,17 +16,16 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc intersphinx"
-RESTRICT="intersphinx? ( network-sandbox )"
+# ValueError: Invalid data-type for array
+RESTRICT="test
+	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/asdf-2.8.0[${PYTHON_USEDEP}]
-	dev-python/asdf-coordinates-schemas[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/asdf-2.13[${PYTHON_USEDEP}]
+	>=dev-python/asdf-coordinates-schemas-0.1[${PYTHON_USEDEP}]
 	>=dev-python/asdf_transform_schemas-0.2.2[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
-	' python3_8)
-	>=dev-python/packaging-16.0[${PYTHON_USEDEP}]
+	>=dev-python/packaging-19[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
@@ -46,12 +46,15 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-asdf dev-python/sphinx-astropy
 
+EPYTEST_IGNORE=(
+	# TypeError: Coordinates could not be parsed as either geocentric or geodetic
+	asdf_astropy/converters/coordinates/tests/test_earth_location.py
+)
+
 python_compile_all() {
 	if use doc; then
-		pushd docs || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-		popd || die
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
