@@ -30,13 +30,8 @@ RDEPEND="${DEPEND}
 		>=net-proxy/v2ray-bin-5.0.0
 		>=net-proxy/v2ray-core-bin-5.0.0
 	) )
-	!v2ray? (
-		!net-proxy/v2ray
-		!net-proxy/v2ray-core
-		!net-proxy/v2ray-bin
-		!net-proxy/v2ray-core-bin
-	)
 	xray? ( >=net-proxy/Xray-1.4.2 )
+	!xray? ( !net-proxy/Xray )
 "
 BDEPEND=""
 
