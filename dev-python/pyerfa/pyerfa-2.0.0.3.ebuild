@@ -21,7 +21,7 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=sci-astronomy/erfa-2.0.0:0=
-	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
 BDEPEND="${RDEPEND}
