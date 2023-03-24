@@ -40,7 +40,7 @@ dev-python/PyQt5                                                                
 dev-python/pytest-cython                                                             | 0.2.1                                                         |
 dev-python/pytest-mpl                                                                | 0.13; 0.16.1                                                  |
 dev-python/pytest-socket                                                             | 0.5.0; 0.6.0                                                  |
-dev-python/vispy                                                                     | 0.11.0; 0.12.1                                                |
+dev-python/vispy                                                                     | 0.12.2                                                        |
 dev-python/yt                                                                        | 4.0.5                                                         | Full doc building needs huge amount of data, so cannot complete locally.
 dev-python/zarr                                                                      | 2.14.2                                                        |
 dev-qt/qtwebkit                                                                      | 5.212.0\_pre20200309-{r1,r2}                                  | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work (the -r2 is a test for upgrade EAPI to 8, and might be a little buggy with youdao-dict.)
