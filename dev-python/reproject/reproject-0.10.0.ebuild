@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
 TMASS_IM_URI="https://irsa.ipac.caltech.edu:443/cgi-bin/2MASS/IM"
 
