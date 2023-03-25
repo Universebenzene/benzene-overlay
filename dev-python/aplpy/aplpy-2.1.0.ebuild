@@ -4,14 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1 optfeature
+inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Astronomical Plotting Library in Python"
 HOMEPAGE="https://aplpy.github.com"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
-	doc? ( http://www.astropy.org/astropy-data/l1448/l1448_13co.fits )"
+SRC_URI+=" doc? ( http://www.astropy.org/astropy-data/l1448/l1448_13co.fits )"
 
 LICENSE="MIT"
 SLOT="0"
@@ -27,8 +26,8 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/pyregion-2.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-4.3[${PYTHON_USEDEP}]
 	>=dev-python/pyavm-0.9.4[${PYTHON_USEDEP}]
+	>=dev-python/shapely-1.7[${PYTHON_USEDEP}]
 	>=sci-libs/scikit-image-0.14[${PYTHON_USEDEP}]
-	>=sci-libs/shapely-1.7[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
@@ -53,10 +52,8 @@ python_prepare_all() {
 
 python_compile_all() {
 	if use doc; then
-		pushd docs || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-		popd || die
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }

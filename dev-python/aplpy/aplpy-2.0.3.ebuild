@@ -30,7 +30,7 @@ RDEPEND=">=dev-python/astropy-3.1[${PYTHON_USEDEP}]
 	>=dev-python/pillow-4.0[${PYTHON_USEDEP}]
 	>=sci-libs/scikit-image-0.14[${PYTHON_USEDEP}]
 	dev-python/imageio[${PYTHON_USEDEP}]
-	>=sci-libs/shapely-1.6[${PYTHON_USEDEP}]
+	>=dev-python/shapely-1.6[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/astropy-helpers[${PYTHON_USEDEP}]
 	doc? (
