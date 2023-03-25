@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		PyAST is a Python extension that provides an interface to the Starlink
+		AST library. It requires Python v2.7 or later.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">starlink-pyast</remote-id>
+		<remote-id type="github">Starlink/starlink-pyast</remote-id>
+	</upstream>
+</pkgmetadata>

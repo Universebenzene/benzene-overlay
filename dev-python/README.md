@@ -11,6 +11,7 @@ dev-python/sphinx-asdf         | 0.1.3; 0.1.4                         |
 dev-python/aplpy               | 2.1.0                                | Versions below 2.1.0 are included but masked. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for more details. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/asdf                | 2.7.2; 2.9.2; 2.10.1; 2.13.0; 2.14.4 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building should only be enabled for re-merge to prevent circular depenencies.
 dev-python/asdf-astropy        | 0.2.1; 0.4.0                         | Dependencies are also in this overlay but not list in this table. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/astlib              | 0.11.3; 0.11.8                       | astLib WCS library for ginga
 dev-python/astrodendro         | 0.2.0-r2; (live)                     | 0.2.0 was really old. Live version should be much better.
 dev-python/astroml             | 0.4.1; 1.0.2\_p1                     |
 dev-python/astropy-healpix     | 0.5; 0.7                             | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
@@ -57,5 +58,6 @@ dev-python/sherpa              | 4.15.0                               | `XSPEC` 
 dev-python/skyfield            | 1.45                                 |
 dev-python/spectral-cube       | 0.6.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/specutils           | 1.1.1; 1.9.1                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/starlink-pyast      | 0.2.1                                | Starlink WCS library for ginga
 dev-python/sunpy               | 4.1.3                                | Testing and doc building are really hard to run, so not supported right now.
 dev-python/sunpy-sphinx-theme  | 1.2.40                               |
