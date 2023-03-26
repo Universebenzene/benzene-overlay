@@ -18,7 +18,7 @@
 		<remote-id type="github">yt-project/yt</remote-id>
 	</upstream>
 	<use>
-		<flag name="doc">Add extra documentation (full doc building needs huge amount of data. Can complete locally).</flag>
+		<flag name="doc">Add extra documentation (full doc building needs huge amount of data. Can't really complete locally).</flag>
 		<flag name="full">Include all dependencies for full function</flag>
 	</use>
 </pkgmetadata>
