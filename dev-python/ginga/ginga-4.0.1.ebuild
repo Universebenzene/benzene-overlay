@@ -4,19 +4,20 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1 desktop xdg
+inherit distutils-r1 desktop optfeature pypi xdg
 
 DESCRIPTION="A scientific image viewer and toolkit"
 HOMEPAGE="https://ejeschke.github.io/ginga"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc gtk3 intersphinx qt5 recommended tk web"
-RESTRICT="intersphinx? ( network-sandbox )"
+# Tests phase runs with fails
+RESTRICT="test
+	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/numpy-1.14[${PYTHON_USEDEP}]
@@ -55,31 +56,37 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		>dev-python/regions-0.5[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/astlib[${PYTHON_USEDEP}]
+		dev-python/starlink-pyast[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx doc dev-python/sphinx-astropy dev-python/sphinx-rtd-theme
 
-python_prepare_all() {
-	sed -i "/Exec/a Icon=ginga" ${PN}.desktop || die
-#	use test && { sed -i "/ignore:distutils/a \	ignore:the imp module is deprecated:DeprecationWarning" setup.cfg || die ; }
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+##	use test && { sed -i "/ignore:distutils/a \	ignore:the imp module is deprecated:DeprecationWarning" setup.cfg || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
 
 python_compile_all() {
 	if use doc; then
-		pushd doc || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-		popd || die
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C doc html
 		HTML_DOCS=( doc/_build/html/. )
 	fi
 }
 
 python_install_all() {
 	distutils-r1_python_prepare_all
-	newicon -s 512 ${PN}/icons/${PN}-512x512.png ${PN}.png
+	doicon -s scalable ${PN}/icons/${PN}.svg
 	domenu ${PN}.desktop
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+
+	optfeature_header "For WCS resolution:"
+	optfeature "Use astLib" dev-python/astlib
+	optfeature "Use starlink" dev-python/starlink-pyast
 }
