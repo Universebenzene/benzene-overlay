@@ -1,0 +1,33 @@
+diff --color -ura a/docs/source/index.rst b/docs/source/index.rst
+--- a/docs/source/index.rst	2022-06-15 09:40:04.000000000 +0800
++++ b/docs/source/index.rst	2023-03-25 19:20:15.813797340 +0800
+@@ -1,29 +1,6 @@
+ sphinxcontrib-youtube
+ =====================
+ 
+-Demo
+-----
+-
+-This module provides support for including YouTube and Vimeo videos in Sphinx :code:`rst` documents.
+-
+-This module defines directives, :code:`youtube` and :code:`vimeo` which insert videos from the respective platforms. They take a single, required argument, wich is the video ID: 
+-
+-.. code-block:: rst 
+-   
+-   ..  youtube:: dQw4w9WgXcQ
+-
+-..  youtube:: dQw4w9WgXcQ
+-   :align: center
+-   :aspect: 16:9
+-
+-.. code-block:: rst
+-
+-   .. vimeo:: 148751763
+-
+-.. vimeo:: 148751763
+-   :align: center
+-   :aspect: 16:9
+-
+ Usage
+ -----
+ 
