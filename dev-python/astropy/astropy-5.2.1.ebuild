@@ -10,8 +10,7 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Core functionality for performing astrophysics with Python"
 HOMEPAGE="https://astropy.org"
-SRC_URI+="
-	doc? (
+SRC_URI+=" doc? (
 		http://www.astropy.org/astropy-data/tutorials/FITS-Header/input_file.fits -> ${PN}-eo-input_file.fits
 		http://www.astropy.org/astropy-data/tutorials/FITS-images/HorseHead.fits -> ${PN}-eo-HorseHead.fits
 		http://www.astropy.org/astropy-data/tutorials/FITS-tables/chandra_events.fits -> ${PN}-eo-chandra_events.fits
