@@ -4,13 +4,12 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="A collection of Matplotlib colormaps from the yt project"
 HOMEPAGE="https://github.com/yt-project/cmyt"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,8 +18,9 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/colorspacious-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.2.0[${PYTHON_USEDEP}]
 	>=dev-python/more-itertools-8.4[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.17.4[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/pytest-mpl[${PYTHON_USEDEP}] )"
+BDEPEND="test? ( >=dev-python/pytest-mpl-0.13[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 
