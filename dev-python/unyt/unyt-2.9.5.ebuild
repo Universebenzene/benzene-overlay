@@ -4,13 +4,12 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Handle, manipulate, and convert data with units in Python"
 HOMEPAGE="https://unyt.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -18,6 +17,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/numpy-1.17.5[${PYTHON_USEDEP}]
 	>=dev-python/sympy-1.5[${PYTHON_USEDEP}]
+	>dev-python/packaging-20.9[${PYTHON_USEDEP}]
 "
 BDEPEND="test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )"
 
