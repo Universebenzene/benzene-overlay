@@ -57,7 +57,6 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 		>=dev-python/jinja-3.0[${PYTHON_USEDEP}]
 		>dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
-		dev-python/towncrier[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
@@ -101,7 +100,7 @@ python_prepare_all() {
 		cp {"${DISTDIR}"/${PN}-eo-,"${S}"/docs/wcs/}HorseHead.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/convolution/}gc_msx_e.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/wcs/}l1448_13co.fits || die
-		eapply "${FILESDIR}"/${P}-doc-use-local-data.patch
+		eapply "${FILESDIR}"/${PN}-5.2.1-doc-use-local-data.patch
 	fi
 
 	distutils-r1_python_prepare_all
@@ -112,7 +111,6 @@ python_configure_all() {
 }
 
 python_compile_all() {
-	# Handler for event 'build-finished' threw an exception (exception: Expecting property name enclosed in double quotes))
 	if use doc; then
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
 			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
