@@ -16,9 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc intersphinx"
-# ValueError: Invalid data-type for array
-RESTRICT="test
-	intersphinx? ( network-sandbox )"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-2.13[${PYTHON_USEDEP}]
@@ -45,11 +43,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-asdf dev-python/sphinx-astropy
-
-EPYTEST_IGNORE=(
-	# TypeError: Coordinates could not be parsed as either geocentric or geodetic
-	asdf_astropy/converters/coordinates/tests/test_earth_location.py
-)
 
 python_compile_all() {
 	if use doc; then

@@ -15,9 +15,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc intersphinx"
-# ValueError: Invalid data-type for array
-RESTRICT="test
-	intersphinx? ( network-sandbox )"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=sci-astronomy/erfa-2.0.0:0=
