@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Never use print() to debug again; inspect variables, expressions,
+		and program execution with a single, simple function call.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">icecream</remote-id>
+		<remote-id type="github">gruns/icecream</remote-id>
+	</upstream>
+</pkgmetadata>
