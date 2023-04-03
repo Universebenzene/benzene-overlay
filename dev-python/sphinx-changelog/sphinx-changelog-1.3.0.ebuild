@@ -10,9 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A changelog renderer for sphinx"
 HOMEPAGE="https://sphinx-changelog.readthedocs.io"
-SRC_URI+="
-	doc? ( https://github.com/OpenAstronomy/sphinx-changelog/raw/v${PV}/changelog/template.rst -> ${P}-template.rst )
-"
+SRC_URI+=" doc? ( https://github.com/OpenAstronomy/sphinx-changelog/raw/v${PV}/changelog/template.rst -> ${P}-template.rst )"
 
 LICENSE="BSD"
 SLOT="0"
