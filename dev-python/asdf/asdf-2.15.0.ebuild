@@ -18,14 +18,14 @@ IUSE="all doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/numpy-1.18[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]
 	>=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
-	>=dev-python/asdf_transform_schemas-0.3.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf_unit_schemas-0.1.0[${PYTHON_USEDEP}]
+	>=dev-python/asdf_transform_schemas-0.3[${PYTHON_USEDEP}]
+	>=dev-python/asdf_unit_schemas-0.1[${PYTHON_USEDEP}]
 	<dev-python/jsonschema-4.18[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]
-	>=dev-python/packaging-16.0[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
+	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
 	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
 	>=dev-python/importlib_metadata-4.11.4[${PYTHON_USEDEP}]
 	all? ( >=dev-python/lz4-0.10[${PYTHON_USEDEP}] )
