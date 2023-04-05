@@ -99,7 +99,7 @@ dev-python/asciitree             | 0.3.3                                        
 dev-python/azure-core            | 1.26.3                                            | Required by new msrest
 dev-python/bidict                | 0.22.0; 0.22.1                                    | Optional for yt
 dev-python/cmdstanpy             | 1.0.8                                             | Test dependency for arviz
-dev-python/distributed           | 2023.2.1; 2023.3.0; 2023.3.1; 2023.3.2            | Optional for arviz and spectral-cube
+dev-python/distributed           | 2023.3.2                                          | Optional for arviz and spectral-cube
 dev-python/eventlet              | 0.33.2                                            | Dropped by official portage. Required by firefly-viz
 dev-python/f90nml                | 1.4.3                                             | Optional for yt
 dev-python/fastcache             | 1.1.0                                             | Optional for yt
