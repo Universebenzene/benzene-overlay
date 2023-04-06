@@ -4,16 +4,14 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
+PYPI_PN="astLib"
 PYTHON_COMPAT=( python3_{9..11} )
 
 inherit distutils-r1 pypi
 
-MY_PN=astLib
-MY_P=${MY_PN}-${PV}
-
 DESCRIPTION="Python astronomy modules for image and coordinate manipulation"
 HOMEPAGE="https://astlib.readthedocs.io"
-SRC_URI="$(pypi_sdist_url --no-normalize "${MY_PN}")"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -30,8 +28,6 @@ RDEPEND="${DEPEND}
 BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-lang/swig
 "
-
-S="${WORKDIR}/${MY_P}"
 
 PATCHES=( "${FILESDIR}/${P}-system-wcstools.patch" )
 
