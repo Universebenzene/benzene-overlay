@@ -3,21 +3,20 @@
 
 EAPI=8
 
-MY_PN=astroML
-
 DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
+PYPI_PN="astroML"
 PYTHON_COMPAT=( python3_{9..11} )
 
 inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Python Machine Learning library for astronomy"
 HOMEPAGE="http://www.astroml.org"
-SRC_URI="$(pypi_sdist_url --no-normalize ${MY_PN})"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples test"
+IUSE="examples"
 PROPERTIES="test_network"
 RESTRICT="test"
 
@@ -32,8 +31,6 @@ BDEPEND="test? (
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 	)
 "
-
-S="${WORKDIR}/${MY_PN}-$(pypi_translate_version ${PV})"
 
 distutils_enable_tests pytest
 
@@ -54,7 +51,7 @@ python_install_all() {
 }
 
 python_test() {
-	epytest ${MY_PN} --remote-data
+	epytest ${PYPI_PN} --remote-data
 }
 
 pkg_postinst() {
