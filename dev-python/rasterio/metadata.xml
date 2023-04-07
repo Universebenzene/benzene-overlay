@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Rasterio reads and writes geospatial raster data. Geographic information
+		systems use GeoTIFF and other formats to organize and store gridded,
+		or raster, datasets. Rasterio reads and writes these formats and
+		provides a Python API based on N-D arrays.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">rasterio</remote-id>
+		<remote-id type="github">rasterio/rasterio</remote-id>
+	</upstream>
+	<use>
+		<flag name="ipython">Extra ipython support</flag>
+		<flag name="s3">s3 support via <pkg>dev-python/boto3</pkg></flag>
+		<flag name="plot">plot support via <pkg>dev-python/matplotlib</pkg></flag>
+	</use>
+</pkgmetadata>

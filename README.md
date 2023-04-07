@@ -118,6 +118,7 @@ dev-python/pyaml                 | 21.10.1                                      
 dev-python/pykdtree              | 1.3.7\_p0                                         | Optional for yt
 dev-python/python-socketio       | 5.8.0                                             | Optional for yt
 dev-python/python-xz             | 0.5.0                                             | Optional for yt
+dev-python/rasterio              | 1.3.6                                             | Optional for photutils. Dependencies are not all listed in the table
 dev-python/ratarmount            | 0.13.0                                            | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
 dev-python/s3fs                  | 2023.3.0                                          | Test dependency for zarr
 dev-python/siosocks              | 0.3.0                                             | Optional for aioftp

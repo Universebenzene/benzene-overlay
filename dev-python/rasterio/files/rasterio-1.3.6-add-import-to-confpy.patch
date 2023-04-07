@@ -1,0 +1,10 @@
+--- a/docs/conf.py	2023-02-13 23:37:53.000000000 +0800
++++ b/docs/conf.py	2023-04-07 13:43:39.185199071 +0800
+@@ -58,6 +58,7 @@
+ #
+ # Parse the version from the rasterio module.
+ try:
++    import rasterio
+     release = rasterio.__version__
+ except:
+     with open('../rasterio/__init__.py') as f:
