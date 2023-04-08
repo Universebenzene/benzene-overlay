@@ -4,14 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Python package for astronomy spectral operations"
 HOMEPAGE="https://specutils.readthedocs.org"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
-	doc? (
+SRC_URI+=" doc? (
 		https://stsci.box.com/shared/static/28a88k1qfipo4yxc4p4d40v4axtlal8y.fits
 		https://data.sdss.org/sas/dr16/sdss/spectro/redux/26/spectra/1323/spec-1323-52797-0012.fits
 	)
@@ -27,9 +26,10 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/astropy-5.1[${PYTHON_USEDEP}]
-	>=dev-python/gwcs-0.17.0[${PYTHON_USEDEP}]
-	>dev-python/asdf-2.12.0[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
+	>=dev-python/asdf-2.14.4[${PYTHON_USEDEP}]
+	>=dev-python/asdf-astropy-0.3[${PYTHON_USEDEP}]
+	>=dev-python/gwcs-0.18[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
 	>=dev-python/ndcube-2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -49,19 +49,15 @@ distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${PN}-1.7.0-doc-use-local-fits.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; }
-#	use test && { sed "/astropy.utils.exceptions/a \	ignore:Subclassing validator classes is not intended:DeprecationWarning" \
-#		-i setup.cfg || die ; }
+	use doc && { eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; }
 
 	distutils-r1_python_prepare_all
 }
 
 python_compile_all() {
 	if use doc; then
-		pushd docs || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-		popd || die
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
