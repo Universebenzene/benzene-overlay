@@ -12,7 +12,7 @@ DESCRIPTION="Fast and direct raster I/O for use with Numpy and SciPy"
 HOMEPAGE="https://rasterio.readthedocs.io"
 SRC_URI="https://github.com/rasterio/rasterio/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
-LICENSE="MIT"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples ipython plot s3"
