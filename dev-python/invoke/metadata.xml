@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Invoke is a Python (2.7 and 3.4+) library for managing shell-oriented subprocesses
+		and organizing executable Python code into CLI-invokable tasks. It draws
+		inspiration from various sources (make/rake, Fabric 1.x, etc) to arrive at a
+		powerful and clean feature set.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">invoke</remote-id>
+		<remote-id type="github">pyinvoke/invoke</remote-id>
+	</upstream>
+</pkgmetadata>
