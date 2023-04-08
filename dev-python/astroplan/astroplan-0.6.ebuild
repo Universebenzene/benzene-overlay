@@ -1,20 +1,19 @@
 # Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python{2_7,3_{9..10}} )
+PYTHON_COMPAT=( python{2_7,3_{9..11}} )
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
-inherit distutils-r1 virtualx eutils optfeature
+inherit distutils-r1 virtualx optfeature pypi
 
 DESCRIPTION="Observation planning package for astronomers"
-HOMEPAGE="https://astroplan.readthedocs.org/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+HOMEPAGE="https://astroplan.readthedocs.org"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc test"
 #RESTRICT="network-sandbox"
 RESTRICT="!test? ( test )"
