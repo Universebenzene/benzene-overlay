@@ -45,9 +45,11 @@ RDEPEND="${DEPEND}
 		dev-python/bottleneck[${PYTHON_USEDEP}]
 		>=dev-python/gwcs-0.16[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
+		dev-python/rasterio[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.6.0[${PYTHON_USEDEP}]
 		>=sci-libs/scikit-image-0.18.0[${PYTHON_USEDEP}]
 		>=sci-libs/scikit-learn-1.0[${PYTHON_USEDEP}]
+		dev-python/shapely[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 	)
 "
@@ -57,6 +59,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		dev-python/rasterio[${PYTHON_USEDEP}]
 		sci-libs/scikit-learn[${PYTHON_USEDEP}]
 		sci-libs/scikit-image[${PYTHON_USEDEP}]
 		media-gfx/graphviz
@@ -68,6 +71,8 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		sci-libs/scikit-learn[${PYTHON_USEDEP}]
 		sci-libs/scikit-image[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
+		dev-python/rasterio[${PYTHON_USEDEP}]
+		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 "
 
@@ -87,7 +92,7 @@ distutils_enable_tests pytest
 #}
 
 python_prepare_all() {
-	use local-datasets && { eapply "${FILESDIR}/"${P}-datasets-use-local.patch; \
+	use local-datasets && { eapply "${FILESDIR}/"${PN}-1.6.0-datasets-use-local.patch; mkdir -p ${PN}/datasets/data ; \
 		for ldata in "${DISTDIR}"/*-d-*; do { cp ${ldata} "${S}"/${PN}/datasets/data/${ldata##*-d-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
 }
@@ -112,4 +117,5 @@ pkg_postinst() {
 	optfeature "used in make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.16"
 	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" dev-python/bottleneck
 	optfeature "display optional progress bars" dev-python/tqdm
+	optfeature "Used for converting source segments into polygon objects" dev-python/rasterio dev-python/shapely
 }
