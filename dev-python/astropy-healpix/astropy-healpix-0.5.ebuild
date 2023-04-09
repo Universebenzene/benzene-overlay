@@ -3,18 +3,18 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..10} )
+PYPI_NO_NORMALIZE=1
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1 optfeature
+inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="BSD-licensed HEALPix for Astropy"
 HOMEPAGE="http://astropy-healpix.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
-	doc? ( https://lambda.gsfc.nasa.gov/data/map/dr3/skymaps/5yr//wmap_band_imap_r9_5yr_K_v3.fits )"
+SRC_URI+=" doc? ( https://lambda.gsfc.nasa.gov/data/map/dr3/skymaps/5yr//wmap_band_imap_r9_5yr_K_v3.fits )"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 RESTRICT="!test? ( test )"	# Test may abort while running
 
@@ -39,7 +39,7 @@ distutils_enable_tests setup.py
 
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
-	export mydistutilsargs=( --offline )
+	export DISTUTILS_ARGS=( --offline )
 	use doc && { cp "${DISTDIR}"/wmap_band_imap_r9_5yr_K_v3.fits "${S}"/docs || die ; }
 	distutils-r1_python_prepare_all
 }

@@ -8,9 +8,6 @@ PYTHON_COMPAT=( python3_{9..11} )
 
 inherit distutils-r1 optfeature pypi
 
-MY_PN=${PN/-/_}
-MY_P=${MY_PN}-${PV}
-
 DESCRIPTION="BSD-licensed HEALPix for Astropy"
 HOMEPAGE="http://astropy-healpix.readthedocs.io"
 SRC_URI+=" doc? ( https://lambda.gsfc.nasa.gov/data/map/dr3/skymaps/5yr//wmap_band_imap_r9_5yr_K_v3.fits )"
