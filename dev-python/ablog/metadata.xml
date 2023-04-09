@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		ABlog is a Sphinx extension that converts any documentation or personal
+		website project into a full-fledged blog
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">ablog</remote-id>
+		<remote-id type="github">sunpy/ablog</remote-id>
+	</upstream>
+	<use>
+		<flag name="markdown">Extra markdown support via <pkg>dev-python/myst-parser</pkg></flag>
+		<flag name="notebook">Extra notebook support</flag>
+	</use>
+</pkgmetadata>
