@@ -11,5 +11,6 @@
 	</upstream>
 	<use>
 		<flag name="code_style">Extra code_style support for development</flag>
+		<flag name="doc">Build extra documentation. network-sandbox will be disabled as doc building needs online data.</flag>
 	</use>
 </pkgmetadata>
