@@ -14,7 +14,7 @@ SRC_URI+=" doc? ( https://github.com/fsspec/s3fs/raw/${PV}/docs/source/conf.py -
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"	# zarr copybutton myst-nb no x86
 IUSE="awscli boto3"
 PROPERTIES="test_network"
 RESTRICT="test"
@@ -29,6 +29,7 @@ BDEPEND="test? (
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
+		dev-python/zarr[${PYTHON_USEDEP}]
 	)
 "
 
@@ -36,8 +37,8 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
-	use doc && { cp {"${DISTDIR}"/${P}-,"${S}"/docs/source/}conf.py || die ; \
-		eapply "${FILESDIR}/${P}-fix-doc-missing-blank-line.patch" ; mkdir -p docs/source/_static || die ; }
+	use doc && { mkdir -p docs/source/_static || die ; \
+		cp {"${DISTDIR}"/${P}-,"${S}"/docs/source/}conf.py || die ; }
 
 	distutils-r1_python_prepare_all
 }

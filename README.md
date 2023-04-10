@@ -120,7 +120,7 @@ dev-python/python-socketio       | 5.8.0                                        
 dev-python/python-xz             | 0.5.0                                             | Optional for yt
 dev-python/rasterio              | 1.3.6                                             | Optional for photutils. Dependencies are not all listed in the table
 dev-python/ratarmount            | 0.13.0                                            | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
-dev-python/s3fs                  | 2023.3.0                                          | Test dependency for zarr
+dev-python/s3fs                  | 2023.4.0                                          | Test dependency for zarr
 dev-python/siosocks              | 0.3.0                                             | Optional for aioftp
 dev-python/colorspacious         | 1.1.2                                             | Pulled in by cmyt. Dropped by official portage
 dev-python/cmyt                  | 1.1.3                                             | Pulled in by yt
