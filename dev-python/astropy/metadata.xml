@@ -18,7 +18,6 @@
 		<remote-id type="pypi">astropy</remote-id>
 	</upstream>
 	<use>
-		<flag name="doc">Build extra documentation (the network-sandbox FEATURE need to be temporarily disabled)</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 	</use>
 </pkgmetadata>
