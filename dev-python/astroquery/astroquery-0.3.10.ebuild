@@ -1,4 +1,4 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -6,15 +6,14 @@ EAPI=7
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYTHON_COMPAT=( python{2_7,3_{6,7,8,9}} )
 
-inherit distutils-r1 eutils optfeature
+inherit distutils-r1 eutils optfeature pypi
 
 DESCRIPTION="Collection of packages to access online astronomical resources"
 HOMEPAGE="https://github.com/astropy/astroquery"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc"
 #RESTRICT="network-sandbox"
 RESTRICT="!test? ( test )"
