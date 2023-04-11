@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Flexible and powerful tensor operations for readable and reliable code.
+		Supports numpy, pytorch, tensorflow, jax, and others.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">einops</remote-id>
+		<remote-id type="github">arogozhnikov/einops</remote-id>
+	</upstream>
+</pkgmetadata>
