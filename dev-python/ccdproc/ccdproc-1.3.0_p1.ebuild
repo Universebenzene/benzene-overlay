@@ -3,18 +3,14 @@
 
 EAPI=7
 
-MY_PV=$(ver_cut 1-3).post$(ver_cut 5)
-MY_P=${PN}-${MY_PV}
-
 DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python3_{9,10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Astropy affiliated package for reducing optical/IR CCD data"
 HOMEPAGE="https://ccdproc.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 
 LICENSE="BSD"
 SLOT="0"
@@ -36,14 +32,12 @@ DEPEND="${RDEPEND}
 	test? ( dev-python/pytest-astropy[${PYTHON_USEDEP}] )
 "
 
-S="${WORKDIR}/${MY_P}"
-
 distutils_enable_tests setup.py
 
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
 	sed -i -e '/[pytest]/s/pytest/tool:pytest/' setup.cfg || die
-	export mydistutilsargs=( --offline )
+	DISTUTILS_ARGS=( --offline )
 	distutils-r1_python_prepare_all
 }
 
