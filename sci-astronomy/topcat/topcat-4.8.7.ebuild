@@ -8,7 +8,7 @@ MY_PV=$(ver_rs 2 -)
 
 DESCRIPTION="Interactive graphical viewer and editor for astronomical tables"
 HOMEPAGE="http://www.star.bris.ac.uk/~mbt/topcat"
-SRC_COM="http://andromeda.star.bristol.ac.uk/releases/topcat/v${MY_PV}"
+SRC_COM="https://www.star.bris.ac.uk/mbt/releases/topcat/v${MY_PV}"
 SRC_URI="${SRC_COM}/${PN}-lite.jar -> ${P}-lite.jar
 	standard? ( ${SRC_COM}/${PN}-full.jar -> ${P}-full.jar )
 	extra? ( ${SRC_COM}/${PN}-extra.jar -> ${P}-extra.jar )"
