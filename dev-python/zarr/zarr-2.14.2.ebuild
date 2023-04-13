@@ -45,7 +45,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/numpydoc \
 	dev-python/sphinx-copybutton \
 	dev-python/sphinx-issues \
-	dev-python/sphinx_design \
+	dev-python/sphinx-design \
 	dev-python/sphinx-rtd-theme \
 	dev-python/pydata-sphinx-theme
 

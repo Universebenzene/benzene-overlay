@@ -39,7 +39,7 @@ distutils_enable_sphinx docs dev-python/sphinx-copybutton \
 	dev-python/sphinx-tabs \
 	dev-python/sphinx-thebe \
 	dev-python/sphinx-togglebutton \
-	dev-python/sphinx_design \
+	dev-python/sphinx-design \
 	dev-python/sphinxcontrib-bibtex \
 	dev-python/sphinxcontrib-youtube \
 	dev-python/sphinxext-opengraph \

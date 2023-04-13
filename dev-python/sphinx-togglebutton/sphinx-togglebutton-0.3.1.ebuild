@@ -22,7 +22,7 @@ RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	sphinx? (
 		dev-python/myst-parser[${PYTHON_USEDEP}]
 		dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
-		dev-python/sphinx_design[${PYTHON_USEDEP}]
+		dev-python/sphinx-design[${PYTHON_USEDEP}]
 	)
 "
 

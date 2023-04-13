@@ -56,6 +56,6 @@ EPYTEST_DESELECT=(
 pkg_postinst() {
 	optfeature "extra rtd support" "dev-python/alabaster dev-python/altair dev-python/bokeh dev-python/ipykernel \
 		dev-python/ipywidgets>=8 dev-python/jupytext dev-python/numpy dev-python/matplotlib<3.6 dev-python/pandas \
-		dev-python/plotly dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/sphinx_design \
+		dev-python/plotly dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/sphinx-design \
 		dev-python/sphinxcontrib-bibtex dev-python/sympy>=1.10.1"
 }

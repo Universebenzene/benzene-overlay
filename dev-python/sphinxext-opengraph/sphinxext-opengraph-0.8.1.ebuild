@@ -25,4 +25,4 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs/source dev-python/sphinx_design dev-python/furo dev-python/myst-parser
+distutils_enable_sphinx docs/source dev-python/sphinx-design dev-python/furo dev-python/myst-parser

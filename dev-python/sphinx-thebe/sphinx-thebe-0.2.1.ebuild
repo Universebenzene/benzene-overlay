@@ -23,7 +23,7 @@ RDEPEND=">=dev-python/sphinx-4[${PYTHON_USEDEP}]
 		dev-python/myst-nb[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-book-theme-0.4.0_rc1[${PYTHON_USEDEP}]
 		dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
-		dev-python/sphinx_design[${PYTHON_USEDEP}]
+		dev-python/sphinx-design[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="test? (
@@ -31,14 +31,14 @@ BDEPEND="test? (
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/myst-nb[${PYTHON_USEDEP}]
 		dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
-		dev-python/sphinx_design[${PYTHON_USEDEP}]
+		dev-python/sphinx-design[${PYTHON_USEDEP}]
 		dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton \
-	dev-python/sphinx_design \
+	dev-python/sphinx-design \
 	dev-python/sphinx-book-theme \
 	dev-python/matplotlib \
 	dev-python/myst-nb

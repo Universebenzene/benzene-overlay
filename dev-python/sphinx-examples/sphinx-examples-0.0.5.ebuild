@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">dev-python/sphinx-4[${PYTHON_USEDEP}]
-	dev-python/sphinx_design[${PYTHON_USEDEP}]"
+	dev-python/sphinx-design[${PYTHON_USEDEP}]"
 
 distutils_enable_tests nose
 
