@@ -4,14 +4,14 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Add a copy button to code blocks in Sphinx"
 HOMEPAGE="https://sphinx-copybutton.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
-	doc? ( https://github.com/executablebooks/sphinx-copybutton/raw/v${PV}/CHANGELOG.md -> ${P}-CHANGELOG.md )"
+SRC_URI+=" doc? ( https://github.com/executablebooks/sphinx-copybutton/raw/v${PV}/CHANGELOG.md -> ${P}-CHANGELOG.md )"
 
 LICENSE="MIT"
 SLOT="0"

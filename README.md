@@ -148,7 +148,7 @@ dev-python/sphinx-autobuild      | 2022.3.14        |
 dev-python/sphinx-book-theme     | 0.2.0; 1.0.1     | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
 dev-python/sphinx-changelog      | 1.3.0            |
 dev-python/sphinx-click          | 4.4.0            |
-dev-python/sphinx-copybutton     | 0.5.1            | Doc build failed due to some version dismatched.
+dev-python/sphinx-copybutton     | 0.5.2            |
 dev-python/sphinx-design         | 0.3.0            |
 dev-python/sphinx-examples       | 0.0.5            |
 dev-python/sphinx-inline-tabs    | 2022.1.2\_beta11 |
