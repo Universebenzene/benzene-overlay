@@ -149,7 +149,7 @@ dev-python/sphinx-book-theme     | 0.2.0; 1.0.1     | `network-sandbox` FEATURE 
 dev-python/sphinx-changelog      | 1.3.0            |
 dev-python/sphinx-click          | 4.4.0            |
 dev-python/sphinx-copybutton     | 0.5.2            |
-dev-python/sphinx-design         | 0.3.0            |
+dev-python/sphinx-design         | 0.4.1            |
 dev-python/sphinx-examples       | 0.0.5            |
 dev-python/sphinx-inline-tabs    | 2022.1.2\_beta11 |
 dev-python/sphinx-thebe          | 0.2.1            |
