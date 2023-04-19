@@ -4,16 +4,15 @@
 EAPI=8
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1 virtualx xdg-utils
+inherit distutils-r1 pypi virtualx xdg-utils
 
 DESCRIPTION="Astropy affiliated package for region handling"
 HOMEPAGE="http://astropy-regions.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+#KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 LICENSE="BSD"
 
 IUSE="doc test"
