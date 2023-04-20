@@ -4,7 +4,7 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
 inherit distutils-r1 desktop virtualx xdg
 
@@ -46,7 +46,6 @@ RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pytest-flake8[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astrodendro[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
