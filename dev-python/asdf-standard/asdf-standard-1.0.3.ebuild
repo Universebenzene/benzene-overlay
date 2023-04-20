@@ -20,7 +20,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 #RESTRICT="test" # some tests failed for astropy>=5.1
 
 RDEPEND="$(python_gen_cond_dep '
-		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
+		>=dev-python/importlib-resources-3[${PYTHON_USEDEP}]
 	' python3_8)"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (

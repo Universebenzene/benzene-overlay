@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
-		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
+		>=dev-python/importlib-resources-3[${PYTHON_USEDEP}]
 	' python3_8)"
 PDEPEND="dev-python/asdf[${PYTHON_USEDEP}]"
 

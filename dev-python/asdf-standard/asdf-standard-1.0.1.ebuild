@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="$(python_gen_cond_dep '
-		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
+		>=dev-python/importlib-resources-3[${PYTHON_USEDEP}]
 	' python3_8)"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (

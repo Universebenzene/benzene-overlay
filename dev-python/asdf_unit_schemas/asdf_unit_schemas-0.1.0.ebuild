@@ -20,7 +20,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
-		>=dev-python/importlib_resources-3[${PYTHON_USEDEP}]
+		>=dev-python/importlib-resources-3[${PYTHON_USEDEP}]
 	' python3_8)"
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 	doc? (
