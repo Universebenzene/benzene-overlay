@@ -21,7 +21,7 @@ KEYWORDS="~amd64"	# nbdime no x86
 IUSE="code_style"
 RESTRICT="test"	# Test phase runs with fails
 
-RDEPEND="dev-python/importlib_metadata[${PYTHON_USEDEP}]
+RDEPEND="dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]
 	dev-python/jupyter-cache[${PYTHON_USEDEP}]
 	dev-python/nbclient[${PYTHON_USEDEP}]
@@ -35,7 +35,7 @@ BDEPEND="test? (
 		dev-python/pytest-param-files[${PYTHON_USEDEP}]
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-		dev-python/importlib_metadata[${PYTHON_USEDEP}]
+		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/nbdime[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]

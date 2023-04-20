@@ -27,7 +27,7 @@ RDEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
 	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
-	>=dev-python/importlib_metadata-4.11.4[${PYTHON_USEDEP}]
+	>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]
 	all? ( >=dev-python/lz4-0.10[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
