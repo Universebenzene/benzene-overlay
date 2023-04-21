@@ -6,7 +6,7 @@ EAPI=8
 # this could be a multiple python package
 # but the way it is packaged makes it very time consuming.
 
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
 inherit toolchain-funcs python-single-r1
 
