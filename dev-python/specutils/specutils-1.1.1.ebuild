@@ -6,11 +6,10 @@ EAPI=8
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYTHON_COMPAT=( python3_{9..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Python package for astronomy spectral operations"
 HOMEPAGE="https://specutils.readthedocs.org/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -39,7 +38,7 @@ distutils_enable_tests setup.py
 
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
-	export mydistutilsargs=( --offline )
+	DISTUTILS_ARGS=( --offline )
 	distutils-r1_python_prepare_all
 }
 
