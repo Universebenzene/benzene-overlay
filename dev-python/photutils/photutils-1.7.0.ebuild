@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..11} )
 
 DATA_COM="8c97b4f"
 DATA_URI="https://github.com/astropy/photutils-datasets/raw/${DATA_COM}/data"

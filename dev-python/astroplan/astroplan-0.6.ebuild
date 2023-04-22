@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python{2_7,3_{9..11}} )
+PYTHON_COMPAT=( python{2_7,3_{10..11}} )
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
 inherit distutils-r1 virtualx optfeature pypi
