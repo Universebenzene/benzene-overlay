@@ -26,7 +26,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/flask-socketio[${PYTHON_USEDEP}]
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	>=dev-python/abg_python-1.0.5[${PYTHON_USEDEP}]
+	>=dev-python/abg-python-1.0.5[${PYTHON_USEDEP}]
 "
 
 S="${WORKDIR}/${MY_P}"
