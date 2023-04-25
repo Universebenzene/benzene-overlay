@@ -138,7 +138,7 @@ dev-python/zict                  | 2.2.0                                        
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/ablog                 | 0.11.3           |
-dev-python/jupyter-cache         | 0.5.0            |
+dev-python/jupyter-cache         | 0.6.1            |
 dev-python/jupyter\_sphinx       | 0.4.0            |
 dev-python/myst-nb               | 0.17.1           |
 dev-python/myst-parser           | 0.18.1-r1        | Only for myst-nb that depends on old version
