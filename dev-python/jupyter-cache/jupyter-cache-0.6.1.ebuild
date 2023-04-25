@@ -15,6 +15,7 @@ SRC_URI="https://github.com/executablebooks/jupyter-cache/archive/refs/tags/v${P
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="cli code_style rtd"
 
 RDEPEND="dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
@@ -24,8 +25,20 @@ RDEPEND="dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/sqlalchemy[${PYTHON_USEDEP}]
 	dev-python/tabulate[${PYTHON_USEDEP}]
+	cli? ( dev-python/click-log[${PYTHON_USEDEP}] )
+	code_style? ( <dev-vcs/pre-commit-4.0 )
+	rtd? (
+		dev-python/ipykernel[${PYTHON_USEDEP}]
+		dev-python/nbdime[${PYTHON_USEDEP}]
+	)
 "
 BDEPEND="test? ( dev-python/nbdime[${PYTHON_USEDEP}] )"
+PDEPEND="rtd? (
+		dev-python/myst-nb[${PYTHON_USEDEP}]
+		dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
+		dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
+	)
+"
 
 distutils_enable_tests pytest
 # jupytext required

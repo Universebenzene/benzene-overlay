@@ -9,4 +9,9 @@
 		<remote-id type="pypi">jupyter-cache</remote-id>
 		<remote-id type="github">executablebooks/jupyter-cache</remote-id>
 	</upstream>
+	<use>
+		<flag name="cli">Extra cli support</flag>
+		<flag name="code_style">Extra code_style support for development</flag>
+		<flag name="rtd">Extra rtd support</flag>
+	</use>
 </pkgmetadata>
