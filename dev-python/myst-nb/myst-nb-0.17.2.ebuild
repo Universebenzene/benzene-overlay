@@ -17,17 +17,19 @@ SRC_URI="https://github.com/executablebooks/MyST-NB/archive/refs/tags/v${PV}.tar
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# nbdime no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="code_style"
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND="dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]
-	dev-python/jupyter-cache[${PYTHON_USEDEP}]
-	dev-python/nbclient[${PYTHON_USEDEP}]
+	dev-python/ipykernel[${PYTHON_USEDEP}]
+	<dev-python/jupyter-cache-0.7[${PYTHON_USEDEP}]
 	<dev-python/myst-parser-0.19[${PYTHON_USEDEP}]
+	dev-python/nbclient[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 "
@@ -35,11 +37,12 @@ BDEPEND="test? (
 		dev-python/pytest-param-files[${PYTHON_USEDEP}]
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-		dev-python/importlib-metadata[${PYTHON_USEDEP}]
+		dev-python/ipywidgets[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/nbconvert[${PYTHON_USEDEP}]
 		dev-python/nbdime[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sympy[${PYTHON_USEDEP}]
 	)
 "
 
@@ -50,11 +53,11 @@ distutils_enable_tests pytest
 EPYTEST_DESELECT=(
 	# No module named 'jupytext'
 	tests/test_execute.py::test_custom_convert_auto
-	tests/test_execute.py::test_custom_convert_cach
+	tests/test_execute.py::test_custom_convert_cache
 )
 
 pkg_postinst() {
-	optfeature "extra rtd support" "dev-python/alabaster dev-python/altair dev-python/bokeh dev-python/ipykernel \
+	optfeature "extra rtd support" "dev-python/alabaster dev-python/altair dev-python/bokeh \
 		dev-python/ipywidgets>=8 dev-python/jupytext dev-python/numpy dev-python/matplotlib<3.6 dev-python/pandas \
 		dev-python/plotly dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/sphinx-design \
 		dev-python/sphinxcontrib-bibtex dev-python/sympy>=1.10.1"
