@@ -4,17 +4,15 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
+PYPI_PN=${PN^}
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1
-
-MY_PN=${PN^}
-MY_P=${MY_PN}-${PV}
+inherit distutils-r1 pypi
 
 DESCRIPTION="Tools for accessing JPEG2000 files"
 HOMEPAGE="https://glymur.readthedocs.org"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz
-	doc? (
+SRC_URI+=" doc? (
 		https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.10.rst -> ${P}-d-0.10.rst
 		https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.11.rst -> ${P}-d-0.11.rst
 		https://github.com/quintusdias/glymur/raw/v${PV}/docs/source/whatsnew/0.12.rst -> ${P}-d-0.12.rst
