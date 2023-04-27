@@ -15,10 +15,11 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-python/heapdict[${PYTHON_USEDEP}]"
 BDEPEND="test? (
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-repeat[${PYTHON_USEDEP}]
+		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 		dev-python/lmdb[${PYTHON_USEDEP}]
-		dev-python/psutil[${PYTHON_USEDEP}]
 	)
 "
 
