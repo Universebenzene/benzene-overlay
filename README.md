@@ -117,6 +117,7 @@ dev-python/msrestazure           | 0.6.4                                        
 dev-python/numcodecs             | 0.11.0                                            | Pulled in by zarr
 dev-python/pyaml                 | 21.10.1                                           | Optional for yt
 dev-python/pykdtree              | 1.3.7\_p0                                         | Optional for yt
+dev-python/pytest-repeat         | 0.9.1                                             | Test dependency for new zict
 dev-python/python-socketio       | 5.8.0                                             | Optional for yt
 dev-python/python-xz             | 0.5.0                                             | Optional for yt
 dev-python/rasterio              | 1.3.6                                             | Optional for photutils. Dependencies are not all listed in the table
