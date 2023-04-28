@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -33,79 +33,55 @@ done
 # ldd /opt/kingsoft/wps-office/office6/wps
 # ldd /opt/kingsoft/wps-office/office6/wpp
 RDEPEND="
-	>=app-accessibility/at-spi2-core-2.46:2
 	app-arch/bzip2:0
-	app-arch/xz-utils
 	app-arch/lz4
+	app-arch/xz-utils
 	dev-libs/expat
 	dev-libs/glib:2
 	dev-libs/libbsd
-	|| ( dev-libs/libffi:0/7 dev-libs/libffi-compat:7 )
+	dev-libs/libffi:0/8
 	dev-libs/libgcrypt:0
 	dev-libs/libgpg-error
 	dev-libs/libpcre:3
-
-	dev-libs/libxslt
-
-	dev-libs/nspr
-	dev-libs/nss
 
 	dev-qt/qtnetwork:5
 	dev-qt/qtwidgets:5
 
 	media-libs/fontconfig:1.0
 	media-libs/freetype:2
-	|| ( media-libs/flac-compat:8.3.0 media-libs/flac:0/0 )
+	media-libs/flac:0/10-12
 	media-libs/libogg
+	media-libs/libpulse
 	media-libs/libsndfile
 	media-libs/libvorbis
-	media-libs/libpng:0
-	media-libs/libpulse
-	|| ( media-libs/tiff-compat:4 media-libs/tiff:0/0 )
+	media-libs/tiff-compat:4
 	net-libs/libasyncns
 	net-print/cups
 	sys-apps/attr
-	sys-apps/util-linux
-	sys-apps/dbus
 	sys-apps/tcp-wrappers
+	sys-apps/util-linux
 	sys-libs/libcap
 	libsystemd? ( virtual/libsystemd )
+	sys-libs/libcxx
 	sys-libs/zlib:0
-
-	x11-libs/cairo
-	x11-libs/gdk-pixbuf:2
+	virtual/glu
 	x11-libs/gtk+:2
-
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libX11
-
-	x11-libs/libXScrnSaver
-
 	x11-libs/libXau
-
-	x11-libs/libXcomposite
-	x11-libs/libXcursor
-
+	x11-libs/libxcb
 	x11-libs/libXdmcp
 	x11-libs/libXext
 	x11-libs/libXrender
 	x11-libs/libXtst
-
-	x11-libs/libXv
-
-	x11-libs/libxcb
-
-	x11-libs/pango
-
-	virtual/glu
 "
 DEPEND=""
 BDEPEND="app-arch/p7zip"
 
 S="${WORKDIR}"
 
-PATCHES=( "${FILESDIR}/${P}-fix-wps-python-parse.patch" )
+PATCHES=( "${FILESDIR}/${PN}-11.1.0.11664-fix-wps-python-parse.patch" )
 
 QA_PREBUILT="opt/kingsoft/${PN}/office6/*"
 QA_FLAGS_IGNORED="opt/kingsoft/${PN}/office6/*"
@@ -154,7 +130,7 @@ src_install() {
 	insinto /etc/xdg/menus/applications-merged
 	doins ${WS}/etc/xdg/menus/applications-merged/wps-office.menu
 
-	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,wpsd,promecefpluginhost,transerr,ksolaunch,wpscloudsvr,EverythingDaemon}
+	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,wpsd,promecefpluginhost,transerr,ksolaunch,wpscloudsvr}
 
 	local MUIDIR="opt/kingsoft/wps-office/office6/mui"
 
