@@ -154,6 +154,7 @@ dev-python/sphinx-copybutton     | 0.5.2            |
 dev-python/sphinx-design         | 0.4.1            |
 dev-python/sphinx-examples       | 0.0.5            |
 dev-python/sphinx-inline-tabs    | 2022.1.2\_beta11 |
+dev-python/sphinx-readable-theme | 1.3.0            |
 dev-python/sphinx-thebe          | 0.2.1            |
 dev-python/sphinx-togglebutton   | 0.3.1            |
 dev-python/sphinx\_contributors  | 0.2.7            |
