@@ -14,7 +14,7 @@ SRC_URI="https://github.com/sphinx-contrib/youtube/archive/refs/tags/v${PV}.tar.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# copybutton, myst-nb, nbdime no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="doc doc-demo"
 RESTRICT="doc-demo? ( network-sandbox )"
 REQUIRED_USE="doc-demo? ( doc )"

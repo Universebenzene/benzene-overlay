@@ -17,7 +17,7 @@ SRC_URI="https://github.com/executablebooks/sphinx-book-theme/archive/refs/tags/
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# copybutton myst-nb nbdime no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="code_style"
 RESTRICT="doc? ( network-sandbox )"
 

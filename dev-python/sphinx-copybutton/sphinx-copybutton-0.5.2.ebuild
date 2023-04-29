@@ -15,7 +15,7 @@ SRC_URI+=" doc? ( https://github.com/executablebooks/sphinx-copybutton/raw/v${PV
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"	# myst-nb, nbdime no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="code_style rtd"
 
 RDEPEND=">=dev-python/sphinx-1.8[${PYTHON_USEDEP}]

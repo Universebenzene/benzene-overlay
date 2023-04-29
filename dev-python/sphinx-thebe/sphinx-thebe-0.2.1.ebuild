@@ -14,7 +14,7 @@ SRC_URI="https://github.com/executablebooks/sphinx-thebe/archive/refs/tags/v${PV
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"	# sphinx-book copybutton mystnb no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="sphinx"
 
 RDEPEND=">=dev-python/sphinx-4[${PYTHON_USEDEP}]
