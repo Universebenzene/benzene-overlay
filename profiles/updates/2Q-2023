@@ -1,2 +1,3 @@
 move dev-python/sphinx_design dev-python/sphinx-design
 move dev-python/abg_python dev-python/abg-python
+move dev-python/asdf_transform_schemas dev-python/asdf-transform-schemas

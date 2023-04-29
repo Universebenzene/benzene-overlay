@@ -20,7 +20,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]
 	>=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
-	>=dev-python/asdf_transform_schemas-0.3[${PYTHON_USEDEP}]
+	>=dev-python/asdf-transform-schemas-0.3[${PYTHON_USEDEP}]
 	>=dev-python/asdf_unit_schemas-0.1[${PYTHON_USEDEP}]
 	<dev-python/jsonschema-4.18[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]

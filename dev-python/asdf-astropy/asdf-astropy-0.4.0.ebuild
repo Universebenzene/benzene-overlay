@@ -21,7 +21,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-2.13[${PYTHON_USEDEP}]
 	>=dev-python/asdf-coordinates-schemas-0.1[${PYTHON_USEDEP}]
-	>=dev-python/asdf_transform_schemas-0.2.2[${PYTHON_USEDEP}]
+	>=dev-python/asdf-transform-schemas-0.2.2[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
 "
