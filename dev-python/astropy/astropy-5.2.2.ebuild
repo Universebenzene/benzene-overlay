@@ -53,7 +53,7 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.6[${PYTHON_USEDEP}]
-		>=dev-python/sphinx-changelog-1.2[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}]
 		>=dev-python/jinja-3.0[${PYTHON_USEDEP}]
 		>dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
