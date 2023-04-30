@@ -13,7 +13,7 @@ HOMEPAGE="http://zarr.readthedocs.io"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"	# copybutton myst-nb no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="examples jupyter"
 RESTRICT="test"	# Test phase runs with fails
 

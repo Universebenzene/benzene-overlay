@@ -14,7 +14,7 @@ SRC_URI+=" doc? ( https://github.com/fsspec/s3fs/raw/${PV}/docs/source/conf.py -
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# zarr copybutton myst-nb no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="awscli boto3"
 PROPERTIES="test_network"
 RESTRICT="test"
