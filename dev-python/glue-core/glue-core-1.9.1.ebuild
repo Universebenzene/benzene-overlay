@@ -3,14 +3,14 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1 desktop virtualx xdg
+inherit distutils-r1 desktop pypi virtualx xdg
 
 DESCRIPTION="Linked Data Visualizations Across Multiple Files"
 HOMEPAGE="http://glueviz.org"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -21,7 +21,7 @@ REQUIRED_USE="all? ( astronomy recommended )"
 RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
 	>=dev-python/dill-0.2[${PYTHON_USEDEP}]
-	>=dev-python/echo-0.5[${PYTHON_USEDEP}]
+	>=dev-python/echo-0.6[${PYTHON_USEDEP}]
 	>=dev-python/h5py-2.10[${PYTHON_USEDEP}]
 	>dev-python/ipykernel-5.1.0[${PYTHON_USEDEP}]
 	>=dev-python/ipython-4.0[${PYTHON_USEDEP}]
@@ -35,6 +35,9 @@ RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
 	>=dev-python/xlrd-1.2[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '
+		>=dev-python/importlib-metadata-3.6[${PYTHON_USEDEP}]
+	' python3_9)
 	all? ( >dev-python/pillow-7.1.0[${PYTHON_USEDEP}] )
 	astronomy? (
 		dev-python/pyavm[${PYTHON_USEDEP}]
