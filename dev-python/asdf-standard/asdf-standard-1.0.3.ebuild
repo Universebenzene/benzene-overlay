@@ -28,9 +28,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-asdf-0.1.4[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
-	test? (
-		~dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
-	)
+	test? ( <dev-python/astropy-5.1[${PYTHON_USEDEP}] )
 "
 PDEPEND="test? ( >=dev-python/asdf-2.8[${PYTHON_USEDEP}] )"
 
@@ -39,10 +37,8 @@ distutils_enable_tests pytest
 
 python_compile_all() {
 	if use doc; then
-		pushd docs || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-		popd || die
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/build/html/. )
 	fi
 }
