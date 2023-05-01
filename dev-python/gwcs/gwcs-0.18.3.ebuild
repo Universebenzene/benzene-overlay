@@ -21,7 +21,7 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-2.8.1[${PYTHON_USEDEP}]
-	dev-python/asdf_wcs_schemas[${PYTHON_USEDEP}]
+	dev-python/asdf-wcs-schemas[${PYTHON_USEDEP}]
 	>=dev-python/asdf-astropy-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
