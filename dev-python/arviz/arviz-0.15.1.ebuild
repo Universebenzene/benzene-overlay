@@ -14,7 +14,7 @@ SRC_URI="https://github.com/arviz-devs/arviz/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"	# zarr copybutton myst-nb no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="all examples"
 PROPERTIES="test_network"
 RESTRICT="test"

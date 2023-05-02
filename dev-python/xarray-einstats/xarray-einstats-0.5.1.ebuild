@@ -14,7 +14,7 @@ SRC_URI="https://github.com/arviz-devs/xarray-einstats/archive/refs/tags/v${PV}.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"	# copybutton, myst-nb, nbdime no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="einops numba"
 
 RDEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]
