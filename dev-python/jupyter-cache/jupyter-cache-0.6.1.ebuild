@@ -29,10 +29,15 @@ RDEPEND="dev-python/attrs[${PYTHON_USEDEP}]
 	code_style? ( <dev-vcs/pre-commit-4.0 )
 	rtd? (
 		dev-python/ipykernel[${PYTHON_USEDEP}]
+		dev-python/jupytext[${PYTHON_USEDEP}]
 		dev-python/nbdime[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="test? ( dev-python/nbdime[${PYTHON_USEDEP}] )"
+BDEPEND="test? (
+		dev-python/jupytext[${PYTHON_USEDEP}]
+		dev-python/nbdime[${PYTHON_USEDEP}]
+	)
+"
 PDEPEND="rtd? (
 		dev-python/myst-nb[${PYTHON_USEDEP}]
 		dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
@@ -41,14 +46,8 @@ PDEPEND="rtd? (
 "
 
 distutils_enable_tests pytest
-# jupytext required
-#distutils_enable_sphinx docs dev-python/python-sphinx-copybutton \
-#	dev-python/python-sphinx-book-theme \
-#	dev-python/python-myst-nb \
-#	dev-python/python-jupytext \
-#	dev-python/python-nbdime
-
-EPYTEST_DESELECT=(
-	# jupytext required
-	tests/test_cache.py::test_execution_jupytext
-)
+distutils_enable_sphinx docs dev-python/sphinx-copybutton \
+	dev-python/sphinx-book-theme \
+	dev-python/myst-nb \
+	dev-python/jupytext \
+	dev-python/nbdime
