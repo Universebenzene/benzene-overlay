@@ -37,6 +37,7 @@ BDEPEND="test? (
 		dev-python/pytest-param-files[${PYTHON_USEDEP}]
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		dev-python/jupytext[${PYTHON_USEDEP}]
 		dev-python/ipywidgets[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
@@ -50,15 +51,9 @@ S="${WORKDIR}/${MY_P}"
 
 distutils_enable_tests pytest
 
-EPYTEST_DESELECT=(
-	# No module named 'jupytext'
-	tests/test_execute.py::test_custom_convert_auto
-	tests/test_execute.py::test_custom_convert_cache
-)
-
 pkg_postinst() {
 	optfeature "extra rtd support" "dev-python/alabaster dev-python/altair dev-python/bokeh \
-		dev-python/ipywidgets>=8 dev-python/jupytext dev-python/numpy dev-python/matplotlib<3.6 dev-python/pandas \
+		dev-python/ipywidgets>=8 dev-python/jupytext dev-python/numpy dev-python/matplotlib dev-python/pandas \
 		dev-python/plotly dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/sphinx-design \
 		dev-python/sphinxcontrib-bibtex dev-python/sympy>=1.10.1"
 }
