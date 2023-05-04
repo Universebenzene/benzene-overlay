@@ -162,7 +162,7 @@ dev-python/sphinx\_contributors  | 0.2.7            |
 dev-python/sphinx\_mdinclude     | 0.5.3            |
 dev-python/sphinxcontrib-youtube | 1.2.0            | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building.
 dev-python/sphinxext-opengraph   | 0.8.2            |
-dev-python/dask-sphinx-theme     | 3.0.3            |
+dev-python/dask-sphinx-theme     | 3.0.4            |
 dev-python/sunpy-sphinx-theme    | 1.2.40           |
 dev-python/mistune               | 0.8.4-r1         | Only for sphinx-asdf that depends on old version
 dev-python/nbconvert             | 6.4.5            | Depends on old mistune
