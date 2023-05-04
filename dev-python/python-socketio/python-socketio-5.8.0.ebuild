@@ -14,7 +14,7 @@ SRC_URI="https://github.com/miguelgrinberg/python-socketio/archive/refs/tags/v${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"	# bidict copybutton myst-nb no x86
+KEYWORDS="~amd64"	# bidict pytest-benchmark no x86
 IUSE="asyncio-client client examples"
 
 RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
