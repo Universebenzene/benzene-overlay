@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/ageller/Firefly"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"	# flask bidict copybutton myst-nb no x86
+KEYWORDS="~amd64"	# flask bidict no x86
 RESTRICT="test"	# TypeError: value type <class 'bool'> does not match default value type <class 'dict'>
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
