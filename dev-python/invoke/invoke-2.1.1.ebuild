@@ -3,7 +3,7 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
 inherit distutils-r1 pypi
@@ -23,7 +23,6 @@ RDEPEND="dev-python/fluidity[${PYTHON_USEDEP}]
 BDEPEND="test? (
 		dev-python/pytest-relaxed[${PYTHON_USEDEP}]
 		dev-python/icecream[${PYTHON_USEDEP}]
-		app-shells/zsh
 	)
 "
 
