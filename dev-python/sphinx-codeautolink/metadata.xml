@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">sphinx-codeautolink</remote-id>
+		<remote-id type="github">felix-hilden/sphinx-codeautolink</remote-id>
+	</upstream>
+	<use>
+		<flag name="ipython">Optional ipython support</flag>
+	</use>
+</pkgmetadata>
