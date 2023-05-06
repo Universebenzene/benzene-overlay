@@ -8,12 +8,11 @@ PYTHON_COMPAT=( python3_{10..11} )
 
 GIT_RAW_URI="https://github.com/skyfielders/python-skyfield/raw/${PV}"
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Elegant astronomy for Python"
 HOMEPAGE="https://github.com/skyfielders/python-skyfield"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
-	doc? (
+SRC_URI+=" doc? (
 		${GIT_RAW_URI}/skyfield/documentation/conf.py -> ${P}-d-conf.py
 		${GIT_RAW_URI}/skyfield/documentation/bright_stars.png -> ${P}-d-bright_stars.png
 		${GIT_RAW_URI}/skyfield/documentation/_sphinx_ext/pretty_protos.py -> ${P}-dp-pretty_protos.py
