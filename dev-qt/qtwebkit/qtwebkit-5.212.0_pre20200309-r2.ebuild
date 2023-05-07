@@ -92,6 +92,8 @@ PATCHES=(
 	# From https://github.com/WebKit/WebKit/commit/c7d19a492d97f9282a546831beb918e03315f6ef
 	# Ruby 3.2 removes Object#=~ completely
 	"${FILESDIR}/${P}-webkit-offlineasm-warnings-ruby27.patch"
+	# GCC 13
+	"${FILESDIR}/${P}-cstdint.patch"
 )
 
 _check_reqs() {
