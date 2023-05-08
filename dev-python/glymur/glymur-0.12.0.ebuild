@@ -43,8 +43,6 @@ BDEPEND="test? (
 	)
 "
 
-S="${WORKDIR}/${MY_P}"
-
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx-rtd-theme
 

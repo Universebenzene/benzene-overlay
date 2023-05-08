@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_SETUPTOOLS=manual
 PYPI_NO_NORMALIZE=1
 PYPI_PN="astLib"
@@ -34,7 +35,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 
 python_install_all() {
 	dodoc CHANGE_LOG
-	use doc && HTML_DOCS=( docs/${MY_PN}/. )
+	use doc && HTML_DOCS=( docs/${PYPI_PN}/. )
 	insinto /usr/share/doc/${PF}
 	use examples && doins -r examples
 	distutils-r1_python_install_all
