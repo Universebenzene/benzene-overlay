@@ -3,14 +3,13 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="PyYAML-based module to produce pretty and readable YAML-serialized data"
 HOMEPAGE="https://github.com/mk-fg/pretty-yaml"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="WTFPL-2"
 SLOT="0"
