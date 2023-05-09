@@ -15,7 +15,7 @@ It's recommended to mask the whole overlay and then unmask just the packages you
 
 Some science related miscellaneous python package are listed in a separate table [below](https://github.com/Universebenzene/benzene-overlay#some-science-related-miscellaneous-python-packages), in order to simplify the main table.
 
-Doc/sphinx related packages are listed in [another saperate table](https://github.com/Universebenzene/benzene-overlay#docsphinx-related-packages)
+Doc/sphinx and Doc/MkDocs related packages are listed in separate tables [here](https://github.com/Universebenzene/benzene-overlay#docsphinx-related-packages) and [here](https://github.com/Universebenzene/benzene-overlay#docmkdocs-related-packages)
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
@@ -167,5 +167,16 @@ dev-python/dask-sphinx-theme     | 3.0.4            |
 dev-python/sunpy-sphinx-theme    | 1.2.40           |
 dev-python/mistune               | 0.8.4-r1         | Only for sphinx-asdf that depends on old version
 dev-python/nbconvert             | 6.4.5            | Depends on old mistune
+
+<!--</details>-->
+
+### Doc/MkDocs related packages
+
+<!--<details>
+<summary>(Click to unfold)</summary>-->
+
+Package name | Available version | Additional information
+------------ | :---------------: | ----------------------
+dev-python/mkdocs-autorefs       | 0.4.1           |
 
 <!--</details>-->
