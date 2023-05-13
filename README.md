@@ -176,7 +176,6 @@ dev-python/nbconvert             | 6.4.5            | Depends on old mistune
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-dev-python/mkdocs-autorefs       | 0.4.1           |
 dev-python/mkdocs-gen-files      | 0.5.0           |
 dev-python/mkdocs-literate-nav   | 0.6.0           |
 
