@@ -114,7 +114,6 @@ dev-python/miniballcpp           | 0.2.3                                        
 dev-python/msrest                | 0.7.1                                             | SunPy, h5pyd related
 dev-python/msrestazure           | 0.6.4                                             | SunPy, h5pyd related
 dev-python/numcodecs             | 0.11.0                                            | Pulled in by zarr
-dev-python/pyaml                 | 23.5.8                                           | Optional for yt
 dev-python/pykdtree              | 1.3.7\_p0                                         | Optional for yt
 dev-python/pytest-golden         | 0.2.2                                             | Test dependency for mkdocstrings related packages
 dev-python/pytest-repeat         | 0.9.1                                             | Test dependency for new zict
