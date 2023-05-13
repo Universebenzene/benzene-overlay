@@ -3,16 +3,14 @@
 
 EAPI=8
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="astroML"
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1 virtualx optfeature
-
-MY_PN=astroML
-MY_P=${MY_PN}-${PV}
+inherit distutils-r1 virtualx optfeature pypi
 
 DESCRIPTION="Python Machine Learning library for astronomy"
 HOMEPAGE="http://www.astroml.org"
-SRC_URI="mirror://pypi/${PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -32,12 +30,10 @@ BDEPEND="test? (
 	)
 "
 
-S="${WORKDIR}/${MY_P}"
-
 DOCS=( CHANGES.rst README.rst )
 
 python_prepare_all() {
-	cp "${FILESDIR}"/conftest.py "${S}/${MY_PN}" || die
+	cp "${FILESDIR}"/conftest.py "${S}/${PYPI_PN}" || die
 	distutils-r1_python_prepare_all
 }
 
