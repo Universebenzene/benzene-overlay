@@ -3,14 +3,28 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
+
+#DOCS_BUILDER="sphinx"
+#DOCS_DEPEND="dev-python/sphinx-gallery
+#	dev-python/sphinxcontrib-apidoc
+#	dev-python/pydata-sphinx-theme
+#	dev-python/imageio
+#	dev-python/myst-parser
+#	dev-python/networkx
+#	dev-python/numpydoc
+#	dev-python/pyopengl
+#	dev-python/pytest
+#"
+#DOCS_DIR="doc"
 
 DATA_COM="5a3db8447d3e13ed402545662f20f5ff191a6d42"
 DATA_DATE="20190506"
 DATA_URI="https://github.com/vispy/demo-data/raw/${DATA_COM}"
 
-inherit distutils-r1 pypi virtualx xdg-utils
+inherit distutils-r1 pypi virtualx xdg-utils #docs
 
 DESCRIPTION="Interactive visualization in Python"
 HOMEPAGE="http://vispy.org"
@@ -52,8 +66,7 @@ RDEPEND="${DEPEND}
 	sdl2? ( dev-python/PySDL2[${PYTHON_USEDEP}] )
 	wx? ( dev-python/wxpython[${PYTHON_USEDEP}] )
 "
-BDEPEND="dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
-	>=dev-python/cython-0.29.2[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/cython-0.29.2[${PYTHON_USEDEP}]
 	doc? (
 		media-libs/fontconfig
 		virtual/opengl
@@ -70,9 +83,10 @@ BDEPEND="dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 		virtual/opengl
 	)
 "
+#dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
-# QThread: Destroyed while thread is still running
+# SANDBOX ACCESS DENIED:  open_wr:       /dev/fuse
 distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/sphinxcontrib-apidoc \
 	dev-python/pydata-sphinx-theme \
@@ -84,7 +98,7 @@ distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/pytest
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${PN}-0.12.0-use-local-demo-data.patch ; \
+	use doc && { eapply "${FILESDIR}"/${P}-use-local-demo-data.patch ; \
 		for dat in "${DISTDIR}"/*-d-*; do { cp ${dat} "${S}"/examples/scene/${dat##*-d-} || die ; } ; done ; \
 		cp {"${DISTDIR}"/${PN}-${DATA_DATE}-d-,"${S}"/examples/plotting/}mri.npz || die ; }
 	xdg_environment_reset
@@ -97,6 +111,8 @@ python_compile_all() {
 		cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/visuals/text/*.cpython*so ${PN}/visuals/text || die
 		virtx sphinx_compile_all
 	fi
+#	VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
+#		virtx docs_compile
 }
 
 python_install_all() {
