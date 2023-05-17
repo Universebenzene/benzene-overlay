@@ -177,6 +177,7 @@ dev-python/nbconvert             | 6.4.5            | Depends on old mistune
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/markdown-callouts     | 0.3.0           | mkdocstrings related (should be test depend)
+dev-python/markdown-exec         | 1.6.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-gen-files      | 0.5.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-literate-nav   | 0.6.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-section-index  | 0.3.5           | mkdocstrings related (should be test depend)
