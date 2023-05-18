@@ -3,17 +3,16 @@
 
 EAPI=8
 
+#DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
+PYPI_PN="ATpy"
 PYTHON_COMPAT=( python3_{10..11} )
 PYTHON_REQ_USE="sqlite"
 
-inherit distutils-r1
-
-MY_PN=ATpy
-MY_P="${MY_PN}-${PV}"
+inherit distutils-r1 pypi
 
 DESCRIPTION="Astronomical tables support for Python"
 HOMEPAGE="http://atpy.readthedocs.io"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 RDEPEND=">=dev-python/astropy-0.2[${PYTHON_USEDEP}]
 	hdf5? ( >=dev-python/h5py-1.3[${PYTHON_USEDEP}] )
@@ -36,8 +35,6 @@ IUSE="hdf5 mysql postgres sqlite examples"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 LICENSE="MIT"
-
-S="${WORKDIR}/${MY_P}"
 
 PATCHES=( "${FILESDIR}/${P}-correct-doc-label.patch" )
 
