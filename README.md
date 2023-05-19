@@ -176,6 +176,7 @@ dev-python/nbconvert             | 6.4.5            | Depends on old mistune
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
+dev-python/docstring-parser      | 0.15            | Dependency of pytkdocs
 dev-python/markdown-callouts     | 0.3.0           | mkdocstrings related (should be test depend)
 dev-python/markdown-exec         | 1.6.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-coverage       | 0.2.7           | mkdocstrings related (should be test depend)
