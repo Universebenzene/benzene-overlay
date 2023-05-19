@@ -10,12 +10,18 @@ inherit distutils-r1
 
 DESCRIPTION="The bidirectional mapping library for Python"
 HOMEPAGE="https://bidict.readthedocs.io"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/jab/bidict/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"	# pytest-benchmark no x86
 
-# Pypi package drops docs and tests dir since 0.22.1
-distutils_enable_tests nose
-#distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/furo
+BDEPEND="test? (
+		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/hypothesis[${PYTHON_USEDEP}]
+	)
+"
+
+distutils_enable_tests pytest
+distutils_enable_sphinx docs dev-python/furo
