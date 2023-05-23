@@ -14,7 +14,7 @@ SRC_URI="https://github.com/dfm/corner.py/archive/refs/tags/v${PV}.tar.gz -> ${P
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# arviz zarr no x86
+KEYWORDS="~amd64"	# arviz no x86
 IUSE="arviz"
 RESTRICT="test"	# matplotlib.testing.exceptions.ImageComparisonFailure: images not close
 
