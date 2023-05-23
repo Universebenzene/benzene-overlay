@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
@@ -28,7 +29,7 @@ RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
 	dask? ( >=dev-python/dask-2.0.0[${PYTHON_USEDEP}] )
 	database? ( >=dev-python/sqlalchemy-1.3.4[${PYTHON_USEDEP}] )
 	image? (
-		>=dev-python/scipy-1.3.0[${PYTHON_USEDEP}]
+		>dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
 		>=sci-libs/scikit-image-0.16.0[${PYTHON_USEDEP}]
 	)
 	jpeg2k? (
@@ -39,7 +40,7 @@ RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0.0[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.3.0[${PYTHON_USEDEP}]
+		>dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
 	)
 	net? (
 		>=dev-python/beautifulsoup4-4.8.0[${PYTHON_USEDEP}]
