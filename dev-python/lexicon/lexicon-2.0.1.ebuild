@@ -16,5 +16,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 distutils_enable_tests nose
-# releases requires semantic_version<2.7
+# releases requires semantic-version<2.7
 #distutils_enable_sphinx docs dev-python/releases

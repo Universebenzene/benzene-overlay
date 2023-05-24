@@ -21,5 +21,5 @@ RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests --install pytest
-# require releases, which depends on semantic_version<2.7
+# require releases, which depends on semantic-version<2.7
 #distutils_enable_sphinx docs

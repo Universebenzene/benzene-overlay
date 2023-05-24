@@ -25,7 +25,7 @@ RDEPEND=">=dev-python/numpy-1.10[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-16.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
-	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
+	>=dev-python/semantic-version-2.8[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (

@@ -21,7 +21,7 @@ RESTRICT="!test? ( test )"
 RDEPEND=">=dev-python/numpy-1.10[${PYTHON_USEDEP}]
 	<dev-python/jsonschema-4[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
-	>=dev-python/semantic_version-2.8[${PYTHON_USEDEP}]
+	>=dev-python/semantic-version-2.8[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
