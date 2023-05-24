@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_EXT=1
-DISTUTILS_USE_PEP517=standalone
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
 inherit distutils-r1 optfeature pypi virtualx
@@ -19,7 +19,7 @@ IUSE="doc intersphinx examples"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	sci-libs/fftw:3.0=
 "
 RDEPEND="${DEPEND}"
