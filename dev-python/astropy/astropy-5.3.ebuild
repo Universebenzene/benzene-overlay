@@ -7,27 +7,41 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1 optfeature
+inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Core functionality for performing astrophysics with Python"
 HOMEPAGE="https://astropy.org"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI+=" doc? (
+		http://www.astropy.org/astropy-data/tutorials/FITS-Header/input_file.fits -> ${PN}-eo-input_file.fits
+		http://www.astropy.org/astropy-data/tutorials/FITS-images/HorseHead.fits -> ${PN}-eo-HorseHead.fits
+		http://www.astropy.org/astropy-data/tutorials/FITS-tables/chandra_events.fits -> ${PN}-eo-chandra_events.fits
+		http://www.astropy.org/astropy-data/visualization/reprojected_sdss_g.fits.bz2 -> ${PN}-dv-reprojected_sdss_g.fits.bz2
+		http://www.astropy.org/astropy-data/visualization/reprojected_sdss_r.fits.bz2 -> ${PN}-dv-reprojected_sdss_r.fits.bz2
+		http://www.astropy.org/astropy-data/visualization/reprojected_sdss_i.fits.bz2 -> ${PN}-dv-reprojected_sdss_i.fits.bz2
+		http://www.astropy.org/astropy-data/allsky/allsky_rosat.fits -> ${PN}-dvw-allsky_rosat.fits
+		http://www.astropy.org/astropy-data/galactic_center/gc_bolocam_gps.fits -> ${PN}-dvw-gc_bolocam_gps.fits
+		http://www.astropy.org/astropy-data/galactic_center/gc_msx_e.fits -> ${PN}-dvw-gc_msx_e.fits
+		http://www.astropy.org/astropy-data/l1448/l1448_13co.fits -> ${PN}-dvw-l1448_13co.fits
+		http://www.astropy.org/astropy-data/galactic_center/gc_2mass_k.fits -> ${PN}-dw-gc_2mass_k.fits
+		http://www.astropy.org/astropy-data/timeseries/kplr010666592-2009131110544_slc.fits -> ${PN}-dt-kplr010666592-2009131110544_slc.fits
+	)
+"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples"
+IUSE="doc examples intersphinx"
 PROPERTIES="test_network"
-# Doc build can't start without disabling network-sandbox
 RESTRICT="test
-	doc? ( network-sandbox )"
+	intersphinx? ( network-sandbox )"
+REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-libs/expat-2.2.9:0=
-	>=dev-python/numpy-1.18[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/pyerfa-2.0[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
 	>=sci-astronomy/wcslib-7.12:0=
-	>=sci-libs/cfitsio-4.1.0:0=
+	>=sci-libs/cfitsio-4.2.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
@@ -35,34 +49,37 @@ RDEPEND="${DEPEND}
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
-	>=dev-python/cython-0.29.28[${PYTHON_USEDEP}]
+	>=dev-python/cython-0.29.30[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.6[${PYTHON_USEDEP}]
-		dev-python/sphinx-changelog[${PYTHON_USEDEP}]
-		dev-python/jinja[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/jinja-3.0[${PYTHON_USEDEP}]
+		>dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
 		dev-libs/libxml2
-		dev-python/asdf[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 		dev-python/bleach[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
+		dev-python/fitsio[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
 		>=dev-python/jplephem-2.15[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/objgraph[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/pytest-astropy[${PYTHON_USEDEP}]
+		>=dev-python/pytest-astropy-0.10[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/pyarrow[${PYTHON_USEDEP},parquet,snappy]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/skyfield[${PYTHON_USEDEP}]
+		dev-python/s3fs[${PYTHON_USEDEP}]
 	)
 "
 
@@ -76,17 +93,30 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 
+python_prepare_all() {
+	if use doc && ! use intersphinx; then
+		for eeo in "${DISTDIR}"/*-eo-*; do { cp ${eeo} "${S}"/examples/io/${eeo##*-eo-} || die ; } ; done
+		for ddv in "${DISTDIR}"/*-dv-*; do { cp ${ddv} "${S}"/docs/visualization/${ddv##*-dv-} || die ; } ; done
+		for dvw in "${DISTDIR}"/*-dvw-*; do { cp ${dvw} "${S}"/docs/visualization/wcsaxes/${dvw##*-dvw-} || die ; } ; done
+		for ddw in "${DISTDIR}"/*-dw-*; do { cp ${ddw} "${S}"/docs/wcs/${ddw##*-dw-} || die ; } ; done
+		for ddt in "${DISTDIR}"/*-dt-*; do { cp ${ddt} "${S}"/docs/timeseries/${ddt##*-dt-} || die ; } ; done
+		cp {"${DISTDIR}"/${PN}-eo-,"${S}"/docs/wcs/}HorseHead.fits || die
+		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/convolution/}gc_msx_e.fits || die
+		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/wcs/}l1448_13co.fits || die
+		eapply "${FILESDIR}"/${P}-doc-use-local-data.patch
+	fi
+
+	distutils-r1_python_prepare_all
+}
+
 python_configure_all() {
 	export ASTROPY_USE_SYSTEM_ALL=1
 }
 
 python_compile_all() {
-	# Handler for event 'build-finished' threw an exception (exception: Expecting property name enclosed in double quotes))
 	if use doc; then
-		pushd docs || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake html
-		popd || die
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		cp docs/{_static/*,_build/html/_static} || die
 		cp docs/{_static/*,_build/html/_images} || die
 		HTML_DOCS=( docs/_build/html/. )
@@ -110,7 +140,7 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "power a variety of features in several modules" ">=dev-python/scipy-1.3"
+	optfeature "power a variety of features in several modules" ">=dev-python/scipy-1.5"
 	optfeature "read/write Table objects from/to HDF5 files" dev-python/h5py
 	optfeature "read Table objects from HTML files" dev-python/beautifulsoup4
 	optfeature "read Table objects from HTML files using the pandas reader" dev-python/html5lib
@@ -131,10 +161,13 @@ on arrays with NaN values." dev-python/bottleneck
 	optfeature "downloading files from HTTPS or FTP+TLS sites in case Python is not able to locate up-to-date root CA \
 certificates on your system; this package is usually already included in many Python installations (e.g., as a dependency of \
 the requests package)." dev-python/certifi
+	optfeature "Enables access to subsets of remote FITS files without having to download the entire file" \
+">=dev-python/fsspec-2022.8.2"
+	optfeature "Enables access to files hosted in AWS S3 cloud storage" ">=dev-python/s3fs-2022.8.2"
 	optfeature "testing with Matplotlib figures" dev-python/pytest-mpl
 	optfeature "code coverage measurements" dev-python/coverage
 	optfeature "automate testing and documentation builds" dev-python/tox
 	optfeature "testing Solar System coordinates" dev-python/skyfield
 	optfeature "testing satellite positions" dev-python/sgp4
-	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-5.0.0"
+	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-5.0.0[parquet,snappy]"
 }
