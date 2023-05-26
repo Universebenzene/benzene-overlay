@@ -37,8 +37,8 @@ PATCHES=(
 	"${FILESDIR}/eventlet-0.25.1-tests.patch"
 	"${FILESDIR}/eventlet-0.30.0-tests-socket.patch"
 	"${FILESDIR}/eventlet-0.30.2-test-timeout.patch"
-	"${FILESDIR}/${P}-python310.patch"
-	"${FILESDIR}/${P}-fix-doc-title.patch"
+	"${FILESDIR}/${PN}-0.33.2-python310.patch"
+	"${FILESDIR}/${PN}-0.33.2-fix-doc-title.patch"
 )
 
 distutils_enable_tests nose
