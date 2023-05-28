@@ -318,3 +318,10 @@ multilib_src_install() {
 
 	use split-usr && dosym ../../$(get_libdir)/libsystemd.so.0 /usr/$(get_libdir)/libsystemd.so
 }
+
+pkg_preinst() {
+	if ! use boot && has_version "sys-libs/libsystemd[gnuefi(-)]"; then
+		ewarn "The 'gnuefi' USE flag has been renamed to 'boot'."
+		ewarn "Make sure to enable the 'boot' USE flag if you use systemd-boot."
+	fi
+}
