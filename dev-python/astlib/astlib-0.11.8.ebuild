@@ -9,14 +9,7 @@ PYPI_NO_NORMALIZE=1
 PYPI_PN="astLib"
 PYTHON_COMPAT=( python3_{10..11} )
 
-DOCS_BUILDER="sphinx"
-DOCS_DEPEND="dev-python/sphinx-epytext
-	dev-python/readthedocs-sphinx-ext
-	dev-python/sphinx-rtd-theme
-"
-DOCS_DIR="docs"
-
-inherit distutils-r1 pypi docs
+inherit distutils-r1 pypi
 
 DESCRIPTION="Python astronomy modules for image and coordinate manipulation"
 HOMEPAGE="https://astlib.readthedocs.io"
@@ -40,8 +33,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 PATCHES=( "${FILESDIR}/${P}-system-wcstools.patch" )
 
 distutils_enable_tests nose
-# cannot import name '*' from 'PyWCSTools
-#distutils_enable_sphinx docs dev-python/sphinx-epytext dev-python/readthedocs-sphinx-ext dev-python/sphinx-rtd-theme
+distutils_enable_sphinx docs dev-python/sphinx-epytext dev-python/readthedocs-sphinx-ext dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
 	use doc && { mkdir -p docs/_static || die ; }
@@ -49,11 +41,12 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
-#python_compile_all() {
-#	use doc && { cp "${BUILD_DIR}"/lib/PyWCSTools/*.cpython*so "${S}/PyWCSTools" || die ; }
-#
-#	sphinx_compile_all
-#}
+python_compile_all() {
+#	cannot import name '*' from 'PyWCSTools
+	use doc && [[ -d PyWCSTools ]] && { mv {,_}PyWCSTools || die ; }
+	sphinx_compile_all
+	[[ -d _PyWCSTools ]] && { mv {_,}PyWCSTools || die ; }
+}
 
 python_install_all() {
 	dodoc CHANGE_LOG
