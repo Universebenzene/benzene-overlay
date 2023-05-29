@@ -119,7 +119,7 @@ dev-python/pytest-golden         | 0.2.2                                        
 dev-python/pytest-repeat         | 0.9.1                                             | Test dependency for new zict
 dev-python/python-socketio       | 5.8.0                                             | Optional for yt
 dev-python/python-xz             | 0.5.0                                             | Optional for yt
-dev-python/rasterio              | 1.3.6                                             | Optional for photutils. Dependencies are not all listed in the table
+dev-python/rasterio              | 1.3.7                                             | Optional for photutils. Dependencies are not all listed in the table
 dev-python/ratarmount            | 0.13.0                                            | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
 dev-python/s3fs                  | 2023.5.0                                          | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks              | 0.3.0                                             | Optional for aioftp

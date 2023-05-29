@@ -42,6 +42,7 @@ BDEPEND=">=dev-python/cython-0.29.29[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		sci-libs/gdal:=[aux-xml(+),jpeg,netcdf,png,threads(+)]
+		sci-libs/hdf5
 	)
 "
 
@@ -49,7 +50,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-add-import-to-confpy.patch ; \
+	use doc && { eapply "${FILESDIR}"/${PN}-1.3.6-add-import-to-confpy.patch ; \
 #		sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ; \
 	}
 
