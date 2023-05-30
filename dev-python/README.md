@@ -43,7 +43,7 @@ dev-python/mpl-animator        | 1.1.0                                |
 dev-python/mpl-scatter-density | 0.7                                  | Glueviz releated.
 dev-python/naima               | 0.10.0                               |
 dev-python/ndcube              | 2.1.1                                | SunPy releated. Dependency of specutils.
-dev-python/photutils           | 1.7.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
+dev-python/photutils           | 1.8.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pvextractor         | 0.3                                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pyavm               | 0.9.5                                |
 dev-python/pyerfa              | 1.7.2; 2.0.0.3                       | Fixed test phase. One of the deps of `astropy`. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.

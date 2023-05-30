@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
@@ -37,17 +38,17 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )
 	doc? ( local-datasets )"
 
-DEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	all? (
 		dev-python/bottleneck[${PYTHON_USEDEP}]
-		>=dev-python/gwcs-0.16[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
+		>=dev-python/gwcs-0.18[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.6.0[${PYTHON_USEDEP}]
-		>=sci-libs/scikit-image-0.18.0[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.7.0[${PYTHON_USEDEP}]
+		>=sci-libs/scikit-image-0.19.0[${PYTHON_USEDEP}]
 		>=sci-libs/scikit-learn-1.0[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
