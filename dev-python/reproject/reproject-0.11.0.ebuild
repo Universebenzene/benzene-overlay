@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
@@ -35,11 +36,15 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-healpix-0.6[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
+	dev-python/cloudpickle[${PYTHON_USEDEP}]
+	>=dev-python/dask-2020[${PYTHON_USEDEP}]
+	dev-python/fsspec[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.5[${PYTHON_USEDEP}]
+	dev-python/zarr[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
@@ -53,6 +58,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/pytest-arraydiff[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/sunpy[${PYTHON_USEDEP}]
@@ -79,7 +85,7 @@ python_compile_all() {
 }
 
 python_test() {
-	epytest "${BUILD_DIR}"
+	epytest "${BUILD_DIR}" --remote-data
 }
 
 pkg_postinst() {
