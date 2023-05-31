@@ -7,24 +7,11 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
-#DOCS_BUILDER="sphinx"
-#DOCS_DEPEND="dev-python/sphinx-gallery
-#	dev-python/sphinxcontrib-apidoc
-#	dev-python/pydata-sphinx-theme
-#	dev-python/imageio
-#	dev-python/myst-parser
-#	dev-python/networkx
-#	dev-python/numpydoc
-#	dev-python/pyopengl
-#	dev-python/pytest
-#"
-#DOCS_DIR="doc"
-
 DATA_COM="5a3db8447d3e13ed402545662f20f5ff191a6d42"
 DATA_DATE="20190506"
 DATA_URI="https://github.com/vispy/demo-data/raw/${DATA_COM}"
 
-inherit distutils-r1 pypi virtualx xdg-utils #docs
+inherit distutils-r1 pypi virtualx xdg-utils
 
 DESCRIPTION="Interactive visualization in Python"
 HOMEPAGE="http://vispy.org"
@@ -108,11 +95,10 @@ python_prepare_all() {
 
 python_compile_all() {
 	if use doc; then
-		cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/visuals/text/*.cpython*so ${PN}/visuals/text || die
+		use doc && [[ -d ${PN} ]] && { mv {,_}${PN} || die ; }
 		virtx sphinx_compile_all
+		[[ -d _${PN} ]] && { mv {_,}${PN} || die ; }
 	fi
-#	VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-#		virtx docs_compile
 }
 
 python_install_all() {
