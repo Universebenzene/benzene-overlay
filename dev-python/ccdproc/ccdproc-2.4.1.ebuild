@@ -18,8 +18,8 @@ REQUIRED_USE="intersphinx? ( doc )"
 LICENSE="BSD"
 SLOT="0"
 
-RDEPEND=">=dev-python/numpy-1.18[${PYTHON_USEDEP}]
-	>=dev-python/astropy-4.3[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.0.1[${PYTHON_USEDEP}]
 	sci-libs/scikit-image[${PYTHON_USEDEP}]
 	>=dev-python/astroscrappy-1.0.8[${PYTHON_USEDEP}]
 	>=dev-python/reproject-0.7[${PYTHON_USEDEP}]
@@ -31,7 +31,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/memory_profiler[${PYTHON_USEDEP}]
 	)
@@ -41,7 +40,7 @@ distutils_enable_tests pytest
 #distutils_enable_sphinx docs --no-autodoc
 
 python_prepare_all() {
-	use doc && eapply "${FILESDIR}"/${P}-fix-underline-length.patch
+	use doc && eapply "${FILESDIR}"/${PN}-2.4.0-fix-underline-length.patch
 
 	distutils-r1_python_prepare_all
 }
