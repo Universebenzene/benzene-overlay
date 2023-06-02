@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYTHON_COMPAT=( python3_{10..11} )
 
@@ -43,7 +44,7 @@ python_prepare_all() {
 		sed -e 's/if has_openmp/if False/' \
 			-i astroscrappy/utils/setup_package.py || die
 	fi
-	export mydistutilsargs=( --offline )
+	export DISTUTILS_ARGS=( --offline )
 	distutils-r1_python_prepare_all
 }
 
