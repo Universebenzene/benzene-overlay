@@ -8,8 +8,8 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.8:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/5a910969828531efb24add85626e2372/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
-	arm64? ( https://updatecdn.meeting.qq.com/cos/985de8a45fa77fd55eaaa0999ebffb74/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
+SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/72158c3abd95460ff9e7ae59fb4041cf/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
+	arm64? ( https://updatecdn.meeting.qq.com/cos/61b7b8d633563be3346377b3d86f00f5/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
