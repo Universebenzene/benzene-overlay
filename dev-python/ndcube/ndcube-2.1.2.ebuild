@@ -35,6 +35,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/sunpy[${PYTHON_USEDEP}]
+		dev-python/sunpy-sphinx-theme[${PYTHON_USEDEP}]
 	)
 "
 
