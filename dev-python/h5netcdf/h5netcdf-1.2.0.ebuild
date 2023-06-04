@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-python/h5py[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-7.0[${PYTHON_USEDEP}]
 	test? (
 		dev-python/netcdf4[${PYTHON_USEDEP}]
 		dev-python/h5pyd[${PYTHON_USEDEP}]
@@ -28,8 +28,3 @@ BDEPEND="dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-book-theme
-
-python_prepare_all() {
-	use doc && { sed -i -e "/GH/s/GH/GH\%s/" -e "/PR/s/PR/PR\%s/" doc/conf.py || die ; }
-	distutils-r1_python_prepare_all
-}
