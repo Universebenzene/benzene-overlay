@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		MkDocs plugin for displaying a list of GitHub (.com or Enterprise)
+		contributors on each page. Encourages contributions to the documentation!
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">mkdocs-git-committers-plugin-2</remote-id>
+		<remote-id type="github">ojacques/mkdocs-git-committers-plugin-2</remote-id>
+	</upstream>
+</pkgmetadata>
