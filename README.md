@@ -144,7 +144,7 @@ dev-python/jupytext              | 1.14.6           | Build with wheel source to
 dev-python/myst-nb               | 0.17.2           |
 dev-python/myst-parser           | 0.18.1-r1        | Only for myst-nb that depends on old version
 dev-python/runnotebook           | 0.3.1; (live)    |
-dev-python/sphinx-astropy        | 1.6.0; 1.8.0     | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
+dev-python/sphinx-astropy        | 1.6.0; 1.9.1     | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
 dev-python/sphinx-asdf           | 0.1.3; 0.1.4     |
 dev-python/sphinx-autobuild      | 2022.3.14        |
 dev-python/sphinx-book-theme     | 0.2.0; 1.0.1     | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.

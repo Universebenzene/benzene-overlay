@@ -13,4 +13,7 @@
 		<remote-id type="pypi">sphinx-astropy</remote-id>
 		<remote-id type="github">astropy/sphinx-astropy</remote-id>
 	</upstream>
+	<use>
+		<flag name="confv2">To use the new pydata-sphinx-theme with sphinx_astropy.conf.v2</flag>
+	</use>
 </pkgmetadata>
