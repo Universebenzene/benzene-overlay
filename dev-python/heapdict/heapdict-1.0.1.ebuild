@@ -4,16 +4,14 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
+PYPI_PN="HeapDict"
 PYTHON_COMPAT=( python3_{10..11} )
 
-MY_PN=HeapDict
-MY_P=${MY_PN}-${PV}
-
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Heap with decrease-key and increase-key operations"
 HOMEPAGE="http://stutzbachenterprises.com"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -21,8 +19,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-S="${WORKDIR}/${MY_P}"
-
 python_test() {
-	${EPYTHON} test_heap.py || die
+	${EPYTHON} test_heap.py || die "Tests failed with ${EPYTHON}"
 }
