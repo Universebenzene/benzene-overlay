@@ -94,5 +94,6 @@ python_test() {
 }
 
 pkg_postinst() {
+	optfeature "CDF Astropy Epochs" dev-python/astropy
 	optfeature "working with XArray" dev-python/xarray
 }
