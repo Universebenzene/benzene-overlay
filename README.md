@@ -140,7 +140,7 @@ Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/ablog                 | 0.11.4\_p1       |
 dev-python/jupyter-cache         | 0.6.1            |
-dev-python/jupyter\_sphinx       | 0.4.0            |
+dev-python/jupyter-sphinx        | 0.4.0            |
 dev-python/jupytext              | 1.14.6           | Build with wheel source to include Jupyter Lab Extenstion
 dev-python/myst-nb               | 0.17.2           |
 dev-python/myst-parser           | 0.18.1-r1        | Only for myst-nb that depends on old version

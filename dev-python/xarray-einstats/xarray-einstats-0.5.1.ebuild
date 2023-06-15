@@ -33,7 +33,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx-copybutton \
 	dev-python/sphinx-design \
 	dev-python/furo \
-	dev-python/jupyter_sphinx \
+	dev-python/jupyter-sphinx \
 	dev-python/myst-nb \
 	dev-python/numpydoc \
 	dev-python/einops \

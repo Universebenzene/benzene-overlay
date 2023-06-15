@@ -3,3 +3,4 @@ move dev-python/abg_python dev-python/abg-python
 move dev-python/asdf_transform_schemas dev-python/asdf-transform-schemas
 move dev-python/asdf_unit_schemas dev-python/asdf-unit-schemas
 move dev-python/asdf_wcs_schemas dev-python/asdf-wcs-schemas
+move dev-python/jupyter_sphinx dev-python/jupyter-sphinx
