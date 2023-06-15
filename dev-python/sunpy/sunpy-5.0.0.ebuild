@@ -18,26 +18,26 @@ KEYWORDS="~amd64 ~x86"
 IUSE="asdf dask database examples image jpeg2k map net timeseries visualization"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.17.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-5.0.1[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
-	>=dev-python/parfive-1.2.0[${PYTHON_USEDEP},ftp]
+	>=dev-python/parfive-2.0.0[${PYTHON_USEDEP},ftp]
 	asdf? (
 		>=dev-python/asdf-2.8.0[${PYTHON_USEDEP}]
 		>=dev-python/asdf-astropy-0.1.1[${PYTHON_USEDEP}]
 	)
-	dask? ( >=dev-python/dask-2.0.0[${PYTHON_USEDEP}] )
+	dask? ( >=dev-python/dask-2021.4.0[${PYTHON_USEDEP}] )
 	database? ( >=dev-python/sqlalchemy-1.3.4[${PYTHON_USEDEP}] )
 	image? (
 		>dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
-		>=sci-libs/scikit-image-0.16.0[${PYTHON_USEDEP}]
+		>=sci-libs/scikit-image-0.18.0[${PYTHON_USEDEP}]
 	)
 	jpeg2k? (
 		>dev-python/glymur-0.9.5[${PYTHON_USEDEP}]
 		>=dev-python/lxml-4.8.0[${PYTHON_USEDEP}]
 	)
 	map? (
-		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0.0[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
 		>dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
@@ -51,13 +51,13 @@ RDEPEND=">=dev-python/astropy-4.2.1[${PYTHON_USEDEP}]
 	)
 	timeseries? (
 		>dev-python/cdflib-0.4.0[${PYTHON_USEDEP}]
-		>=dev-python/h5netcdf-0.8.1[${PYTHON_USEDEP}]
+		>=dev-python/h5netcdf-0.11[${PYTHON_USEDEP}]
 		>=dev-python/h5py-3.1.0[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
-		>=dev-python/pandas-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
+		>=dev-python/pandas-1.2.0[${PYTHON_USEDEP}]
 	)
 	visualization? (
-		>=dev-python/matplotlib-3.3.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0.0[${PYTHON_USEDEP}]
 	)
 "
