@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Simple wrapper for Youdao online translate (Chinese - English) service API,
+		as an alternative to the StarDict Console Version(sdcv).
+		This is a GO portation from the original ydcv in python
+	</longdescription>
+	<upstream>
+		<remote-id type="github">boypt/ydgo</remote-id>
+	</upstream>
+</pkgmetadata>
