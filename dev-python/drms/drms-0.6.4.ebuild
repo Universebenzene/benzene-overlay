@@ -33,16 +33,14 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs \
-	dev-python/sphinx-automodapi \
+distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinx-changelog \
 	dev-python/sphinx-gallery \
 	dev-python/sunpy-sphinx-theme \
 	dev-python/astropy
 
 python_prepare_all() {
-	sed -i "/20201101/s/20201101/$(date -d yesterday +%Y%m%d)/" examples/export_from_id.py || die
-	mkdir -p changelog || die
+	sed -i "/20201101/s/20201101/$(date -d yesterday +%Y%m%d)/" examples/skip_export_from_id.py || die
 
 	distutils-r1_python_prepare_all
 }
@@ -58,5 +56,5 @@ python_install_all() {
 }
 
 python_test() {
-	JSOC_EMAIL="jsoc@sunpy.org" epytest --email "jsoc@sunpy.org"
+	JSOC_EMAIL="jsoc@sunpy.org" epytest #--email "jsoc@sunpy.org"
 }
