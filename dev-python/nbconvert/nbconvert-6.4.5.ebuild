@@ -6,11 +6,10 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Converting Jupyter Notebooks"
 HOMEPAGE="https://nbconvert.readthedocs.io/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -22,8 +21,8 @@ RDEPEND="
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 	>=dev-python/entrypoints-0.2.2[${PYTHON_USEDEP}]
 	dev-python/jinja[${PYTHON_USEDEP}]
-	dev-python/jupyter_core[${PYTHON_USEDEP}]
-	dev-python/jupyterlab_pygments[${PYTHON_USEDEP}]
+	dev-python/jupyter-core[${PYTHON_USEDEP}]
+	dev-python/jupyterlab-pygments[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]
 	>=dev-python/mistune-0.8.1[${PYTHON_USEDEP}]
 	<dev-python/mistune-2[${PYTHON_USEDEP}]
@@ -40,7 +39,7 @@ BDEPEND="
 		dev-python/pebble[${PYTHON_USEDEP}]
 		dev-python/ipykernel[${PYTHON_USEDEP}]
 		dev-python/ipywidgets[${PYTHON_USEDEP}]
-		>=dev-python/jupyter_client-4.2[${PYTHON_USEDEP}]
+		>=dev-python/jupyter-client-4.2[${PYTHON_USEDEP}]
 	)
 "
 
