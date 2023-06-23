@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
@@ -42,9 +43,10 @@ python_prepare_all() {
 }
 
 python_compile_all() {
-	use doc && { cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/*.cpython*so "${S}/${PN}" || die ; }
-
+#	ModuleNotFoundError: No module named 'numcodecs._shuffle'
+	use doc && [[ -d ${PN} ]] && { mv {,_}${PN} || die ; }
 	sphinx_compile_all
+	[[ -d _${PN} ]] && { mv {_,}${PN} || die ; }
 }
 
 python_install_all() {
