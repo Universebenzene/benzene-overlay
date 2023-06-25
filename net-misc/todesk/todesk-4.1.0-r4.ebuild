@@ -42,10 +42,12 @@ src_install() {
 	doexe usr/local/bin/${PN}
 
 	exeinto /opt/${PN}/bin
-	use keep-server && dosym -r /usr/bin/sleep /opt/${PN}/bin/${PN}-hold
+	use keep-server && { dosym -r /usr/bin/sleep /opt/${PN}/bin/${PN}-hold ; \
+		doexe "${FILESDIR}"/{*-systemd,systemd-${PN}d} ; }
 
 	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-alone.initd" "${PN}d.initd") ${PN}d
-	systemd_dounit etc/systemd/system/${PN}d.service
+	use keep-server && systemd_newunit "${FILESDIR}"/${PN}d-keep.service ${PN}d.service || \
+		systemd_dounit etc/systemd/system/${PN}d.service
 
 	for si in 16 24 32 48 64 128 256 512; do
 		doicon -s ${si} usr/share/icons/hicolor/${si}x${si}/apps/${PN}.png
