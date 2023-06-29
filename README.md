@@ -126,7 +126,7 @@ dev-python/ratarmount            | 0.13.0                                       
 dev-python/s3fs                  | 2023.5.0; 2023.6.0                                | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks              | 0.3.0                                             | Optional for aioftp
 dev-python/colorspacious         | 1.1.2                                             | Pulled in by cmyt. Dropped by official portage
-dev-python/cmyt                  | 1.2.1                                             | Pulled in by yt
+dev-python/cmyt                  | 1.3.0                                             | Pulled in by yt
 dev-python/unyt                  | 2.9.5                                             | Pulled in by yt
 dev-python/zict                  | 2.2.0; 3.0.0                                      | Pulled in by distributed
 
