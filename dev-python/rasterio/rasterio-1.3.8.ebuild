@@ -59,9 +59,9 @@ python_prepare_all() {
 
 python_compile_all() {
 	# No module named 'rasterio._version'
-	use doc && [[ -d ${PN} ]] && { mv ${PN} _${PN} || die ; }
+	use doc && [[ -d ${PN} ]] && { mv {,_}${PN} || die ; }
 	sphinx_compile_all
-	[[ -d _${PN} ]] && { mv _${PN} ${PN} || die ; }
+	[[ -d _${PN} ]] && { mv {_,}${PN} || die ; }
 }
 
 python_install_all() {
@@ -76,7 +76,7 @@ python_install_all() {
 
 python_test() {
 	# No module named 'rasterio._version'
-	[[ -d ${PN} ]] && { mv ${PN} _${PN} || die ; }
+	[[ -d ${PN} ]] && { mv {,_}${PN} || die ; }
 	epytest
-	[[ -d _${PN} ]] && { mv _${PN} ${PN} || die ; }
+	[[ -d _${PN} ]] && { mv {_,}${PN} || die ; }
 }
