@@ -1,0 +1,10 @@
+--- a/tests/test_basic_s3.py	2023-06-18 13:13:43.513908760 +0800
++++ b/tests/test_basic_s3.py	2023-06-18 13:13:46.077250097 +0800
+@@ -634,6 +634,7 @@
+         'ResponseMetadata',
+         'ContentLength',
+         'VersionId',
++        'AcceptRanges',
+     }
+ 
+ 
