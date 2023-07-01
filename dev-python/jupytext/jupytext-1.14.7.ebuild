@@ -18,7 +18,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="<dev-python/markdown-it-py-3.0.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}]
 	dev-python/mdit-py-plugins[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
@@ -32,6 +32,7 @@ BDEPEND="test? (
 		dev-python/GitPython[${PYTHON_USEDEP}]
 		dev-python/isort[${PYTHON_USEDEP}]
 		dev-python/myst-parser[${PYTHON_USEDEP}]
+		dev-python/nbconvert[${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]
 		dev-python/sphinx-gallery[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit
