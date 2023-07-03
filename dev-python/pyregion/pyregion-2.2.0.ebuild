@@ -3,6 +3,7 @@
 
 EAPI=8
 
+DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
@@ -30,9 +31,10 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/sphinx-rtd-theme dev-python/matplotlib
 
 python_compile_all() {
-	use doc && { cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/*.cpython*so ${PN} || die ; }
-
+#	ModuleNotFoundError: No module named 'pyregion._region_filter'
+	use doc && [[ -d ${PN} ]] && { mv {,_}${PN} || die ; }
 	sphinx_compile_all
+	[[ -d _${PN} ]] && { mv {_,}${PN} || die ; }
 }
 
 python_install_all() {
