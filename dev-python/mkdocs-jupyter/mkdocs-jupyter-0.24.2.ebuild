@@ -15,7 +15,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">dev-python/jupytext-1.13.8[${PYTHON_USEDEP}]
+RDEPEND=">dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
+	>dev-python/jupytext-1.13.8[${PYTHON_USEDEP}]
 	>dev-python/mkdocs-material-9.0.0[${PYTHON_USEDEP}]
 	>=dev-python/nbconvert-7.2.9[${PYTHON_USEDEP}]
 	>dev-python/pygments-2.12.0[${PYTHON_USEDEP}]
