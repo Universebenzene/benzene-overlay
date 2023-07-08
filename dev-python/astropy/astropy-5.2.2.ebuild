@@ -7,23 +7,25 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
+DATA_URI="http://www.astropy.org/astropy-data"
+
 inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Core functionality for performing astrophysics with Python"
 HOMEPAGE="https://astropy.org"
 SRC_URI+=" doc? (
-		http://www.astropy.org/astropy-data/tutorials/FITS-Header/input_file.fits -> ${PN}-eo-input_file.fits
-		http://www.astropy.org/astropy-data/tutorials/FITS-images/HorseHead.fits -> ${PN}-eo-HorseHead.fits
-		http://www.astropy.org/astropy-data/tutorials/FITS-tables/chandra_events.fits -> ${PN}-eo-chandra_events.fits
-		http://www.astropy.org/astropy-data/visualization/reprojected_sdss_g.fits.bz2 -> ${PN}-dv-reprojected_sdss_g.fits.bz2
-		http://www.astropy.org/astropy-data/visualization/reprojected_sdss_r.fits.bz2 -> ${PN}-dv-reprojected_sdss_r.fits.bz2
-		http://www.astropy.org/astropy-data/visualization/reprojected_sdss_i.fits.bz2 -> ${PN}-dv-reprojected_sdss_i.fits.bz2
-		http://www.astropy.org/astropy-data/allsky/allsky_rosat.fits -> ${PN}-dvw-allsky_rosat.fits
-		http://www.astropy.org/astropy-data/galactic_center/gc_bolocam_gps.fits -> ${PN}-dvw-gc_bolocam_gps.fits
-		http://www.astropy.org/astropy-data/galactic_center/gc_msx_e.fits -> ${PN}-dvw-gc_msx_e.fits
-		http://www.astropy.org/astropy-data/l1448/l1448_13co.fits -> ${PN}-dvw-l1448_13co.fits
-		http://www.astropy.org/astropy-data/galactic_center/gc_2mass_k.fits -> ${PN}-dw-gc_2mass_k.fits
-		http://www.astropy.org/astropy-data/timeseries/kplr010666592-2009131110544_slc.fits -> ${PN}-dt-kplr010666592-2009131110544_slc.fits
+		${DATA_URI}/tutorials/FITS-Header/input_file.fits -> ${PN}-eo-input_file.fits
+		${DATA_URI}/tutorials/FITS-images/HorseHead.fits -> ${PN}-eo-HorseHead.fits
+		${DATA_URI}/tutorials/FITS-tables/chandra_events.fits -> ${PN}-eo-chandra_events.fits
+		${DATA_URI}/visualization/reprojected_sdss_g.fits.bz2 -> ${PN}-dv-reprojected_sdss_g.fits.bz2
+		${DATA_URI}/visualization/reprojected_sdss_r.fits.bz2 -> ${PN}-dv-reprojected_sdss_r.fits.bz2
+		${DATA_URI}/visualization/reprojected_sdss_i.fits.bz2 -> ${PN}-dv-reprojected_sdss_i.fits.bz2
+		${DATA_URI}/allsky/allsky_rosat.fits -> ${PN}-dvw-allsky_rosat.fits
+		${DATA_URI}/galactic_center/gc_bolocam_gps.fits -> ${PN}-dvw-gc_bolocam_gps.fits
+		${DATA_URI}/galactic_center/gc_msx_e.fits -> ${PN}-dvw-gc_msx_e.fits
+		${DATA_URI}/l1448/l1448_13co.fits -> ${PN}-dvw-l1448_13co.fits
+		${DATA_URI}/galactic_center/gc_2mass_k.fits -> ${PN}-dw-gc_2mass_k.fits
+		${DATA_URI}/timeseries/kplr010666592-2009131110544_slc.fits -> ${PN}-dt-kplr010666592-2009131110544_slc.fits
 	)
 "
 
