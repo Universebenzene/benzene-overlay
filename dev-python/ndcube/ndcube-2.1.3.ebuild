@@ -47,15 +47,11 @@ distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sunpy-sphinx-theme \
 	dev-python/mpl-animators \
 	">=dev-python/pytest-doctestplus-0.9.0" \
-	dev-python/sunpy \
-	dev-python/towncrier
+	dev-python/sunpy
 
 python_prepare_all() {
 	use doc && { eapply "${FILESDIR}"/${PN}-2.1.0-doc-use-local-fits.patch ; \
 		cp "${DISTDIR}"/*.fits* examples || die ; mkdir -p changelog || die ; }
-#	use test && { sed -i -e '/ignore:distutils/a \	ignore:"order" was deprecated in version 0.9' \
-#		-e "/ignore:distutils/a \	ignore:The default kernel will change from 'Hann' to  'Gaussian'" \
-#		-e "/ignore:distutils/a \	ignore:The default boundary mode will change from 'ignore' to  'strict'" setup.cfg || die ; }
 
 	distutils-r1_python_prepare_all
 }
