@@ -43,7 +43,7 @@ EPYTEST_IGNORE=(
 	# test_lambda uses moto.awslambda, which requires a running Docker service
 	# See: https://github.com/spulec/moto/issues/3276
 	# test_version checks lower and upper bounds for dependencies in setup.py,
-	# and they are patched away in prepare()
+	# and they are patched away
 	tests/test_patches.py
 	tests/test_lambda.py
 	tests/test_version.py
@@ -53,9 +53,7 @@ python_prepare_all() {
 	use doc && { eapply "${FILESDIR}"/${PN}-2.5.0-fix-doc-title-underline.patch; mkdir -p docs/_static || die ; \
 #		sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ; \
 	}
-	use test && { echo asyncio_mode = auto >> pytest.ini || die ; \
-#		eapply "${FILESDIR}"/${PN}-2.5.0-moto-4.1.7.diff ; \
-	}
+	use test && { echo asyncio_mode = auto >> pytest.ini || die ; eapply "${FILESDIR}"/${PN}-2.5.0-moto-4.1.7.diff ; }
 
 	distutils-r1_python_prepare_all
 }
