@@ -4,16 +4,12 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
-MY_PN=${PN/-/_}
-MY_P=${MY_PN}-${PV}
-
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Pytest Plugin to disable socket calls during tests"
 HOMEPAGE="https://github.com/miketheman/pytest-socket"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -29,8 +25,6 @@ BDEPEND="test? (
 		dev-python/starlette[${PYTHON_USEDEP}]
 	)
 "
-
-S="${WORKDIR}/${MY_P}"
 
 distutils_enable_tests pytest
 
