@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="einops numba"
 
-RDEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.6[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.7[${PYTHON_USEDEP}]
 	>=dev-python/xarray-2022.09.0[${PYTHON_USEDEP}]
 	einops? ( dev-python/einops[${PYTHON_USEDEP}] )
 	numba? ( >=dev-python/numba-0.55[${PYTHON_USEDEP}] )
@@ -32,6 +32,7 @@ BDEPEND="test? (
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx-copybutton \
 	dev-python/sphinx-design \
+	dev-python/sphinx-togglebutton \
 	dev-python/furo \
 	dev-python/jupyter-sphinx \
 	dev-python/myst-nb \
