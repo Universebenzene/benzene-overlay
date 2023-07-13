@@ -12,7 +12,7 @@ inherit distutils-r1 virtualx pypi
 DESCRIPTION="Matplotlib helpers to make density scatter plots"
 HOMEPAGE="https://github.com/astrofrog/mpl-scatter-density"
 
-LICENSE="MIT"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"

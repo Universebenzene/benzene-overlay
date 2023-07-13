@@ -13,7 +13,7 @@ inherit distutils-r1 pypi
 DESCRIPTION="Fast 1D and 2D histogram functions in Python"
 HOMEPAGE="https://github.com/astrofrog/fast-histogram"
 
-LICENSE="MIT"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
