@@ -47,8 +47,8 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
-	use doc && { for dst in "${DISTDIR}"/*-d-*; do { cp ${dst} "${S}"/docs/source/whatsnew/${dst##*-d-} || die ; } ; done ; \
-		mkdir docs/source/_static || die ; }
+	use doc && { mkdir docs/source/_static || die ; \
+		for dst in "${DISTDIR}"/*-d-*; do { cp ${dst} "${S}"/docs/source/whatsnew/${dst##*-d-} || die ; } ; done ; }
 	use test && { for tdata in "${DISTDIR}"/*-t-*; do { cp ${tdata} "${S}"/tests/data/${tdata##*-t-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
 }
