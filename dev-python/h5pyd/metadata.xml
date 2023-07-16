@@ -9,4 +9,10 @@
 		<remote-id type="pypi">h5pyd</remote-id>
 		<remote-id type="github">HDFGroup/h5pyd</remote-id>
 	</upstream>
+	<use>
+		<flag name="aws">Extra aws support via <pkg>dev-python/s3fs</pkg></flag>
+		<flag name="azure">Extra azure support</flag>
+		<flag name="google">Extra google support</flag>
+		<flag name="hdf5">Extra hdf5 support via <pkg>dev-python/h5py</pkg></flag>
+	</use>
 </pkgmetadata>
