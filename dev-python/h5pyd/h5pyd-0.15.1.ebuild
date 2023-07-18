@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{10..11} )
 
 H5PY_EXPV="3.9.0"
 H5PY_EXP_URI="https://raw.githubusercontent.com/h5py/h5py/${H5PY_EXPV}/examples"
-COMMIT="1b7e1f128ba6b9a0f64aff4c2ef70b9e35a273c8"
+COMMIT="ca1f8aeac9db5423b602da4f28169928c35f2831"
 
 inherit distutils-r1
 
