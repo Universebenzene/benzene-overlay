@@ -22,12 +22,12 @@ else
 	MY_P=${MY_PN}-${MY_PV}
 	S=${WORKDIR}/${MY_P}
 	SRC_URI="https://github.com/systemd/${MY_PN}/archive/v${MY_PV}/${MY_P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
+	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 fi
 
 inherit bash-completion-r1 linux-info meson-multilib ninja-utils pam
 
-inherit python-any-r1 toolchain-funcs #systemd udev usr-ldscript
+inherit python-single-r1 toolchain-funcs #systemd udev usr-ldscript
 
 DESCRIPTION="A standalone package to provide libsystemd.so without systemd"
 HOMEPAGE="http://systemd.io/"
@@ -42,6 +42,7 @@ IUSE="
 "
 
 REQUIRED_USE="
+	${PYTHON_REQUIRED_USE}
 	dns-over-tls? ( || ( gnutls openssl ) )
 	fido2? ( cryptsetup openssl )
 	homed? ( cryptsetup pam openssl )
@@ -93,8 +94,14 @@ DEPEND="${COMMON_DEPEND}
 	>=sys-kernel/linux-headers-${MINKV}
 "
 
+PEFILE_DEPEND='dev-python/pefile[${PYTHON_USEDEP}]'
+
 # baselayout-2.2 has /run
 RDEPEND="${COMMON_DEPEND}
+	boot? (
+		${PYTHON_DEPS}
+		$(python_gen_cond_dep "${PEFILE_DEPEND}")
+	)
 	!sys-apps/systemd
 "
 
@@ -114,18 +121,16 @@ BDEPEND="
 	app-text/docbook-xml-dtd:4.5
 	app-text/docbook-xsl-stylesheets
 	dev-libs/libxslt:0
-	$(python_gen_any_dep 'dev-python/jinja[${PYTHON_USEDEP}]')
-	$(python_gen_any_dep 'dev-python/lxml[${PYTHON_USEDEP}]')
-	boot? ( $(python_gen_any_dep 'dev-python/pyelftools[${PYTHON_USEDEP}]') )
+	${PYTHON_DEPS}
+	$(python_gen_cond_dep "
+		dev-python/jinja[\${PYTHON_USEDEP}]
+		dev-python/lxml[\${PYTHON_USEDEP}]
+		boot? (
+			dev-python/pyelftools[\${PYTHON_USEDEP}]
+			test? ( ${PEFILE_DEPEND} )
+		)
+	")
 "
-
-python_check_deps() {
-	python_has_version "dev-python/jinja[${PYTHON_USEDEP}]" || return
-	python_has_version "dev-python/lxml[${PYTHON_USEDEP}]" || return
-	if use boot; then
-		python_has_version "dev-python/pyelftools[${PYTHON_USEDEP}]" || return
-	fi
-}
 
 QA_FLAGS_IGNORED="usr/lib/systemd/boot/efi/.*"
 QA_EXECSTACK="usr/lib/systemd/boot/efi/*"
