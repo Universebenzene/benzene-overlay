@@ -25,9 +25,9 @@ else
 	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 fi
 
-inherit bash-completion-r1 linux-info meson-multilib ninja-utils pam
+inherit bash-completion-r1 linux-info meson-multilib ninja-utils pam python-single-r1
 
-inherit python-single-r1 toolchain-funcs #systemd udev usr-ldscript
+inherit secureboot toolchain-funcs #systemd udev usr-ldscript
 
 DESCRIPTION="A standalone package to provide libsystemd.so without systemd"
 HOMEPAGE="http://systemd.io/"
@@ -185,7 +185,7 @@ pkg_pretend() {
 }
 
 pkg_setup() {
-	:
+	use gnuefi && secureboot_pkg_setup
 }
 
 src_unpack() {
