@@ -1,0 +1,12 @@
+diff --color -ura a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2023-01-22 00:54:12.784215463 +0800
++++ b/CMakeLists.txt	2023-01-22 00:56:49.968087108 +0800
+@@ -1047,6 +1047,8 @@
+ 
+ add_subdirectory(src)
+ 
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl, --export-dynamic")
++
+ if(NOT PYTHON_MODULE)
+     add_subdirectory(testsuite)
+ endif(NOT PYTHON_MODULE)

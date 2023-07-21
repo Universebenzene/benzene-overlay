@@ -1,0 +1,16 @@
+diff --color -ura a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2023-01-22 01:13:02.710126669 +0800
++++ b/CMakeLists.txt	2023-01-22 01:15:00.445537567 +0800
+@@ -1190,6 +1190,12 @@
+ message("GDLDEV mode: ${GDLDEV} (use -DGDLDEV=ON to enable work-in-progress tests)")
+ message("")
+ 
++set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl, -export-dynamic")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl, -export-dynamic")
++set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl, -export-dynamic")
++set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl, -export-dynamic")
++set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl, -export-dynamic")
++
+ # do we have a Conda env. around ? see issues #780
+ if ((DEFINED ENV{CONDA_PREFIX}) OR (DEFINED ENV{CONDA_EXE}))
+   message("==========================================================================\n"
