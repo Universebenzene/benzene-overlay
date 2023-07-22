@@ -46,7 +46,6 @@ distutils_enable_sphinx docs dev-python/numpydoc \
 	dev-python/sphinx-copybutton \
 	dev-python/sphinx-issues \
 	dev-python/sphinx-design \
-	dev-python/sphinx-rtd-theme \
 	dev-python/pydata-sphinx-theme
 
 # No module named 'azure'
@@ -66,6 +65,7 @@ EPYTEST_DESELECT=(
 	zarr/tests/test_core.py::TestArrayWithABSStore::test_array_2d_edge_case
 	zarr/tests/test_core.py::TestArrayWithABSStore::test_array_2d_partial
 	zarr/tests/test_core.py::TestArrayWithABSStore::test_array_dtype_shape
+	zarr/tests/test_core.py::TestArrayWithABSStore::test_array_init
 	zarr/tests/test_core.py::TestArrayWithABSStore::test_array_order
 	zarr/tests/test_core.py::TestArrayWithABSStore::test_attributes
 	zarr/tests/test_core.py::TestArrayWithABSStore::test_compressors
@@ -111,6 +111,7 @@ EPYTEST_DESELECT=(
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_array_2d_edge_case
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_array_2d_partial
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_array_dtype_shape
+	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_array_init
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_array_order
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_attributes
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_compressors
@@ -120,6 +121,7 @@ EPYTEST_DESELECT=(
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_islice
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_iter
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_iteration_exceptions
+	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_nbytes_stored
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_nchunks_initialized
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_np_ufuncs
 	zarr/tests/test_core.py::TestArrayWithABSStoreV3::test_object_arrays
