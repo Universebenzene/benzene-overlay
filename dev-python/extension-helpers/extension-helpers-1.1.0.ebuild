@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
 
@@ -15,11 +15,12 @@ HOMEPAGE="https://extension-helpers.readthedocs.io"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"	# Test phase runs with fails
 
-RDEPEND=">=dev-python/setuptools-40.2[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/setuptools-40.2[${PYTHON_USEDEP}]
+	>=dev-python/tomli-1.0.0[${PYTHON_USEDEP}]
+"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? ( dev-python/numpy[${PYTHON_USEDEP}] )
+	test? ( dev-python/pip[${PYTHON_USEDEP}] )
 "
 
 distutils_enable_tests pytest
