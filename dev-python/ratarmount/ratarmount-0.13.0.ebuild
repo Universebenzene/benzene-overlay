@@ -25,7 +25,7 @@ RESTRICT="test"	# RuntimeError: Expected mount point but it isn't one!
 RDEPEND="dev-python/ratarmountcore[${PYTHON_USEDEP}]
 	dev-python/fusepy[${PYTHON_USEDEP}]
 	>=dev-python/indexed_bzip2-1.3.1[${PYTHON_USEDEP}]
-	>=dev-python/indexed_gzip-1.6.3[${PYTHON_USEDEP}]
+	>=dev-python/indexed-gzip-1.6.3[${PYTHON_USEDEP}]
 	>=dev-python/indexed_zstd-1.2.2[${PYTHON_USEDEP}]
 	>=dev-python/python-xz-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/rarfile-4.0[${PYTHON_USEDEP}]
