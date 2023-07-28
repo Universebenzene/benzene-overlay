@@ -40,7 +40,6 @@ IUSE="
 	+lz4 lzma +openssl pam pcre pkcs11 policykit pwquality qrcode
 	+resolvconf +seccomp selinux split-usr +sysv-utils test tpm vanilla xkb +zstd
 "
-
 REQUIRED_USE="
 	dns-over-tls? ( || ( gnutls openssl ) )
 	fido2? ( cryptsetup openssl )

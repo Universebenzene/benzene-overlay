@@ -40,7 +40,6 @@ IUSE="
 	+lz4 lzma +openssl pam pcre pkcs11 policykit pwquality qrcode
 	+resolvconf +seccomp selinux split-usr +sysv-utils test tpm vanilla xkb +zstd
 "
-
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
 	dns-over-tls? ( || ( gnutls openssl ) )
@@ -185,7 +184,7 @@ pkg_pretend() {
 }
 
 pkg_setup() {
-	use gnuefi && secureboot_pkg_setup
+	use boot && secureboot_pkg_setup
 }
 
 src_unpack() {
