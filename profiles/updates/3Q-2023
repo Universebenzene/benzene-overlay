@@ -1,1 +1,2 @@
 move dev-python/indexed_zstd dev-python/indexed-zstd
+move dev-python/indexed_bzip2 dev-python/indexed-bzip2
