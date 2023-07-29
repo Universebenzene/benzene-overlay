@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="code_style rtd theme_furo theme_pydata theme_rtd theme_sbt"
 
-RDEPEND="<dev-python/sphinx-7[${PYTHON_USEDEP}]
+RDEPEND="<dev-python/sphinx-8[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
-	rtd? ( <dev-python/myst-parser-2[${PYTHON_USEDEP}] )
+	rtd? ( <dev-python/myst-parser-3[${PYTHON_USEDEP}] )
 	theme_furo? ( >=dev-python/furo-2022.06.04[${PYTHON_USEDEP}] )
 	theme_pydata? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	theme_rtd? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
@@ -27,7 +27,7 @@ RDEPEND="<dev-python/sphinx-7[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
-		<dev-python/myst-parser-2[${PYTHON_USEDEP}]
+		<dev-python/myst-parser-3[${PYTHON_USEDEP}]
 	)
 "
 
