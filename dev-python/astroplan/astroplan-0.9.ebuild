@@ -31,28 +31,20 @@ RDEPEND=">=dev-python/astropy-4[${PYTHON_USEDEP}]
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		dev-python/sphinx-astropy[${PYTHON_USEDEP},confv2]
 		dev-python/astroquery[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
-		${RDEPEND}
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
+		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
-	)"
+	)
+"
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astroquery
-
-python_prepare_all() {
-	sed -e "/nasa_exoplanet_archive/s/nasa_exoplanet_archive/ipac.nexsci.nasa_exoplanet_archive/g" \
-		-i docs/tutorials/periodic.rst || die
-
-	distutils-r1_python_prepare_all
-}
 
 python_compile_all() {
 	if use doc; then
