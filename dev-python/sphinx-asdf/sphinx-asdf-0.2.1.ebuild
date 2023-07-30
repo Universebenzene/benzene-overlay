@@ -15,11 +15,11 @@ HOMEPAGE="https://github.com/spacetelescope/sphinx-asdf"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"	#	re.error: global flags not at the start of the expression at position 441
 
 RDEPEND="dev-python/asdf[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 	>=dev-python/mistune-3[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 	dev-python/sphinx-bootstrap-theme[${PYTHON_USEDEP}]
