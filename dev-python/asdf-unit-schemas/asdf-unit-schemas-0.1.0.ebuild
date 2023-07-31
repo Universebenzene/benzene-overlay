@@ -31,7 +31,6 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 		>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/tomli[${PYTHON_USEDEP}]
-		media-gfx/graphviz
 	)
 	test? ( dev-python/scipy[${PYTHON_USEDEP}] )
 "

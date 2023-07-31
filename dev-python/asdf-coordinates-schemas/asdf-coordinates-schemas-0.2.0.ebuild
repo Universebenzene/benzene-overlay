@@ -27,7 +27,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 		dev-python/tomli[${PYTHON_USEDEP}]
-		media-gfx/graphviz
 	)
 "
 

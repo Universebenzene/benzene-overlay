@@ -35,6 +35,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		${RDEPEND}
 		>=dev-python/sphinx-asdf-0.1.4[${PYTHON_USEDEP}]
 		dev-python/tomli[${PYTHON_USEDEP}]
+		media-gfx/graphviz
 	)
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]

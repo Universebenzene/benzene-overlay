@@ -28,7 +28,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/toml[${PYTHON_USEDEP}]
-		media-gfx/graphviz
 	)
 "
 PDEPEND="test? ( >=dev-python/asdf-2.8.0[${PYTHON_USEDEP}] )"
