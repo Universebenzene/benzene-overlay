@@ -17,12 +17,14 @@ SRC_URI="https://github.com/mwouts/jupytext/archive/refs/tags/v${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="rst2md"
 
 RDEPEND=">=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}]
 	dev-python/mdit-py-plugins[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/toml[${PYTHON_USEDEP}]
+	rst2md? ( dev-python/sphinx-gallery[${PYTHON_USEDEP}] )
 "
 
 BDEPEND="test? (

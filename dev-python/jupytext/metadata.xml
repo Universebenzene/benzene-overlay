@@ -9,4 +9,7 @@
 		<remote-id type="pypi">jupytext</remote-id>
 		<remote-id type="github">mwouts/jupytext</remote-id>
 	</upstream>
+	<use>
+		<flag name="rst2md">Support for converting reStructuredText to markdown via <pkg>dev-python/sphinx-gallery</pkg></flag>
+	</use>
 </pkgmetadata>
