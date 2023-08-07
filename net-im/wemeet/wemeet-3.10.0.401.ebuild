@@ -18,7 +18,6 @@ REQUIRED_USE="bundled-libs? ( bundled-qt )"
 
 RDEPEND="dev-libs/nss
 	dev-libs/wayland
-	media-sound/pulseaudio
 	x11-libs/libX11
 	!bundled-libs? (
 		app-crypt/p11-kit[asn1,libffi]
@@ -58,7 +57,7 @@ RDEPEND="dev-libs/nss
 		>=dev-qt/qthelp-${QT5_MIN}
 		>=dev-qt/qtgui-${QT5_MIN}[X,eglfs,jpeg,ibus?,linuxfb,vnc,wayland?]
 		>=dev-qt/qtlocation-${QT5_MIN}
-		>=dev-qt/qtnetwork-${QT5_MIN}[connman]
+		>=dev-qt/qtnetwork-${QT5_MIN}
 		>=dev-qt/qtnetworkauth-${QT5_MIN}
 		>=dev-qt/qtopengl-${QT5_MIN}
 		>=dev-qt/qtprintsupport-${QT5_MIN}[cups]

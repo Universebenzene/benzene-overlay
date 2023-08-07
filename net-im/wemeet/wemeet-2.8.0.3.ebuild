@@ -1,4 +1,4 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,7 +17,6 @@ IUSE="ibus wayland bundled-libs"
 
 RDEPEND="dev-libs/nss
 	dev-libs/wayland
-	media-sound/pulseaudio
 	x11-libs/libX11
 	!bundled-libs? (
 		app-crypt/p11-kit[asn1,libffi]
@@ -55,7 +54,7 @@ RDEPEND="dev-libs/nss
 		dev-qt/qtdbus:5
 		dev-qt/qtdeclarative:5
 		dev-qt/qtgui:5[X,eglfs,jpeg,ibus?,linuxfb,wayland?]
-		dev-qt/qtnetwork:5[connman]
+		dev-qt/qtnetwork:5
 		dev-qt/qtopengl:5
 		dev-qt/qtprintsupport:5[cups]
 		dev-qt/qtsql:5[sqlite]

@@ -8,17 +8,16 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.8:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/22516e32c067130e73b91ea0793495ae/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
-	arm64? ( https://updatecdn.meeting.qq.com/cos/9d3403df3db67092990ce8ad9438a53a/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
+SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/174f137e819ba174c7be6949bb03e665/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
+	arm64? ( https://updatecdn.meeting.qq.com/cos/a7642088c0e903f1e7ac25f416e7a8e9/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
-IUSE="ibus wayland bundled-libs bundled-qt pipewire"
+IUSE="ibus wayland bundled-libs +bundled-qt pipewire"
 REQUIRED_USE="bundled-libs? ( bundled-qt )"
 
 RDEPEND="dev-libs/nss
-	media-sound/pulseaudio
 	x11-libs/libX11
 	!bundled-libs? (
 		app-crypt/p11-kit[libffi]
@@ -59,7 +58,7 @@ RDEPEND="dev-libs/nss
 		>=dev-qt/qthelp-${QT5_MIN}
 		>=dev-qt/qtgui-${QT5_MIN}[X,eglfs,jpeg,ibus?,linuxfb,vnc,wayland?]
 		>=dev-qt/qtlocation-${QT5_MIN}
-		>=dev-qt/qtnetwork-${QT5_MIN}[connman]
+		>=dev-qt/qtnetwork-${QT5_MIN}
 		>=dev-qt/qtnetworkauth-${QT5_MIN}
 		>=dev-qt/qtopengl-${QT5_MIN}
 		>=dev-qt/qtprintsupport-${QT5_MIN}[cups]
