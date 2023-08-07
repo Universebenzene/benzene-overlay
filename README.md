@@ -153,7 +153,7 @@ dev-python/sphinx-asdf                  | 0.1.3; 0.1.4; 0.2.1 |
 dev-python/sphinx-autobuild             | 2022.3.14           |
 dev-python/sphinx-autosummary-accessors | 2023.4.0            |
 dev-python/sphinx-book-theme            | 0.2.0; 1.0.1        | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
-dev-python/sphinx-changelog             | 1.3.0               |
+dev-python/sphinx-changelog             | 1.4.1               |
 dev-python/sphinx-click                 | 4.4.0               |
 dev-python/sphinx-codeautolink          | 0.15.0              |
 dev-python/sphinx-copybutton            | 0.5.2               |
