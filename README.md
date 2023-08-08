@@ -185,7 +185,7 @@ Package name | Available version        | Additional information
 dev-python/docstring-parser             | 0.15            | Optional dependency of pytkdocs
 dev-python/markdown-callouts            | 0.3.0           | mkdocstrings related (should be test depend)
 dev-python/markdown-exec                | 1.6.0           | mkdocstrings related (should be test depend)
-dev-python/mkdocs-coverage              | 0.2.7           | mkdocstrings related (should be test depend)
+dev-python/mkdocs-coverage              | 1.0.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-gen-files             | 0.5.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-git-committers-plugin | 1.1.2           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-jupyter               | 0.24.2          |
