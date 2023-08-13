@@ -19,7 +19,7 @@ IUSE="awscli boto3"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/aiohttp-3.3.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
 	dev-python/botocore[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.10.10[${PYTHON_USEDEP}]

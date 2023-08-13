@@ -98,7 +98,7 @@ Package name | Available version | Additional information
 dev-python/adal                  | 1.2.7                                             | SunPy, h5pyd related
 dev-python/abg-python            | 1.1.3                                             | Optional for yt
 dev-python/aggdraw               | 1.3.16                                            | Optional for ginga
-dev-python/aiobotocore           | 2.5.2                                             | Pulled in by zarr
+dev-python/aiobotocore           | 2.6.0                                             | Pulled in by zarr
 dev-python/aioitertools          | 0.11.0                                            | Pulled in by zarr
 dev-python/arviz                 | 0.16.1                                            | Optional for corner.py.
 dev-python/asciitree             | 0.3.3                                             | Pulled in by zarr
