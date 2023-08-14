@@ -14,7 +14,7 @@ SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/174f137e819ba174c7be6949b
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
-IUSE="ibus wayland bundled-libs +bundled-qt pipewire"
+IUSE="ibus wayland bundled-libs bundled-qt pipewire"
 REQUIRED_USE="bundled-libs? ( bundled-qt )"
 
 RDEPEND="dev-libs/nss
