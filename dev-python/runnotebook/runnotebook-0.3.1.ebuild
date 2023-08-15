@@ -4,23 +4,21 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
+PYPI_NO_NORMALIZE=1
+PYPI_PN="RunNotebook"
 PYTHON_COMPAT=( python3_{10..11} )
 
 inherit distutils-r1
-
-MY_PN="RunNotebook"
-MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="IPython notebook sphinx extensions"
 HOMEPAGE="https://github.com/ngoldbaum/RunNotebook"
 
 if [[ ${PV} == *9999 ]]; then
-	EGIT_REPO_URI="https://github.com/ngoldbaum/${MY_PN}.git"
+	EGIT_REPO_URI="https://github.com/ngoldbaum/${PYPI_PN}.git"
 	inherit git-r3
 else
-	SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+	inherit pypi
 	KEYWORDS="~amd64 ~x86"
-	S="${WORKDIR}/${MY_P}"
 fi
 
 LICENSE="BSD"
