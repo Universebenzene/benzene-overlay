@@ -38,7 +38,7 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )
 	doc? ( local-datasets )"
 
-DEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
@@ -54,14 +54,13 @@ RDEPEND="${DEPEND}
 		dev-python/tqdm[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	>=dev-python/cython-0.29.30[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
-		sci-libs/scikit-learn[${PYTHON_USEDEP}]
 		sci-libs/scikit-image[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
@@ -111,11 +110,11 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "power a variety of features in several modules (strongly recommended)" ">=dev-python/scipy-1.6.0"
-	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.3.0"
-	optfeature "used in deblend_sources for deblending segmented sources" ">=sci-libs/scikit-image-0.18.0"
-	optfeature "used in DBSCANGroup to create star groups" ">=sci-libs/scikit-learn-1.0"
-	optfeature "used in make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.16"
+	optfeature "power a variety of features in several modules (strongly recommended)" ">=dev-python/scipy-1.7.0"
+	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.5.0"
+	optfeature "deblending segmented sources" ">=sci-libs/scikit-image-0.19.0"
+	optfeature "used in the deprecated DBSCANGroup to create star groups" ">=sci-libs/scikit-learn-1.0"
+	optfeature "used in make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.18"
 	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" dev-python/bottleneck
 	optfeature "display optional progress bars" dev-python/tqdm
 	optfeature "Used for converting source segments into polygon objects" dev-python/rasterio dev-python/shapely
