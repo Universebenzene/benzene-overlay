@@ -195,6 +195,7 @@ src_unpack() {
 src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}/systemd-253-initrd-generators.patch"
+		"${FILESDIR}/systemd-254.1-tmpfiles-setup-dev-early.patch"
 	)
 
 	if ! use vanilla; then
