@@ -19,7 +19,7 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 DEPEND=">=dev-python/numpy-1.13[${PYTHON_USEDEP}]
-	>=sci-astronomy/healpix-3.80:=[cxx]
+	>=sci-astronomy/healpix-3.82:=[cxx]
 	>=sci-libs/cfitsio-4.1.0:=
 	sci-libs/libsharp:=
 "
