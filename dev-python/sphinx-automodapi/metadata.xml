@@ -13,4 +13,7 @@
 		<remote-id type="pypi">sphinx-automodapi</remote-id>
 		<remote-id type="github">astropy/sphinx-automodapi</remote-id>
 	</upstream>
+	<use>
+		<flag name="rtd">Extra rtd support</flag>
+	</use>
 </pkgmetadata>
