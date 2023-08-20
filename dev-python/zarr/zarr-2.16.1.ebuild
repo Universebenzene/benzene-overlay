@@ -18,7 +18,7 @@ IUSE="examples jupyter"
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.20[${PYTHON_USEDEP}]
+	>dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	dev-python/fasteners[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.10.0[${PYTHON_USEDEP}]
 	jupyter? (
@@ -36,7 +36,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
 		dev-python/pymongo[${PYTHON_USEDEP}]
 		dev-python/redis[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 	)
 "
