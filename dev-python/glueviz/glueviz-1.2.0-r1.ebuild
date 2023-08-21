@@ -16,14 +16,15 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc"
 
-RDEPEND=">=dev-python/glue-core-1.2.0[${PYTHON_USEDEP},doc?]
+RDEPEND=">=dev-python/glue-core-1.13.0[${PYTHON_USEDEP}]
 	>=dev-python/glue-vispy-viewers-1.0.3[${PYTHON_USEDEP}]
+	doc? ( >=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP},doc] )
 "
 
 distutils_enable_tests nose
 
 python_install_all() {
-	use doc && dosym -r /usr/share/doc/glue-core-*/html /usr/share/doc/${PF}/html
+	use doc && dosym -r /usr/share/doc/glue-qt*/html /usr/share/doc/${PF}/html
 
 	distutils-r1_python_install_all
 }

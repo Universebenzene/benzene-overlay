@@ -6,12 +6,10 @@
 		<name>Astro Benzene</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="pypi">glue-core</remote-id>
-		<remote-id type="github">glue-viz/glue</remote-id>
+		<remote-id type="pypi">glue-qt</remote-id>
+		<remote-id type="github">glue-viz/glue-qt</remote-id>
 	</upstream>
 	<use>
-		<flag name="all">Most function support</flag>
-		<flag name="astronomy">More astronomy support</flag>
-		<flag name="recommended">Slightly more function support</flag>
+		<flag name="qt">Include PyQt5 library</flag>
 	</use>
 </pkgmetadata>
