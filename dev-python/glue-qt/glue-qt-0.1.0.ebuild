@@ -15,7 +15,7 @@ HOMEPAGE="http://glueviz.org"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"	# no x86 KEYWORD for pvextractor, spectral-cube, yt, glueviz
-IUSE="+qt +doc"
+IUSE="+qt doc"
 
 RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
