@@ -14,6 +14,7 @@
 		<remote-id type="github">glue-viz/glue-vispy-viewers</remote-id>
 	</upstream>
 	<use>
+		<flag name="all"><pkg>dev-python/imageio</pkg> for more function support</flag>
 		<flag name="qt">Extra qt support via <pkg>dev-python/PyQt5</pkg></flag>
 	</use>
 </pkgmetadata>
