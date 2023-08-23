@@ -15,12 +15,12 @@ HOMEPAGE="http://glueviz.org"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"	# no x86 KEYWORD for pvextractor, spectral-cube, yt, glueviz
-IUSE="+qt doc"
+IUSE="+qt"
 
 RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
 	>=dev-python/echo-0.6[${PYTHON_USEDEP}]
-	>=dev-python/glue-core-1.13.0[${PYTHON_USEDEP}]
+	>=dev-python/glue-core-1.13.1[${PYTHON_USEDEP}]
 	>dev-python/ipykernel-5.1.0[${PYTHON_USEDEP}]
 	>=dev-python/ipython-4.0[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.2[${PYTHON_USEDEP}]
@@ -34,12 +34,14 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	' python3_9)
 	qt? ( >=dev-python/PyQt5-5.14[${PYTHON_USEDEP}] )
 "
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? ( dev-python/PyQt5[${PYTHON_USEDEP}] )
+"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-automodapi \
 	dev-python/sphinxcontrib-spelling \
-	dev-python/sphinx-rtd-theme \
+	dev-python/sphinx-book-theme \
 	dev-python/numpydoc
 
 python_install_all() {
