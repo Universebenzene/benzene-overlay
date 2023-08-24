@@ -17,7 +17,7 @@ if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
 else
 	inherit pypi
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64"	# multiprocess no x86
 fi
 
 LICENSE="BSD"
@@ -30,8 +30,10 @@ RDEPEND="dev-python/multi_key_dict[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/six-1.3.1[${PYTHON_USEDEP}]
 "
-BDEPEND="test? (
+BDEPEND="dev-python/pbr[${PYTHON_USEDEP}]
+	test? (
 		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/multiprocess[${PYTHON_USEDEP}]
 		dev-python/requests-mock[${PYTHON_USEDEP}]
 		dev-python/testscenarios[${PYTHON_USEDEP}]
 	)
