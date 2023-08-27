@@ -4,13 +4,12 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Sans-io socks proxy client/server with couple io backends"
 HOMEPAGE="https://sans-io.readthedocs.io https://github.com/pohmelie/siosocks"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
