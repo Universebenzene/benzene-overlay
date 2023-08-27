@@ -146,7 +146,7 @@ Package name | Available version | Additional information
 dev-python/ablog                        | 0.11.4\_p1          |
 dev-python/jupyter-cache                | 0.6.1               |
 dev-python/jupyter-sphinx               | 0.4.0               |
-dev-python/jupytext                     | 1.15.0              | Build with wheel source to include Jupyter Lab Extenstion
+dev-python/jupytext                     | 1.15.1              | Build with wheel source to include Jupyter Lab Extenstion
 dev-python/myst-nb                      | 0.17.2              |
 dev-python/myst-parser                  | 0.18.1-r1           | Only for myst-nb that depends on old version
 dev-python/runnotebook                  | 0.3.1; (live)       |
