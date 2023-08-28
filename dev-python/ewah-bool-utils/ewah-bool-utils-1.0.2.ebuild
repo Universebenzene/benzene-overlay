@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=dev-python/numpy-1.17.3[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
-BDEPEND=">=dev-python/cython-0.29.22[${PYTHON_USEDEP}]"
+BDEPEND="<dev-python/cython-3.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
