@@ -4,13 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
+PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Rebuild Sphinx documentation on changes, with live-reload in the browser"
 HOMEPAGE="https://github.com/executablebooks/sphinx-autobuild"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
