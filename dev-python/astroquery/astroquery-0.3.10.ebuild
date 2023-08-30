@@ -6,7 +6,7 @@ EAPI=7
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYTHON_COMPAT=( python{2_7,3_{10..11}} )
 
-inherit distutils-r1 eutils optfeature pypi
+inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Collection of packages to access online astronomical resources"
 HOMEPAGE="https://github.com/astropy/astroquery"

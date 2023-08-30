@@ -7,7 +7,7 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1 xdg-utils eutils optfeature
+inherit distutils-r1 xdg-utils optfeature
 
 DESCRIPTION="Core functionality for performing astrophysics with Python"
 HOMEPAGE="https://www.astropy.org/"
