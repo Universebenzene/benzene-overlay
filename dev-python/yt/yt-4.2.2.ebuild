@@ -57,7 +57,8 @@ RDEPEND="${DEPEND}
 		>=dev-python/xarray-0.16.1[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="test? (
+BDEPEND="<dev-python/cython-3.0[${PYTHON_USEDEP}]
+	test? (
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
@@ -84,6 +85,7 @@ distutils_enable_sphinx doc/source dev-python/sphinx-bootstrap-theme \
 	dev-python/bottle \
 	dev-python/h5py \
 	dev-python/nose \
+	dev-python/pandas \
 	dev-python/pooch \
 	dev-python/pytest \
 	'>=dev-python/pyx-0.15' \
