@@ -29,6 +29,7 @@ IUSE="+bzip2 +full +gzip +rar +xz +zstd"
 REQUIRED_USE="full? ( bzip2 gzip rar xz zstd )"
 
 RDEPEND="bzip2? ( >=dev-python/indexed-bzip2-1.3.1[${PYTHON_USEDEP}] )
+	full? ( >=dev-python/rapidgzip-0.10.0[${PYTHON_USEDEP}] )
 	gzip? ( >=dev-python/indexed-gzip-1.6.3[${PYTHON_USEDEP}] )
 	rar? ( >=dev-python/rarfile-4.0[${PYTHON_USEDEP}] )
 	xz? ( >=dev-python/python-xz-0.4.0[${PYTHON_USEDEP}] )

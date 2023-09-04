@@ -127,7 +127,7 @@ dev-python/pytest-repeat         | 0.9.1                                        
 dev-python/python-socketio       | 5.9.0                                             | Optional for yt
 dev-python/python-xz             | 0.5.0                                             | Optional for yt
 dev-python/rasterio              | 1.3.8                                             | Optional for photutils. Dependencies are not all listed in the table
-dev-python/ratarmount            | 0.13.0                                            | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
+dev-python/ratarmount            | 0.14.0                                            | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
 dev-python/s3fs                  | 2023.6.0                                          | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks              | 0.3.0                                             | Optional for aioftp
 dev-python/colorspacious         | 1.1.2                                             | Pulled in by cmyt. Dropped by official portage
