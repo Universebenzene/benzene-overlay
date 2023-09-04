@@ -18,7 +18,7 @@ KEYWORDS="~amd64"	# bidict pytest-benchmark no x86
 IUSE="asyncio-client client examples"
 
 RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
-	>=dev-python/python-engineio-4.3.0[${PYTHON_USEDEP}]
+	>=dev-python/python-engineio-4.7.0[${PYTHON_USEDEP}]
 	client? (
 		>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
 		>=dev-python/websocket-client-0.54.0[${PYTHON_USEDEP}]

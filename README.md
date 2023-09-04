@@ -124,7 +124,7 @@ dev-python/numcodecs             | 0.11.0                                       
 dev-python/pykdtree              | 1.3.7\_p0                                         | Optional for yt
 dev-python/pytest-golden         | 0.2.2                                             | Test dependency for mkdocstrings related packages
 dev-python/pytest-repeat         | 0.9.1                                             | Test dependency for new zict
-dev-python/python-socketio       | 5.8.0                                             | Optional for yt
+dev-python/python-socketio       | 5.9.0                                             | Optional for yt
 dev-python/python-xz             | 0.5.0                                             | Optional for yt
 dev-python/rasterio              | 1.3.8                                             | Optional for photutils. Dependencies are not all listed in the table
 dev-python/ratarmount            | 0.13.0                                            | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
