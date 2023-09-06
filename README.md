@@ -111,7 +111,7 @@ dev-python/f90nml                | 1.4.3                                        
 dev-python/fastcache             | 1.1.0                                             | Optional for yt
 dev-python/firefly-viz           | 2.0.4                                             | Optional for yt
 dev-python/firefly               | 3.2.3                                             | Optional for new yt
-dev-python/flask-socketio        | 5.3.5                                             | Optional for yt
+dev-python/flask-socketio        | 5.3.6                                             | Optional for yt
 dev-python/fusepy                | 3.0.1                                             | Optional for yt
 dev-python/heapdict              | 1.0.1                                             | Pulled in by zict and distributed
 dev-python/indexed\-{bzip2,zstd} | 1.5.0 / 1.6.0                                     | Optional for yt (ratarmount{,core})
