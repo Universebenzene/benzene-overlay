@@ -8,12 +8,12 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.8:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/174f137e819ba174c7be6949bb03e665/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
-	arm64? ( https://updatecdn.meeting.qq.com/cos/a7642088c0e903f1e7ac25f416e7a8e9/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
+SRC_URI="arm64? ( https://updatecdn.meeting.qq.com/cos/87439695193afbf8b1faa23202ce7306/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~arm64"
+#KEYWORDS="-* ~amd64 ~arm64"
+KEYWORDS="-* ~arm64"
 IUSE="ibus wayland bundled-libs bundled-qt pipewire"
 REQUIRED_USE="bundled-libs? ( bundled-qt )"
 
