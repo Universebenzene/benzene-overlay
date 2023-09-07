@@ -190,7 +190,7 @@ dev-python/markdown-callouts            | 0.3.0           | mkdocstrings related
 dev-python/markdown-exec                | 1.6.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-coverage              | 1.0.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-gen-files             | 0.5.0           | mkdocstrings related (should be test depend)
-dev-python/mkdocs-git-committers-plugin | 1.1.2           | mkdocstrings related (should be test depend)
+dev-python/mkdocs-git-committers-plugin | 1.2.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-jupyter               | 0.24.2          |
 dev-python/mkdocs-literate-nav          | 0.6.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-section-index         | 0.3.5           | mkdocstrings related (should be test depend)
