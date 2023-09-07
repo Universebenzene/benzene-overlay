@@ -19,7 +19,7 @@ RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-1.5.0[${PYTHON_USEDEP}]
-	~dev-python/dask-2023.9.0[${PYTHON_USEDEP}]
+	>=dev-python/dask-2023.9.1[${PYTHON_USEDEP}]
 	>=dev-python/jinja-2.10.3[${PYTHON_USEDEP}]
 	>=dev-python/locket-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-1.0.0[${PYTHON_USEDEP}]
@@ -59,14 +59,6 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/dask-sphinx-theme dev-python/numpydoc dev-python/sphinx-click
-
-EPYTEST_DESELECT=(
-	# Timeout
-	distributed/diagnostics/tests/test_worker_plugin.py::test_normal_task_transitions_called
-	distributed/diagnostics/tests/test_worker_plugin.py::test_failing_task_transitions_called
-	distributed/diagnostics/tests/test_worker_plugin.py::test_superseding_task_transitions_called
-	distributed/diagnostics/tests/test_worker_plugin.py::test_dependent_tasks
-)
 
 python_prepare_all() {
 	use doc && { sed -i -e "/github/s/GH\#/GH\%s\#/" docs/source/conf.py || die ; \
