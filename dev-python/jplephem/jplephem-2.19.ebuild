@@ -26,7 +26,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 distutils_enable_tests nose
 
 python_prepare_all() {
-	use test && { for ebsp in "${DISTDIR}"/${P}*.bsp; do { cp ${ebsp} "${S}"/${ebsp##*-} || die ; } done }
+	use test && { for ebsp in "${DISTDIR}"/${P}*.bsp; do { cp ${ebsp} "${S}"/${ebsp##*-} || die ; } done ; }
 
 	distutils-r1_python_prepare_all
 }
