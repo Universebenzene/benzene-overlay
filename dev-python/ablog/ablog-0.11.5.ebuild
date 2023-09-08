@@ -35,7 +35,10 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 		virtual/pandoc
 	)
+	test? ( <dev-python/sphinx-7.2[${PYTHON_USEDEP}] )
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/myst-parser dev-python/nbsphinx
+distutils_enable_sphinx docs "<dev-python/sphinx-7.2" dev-python/sphinx-automodapi \
+	dev-python/myst-parser \
+	dev-python/nbsphinx
