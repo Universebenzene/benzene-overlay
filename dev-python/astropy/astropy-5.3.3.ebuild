@@ -39,11 +39,11 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-libs/expat-2.2.9:0=
-	<dev-python/numpy-1.25[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
 	>=dev-python/pyerfa-2.0[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
-	>=sci-astronomy/wcslib-7.9:0=
-	>=sci-libs/cfitsio-4.1.0:0=
+	>=sci-astronomy/wcslib-7.12:0=
+	>=sci-libs/cfitsio-4.2.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
@@ -51,40 +51,37 @@ RDEPEND="${DEPEND}
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
-	>=dev-python/cython-0.29.22[${PYTHON_USEDEP}]
-	>=dev-python/jinja-3.0.3[${PYTHON_USEDEP}]
-	>=dev-python/markupsafe-2.0.1[${PYTHON_USEDEP}]
+	>=dev-python/cython-0.29.30[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.6[${PYTHON_USEDEP}]
-		>=dev-python/sphinx-changelog-1.1.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}]
 		>=dev-python/jinja-3.0[${PYTHON_USEDEP}]
-		>dev-python/matplotlib-3.4.0[${PYTHON_USEDEP}]
+		>dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
 		dev-libs/libxml2
-		>=dev-python/pytest-astropy-0.9[${PYTHON_USEDEP}]
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
-		dev-python/asdf[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 		dev-python/bleach[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
+		dev-python/fitsio[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
-		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
-		dev-python/jplephem[${PYTHON_USEDEP}]
+		>=dev-python/jplephem-2.15[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/objgraph[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
+		>=dev-python/pytest-astropy-0.10[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 		dev-python/pyarrow[${PYTHON_USEDEP},parquet,snappy]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/skyfield[${PYTHON_USEDEP}]
+		dev-python/s3fs[${PYTHON_USEDEP}]
 	)
 "
 
@@ -108,7 +105,7 @@ python_prepare_all() {
 		cp {"${DISTDIR}"/${PN}-eo-,"${S}"/docs/wcs/}HorseHead.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/convolution/}gc_msx_e.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/wcs/}l1448_13co.fits || die
-		eapply "${FILESDIR}"/${PN}-5.0.6-doc-use-local-data.patch
+		eapply "${FILESDIR}"/${PN}-5.3-doc-use-local-data.patch
 	fi
 
 	distutils-r1_python_prepare_all
@@ -145,7 +142,7 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "power a variety of features in several modules" ">=dev-python/scipy-1.3"
+	optfeature "power a variety of features in several modules" ">=dev-python/scipy-1.5"
 	optfeature "read/write Table objects from/to HDF5 files" dev-python/h5py
 	optfeature "read Table objects from HTML files" dev-python/beautifulsoup4
 	optfeature "read Table objects from HTML files using the pandas reader" dev-python/html5lib
@@ -156,20 +153,23 @@ pkg_postinst() {
 default indexing engine" dev-python/sortedcontainers
 	optfeature "specify and convert between timezones" dev-python/pytz
 	optfeature "retrieve JPL ephemeris of Solar System objects" dev-python/jplephem
-	optfeature "provide plotting functionality that astropy.visualization enhances" ">dev-python/matplotlib-3.4.0"
+	optfeature "provide plotting functionality that astropy.visualization enhances" ">dev-python/matplotlib-3.5.2"
 	optfeature "discovery of entry points which are used to insert fitters into astropy.modeling.fitting" dev-python/setuptools
 	optfeature "the ‘kraft-burrows-nousek’ interval in poisson_conf_interval" dev-python/mpmath
 	optfeature "Enables the serialization of various Astropy classes into a portable, hierarchical, human-readable \
-representation" ">=dev-python/asdf-2.9.2"
+representation" ">=dev-python/asdf-2.10.0"
 	optfeature "Improves the performance of sigma-clipping and other functionality that may require computing statistics \
 on arrays with NaN values." dev-python/bottleneck
 	optfeature "downloading files from HTTPS or FTP+TLS sites in case Python is not able to locate up-to-date root CA \
 certificates on your system; this package is usually already included in many Python installations (e.g., as a dependency of \
 the requests package)." dev-python/certifi
+	optfeature "Enables access to subsets of remote FITS files without having to download the entire file" \
+">=dev-python/fsspec-2022.8.2"
+	optfeature "Enables access to files hosted in AWS S3 cloud storage" ">=dev-python/s3fs-2022.8.2"
 	optfeature "testing with Matplotlib figures" dev-python/pytest-mpl
 	optfeature "code coverage measurements" dev-python/coverage
 	optfeature "automate testing and documentation builds" dev-python/tox
 	optfeature "testing Solar System coordinates" dev-python/skyfield
 	optfeature "testing satellite positions" dev-python/sgp4
-	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-5.0.0"
+	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-5.0.0[parquet,snappy]"
 }
