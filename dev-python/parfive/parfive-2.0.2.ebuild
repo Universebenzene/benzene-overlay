@@ -39,7 +39,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinx-autodoc-typehints \
 	dev-python/sphinx-book-theme \
-	dev-python/sphinx_contributors
+	dev-python/sphinx-contributors
 
 pkg_postinst() {
 	optfeature "using aiofiles to write downloaded data to disk using a separate thread pool" dev-python/aiofiles

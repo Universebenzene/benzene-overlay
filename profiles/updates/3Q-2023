@@ -1,2 +1,3 @@
 move dev-python/indexed_zstd dev-python/indexed-zstd
 move dev-python/indexed_bzip2 dev-python/indexed-bzip2
+move dev-python/sphinx_contributors dev-python/sphinx-contributors
