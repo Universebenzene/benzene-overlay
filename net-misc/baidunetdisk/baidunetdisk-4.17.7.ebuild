@@ -29,7 +29,8 @@ S="${WORKDIR}"
 QA_PREBUILT="opt/${PN}/*"
 
 src_prepare() {
-	sed -i '/Name/a Name[zh_CN]=百度网盘' usr/share/applications/${PN}.desktop || die
+	sed -e "s/Exec=.*/Exec=baidunetdisk %U/g" \
+		-e '/Name/a Name[zh_CN]=百度网盘' -i usr/share/applications/${PN}.desktop || die
 	default
 }
 
@@ -37,7 +38,8 @@ src_install() {
 	insinto /opt
 	doins -r opt/${PN}
 	fperms +x /opt/${PN}/${PN}
-	dosym -r /opt/{${PN}/${PN},bin/${PN}}
+	exeinto /opt/bin
+	newexe "${FILESDIR}"/${PN}.sh ${PN}
 
 	gzip -d usr/share/doc/${PN}/*.gz || die
 	dodoc usr/share/doc/${PN}/*
