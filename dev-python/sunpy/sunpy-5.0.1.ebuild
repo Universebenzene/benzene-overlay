@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="asdf dask database examples image jpeg2k map net timeseries visualization"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/astropy-5.0.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-5.0.6[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/parfive-2.0.0[${PYTHON_USEDEP},ftp]
