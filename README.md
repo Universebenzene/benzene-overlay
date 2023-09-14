@@ -193,7 +193,7 @@ dev-python/mkdocs-gen-files             | 0.5.0           | mkdocstrings related
 dev-python/mkdocs-git-committers-plugin | 1.2.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-jupyter               | 0.24.2          |
 dev-python/mkdocs-literate-nav          | 0.6.1           | mkdocstrings related (should be test depend)
-dev-python/mkdocs-section-index         | 0.3.5           | mkdocstrings related (should be test depend)
+dev-python/mkdocs-section-index         | 0.3.7           | mkdocstrings related (should be test depend)
 dev-python/mkdocstrings-crystal         | 0.3.5; 0.3.6    |
 dev-python/mkdocstrings-python-legacy   | 0.2.3           |
 dev-python/pytkdocs                     | 0.16.1          | Dependency of mkdocstrings-python-legacy

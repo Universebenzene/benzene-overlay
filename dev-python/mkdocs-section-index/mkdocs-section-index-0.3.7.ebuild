@@ -19,7 +19,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/mkdocs-1.0.3[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/mkdocs-1.2[${PYTHON_USEDEP}]"
 BDEPEND="test? (
 		dev-python/pytest-golden[${PYTHON_USEDEP}]
 		dev-python/jinja[${PYTHON_USEDEP}]
