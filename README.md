@@ -165,7 +165,7 @@ dev-python/sphinx-inline-tabs           | 2023.4.21           |
 dev-python/sphinx-readable-theme        | 1.3.0               |
 dev-python/sphinx-thebe                 | 0.2.1               |
 dev-python/sphinx-togglebutton          | 0.3.1               |
-dev-python/sphinx\_contributors         | 0.2.7               |
+dev-python/sphinx-contributors          | 0.2.7               |
 dev-python/sphinx\_mdinclude            | 0.5.3               |
 dev-python/sphinxcontrib-srclink        | 0.2.4               |
 dev-python/sphinxcontrib-youtube        | 1.2.0               | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building.
