@@ -25,7 +25,6 @@ RDEPEND="dev-python/aiobotocore[${PYTHON_USEDEP},awscli?,boto3?]
 "
 BDEPEND="test? (
 		dev-python/dask[${PYTHON_USEDEP}]
-		dev-python/flask[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
