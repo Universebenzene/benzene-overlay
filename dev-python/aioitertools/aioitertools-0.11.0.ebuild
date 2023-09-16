@@ -20,4 +20,4 @@ RDEPEND=">=dev-python/typing-extensions-4.0[${PYTHON_USEDEP}]"
 PATCHES=( "${FILESDIR}/${P}-fix-doc-markdown-highlight.patch" )
 
 distutils_enable_tests nose
-distutils_enable_sphinx docs dev-python/sphinx_mdinclude
+distutils_enable_sphinx docs dev-python/sphinx-mdinclude
