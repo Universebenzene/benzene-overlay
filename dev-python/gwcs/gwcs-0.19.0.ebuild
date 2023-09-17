@@ -15,15 +15,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc intersphinx"
-# ValueError: buffer source array is read-only
-RESTRICT="test
-	intersphinx? ( network-sandbox )"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-2.8.1[${PYTHON_USEDEP}]
 	dev-python/asdf-wcs-schemas[${PYTHON_USEDEP}]
 	>=dev-python/asdf-astropy-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.3[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
