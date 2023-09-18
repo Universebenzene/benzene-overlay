@@ -16,18 +16,16 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=">=dev-python/numpy-1.17.3[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
-BDEPEND="<dev-python/cython-3.0[${PYTHON_USEDEP}]"
+BDEPEND=">=dev-python/cython-3.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
 
 python_prepare_all() {
-	use doc && { mkdir docs/_static || die ; eapply "${FILESDIR}"/${P}-fix-title-underline.patch ; \
-		sed -e "/^version =/c version = \"${PN}\"" -e "/^release =/c release = \"${PN}\"" \
-			-i docs/conf.py || die ;
-#			-e "/language\ = /s/None/'en'/" \
+	use doc && { mkdir docs/_static || die ; eapply "${FILESDIR}"/${PN}-1.0.2-fix-title-underline.patch ; \
+#		sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ;
 	}
 
 	distutils-r1_python_prepare_all
