@@ -14,7 +14,7 @@ SRC_URI="https://github.com/dask/distributed/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# pyarrow no x86
+KEYWORDS="~amd64"	# pyarrow, memray no x86
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]
@@ -45,6 +45,7 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 		dev-python/jupyter-server[${PYTHON_USEDEP}]
 		dev-python/lz4[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/memray[${PYTHON_USEDEP}]
 		dev-python/netcdf4[${PYTHON_USEDEP}]
 		dev-python/numba[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
@@ -60,7 +61,8 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/dask-sphinx-theme dev-python/numpydoc \
 	dev-python/sphinx-click \
-	dev-python/sphinx-design
+	dev-python/sphinx-design \
+	dev-python/memray
 
 python_prepare_all() {
 	use doc && { sed -i -e "/github/s/GH\#/GH\%s\#/" docs/source/conf.py || die ; \
