@@ -39,7 +39,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
-		dev-python/matplotlib[${PYTHON_USEDEP}]
 	)
 "
 
