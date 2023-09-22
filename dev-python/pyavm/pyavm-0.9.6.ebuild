@@ -3,7 +3,7 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="PyAVM"
 PYTHON_COMPAT=( python3_{10..11} )
@@ -20,6 +20,8 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.10[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/pillow[${PYTHON_USEDEP}] )"
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	test? ( dev-python/pillow[${PYTHON_USEDEP}] )
+"
 
 distutils_enable_tests pytest
