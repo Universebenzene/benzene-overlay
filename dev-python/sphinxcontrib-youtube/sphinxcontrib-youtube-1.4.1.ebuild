@@ -10,13 +10,13 @@ inherit distutils-r1
 
 DESCRIPTION="A Sphinx extension to embed videos from YouTube"
 HOMEPAGE="https://sphinxcontrib-youtube.readthedocs.io"
-SRC_URI="https://github.com/sphinx-contrib/youtube/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
+SRC_URI="https://github.com/sphinx-contrib/youtube/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/sphinx-0.6[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-6.1[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
