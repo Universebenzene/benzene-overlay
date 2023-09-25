@@ -21,7 +21,6 @@ RDEPEND=">dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/nbconvert-7.2.9[${PYTHON_USEDEP}]
 	>dev-python/pygments-2.12.0[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/mkdocs-pymdownx-material-extras[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 

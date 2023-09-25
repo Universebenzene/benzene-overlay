@@ -14,7 +14,7 @@ HOMEPAGE="https://mkdocs-jupyter.danielfrg.com"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"	# one test fail due to mkdocs-jupyter.css missing
+RESTRICT="test"	# 1 test failed
 
 RDEPEND=">dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
 	>dev-python/jupytext-1.13.8[${PYTHON_USEDEP}]
@@ -22,13 +22,13 @@ RDEPEND=">dev-python/ipykernel-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/nbconvert-7.2.9[${PYTHON_USEDEP}]
 	>dev-python/pygments-2.12.0[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/mkdocs-pymdownx-material-extras[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 
 python_prepare_all() {
 	# remove dep on pytest-cov
 	sed -i -e "/--cov/d" pyproject.toml || die
+	use test && { mkdir -p "${S}"/src/mkdocs_jupyter/tests/mkdocs/docs || die ; }
 
 	distutils-r1_python_prepare_all
 }
