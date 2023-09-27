@@ -5,4 +5,8 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="pypi">pytest-astropy</remote-id>
+		<remote-id type="github">astropy/pytest-astropy</remote-id>
+	</upstream>
 </pkgmetadata>
