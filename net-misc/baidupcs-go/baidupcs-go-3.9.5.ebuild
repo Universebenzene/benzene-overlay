@@ -18,7 +18,7 @@ EGO_VENDOR=(
 	"github.com/oleiade/lane v1.0.1"
 	"github.com/olekukonko/tablewriter v0.0.4"
 	"github.com/peterh/liner v1.2.1"
-	"github.com/qjfoidnh/Baidu-Login v1.4.0"
+	"github.com/qjfoidnh/Baidu-Login v1.4.1"
 	"github.com/astaxie/beego v1.12.3"
 	"github.com/qjfoidnh/baidu-tools v1.2.0"
 	"github.com/bitly/go-simplejson v0.5.0"
