@@ -86,7 +86,7 @@ distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/pytest
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-use-local-demo-data.patch ; \
+	use doc && { eapply "${FILESDIR}"/${PN}-0.14.0-use-local-demo-data.patch ; \
 		for dat in "${DISTDIR}"/*-d-*; do { cp ${dat} "${S}"/examples/scene/${dat##*-d-} || die ; } ; done ; \
 		cp {"${DISTDIR}"/${PN}-${DATA_DATE}-d-,"${S}"/examples/plotting/}mri.npz || die ; }
 	xdg_environment_reset
