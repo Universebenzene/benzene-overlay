@@ -89,6 +89,8 @@ PATCHES=(
 	"${FILESDIR}/${P}-python-3.9.patch" # bug 766303
 	"${FILESDIR}/${P}-glib-2.68.patch" # bug 777759
 	"${FILESDIR}/${P}-position.patch"
+	# GCC 13
+	"${FILESDIR}/${P}-cstdint.patch"
 )
 
 _check_reqs() {
