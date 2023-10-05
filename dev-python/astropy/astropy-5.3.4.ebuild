@@ -51,7 +51,7 @@ RDEPEND="${DEPEND}
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
-	>=dev-python/cython-0.29.30[${PYTHON_USEDEP}]
+	>=dev-python/cython-0.29.36[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
