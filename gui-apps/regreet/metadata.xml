@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">rharish101/ReGreet</remote-id>
+	</upstream>
+	<use>
+		<flag name="gtk4">Compile with support for gtk4</flag>
+		<flag name="cage">Use cage to start regreet</flag>
+		<flag name="sway">Use sway to start regreet</flag>
+		<flag name="logs">Compile logs support regreet (debug)</flag>
+	</use>
+</pkgmetadata>
