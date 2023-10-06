@@ -21,10 +21,15 @@ RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/stanio[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	all? ( dev-python/xarray[${PYTHON_USEDEP}] )
 "
-BDEPEND="test? ( dev-vcs/git )"
+BDEPEND="test? (
+		dev-python/xarray[${PYTHON_USEDEP}]
+		dev-vcs/git
+	)
+"
 
 distutils_enable_tests pytest
 
@@ -37,6 +42,12 @@ EPYTEST_IGNORE=(
 EPYTEST_DESELECT=(
 	# E ValueError: No CmdStan installation found, run command "install_cmdstan"or (re)activate your conda environment!
 	test/test_cmdstan_args.py::test_args_sig_figs
+	test/test_laplace.py::test_laplace_from_opt_csv
+	test/test_laplace.py::test_laplace_from_csv
+	test/test_laplace.py::test_laplace_runs_opt
+	test/test_laplace.py::test_laplace_bad_jacobian_mismatch
+	test/test_laplace.py::test_laplace_bad_two_modes
+	test/test_laplace.py::test_laplace_outputs
 	test/test_model.py::test_model_good
 	test/test_model.py::test_ctor_compile_arg
 	test/test_model.py::test_exe_only
@@ -54,6 +65,7 @@ EPYTEST_DESELECT=(
 	test/test_model.py::test_model_compile_space
 	test/test_model.py::test_model_includes_explicit
 	test/test_model.py::test_model_includes_implicit
+	test/test_model.py::test_model_includes_special_char
 	test/test_optimize.py::test_instantiate
 	test/test_optimize.py::test_rosenbrock
 	test/test_optimize.py::test_eight_schools
@@ -74,6 +86,10 @@ EPYTEST_DESELECT=(
 	test/test_optimize.py::test_attrs
 	test/test_optimize.py::test_timeout
 	test/test_optimize.py::test_serialization
+	test/test_pathfinder.py::test_pathfinder_outputs
+	test/test_pathfinder.py::test_single_pathfinder
+	test/test_pathfinder.py::test_pathfinder_create_inits
+	test/test_pathfinder.py::test_pathfinder_init_sampling
 	test/test_sample.py::test_bernoulli_good
 	test/test_sample.py::test_bernoulli_unit_e
 	test/test_sample.py::test_init_types
@@ -116,6 +132,8 @@ EPYTEST_DESELECT=(
 	test/test_sample.py::test_diagnostics
 	test/test_sample.py::test_timeout
 	test/test_sample.py::test_json_edges
+	test/test_sample.py::test_json_junk_alongside_data
+	test/test_sample.py::test_tuple_data_in
 	test/test_sample.py::test_serialization
 	test/test_utils.py::test_cmdstan_version
 	test/test_utils.py::test_check_sampler_csv_thin

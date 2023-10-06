@@ -106,7 +106,7 @@ dev-python/arviz                 | 0.16.1                                       
 dev-python/asciitree             | 0.3.3                                             | Pulled in by zarr
 dev-python/azure-core            | 1.26.3                                            | Required by new msrest
 dev-python/bidict                | 0.22.0; 0.22.1                                    | Optional for yt
-dev-python/cmdstanpy             | 1.0.8; 1.1.0                                      | Test dependency for arviz
+dev-python/cmdstanpy             | 1.0.8; 1.2.0                                      | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/distributed           | 2023.9.1; 2023.9.2; 2023.9.3                      | Optional for arviz and spectral-cube
 dev-python/eventlet              | 0.33.3                                            | Dropped by official portage. Required by firefly{,-viz}
 dev-python/f90nml                | 1.4.3                                             | Optional for yt
