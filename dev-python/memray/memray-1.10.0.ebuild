@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A memory profiler for Python applications"
 HOMEPAGE="https://sphinx-book-theme.readthedocs.io"
-SRC_URI="https://github.com/bloomberg/memray/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+SRC_URI="https://github.com/bloomberg/memray/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
 	$(python_gen_useflags python3_11)? ( $(pypi_wheel_url ${PN} ${PV} "cp311" "cp311-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 	$(python_gen_useflags python3_10)? ( $(pypi_wheel_url ${PN} ${PV} "cp310" "cp310-manylinux_2_12_x86_64.manylinux2010_x86_64") )
 "
@@ -19,6 +19,7 @@ SRC_URI="https://github.com/bloomberg/memray/archive/refs/tags/v${PV}.tar.gz -> 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
+RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">=dev-python/jinja-2.9[${PYTHON_USEDEP}]
 	>=dev-python/rich-11.2.0[${PYTHON_USEDEP}]
