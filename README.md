@@ -123,7 +123,7 @@ dev-python/libconf               | 2.0.1                                        
 dev-python/miniballcpp           | 0.2.3                                             | Optional for yt
 dev-python/msrest                | 0.7.1                                             | SunPy, h5pyd related
 dev-python/msrestazure           | 0.6.4                                             | SunPy, h5pyd related
-dev-python/numcodecs             | 0.11.0                                            | Pulled in by zarr
+dev-python/numcodecs             | 0.12.0                                            | Pulled in by zarr
 dev-python/pykdtree              | 1.3.9                                             | Optional for yt
 dev-python/pytest-repeat         | 0.9.2                                             | Test dependency for new zict
 dev-python/python-socketio       | 5.9.0                                             | Optional for yt

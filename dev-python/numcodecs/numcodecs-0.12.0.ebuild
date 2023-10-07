@@ -16,7 +16,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples msgpack zfpy"
-RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]
 	dev-python/entrypoints[${PYTHON_USEDEP}]
