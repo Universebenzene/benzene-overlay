@@ -147,7 +147,7 @@ dev-python/zict                  | 2.2.0; 3.0.0                                 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/sphinx                       | 5.1.1               | For old myst-parser and myst-nb
-dev-python/ablog                        | 0.11.5              |
+dev-python/ablog                        | 0.11.6              |
 dev-python/jupyter-cache                | 0.6.1               |
 dev-python/jupyter-sphinx               | 0.4.0               |
 dev-python/jupytext                     | 1.15.2              | Build with wheel source to include Jupyter Lab Extenstion
