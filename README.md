@@ -98,6 +98,7 @@ Packages in this table might just be pulled in as dependencies by some sicense r
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
+dev-cpp/reproc                   | 14.2.4                                            | Dependency for micromamba (compiled version)
 dev-python/adal                  | 1.2.7                                             | SunPy, h5pyd related
 dev-python/abg-python            | 1.1.3                                             | Optional for yt
 dev-python/aggdraw               | 1.3.16                                            | Optional for ginga
