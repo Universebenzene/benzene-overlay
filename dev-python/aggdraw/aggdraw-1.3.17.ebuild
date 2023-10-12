@@ -7,11 +7,11 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..12} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="High quality drawing interface for PIL"
 HOMEPAGE="https://aggdraw.readthedocs.io"
-SRC_URI="https://github.com/pytroll/aggdraw/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+SRC_URI+=" test? ( https://github.com/pytroll/aggdraw/raw/v${PV}/selftest.py -> ${P}-selftest.py )"
 
 LICENSE="MIT"
 SLOT="0"
@@ -26,12 +26,9 @@ BDEPEND="test? (
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx doc/source
 
 python_prepare_all() {
-	use doc && { mkdir -p doc/source/_static || die ; \
-#		sed -i "/language\ = /s/None/'en'/" doc/source/conf.py || die ; \
-	}
+	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/}selftest.py || die ; }
 
 	distutils-r1_python_prepare_all
 }

@@ -102,7 +102,7 @@ Package name | Available version | Additional information
 dev-cpp/reproc                   | 14.2.4                                            | Dependency for micromamba (compiled version)
 dev-python/adal                  | 1.2.7                                             | SunPy, h5pyd related
 dev-python/abg-python            | 1.1.3                                             | Optional for yt
-dev-python/aggdraw               | 1.3.16                                            | Optional for ginga
+dev-python/aggdraw               | 1.3.16; 1.3.17                                    | Optional for ginga
 dev-python/aiobotocore           | 2.6.0                                             | Pulled in by zarr
 dev-python/aioitertools          | 0.11.0                                            | Pulled in by zarr
 dev-python/arviz                 | 0.16.1                                            | Optional for corner.py.
