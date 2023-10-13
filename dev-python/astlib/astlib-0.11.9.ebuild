@@ -30,7 +30,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-lang/swig
 "
 
-PATCHES=( "${FILESDIR}/${P}-system-wcstools.patch" )
+PATCHES=( "${FILESDIR}/${PN}-0.11.8-system-wcstools.patch" )
 
 distutils_enable_tests nose
 distutils_enable_sphinx docs dev-python/sphinx-epytext dev-python/readthedocs-sphinx-ext dev-python/sphinx-rtd-theme
