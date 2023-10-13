@@ -45,7 +45,7 @@ BDEPEND=">=dev-python/cython-3.0.2[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
-		sci-libs/gdal:=[aux-xml(+),jpeg,netcdf,png,threads(+)]
+		sci-libs/gdal:=[aux-xml(+),hdf5,jpeg,netcdf,png,threads(+)]
 		sci-libs/hdf5
 	)
 "
