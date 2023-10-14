@@ -19,8 +19,8 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=sci-astronomy/erfa-2.0.0:0=
-	>=dev-python/numpy-1.17[${PYTHON_USEDEP}]
+RDEPEND=">=sci-astronomy/erfa-2.0.1:0=
+	>=dev-python/numpy-1.19[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
 BDEPEND="${RDEPEND}

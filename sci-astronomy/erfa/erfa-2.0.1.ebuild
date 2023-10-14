@@ -7,7 +7,7 @@ inherit autotools
 
 DESCRIPTION="Essential Routines for Fundamental Astronomy"
 HOMEPAGE="https://github.com/liberfa/erfa"
-SRC_URI="https://github.com/liberfa/erfa/releases/download/v${PV}/${P}.tar.gz"
+SRC_URI="https://github.com/liberfa/erfa/releases/download/v${PV}/${P}.tar.xz"
 
 LICENSE="BSD"
 SLOT="0/1"
