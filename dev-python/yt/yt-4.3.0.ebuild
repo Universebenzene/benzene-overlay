@@ -19,16 +19,16 @@ PROPERTIES="test_network"
 RESTRICT="test"
 IUSE="full"
 
-DEPEND=">=dev-python/numpy-1.17.5[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
 	>=dev-python/ewah-bool-utils-1.0.2[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}
 	>=dev-python/cmyt-1.1.2[${PYTHON_USEDEP}]
 	>=dev-python/ipywidgets-8.0.0[${PYTHON_USEDEP}]
-	>dev-python/matplotlib-3.4.2[${PYTHON_USEDEP}]
+	>dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 	>=dev-python/more-itertools-8.4[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
-	>=dev-python/pillow-6.2.1[${PYTHON_USEDEP}]
+	>=dev-python/pillow-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/tomli-1.2.3[${PYTHON_USEDEP}]
 	>=dev-python/tomli-w-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-3.4.0[${PYTHON_USEDEP}]
@@ -55,11 +55,12 @@ RDEPEND="${DEPEND}
 		>=dev-python/requests-2.20.0[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.5.0[${PYTHON_USEDEP}]
 		>=dev-python/xarray-0.16.1[${PYTHON_USEDEP}]
+		sci-libs/cartopy
 	)
 "
-BDEPEND="<dev-python/cython-3.0[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/cython-3.0[${PYTHON_USEDEP}]
+	doc? ( virtual/pandoc )
 	test? (
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		dev-python/f90nml[${PYTHON_USEDEP}]
 		dev-python/firefly[${PYTHON_USEDEP}]
@@ -69,17 +70,16 @@ BDEPEND="<dev-python/cython-3.0[${PYTHON_USEDEP}]
 		dev-python/nose[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		dev-python/pooch[${PYTHON_USEDEP}]
-		dev-python/pyx[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/ratarmount[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
 		sci-libs/cartopy
-		app-text/texlive-core
 	)
 "
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc/source dev-python/sphinx-bootstrap-theme \
+	dev-python/nbsphinx \
 	'>dev-python/runnotebook-0.3.1' \
 	dev-python/bottle \
 	dev-python/h5py \
@@ -94,6 +94,12 @@ EPYTEST_IGNORE=(
 #	Unknown pytest.mark.answer_test
 	yt/frontends/gdf/tests/test_outputs_nose.py
 )
+
+python_prepare_all() {
+	sed -i -e '/__legacy__/d' pyproject.toml || die
+
+	distutils-r1_python_prepare_all
+}
 
 python_compile_all() {
 	use doc && { [[ -d ${PN} ]] && { mv {,_}${PN} || die ; } ; cp -r "${S}"{/doc/helper_scripts,} || die ; }
