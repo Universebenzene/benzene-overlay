@@ -23,7 +23,6 @@ RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	>=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
 	>=dev-python/asdf-transform-schemas-0.3[${PYTHON_USEDEP}]
 	>=dev-python/asdf-unit-schemas-0.1[${PYTHON_USEDEP}]
-	>=dev-python/jsonschema-4.8[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
@@ -34,7 +33,7 @@ RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		>=dev-python/sphinx-asdf-0.1.4[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-asdf-0.2.2[${PYTHON_USEDEP}]
 		dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
 		>=dev-python/mistune-3[${PYTHON_USEDEP}]
 		dev-python/tomli[${PYTHON_USEDEP}]
@@ -43,8 +42,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
-		dev-python/pytest-openfiles[${PYTHON_USEDEP}]
-		dev-python/astropy[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/fsspec[${PYTHON_USEDEP}]
 		dev-python/lz4[${PYTHON_USEDEP}]
@@ -54,7 +51,12 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-#distutils_enable_sphinx docs ">=dev-python/sphinx-asdf-0.1.4" dev-python/tomli
+#distutils_enable_sphinx docs ">=dev-python/sphinx-asdf-0.2.2" dev-python/tomli
+
+EPYTEST_DESELECT=(
+	# Fatal Python error: Segmentation fault
+	asdf/_tests/_regtests/test_1530.py::test_update_with_memmapped_data_can_make_view_data_invalid
+)
 
 python_compile_all() {
 	if use doc; then
