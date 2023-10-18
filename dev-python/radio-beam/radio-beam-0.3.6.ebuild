@@ -23,10 +23,7 @@ RDEPEND=">=dev-python/numpy-1.8.0[${PYTHON_USEDEP}]
 	dev-python/astropy[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
-	all? (
-		dev-python/matplotlib[${PYTHON_USEDEP}]
-		dev-python/scipy[${PYTHON_USEDEP}]
-	)
+	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (

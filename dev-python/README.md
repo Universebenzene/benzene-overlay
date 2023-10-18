@@ -51,7 +51,7 @@ dev-python/pydl                | 0.7.0; 1.0.0\_rc2                            | 
 dev-python/pymoc               | 0.5.0                                        |
 dev-python/pyregion            | 2.1.1; 2.2.0                                 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/pyvo                | 1.2.1; 1.4.2                                 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/radio-beam          | 0.3.4                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/radio-beam          | 0.3.6                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/regions             | 0.4; 0.7                                     | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/reproject           | 0.5.1; 0.12.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sep                 | 1.2.1                                        |
