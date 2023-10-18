@@ -16,9 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"	# no x86 KEYWORD for yt, glueviz
 IUSE="doc intersphinx noviz viz viz_extra"
-# Test phase runs with errors
-RESTRICT="test
-	intersphinx? ( network-sandbox )"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/numpy-1.8[${PYTHON_USEDEP}]
@@ -53,18 +51,17 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/regions[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
-		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/zarr[${PYTHON_USEDEP}]
 	)
 "
 PDEPEND="noviz? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
 	viz? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
 	viz_extra? (
-		dev-python/glue-core[${PYTHON_USEDEP},qt]
+		dev-python/glue-qt[${PYTHON_USEDEP}]
 		dev-python/yt[${PYTHON_USEDEP}]
 	)
 	test? (
-		dev-python/glue-core[${PYTHON_USEDEP},qt]
+		dev-python/glue-qt[${PYTHON_USEDEP}]
 		dev-python/pvextractor[${PYTHON_USEDEP}]
 		dev-python/yt[${PYTHON_USEDEP}]
 	)
