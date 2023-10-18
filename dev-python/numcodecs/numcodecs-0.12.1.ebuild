@@ -18,7 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples msgpack zfpy"
 
 RDEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]
-	dev-python/entrypoints[${PYTHON_USEDEP}]
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	zfpy? ( dev-libs/zfp[python] )
 "
@@ -27,6 +26,7 @@ BDEPEND=">dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
 	doc? ( dev-libs/zfp[python] )
 	test? (
+		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
 		dev-libs/zfp[python]
 	)
