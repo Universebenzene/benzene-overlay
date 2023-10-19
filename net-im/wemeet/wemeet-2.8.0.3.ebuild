@@ -19,7 +19,7 @@ RDEPEND="dev-libs/nss
 	dev-libs/wayland
 	x11-libs/libX11
 	!bundled-libs? (
-		app-crypt/p11-kit[asn1,libffi]
+		app-crypt/p11-kit[libffi]
 		dev-lang/orc
 		dev-libs/boost[icu]
 		dev-libs/capnproto
