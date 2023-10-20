@@ -24,8 +24,7 @@ RDEPEND=">=dev-python/requests-2.18.4[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	aio? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
 "
-BDEPEND="app-arch/unzip
-	test? (
+BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/trio[${PYTHON_USEDEP}]
