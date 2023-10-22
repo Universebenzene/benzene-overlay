@@ -165,7 +165,6 @@ dev-python/sphinx-click                 | 5.0.1               |
 dev-python/sphinx-codeautolink          | 0.15.0              |
 dev-python/sphinx-design                | 0.5.0               |
 dev-python/sphinx-examples              | 0.0.5               |
-dev-python/sphinx-inline-tabs           | 2023.4.21           |
 dev-python/sphinx-readable-theme        | 1.3.0               |
 dev-python/sphinx-thebe                 | 0.2.1               |
 dev-python/sphinx-togglebutton          | 0.3.1               |
