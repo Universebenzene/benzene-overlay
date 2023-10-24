@@ -28,6 +28,7 @@ RDEPEND=">=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/dill[${PYTHON_USEDEP}]
 		dev-python/docker[${PYTHON_USEDEP}]
 		dev-python/flask-cors[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
@@ -44,7 +45,6 @@ EPYTEST_IGNORE=(
 	# See: https://github.com/spulec/moto/issues/3276
 	# test_version checks lower and upper bounds for dependencies in setup.py,
 	# and they are patched away
-	tests/test_patches.py
 	tests/test_lambda.py
 	tests/test_version.py
 )
