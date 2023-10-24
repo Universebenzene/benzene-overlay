@@ -31,6 +31,7 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/pvextractor-0.2[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
+	>=dev-python/shapely-2.0[${PYTHON_USEDEP}]
 	>=dev-python/xlrd-1.2[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/importlib-metadata-3.6[${PYTHON_USEDEP}]
@@ -54,4 +55,4 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 PDEPEND="dev-python/glue-qt[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx doc dev-python/sphinx-automodapi dev-python/sphinx-rtd-theme dev-python/numpydoc
+distutils_enable_sphinx doc dev-python/sphinx-automodapi dev-python/sphinx-book-theme dev-python/numpydoc
