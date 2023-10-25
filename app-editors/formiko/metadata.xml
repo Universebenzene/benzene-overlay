@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Formiko is reStructuredText and MarkDown editor and live previewer.
+		It is written in Python with Gtk3, GtkSourceView and Webkit2. Use Docutils
+		and recommonmark Common Mark parser.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">formiko</remote-id>
+		<remote-id type="github">ondratu/formiko</remote-id>
+	</upstream>
+	<use>
+		<flag name="vim">Vim editor support (formiko-vim command) via <pkg>app-editors/gvim</pkg></flag>
+	</use>
+</pkgmetadata>
