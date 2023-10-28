@@ -16,7 +16,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/xarray-2022.6.0[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/xarray-2022.6.0[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+"
 BDEPEND="dev-python/check-manifest[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-7.0[${PYTHON_USEDEP}]
 	doc? ( media-fonts/roboto )
