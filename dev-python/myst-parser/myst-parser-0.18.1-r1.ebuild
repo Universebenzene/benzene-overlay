@@ -30,7 +30,6 @@ RDEPEND="
 	dev-python/markdown-it-py[${PYTHON_USEDEP}]
 	>=dev-python/mdit-py-plugins-0.3.1[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	<dev-python/sphinx-6[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-4[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
