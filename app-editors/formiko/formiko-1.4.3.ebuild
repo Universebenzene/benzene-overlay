@@ -42,4 +42,5 @@ pkg_postinst() {
 	xdg_pkg_postinst
 
 	optfeature "Common Mark support (MarkDown)" dev-python/recommonmark
+	optfeature "syntax color in html output code blocks" dev-python/pygments
 }
