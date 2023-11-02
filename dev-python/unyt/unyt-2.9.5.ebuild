@@ -15,14 +15,22 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/numpy-1.17.5[${PYTHON_USEDEP}]
-	>=dev-python/sympy-1.5[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
+	>=dev-python/sympy-1.7[${PYTHON_USEDEP}]
 	>dev-python/packaging-20.9[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )"
+BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
+	test? (
+		dev-python/astropy[${PYTHON_USEDEP}]
+		dev-python/dask[${PYTHON_USEDEP}]
+		dev-python/h5py[${PYTHON_USEDEP}]
+		dev-python/jinja[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+	)
+"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs
+distutils_enable_sphinx docs dev-python/dask
 
 python_prepare_all() {
 	use doc && { ln -rs "${S}"/{docs/extensions/show_all_units.py,} || die ; }
