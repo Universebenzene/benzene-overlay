@@ -31,8 +31,3 @@ EPYTEST_IGNORE=(
 	# KeyError: 'JENKINS_URL'
 	tests/integration
 )
-
-python_prepare_all() {
-	use doc && { mkdir docs/source/_static || die ; }
-	distutils-r1_python_prepare_all
-}
