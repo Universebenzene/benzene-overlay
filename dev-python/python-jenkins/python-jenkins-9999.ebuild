@@ -28,7 +28,7 @@ RDEPEND="dev-python/multi_key_dict[${PYTHON_USEDEP}]
 	>=dev-python/pbr-0.8.2[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	>=dev-python/six-1.3.1[${PYTHON_USEDEP}]
+	>=dev-python/six-1.3.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/pbr[${PYTHON_USEDEP}]
 	test? (
