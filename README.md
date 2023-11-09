@@ -150,7 +150,7 @@ dev-python/zict                  | 2.2.0; 3.0.0                                 
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-dev-python/sphinx                       | 5.1.1               | For old myst-parser and myst-nb
+dev-python/sphinx                       | 5.1.1               | For old myst-parser and myst-nb <!-- sphinx>=6 <- copybutton <-doc- sphinx-thebe -doc-> myst-nb -> myst-parser(oldver needs sphinx<6) -->
 dev-python/ablog                        | 0.11.6              |
 dev-python/jupyter-cache                | 0.6.1; 1.0.0        |
 dev-python/jupyter-sphinx               | 0.4.0               |
