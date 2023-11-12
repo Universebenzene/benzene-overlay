@@ -102,7 +102,7 @@ Packages in this table might just be pulled in as dependencies by some sicense r
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-cpp/reproc                   | 14.2.4                                            | Dependency for micromamba (compiled version)
-sys-libs/libsolv                 | 0.7.26; (live)                                    | Dependency for micromamba (compiled version). Modified from [gentoo-zh](https://github.com/microcai/gentoo-zh/tree/783009591c662952ec437e4737817fc8798d4498/sys-libs/libsolv) (dropped with `sys-apps/zypper` )
+sys-libs/libsolv                 | 0.7.26; (live)                                    | Dependency for micromamba (compiled version). Modified from [gentoo-zh](https://github.com/microcai/gentoo-zh/tree/783009591c662952ec437e4737817fc8798d4498/sys-libs/libsolv) ([dropped](https://github.com/microcai/gentoo-zh/pull/3886) with `sys-apps/zypper` )
 dev-python/adal                  | 1.2.7                                             | SunPy, h5pyd related
 dev-python/abg-python            | 1.1.3                                             | Optional for yt
 dev-python/aggdraw               | 1.3.16; 1.3.18                                    | Optional for ginga
