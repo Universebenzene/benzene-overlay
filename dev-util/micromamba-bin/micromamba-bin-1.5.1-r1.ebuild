@@ -9,8 +9,8 @@ CONDA_FORGE_URI="https://api.anaconda.org/download/conda-forge"
 
 DESCRIPTION="Tiny version of mamba, the fast conda package installer (binary version)"
 HOMEPAGE="https://github.com/mamba-org/mamba"
-SRC_URI="amd64? ( ${CONDA_FORGE_URI}/${MY_PN}/${PV}/linux-64/${MY_P}-0.tar.bz2 -> ${P}-amd64.tar.bz2 )
-	arm64? ( ${CONDA_FORGE_URI}/${MY_PN}/${PV}/linux-aarch64/${MY_P}-0.tar.bz2 -> ${P}-arm64.tar.bz2 )
+SRC_URI="amd64? ( ${CONDA_FORGE_URI}/${MY_PN}/${PV}/linux-64/${MY_P}-1.tar.bz2 -> ${PF}-amd64.tar.bz2 )
+	arm64? ( ${CONDA_FORGE_URI}/${MY_PN}/${PV}/linux-aarch64/${MY_P}-1.tar.bz2 -> ${PF}-arm64.tar.bz2 )
 "
 LICENSE="BSD"
 SLOT="0"
