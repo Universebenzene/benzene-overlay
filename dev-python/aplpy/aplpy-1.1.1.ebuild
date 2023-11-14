@@ -3,16 +3,14 @@
 
 EAPI=7
 
+PYPI_NO_NORMALIZE=1
+PYPI_PN="APLpy"
 PYTHON_COMPAT=( python{2_7,3_{10..11}} )
 
-inherit distutils-r1 virtualx xdg-utils optfeature
-
-MY_PN=APLpy
-MY_P=${MY_PN}-${PV}
+inherit distutils-r1 pypi virtualx xdg-utils optfeature
 
 DESCRIPTION="Astronomical Plotting Library in Python"
 HOMEPAGE="https://aplpy.github.com/"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -37,15 +35,13 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	)
 "
 
-S="${WORKDIR}/${MY_P}"
-
 PATCHES=( "${FILESDIR}/${PN}-1.0-fix-dependencies.patch" )
 
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
 	sed -i -e '/[pytest]/s/pytest/tool:pytest/' setup.cfg || die
 	xdg_environment_reset
-	export mydistutilsargs=( --offline )
+	DISTUTILS_ARGS=( --offline )
 	distutils-r1_python_prepare_all
 }
 
