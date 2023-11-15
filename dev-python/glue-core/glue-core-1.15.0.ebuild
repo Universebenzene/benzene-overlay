@@ -3,7 +3,7 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{10..11} )
 
@@ -46,13 +46,14 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astrodendro[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/pyavm[${PYTHON_USEDEP}]
 		sci-libs/scikit-image[${PYTHON_USEDEP}]
 	)
 "
-PDEPEND="dev-python/glue-qt[${PYTHON_USEDEP}]"
+PDEPEND=">=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-automodapi dev-python/sphinx-book-theme dev-python/numpydoc
