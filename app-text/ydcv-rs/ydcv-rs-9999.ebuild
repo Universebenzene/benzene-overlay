@@ -19,7 +19,7 @@ if [[ ${PV} != *9999 ]]; then
 		async-io@1.13.0
 		async-io@2.2.0
 		async-lock@2.8.0
-		async-lock@3.0.0
+		async-lock@3.1.0
 		async-process@1.8.1
 		async-recursion@1.0.5
 		async-signal@0.2.5
@@ -34,13 +34,13 @@ if [[ ${PV} != *9999 ]]; then
 		bitflags@2.4.1
 		block@0.1.6
 		block-buffer@0.10.4
-		blocking@1.5.0
+		blocking@1.5.1
 		bumpalo@3.14.0
 		byteorder@1.5.0
 		bytes@1.5.0
 		calloop@0.12.3
 		calloop-wayland-source@0.2.0
-		cc@1.0.83
+		cc@1.0.84
 		cfg-if@1.0.0
 		clap@2.34.0
 		clipboard-win@3.1.1
@@ -71,17 +71,19 @@ if [[ ${PV} != *9999 ]]; then
 		endian-type@0.1.2
 		enumflags2@0.7.8
 		enumflags2_derive@0.7.8
-		env_logger@0.10.0
+		env_logger@0.10.1
 		equivalent@1.0.1
-		errno@0.3.5
+		errno@0.3.6
 		error-code@2.3.1
 		event-listener@2.5.3
-		event-listener@3.0.1
+		event-listener@3.1.0
 		event-listener-strategy@0.3.0
 		fastrand@1.9.0
 		fastrand@2.0.1
 		fd-lock@3.0.13
 		fnv@1.0.7
+		foreign-types@0.3.2
+		foreign-types-shared@0.1.1
 		form_urlencoded@1.2.0
 		futf@0.1.5
 		futures-channel@0.3.29
@@ -96,7 +98,7 @@ if [[ ${PV} != *9999 ]]; then
 		generic-array@0.14.7
 		gethostname@0.3.0
 		getopts@0.2.21
-		getrandom@0.2.10
+		getrandom@0.2.11
 		gimli@0.28.0
 		h2@0.3.21
 		hashbrown@0.12.3
@@ -108,13 +110,14 @@ if [[ ${PV} != *9999 ]]; then
 		home@0.5.5
 		html5ever@0.26.0
 		htmlescape@0.3.1
-		http@0.2.9
+		http@0.2.11
 		http-body@0.4.5
 		httparse@1.8.0
 		httpdate@1.0.3
 		humantime@2.1.0
 		hyper@0.14.27
 		hyper-rustls@0.24.2
+		hyper-tls@0.5.0
 		idna@0.4.0
 		indexmap@1.9.3
 		indexmap@2.1.0
@@ -130,7 +133,7 @@ if [[ ${PV} != *9999 ]]; then
 		libloading@0.8.1
 		libredox@0.0.1
 		linux-raw-sys@0.3.8
-		linux-raw-sys@0.4.10
+		linux-raw-sys@0.4.11
 		lock_api@0.4.11
 		log@0.4.20
 		mac@0.1.1
@@ -145,9 +148,11 @@ if [[ ${PV} != *9999 ]]; then
 		minimal-lexical@0.2.1
 		miniz_oxide@0.7.1
 		mio@0.8.9
+		native-tls@0.2.11
 		new_debug_unreachable@1.0.4
 		nibble_vec@0.1.0
 		nix@0.26.4
+		nix@0.27.1
 		nom@7.1.3
 		notify-rust@4.9.0
 		num_cpus@1.16.0
@@ -156,6 +161,10 @@ if [[ ${PV} != *9999 ]]; then
 		objc_id@0.1.1
 		object@0.32.1
 		once_cell@1.18.0
+		openssl@0.10.59
+		openssl-macros@0.1.1
+		openssl-probe@0.1.5
+		openssl-sys@0.9.95
 		ordered-stream@0.2.0
 		parking@2.2.0
 		parking_lot@0.12.1
@@ -197,19 +206,22 @@ if [[ ${PV} != *9999 ]]; then
 		ring@0.17.5
 		rustc-demangle@0.1.23
 		rustix@0.37.27
-		rustix@0.38.21
+		rustix@0.38.22
 		rustls@0.21.8
-		rustls-pemfile@1.0.3
+		rustls-pemfile@1.0.4
 		rustls-webpki@0.101.7
-		rustyline@12.0.0
+		rustyline-with-newest-nix@12.0.0
 		ryu@1.0.15
+		schannel@0.1.22
 		scoped-tls@1.0.1
 		scopeguard@1.2.0
 		scraper@0.18.1
 		sct@0.7.1
+		security-framework@2.9.2
+		security-framework-sys@2.9.1
 		selectors@0.25.0
-		serde@1.0.190
-		serde_derive@1.0.190
+		serde@1.0.192
+		serde_derive@1.0.192
 		serde_json@1.0.108
 		serde_repr@0.1.17
 		serde_urlencoded@0.7.1
@@ -218,7 +230,7 @@ if [[ ${PV} != *9999 ]]; then
 		signal-hook-registry@1.4.1
 		siphasher@0.3.11
 		slab@0.4.9
-		smallvec@1.11.1
+		smallvec@1.11.2
 		smithay-client-toolkit@0.18.0
 		smithay-clipboard@0.7.0
 		socket2@0.4.10
@@ -241,7 +253,7 @@ if [[ ${PV} != *9999 ]]; then
 		tauri-winrt-notification@0.1.3
 		tempfile@3.8.1
 		tendril@0.4.3
-		termcolor@1.3.0
+		termcolor@1.4.0
 		textwrap@0.11.0
 		thiserror@1.0.50
 		thiserror-impl@1.0.50
@@ -249,7 +261,8 @@ if [[ ${PV} != *9999 ]]; then
 		time-core@0.1.2
 		tinyvec@1.6.0
 		tinyvec_macros@0.1.1
-		tokio@1.33.0
+		tokio@1.34.0
+		tokio-native-tls@0.3.1
 		tokio-rustls@0.24.1
 		tokio-socks@0.5.1
 		tokio-util@0.7.10
@@ -271,6 +284,7 @@ if [[ ${PV} != *9999 ]]; then
 		url@2.4.1
 		utf-8@0.7.6
 		utf8parse@0.2.1
+		vcpkg@0.2.15
 		vec_map@0.8.2
 		version_check@0.9.4
 		waker-fn@1.1.1
@@ -350,15 +364,14 @@ if [[ ${PV} == *9999 ]]; then
 	}
 else
 	SRC_URI="${CARGO_CRATE_URIS}"
-	KEYWORDS="~amd64"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="+clipboard +notify +rustls test"
-PROPERTIES="test? ( test_network )"
+PROPERTIES="test_network"
 RESTRICT="test"
-REQUIRED_USE="amd64? ( clipboard rustls )"
 
 RDEPEND="${DEPEND}
 	dev-libs/openssl
@@ -372,7 +385,7 @@ src_configure() {
 	local myfeatures=(
 		$(usev clipboard)
 		$(usev notify)
-		$(usev rustls)
+		$(usex rustls rustls native-tls)
 	)
 	cargo_src_configure --no-default-features
 }
