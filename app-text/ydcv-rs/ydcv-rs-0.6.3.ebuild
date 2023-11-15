@@ -40,7 +40,7 @@ if [[ ${PV} != *9999 ]]; then
 		bytes@1.5.0
 		calloop@0.12.3
 		calloop-wayland-source@0.2.0
-		cc@1.0.84
+		cc@1.0.83
 		cfg-if@1.0.0
 		clap@2.34.0
 		clipboard-win@3.1.1
@@ -206,7 +206,7 @@ if [[ ${PV} != *9999 ]]; then
 		ring@0.17.5
 		rustc-demangle@0.1.23
 		rustix@0.37.27
-		rustix@0.38.22
+		rustix@0.38.24
 		rustls@0.21.8
 		rustls-pemfile@1.0.4
 		rustls-webpki@0.101.7
@@ -340,8 +340,8 @@ if [[ ${PV} != *9999 ]]; then
 		zbus@3.14.1
 		zbus_macros@3.14.1
 		zbus_names@2.6.0
-		zerocopy@0.7.25
-		zerocopy-derive@0.7.25
+		zerocopy@0.7.26
+		zerocopy-derive@0.7.26
 		zvariant@3.15.0
 		zvariant_derive@3.15.0
 		zvariant_utils@1.0.1
