@@ -9,8 +9,8 @@ CONDA_FORGE_URI="https://api.anaconda.org/download/conda-forge"
 
 DESCRIPTION="Tiny version of mamba, the fast conda package installer (binary version)"
 HOMEPAGE="https://github.com/mamba-org/mamba"
-SRC_URI="amd64? ( ${CONDA_FORGE_URI}/${MY_PN}/${PV}/linux-64/${MY_P}-1.tar.bz2 -> ${PF}-amd64.tar.bz2 )
-	arm64? ( ${CONDA_FORGE_URI}/${MY_PN}/${PV}/linux-aarch64/${MY_P}-1.tar.bz2 -> ${PF}-arm64.tar.bz2 )
+SRC_URI="amd64? ( ${CONDA_FORGE_URI}/${MY_PN}/${PV}/linux-64/${MY_P}-0.tar.bz2 -> ${PF}-amd64.tar.bz2 )
+	arm64? ( ${CONDA_FORGE_URI}/${MY_PN}/${PV}/linux-aarch64/${MY_P}-0.tar.bz2 -> ${PF}-arm64.tar.bz2 )
 "
 LICENSE="BSD"
 SLOT="0"
@@ -32,5 +32,5 @@ src_install() {
 
 src_test() {
 	einfo "Testing with ${S}/bin/${MY_PN}"
-	PATH="${S}/bin:${PATH}" sh info/test/run_test.sh || die "test suite failed"
+	PREFIX="${S}" PATH="${S}/bin:${PATH}" sh info/test/run_test.sh || die "test suite failed"
 }

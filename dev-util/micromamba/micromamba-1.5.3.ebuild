@@ -9,15 +9,11 @@ DISTUTILS_SINGLE_IMPL=1
 #DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..12} )
 
-MY_PN="${PN/micro/}"
-MY_PV="2023.09.05"
-MY_P="${MY_PN}-${MY_PV}"
-
 inherit distutils-r1 cmake multilib
 
 DESCRIPTION="C++ tiny version of mamba, the fast conda package installer"
 HOMEPAGE="https://github.com/mamba-org/mamba"
-SRC_URI="https://github.com/mamba-org/mamba/archive/refs/tags/${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mamba-org/mamba/archive/refs/tags/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/2"
@@ -55,17 +51,17 @@ BDEPEND="python? (
 		$(python_gen_cond_dep '
 			dev-python/pytest-lazy-fixture[${PYTHON_USEDEP}]
 			dev-python/pytest-xprocess[${PYTHON_USEDEP}]
-			dev-python/zstandard[${PYTHON_USEDEP}]
 		')
 	)
 "
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/mamba-${P}"
 
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
 	# No module named 'conda_package_handling'
+	# Depends on dev-python/zstandard[${PYTHON_USEDEP}]
 	micromamba/tests/test_package.py
 )
 
@@ -110,7 +106,7 @@ src_install() {
 }
 
 src_test() {
-	mkdir "${T}"/{.mamba,.conda} || die
+	mkdir -p "${T}"/{.mamba,.conda} || die
 	MAMBA_ROOT_PREFIX="${T}/.mamba" CONDA_PREFIX="${T}/.conda" \
 	TEST_MAMBA_EXE="${BUILD_DIR}"/${PN}/${PN} epytest micromamba/tests
 }
