@@ -20,6 +20,14 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? ( dev-python/astropy[${PYTHON_USEDEP}] )"
+	test? (
+		dev-python/astropy[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+	)
+"
 
 distutils_enable_tests pytest
+
+python_test() {
+	PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) epytest
+}
