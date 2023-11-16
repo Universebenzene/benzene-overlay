@@ -18,11 +18,12 @@ IUSE="doc intersphinx examples"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-2.0[${PYTHON_USEDEP}]
-	dev-python/QtPy[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
-	dev-python/spectral-cube[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
+	>=dev-python/QtPy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
+	>=dev-python/spectral-cube-0.4[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
@@ -32,25 +33,24 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		dev-python/PyQt6[${PYTHON_USEDEP}]
 	)
 "
-
-PATCHES=( "${FILESDIR}/${P}-fix-doc-build-warning.patch" )
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
-EPYTEST_DESELECT=(
-	# This tests currently segfaults with Matplotlib 3.1 and later
-	pvextractor/tests/test_gui.py::test_gui
-)
+python_prepare_all() {
+	use doc && { eapply "${FILESDIR}"/${PN}-0.3-fix-doc-build-warning.patch ; \
+		sed -i -e "/version =/c version = '${pkgver}'" -e "/release =/c release = '${pkgver}'" docs/conf.py || die ; }
+
+	distutils-r1_python_prepare_all
+}
 
 python_compile_all() {
 	if use doc; then
-		pushd docs || die
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" html
-		popd || die
+			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
