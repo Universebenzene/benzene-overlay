@@ -20,7 +20,7 @@ IUSE="+qt"
 RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
 	>=dev-python/echo-0.6[${PYTHON_USEDEP}]
-	>=dev-python/glue-core-1.13.1[${PYTHON_USEDEP}]
+	>=dev-python/glue-core-1.15.0[${PYTHON_USEDEP}]
 	>dev-python/ipykernel-5.1.0[${PYTHON_USEDEP}]
 	>=dev-python/ipython-4.0[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.2[${PYTHON_USEDEP}]
