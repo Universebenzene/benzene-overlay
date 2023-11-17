@@ -1,6 +1,18 @@
---- a/docs/masks.rst	2022-10-28 06:20:08.000000000 +0800
-+++ b/docs/masks.rst	2022-10-29 18:52:57.659467136 +0800
-@@ -206,7 +206,8 @@
+--- a/docs/index.rst	2023-11-17 03:44:14.000000000 +0800
++++ b/docs/index.rst	2023-11-17 11:55:08.311683985 +0800
+@@ -66,7 +66,8 @@
+ 
+     from regions import Regions
+ 
+-    image_file = get_pkg_data_filename('tutorials/FITS-images/HorseHead.fits')
++    try: image_file = get_pkg_data_filename('tutorials/FITS-images/HorseHead.fits')
++    except Exception: image_file = '_static/HorseHead.fits'  # use local fits as no network while doc building
+     image_data = fits.getdata(image_file, ext=0, memmap=False)
+ 
+     fig, ax = plt.subplots(figsize=(8, 8))
+--- a/docs/masks.rst	2023-11-17 03:44:14.000000000 +0800
++++ b/docs/masks.rst	2023-11-17 11:50:00.109574892 +0800
+@@ -212,7 +212,8 @@
      from regions.core import PixCoord
      from regions.shapes.circle import CirclePixelRegion
  
@@ -10,7 +22,7 @@
      hdulist = fits.open(filename)
      hdu = hdulist[0]
      center = PixCoord(158.5, 1053.5)
-@@ -245,7 +246,8 @@
+@@ -251,7 +252,8 @@
      from regions.core import PixCoord
      from regions.shapes.circle import CirclePixelRegion
  
@@ -20,16 +32,3 @@
      hdulist = fits.open(filename)
      hdu = hdulist[0]
      center = PixCoord(158.5, 1053.5)
---- a/docs/plot_reg.py	2022-10-28 06:20:08.000000000 +0800
-+++ b/docs/plot_reg.py	2022-10-29 18:49:52.396634946 +0800
-@@ -7,7 +7,9 @@
- from regions import Regions
- 
- 
--image_file = get_pkg_data_filename('tutorials/FITS-images/HorseHead.fits')
-+# use local fits if no network while doc building
-+try: image_file = get_pkg_data_filename('tutorials/FITS-images/HorseHead.fits')
-+except Exception: image_file = '_static/HorseHead.fits'
- image_data = fits.getdata(image_file, ext=0, memmap=False)
- 
- fig, ax = plt.subplots()

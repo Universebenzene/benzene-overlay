@@ -21,28 +21,30 @@ LICENSE="BSD"
 IUSE="all doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
-DEPEND=">=dev-python/numpy-1.18[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	all? (
-		>=dev-python/matplotlib-3.1[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${RDEPEND}
-	>=dev-python/cython-0.29.30[${PYTHON_USEDEP}]
+	>=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
+	<dev-python/cython-3.1.0[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.1[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-arraydiff[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 	)
 "
