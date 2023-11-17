@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples plotting reproject"
 
-RDEPEND=">dev-python/numpy-1.17[${PYTHON_USEDEP}]
-	>=dev-python/astropy-4.2[${PYTHON_USEDEP}]
-	>=dev-python/gwcs-0.15[${PYTHON_USEDEP}]
+RDEPEND=">dev-python/numpy-1.21.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.0.6[${PYTHON_USEDEP}]
+	>=dev-python/gwcs-0.18[${PYTHON_USEDEP}]
 	plotting? (
-		>=dev-python/matplotlib-3.2[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0[${PYTHON_USEDEP}]
 	)
 	reproject? ( >=dev-python/reproject-0.7.1[${PYTHON_USEDEP}] )
@@ -30,12 +30,12 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		dev-python/pytest-mpl[${PYTHON_USEDEP}]
+		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/mpl-animators[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
-		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/sunpy[${PYTHON_USEDEP}]
-		dev-python/sunpy-sphinx-theme[${PYTHON_USEDEP}]
 	)
 "
 
@@ -45,8 +45,8 @@ distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinx-gallery \
 	dev-python/sphinxext-opengraph \
 	dev-python/sunpy-sphinx-theme \
-	dev-python/mpl-animators \
 	">=dev-python/pytest-doctestplus-0.9.0" \
+	dev-python/mpl-animators \
 	dev-python/sunpy
 
 python_prepare_all() {
