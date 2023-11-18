@@ -22,12 +22,14 @@ REQUIRED_USE="examples? ( doc )"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 "
 
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
+		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 	)
 "
@@ -35,14 +37,14 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinx-changelog \
+	dev-python/sphinx-copybutton \
+	dev-python/sphinx-hoverxref \
 	dev-python/sphinx-gallery \
 	dev-python/sunpy-sphinx-theme \
 	dev-python/astropy
 
-python_prepare_all() {
-	sed -i "/20201101/s/20201101/$(date -d yesterday +%Y%m%d)/" examples/skip_export_from_id.py || die
-
-	distutils-r1_python_prepare_all
+python_compile_all() {
+	JSOC_EMAIL="jsoc@sunpy.org" sphinx_compile_all
 }
 
 python_install_all() {
@@ -56,5 +58,5 @@ python_install_all() {
 }
 
 python_test() {
-	JSOC_EMAIL="jsoc@sunpy.org" epytest #--email "jsoc@sunpy.org"
+	JSOC_EMAIL="jsoc@sunpy.org" epytest --remote-data
 }
