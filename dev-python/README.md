@@ -39,7 +39,7 @@ dev-python/imexam              | 0.9.1                                          
 dev-python/jplephem            | 2.19                                                |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                     | Old version for dev-python/asdf
 dev-python/montage-wrapper     | 0.9.9                                               |
-dev-python/mpl-animator        | 1.1.0                                               |
+dev-python/mpl-animator        | 1.1.1                                               |
 dev-python/mpl-scatter-density | 0.7                                                 | Glueviz releated.
 dev-python/naima               | 0.10.0                                              |
 dev-python/ndcube              | 2.2.0                                               | SunPy releated. Dependency of specutils.
