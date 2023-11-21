@@ -18,8 +18,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="asdf dask database examples image jpeg2k map net timeseries visualization"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/astropy-5.0.6[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]"
+RDEPEND="${DEPEND}
+	>=dev-python/astropy-5.0.6[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/parfive-2.0.0[${PYTHON_USEDEP},ftp]
 	asdf? (
@@ -44,7 +45,7 @@ RDEPEND=">=dev-python/astropy-5.0.6[${PYTHON_USEDEP}]
 	)
 	net? (
 		>=dev-python/beautifulsoup4-4.8.0[${PYTHON_USEDEP}]
-		>=dev-python/drms-0.6.1[${PYTHON_USEDEP}]
+		<dev-python/drms-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/python-dateutil-2.8.0[${PYTHON_USEDEP}]
 		>=dev-python/tqdm-4.32.1[${PYTHON_USEDEP}]
 		>=dev-python/zeep-3.4.0[${PYTHON_USEDEP}]
