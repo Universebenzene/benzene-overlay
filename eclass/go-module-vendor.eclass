@@ -62,7 +62,7 @@ esac
 if [[ -z ${_GO_MODULE_ECLASS} ]]; then
 _GO_MODULE_ECLASS=1
 
-inherit edo multiprocessing toolchain-funcs
+inherit edo multiprocessing toolchain-funcs go-env
 
 if [[ ! ${GO_OPTIONAL} ]]; then
 	BDEPEND=">=dev-lang/go-1.18"
@@ -447,6 +447,7 @@ go-module-vendor_setup_vendor() {
 #    local go proxy.  This mode is deprecated.
 # 2. Otherwise, if EGO_VENDOR is set, bail out, as this functionality was removed.
 # 3. Otherwise, call go-module-vendor_setup_vendor to set the vendor directory from tarball.
+# Set compile env via go-env.
 go-module-vendor_src_unpack() {
 	if use amd64 || use arm || use arm64 ||
 		( use ppc64 && [[ $(tc-endian) == "little" ]] ) || use s390 || use x86; then
@@ -466,6 +467,8 @@ go-module-vendor_src_unpack() {
 		default
 		go-module-vendor_setup_vendor
 	fi
+
+	go-env_set_compile_environment
 }
 
 # @FUNCTION: _go-module-vendor_src_unpack_gosum
