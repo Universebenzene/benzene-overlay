@@ -23,6 +23,7 @@
 		<remote-id type="github">astropy/reproject</remote-id>
 	</upstream>
 	<use>
+		<flag name="all">Including <pkg>dev-python/shapely</pkg> for some mosaicking function.</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 	</use>
 </pkgmetadata>

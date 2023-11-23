@@ -53,7 +53,7 @@ dev-python/pyregion            | 2.1.1; 2.2.0                                   
 dev-python/pyvo                | 1.2.1; 1.4.2                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/radio-beam          | 0.3.6                                               | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/regions             | 0.4; 0.8                                            | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/reproject           | 0.5.1; 0.12.0                                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/reproject           | 0.5.1; 0.12.0; 0.13.0                               | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sep                 | 1.2.1                                               |
 dev-python/sgp4                | 2.22                                                |
 dev-python/sherpa              | 4.15.0; 4.15.1; 4.16.0                              | `XSPEC` support is not included while building. See [here](https://sherpa.readthedocs.io/en/4.15.0/install.html#building-from-source) for more details to build with `XSPEC` manually.
