@@ -105,7 +105,7 @@ src_unpack() {
 }
 
 src_install() {
-	local WS="${S}/${PN}$(usex cn '-cn' '')"
+	local WS="${S}/${PN}$(usev cn '-cn')"
 
 	exeinto /usr/bin
 	exeopts -m0755
