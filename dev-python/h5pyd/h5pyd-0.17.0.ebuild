@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
-H5PY_EXPV="3.8.0"
+H5PY_EXPV="3.10.0"
 H5PY_EXP_URI="https://raw.githubusercontent.com/h5py/h5py/${H5PY_EXPV}/examples"
 
 inherit distutils-r1
@@ -24,19 +24,24 @@ SRC_URI="https://github.com/HDFGroup/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples"
+IUSE="aws azure examples google hdf5"
 RESTRICT="test"	# need h5serv for testing
 
 RDEPEND=">=dev-python/numpy-1.17.3[${PYTHON_USEDEP}]
-	dev-python/adal[${PYTHON_USEDEP}]
-	dev-python/cryptography[${PYTHON_USEDEP}]
-	dev-python/google-api-python-client[${PYTHON_USEDEP}]
-	dev-python/google-auth[${PYTHON_USEDEP}]
-	dev-python/google-auth-oauthlib[${PYTHON_USEDEP}]
-	dev-python/msrestazure[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
 	dev-python/pyjwt[${PYTHON_USEDEP}]
 	dev-python/requests-unixsocket[${PYTHON_USEDEP}]
+	aws? ( dev-python/s3fs[${PYTHON_USEDEP}] )
+	azure? (
+		dev-python/adal[${PYTHON_USEDEP}]
+		dev-python/msrestazure[${PYTHON_USEDEP}]
+	)
+	google? (
+		dev-python/google-api-python-client[${PYTHON_USEDEP}]
+		dev-python/google-auth[${PYTHON_USEDEP}]
+		dev-python/google-auth-oauthlib[${PYTHON_USEDEP}]
+	)
+	hdf5? ( dev-python/h5py[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/pkgconfig[${PYTHON_USEDEP}]"
 
