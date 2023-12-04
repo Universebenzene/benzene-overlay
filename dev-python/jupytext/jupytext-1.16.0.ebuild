@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
 
@@ -17,15 +17,13 @@ SRC_URI="https://github.com/mwouts/jupytext/archive/refs/tags/v${PV}.tar.gz -> $
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="rst2md"
-RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}]
 	dev-python/mdit-py-plugins[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/toml[${PYTHON_USEDEP}]
-	rst2md? ( dev-python/sphinx-gallery[${PYTHON_USEDEP}] )
 "
 
 BDEPEND="test? (
@@ -37,11 +35,11 @@ BDEPEND="test? (
 		dev-python/myst-parser[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]
-		dev-python/sphinx-gallery[${PYTHON_USEDEP}]
 		dev-vcs/pre-commit
 		virtual/pandoc
 	)
 "
+#		dev-python/sphinx-gallery[${PYTHON_USEDEP}]	0.7.0 only
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/myst-parser
