@@ -52,6 +52,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/regions[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
 		dev-python/zarr[${PYTHON_USEDEP}]
+		dev-qt/qtsvg:5
 	)
 "
 PDEPEND="noviz? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
