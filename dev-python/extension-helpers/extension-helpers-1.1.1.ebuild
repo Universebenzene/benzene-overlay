@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/setuptools-40.2[${PYTHON_USEDEP}]
-	>=dev-python/tomli-1.0.0[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/tomli-1.0.0[${PYTHON_USEDEP}]' python3_10)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? ( dev-python/pip[${PYTHON_USEDEP}] )
