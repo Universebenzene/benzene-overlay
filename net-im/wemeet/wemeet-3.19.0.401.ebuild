@@ -8,12 +8,12 @@ inherit unpacker qmake-utils desktop xdg
 QT5_MIN="5.15.8:5"
 DESCRIPTION="Wemeet - Tencent Video Conferencing. A.k.a Tencent Meeting"
 HOMEPAGE="https://meeting.tencent.com"
-SRC_URI="arm64? ( https://updatecdn.meeting.qq.com/cos/87439695193afbf8b1faa23202ce7306/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
+SRC_URI="amd64? ( https://updatecdn.meeting.qq.com/cos/bb4001c715553579a8b3e496233331d4/TencentMeeting_0300000000_${PV}_x86_64_default.publish.deb -> ${P}_x86_64.deb )
+	arm64? ( https://updatecdn.meeting.qq.com/cos/0f96a97b0aaea9b9d5d2c2b912ede656/TencentMeeting_0300000000_${PV}_arm64_default.publish.deb -> ${P}_arm64.deb )"
 
 LICENSE="TencentMeetingDeclare"
 SLOT="0"
-#KEYWORDS="-* ~amd64 ~arm64"
-KEYWORDS="-* ~arm64"
+KEYWORDS="-* ~amd64 ~arm64"
 IUSE="ibus wayland bundled-libs bundled-qt pipewire"
 REQUIRED_USE="bundled-libs? ( bundled-qt )"
 
@@ -95,15 +95,15 @@ src_prepare() {
 install_libs() {
 	if use bundled-qt; then
 		if use arm64; then
-			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,tms*,service*}
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,tms*,service*,Tencent*}
 		else
-			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,tms*,service*,bugly*,crbase*}
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,icu*,Qt5*,qt_*,tms*,service*,bugly*,crbase*,Tencent*}
 		fi
 	else
 		if use arm64; then
-			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*,tms*,service*}
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*,tms*,service*,Tencent*}
 		else
-			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*,tms*,service*,bugly*,crbase*}
+			doins -r opt/${PN}/lib/lib{ui*,wemeet*,xcast*,xnn*,desktop*,ImSDK.so,nxui*,qt_*,tms*,service*,bugly*,crbase*,Tencent*}
 		fi
 	fi
 }
