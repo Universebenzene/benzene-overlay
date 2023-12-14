@@ -18,7 +18,6 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/sphinx-4.0[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	doc? ( media-fonts/roboto )
 	test? (
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
