@@ -19,7 +19,8 @@ IUSE="aio examples doc"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/requests-2.18.4[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/anyio-3.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.11.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	aio? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
@@ -27,6 +28,7 @@ RDEPEND=">=dev-python/requests-2.18.4[${PYTHON_USEDEP}]
 BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/flask[${PYTHON_USEDEP}]
 		dev-python/trio[${PYTHON_USEDEP}]
 	)
 "
@@ -45,8 +47,3 @@ python_install_all() {
 
 	distutils-r1_python_install_all
 }
-
-EPYTEST_IGNORE=(
-	# No module named 'devtools_testutils'
-	tests/test_connection_string_parsing.py
-)
