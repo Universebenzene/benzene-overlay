@@ -14,7 +14,7 @@ HOMEPAGE="https://pyvo.readthedocs.io"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="all doc examples intersphinx"
+IUSE="all doc intersphinx"
 PROPERTIES="test_network"
 RESTRICT="test
 	intersphinx? ( network-sandbox )"
@@ -50,16 +50,6 @@ python_compile_all() {
 	fi
 }
 
-python_install_all() {
-	if use examples; then
-		docompress -x "/usr/share/doc/${PF}/examples"
-		docinto examples
-		dodoc -r examples/.
-	fi
-
-	distutils-r1_python_install_all
-}
-
 python_test() {
-	epytest ${PN} --remote-data
+	epytest --remote-data
 }
