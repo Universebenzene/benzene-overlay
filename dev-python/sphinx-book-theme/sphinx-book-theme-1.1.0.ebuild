@@ -21,12 +21,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE="code_style"
 RESTRICT="doc? ( network-sandbox )"
 
-RDEPEND=">=dev-python/sphinx-4[${PYTHON_USEDEP}]
-	>=dev-python/pydata-sphinx-theme-0.13.3[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-5[${PYTHON_USEDEP}]
+	>=dev-python/pydata-sphinx-theme-0.14[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 "
-BDEPEND="doc? ( media-fonts/roboto )
-	test? (
+BDEPEND="test? (
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
 		dev-python/myst-nb[${PYTHON_USEDEP}]
 		dev-python/sphinx-thebe[${PYTHON_USEDEP}]
@@ -45,7 +44,9 @@ distutils_enable_sphinx docs dev-python/sphinx-copybutton \
 	dev-python/sphinxext-opengraph \
 	dev-python/ablog \
 	dev-python/myst-nb \
-	dev-python/numpydoc
+	dev-python/numpydoc \
+	dev-python/pandas \
+	sci-geosciences/folium
 
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \
