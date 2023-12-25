@@ -21,3 +21,9 @@ DEPEND=">=app-i18n/fcitx-4.2.9:4"
 RDEPEND="${DEPEND}"
 
 DOCS=( AUTHORS README )
+
+src_prepare() {
+	for iconn in icons/fcitx*g; do { mv ${iconn} ${iconn%%-*}4-${iconn#*-} || die ; }; done
+	sed -i "s/fcitx-/fcitx4-/g" icons/CMakeLists.txt || die
+	cmake_src_prepare
+}
