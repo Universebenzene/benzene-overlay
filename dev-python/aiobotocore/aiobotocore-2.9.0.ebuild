@@ -29,7 +29,6 @@ RDEPEND=">=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
 BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/dill[${PYTHON_USEDEP}]
-		dev-python/docker[${PYTHON_USEDEP}]
 		dev-python/flask-cors[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/openapi-spec-validator[${PYTHON_USEDEP}]
@@ -53,7 +52,6 @@ python_prepare_all() {
 	use doc && { eapply "${FILESDIR}"/${PN}-2.5.0-fix-doc-title-underline.patch; mkdir -p docs/_static || die ; \
 #		sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ; \
 	}
-	use test && { echo asyncio_mode = auto >> pytest.ini || die ; eapply "${FILESDIR}"/${PN}-2.5.0-moto-4.1.7.diff ; }
 
 	distutils-r1_python_prepare_all
 }
