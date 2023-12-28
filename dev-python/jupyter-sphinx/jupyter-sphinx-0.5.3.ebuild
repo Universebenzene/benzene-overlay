@@ -3,8 +3,8 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+DISTUTILS_USE_PEP517=hatchling
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1
 
@@ -16,7 +16,8 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/sphinx-2[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-7[${PYTHON_USEDEP}]
+	>=dev-python/ipykernel-4.5.1[${PYTHON_USEDEP}]
 	>=dev-python/ipywidgets-7.0.0[${PYTHON_USEDEP}]
 	>=dev-python/nbconvert-5.5[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
