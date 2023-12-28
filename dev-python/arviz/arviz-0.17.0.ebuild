@@ -14,16 +14,16 @@ SRC_URI="https://github.com/arviz-devs/arviz/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="all examples"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.22.0[${PYTHON_USEDEP}]
 	>=dev-python/h5netcdf-1.0.2[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-3.2[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	>=dev-python/pandas-1.3.0[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.8.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-60.0.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.1.0[${PYTHON_USEDEP}]

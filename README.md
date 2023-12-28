@@ -108,7 +108,7 @@ dev-python/abg-python            | 1.1.3                                        
 dev-python/aggdraw               | 1.3.16; 1.3.18                                    | Optional for ginga
 dev-python/aiobotocore           | 2.9.0                                             | Pulled in by zarr
 dev-python/aioitertools          | 0.11.0                                            | Pulled in by zarr
-dev-python/arviz                 | 0.16.1                                            | Optional for corner.py.
+dev-python/arviz                 | 0.17.0                                            | Optional for corner.py.
 dev-python/asciitree             | 0.3.3                                             | Pulled in by zarr
 dev-python/azure-core            | 1.26.3; 1.29.6                                    | Required by new msrest
 dev-python/bidict                | 0.22.0; 0.22.1                                    | Optional for yt
