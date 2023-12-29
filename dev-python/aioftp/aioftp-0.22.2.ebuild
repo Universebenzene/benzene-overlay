@@ -3,7 +3,7 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
@@ -26,3 +26,9 @@ BDEPEND="test? (
 "
 
 distutils_enable_tests pytest
+
+python_prepare_all() {
+	use test && { sed -i "s/ --cov//" pyproject.toml || die ; }
+
+	distutils-r1_python_prepare_all
+}
