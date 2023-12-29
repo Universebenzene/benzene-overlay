@@ -43,10 +43,6 @@ distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sunpy-sphinx-theme \
 	dev-python/astropy
 
-python_compile_all() {
-	JSOC_EMAIL="jsoc@sunpy.org" sphinx_compile_all
-}
-
 python_install_all() {
 	if use examples; then
 		docompress -x "/usr/share/doc/${PF}/examples"
