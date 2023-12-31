@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Py-tree-sitter-languages provides binary Python wheels for all tree sitter languages.
+		The binary wheels remove the need to download and compile support for individual languages.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">tree-sitter-languages</remote-id>
+		<remote-id type="github">grantjenks/py-tree-sitter-languages</remote-id>
+	</upstream>
+</pkgmetadata>
