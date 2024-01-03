@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,8 +20,8 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-5.0[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
 	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -35,8 +35,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
 	)
 "
-
-PATCHES=( "${FILESDIR}"/${P}-fix-astropy-5.1.patch )
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
