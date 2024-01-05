@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -29,8 +29,6 @@ RDEPEND="x11-libs/gtk+:3[cups]
 	app-crypt/libsecret
 	x11-libs/libnotify
 "
-DEPEND=""
-BDEPEND=""
 
 S="${WORKDIR}"
 
