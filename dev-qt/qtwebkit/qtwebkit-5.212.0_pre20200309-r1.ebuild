@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -14,7 +14,7 @@ else
 	S="${WORKDIR}/${MY_P}"
 fi
 PYTHON_COMPAT=( python3_{10..11} )
-USE_RUBY="ruby27 ruby30 ruby31"
+USE_RUBY="ruby27 ruby30 ruby31 ruby32"
 inherit check-reqs cmake flag-o-matic python-any-r1 qmake-utils ruby-single toolchain-funcs
 
 DESCRIPTION="WebKit rendering library for the Qt5 framework (deprecated)"
@@ -89,6 +89,9 @@ PATCHES=(
 	"${FILESDIR}/${P}-python-3.9.patch" # bug 766303
 	"${FILESDIR}/${P}-glib-2.68.patch" # bug 777759
 	"${FILESDIR}/${P}-position.patch"
+	# From https://github.com/WebKit/WebKit/commit/c7d19a492d97f9282a546831beb918e03315f6ef
+	# Ruby 3.2 removes Object#=~ completely
+	"${FILESDIR}/${P}-webkit-offlineasm-warnings-ruby27.patch"
 	# GCC 13
 	"${FILESDIR}/${P}-cstdint.patch"
 )
@@ -134,7 +137,9 @@ src_configure() {
 		-DENABLE_X11_TARGET=$(usex X)
 	)
 
-	if has_version "virtual/rubygems[ruby_targets_ruby31]"; then
+	if has_version "virtual/rubygems[ruby_targets_ruby32]"; then
+		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby32) )
+	elif has_version "virtual/rubygems[ruby_targets_ruby31]"; then
 		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby31) )
 	elif has_version "virtual/rubygems[ruby_targets_ruby30]"; then
 		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby30) )

@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -13,8 +13,8 @@ else
 	KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~riscv ~x86"
 	S="${WORKDIR}/${MY_P}"
 fi
-PYTHON_COMPAT=( python3_{10..11} )
-USE_RUBY="ruby27 ruby30 ruby31 ruby32"
+PYTHON_COMPAT=( python3_{10..12} )
+USE_RUBY="ruby27 ruby31 ruby32 ruby33"
 inherit check-reqs cmake flag-o-matic python-any-r1 qmake-utils ruby-single toolchain-funcs
 
 DESCRIPTION="WebKit rendering library for the Qt5 framework (deprecated)"
@@ -137,12 +137,12 @@ src_configure() {
 		-DENABLE_X11_TARGET=$(usex X)
 	)
 
-	if has_version "virtual/rubygems[ruby_targets_ruby32]"; then
+	if has_version "virtual/rubygems[ruby_targets_ruby33]"; then
+		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby33) )
+	elif has_version "virtual/rubygems[ruby_targets_ruby32]"; then
 		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby32) )
 	elif has_version "virtual/rubygems[ruby_targets_ruby31]"; then
 		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby31) )
-	elif has_version "virtual/rubygems[ruby_targets_ruby30]"; then
-		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby30) )
 	else
 		mycmakeargs+=( -DRUBY_EXECUTABLE=$(type -P ruby27) )
 	fi
