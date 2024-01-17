@@ -19,6 +19,7 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 RDEPEND="${DEPEND}
+	!dev-util/mamba[micromamba]
 	!dev-util/micromamba
 "
 
