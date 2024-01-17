@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,9 +21,12 @@ IUSE="sphinx"
 RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/wheel[${PYTHON_USEDEP}]
 	sphinx? (
-		dev-python/myst-parser[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/myst-nb[${PYTHON_USEDEP}]
+		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/sphinx-book-theme[${PYTHON_USEDEP}]
 		dev-python/sphinx-design[${PYTHON_USEDEP}]
+		dev-python/sphinx-examples[${PYTHON_USEDEP}]
 	)
 "
 
