@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="einops numba"
 
-RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.7[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
 	>=dev-python/xarray-2022.09.0[${PYTHON_USEDEP}]
 	einops? ( dev-python/einops[${PYTHON_USEDEP}] )
 	numba? ( >=dev-python/numba-0.55[${PYTHON_USEDEP}] )
