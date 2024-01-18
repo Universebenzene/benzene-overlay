@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 RDEPEND="media-video/ffmpeg[cdio,iec61883,ieee1394,jack,libcaca,librtmp,sdl,speex,twolame,webp]
 	media-plugins/gst-plugins-meta[mp3,wavpack]
 	app-pda/usbmuxd
-	net-nds/openldap
+	|| ( net-nds/openldap-compat:2.4 net-nds/openldap:0/0 )
 	sys-process/numactl
 "
 DEPEND=""
