@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,17 +19,16 @@ IUSE="aio examples doc"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/anyio-3.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.11.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	aio? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-trio[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/flask[${PYTHON_USEDEP}]
-		dev-python/trio[${PYTHON_USEDEP}]
 	)
 "
 
