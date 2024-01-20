@@ -1,5 +1,5 @@
---- a/wps-office/usr/bin/wps	2022-12-14 14:42:22.494474822 +0800
-+++ b/wps-office/usr/bin/wps	2022-12-14 14:40:49.544596650 +0800
+--- a/wps-office-cn/usr/bin/wps	2022-12-14 14:42:22.494474822 +0800
++++ b/wps-office-cn/usr/bin/wps	2022-12-14 14:40:49.544596650 +0800
 @@ -61,7 +61,7 @@
  
  		gFilePath=$1

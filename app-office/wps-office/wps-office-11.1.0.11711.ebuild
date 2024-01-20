@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,13 +14,15 @@ HOMEPAGE="https://www.wps.com/office/linux https://www.wps.cn/product/wpslinux h
 
 KEYWORDS="~amd64"
 
-SRC_URI="https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_PV}/${MY_P}.XA_amd64.deb
-	https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb
-	https://github.com/gromko/wps-office-mui/archive/${MUI_PV}.tar.gz -> ${PN}-mui-${MUI_PV}.tar.gz
+SRC_URI="fetch+https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_PV}/${MY_P}.XA_amd64.deb
+	fetch+https://github.com/gromko/wps-office-mui/archive/${MUI_PV}.tar.gz -> ${PN}-mui-${MUI_PV}.tar.gz
+	cn? ( https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb )
+	l10n_zh-CN? ( https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb )
 "
 
 SLOT="0"
-RESTRICT="bindist strip mirror" # mirror as explained at bug #547372
+RESTRICT="bindist strip mirror
+	cn? ( fetch ) l10n_zh-CN? ( fetch )" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
 IUSE="cn +mime libsystemd l10n_zh-CN"
 LANGS="de en-GB es-ES es-MX fr fr-CA ja pl pt-BR pt-PT ru th uk zh-HK zh-MO zh-TW"
@@ -76,7 +78,6 @@ RDEPEND="
 	x11-libs/libXrender
 	x11-libs/libXtst
 "
-DEPEND=""
 BDEPEND="app-arch/p7zip"
 
 S="${WORKDIR}"
@@ -86,6 +87,22 @@ PATCHES=( "${FILESDIR}/${PN}-11.1.0.11664-fix-wps-python-parse.patch" )
 QA_PREBUILT="opt/kingsoft/${PN}/office6/*"
 QA_FLAGS_IGNORED="opt/kingsoft/${PN}/office6/*"
 
+pkg_nofetch() {
+	ewarn
+	ewarn "Downloading url of CN version package cannot be used directly (will get 403 error)."
+	ewarn "You need to download it manually from https://www.wps.cn/product/wpslinux website"
+	ewarn "and place it in your DISTDIR directory."
+	ewarn "Alternatively you can indicate the website as referer and download the package by command."
+	ewarn "e.g. by curl:"
+	ewarn "$ curl -e 'https://www.wps.cn/product/wpslinux' https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb -O ${MY_P}_amd64.deb"
+	ewarn
+	ewarn "by wget:"
+	ewarn "$ wget --referer 'https://www.wps.cn/product/wpslinux' https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb"
+	ewarn
+	ewarn "And don't forget to place it in the DISTDIR directory."
+	ewarn
+}
+
 src_unpack() {
 	mkdir ${PN} ${PN}-cn || die
 	pushd ${PN} || die
@@ -93,15 +110,22 @@ src_unpack() {
 	unpack ./data.tar.*
 	popd || die
 
-	pushd ${PN}-cn || die
-	unpack ${MY_P}_amd64.deb
-	unpack ./data.tar.*
-	popd || die
+	if use cn || use l10n_zh-CN; then
+		pushd ${PN}-cn || die
+		unpack ${MY_P}_amd64.deb
+		unpack ./data.tar.*
+		popd || die
+	fi
 
 	unpack ${PN}-mui-${MUI_PV}.tar.gz
 	pushd ${PN}-mui-${MUI_PV}/mui || die
 	for zs in *.7z; do unpack_7z ${zs}; done
 	popd || die
+}
+
+src_prepare() {
+	use cn && PATCHES+=( "${FILESDIR}/${PN}-cn-11.1.0.11664-fix-wps-python-parse.patch" )
+	default
 }
 
 src_install() {
