@@ -117,7 +117,7 @@ dev-python/eventlet                | 0.33.3                                     
 dev-python/f90nml                  | 1.4.4                                             | Optional for yt
 dev-python/fastcache               | 1.1.0                                             | Optional for yt
 dev-python/firefly-viz             | 2.0.4                                             | Optional for yt
-dev-python/firefly                 | 3.2.3                                             | Optional for new yt
+dev-python/firefly                 | 3.2.4                                             | Optional for new yt
 dev-python/flask-socketio          | 5.3.6                                             | Optional for yt
 dev-python/fusepy                  | 3.0.1                                             | Optional for yt
 dev-python/heapdict                | 1.0.1                                             | Pulled in by zict and distributed
