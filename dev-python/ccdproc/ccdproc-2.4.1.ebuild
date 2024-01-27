@@ -32,7 +32,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/memory_profiler[${PYTHON_USEDEP}]
+		dev-python/memory-profiler[${PYTHON_USEDEP}]
 	)
 "
 
