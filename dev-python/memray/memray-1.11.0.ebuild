@@ -10,7 +10,7 @@ PYTHON_COMPAT=( python3_{10..11} )
 inherit distutils-r1 pypi
 
 DESCRIPTION="A memory profiler for Python applications"
-HOMEPAGE="https://sphinx-book-theme.readthedocs.io"
+HOMEPAGE="https://bloomberg.github.io/memray"
 SRC_URI="https://github.com/bloomberg/memray/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
 	$(python_gen_useflags python3_11)? ( $(pypi_wheel_url ${PN} ${PV} "cp311" "cp311-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 	$(python_gen_useflags python3_10)? ( $(pypi_wheel_url ${PN} ${PV} "cp310" "cp310-manylinux_2_12_x86_64.manylinux2010_x86_64") )
