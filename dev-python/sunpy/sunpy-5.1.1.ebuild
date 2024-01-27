@@ -31,7 +31,7 @@ RDEPEND="${DEPEND}
 	database? ( >=dev-python/sqlalchemy-1.3.4[${PYTHON_USEDEP}] )
 	image? (
 		>dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
-		>=sci-libs/scikit-image-0.18.0[${PYTHON_USEDEP}]
+		>=dev-python/scikit-image-0.18.0[${PYTHON_USEDEP}]
 	)
 	jpeg2k? (
 		>dev-python/glymur-0.9.5[${PYTHON_USEDEP}]

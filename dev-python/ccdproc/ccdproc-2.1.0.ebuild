@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,7 +16,7 @@ SLOT="0"
 
 RDEPEND="
 	>=dev-python/astropy-2.0[${PYTHON_USEDEP}]
-	sci-libs/scikit-image[${PYTHON_USEDEP}]
+	dev-python/scikit-image[${PYTHON_USEDEP}]
 	>=dev-python/astroscrappy-1.0.5[${PYTHON_USEDEP}]
 	>=dev-python/reproject-0.5[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.16[${PYTHON_USEDEP}]

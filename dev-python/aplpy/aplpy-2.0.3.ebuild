@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -26,7 +26,7 @@ RDEPEND=">=dev-python/astropy-3.1[${PYTHON_USEDEP}]
 	>=dev-python/pyavm-0.9.4[${PYTHON_USEDEP}]
 	>=dev-python/pyregion-2.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-4.0[${PYTHON_USEDEP}]
-	>=sci-libs/scikit-image-0.14[${PYTHON_USEDEP}]
+	>=dev-python/scikit-image-0.14[${PYTHON_USEDEP}]
 	dev-python/imageio[${PYTHON_USEDEP}]
 	>=dev-python/shapely-1.6[${PYTHON_USEDEP}]
 "

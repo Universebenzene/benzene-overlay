@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -42,7 +42,7 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 		dev-python/astrodendro[${PYTHON_USEDEP}]
 		dev-python/spectral-cube[${PYTHON_USEDEP}]
 	)
-	recommended? ( sci-libs/scikit-image[${PYTHON_USEDEP}] )
+	recommended? ( dev-python/scikit-image[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
@@ -50,7 +50,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/astrodendro[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/pyavm[${PYTHON_USEDEP}]
-		sci-libs/scikit-image[${PYTHON_USEDEP}]
+		dev-python/scikit-image[${PYTHON_USEDEP}]
 	)
 "
 PDEPEND=">=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]"

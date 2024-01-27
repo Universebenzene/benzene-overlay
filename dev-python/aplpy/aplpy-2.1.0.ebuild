@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -27,7 +27,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/pillow-4.3[${PYTHON_USEDEP}]
 	>=dev-python/pyavm-0.9.4[${PYTHON_USEDEP}]
 	>=dev-python/shapely-1.7[${PYTHON_USEDEP}]
-	>=sci-libs/scikit-image-0.14[${PYTHON_USEDEP}]
+	>=dev-python/scikit-image-0.14[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (

@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -48,7 +48,7 @@ RDEPEND="${DEPEND}
 		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.7.0[${PYTHON_USEDEP}]
-		>=sci-libs/scikit-image-0.19.0[${PYTHON_USEDEP}]
+		>=dev-python/scikit-image-0.19.0[${PYTHON_USEDEP}]
 		>=sci-libs/scikit-learn-1.0[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
@@ -61,7 +61,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
-		sci-libs/scikit-image[${PYTHON_USEDEP}]
+		dev-python/scikit-image[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
@@ -69,7 +69,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		sci-libs/scikit-learn[${PYTHON_USEDEP}]
-		sci-libs/scikit-image[${PYTHON_USEDEP}]
+		dev-python/scikit-image[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
@@ -83,7 +83,7 @@ distutils_enable_tests pytest
 #	dev-python/sphinx-astropy \
 #	dev-python/scipy \
 #	sci-libs/scikit-learn \
-#	sci-libs/scikit-image
+#	dev-python/scikit-image
 
 # Disable intersphinx
 #python_prepare_all() {
@@ -112,7 +112,7 @@ python_test() {
 pkg_postinst() {
 	optfeature "power a variety of features in several modules (strongly recommended)" ">=dev-python/scipy-1.7.0"
 	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.5.0"
-	optfeature "deblending segmented sources" ">=sci-libs/scikit-image-0.19.0"
+	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.19.0"
 	optfeature "used in the deprecated DBSCANGroup to create star groups" ">=sci-libs/scikit-learn-1.0"
 	optfeature "used in make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.18"
 	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" dev-python/bottleneck
