@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,9 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
-RDEPEND=">=dev-python/pytest-3.6.3[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/pytest-6.2.5[${PYTHON_USEDEP}]"
 BDEPEND="test? (
-		dev-python/asynctest[${PYTHON_USEDEP}]
 		dev-python/httpx[${PYTHON_USEDEP}]
 		dev-python/pytest-httpbin[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
