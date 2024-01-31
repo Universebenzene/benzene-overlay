@@ -121,6 +121,8 @@ src_unpack() {
 	pushd ${PN}-mui-${MUI_PV}/mui || die
 	for zs in *.7z; do unpack_7z ${zs}; done
 	popd || die
+
+	xz -cd "${FILESDIR}/${P}-lang_list_community.json.xz" > "${S}/lang_list_community.json" || die
 }
 
 src_prepare() {
@@ -179,6 +181,9 @@ src_install() {
 	done
 	use l10n_ja && doins -r "${S}/${PN}-mui-${MUI_PV}/mui/ja_JP"
 	use l10n_uk && doins -r "${S}/${PN}-mui-${MUI_PV}/mui/uk_UA"
+
+	insinto /${MUIDIR}/lang_list
+	doins lang_list_community.json
 }
 
 pkg_postinst() {
