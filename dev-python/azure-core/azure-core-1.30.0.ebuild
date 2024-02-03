@@ -28,7 +28,6 @@ BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/pytest-trio[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
-		dev-python/flask[${PYTHON_USEDEP}]
 	)
 "
 
