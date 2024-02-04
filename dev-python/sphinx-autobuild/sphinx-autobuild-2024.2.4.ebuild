@@ -4,13 +4,16 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{10..12} )
+
+#MY_PV="$(ver_cut 1).$(($(ver_cut 2))).$(($(ver_cut 3)))"
+#MY_P="${PN//-/_}-${MY_PV}"
 
 inherit distutils-r1 pypi
 
 DESCRIPTION="Rebuild Sphinx documentation on changes, with live-reload in the browser"
 HOMEPAGE="https://github.com/executablebooks/sphinx-autobuild"
+#SRC_URI="$(pypi_sdist_url ${PN} ${MY_PV})"
 
 LICENSE="MIT"
 SLOT="0"
@@ -21,5 +24,6 @@ RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
 "
 
+#S="${WORKDIR}/${MY_P}"
+
 distutils_enable_tests pytest
-distutils_enable_sphinx docs --no-autodoc
