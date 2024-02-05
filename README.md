@@ -138,7 +138,7 @@ dev-python/rasterio                | 1.3.8\_p2; 1.3.9                           
 dev-python/ratarmount              | 0.14.0                                            | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
 dev-python/s3fs                    | 2023.12.2; 2024.2.0                               | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks                | 0.3.0                                             | Optional for aioftp
-dev-python/textual                 | 0.47.1                                            | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
+dev-python/textual                 | 0.48.2                                            | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
 dev-python/colorspacious           | 1.1.2                                             | Pulled in by cmyt. Dropped by official portage
 dev-python/cmyt                    | 2.0.0                                             | Pulled in by yt
 dev-python/unyt                    | 3.0.1                                             | Pulled in by yt
