@@ -12,6 +12,7 @@ inherit distutils-r1 pypi
 DESCRIPTION="Binary Python wheels for all tree sitter languages"
 HOMEPAGE="https://github.com/grantjenks/py-tree-sitter-languages"
 SRC_URI="https://github.com/grantjenks/py-tree-sitter-languages/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	$(python_gen_useflags python3_12)? ( $(pypi_wheel_url ${PN} ${PV} "cp312" "cp312-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 	$(python_gen_useflags python3_11)? ( $(pypi_wheel_url ${PN} ${PV} "cp311" "cp311-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 	$(python_gen_useflags python3_10)? ( $(pypi_wheel_url ${PN} ${PV} "cp310" "cp310-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 "
@@ -27,11 +28,15 @@ S="${WORKDIR}/py-${P}"
 distutils_enable_tests pytest
 
 python_compile() {
-	local _abitag="cp311-manylinux_2_17_x86_64.manylinux2014_x86_64"
-	if use $(python_gen_useflags python3_11); then
+	if use $(python_gen_useflags python3_12); then
+		local _pytag="cp312"
+		local _abitag="cp312-manylinux_2_17_x86_64.manylinux2014_x86_64"
+	elif use $(python_gen_useflags python3_11); then
 		local _pytag="cp311"
+		local _abitag="cp311-manylinux_2_17_x86_64.manylinux2014_x86_64"
 	elif use $(python_gen_useflags python3_10); then
 		local _pytag="cp310"
+		local _abitag="cp310-manylinux_2_17_x86_64.manylinux2014_x86_64"
 	fi
 	distutils_wheel_install "${BUILD_DIR}/install" \
 		"${DISTDIR}"/$(pypi_wheel_name "${PN}" "${PV}" "${_pytag}" "${_abitag}")
