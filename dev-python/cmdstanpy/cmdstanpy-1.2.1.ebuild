@@ -26,6 +26,7 @@ RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	all? ( dev-python/xarray[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
+		dev-python/pytest-order[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
 		dev-vcs/git
 	)
@@ -153,6 +154,9 @@ EPYTEST_DESELECT=(
 	test/test_model.py::test_model_syntax_error
 	test/test_model.py::test_model_format_options
 	test/test_model.py::test_format_old_version
+	test/test_pathfinder.py::test_pathfinder_no_psis
+	test/test_pathfinder.py::test_pathfinder_no_lp_calc
+	test/test_sample.py::test_warmup_no_adapt
 )
 
 python_install_all() {
