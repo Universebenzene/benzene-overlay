@@ -32,6 +32,7 @@ BDEPEND="test? (
 		dev-python/flask-cors[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/openapi-spec-validator[${PYTHON_USEDEP}]
+		dev-python/pip[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 	)
 "
