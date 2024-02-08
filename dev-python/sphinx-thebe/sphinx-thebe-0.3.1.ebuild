@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2023-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -38,7 +38,8 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton \
 	dev-python/sphinx-design \
 	dev-python/sphinx-book-theme \
-	dev-python/myst-nb
+	dev-python/myst-nb \
+	dev-python/matplotlib
 
 python_test() {
 	PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) epytest
