@@ -28,12 +28,12 @@ BDEPEND="test? (
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
-	# https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=python-textual
+	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-textual/-/blob/main/PKGBUILD?ref_type=heads
 	tests/snapshot_tests/test_snapshots.py
 )
 
 python_test() {
-	# https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=python-textual
+	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-textual/-/blob/main/PKGBUILD?ref_type=heads
 	epytest -k 'not textual_env_var'
 }
 
