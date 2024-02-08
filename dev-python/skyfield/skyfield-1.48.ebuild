@@ -10,7 +10,9 @@ inherit distutils-r1
 
 DESCRIPTION="Elegant astronomy for Python"
 HOMEPAGE="https://github.com/skyfielders/python-skyfield"
-SRC_URI="https://github.com/skyfielders/python-skyfield/archive/${PV}.tar.gz -> ${P}.gh.tar.gz"
+SRC_URI="https://github.com/skyfielders/python-skyfield/archive/${PV}.tar.gz -> ${P}.gh.tar.gz
+	test? ( https://datacenter.iers.org/data/9/finals2000A.all -> ${P}-finals2000A.all )
+"
 
 LICENSE="MIT"
 SLOT="0"
@@ -34,6 +36,12 @@ S="${WORKDIR}/python-${P}"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx skyfield/documentation dev-python/pandas
+
+python_prepare_all() {
+	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/}finals2000A.all || die ; }
+
+	distutils-r1_python_prepare_all
+}
 
 python_install_all() {
 	if use examples; then
