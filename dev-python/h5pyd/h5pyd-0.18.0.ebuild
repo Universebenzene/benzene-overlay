@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,9 +6,9 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..11} )
 
-H5PY_EXPV="3.9.0"
+H5PY_EXPV="3.10.0"
 H5PY_EXP_URI="https://raw.githubusercontent.com/h5py/h5py/${H5PY_EXPV}/examples"
-COMMIT="f1cf1923833c077e2c8d50c4dbbf89a1775493a7"
+COMMIT="094f0b2b7e2a777f6dc1a6f60851cc856067d9a2"
 
 inherit distutils-r1
 
