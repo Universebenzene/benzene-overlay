@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -32,35 +32,42 @@ SRC_URI+=" doc? (
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples intersphinx"
+IUSE="doc examples intersphinx recommended"
 PROPERTIES="test_network"
 RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-libs/expat-2.2.9:0=
-	>=dev-python/numpy-1.20[${PYTHON_USEDEP}]
+DEPEND=">=dev-libs/expat-2.5.0:0=
+	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
 	>=dev-python/pyerfa-2.0[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
-	>=sci-astronomy/wcslib-7.12:0=
+	>=sci-astronomy/wcslib-8.1:0=
 	>=sci-libs/cfitsio-4.2.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
+	>=dev-python/astropy-iers-data-0.2023.11.27.0.30.38[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
+	recommended? (
+		>dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.5[${PYTHON_USEDEP}]
+	)
 "
 BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
-	>=dev-python/cython-0.29.30[${PYTHON_USEDEP}]
+	>=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		>=dev-python/sphinx-astropy-1.6[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-astropy-1.9.1[${PYTHON_USEDEP},confv2]
 		>=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}]
+		dev-python/sphinx-design[${PYTHON_USEDEP}]
 		>=dev-python/jinja-3.0[${PYTHON_USEDEP}]
 		>dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
 		media-gfx/graphviz
 	)
 	test? (
@@ -68,15 +75,19 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 		dev-python/bleach[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
+		dev-python/fitsio[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
+		dev-python/html5lib[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
 		>=dev-python/jplephem-2.15[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/mpmath[${PYTHON_USEDEP}]
 		dev-python/objgraph[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		>=dev-python/pytest-astropy-0.10[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
+		dev-python/pyarrow[${PYTHON_USEDEP},parquet,snappy]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/skyfield[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
@@ -103,7 +114,7 @@ python_prepare_all() {
 		cp {"${DISTDIR}"/${PN}-eo-,"${S}"/docs/wcs/}HorseHead.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/convolution/}gc_msx_e.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/wcs/}l1448_13co.fits || die
-		eapply "${FILESDIR}"/${PN}-5.2.1-doc-use-local-data.patch
+		eapply "${FILESDIR}"/${PN}-5.3-doc-use-local-data.patch
 	fi
 
 	distutils-r1_python_prepare_all
@@ -117,8 +128,8 @@ python_compile_all() {
 	if use doc; then
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
 			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
-		cp docs/{_static/*,_build/html/_static} || die
-		cp docs/{_static/*,_build/html/_images} || die
+		cp -r docs/{_static/*,_build/html/_static} || die
+		cp -r docs/{_static/*,_build/html/_images} || die
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
@@ -155,19 +166,19 @@ default indexing engine" dev-python/sortedcontainers
 	optfeature "discovery of entry points which are used to insert fitters into astropy.modeling.fitting" dev-python/setuptools
 	optfeature "the ‘kraft-burrows-nousek’ interval in poisson_conf_interval" dev-python/mpmath
 	optfeature "Enables the serialization of various Astropy classes into a portable, hierarchical, human-readable \
-representation" ">=dev-python/asdf-2.10.0"
+representation" ">=dev-python/asdf-astropy-0.3"
 	optfeature "Improves the performance of sigma-clipping and other functionality that may require computing statistics \
 on arrays with NaN values." dev-python/bottleneck
 	optfeature "downloading files from HTTPS or FTP+TLS sites in case Python is not able to locate up-to-date root CA \
 certificates on your system; this package is usually already included in many Python installations (e.g., as a dependency of \
 the requests package)." dev-python/certifi
 	optfeature "Enables access to subsets of remote FITS files without having to download the entire file" \
-">=dev-python/fsspec-2022.8.2"
-	optfeature "Enables access to files hosted in AWS S3 cloud storage" ">=dev-python/s3fs-2022.8.2"
+">=dev-python/fsspec-2023.4.0"
+	optfeature "Enables access to files hosted in AWS S3 cloud storage" ">=dev-python/s3fs-2023.4.0"
 	optfeature "testing with Matplotlib figures" dev-python/pytest-mpl
 	optfeature "code coverage measurements" dev-python/coverage
 	optfeature "automate testing and documentation builds" dev-python/tox
 	optfeature "testing Solar System coordinates" dev-python/skyfield
 	optfeature "testing satellite positions" dev-python/sgp4
-	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-5.0.0"
+	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-5.0.0[parquet,snappy]"
 }

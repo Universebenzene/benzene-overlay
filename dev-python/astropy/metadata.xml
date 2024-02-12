@@ -19,5 +19,6 @@
 	</upstream>
 	<use>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+		<flag name="recommended">Recommended optional features</flag>
 	</use>
 </pkgmetadata>
