@@ -52,7 +52,3 @@ python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \
 		"${DISTDIR}/$(pypi_wheel_name)"
 }
-
-python_test() {
-	PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) epytest
-}
