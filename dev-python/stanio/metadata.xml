@@ -9,4 +9,7 @@
 		<remote-id type="pypi">stanio</remote-id>
 		<remote-id type="github">WardBrian/stanio</remote-id>
 	</upstream>
+	<use>
+		<flag name="ujson">Faster serialization via <pkg>dev-python/ujson</pkg></flag>
+	</use>
 </pkgmetadata>
