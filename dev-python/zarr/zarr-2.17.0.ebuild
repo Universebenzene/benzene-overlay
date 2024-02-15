@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,7 +18,7 @@ IUSE="examples jupyter"
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
-	>dev-python/numpy-1.21[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.21.1[${PYTHON_USEDEP}]
 	dev-python/fasteners[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.10.0[${PYTHON_USEDEP}]
 	jupyter? (
@@ -42,6 +42,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/numpydoc \
+	dev-python/sphinx-automodapi \
 	dev-python/sphinx-copybutton \
 	dev-python/sphinx-issues \
 	dev-python/sphinx-design \
@@ -225,6 +226,7 @@ EPYTEST_DESELECT=(
 	zarr/tests/test_storage_v3.py::TestABSStoreV3::test_writeable_values
 	zarr/tests/test_storage_v3.py::TestABSStoreV3::test_update
 	zarr/tests/test_storage_v3.py::TestABSStoreV3::test_iterators
+	zarr/tests/test_storage_v3.py::TestABSStoreV3::test_init_array
 	zarr/tests/test_storage_v3.py::TestABSStoreV3::test_init_array_overwrite
 	zarr/tests/test_storage_v3.py::TestABSStoreV3::test_init_array_overwrite_path
 	zarr/tests/test_storage_v3.py::TestABSStoreV3::test_init_array_overwrite_chunk_store
