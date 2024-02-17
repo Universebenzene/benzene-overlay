@@ -38,7 +38,7 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )
 	doc? ( local-datasets )"
 
-DEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.25[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
@@ -57,7 +57,7 @@ RDEPEND="${DEPEND}
 BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 	<dev-python/cython-3.1.0[${PYTHON_USEDEP}]
-	dev-python/extension-helpers[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
