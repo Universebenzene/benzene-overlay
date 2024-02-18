@@ -21,4 +21,7 @@
 		<remote-id type="github">goldendict/goldendict</remote-id>
 		<remote-id type="sourceforge">goldendict</remote-id>
 	</upstream>
+	<use>
+		<flag name="webengine">Use <pkg>dev-qt/qtwebengine</pkg> instead of <pkg>dev-qt/qtwebkit</pkg></flag>
+	</use>
 </pkgmetadata>

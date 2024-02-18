@@ -19,12 +19,12 @@ else
 	MY_PV=${PV^^}
 	MY_PV=${MY_PV/_/-}
 	SRC_URI="https://github.com/vedgy/${PN}/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
-#	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="debug ffmpeg"
+IUSE="debug ffmpeg +webengine"
 
 RDEPEND="
 	app-arch/bzip2
@@ -38,7 +38,8 @@ RDEPEND="
 	dev-qt/qtprintsupport:5
 	dev-qt/qtsql:5
 	dev-qt/qtsvg:5
-	dev-qt/qtwebengine:5
+	webengine? ( dev-qt/qtwebengine:5 )
+	!webengine? ( dev-qt/qtwebkit:5 )
 	dev-qt/qtwidgets:5
 	dev-qt/qtx11extras:5
 	dev-qt/qtxml:5
@@ -91,10 +92,8 @@ src_configure() {
 		myconf+=( CONFIG+=no_ffmpeg_player )
 	fi
 
-	myconf+=(
-		CONFIG+=no_qtmultimedia_player
-		CONFIG+=use_qtwebengine
-	)
+	myconf+=( CONFIG+=no_qtmultimedia_player )
+	use webengine && myconf+=( CONFIG+=use_qtwebengine )
 	eqmake5 "${myconf[@]}" ${PN}.pro
 }
 
