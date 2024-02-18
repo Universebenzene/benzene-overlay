@@ -119,6 +119,8 @@ src_configure() {
 	# Multiple rendering bugs on youtube, github, etc without this, bug #547224
 	append-flags $(test-flags -fno-strict-aliasing)
 
+	append-cxxflags -fpermissive
+
 	local mycmakeargs=(
 		-DPORT=Qt
 		-DENABLE_API_TESTS=OFF
