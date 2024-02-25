@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,36 +14,43 @@ HOMEPAGE="https://ejeschke.github.io/ginga"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc gtk3 intersphinx qt5 recommended tk web"
+IUSE="doc gtk3 intersphinx pyside2 pyside6 qt5 qt6 recommended tk web"
 # Tests phase runs with fails
 RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/numpy-1.14[${PYTHON_USEDEP}]
-	>=dev-python/astropy-3.2[${PYTHON_USEDEP}]
-	>=dev-python/pillow-6.2.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
+	>=dev-python/pillow-9.2[${PYTHON_USEDEP}]
 	>=dev-python/QtPy-2.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
+	>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
 	gtk3? (
 		dev-python/pycairo[${PYTHON_USEDEP}]
 		dev-python/pygobject[${PYTHON_USEDEP}]
 	)
+	pyside2? ( dev-python/pyside2[${PYTHON_USEDEP}] )
+	pyside6? ( dev-python/pyside6[${PYTHON_USEDEP}] )
 	qt5? ( dev-python/PyQt5[${PYTHON_USEDEP}] )
+	qt6? ( dev-python/PyQt6[${PYTHON_USEDEP}] )
 	recommended? (
 		>=dev-python/astroquery-0.3.5[${PYTHON_USEDEP}]
-		>=dev-python/beautifulsoup4-4.3.2[${PYTHON_USEDEP}]
-		dev-python/docutils[${PYTHON_USEDEP}]
 		>=dev-python/exifread-2.3.2[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-2.1[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.4[${PYTHON_USEDEP}]
+		>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 		>=dev-python/python-magic-0.4.15[${PYTHON_USEDEP}]
 		>=dev-python/scipy-0.18.1[${PYTHON_USEDEP}]
 		>=media-libs/opencv-4.5.4.58[${PYTHON_USEDEP},python]
 		dev-python/photutils[${PYTHON_USEDEP}]
 	)
-	tk? ( dev-python/aggdraw[${PYTHON_USEDEP}] )
-	web? ( dev-python/tornado[${PYTHON_USEDEP}] )
+	tk? ( dev-python/pycairo[${PYTHON_USEDEP}] )
+	web? (
+		dev-python/pycairo[${PYTHON_USEDEP}]
+		dev-python/tornado[${PYTHON_USEDEP}]
+	)
 "
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
