@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2019-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -30,7 +30,7 @@ RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]
 	all? ( >=dev-python/lz4-0.10[${PYTHON_USEDEP}] )
 "
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-asdf-0.2.2[${PYTHON_USEDEP}]
@@ -52,11 +52,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs ">=dev-python/sphinx-asdf-0.2.2" dev-python/tomli
-
-EPYTEST_DESELECT=(
-	# Fatal Python error: Segmentation fault
-	asdf/_tests/_regtests/test_1530.py::test_update_with_memmapped_data_can_make_view_data_invalid
-)
 
 python_compile_all() {
 	if use doc; then
