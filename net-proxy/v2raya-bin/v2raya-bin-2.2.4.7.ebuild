@@ -14,11 +14,12 @@ SRC_URI="
 	x86? ( https://apt.v2raya.org/static/${MY_PN}_linux_x86_${PV} -> ${P}-x86 )
 	arm64? ( https://apt.v2raya.org/static/${MY_PN}_linux_arm64_${PV} -> ${P}-arm64 )
 	arm? ( https://apt.v2raya.org/static/${MY_PN}_linux_armv7_${PV} -> ${P}-arm )
+	loong? ( https://apt.v2raya.org/static/${MY_PN}_linux_loongarch64_${PV} -> ${P}-loong )
 	https://github.com/v2rayA/v2rayA/archive/refs/tags/v${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz
 "
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~arm ~arm64 ~x86"
+KEYWORDS="-* ~amd64 ~arm ~arm64 ~loong ~x86"
 IUSE="+v2ray xray"
 REQUIRED_USE="|| ( v2ray xray )"
 
