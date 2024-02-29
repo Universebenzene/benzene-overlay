@@ -1,0 +1,30 @@
+From: Ole Streicher <olebole@debian.org>
+Date: Fri, 12 Jun 2020 17:13:16 +0200
+Subject: Use system ply instead of local copy
+
+---
+ astropy/utils/parsing.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/astropy/utils/parsing.py b/astropy/utils/parsing.py
+index 10c3a88..919c222 100644
+--- a/astropy/utils/parsing.py
++++ b/astropy/utils/parsing.py
+@@ -82,7 +82,7 @@ def lex(lextab, package, reflags=int(re.VERBOSE)):
+     reflags : int
+         Passed to ``ply.lex``.
+     """
+-    from astropy.extern.ply import lex
++    from ply import lex
+ 
+     caller_file = lex.get_caller_module_dict(2)["__file__"]
+     lextab_filename = os.path.join(os.path.dirname(caller_file), lextab + ".py")
+@@ -138,7 +138,7 @@ def yacc(tabmodule, package):
+         the output file. This is inserted into a comment in the generated
+         file.
+     """
+-    from astropy.extern.ply import yacc
++    from ply import yacc
+ 
+     caller_file = yacc.get_caller_module_dict(2)["__file__"]
+     tab_filename = os.path.join(os.path.dirname(caller_file), tabmodule + ".py")

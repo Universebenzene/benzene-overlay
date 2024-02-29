@@ -48,6 +48,8 @@ DEPEND=">=dev-libs/expat-2.5.0:0=
 "
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-iers-data-0.2023.11.27.0.30.38[${PYTHON_USEDEP}]
+	dev-python/configobj[${PYTHON_USEDEP}]
+	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	recommended? (
@@ -94,6 +96,11 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 	)
 "
 
+PATCHES=(
+	"${FILESDIR}/${P}-system-configobj.patch"
+	"${FILESDIR}/${P}-system-ply.patch"
+)
+
 # TODO: Fix this
 # NameError: name 'disabled_intersphinx_mapping' is not defined
 #distutils_enable_sphinx docs \
@@ -105,6 +112,7 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 distutils_enable_tests pytest
 
 python_prepare_all() {
+	rm -r ${PN}/extern/{configobj,ply} || die
 	if use doc && ! use intersphinx; then
 		for eeo in "${DISTDIR}"/*-eo-*; do { cp ${eeo} "${S}"/examples/io/${eeo##*-eo-} || die ; } ; done
 		for ddv in "${DISTDIR}"/*-dv-*; do { cp ${ddv} "${S}"/docs/visualization/${ddv##*-dv-} || die ; } ; done
