@@ -108,7 +108,7 @@ dev-python/aiobotocore             | 2.11.2                                     
 dev-python/aioitertools            | 0.11.0                                            | Pulled in by zarr
 dev-python/arviz                   | 0.17.0                                            | Optional for corner.py.
 dev-python/asciitree               | 0.3.3                                             | Pulled in by zarr
-dev-python/azure-core              | 1.26.3; 1.30.0                                    | Required by new msrest
+dev-python/azure-core              | 1.26.3; 1.30.1                                    | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.23.1                                    | Optional for yt
 dev-python/check-manifest          | 0.49                                              | Dropped by official portage. Required by xarray-datatree (test dep for arviz)
 dev-python/cmdstanpy               | 1.0.8; 1.2.1                                      | Test dependency for arviz. Dependency stanio is included but not listed in the table
