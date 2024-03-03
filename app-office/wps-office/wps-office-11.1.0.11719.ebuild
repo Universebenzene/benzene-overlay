@@ -16,13 +16,15 @@ KEYWORDS="~amd64"
 
 SRC_URI="fetch+https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_PV}/${MY_P}.XA_amd64.deb
 	fetch+https://github.com/gromko/wps-office-mui/archive/${MUI_PV}.tar.gz -> ${PN}-mui-${MUI_PV}.tar.gz
-	cn? ( https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb )
-	l10n_zh-CN? ( https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb )
+	cn? ( https://wb9.s-ton.top/wps302/${PV}/amd64 -> ${MY_P}_amd64.deb )
+	l10n_zh-CN? ( https://wb9.s-ton.top/wps302/${PV}/amd64 -> ${MY_P}_amd64.deb )
 "
+#	cn? ( https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb )
+#	l10n_zh-CN? ( https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb )
 
 SLOT="0"
-RESTRICT="bindist strip mirror
-	cn? ( fetch ) l10n_zh-CN? ( fetch )" # mirror as explained at bug #547372
+RESTRICT="bindist strip mirror"
+#	cn? ( fetch ) l10n_zh-CN? ( fetch )" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
 IUSE="cn +mime libsystemd l10n_zh-CN"
 LANGS="de en-GB es-ES es-MX fr fr-CA ja pl pt-BR pt-PT ru th uk zh-HK zh-MO zh-TW"
@@ -87,26 +89,26 @@ PATCHES=( "${FILESDIR}/${PN}-11.1.0.11664-fix-wps-python-parse.patch" )
 QA_PREBUILT="opt/kingsoft/${PN}/office6/*"
 QA_FLAGS_IGNORED="opt/kingsoft/${PN}/office6/*"
 
-_get_source_url_amd64() {
-	url="https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb"
-	uri="${url#https://wps-linux-personal.wpscdn.cn}"
-	secrityKey='7f8faaaa468174dc1c9cd62e5f218a5b'
-	timestamp10=$(date '+%s')
-	md5hash=$(echo -n "${secrityKey}${uri}${timestamp10}" | md5sum)
-	url+="?t=${timestamp10}&k=${md5hash%% *}"
-	echo "$url"
-}
-
-pkg_nofetch() {
-	ewarn
-	ewarn "Downloading url of CN version package cannot be used directly (will get 403 error)."
-	ewarn "You need to download it manually from https://www.wps.cn/product/wpslinux website"
-	ewarn "and place it in your DISTDIR directory."
-	ewarn "Alternatively you can get the source url via the following link:"
-	ewarn "$(_get_source_url_amd64)"
-	ewarn "And don't forget to rename it as ${MY_P}_amd64.deb then place it in the DISTDIR directory."
-	ewarn
-}
+#_get_source_url_amd64() {
+#	url="https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb"
+#	uri="${url#https://wps-linux-personal.wpscdn.cn}"
+#	secrityKey='7f8faaaa468174dc1c9cd62e5f218a5b'
+#	timestamp10=$(date '+%s')
+#	md5hash=$(echo -n "${secrityKey}${uri}${timestamp10}" | md5sum)
+#	url+="?t=${timestamp10}&k=${md5hash%% *}"
+#	echo "$url"
+#}
+#
+#pkg_nofetch() {
+#	ewarn
+#	ewarn "Downloading url of CN version package cannot be used directly (will get 403 error)."
+#	ewarn "You need to download it manually from https://www.wps.cn/product/wpslinux website"
+#	ewarn "and place it in your DISTDIR directory."
+#	ewarn "Alternatively you can get the source via the following generated link:"
+#	ewarn "$(_get_source_url_amd64)"
+#	ewarn "And don't forget to rename it as ${MY_P}_amd64.deb then place it in the DISTDIR directory."
+#	ewarn
+#}
 
 src_unpack() {
 	mkdir ${PN} ${PN}-cn || die
