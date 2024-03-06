@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,20 +17,16 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
-#RESTRICT="test" # some tests failed for astropy>=5.1
 
-RDEPEND="$(python_gen_cond_dep '
-		>=dev-python/importlib-resources-3[${PYTHON_USEDEP}]
-	' python3_8)"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-asdf-0.1.4[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
-	test? ( <dev-python/astropy-5.1[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/packaging-16.0[${PYTHON_USEDEP}] )
 "
-PDEPEND="test? ( >=dev-python/asdf-2.8[${PYTHON_USEDEP}] )"
+PDEPEND="test? ( >=dev-python/asdf-3.0.0[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs/source '>=dev-python/sphinx-asdf-0.1.4'
