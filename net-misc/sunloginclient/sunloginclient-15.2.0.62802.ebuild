@@ -16,11 +16,12 @@ RESTRICT="mirror"
 LICENSE="Sunlogin"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE="keep-server"
+IUSE="keep-server systemd"
 
 RDEPEND="dev-libs/libappindicator:3
 	x11-apps/xhost
 	virtual/libcrypt:=
+	virtual/libsystemd[systemd=]
 "
 
 S="${WORKDIR}/usr"
@@ -69,6 +70,14 @@ pkg_postinst() {
 	elog "You may also need to run \`xhost +\` before remote controlling"
 	elog "your computer from others"
 	elog
+	if ! use systemd; then
+		ewarn
+		ewarn "For OpenRC users, remote controlling from others may not work with the"
+		ewarn "newest version of sunloginclient, without libsystemd.so"
+		ewarn "We produce a virtual/libsystemd package for you to choose, which is not well tested."
+		ewarn "Or you can install the OLDER version 10.0.2.24779 if you use OpenRC system"
+		ewarn
+	fi
 
 	xdg_pkg_postinst
 }
