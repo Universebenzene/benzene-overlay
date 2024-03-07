@@ -103,7 +103,7 @@ Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/adal                    | 1.2.7                                             | SunPy, h5pyd related
 dev-python/abg-python              | 1.1.4                                             | Optional for yt
-dev-python/aggdraw                 | 1.3.16; 1.3.18                                    | Optional for ginga
+dev-python/aggdraw                 | 1.3.16; 1.3.18\_p0                                | Optional for ginga
 dev-python/aiobotocore             | 2.11.2                                            | Pulled in by zarr
 dev-python/aioitertools            | 0.11.0                                            | Pulled in by zarr
 dev-python/arviz                   | 0.17.0                                            | Optional for corner.py.

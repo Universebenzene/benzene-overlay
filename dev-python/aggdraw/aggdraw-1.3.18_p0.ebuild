@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -9,9 +9,11 @@ PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
 
+MY_PV=$(pypi_translate_version ${PV})
+
 DESCRIPTION="High quality drawing interface for PIL"
 HOMEPAGE="https://aggdraw.readthedocs.io"
-SRC_URI+=" test? ( https://github.com/pytroll/aggdraw/raw/v${PV}/selftest.py -> ${P}-selftest.py )"
+SRC_URI+=" test? ( https://github.com/pytroll/aggdraw/raw/v${MY_PV}/selftest.py -> ${P}-selftest.py )"
 
 LICENSE="MIT"
 SLOT="0"
@@ -28,11 +30,7 @@ BDEPEND="test? (
 distutils_enable_tests pytest
 
 python_prepare_all() {
-	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/}selftest.py || die ; }
+	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/test_}selftest.py || die ; }
 
 	distutils-r1_python_prepare_all
-}
-
-python_test() {
-	${EPYTHON} selftest.py || die "Tests failed with ${EPYTHON}"
 }
