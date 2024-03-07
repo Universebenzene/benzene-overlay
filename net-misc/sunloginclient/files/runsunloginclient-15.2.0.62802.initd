@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+# Copyright 1999-2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="check running sunloginclinet loop"
+command="/opt/sunlogin/bin/oray_rundaemon"
+command_args="-m server"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
+	need net
+}
+
+kill_sun() {
+	psid=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep $1 | grep -v $0 | awk '{print $1}')
+	if [ -n "$psid" ]; then
+		killall $1
+	fi
+
+	return 0
+}
+
+stop_post() {
+	kill_sun sunloginclient
+
+	eend $?
+}

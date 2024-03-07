@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+# Copyright 1999-2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="sunloginclient server daemon"
+supervisor="supervise-daemon"
+respawn_max=0
+command="/opt/sunlogin/bin/sunloginclient"
+command_args="--mod=service"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
+	need runoraydaemon
+}
+
+stop_post() {
+	einfo "To stop the sunlogin daemon entirely you need to stop the runoraydaemon as well."
+
+	eend $?
+}

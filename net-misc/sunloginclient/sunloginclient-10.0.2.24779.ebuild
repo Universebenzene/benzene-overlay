@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2020-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -26,8 +26,6 @@ RDEPEND="app-text/aspell
 	x11-apps/xhost
 	virtual/libcrypt:=
 "
-DEPEND=""
-BDEPEND=""
 
 S="${WORKDIR}/usr"
 
