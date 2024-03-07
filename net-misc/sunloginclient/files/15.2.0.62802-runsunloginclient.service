@@ -6,7 +6,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=sh -c '/opt/sunlogin/bin/oray_rundaemon -m server >/dev/null 2>&1 & /opt/sunlogin/bin/sunloginclient -m service'
+ExecStart=sh -c '/opt/sunlogin/bin/oray_rundaemon -m server >/dev/null 2>&1 & /opt/sunlogin/bin/sunloginclient --mod=service'
 KillMode=process
 ExecStop=
 Restart=always
