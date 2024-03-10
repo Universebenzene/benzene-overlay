@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2023-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,22 +18,17 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
-	>=dev-python/asdf-transform-schemas-0.3.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-unit-schemas-0.1.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/importlib-resources-3[${PYTHON_USEDEP}]
-	' python3_8)"
+RDEPEND=">=dev-python/asdf-standard-1.1.0[${PYTHON_USEDEP}]
+	>=dev-python/asdf-transform-schemas-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/asdf-coordinates-schemas-0.3.0[${PYTHON_USEDEP}]
+"
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
-		dev-python/sphinx-asdf[${PYTHON_USEDEP}]
-		dev-python/asdf[${PYTHON_USEDEP}]
-	)
-	test? (
-		dev-python/asdf[${PYTHON_USEDEP}]
-		dev-python/asdf-coordinates-schemas[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-asdf-0.1.3[${PYTHON_USEDEP}]
+		>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
+		media-gfx/graphviz
 	)
 "
 
