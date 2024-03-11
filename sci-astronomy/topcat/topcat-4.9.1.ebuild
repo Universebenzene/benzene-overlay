@@ -4,8 +4,8 @@
 EAPI=8
 
 inherit desktop java-pkg-2 xdg
-#MY_PV=$(ver_rs 2 -)
-MY_PV=${PV}
+MY_PV=$(ver_rs 2 -)
+#MY_PV=${PV}
 
 DESCRIPTION="Interactive graphical viewer and editor for astronomical tables"
 HOMEPAGE="http://www.star.bris.ac.uk/~mbt/topcat"
