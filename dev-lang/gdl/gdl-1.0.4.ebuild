@@ -1,16 +1,16 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 WX_GTK_VER="3.2-gtk3"
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit cmake python-r1 toolchain-funcs virtualx wxwidgets
 
 DESCRIPTION="GNU Data Language"
 HOMEPAGE="https://github.com/gnudatalanguage/gdl"
-SRC_URI="https://github.com/gnudatalanguage/gdl/releases/download/v${PV}/${PN}-v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/gnudatalanguage/${PN}/releases/download/v${PV}/${PN}-v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,6 +23,7 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 RDEPEND="
 	dev-cpp/antlr-cpp:2=
 	dev-libs/expat
+	media-libs/libpng:=
 	net-libs/libtirpc:=
 	sci-libs/gsl:=
 	sci-libs/plplot:=[X,cxx,-dynamic,wxwidgets?]
@@ -65,10 +66,10 @@ BDEPEND="
 	python? ( app-admin/chrpath )
 "
 
-PATCHES=( "${FILESDIR}"/${PN}-1.0.3-cmake.patch )
+PATCHES=( "${FILESDIR}"/${PN}-1.0.4-cmake.patch )
 DOCS=( AUTHORS HACKING NEWS PYTHON.txt README README.md )
 
-S="${WORKDIR}/${PN}"
+S="${WORKDIR}/${PN}-v${PV}"
 
 pkg_pretend() {
 	[[ ${MERGE_TYPE} != binary ]] && use openmp && tc-check-openmp
@@ -88,11 +89,6 @@ src_prepare() {
 	# gentoo: avoid install files in datadir directory
 	# and manually install them in src_install
 	sed -e '/AUTHORS/d' -i CMakeLists.txt || die
-	sed -e 's|#include "plDevs.h"|#include <plplot/plDevs.h>|' \
-		-e 's|#include "plplotP.h"|#include <plplot/plplotP.h>|' \
-		-e 's|#include "drivers.h"|#include <plplot/drivers.h>|' \
-		-e 's|#include "plevent.h"|#include <plplot/plevent.h>|' \
-		-e 's|#include "plxwd.h"|#include <plplot/plxwd.h>|' -i src/plplotdriver/* || die
 
 	cmake_src_prepare
 }
@@ -105,6 +101,7 @@ src_configure() {
 		-DREADLINE=ON
 		-DX11=ON
 		-DEXPAT=ON
+		-DPNGLIB=ON
 		-DEIGEN3=$(usex eigen)
 		-DFFTW=$(usex fftw)
 		-DGRIB=OFF
@@ -115,7 +112,6 @@ src_configure() {
 		-DNETCDF=$(usex netcdf)
 		-DOPENMP=$(usex openmp)
 		-DPNGLIB=$(usex png)
-		-DQHULL=OFF
 		-DUDUNITS2=$(usex udunits)
 		-DWXWIDGETS=$(usex wxwidgets)
 		-DGRAPHICSMAGICK=$(usex imagemagick $(usex graphicsmagick))
@@ -123,6 +119,7 @@ src_configure() {
 		-DTIFF=$(usex tiff)
 		-DGEOTIFF=$(usex tiff)
 		-DSHAPELIB=$(usex shapelib)
+		-DQHULL=OFF
 	)
 
 	configuration() {
