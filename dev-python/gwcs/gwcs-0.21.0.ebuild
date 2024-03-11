@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,7 +19,7 @@ RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-2.8.1[${PYTHON_USEDEP}]
-	dev-python/asdf-wcs-schemas[${PYTHON_USEDEP}]
+	>=dev-python/asdf-wcs-schemas-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-astropy-0.2.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.3[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
