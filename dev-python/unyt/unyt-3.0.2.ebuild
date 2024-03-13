@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,7 +19,7 @@ RDEPEND=">=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]
 	>=dev-python/sympy-1.7[${PYTHON_USEDEP}]
 	>dev-python/packaging-20.9[${PYTHON_USEDEP}]
 "
-BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-7.0.1[${PYTHON_USEDEP}]
 	test? (
 		dev-python/astropy[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
