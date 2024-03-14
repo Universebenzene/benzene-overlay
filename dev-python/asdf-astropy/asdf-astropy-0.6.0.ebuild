@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,8 +20,8 @@ RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-2.13[${PYTHON_USEDEP}]
-	>=dev-python/asdf-coordinates-schemas-0.1[${PYTHON_USEDEP}]
-	>=dev-python/asdf-transform-schemas-0.2.2[${PYTHON_USEDEP}]
+	>=dev-python/asdf-coordinates-schemas-0.3[${PYTHON_USEDEP}]
+	>=dev-python/asdf-transform-schemas-0.5[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
 "
