@@ -26,6 +26,7 @@
 		<flag name="libsystemd">Use bundled libdbus that depends on <pkg>virtual/libsystemd</pkg></flag>
 		<flag name="l10n_zh-HK">Chinese (Traditional, Hong Kong S.A.R.)</flag>
 		<flag name="l10n_zh-MO">Chinese (Traditional, Macao S.A.R.)</flag>
+		<flag name="system-freetype"> Use <pkg>media-libs/freetype</pkg> instead of <pkg>media-libs/freetype-wps</pkg>.</flag>
 	</use>
 </pkgmetadata>
 
