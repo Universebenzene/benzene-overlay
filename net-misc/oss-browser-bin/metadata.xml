@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Ossbrowser is a graphical management tool developed by Alibaba Cloud.
+		It provides features similar to those of Windows Explorer. Using ossbrowser,
+		you can view, upload, download, and manage items with ease.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">aliyun/oss-browser</remote-id>
+	</upstream>
+</pkgmetadata>
+
