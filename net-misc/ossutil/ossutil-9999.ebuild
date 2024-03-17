@@ -28,7 +28,7 @@ else
 fi
 
 RDEPEND="${DEPEND}
-	!net-proxy/ossutil-bin
+	!net-misc/ossutil-bin
 "
 
 src_compile() {
