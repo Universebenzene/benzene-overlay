@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		The ossfs enables you to mount Alibaba Cloud OSS buckets to a
+		local file in Linux, macOS, and FreeBSD systems. In the system,
+		you can conveniently operate on objects in OSS while using the
+		local file system to maintain data sharing.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">aliyun/ossfs</remote-id>
+	</upstream>
+</pkgmetadata>
