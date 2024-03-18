@@ -26,7 +26,7 @@ SLOT="0"
 RESTRICT="bindist strip mirror"
 #	cn? ( fetch ) l10n_zh-CN? ( fetch )" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
-IUSE="cn +mime libsystemd l10n_zh-CN"
+IUSE="cn +mime libsystemd l10n_zh-CN system-freetype"
 LANGS="de en-GB es-ES es-MX fr fr-CA ja pl pt-BR pt-PT ru th uk zh-HK zh-MO zh-TW"
 for X in ${LANGS}; do
 	IUSE="${IUSE} l10n_${X}"
@@ -52,7 +52,8 @@ RDEPEND="
 	dev-qt/qtwidgets:5
 
 	media-libs/fontconfig:1.0
-	media-libs/freetype:2
+	!system-freetype? ( media-libs/freetype-wps:2 )
+	system-freetype? ( media-libs/freetype:2 )
 	media-libs/flac:0/10-12
 	media-libs/libogg
 	media-libs/libpulse
