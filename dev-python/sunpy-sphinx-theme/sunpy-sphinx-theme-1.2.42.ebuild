@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -12,7 +12,7 @@ inherit distutils-r1 pypi
 DESCRIPTION="The sphinx theme for the SunPy website and documentation"
 HOMEPAGE="https://github.com/sunpy/sunpy-sphinx-theme"
 
-LICENSE="BSD"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 

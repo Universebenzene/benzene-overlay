@@ -12,12 +12,12 @@ inherit distutils-r1 pypi
 DESCRIPTION="The sphinx theme for the SunPy website and documentation"
 HOMEPAGE="https://github.com/sunpy/sunpy-sphinx-theme"
 
-LICENSE="BSD"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
-	<dev-python/pydata-sphinx-theme-0.14[${PYTHON_USEDEP}]
+	dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-6.2[$PYTHON_USEDEP]"
 
