@@ -16,6 +16,9 @@ SRC_URI+=" test? (
 		${GIT_TEST_URI}/packed-5-times.tar.gz -> ${P}-t-packed-5-times.tar.gz
 		${GIT_TEST_URI}/compressed-100-times.gz -> ${P}-t-compressed-100-times.gz
 		${GIT_TEST_URI}/compressed-100-times.tar.gz -> ${P}-t-compressed-100-times.tar.gz
+		${GIT_TEST_URI}/double-compressed-nested-tar.tgz.tgz -> ${P}-t-double-compressed-nested-tar.tgz.tgz
+		${GIT_TEST_URI}/folder-symlink.rar -> ${P}-t-folder-symlink.rar
+		${GIT_TEST_URI}/folder-symlink.zip -> ${P}-t-folder-symlink.zip
 		${GIT_TEST_URI}/single-file.tar -> ${P}-t-single-file.tar
 		${GIT_TEST_URI}/2k-recursive-tars.tar.bz2 -> ${P}-t-2k-recursive-tars.tar.bz2
 		${GIT_TEST_URI}/tar-with-300-folders-with-1000-files-0B-files.tar.bz2 -> ${P}-t-tar-with-300-folders-with-1000-files-0B-files.tar.bz2
@@ -38,8 +41,9 @@ RDEPEND="bzip2? ( >=dev-python/indexed-bzip2-1.3.1[${PYTHON_USEDEP}] )
 BDEPEND="test? (
 		dev-python/indexed-bzip2[${PYTHON_USEDEP}]
 		dev-python/indexed-gzip[${PYTHON_USEDEP}]
-		dev-python/python-xz[${PYTHON_USEDEP}]
 		dev-python/indexed-zstd[${PYTHON_USEDEP}]
+		dev-python/python-xz[${PYTHON_USEDEP}]
+		dev-python/rarfile[${PYTHON_USEDEP}]
 		dev-python/zstandard[${PYTHON_USEDEP}]
 	)
 "
