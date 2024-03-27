@@ -53,7 +53,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 	)
 "
-PDEPEND=">=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-automodapi dev-python/sphinx-book-theme dev-python/numpydoc
