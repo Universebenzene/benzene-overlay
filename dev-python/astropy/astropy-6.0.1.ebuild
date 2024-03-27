@@ -40,14 +40,14 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-libs/expat-2.5.0:0=
 	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
-	>=dev-python/pyerfa-2.0[${PYTHON_USEDEP}]
+	>=dev-python/pyerfa-2.0.1.1[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
 	>=sci-astronomy/wcslib-8.1:0=
 	>=sci-libs/cfitsio-4.2.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2023.11.27.0.30.38[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2024.2.26.0.28.55[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
@@ -65,7 +65,7 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-astropy-1.9.1[${PYTHON_USEDEP},confv2]
 		>=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}]
 		dev-python/sphinx-design[${PYTHON_USEDEP}]
-		>=dev-python/jinja-3.0[${PYTHON_USEDEP}]
+		>=dev-python/jinja-3.1.3[${PYTHON_USEDEP}]
 		>dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
@@ -88,7 +88,6 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		>=dev-python/pytest-astropy-0.10[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
-		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 		dev-python/pyarrow[${PYTHON_USEDEP},parquet,snappy]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/skyfield[${PYTHON_USEDEP}]
@@ -97,8 +96,8 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 "
 
 PATCHES=(
-	"${FILESDIR}/${P}-system-configobj.patch"
-	"${FILESDIR}/${P}-system-ply.patch"
+	"${FILESDIR}/${PN}-6.0.0-system-configobj.patch"
+	"${FILESDIR}/${PN}-6.0.0-system-ply.patch"
 )
 
 # TODO: Fix this
@@ -109,6 +108,7 @@ PATCHES=(
 #	dev-python/scipy \
 #	dev-python/pytest
 
+EPYTEST_XDIST=1
 distutils_enable_tests pytest
 
 python_prepare_all() {
