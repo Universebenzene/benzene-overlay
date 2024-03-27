@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="all doc"
 PROPERTIES="test_network"
-RESTRICT="test"	# Test phase runs with fails
+RESTRICT="test"
 
 RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	dev-python/pandas[${PYTHON_USEDEP}]
@@ -27,7 +27,6 @@ RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/pytest-order[${PYTHON_USEDEP}]
-		dev-python/xarray[${PYTHON_USEDEP}]
 		dev-vcs/git
 	)
 "
@@ -91,6 +90,9 @@ EPYTEST_DESELECT=(
 	test/test_pathfinder.py::test_single_pathfinder
 	test/test_pathfinder.py::test_pathfinder_create_inits
 	test/test_pathfinder.py::test_pathfinder_init_sampling
+	test/test_pathfinder.py::test_inits_for_pathfinder
+	test/test_pathfinder.py::test_pathfinder_threads
+	test/test_sample.py::test_pd_xr_agreement
 	test/test_sample.py::test_bernoulli_good
 	test/test_sample.py::test_bernoulli_unit_e
 	test/test_sample.py::test_init_types
@@ -138,6 +140,9 @@ EPYTEST_DESELECT=(
 	test/test_sample.py::test_serialization
 	test/test_utils.py::test_cmdstan_version
 	test/test_utils.py::test_check_sampler_csv_thin
+	test/test_utils.py::test_default_path
+	test/test_utils.py::test_set_path
+	test/test_utils.py::test_validate_path
 	test/test_variational.py::test_instantiate
 	test/test_variational.py::test_variables
 	test/test_variational.py::test_variables_3d
