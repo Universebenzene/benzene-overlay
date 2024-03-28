@@ -63,4 +63,4 @@ dev-python/spectral-cube       | 0.6.5                                          
 dev-python/specutils           | 1.1.1; 1.13.0                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/starlink-pyast      | 0.2.1                                                | Starlink WCS library for ginga
 dev-python/sunpy               | 5.1.1                                                | Testing and doc building are really hard to run, so not supported right now.
-dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.0.6                                 |
+dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.0.7                                 |
