@@ -35,13 +35,6 @@ S="${WORKDIR}/${MY_P}"
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx-rtd-theme
 
-EPYTEST_DESELECT=(
-	# requires the 'imagecodecs'
-	tests/test_tiff2jp2.py::TestSuite::test_rgba_interface_big_endian
-	tests/test_tiff2jp2.py::TestSuite::test_rgba_interface_big_endian_stripped
-	tests/test_tiff2jp2.py::TestSuite::test_rgba_interface_big_endian_tiled
-)
-
 python_prepare_all() {
 	use doc && { mkdir docs/source/_static || die ; }
 	distutils-r1_python_prepare_all
