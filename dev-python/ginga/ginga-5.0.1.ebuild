@@ -24,6 +24,7 @@ RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-9.2[${PYTHON_USEDEP}]
 	>=dev-python/QtPy-2.0.1[${PYTHON_USEDEP}]
+	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 	>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
 	gtk3? (
