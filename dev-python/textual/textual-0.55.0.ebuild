@@ -39,5 +39,5 @@ python_test() {
 
 pkg_postinst() {
 	optfeature "bindings for python" ">=dev-python/tree-sitter-0.20.1"
-	optfeature "support for languages" ">=dev-python/tree-sitter-languages-1.7.0"
+	optfeature "support for languages" ">=dev-python/tree-sitter-languages-1.10.2"
 }
