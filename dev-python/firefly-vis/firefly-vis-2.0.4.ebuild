@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,6 +16,7 @@ HOMEPAGE="https://github.com/ageller/Firefly"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"	# bidict pytest-benchmark no x86
+RESTRICT="test"	# No usable test phases
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/h5py[${PYTHON_USEDEP}]
@@ -27,4 +28,4 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/abg-python-1.0.5[${PYTHON_USEDEP}]
 "
 
-distutils_enable_tests nose
+#distutils_enable_tests nose

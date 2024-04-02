@@ -6,7 +6,7 @@ EAPI=8
 #DISTUTILS_USE_PEP517=setuptools
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYPI_NO_NORMALIZE=1
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
 
@@ -17,6 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="sphinx"
+RESTRICT="test"	# No usable test phases
 
 RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/wheel[${PYTHON_USEDEP}]
@@ -30,4 +31,4 @@ RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	)
 "
 
-distutils_enable_tests nose
+#distutils_enable_tests nose

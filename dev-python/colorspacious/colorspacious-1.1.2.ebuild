@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,7 +14,7 @@ HOMEPAGE="https://colorspacious.readthedocs.org"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="doc test"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 BDEPEND="${RDEPEND}
@@ -26,11 +26,12 @@ BDEPEND="${RDEPEND}
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
+	test? ( >=dev-python/nose-1.3.7_p20221026[${PYTHON_USEDEP}] )
 "
 
 PATCHES=( "${FILESDIR}"/${P}-fix-deprecated-confpy.patch )
 
-distutils_enable_tests nose
+#distutils_enable_tests nose
 # FileNotFoundError: [Errno 2] No such file or directory: '_static/colorspacious-graph.dot'
 #distutils_enable_sphinx doc dev-python/sphinxcontrib-bibtex \
 #	dev-python/sphinx-rtd-theme \

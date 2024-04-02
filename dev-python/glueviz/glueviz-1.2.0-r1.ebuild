@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,13 +15,14 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc"
+RESTRICT="test"	# No usable test phases
 
 RDEPEND=">=dev-python/glue-core-1.13.0[${PYTHON_USEDEP}]
 	>=dev-python/glue-vispy-viewers-1.0.3[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP},doc] )
 "
 
-distutils_enable_tests nose
+#distutils_enable_tests nose
 
 python_install_all() {
 	use doc && dosym -r /usr/share/doc/glue-qt*/html /usr/share/doc/${PF}/html

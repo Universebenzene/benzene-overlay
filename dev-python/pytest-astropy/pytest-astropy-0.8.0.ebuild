@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,6 +14,7 @@ HOMEPAGE="https://github.com/astropy/pytest-astropy"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+RESTRICT="test"	# No usable test phases
 RDEPEND=">=dev-python/hypothesis-5.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-astropy-header-0.1.2[${PYTHON_USEDEP}]
 	>=dev-python/pytest-arraydiff-0.1[${PYTHON_USEDEP}]
@@ -25,4 +26,4 @@ RDEPEND=">=dev-python/hypothesis-5.1[${PYTHON_USEDEP}]
 	>=dev-python/pytest-4.6.0[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
+#BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"

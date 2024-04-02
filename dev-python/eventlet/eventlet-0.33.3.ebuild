@@ -17,14 +17,14 @@ HOMEPAGE="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
-IUSE="examples"
-RESTRICT="test"	# Test phase runs with error
+IUSE="examples test"
 
 RDEPEND=">=dev-python/dnspython-1.15.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]
 	dev-python/greenlet[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
+		>=dev-python/nose-1.3.7_p20221026[${PYTHON_USEDEP}]
 		dev-python/httplib2[${PYTHON_USEDEP}]
 		dev-python/mock[${PYTHON_USEDEP}]
 		dev-python/psycopg:2[${PYTHON_USEDEP}]
@@ -41,7 +41,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-0.33.2-fix-doc-title.patch"
 )
 
-distutils_enable_tests nose
+#distutils_enable_tests nose
 distutils_enable_sphinx doc dev-python/pyzmq
 
 src_prepare() {

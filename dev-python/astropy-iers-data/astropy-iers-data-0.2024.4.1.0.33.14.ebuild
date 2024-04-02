@@ -15,7 +15,8 @@ HOMEPAGE="https://github.com/astropy/astropy-iers-data"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+RESTRICT="test"	# No usable test phases
 
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
 
-distutils_enable_tests nose
+#distutils_enable_tests nose

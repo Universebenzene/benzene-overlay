@@ -1,10 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1
 
@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc doc-demo"
-RESTRICT="doc-demo? ( network-sandbox )"
+RESTRICT="doc-demo? ( network-sandbox ) test"	# No usable test phases
 REQUIRED_USE="doc-demo? ( doc )"
 
 RDEPEND=">=dev-python/sphinx-0.6[${PYTHON_USEDEP}]
@@ -31,7 +31,7 @@ BDEPEND="doc? (
 
 S="${WORKDIR}/youtube-${PV}"
 
-distutils_enable_tests nose
+#distutils_enable_tests nose
 # Could not import extension sphinx.builders.epub3 (exception: No module named 'sphinxcontrib.serializinghtml')
 #distutils_enable_sphinx docs/source dev-python/sphinx-copybutton dev-python/furo
 
