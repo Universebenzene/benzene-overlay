@@ -36,6 +36,7 @@ app-text/{[de](https://www.eudic.net/v4/de/app/download),[es](https://www.eudic.
 dev-cpp/gtkspellmm                                                                   | 3.0.5                                                                                                                 | Dependency for [gimagereader[gtk]](https://gitlab.com/salfter/portage/-/tree/master/app-text/gimagereader?ref_type=heads)
 dev-lang/gdl                                                                         | 1.0.0\_rc3-r3; 1.0.1-r3; 1.0.4                                                                                        | Allow `gdl` and the python module installed at the same time
 dev-python/aioftp                                                                    | 0.22.3                                                                                                                |
+dev-python/asyncssh                                                                  | 2.14.2                                                                                                                | Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
 dev-python/corner                                                                    | 2.2.2                                                                                                                 |
 dev-python/exifread                                                                  | 3.0.0                                                                                                                 |
 dev-python/glymur                                                                    | 0.12.0; 0.12.8; 0.12.9\_p1; 0.12.9\_p2                                                                                |
@@ -137,6 +138,7 @@ dev-python/numcodecs               | 0.12.1                                     
 dev-python/pykdtree                | 1.3.11                                            | Optional for yt
 dev-python/pytest-repeat           | 0.9.3                                             | Test dependency for new zict
 dev-python/pytest-textual-snapshot | 0.4.0                                             | Test dependency for new memray. Dependency syrupy is included but not listed in the table
+dev-python/python-pkcs11           | 0.7.0                                             | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
 dev-python/python-socketio         | 5.9.0; 5.11.2                                     | Optional for yt
 dev-python/python-xz               | 0.5.0                                             | Optional for yt
 dev-python/rasterio                | 1.3.8\_p2; 1.3.9                                  | Optional for photutils. Dependencies are not all listed in the table
