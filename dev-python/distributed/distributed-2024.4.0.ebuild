@@ -37,6 +37,7 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/asyncssh[${PYTHON_USEDEP}]
 		dev-python/bokeh[${PYTHON_USEDEP}]
 		dev-python/dask-expr[${PYTHON_USEDEP}]
 		dev-python/flaky[${PYTHON_USEDEP}]
@@ -57,7 +58,6 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 		dev-python/zstandard[${PYTHON_USEDEP}]
 	)
 "
-#		dev-python/asyncssh[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/dask-sphinx-theme dev-python/numpydoc \
