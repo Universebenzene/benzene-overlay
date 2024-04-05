@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2020-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -25,7 +25,7 @@ RDEPEND=">=dev-python/astropy-4[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	plotting? (
 		dev-python/astroquery[${PYTHON_USEDEP}]
-		dev-python/matplotlib[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-1.4[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
