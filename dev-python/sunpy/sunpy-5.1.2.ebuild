@@ -35,7 +35,7 @@ RDEPEND="${DEPEND}
 	)
 	jpeg2k? (
 		>dev-python/glymur-0.9.5[${PYTHON_USEDEP}]
-		>=dev-python/lxml-4.8.0[${PYTHON_USEDEP}]
+		>dev-python/lxml-5.0.0[${PYTHON_USEDEP}]
 	)
 	map? (
 		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
