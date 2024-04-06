@@ -20,9 +20,8 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	>=dev-python/attrs-20.1.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-standard-1.0.1[${PYTHON_USEDEP}]
+	>=dev-python/asdf-standard-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-transform-schemas-0.3[${PYTHON_USEDEP}]
-	>=dev-python/asdf-unit-schemas-0.1[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
@@ -40,7 +39,6 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/fsspec[${PYTHON_USEDEP}]
