@@ -18,7 +18,7 @@ IUSE="examples jupyter"
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.21.1[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
 	dev-python/fasteners[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.10.0[${PYTHON_USEDEP}]
 	jupyter? (
@@ -160,6 +160,7 @@ EPYTEST_DESELECT=(
 	zarr/tests/test_hierarchy.py::TestGroupWithABSStore::test_group_init_errors_1
 	zarr/tests/test_hierarchy.py::TestGroupWithABSStore::test_group_init_errors_2
 	zarr/tests/test_hierarchy.py::TestGroupWithABSStore::test_group_repr
+	zarr/tests/test_hierarchy.py::TestGroupWithABSStore::test_ipython_repr_methods
 	zarr/tests/test_hierarchy.py::TestGroupWithABSStore::test_iterators_recurse
 	zarr/tests/test_hierarchy.py::TestGroupWithABSStore::test_move
 	zarr/tests/test_hierarchy.py::TestGroupWithABSStore::test_paths
@@ -184,6 +185,7 @@ EPYTEST_DESELECT=(
 	zarr/tests/test_hierarchy.py::TestGroupV3WithABSStore::test_group_init_errors_1
 	zarr/tests/test_hierarchy.py::TestGroupV3WithABSStore::test_group_init_errors_2
 	zarr/tests/test_hierarchy.py::TestGroupV3WithABSStore::test_group_repr
+	zarr/tests/test_hierarchy.py::TestGroupV3WithABSStore::test_ipython_repr_methods
 	zarr/tests/test_hierarchy.py::TestGroupV3WithABSStore::test_iterators_recurse
 	zarr/tests/test_hierarchy.py::TestGroupV3WithABSStore::test_move
 	zarr/tests/test_hierarchy.py::TestGroupV3WithABSStore::test_paths
