@@ -116,7 +116,8 @@ dev-python/arviz                   | 0.17.1                                     
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
 dev-python/azure-core              | 1.26.3; 1.30.1                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
-dev-python/check-manifest          | 0.49                                                       | Dropped by official portage. Required by xarray-datatree (test dep for arviz)
+dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Required by firefly{,-viz}
+dev-python/check-manifest          | 0.49                                                       | Dropped by official portage. Test dependency for zarr
 dev-python/cmdstanpy               | 1.0.8; 1.2.2                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/distributed             | 2024.2.0; 2024.2.1; 2024.3.0; 2024.3.1; 2024.4.0; 2024.4.1 | Optional for arviz and spectral-cube
 dev-python/eventlet                | 0.33.3; 0.35.1                                             | Dropped by official portage. Required by firefly{,-viz}
