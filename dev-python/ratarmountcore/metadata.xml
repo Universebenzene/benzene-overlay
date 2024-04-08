@@ -9,6 +9,7 @@
 		<remote-id type="pypi">ratarmountcore</remote-id>
 	</upstream>
 	<use>
+		<flag name="7z">Add extra support for 7z</flag>
 		<flag name="bzip2">Add extra support for bzip2</flag>
 		<flag name="full">Include all extra dependencies</flag>
 		<flag name="gzip">Add extra support for gzip</flag>

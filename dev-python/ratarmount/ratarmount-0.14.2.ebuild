@@ -22,7 +22,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="test"	# RuntimeError: Expected mount point but it isn't one!
 
-RDEPEND=">=dev-python/ratarmountcore-0.6.0[${PYTHON_USEDEP}]
+RDEPEND="<dev-python/ratarmountcore-0.7.0[${PYTHON_USEDEP}]
 	dev-python/fusepy[${PYTHON_USEDEP}]
 	>=dev-python/indexed-bzip2-1.3.1[${PYTHON_USEDEP}]
 	>=dev-python/indexed-gzip-1.6.3[${PYTHON_USEDEP}]
