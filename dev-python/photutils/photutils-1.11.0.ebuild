@@ -49,7 +49,7 @@ RDEPEND="${DEPEND}
 		dev-python/rasterio[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.7.2[${PYTHON_USEDEP}]
 		>=dev-python/scikit-image-0.19[${PYTHON_USEDEP}]
-		>=sci-libs/scikit-learn-1.0[${PYTHON_USEDEP}]
+		>=dev-python/scikit-learn-1.0[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 	)
@@ -71,7 +71,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
-		sci-libs/scikit-learn[${PYTHON_USEDEP}]
+		dev-python/scikit-learn[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
@@ -85,7 +85,7 @@ distutils_enable_tests pytest
 #distutils_enable_sphinx docs \
 #	dev-python/sphinx-astropy \
 #	dev-python/scipy \
-#	sci-libs/scikit-learn \
+#	dev-python/scikit-learn \
 #	dev-python/scikit-image
 
 # Disable intersphinx
@@ -116,7 +116,7 @@ pkg_postinst() {
 	optfeature "power a variety of features in several modules (strongly recommended)" ">=dev-python/scipy-1.7.2"
 	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.5"
 	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.19"
-	optfeature "used in the deprecated DBSCANGroup to create star groups" ">=sci-libs/scikit-learn-1.0"
+	optfeature "used in the deprecated DBSCANGroup to create star groups" ">=dev-python/scikit-learn-1.0"
 	optfeature "used in make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.18"
 	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" dev-python/bottleneck
 	optfeature "display optional progress bars" dev-python/tqdm
