@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2020-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,9 +21,9 @@ LICENSE="BSD"
 IUSE="all doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
-DEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.23[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
 	all? (
 		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
@@ -36,16 +36,14 @@ BDEPEND="${RDEPEND}
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-astropy-1.9[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 	test? (
 		dev-python/pytest-arraydiff[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
-		dev-python/matplotlib[${PYTHON_USEDEP}]
 	)
 "
 
@@ -53,7 +51,7 @@ distutils_enable_tests pytest
 
 python_prepare_all() {
 	use doc && { cp "${DISTDIR}"/*.fits* docs/_static || die ; }
-	use intersphinx || eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch
+	use intersphinx || eapply "${FILESDIR}"/${PN}-0.8-doc-use-local-fits.patch
 	distutils-r1_python_prepare_all
 }
 
