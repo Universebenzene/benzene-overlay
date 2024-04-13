@@ -167,7 +167,7 @@ dev-python/ablog                        | 0.11.6               |
 dev-python/jupyter-cache                | 0.6.1; 1.0.0         |
 dev-python/jupyter-sphinx               | 0.5.3                |
 dev-python/jupytext                     | 1.16.1               | Build with wheel source to include Jupyter Lab Extenstion
-dev-python/myst-nb                      | 0.17.2; 1.0.0        |
+dev-python/myst-nb                      | 0.17.2; 1.1.0        |
 dev-python/myst-parser                  | 0.18.1-r1            | Only for myst-nb that depends on old version
 dev-python/runnotebook                  | 0.3.1; (live)        |
 dev-python/sphinx-astropy               | 1.6.0; 1.9.1         | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
