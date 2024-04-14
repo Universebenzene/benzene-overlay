@@ -7,7 +7,7 @@ MY_PV=$(ver_cut 1-3)post$(ver_cut 5)
 MY_P=${PN}-${MY_PV}
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1
 

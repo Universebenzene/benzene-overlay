@@ -6,7 +6,7 @@ EAPI=8
 COMMIT="d0134123978678d33573d53a144ce1634e770e10"
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1
 
