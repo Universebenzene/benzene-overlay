@@ -192,7 +192,7 @@ dev-python/sphinxext-opengraph          | 0.9.1                |
 dev-python/dask-sphinx-theme            | 3.0.5                |
 dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.0.9 |
 dev-python/pydata-sphinx-theme          | 0.13.3-r1            | Old version dropped by official portage, required by sunpy-sphinx-theme
-dev-python/mistune                      | 0.8.4-r1             | Only for sphinx-asdf that depends on old version
+dev-python/mistune                      | 0.8.4-r1; 2.0.5      | For sphinx-asdf and sphinx-mdinclude that depend on old version
 dev-python/nbconvert                    | 6.4.5                | Depends on old mistune
 
 <!--</details>-->
