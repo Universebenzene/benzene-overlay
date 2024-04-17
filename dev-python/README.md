@@ -23,7 +23,7 @@ dev-python/astroquery          | 0.3.10; 0.4.7                                  
 dev-python/astroscrappy        | 1.0.8; 1.1.0                                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/atpy                | 0.9.7                                                | Old package, so the test phase may fail
 dev-python/ccdproc             | 1.3.0\_p1; 2.1.0; 2.4.1                              | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/casa-formats-io     | 0.2.3                                                |
+dev-python/casa-formats-io     | 0.3.0                                                |
 dev-python/cdflib              | 0.4.9; 1.1.1; 1.2.6                                  | SunPy releated. 1.1.1 remained as some tests failed in 1.1.2 and later
 dev-python/drms                | 0.6.4; 0.7.1                                         | SunPy releated. `network-sandbox` FEATURE will be disabled if you enable `examples` flag for doc building
 dev-python/echo                | 0.8.0                                                | Glueviz releated.

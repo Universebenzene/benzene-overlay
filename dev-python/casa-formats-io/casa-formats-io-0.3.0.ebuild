@@ -23,7 +23,6 @@ RDEPEND="${DEPEND}
 "
 BDEPEND="${DEPEND}
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest-openfiles[${PYTHON_USEDEP}] )
 "
 PDEPEND="test? ( dev-python/glue-core[${PYTHON_USEDEP}] )"
 
