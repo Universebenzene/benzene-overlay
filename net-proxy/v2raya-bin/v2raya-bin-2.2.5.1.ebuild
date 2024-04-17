@@ -57,6 +57,7 @@ src_install() {
 
 	insinto /etc/default
 	newins "${FILESDIR}"/${MY_PN}.conf ${MY_PN}
+	addpredict /etc/v2raya
 	"${ED%/}"/usr/bin/v2raya --report config | sed '1,6d' | fold -s -w 78 | sed -E 's/^([^#].+)/# \1/' >> \
 		"${ED%/}/etc/default/v2raya" || die
 }
