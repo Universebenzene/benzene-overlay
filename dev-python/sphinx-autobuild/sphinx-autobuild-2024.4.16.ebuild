@@ -23,7 +23,8 @@ RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
 	>=dev-python/starlette-0.35[${PYTHON_USEDEP}]
 	>=dev-python/uvicorn-0.25[${PYTHON_USEDEP}]
-	>=dev-python/websockets-11.0[${PYTHON_USEDEP}]
+	>=dev-python/watchfiles-0.20[${PYTHON_USEDEP}]
+	>=dev-python/websockets-11[${PYTHON_USEDEP}]
 "
 
 #S="${WORKDIR}/${MY_P}"
