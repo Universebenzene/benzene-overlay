@@ -73,7 +73,6 @@ BDEPEND=">=dev-python/cython-0.29.2[${PYTHON_USEDEP}]
 #dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
-# SANDBOX ACCESS DENIED:  open_wr:       /dev/fuse
 distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/sphinxcontrib-apidoc \
 	dev-python/pydata-sphinx-theme \
@@ -96,6 +95,8 @@ python_prepare_all() {
 python_compile_all() {
 	if use doc; then
 		use doc && [[ -d ${PN} ]] && { mv {,_}${PN} || die ; }
+		# SANDBOX ACCESS DENIED:  open_wr:       /dev/fuse
+		addpredict /dev/fuse
 		virtx sphinx_compile_all
 		[[ -d _${PN} ]] && { mv {_,}${PN} || die ; }
 	fi
