@@ -147,7 +147,7 @@ dev-python/ratarmount              | 0.14.2; 0.15.0                             
 dev-python/s3fs                    | 2024.3.1                                                   | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks                | 0.3.0                                                      | Optional for aioftp
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
-dev-python/textual                 | 0.56.4                                                     | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
+dev-python/textual                 | 0.57.0                                                     | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
 dev-python/colorspacious           | 1.1.2                                                      | Pulled in by cmyt. Dropped by official portage
 dev-python/cmyt                    | 2.0.0                                                      | Pulled in by yt
 dev-python/unyt                    | 3.0.2                                                      | Pulled in by yt
