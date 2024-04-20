@@ -136,7 +136,7 @@ dev-python/miniballcpp             | 0.2.3                                      
 dev-python/msrest                  | 0.7.1                                                      | SunPy, h5pyd related
 dev-python/msrestazure             | 0.6.4                                                      | SunPy, h5pyd related
 dev-python/numcodecs               | 0.12.1                                                     | Pulled in by zarr
-dev-python/pykdtree                | 1.3.11                                                     | Optional for yt
+dev-python/pykdtree                | 1.3.12                                                     | Optional for yt
 dev-python/pytest-repeat           | 0.9.3                                                      | Test dependency for new zict
 dev-python/pytest-textual-snapshot | 0.4.0                                                      | Test dependency for new memray. Dependency syrupy is included but not listed in the table
 dev-python/python-pkcs11           | 0.7.0                                                      | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
