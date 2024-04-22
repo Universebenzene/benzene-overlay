@@ -15,8 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/mistune-2.0.4[${PYTHON_USEDEP}]
-	<dev-python/mistune-3.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/mistune-3.0[${PYTHON_USEDEP}]
 	<dev-python/docutils-1.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.8[${PYTHON_USEDEP}]
 "
