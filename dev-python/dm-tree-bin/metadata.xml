@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		tree is a library for working with nested data structures. In a way,
+		tree generalizes the builtin map function which only supports flat
+		sequences, and allows to apply a function to each "leaf" preserving the
+		overall structure.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">dm-tree</remote-id>
+		<remote-id type="github">google-deepmind/tree</remote-id>
+	</upstream>
+</pkgmetadata>
