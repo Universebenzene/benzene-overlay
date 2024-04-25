@@ -37,7 +37,7 @@ dev-python/h5netcdf            | 1.3.0                                          
 dev-python/h5pyd               | 0.12.2; 0.17.0; 0.18.0                               |
 dev-python/healpy              | 1.16.5; 1.16.6                                       |
 dev-python/imexam              | 0.9.1                                                | With [my issue](https://github.com/spacetelescope/imexam/issues/252) unsolved. [NOT COMPATIBLE WITH PY3.11 YET](https://github.com/spacetelescope/imexam/issues/256)
-dev-python/jplephem            | 2.21                                                 |
+dev-python/jplephem            | 2.22                                                 |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                      | Old version for dev-python/asdf
 dev-python/montage-wrapper     | 0.9.9                                                |
 dev-python/mpl-animator        | 1.1.1                                                |
