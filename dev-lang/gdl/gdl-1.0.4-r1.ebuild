@@ -127,7 +127,8 @@ src_configure() {
 		cmake_src_configure
 	}
 	configuration -DPYTHON_MODULE=OFF -DPYTHON=OFF
-	use python && python_foreach_impl configuration -DPYTHON_MODULE=ON -DPYTHON=ON
+	use python && python_foreach_impl configuration -DPYTHON_MODULE=ON -DPYTHON=ON \
+		-DPython_EXECUTABLE=/usr/bin/python$(python -c "import sys; print('.'.join(map(str, sys.version_info[:2])))")
 }
 
 src_compile() {
