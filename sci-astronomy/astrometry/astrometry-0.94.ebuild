@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,7 +6,7 @@ EAPI=8
 # this could be a multiple python package
 # but the way it is packaged makes it very time consuming.
 
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit toolchain-funcs python-single-r1
 
@@ -29,7 +29,7 @@ RDEPEND="
 		dev-python/numpy[${PYTHON_USEDEP}]
 	')
 	media-libs/libpng:0
-	media-libs/netpbm
+	netpbm? ( media-libs/netpbm )
 	sci-astronomy/wcslib:0=
 	sci-libs/cfitsio:0=
 	sci-libs/gsl:0=
@@ -58,9 +58,9 @@ src_prepare() {
 		-i util/makefile.common || die
 
 	# compile & link netpbm
-	if use netpbm; then
-		sed -e 's/NETPBM_INC\ ?=/NETPBM_INC\ ?=\ -I\/usr\/include\/netpbm/g' \
-			-e "s/-L.\ -lnetpbm/-L\/usr\/$(get_libdir)\ -lnetpbm/g" \
+	if ! use netpbm; then
+		sed -e '/NETPBM_INC/c NETPBM_INC\ :=' \
+			-e "/NETPBM_LIB/c NETPBM_LIB\ :=" \
 			-i util/makefile.netpbm || die
 	fi
 
