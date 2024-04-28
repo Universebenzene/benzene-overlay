@@ -1,0 +1,22 @@
+--- a/src/dae/plugins.py	2023-09-19 14:38:04.000000000 +0800
++++ b/src/dae/plugins.py	2024-04-29 00:52:21.953465841 +0800
+@@ -20,7 +20,7 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-import imp
++import importlib
+ import os
+ import sys
+ import traceback
+@@ -50,7 +50,9 @@
+         if path is None:
+             return False
+         sys.path.insert(0, path)
+-        plugin = imp.load_source(plugin_name, os.path.join(path, '__init__.py'))
++        spec = importlib.util.spec_from_file_location(plugin_name, os.path.join(path, '__init__.py'))
++        plugin = importlib.util.module_from_spec(spec)
++        spec.loader.exec_module(plugin)
+         sys.path = sys.path[1:]
+         self.loaded_plugins[plugin_name] = plugin
+         return plugin

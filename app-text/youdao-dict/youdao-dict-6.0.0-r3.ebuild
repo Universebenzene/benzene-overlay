@@ -49,6 +49,7 @@ S="${WORKDIR}"
 src_prepare() {
 	use amd64 && { pushd "${P}-${ARCH}" || die ; }
 	eapply "${FILESDIR}/${P}-fix-window-center-value.patch"
+	eapply "${FILESDIR}/${P}-fix-imp-to-importlib.patch"
 	sed -i 's/getargspec/getfullargspec/g' src/app/plugins/youdao/pyquery/pyquery.py || die
 	sed -i -e "/PREFIX=/cDEST=${ED%/}\nPREFIX=\$DEST/usr" \
 		-e 's/\/etc/$DEST\/etc/g' \
