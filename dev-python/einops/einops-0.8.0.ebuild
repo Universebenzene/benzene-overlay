@@ -19,14 +19,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"	# mkdocstrings{,-python} no x86
 
-BDEPEND="doc? ( || (
+BDEPEND="doc? (
+	<dev-python/mkdocs-1.6.0
+	|| (
 		dev-python/mkdocstrings-python-legacy[${PYTHON_USEDEP}]
 		dev-python/mkdocstrings-python[${PYTHON_USEDEP}]
 	) )
 	test? (
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
-		dev-python/parameterized[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
 	)
 "
