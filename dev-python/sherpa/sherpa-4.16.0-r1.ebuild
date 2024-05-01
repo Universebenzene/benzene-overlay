@@ -1,11 +1,11 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 optfeature pypi virtualx
 
@@ -41,14 +41,27 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_XDIST=1
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-rtd-theme dev-python/nbsphinx
 
 python_prepare_all() {
 	sed -e "s|#fftw=local|fftw=local|" -e "s|#fftw-include[-_]dirs.*$|fftw-include_dirs=/usr/include|" \
-		-e "s|#fftw-lib-dirs.*$|fftw-lib-dirs=/usr/$(get_libdir)|" -e "s|#fftw-libraries|fftw-libraries|" -i setup.cfg || die
+		-e "s|#fftw-lib-dirs.*$|fftw-lib-dirs=/usr/$(get_libdir)|" -e "s|#fftw-libraries|fftw-libraries|" \
+		-e "/group-location/a group-location=extern/grplib-4.9/python/.libs/group.so" \
+		-e "/stk-location/a stk-location=extern/stklib-4.11/src/.libs/stk.so" -i setup.cfg || die
+	# Fix python3.12 and numpy>1.23
+	sed -e '/^import\ setuptools/c from setuptools import setup' -e '/distutils/d' -i setup.py || die
+	sed -e '/setuptools.command/s/^#\ //' -e '/distutils/d' -i helpers/__init__.py || die
+	sed -e "/^sherpa_inc/s/]/, numpy.get_include()]/" -e '/^from/a import numpy' -i helpers/extensions/__init__.py || die
 
 	distutils-r1_python_prepare_all
+}
+
+python_compile() {
+	distutils-r1_python_compile
+	cp "${S}"/extern/grplib-4.9/python/.libs/group.so "${BUILD_DIR}"/install/$(python_get_sitedir) || die
+	cp "${S}"/extern/stklib-4.11/src/.libs/stk.so "${BUILD_DIR}"/install/$(python_get_sitedir) || die
 }
 
 python_compile_all() {
