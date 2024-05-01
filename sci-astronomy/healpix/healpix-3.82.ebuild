@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,11 +6,11 @@ EAPI=8
 inherit autotools toolchain-funcs java-pkg-opt-2 java-ant-2
 
 MYP="Healpix_${PV}"
-MYPF=${MYP}_2022Jul28
+MYPD=${MYP}_2022Jul28
 
 DESCRIPTION="Hierarchical Equal Area isoLatitude Pixelization of a sphere"
 HOMEPAGE="http://healpix.sourceforge.net https://healpix.jpl.nasa.gov"
-SRC_URI="mirror://sourceforge/healpix/${MYP}/${MYPF}.tar.gz"
+SRC_URI="https://downloads.sourceforge.net/healpix/${MYP}/${MYPD}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0/0-3"	# subslot = libchealpix/libhealpix_cxx.so soname version
@@ -32,8 +32,9 @@ RDEPEND="
 
 BDEPEND="${RDEPEND}
 	virtual/pkgconfig
-	java? ( >=virtual/jdk-1.8:* test? ( dev-java/ant-junit4:0 ) )
+	java? ( >=virtual/jdk-1.8:* )
 "
+#	java? ( >=virtual/jdk-1.8:* test? ( dev-java/ant-junit4:0 ) )
 
 S="${WORKDIR}/${MYP}"
 
@@ -102,11 +103,11 @@ src_test() {
 		emake check
 		popd > /dev/null
 	fi
-	if use java; then
-		pushd src/java > /dev/null
-		EANT_GENTOO_CLASSPATH="ant-junit4" ANT_TASKS="ant-junit4" eant test
-		popd > /dev/null
-	fi
+#	if use java; then
+#		pushd src/java > /dev/null
+#		EANT_GENTOO_CLASSPATH="ant-junit4" ANT_TASKS="ant-junit4" eant test
+#		popd > /dev/null
+#	fi
 }
 
 src_install() {

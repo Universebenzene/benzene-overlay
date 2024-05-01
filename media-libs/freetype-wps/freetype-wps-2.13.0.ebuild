@@ -15,11 +15,11 @@ MY_PREFIX="/opt/${PN}"
 WPS_LIB_DIR="/opt/kingsoft/wps-office/office6"
 
 if [[ "${PV}" != 9999 ]] ; then
-	SRC_URI="mirror://sourceforge/freetype/${MY_P/_/}.tar.xz
+	SRC_URI="https://downloads.sourceforge.net/freetype/${MY_P/_/}.tar.xz
 		mirror://nongnu/freetype/${MY_P/_/}.tar.xz
-		utils?	( mirror://sourceforge/freetype/ft2demos-${PV}.tar.xz
+		utils?	( https://downloads.sourceforge.net/freetype/ft2demos-${PV}.tar.xz
 			mirror://nongnu/freetype/ft2demos-${PV}.tar.xz )
-		doc?	( mirror://sourceforge/freetype/${MY_PN}-doc-${PV}.tar.xz
+		doc?	( https://downloads.sourceforge.net/freetype/${MY_PN}-doc-${PV}.tar.xz
 			mirror://nongnu/freetype/${MY_PN}-doc-${PV}.tar.xz )"
 	KEYWORDS="~amd64"
 	IUSE+=" doc"
