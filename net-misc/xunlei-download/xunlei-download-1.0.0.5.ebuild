@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2020-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,16 +24,14 @@ RDEPEND="dev-libs/dbus-glib
 	x11-libs/libXScrnSaver
 	dev-libs/nss
 "
-DEPEND=""
-BDEPEND=""
 
 S="${WORKDIR}/opt/apps/${MY_PN}"
 
 QA_PREBUILT="opt/${PN}/* opt/${PN}/resources/bin/*"
 
 src_prepare() {
-	sed -e '/Cate/s/net/Network/' -e '4c Exec=xunlei-download %U' \
-		-e '5c Icon=com.xunlei.download' -i entries/applications/${MY_PN}.desktop || die
+	sed -e '/Cate/s/net/Network/' -e '/^Exec/c Exec=xunlei-download %U' \
+		-e '/^Icon/c Icon=com.xunlei.download' -i entries/applications/${MY_PN}.desktop || die
 	sed -i "s/apps\/${MY_PN}\/files/${PN}/" files/start.sh || die
 	default
 }
