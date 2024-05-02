@@ -26,7 +26,6 @@ RDEPEND=">=dev-python/dnspython-1.15.0[${PYTHON_USEDEP}]
 BDEPEND=">=dev-python/hatch-vcs-0.3[${PYTHON_USEDEP}]
 	test? (
 		dev-python/httplib2[${PYTHON_USEDEP}]
-		dev-python/mock[${PYTHON_USEDEP}]
 		dev-python/psycopg:2[${PYTHON_USEDEP}]
 		dev-python/pyopenssl[${PYTHON_USEDEP}]
 		dev-python/pyzmq[${PYTHON_USEDEP}]
@@ -41,7 +40,12 @@ PATCHES=(
 )
 
 distutils_enable_tests pytest
-distutils_enable_sphinx doc/source dev-python/sphinxcontrib-apidoc dev-python/psycopg:2 dev-python/py dev-python/thrift
+distutils_enable_sphinx doc/source dev-python/sphinxcontrib-apidoc \
+	dev-python/py \
+	dev-python/pyopenssl \
+	dev-python/psycopg:2 \
+	dev-python/pyzmq \
+	dev-python/thrift
 
 src_prepare() {
 	# increase timeout - #791748
