@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
 
@@ -21,7 +21,7 @@ RDEPEND=">=dev-python/docutils-0.18[${PYTHON_USEDEP}]
 	>=dev-python/invoke-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/watchdog-2.1.0[${PYTHON_USEDEP}]
 	markdown? ( >=dev-python/myst-parser-0.17.0[${PYTHON_USEDEP}] )
 	notebook? (
