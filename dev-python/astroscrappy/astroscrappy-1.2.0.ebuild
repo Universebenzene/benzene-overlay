@@ -1,11 +1,11 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2020-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
 
@@ -19,11 +19,12 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.20[${PYTHON_USEDEP}]"
+DEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/extension-helpers[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
+	>=dev-python/cython-3.0[${PYTHON_USEDEP}]
+	<dev-python/cython-3.1[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
@@ -37,6 +38,12 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 DOCS=( README.rst CHANGES.rst )
 
 distutils_enable_tests pytest
+
+python_prepare_all() {
+	use doc && { cat "${FILESDIR}/${P}-setup.cfg" >> "${S}"/setup.cfg || die ; }
+
+	distutils-r1_python_prepare_all
+}
 
 python_compile_all() {
 	if use doc; then
