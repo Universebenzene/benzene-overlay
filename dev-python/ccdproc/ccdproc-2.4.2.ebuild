@@ -1,10 +1,10 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2020-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
 
@@ -12,7 +12,8 @@ DESCRIPTION="Astropy affiliated package for reducing optical/IR CCD data"
 HOMEPAGE="https://ccdproc.readthedocs.io"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc intersphinx"
-RESTRICT="intersphinx? ( network-sandbox )"
+RESTRICT="intersphinx? ( network-sandbox )
+	test"	# something wrong with test tempdir
 REQUIRED_USE="intersphinx? ( doc )"
 
 LICENSE="BSD"
@@ -31,6 +32,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
+		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/memory-profiler[${PYTHON_USEDEP}]
 	)
