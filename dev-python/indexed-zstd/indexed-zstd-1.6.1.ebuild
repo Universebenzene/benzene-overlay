@@ -1,10 +1,10 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2022-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
-DISTUTILS_USE_PEP517=standalone
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
@@ -20,9 +20,7 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 RDEPEND="app-arch/zstd"
-BDEPEND="dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
-"
+BDEPEND="dev-python/cython[${PYTHON_USEDEP}]"
 
 python_prepare_all() {
 	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/}test.zst || die ; }
