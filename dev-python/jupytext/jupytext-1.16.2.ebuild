@@ -23,7 +23,7 @@ RDEPEND=">=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/toml[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
 "
 
 BDEPEND="test? (
@@ -35,7 +35,6 @@ BDEPEND="test? (
 		dev-python/myst-parser[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]
-		dev-vcs/pre-commit
 		virtual/pandoc
 	)
 "
@@ -43,6 +42,8 @@ BDEPEND="test? (
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/myst-parser
+
+EPYTEST_IGNORE=( tests/external/pre_commit )
 
 python_compile() {
 	distutils_wheel_install "${BUILD_DIR}/install" \
