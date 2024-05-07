@@ -68,11 +68,6 @@ src_prepare() {
 	sed -e "s|-lm|-lm $($(tc-getPKG_CONFIG) --libs wcslib gsl)|" \
 		-i util/Makefile || die
 	export SYSTEM_GSL=yes
-
-	# fix for py3.12
-	sed -e "/^from numpy/c import numpy" \
-		-e 's/get_numpy_include_dirs()/[numpy.get_include()]/' \
-		-i libkd/setup{,-min}.py setup-libkd.py || die
 }
 
 src_compile() {
