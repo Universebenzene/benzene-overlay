@@ -89,6 +89,11 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
+python_install() {
+	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/tests || die
+	distutils-r1_python_install
+}
+
 python_test() {
 	epytest --remote-data
 }
