@@ -1,0 +1,31 @@
+diff --git a/tests/moto_server.py b/tests/moto_server.py
+index 7807401..8ce738a 100644
+--- a/tests/moto_server.py
++++ b/tests/moto_server.py
+@@ -28,6 +28,17 @@ def get_free_tcp_port(release_socket: bool = False):
+     return sckt, port
+ 
+ 
++class DomainDispatcherApplication(moto.server.DomainDispatcherApplication):
++    def __init__(self, create_app, service):
++        super().__init__(create_app)
++        self.service = service
++
++    def get_backend_for_host(self, host):
++        if self.service:
++            return self.service
++
++        return super().get_backend_for_host(host)
++
+ class MotoService:
+     """Will Create MotoService.
+     Service is ref-counted so there will only be one per process. Real Service will
+@@ -94,7 +105,7 @@ class MotoService:
+             await self._stop()
+ 
+     def _server_entry(self):
+-        self._main_app = moto.server.DomainDispatcherApplication(
++        self._main_app = DomainDispatcherApplication(
+             moto.server.create_backend_app, service=self._service_name
+         )
+         self._main_app.debug = True

@@ -48,6 +48,14 @@ EPYTEST_IGNORE=(
 	tests/test_lambda.py
 )
 
+python_prepare_all() {
+	# Work-around test failures with moto 5.x
+	# See: https://github.com/aio-libs/aiobotocore/issues/1108
+	use test && eapply "${FILESDIR}"/${P}-moto-5.x.diff
+
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	epytest -m moto
 }
