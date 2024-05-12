@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 desktop optfeature pypi xdg
 
@@ -18,7 +18,8 @@ IUSE="doc gtk3 intersphinx pyside2 pyside6 qt5 qt6 recommended tk web"
 # Tests phase runs with fails
 RESTRICT="test
 	intersphinx? ( network-sandbox )"
-REQUIRED_USE="intersphinx? ( doc )"
+REQUIRED_USE="intersphinx? ( doc )
+	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
 
 RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
@@ -31,7 +32,7 @@ RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 		dev-python/pycairo[${PYTHON_USEDEP}]
 		dev-python/pygobject[${PYTHON_USEDEP}]
 	)
-	pyside2? ( dev-python/pyside2[${PYTHON_USEDEP}] )
+	pyside2? ( $(python_gen_cond_dep 'dev-python/pyside2[${PYTHON_USEDEP}]' python3_{10,11}) )
 	pyside6? ( dev-python/pyside6[${PYTHON_USEDEP}] )
 	qt5? ( dev-python/PyQt5[${PYTHON_USEDEP}] )
 	qt6? ( dev-python/PyQt6[${PYTHON_USEDEP}] )
