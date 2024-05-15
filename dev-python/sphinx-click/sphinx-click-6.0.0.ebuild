@@ -15,8 +15,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/sphinx-2.0[${PYTHON_USEDEP}]
-	>=dev-python/click-7.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-4.0[${PYTHON_USEDEP}]
+	>=dev-python/click-8.0[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/pbr-2.0[${PYTHON_USEDEP}]"
 
