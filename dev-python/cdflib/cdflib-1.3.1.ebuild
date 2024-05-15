@@ -64,7 +64,7 @@ KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
