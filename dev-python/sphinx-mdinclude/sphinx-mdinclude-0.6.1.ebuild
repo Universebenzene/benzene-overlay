@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/mistune-3.0[${PYTHON_USEDEP}]
 	<dev-python/docutils-1.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.8[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-6[${PYTHON_USEDEP}]
 "
 BDEPEND="test? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
 
