@@ -52,7 +52,7 @@ dev-python/api4jenkins                                                          
 dev-python/python-jenkins                                                            | 1.8.2; (live)                                                                                                         | Dependency multi\_key\_dict is also included but not listed here
 dev-python/vispy                                                                     | 0.13.0; 0.14.2                                                                                                        |
 dev-python/yt                                                                        | 4.0.5; 4.1.4; 4.2.2; 4.3.0                                                                                            | Full doc building needs huge amount of data, so cannot complete locally.
-dev-python/zarr                                                                      | 2.18.0                                                                                                                |
+dev-python/zarr                                                                      | 2.18.1                                                                                                                |
 dev-qt/qtwebkit                                                                      | 5.212.0\_pre20200309-{r1,r2}                                                                                          | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work (the -r2 is a test for upgrade EAPI to 8, and might be a little buggy with youdao-dict.)
 [dev-util/micromamba{,-bin}](https://mamba.readthedocs.io)                           | [1.5.6](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-util/micromamba/micromamba-1.5.6.ebuild)                                        | `dev-util/mamba[micromamba]` in [gentoo-zh](https://github.com/microcai/gentoo-zh) is **recommended** if you want source version and don't care about testing. Also need [gentoo-zh](https://github.com/microcai/gentoo-zh) to provide dependency `dev-cpp/reproc`, `dev-cpp/tl-expected` and `sys-libs/libsolv` .
 gnome-base/gconf                                                                     | 3.2.6-r6                                                                                                              | Dropped by official portage but required by `net-misc/oss-browser-bin`. Copied from [KBrown-pub](https://git.softwarelibre.mx/KBrown/gentoo-overlay/-/blob/KBrown-pub/gnome-base/gconf) and [kzd](https://gitlab.com/kzdixon/kzd-ebuilds/-/blob/master/gnome-base/gconf) overlays but fix dependency `dev-util/gtk-doc-am` → `dev-build/gtk-doc-am`
@@ -110,14 +110,14 @@ Package name | Available version | Additional information
 dev-python/adal                    | 1.2.7                                                      | SunPy, h5pyd related
 dev-python/abg-python              | 1.1.4                                                      | Optional for yt
 dev-python/aggdraw                 | 1.3.16; 1.3.18\_p0                                         | Optional for ginga
-dev-python/aiobotocore             | 2.13.0                                                     | Pulled in by zarr
-dev-python/aioitertools            | 0.11.0                                                     | Pulled in by zarr
+dev-python/aiobotocore             | 2.13.0                                                     | Pulled in by s3fs
+dev-python/aioitertools            | 0.11.0                                                     | Pulled in by s3fs
 dev-python/arviz                   | 0.17.1; 0.18.0                                             | Optional for corner.py.
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
 dev-python/azure-core              | 1.26.3; 1.30.1                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
 dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Required by firefly{,-viz}
-dev-python/check-manifest          | 0.49                                                       | Dropped by official portage. Test dependency for zarr
+dev-python/check-manifest          | 0.49                                                       | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.2.2                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/distributed             | 2024.2.0; 2024.2.1; 2024.3.1; 2024.4.1; 2024.4.2           | Optional for arviz and spectral-cube
 dev-python/dm-tree-bin             | 0.1.8                                                      | Required by new arviz. Use binary version to avoid downloading while compiling
