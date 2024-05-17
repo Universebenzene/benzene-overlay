@@ -140,7 +140,7 @@ dev-python/numcodecs               | 0.12.1                                     
 dev-python/pykdtree                | 1.3.12                                                     | Optional for yt
 dev-python/pytest-repeat           | 0.9.3                                                      | Test dependency for new zict
 dev-python/pytest-textual-snapshot | 0.4.0                                                      | Test dependency for new memray. Dependency syrupy is included but not listed in the table
-dev-python/python-pkcs11           | 0.7.0                                                      | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
+dev-python/python-pkcs11           | 0.7.0-r1                                                   | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
 dev-python/python-socketio         | 5.9.0; 5.11.2                                              | Optional for yt
 dev-python/python-xz               | 0.5.0                                                      | Optional for yt
 dev-python/rasterio                | 1.3.8\_p2; 1.3.10                                          | Optional for photutils. Dependencies are not all listed in the table
