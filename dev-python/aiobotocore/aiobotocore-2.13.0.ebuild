@@ -19,7 +19,7 @@ IUSE="awscli boto3"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/aiohttp-3.8.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
 	dev-python/botocore[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.10.10[${PYTHON_USEDEP}]
@@ -39,6 +39,7 @@ BDEPEND="test? (
 	)
 "
 
+EPYTEST_XDIST=1
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
 
@@ -51,7 +52,7 @@ EPYTEST_IGNORE=(
 python_prepare_all() {
 	# Work-around test failures with moto 5.x
 	# See: https://github.com/aio-libs/aiobotocore/issues/1108
-	use test && eapply "${FILESDIR}"/${P}-moto-5.x.diff
+	use test && eapply "${FILESDIR}"/${PN}-2.12.3-moto-5.x.diff
 
 	distutils-r1_python_prepare_all
 }
