@@ -49,8 +49,8 @@ src_install() {
 	keepdir /opt/${MY_PN}/etc
 
 	use keep-server && newinitd "${FILESDIR}"/runoraydaemon.initd runoraydaemon
-	newinitd "${FILESDIR}"/run${P}$(usex keep-server '-keep' '').initd run${PN}
-	systemd_newunit $(usex keep-server "${FILESDIR}/${PV}-" "${LS}/scripts/")run${PN}.service run${PN}.service
+	newinitd "${FILESDIR}"/run${PN}-15.2.0.62802$(usex keep-server '-keep' '').initd run${PN}
+	systemd_newunit $(usex keep-server "${FILESDIR}/15.2.0.62802-" "${LS}/scripts/")run${PN}.service run${PN}.service
 
 	newicon -s 128 ${LS}/res/icon/sunlogin_client.png ${PN}.png
 	domenu share/applications/${MY_PN}.desktop
