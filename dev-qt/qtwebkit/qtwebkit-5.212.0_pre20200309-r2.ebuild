@@ -43,7 +43,7 @@ BDEPEND="
 "
 DEPEND="
 	dev-db/sqlite:3
-	dev-libs/icu:=
+	<dev-libs/icu-75:=
 	dev-libs/libxml2
 	dev-libs/libxslt
 	>=dev-qt/qtcore-${QT_MIN_VER}
@@ -94,6 +94,8 @@ PATCHES=(
 	"${FILESDIR}/${P}-webkit-offlineasm-warnings-ruby27.patch"
 	# GCC 13
 	"${FILESDIR}/${P}-cstdint.patch"
+	# GCC 14
+	"${FILESDIR}/${P}-fix-build-gcc14.patch"
 )
 
 _check_reqs() {
