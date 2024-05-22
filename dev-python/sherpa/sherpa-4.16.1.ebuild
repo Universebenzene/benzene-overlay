@@ -11,12 +11,15 @@ inherit distutils-r1 optfeature pypi virtualx
 
 DESCRIPTION="Modeling and fitting package for scientific data analysis"
 HOMEPAGE="https://sherpa.readthedocs.io"
+SRC_URI+=" test? ( https://github.com/sherpa/sherpa-test-data/archive/refs/tags/${PV}.tar.gz -> ${P}-testdata.tar.gz )"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64" # ds9 no x86 KEYWORD
 IUSE="doc intersphinx examples"
-RESTRICT="intersphinx? ( network-sandbox )"
+PROPERTIES="test_network"
+RESTRICT="test
+	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
@@ -36,6 +39,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-xvfb[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
+		dev-python/bokeh[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		sci-astronomy/ds9-bin
 	)
@@ -46,6 +50,7 @@ distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-rtd-theme dev-python/nbsphinx
 
 python_prepare_all() {
+	rm -r extern/fftw-* || die
 	sed -e "s|#fftw=local|fftw=local|" -e "s|#fftw-include[-_]dirs.*$|fftw-include_dirs=/usr/include|" \
 		-e "s|#fftw-lib-dirs.*$|fftw-lib-dirs=/usr/$(get_libdir)|" -e "s|#fftw-libraries|fftw-libraries|" \
 		-e "/group-location/a group-location=extern/grplib-4.9/python/.libs/group.so" \
@@ -80,10 +85,12 @@ python_install_all() {
 	fi
 
 	distutils-r1_python_install_all
+	rm "${ED/%}"/usr/*.so || die
 }
 
 python_test() {
-	virtx epytest "${BUILD_DIR}"
+	PYTHONPATH="${WORKDIR}/sherpa-test-data-${PV}" virtx epytest --pyargs \
+		"${BUILD_DIR}/install/$(python_get_sitedir)/${PN}" --runslow --runzenodo
 }
 
 pkg_postinst() {
