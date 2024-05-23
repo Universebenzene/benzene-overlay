@@ -130,7 +130,7 @@ dev-python/flask-socketio          | 5.3.6                                      
 dev-python/fusepy                  | 3.0.1                                                      | Optional for yt
 dev-python/heapdict                | 1.0.1                                                      | Pulled in by zict and distributed
 dev-python/indexed\-{bzip2,zstd}   | 1.6.0 / 1.6.1                                              | Optional for yt (ratarmount{,core})
-dev-python/rapidgzip               | 0.14.1                                                     | Optional for new ratarmount{,core}
+dev-python/rapidgzip               | 0.14.2                                                     | Optional for new ratarmount{,core}
 dev-python/libconf                 | 2.0.1                                                      | Optional for yt
 dev-python/memory-profiler         | 0.61                                                       | Dropped by official portage. Test dependency for ccdproc
 dev-python/miniballcpp             | 0.2.3                                                      | Optional for yt
