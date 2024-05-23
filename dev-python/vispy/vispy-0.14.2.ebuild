@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 DATA_COM="5a3db8447d3e13ed402545662f20f5ff191a6d42"
 DATA_DATE="20190506"
@@ -32,7 +32,9 @@ KEYWORDS="~amd64"	# no x86 KEYWORD for meshio PyQt6 pyside6
 IUSE="examples io ipython-static pyglet +pyqt5 pyqt6 pyside2 pyside6 sdl2 wx"
 PROPERTIES="test_network"
 RESTRICT="test"
-REQUIRED_USE="|| ( pyglet pyqt5 pyqt6 pyside2 pyside6 sdl2 wx )"
+REQUIRED_USE="|| ( pyglet pyqt5 pyqt6 pyside2 pyside6 sdl2 wx )
+	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )
+	wx? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
 
 DEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
@@ -48,10 +50,12 @@ RDEPEND="${DEPEND}
 	pyglet? ( >=dev-python/pyglet-1.2[${PYTHON_USEDEP}] )
 	pyqt5? ( dev-python/PyQt5[${PYTHON_USEDEP},gui,testlib,widgets] )
 	pyqt6? ( dev-python/PyQt6[${PYTHON_USEDEP},gui,testlib,widgets] )
-	pyside2? ( dev-python/pyside2[${PYTHON_USEDEP},gui,testlib,widgets] )
+	pyside2? ( $(python_gen_cond_dep '
+		dev-python/pyside2[${PYTHON_USEDEP},gui,testlib,widgets]
+	' python3_{10,11}) )
 	pyside6? ( dev-python/pyside6[${PYTHON_USEDEP},gui,testlib,widgets] )
 	sdl2? ( dev-python/PySDL2[${PYTHON_USEDEP}] )
-	wx? ( dev-python/wxpython[${PYTHON_USEDEP}] )
+	wx? ( $(python_gen_cond_dep 'dev-python/wxpython[${PYTHON_USEDEP}]' python3_{10,11}) )
 "
 BDEPEND=">=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-7.1[${PYTHON_USEDEP}]
