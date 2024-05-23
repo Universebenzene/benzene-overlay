@@ -15,19 +15,19 @@ SRC_URI="https://github.com/executablebooks/sphinx-design/archive/refs/tags/v${P
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="code_style rtd theme_furo theme_pydata theme_rtd theme_sbt"
+IUSE="code-style rtd theme-furo theme-pydata theme-rtd theme-sbt"
 
 RDEPEND="<dev-python/sphinx-8[${PYTHON_USEDEP}]
-	code_style? ( dev-vcs/pre-commit )
+	code-style? ( dev-vcs/pre-commit )
 	rtd? ( <dev-python/myst-parser-3[${PYTHON_USEDEP}] )
-	theme_furo? ( >=dev-python/furo-2022.06.04[${PYTHON_USEDEP}] )
-	theme_pydata? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
-	theme_rtd? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
-	theme_sbt? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
+	theme-furo? ( >=dev-python/furo-2022.06.04[${PYTHON_USEDEP}] )
+	theme-pydata? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
+	theme-rtd? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
+	theme-sbt? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
 		dev-python/pytest-regressions[${PYTHON_USEDEP}]
-		<dev-python/myst-parser-3[${PYTHON_USEDEP}]
+		dev-python/myst-parser[${PYTHON_USEDEP}]
 	)
 "
 

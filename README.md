@@ -179,7 +179,7 @@ dev-python/sphinx-book-theme            | 0.2.0; 1.0.1; 1.1.2   | `network-sandb
 dev-python/sphinx-changelog             | 1.5.0                 |
 dev-python/sphinx-click                 | 6.0.0                 |
 dev-python/sphinx-codeautolink          | 0.15.1                |
-dev-python/sphinx-design                | 0.5.0                 |
+dev-python/sphinx-design                | 0.6.0                 |
 dev-python/sphinx-examples              | 0.0.5                 |
 dev-python/sphinx-hoverxref             | 1.3.0                 |
 dev-python/sphinx-readable-theme        | 1.3.0                 |

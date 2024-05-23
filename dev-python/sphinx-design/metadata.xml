@@ -10,11 +10,11 @@
 		<remote-id type="github">executablebooks/sphinx-design</remote-id>
 	</upstream>
 	<use>
-		<flag name="code_style">Extra code_style support for development via <pkg>dev-vcs/pre-commit</pkg></flag>
+		<flag name="code-style">Extra code_style support for development via <pkg>dev-vcs/pre-commit</pkg></flag>
 		<flag name="rtd">Extra rtd support via <pkg>dev-python/myst-parser</pkg></flag>
-		<flag name="theme_furo">Furo theme support via <pkg>dev-python/furo</pkg></flag>
-		<flag name="theme_pydata">PyData theme support via <pkg>dev-python/pydata-sphinx-theme</pkg></flag>
-		<flag name="theme_rtd">RTD theme support via <pkg>dev-python/sphinx-rtd-theme</pkg></flag>
-		<flag name="theme_sbt">Book theme support via <pkg>dev-python/sphinx-book-theme</pkg></flag>
+		<flag name="theme-furo">Furo theme support via <pkg>dev-python/furo</pkg></flag>
+		<flag name="theme-pydata">PyData theme support via <pkg>dev-python/pydata-sphinx-theme</pkg></flag>
+		<flag name="theme-rtd">RTD theme support via <pkg>dev-python/sphinx-rtd-theme</pkg></flag>
+		<flag name="theme-sbt">Book theme support via <pkg>dev-python/sphinx-book-theme</pkg></flag>
 	</use>
 </pkgmetadata>
