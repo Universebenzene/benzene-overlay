@@ -32,7 +32,10 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-lang/swig
 "
 
-PATCHES=( "${FILESDIR}/${PN}-0.11.8-system-wcstools.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-0.11.8-system-wcstools.patch"
+	"${FILESDIR}/${P}-fix-deprecated-imp.patch"
+)
 
 distutils_enable_tests pytest
 # already built in pypi source

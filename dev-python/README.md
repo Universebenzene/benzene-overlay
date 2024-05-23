@@ -14,7 +14,7 @@ dev-python/sphinx-asdf         | 0.1.3; 0.1.4; 0.2.4                            
 dev-python/aplpy               | 2.1.0                                                | Versions below 2.1.0 are included but masked. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for more details. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/asdf                | 2.7.2; 2.9.2; 2.10.1; 2.13.0; 2.15.0; 2.15.2; 3.2.0  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building should only be enabled for re-merge to prevent circular depenencies.
 dev-python/asdf-astropy        | 0.2.1; 0.6.1                                         | Dependencies are also in this overlay but not list in this table. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/astlib              | 0.11.3; 0.11.10                                      | astLib WCS library for ginga
+dev-python/astlib              | 0.11.3-r1; 0.11.10-r1                                | astLib WCS library for ginga
 dev-python/astrodendro         | 0.2.0-r2; (live)                                     | 0.2.0 was really old. Live version should be much better.
 dev-python/astroml             | 0.4.1; 1.0.2\_p1                                     |
 dev-python/astropy-healpix     | 0.5; 1.0.3                                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
