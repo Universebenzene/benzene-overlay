@@ -9,13 +9,16 @@ PYTHON_COMPAT=( python3_{10..12} )
 
 DATA_COM="8c97b4f"
 DATA_URI="https://github.com/astropy/photutils-datasets/raw/${DATA_COM}/data"
-MY_PV="${PV/.0}"
+#MY_PV="${PV/.0}"
 
-inherit distutils-r1 optfeature pypi
+inherit distutils-r1 optfeature #pypi
 
 DESCRIPTION="Affiliated package for image photometry utilities"
 HOMEPAGE="https://photutils.readthedocs.io"
-SRC_URI="$(pypi_sdist_url ${PN} ${MY_PV})
+#SRC_URI="$(pypi_sdist_url ${PN} ${MY_PV})
+#	local-datasets? (
+#SRC_URI+=" local-datasets? (
+SRC_URI="https://github.com/astropy/photutils/releases/download/${PV}/${P}.tar.gz
 	local-datasets? (
 		${DATA_URI}/M6707HH.fits -> ${PN}-${DATA_COM}-d-M6707HH.fits
 		${DATA_URI}/SA112-SF1-001R1.fit.gz -> ${PN}-${DATA_COM}-d-SA112-SF1-001R1.fit.gz
@@ -81,7 +84,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	)
 "
 
-S="${WORKDIR}/${PN}-${MY_PV}"
+#S="${WORKDIR}/${PN}-${MY_PV}"
 
 distutils_enable_tests pytest
 # TODO: Fix this
