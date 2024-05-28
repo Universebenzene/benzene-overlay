@@ -16,5 +16,7 @@
 	<use>
 		<flag name="all"><pkg>dev-python/imageio</pkg> for more function support</flag>
 		<flag name="qt">Extra qt support via <pkg>dev-python/PyQt5</pkg></flag>
+		<flag name="pyqt">Extra pyqt support</flag>
+		<flag name="pyside">Extra pyside support</flag>
 	</use>
 </pkgmetadata>
