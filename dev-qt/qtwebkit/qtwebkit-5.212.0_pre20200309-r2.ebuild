@@ -43,7 +43,7 @@ BDEPEND="
 "
 DEPEND="
 	dev-db/sqlite:3
-	<dev-libs/icu-75:=
+	dev-libs/icu:=
 	dev-libs/libxml2
 	dev-libs/libxslt
 	>=dev-qt/qtcore-${QT_MIN_VER}
@@ -96,6 +96,8 @@ PATCHES=(
 	"${FILESDIR}/${P}-cstdint.patch"
 	# GCC 14
 	"${FILESDIR}/${P}-fix-build-gcc14.patch"
+	# icu 75
+	"${FILESDIR}/${P}-icu-75.patch"
 )
 
 _check_reqs() {

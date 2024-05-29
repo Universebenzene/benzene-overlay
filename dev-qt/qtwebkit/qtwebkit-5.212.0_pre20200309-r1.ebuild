@@ -43,7 +43,7 @@ BDEPEND="
 "
 DEPEND="
 	dev-db/sqlite:3
-	<dev-libs/icu-75:=
+	dev-libs/icu:=
 	dev-libs/libxml2
 	dev-libs/libxslt
 	>=dev-qt/qtcore-${QT_MIN_VER}
