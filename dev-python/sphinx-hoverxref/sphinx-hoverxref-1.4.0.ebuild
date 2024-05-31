@@ -18,18 +18,13 @@ KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-5[${PYTHON_USEDEP}]
 	dev-python/sphinxcontrib-jquery[${PYTHON_USEDEP}]
 "
-BDEPEND="test? (
-		>dev-python/docutils-0.19[${PYTHON_USEDEP}]
-		dev-python/sphinxcontrib-bibtex[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND="test? ( dev-python/sphinxcontrib-bibtex[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
-# Bug #883189
-# exception: [Errno 13] Permission denied: '/usr/lib/python3.11/site-packages/versionwarning/_static/data'
+# exception: [Errno 13] Permission denied: '/usr/lib/python3.12/site-packages/versionwarning/_static/data'
 #distutils_enable_sphinx docs dev-python/sphinx-autoapi \
 #	dev-python/sphinx-notfound-page \
 #	dev-python/sphinx-prompt \
@@ -38,3 +33,16 @@ distutils_enable_tests pytest
 #	dev-python/sphinxcontrib-bibtex \
 #	dev-python/sphinxcontrib-jquery \
 #	dev-python/sphinxemoji
+
+#python_prepare_all() {
+#	use doc && { sed -i 's/sphinx-prompt/sphinx_prompt/' docs/conf.py || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
+
+#python_compile_all() {
+#	# Bug #883189
+#	# SANDBOX ACCESS DENIED:  mkdir: /usr/lib/python3.12/site-packages/versionwarning/_static/data
+#	addpredict $(python_get_sitedir)
+#	sphinx_compile_all
+#}
