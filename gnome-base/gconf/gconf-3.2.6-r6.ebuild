@@ -1,10 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 GNOME_ORG_MODULE="GConf"
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 PYTHON_REQ_USE="xml(+)"
 
 inherit gnome2 multilib-minimal python-single-r1
@@ -61,6 +61,10 @@ src_prepare() {
 
 	# gsettings-data-convert: Migrate from Python 2 to 3.
 	eapply "${FILESDIR}/${P}-python3.patch"
+
+	# cut from https://gitlab.gnome.org/Archive/gconf/-/commit/0780809731c8ab1c364202b1900d3df106b28626
+	# fix gcc14
+	eapply "${FILESDIR}/${P}-fix-gcc14.patch"
 
 	gnome2_src_prepare
 }
