@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1
 
@@ -39,7 +39,6 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/asyncssh[${PYTHON_USEDEP}]
 		dev-python/bokeh[${PYTHON_USEDEP}]
-		dev-python/dask-expr[${PYTHON_USEDEP}]
 		dev-python/flaky[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
 		dev-python/ipywidgets[${PYTHON_USEDEP}]
