@@ -98,6 +98,8 @@ BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 PATCHES=(
 	"${FILESDIR}/${PN}-6.0.0-system-configobj.patch"
 	"${FILESDIR}/${PN}-6.0.0-system-ply.patch"
+	# https://github.com/astropy/astropy/pull/16450
+	"${FILESDIR}/${PN}-6.0.1-fix-gcc14.patch"
 )
 
 # TODO: Fix this
