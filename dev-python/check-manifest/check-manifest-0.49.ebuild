@@ -1,9 +1,9 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 DISTUTILS_USE_PEP517=setuptools
 
 inherit distutils-r1
@@ -22,17 +22,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="
-	dev-python/build[${PYTHON_USEDEP}]
+RDEPEND="dev-python/build[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		dev-python/tomli[${PYTHON_USEDEP}]
-	' 3.8 3.9 3.10)
+	' 3.{8..10})
 "
-BDEPEND="
-	test? (
-		dev-python/mock[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND="test? ( dev-python/mock[${PYTHON_USEDEP}] )"
 
 EPYTEST_DESELECT=(
 	# Need internet
