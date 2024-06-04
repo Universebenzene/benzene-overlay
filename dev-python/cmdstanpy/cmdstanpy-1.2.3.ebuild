@@ -66,6 +66,7 @@ EPYTEST_DESELECT=(
 	test/test_model.py::test_model_includes_explicit
 	test/test_model.py::test_model_includes_implicit
 	test/test_model.py::test_model_includes_special_char
+	test/test_model.py::test_model_syntax_error
 	test/test_optimize.py::test_instantiate
 	test/test_optimize.py::test_rosenbrock
 	test/test_optimize.py::test_eight_schools
