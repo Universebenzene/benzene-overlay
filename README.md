@@ -115,7 +115,7 @@ dev-python/aiobotocore             | 2.13.0                                     
 dev-python/aioitertools            | 0.11.0                                                     | Pulled in by s3fs
 dev-python/arviz                   | 0.17.1; 0.18.0                                             | Optional for corner.py.
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
-dev-python/azure-core              | 1.26.3; 1.30.1                                             | Required by new msrest
+dev-python/azure-core              | 1.26.3; 1.30.2                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
 dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Required by firefly{,-viz}
 dev-python/check-manifest          | 0.49                                                       | Dropped by official portage. Build dependency for xarray-datatree
