@@ -14,7 +14,7 @@ SRC_URI="https://github.com/dask/distributed/archive/refs/tags/${PV}.tar.gz -> $
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# pyarrow, memray no x86
+#KEYWORDS="~amd64"	# pyarrow, memray no x86
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]

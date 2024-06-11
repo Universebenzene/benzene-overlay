@@ -38,6 +38,7 @@ dev-lang/gdl                                                                    
 dev-python/aioftp                                                                    | 0.22.3                                                                                                                |
 dev-python/asyncssh                                                                  | 2.14.2                                                                                                                | Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
 dev-python/corner                                                                    | 2.2.2                                                                                                                 |
+dev-python/dask                                                                      | 2024.4.1                                                                                                              | Dropped by official portage
 dev-python/exifread                                                                  | 3.0.0                                                                                                                 |
 dev-python/glfw                                                                      | 2.7.0                                                                                                                 | Dependency for glue-vispy-viewer>=1.2.0
 dev-python/glymur                                                                    | 0.12.0; 0.12.9\_p1; 0.12.9\_p2; 0.13.1; 0.13.2\_p1                                                                    |
@@ -120,7 +121,7 @@ dev-python/bidict                  | 0.22.0; 0.23.1                             
 dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Required by firefly{,-viz}
 dev-python/check-manifest          | 0.49                                                       | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.2.3                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
-dev-python/distributed             | 2024.2.0; 2024.2.1; 2024.3.1; 2024.4.1; 2024.4.2           | Optional for arviz and spectral-cube
+dev-python/distributed             | 2024.4.1                                                   | Optional for arviz and spectral-cube
 dev-python/dm-tree-bin             | 0.1.8                                                      | Required by new arviz. Use binary version to avoid downloading while compiling
 dev-python/eventlet                | 0.33.3; 0.35.2                                             | Dropped by official portage. Required by firefly{,-viz}
 dev-python/f90nml                  | 1.4.4                                                      | Optional for yt
