@@ -36,6 +36,7 @@ dev-python/gwcs                | 0.17.1; 0.21.0                                 
 dev-python/h5netcdf            | 1.3.0                                                |
 dev-python/h5pyd               | 0.12.2; 0.17.0; 0.18.0                               |
 dev-python/healpy              | 1.16.6; 1.17.1                                       |
+dev-python/hvpy                | 1.1.0                                                | Test dependency and optional for sunpy.
 dev-python/imexam              | 0.9.1                                                | With [my issue](https://github.com/spacetelescope/imexam/issues/252) unsolved. [NOT COMPATIBLE WITH PY3.11 YET](https://github.com/spacetelescope/imexam/issues/256)
 dev-python/jplephem            | 2.22                                                 |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                      | Old version for dev-python/asdf
@@ -62,5 +63,5 @@ dev-python/skyfield            | 1.45; 1.46; 1.48                               
 dev-python/spectral-cube       | 0.6.5                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/specutils           | 1.1.1; 1.15.0                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/starlink-pyast      | 0.2.1                                                | Starlink WCS library for ginga
-dev-python/sunpy               | 5.1.3                                                | Testing and doc building are really hard to run, so not supported right now.
+dev-python/sunpy               | 5.1.4                                                | Doc building is really hard to run, so not supported right now.
 dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.0.11                                |

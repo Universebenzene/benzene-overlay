@@ -48,6 +48,7 @@ dev-python/nose                                                                 
 dev-python/oldest-supported-numpy                                                    | 2023.12.21                                                                                                            | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
 dev-python/parfive                                                                   | 1.5.1; 2.1.0                                                                                                          |
 dev-python/PyQt5                                                                     | 5.15.10-r1                                                                                                            | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
+dev-python/pydantic-settngs                                                          | 2.3.1                                                                                                                 |
 dev-python/pytest-cython                                                             | 0.2.2; 0.3.1                                                                                                          |
 dev-python/pytest-socket                                                             | 0.5.0; 0.7.0                                                                                                          |
 dev-python/api4jenkins                                                               | 2.0.3                                                                                                                 |
@@ -140,6 +141,7 @@ dev-python/msrest                  | 0.7.1                                      
 dev-python/msrestazure             | 0.6.4                                                      | SunPy, h5pyd related
 dev-python/numcodecs               | 0.12.1                                                     | Pulled in by zarr
 dev-python/pykdtree                | 1.3.12                                                     | Optional for yt
+dev-python/pytest-examples         | 0.0.10                                                     | Test dependency for pydantic-settings
 dev-python/pytest-repeat           | 0.9.3                                                      | Test dependency for new zict
 dev-python/pytest-textual-snapshot | 0.4.0                                                      | Test dependency for new memray. Dependency syrupy is included but not listed in the table
 dev-python/python-pkcs11           | 0.7.0-r1                                                   | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)

@@ -16,6 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="asdf dask database examples image jpeg2k map net timeseries visualization"
+PROPERTIES="test_network"
 RESTRICT="test"
 
 DEPEND=">=dev-python/numpy-1.21.0[${PYTHON_USEDEP}]"
@@ -65,11 +66,45 @@ RDEPEND="${DEPEND}
 
 BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
+	test? (
+		dev-python/pytest-arraydiff[${PYTHON_USEDEP}]
+		>=dev-python/pytest-doctestplus-0.5[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
+		>=dev-python/pytest-mpl-0.12[${PYTHON_USEDEP}]
+		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
+		>=dev-python/pytest-xdist-2.0[${PYTHON_USEDEP}]
+		dev-python/asdf-astropy[${PYTHON_USEDEP}]
+		dev-python/astroquery[${PYTHON_USEDEP}]
+		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
+		dev-python/cdflib[${PYTHON_USEDEP}]
+		dev-python/drms[${PYTHON_USEDEP}]
+		dev-python/glymur[${PYTHON_USEDEP}]
+		dev-python/h5netcdf[${PYTHON_USEDEP}]
+		>=dev-python/hvpy-1.0.1[${PYTHON_USEDEP}]
+		>=dev-python/hypothesis-6.0.0[${PYTHON_USEDEP}]
+		dev-python/jplephem[${PYTHON_USEDEP}]
+		dev-python/lxml[${PYTHON_USEDEP}]
+		dev-python/mpl-animators[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/reproject[${PYTHON_USEDEP}]
+		dev-python/scikit-image[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+		dev-python/sqlalchemy[${PYTHON_USEDEP}]
+		dev-python/zeep[${PYTHON_USEDEP}]
+		media-libs/opencv[${PYTHON_USEDEP},python]
+	)
 "
 
-# Tests and doc building are really hard to run. Might fix in far future
 distutils_enable_tests pytest
+# Doc building is really hard to run. Might fix in far future
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sunpy-sphinx-theme
+
+EPYTEST_IGNORE=(
+	# Tests are very slow (From NixOS)
+	sunpy/net/tests/test_fido.py
+	# spiceypy unavailable
+	sunpy/coordinates/tests/test_spice.py
+)
 
 python_install_all() {
 	if use examples; then
@@ -79,4 +114,10 @@ python_install_all() {
 	fi
 
 	distutils-r1_python_install_all
+}
+
+python_test() {
+	cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/io/*.so ${PN}/io || die
+	epytest --remote-data=any
+	rm ${PN}/io/*.so || die
 }

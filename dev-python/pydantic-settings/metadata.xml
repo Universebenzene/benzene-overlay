@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">pydantic-settings</remote-id>
+		<remote-id type="github">pydantic/pydantic-settings</remote-id>
+	</upstream>
+	<use>
+		<flag name="toml">toml support via <pkg>dev-python/tomli</pkg></flag>
+		<flag name="yaml">YAML support via <pkg>dev-python/pyyaml</pkg></flag>
+	</use>
+</pkgmetadata>
