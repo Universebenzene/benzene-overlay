@@ -22,7 +22,7 @@ IUSE="code_style"
 RESTRICT="doc? ( network-sandbox )"
 
 RDEPEND=">=dev-python/sphinx-5[${PYTHON_USEDEP}]
-	>=dev-python/pydata-sphinx-theme-0.14[${PYTHON_USEDEP}]
+	>=dev-python/pydata-sphinx-theme-0.15.2[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 "
 BDEPEND="test? (
