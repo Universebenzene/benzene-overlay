@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_SETUPTOOLS=no
+DISTUTILS_USE_SETUPTOOLS=bdepend
 PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1
@@ -35,7 +35,7 @@ BDEPEND="test? (
 S="${WORKDIR}/python-${P}"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx skyfield/documentation dev-python/pandas
+distutils_enable_sphinx documentation dev-python/pandas
 
 python_prepare_all() {
 	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/}finals2000A.all || die ; }
