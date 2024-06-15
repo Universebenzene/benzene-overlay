@@ -3,8 +3,8 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..12} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{10..13} )
 
 inherit distutils-r1
 
@@ -19,6 +19,6 @@ RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
 "
 
-distutils_enable_tests --install pytest
+distutils_enable_tests pytest
 # require releases, which depends on semantic-version<2.7
 #distutils_enable_sphinx docs
