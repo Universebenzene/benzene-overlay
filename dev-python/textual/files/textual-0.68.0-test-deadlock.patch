@@ -1,0 +1,23 @@
+From e9ad400559c14645e56b7a98a467295c6817686b Mon Sep 17 00:00:00 2001
+From: Will McGugan <willmcgugan@gmail.com>
+Date: Fri, 14 Jun 2024 14:50:03 +0100
+Subject: [PATCH] don't depend on python command
+
+---
+ tests/test_pipe.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/tests/test_pipe.py b/tests/test_pipe.py
+index 21329b302b..92593ac4d6 100644
+--- a/tests/test_pipe.py
++++ b/tests/test_pipe.py
+@@ -14,7 +14,8 @@ def test_deadlock():
+     """Regression test for https://github.com/Textualize/textual/issues/4643"""
+     app_path = (Path(__file__) / "../deadlock.py").resolve().absolute()
+     result = subprocess.run(
+-        f'echo q | python "{app_path}"', shell=True, capture_output=True
++        f'echo q | "{sys.executable}" "{app_path}"', shell=True, capture_output=True
+     )
+     print(result.stdout)
++    print(result.stderr)
+     assert result.returncode == 0
