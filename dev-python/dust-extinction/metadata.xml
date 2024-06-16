@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This package provides astronomical interstellar dust extinction curves implemented
+		using the astropy.modeling framework.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">dust-extinction</remote-id>
+		<remote-id type="github">karllark/dust_extinction</remote-id>
+	</upstream>
+	<use>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
+</pkgmetadata>
