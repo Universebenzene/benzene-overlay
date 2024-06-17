@@ -25,13 +25,6 @@ BDEPEND="test? (
 	)
 "
 
-PATCHES=(
-	# Temporary patch to fix the test_deadlock check which fails
-	# because it expects `textual` to be installed in the test environment.
-	# See https://github.com/Textualize/textual/issues/4649
-	"${FILESDIR}/${P}-test-deadlock.patch"
-)
-
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
