@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">synphot</remote-id>
+		<remote-id type="github">spacetelescope/synphot_refactor</remote-id>
+	</upstream>
+	<use>
+		<flag name="all">Including all optional dependencies for most function.</flag>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
+</pkgmetadata>
