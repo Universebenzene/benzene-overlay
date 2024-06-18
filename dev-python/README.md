@@ -5,7 +5,7 @@ Note: Build with `-O3` flag is not recommended. As this will cause some bug with
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-dev-python/astropy             | 5.0.8; 5.3.4; 6.0.1; 6.1.0                           | Versions below 5.0.2 are included but masked. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy#note-for-astropy) for more details. wcslib>=8.1 is included in this overlay for astropy>=6.0.0
+dev-python/astropy             | 5.0.8; 5.3.4; 6.0.1; 6.1.1                           | Versions below 5.0.2 are included but masked. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy#note-for-astropy) for more details. wcslib>=8.1 is included in this overlay for astropy>=6.0.0
 dev-python/astropy-iers-data   | 0.2024.6.17.0.31.35                                  | Required by astropy>=6.0.0
 dev-python/astropy-helpers     | 2.0.11; 3.0.2; 3.1.1; 4.0.1-r1                       | With patches for better doc building. Same as the [AUR](https://aur.archlinux.org/packages/python-astropy-helpers) ones
 dev-python/pytest-astropy      | 0.8.0; 0.11.0                                        | Test plugins for astropy. Dependencies are also in this overlay but not listed in this table

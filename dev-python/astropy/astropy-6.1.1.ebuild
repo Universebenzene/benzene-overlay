@@ -47,7 +47,7 @@ DEPEND=">=dev-libs/expat-2.5.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2024.4.29.0.28.48[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2024.5.27.0.30.8[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
@@ -101,8 +101,6 @@ BDEPEND=">=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 PATCHES=(
 	"${FILESDIR}/${PN}-6.0.0-system-configobj.patch"
 	"${FILESDIR}/${PN}-6.0.0-system-ply.patch"
-	# https://github.com/astropy/astropy/pull/16450
-	"${FILESDIR}/${PN}-6.0.1-fix-gcc14.patch"
 )
 
 # TODO: Fix this
@@ -126,7 +124,7 @@ python_prepare_all() {
 		cp {"${DISTDIR}"/${PN}-eo-,"${S}"/docs/wcs/}HorseHead.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/convolution/}gc_msx_e.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/wcs/}l1448_13co.fits || die
-		eapply "${FILESDIR}"/${P}-doc-use-local-data.patch
+		eapply "${FILESDIR}"/${PN}-6.1.0-doc-use-local-data.patch
 	fi
 
 	distutils-r1_python_prepare_all
