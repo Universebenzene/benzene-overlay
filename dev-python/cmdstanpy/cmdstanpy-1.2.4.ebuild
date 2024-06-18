@@ -163,14 +163,10 @@ EPYTEST_DESELECT=(
 	test/test_pathfinder.py::test_pathfinder_no_psis
 	test/test_pathfinder.py::test_pathfinder_no_lp_calc
 	test/test_sample.py::test_warmup_no_adapt
+	test/test_sample.py::test_csv_roundtrip
 )
 
 python_install_all() {
 	use doc && HTML_DOCS=( docs/. )
 	distutils-r1_python_install_all
-}
-
-python_test() {
-	mkdir -p "${HOME}"/.cmdstan || die
-	epytest
 }

@@ -121,7 +121,7 @@ dev-python/azure-core              | 1.26.3; 1.30.2                             
 dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
 dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Required by firefly{,-viz}
 dev-python/check-manifest          | 0.49                                                       | Dropped by official portage. Build dependency for xarray-datatree
-dev-python/cmdstanpy               | 1.0.8; 1.2.3                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
+dev-python/cmdstanpy               | 1.0.8; 1.2.4                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/distributed             | 2024.4.1                                                   | Optional for arviz and spectral-cube
 dev-python/dm-tree-bin             | 0.1.8                                                      | Required by new arviz. Use binary version to avoid downloading while compiling
 dev-python/eventlet                | 0.33.3; 0.35.2                                             | Dropped by official portage. Required by firefly{,-viz}
