@@ -15,6 +15,7 @@
 		<remote-id type="github">vispy/vispy</remote-id>
 	</upstream>
 	<use>
+		<flag name="glfw">Enable support for pyglet backend via <pkg>dev-python/glfw</pkg></flag>
 		<flag name="io">Extra io support</flag>
 		<flag name="ipython-static">ipython-static support via <pkg>dev-python/ipython</pkg></flag>
 		<flag name="pyglet">Enable support for pyglet backend via <pkg>dev-python/pyglet</pkg></flag>
