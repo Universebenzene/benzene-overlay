@@ -12,6 +12,7 @@ inherit distutils-r1 pypi
 DESCRIPTION="A memory profiler for Python applications"
 HOMEPAGE="https://bloomberg.github.io/memray"
 SRC_URI="https://github.com/bloomberg/memray/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	$(python_gen_useflags python3_12)? ( $(pypi_wheel_url ${PN} ${PV} "cp312" "cp312-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 	$(python_gen_useflags python3_11)? ( $(pypi_wheel_url ${PN} ${PV} "cp311" "cp311-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 	$(python_gen_useflags python3_10)? ( $(pypi_wheel_url ${PN} ${PV} "cp310" "cp310-manylinux_2_12_x86_64.manylinux2010_x86_64") )
 "
@@ -38,6 +39,11 @@ BDEPEND="test? (
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-argparse dev-python/furo dev-python/ipython
 
+EPYTEST_IGNORE=(
+	# E   ModuleNotFoundError: No module named 'tests.test_exercise
+	docs/tutorials
+)
+
 EPYTEST_DESELECT=(
 	# Stucked tests
 	tests/integration/test_processes.py::test_allocations_with_multiprocessing_following_fork
@@ -45,7 +51,10 @@ EPYTEST_DESELECT=(
 )
 
 python_compile() {
-	if use $(python_gen_useflags python3_11); then
+	if use $(python_gen_useflags python3_12); then
+		local _pytag="cp312"
+		local _abitag="cp312-manylinux_2_17_x86_64.manylinux2014_x86_64"
+	elif use $(python_gen_useflags python3_11); then
 		local _pytag="cp311"
 		local _abitag="cp311-manylinux_2_17_x86_64.manylinux2014_x86_64"
 	elif use $(python_gen_useflags python3_10); then
