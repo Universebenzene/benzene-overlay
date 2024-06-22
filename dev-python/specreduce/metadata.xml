@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Specreduce is an Astropy coordinated package with the goal of
+		providing a shared set of Python utilities that can be used to
+		reduce and calibrate spectroscopic data.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">specreduce</remote-id>
+		<remote-id type="github">astropy/specreduce</remote-id>
+	</upstream>
+	<use>
+		<flag name="all">Including all optional dependencies for most function.</flag>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
+</pkgmetadata>
