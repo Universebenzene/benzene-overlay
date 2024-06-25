@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		ASTROALIGN is a python module that will try to align
+		two stellar astronomical images, especially when there is
+		no WCS information available.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">astroalign</remote-id>
+		<remote-id type="github">quatrope/astroalign</remote-id>
+	</upstream>
+</pkgmetadata>
