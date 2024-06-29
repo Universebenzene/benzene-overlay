@@ -39,17 +39,15 @@ REQUIRED_USE="intersphinx? ( doc )
 	doc? ( local-datasets )"
 
 DEPEND=">=dev-python/numpy-1.25[${PYTHON_USEDEP}]"
-RDEPEND="${DEPEND}
+RDEPEND="<dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
 	all? (
 		dev-python/bottleneck[${PYTHON_USEDEP}]
 		>=dev-python/gwcs-0.18[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.7.2[${PYTHON_USEDEP}]
-		>=dev-python/scikit-image-0.19[${PYTHON_USEDEP}]
-		>=dev-python/scikit-learn-1.0[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
+		>=dev-python/scikit-image-0.20[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 	)
@@ -60,7 +58,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-astropy-1.9[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
@@ -71,7 +69,6 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
-		dev-python/scikit-learn[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
@@ -113,10 +110,9 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "power a variety of features in several modules (strongly recommended)" ">=dev-python/scipy-1.7.2"
+	optfeature "power a variety of features in several modules (strongly recommended)" ">=dev-python/scipy-1.8"
 	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.5"
-	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.19"
-	optfeature "used in the deprecated DBSCANGroup to create star groups" ">=dev-python/scikit-learn-1.0"
+	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.20"
 	optfeature "used in make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.18"
 	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" dev-python/bottleneck
 	optfeature "display optional progress bars" dev-python/tqdm
