@@ -39,7 +39,7 @@ REQUIRED_USE="intersphinx? ( doc )
 	doc? ( local-datasets )"
 
 DEPEND=">=dev-python/numpy-1.25[${PYTHON_USEDEP}]"
-RDEPEND="<dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]
+RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
 	all? (
 		dev-python/bottleneck[${PYTHON_USEDEP}]
