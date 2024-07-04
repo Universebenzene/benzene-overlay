@@ -15,14 +15,21 @@ SRC_URI="https://github.com/pydantic/pytest-examples/archive/refs/tags/v${PV}.ta
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="examples"
+
 RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 	>=dev-python/black-23[${PYTHON_USEDEP}]
-	>=dev-util/ruff-0.0.258
+	>=dev-util/ruff-0.5.0
 "
 
-PATCHES=(
-	"${FILESDIR}/${P}-fix-test-ruff.patch"
-	"${FILESDIR}/${P}-fix-python-3.12.patch"
-)
-
 distutils_enable_tests pytest
+
+python_install_all() {
+	if use examples; then
+		docompress -x "/usr/share/doc/${PF}/examples"
+		docinto examples
+		dodoc -r example/.
+	fi
+
+	distutils-r1_python_install_all
+}
