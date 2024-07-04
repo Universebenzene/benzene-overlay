@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/cryptography-39.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-3.6[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="
 	test? (
