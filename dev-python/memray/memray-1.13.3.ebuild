@@ -31,8 +31,8 @@ BDEPEND="test? (
 		dev-python/pytest-textual-snapshot[${PYTHON_USEDEP}]
 		dev-python/greenlet[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
-		dev-debug/gdb
-		dev-debug/lldb
+		dev-debug/gdb[lzma]
+		dev-debug/lldb[lzma]
 	)
 "
 
