@@ -21,7 +21,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
-		sci-libs/gdal[python]
+		sci-libs/gdal[jpeg2k,python]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 		media-libs/openjpeg:2
 	)
