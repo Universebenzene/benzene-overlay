@@ -73,6 +73,9 @@ src_prepare() {
 	# add trailing semicolon
 	sed -i -e '/^Categories/s/$/;/' redist/org.${PN}.GoldenDict.desktop || die
 
+	# support ffmpeg>=7.0
+	use ffmpeg && eapply "${FILESDIR}/${PN}-add-support-for-ffmpeg-7.0.patch"
+
 	echo "QMAKE_CXXFLAGS_RELEASE = $CXXFLAGS" >> ${PN}.pro
 	echo "QMAKE_CFLAGS_RELEASE = $CFLAGS" >> ${PN}.pro
 

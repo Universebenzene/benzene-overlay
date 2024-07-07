@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -70,6 +70,9 @@ src_prepare() {
 
 	# add trailing semicolon
 	sed -i -e '/^Categories/s/$/;/' redist/org.${PN}.GoldenDict.desktop || die
+
+	# support ffmpeg>=7.0
+	use ffmpeg && eapply "${FILESDIR}/${PN}-add-support-for-ffmpeg-7.0.patch"
 
 	echo "QMAKE_CXXFLAGS_RELEASE = $CXXFLAGS" >> ${PN}.pro
 	echo "QMAKE_CFLAGS_RELEASE = $CFLAGS" >> ${PN}.pro
