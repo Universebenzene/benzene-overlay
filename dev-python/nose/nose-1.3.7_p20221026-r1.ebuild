@@ -39,6 +39,8 @@ BDEPEND="
 	)
 "
 
+PATCHES=( "${FILESDIR}"/${P}-py312.patch )
+
 src_prepare() {
 	# failing to find configuration file
 	sed -e 's/test_cover_options_config_file/_&/' \
