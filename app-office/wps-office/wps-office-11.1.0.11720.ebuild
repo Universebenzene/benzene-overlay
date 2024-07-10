@@ -47,10 +47,6 @@ RDEPEND="
 	dev-libs/libgcrypt:0
 	dev-libs/libgpg-error
 	dev-libs/libpcre:3
-
-	dev-qt/qtnetwork:5
-	dev-qt/qtwidgets:5
-
 	media-libs/fontconfig:1.0
 	!system-freetype? ( media-libs/freetype-wps:2 )
 	system-freetype? ( media-libs/freetype:2 )
@@ -66,7 +62,6 @@ RDEPEND="
 	sys-apps/tcp-wrappers
 	sys-apps/util-linux
 	sys-libs/libcap
-	libsystemd? ( virtual/libsystemd )
 	sys-libs/libcxx
 	sys-libs/zlib:0
 	virtual/glu
@@ -80,6 +75,7 @@ RDEPEND="
 	x11-libs/libXext
 	x11-libs/libXrender
 	x11-libs/libXtst
+	libsystemd? ( virtual/libsystemd )
 "
 BDEPEND="app-arch/p7zip"
 
