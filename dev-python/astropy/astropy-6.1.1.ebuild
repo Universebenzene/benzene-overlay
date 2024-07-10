@@ -39,7 +39,7 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-libs/expat-2.5.0:0=
-	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.25:=[${PYTHON_USEDEP}]
 	>=dev-python/pyerfa-2.0.1.1[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
 	>=sci-astronomy/wcslib-8.2.2:0=

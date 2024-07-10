@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=">=dev-python/numpy-1.19.3[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.19.3:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 BDEPEND=">=dev-python/cython-3.0[${PYTHON_USEDEP}]"
 
