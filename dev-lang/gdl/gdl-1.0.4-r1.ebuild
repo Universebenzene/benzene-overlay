@@ -4,9 +4,9 @@
 EAPI=8
 
 WX_GTK_VER="3.2-gtk3"
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
-inherit cmake python-r1 toolchain-funcs virtualx wxwidgets
+inherit cmake flag-o-matic python-r1 toolchain-funcs virtualx wxwidgets
 
 DESCRIPTION="GNU Data Language"
 HOMEPAGE="https://github.com/gnudatalanguage/gdl"
@@ -94,6 +94,14 @@ src_prepare() {
 }
 
 src_configure() {
+	# -Werror=strict-aliasing
+	# https://bugs.gentoo.org/930966
+	# https://github.com/gnudatalanguage/gdl/issues/1852
+	#
+	# Do not trust with LTO either.
+	append-flags -fno-strict-aliasing
+	filter-lto
+
 	# MPI is still very buggy
 	# x11=off does not compile
 	local mycmakeargs=(
