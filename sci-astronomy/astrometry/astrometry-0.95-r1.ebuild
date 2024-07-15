@@ -48,6 +48,7 @@ S="${WORKDIR}/${MYP}"
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.82-soname.patch
 	"${FILESDIR}"/${PN}-0.82-dynlink.patch
+	"${FILESDIR}"/${P}-numpy2.patch
 )
 
 src_prepare() {
