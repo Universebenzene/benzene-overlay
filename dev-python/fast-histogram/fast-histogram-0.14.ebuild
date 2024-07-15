@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-DEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
+DEPEND="dev-python/numpy:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 BDEPEND="${DEPEND}
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
