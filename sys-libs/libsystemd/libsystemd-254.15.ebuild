@@ -22,10 +22,7 @@ else
 	MY_P=${MY_PN}-${MY_PV}
 	S=${WORKDIR}/${MY_P}
 	SRC_URI="https://github.com/systemd/${MY_PN}/archive/v${MY_PV}/${MY_P}.tar.gz"
-
-	if [[ ${PV} != *rc* ]] ; then
-		KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86"
-	fi
+	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 fi
 
 inherit bash-completion-r1 linux-info meson-multilib ninja-utils pam python-single-r1
@@ -58,14 +55,14 @@ RESTRICT="!test? ( test )"
 MINKV="4.15"
 
 COMMON_DEPEND="
-	>=sys-apps/util-linux-2.32:0=[${MULTILIB_USEDEP}]
+	>=sys-apps/util-linux-2.30:0=[${MULTILIB_USEDEP}]
 	sys-libs/libcap:0=[${MULTILIB_USEDEP}]
 	virtual/libcrypt:=[${MULTILIB_USEDEP}]
 	acl? ( sys-apps/acl:0= )
-	apparmor? ( >=sys-libs/libapparmor-2.13:0= )
+	apparmor? ( sys-libs/libapparmor:0= )
 	audit? ( >=sys-process/audit-2:0= )
 	cryptsetup? ( >=sys-fs/cryptsetup-2.0.1:0= )
-	curl? ( >=net-misc/curl-7.32.0:0= )
+	curl? ( net-misc/curl:0= )
 	elfutils? ( >=dev-libs/elfutils-0.158:0= )
 	fido2? ( dev-libs/libfido2:0= )
 	gcrypt? ( >=dev-libs/libgcrypt-1.4.5:0=[${MULTILIB_USEDEP}] )
@@ -82,12 +79,12 @@ COMMON_DEPEND="
 	iptables? ( net-firewall/iptables:0= )
 	openssl? ( >=dev-libs/openssl-1.1.0:0= )
 	pam? ( sys-libs/pam:=[${MULTILIB_USEDEP}] )
-	pkcs11? ( >=app-crypt/p11-kit-0.23.3:0= )
+	pkcs11? ( app-crypt/p11-kit:0= )
 	pcre? ( dev-libs/libpcre2 )
-	pwquality? ( >=dev-libs/libpwquality-1.4.1:0= )
-	qrcode? ( >=media-gfx/qrencode-3:0= )
+	pwquality? ( dev-libs/libpwquality:0= )
+	qrcode? ( media-gfx/qrencode:0= )
 	seccomp? ( >=sys-libs/libseccomp-2.3.3:0= )
-	selinux? ( >=sys-libs/libselinux-2.1.9:0= )
+	selinux? ( sys-libs/libselinux:0= )
 	tpm? ( app-crypt/tpm2-tss:0= )
 	xkb? ( >=x11-libs/libxkbcommon-0.4.1:0= )
 	zstd? ( >=app-arch/zstd-1.4.0:0=[${MULTILIB_USEDEP}] )
@@ -139,11 +136,6 @@ QA_EXECSTACK="usr/lib/systemd/boot/efi/*"
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != buildonly ]]; then
-		if use test && has pid-sandbox ${FEATURES}; then
-			ewarn "Tests are known to fail with PID sandboxing enabled."
-			ewarn "See https://bugs.gentoo.org/674458."
-		fi
-
 		local CONFIG_CHECK="~BLK_DEV_BSG ~CGROUPS
 			~CGROUP_BPF ~DEVTMPFS ~EPOLL ~FANOTIFY ~FHANDLE
 			~INOTIFY_USER ~IPV6 ~NET ~NET_NS ~PROC_FS ~SIGNALFD ~SYSFS
@@ -197,6 +189,9 @@ src_unpack() {
 
 src_prepare() {
 	local PATCHES=(
+		"${FILESDIR}/systemd-test-process-util.patch"
+		"${FILESDIR}/systemd-253-initrd-generators.patch"
+		"${FILESDIR}/254-PrivateDevices-userdbd.patch"
 	)
 
 	if ! use vanilla; then
@@ -224,8 +219,6 @@ src_configure() {
 multilib_src_configure() {
 	local myconf=(
 		--localstatedir="${EPREFIX}/var"
-		# default is developer, bug 918671
-		-Dmode=release
 		-Dsupport-url="https://gentoo.org/support/"
 		-Dpamlibdir="$(getpam_mod_dir)"
 		# avoid bash-completion dep
@@ -243,9 +236,6 @@ multilib_src_configure() {
 		# no deps
 		-Dima=true
 		-Ddefault-hierarchy=$(usex cgroup-hybrid hybrid unified)
-		# Match /etc/shells, bug 919749
-		-Ddebug-shell="${EPREFIX}/bin/sh"
-		-Ddefault-user-shell="${EPREFIX}/bin/bash"
 		# Optional components/dependencies
 		$(meson_native_use_bool acl)
 		$(meson_native_use_bool apparmor)
@@ -309,7 +299,6 @@ multilib_src_configure() {
 		$(meson_native_true timesyncd)
 		$(meson_native_true tmpfiles)
 		$(meson_native_true vconsole)
-		$(meson_native_true vmspawn)
 	)
 
 	meson_src_configure "${myconf[@]}"
