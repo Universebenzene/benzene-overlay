@@ -13,7 +13,7 @@ HOMEPAGE="http://glueviz.org"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# no x86 KEYWORD for pvextractor, spectral-cube, yt, glueviz
+KEYWORDS="~amd64"	# no x86 KEYWORD for spectral-cube, yt, glueviz
 IUSE="all astronomy recommended"
 REQUIRED_USE="all? ( astronomy recommended )"
 
@@ -28,7 +28,6 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/mpl-scatter-density-0.7[${PYTHON_USEDEP}]
 	>=dev-python/openpyxl-3.0[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.2[${PYTHON_USEDEP}]
-	>=dev-python/pvextractor-0.2[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
 	>=dev-python/shapely-2.0[${PYTHON_USEDEP}]
