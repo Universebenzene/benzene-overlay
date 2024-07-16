@@ -17,16 +17,19 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
+IUSE="all"
 
-DEPEND=">=dev-python/numpy-1.25[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]
 	>sci-astronomy/healpix-3.82:=[cxx]
 	>=sci-libs/cfitsio-4.1.0:=
 	sci-libs/libsharp:=
 "
 RDEPEND="${DEPEND}
 	dev-python/astropy[${PYTHON_USEDEP}]
-	dev-python/matplotlib[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
+	all? (
+		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+	)
 "
 BDEPEND=">=dev-python/cython-3[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]
@@ -38,7 +41,7 @@ DOCS=( README.rst CHANGELOG.rst CITATION )
 
 distutils_enable_tests pytest
 
-python_test() {
+src_test() {
 	rm -r lib/${PN} || die
-	epytest
+	distutils-r1_src_test
 }
