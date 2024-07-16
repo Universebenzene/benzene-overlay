@@ -36,7 +36,7 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.23[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.23:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-healpix-0.6[${PYTHON_USEDEP}]

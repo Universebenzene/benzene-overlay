@@ -22,7 +22,7 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.19[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.19:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-3[${PYTHON_USEDEP}]
 "
