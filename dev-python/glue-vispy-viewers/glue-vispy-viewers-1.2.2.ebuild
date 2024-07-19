@@ -24,7 +24,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/pyopengl[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
-	>=dev-python/vispy-0.9.1[${PYTHON_USEDEP}]
+	>=dev-python/vispy-0.12.0[${PYTHON_USEDEP}]
 	pyqt? (
 		>=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]
 		dev-python/PyQt6[${PYTHON_USEDEP}]
