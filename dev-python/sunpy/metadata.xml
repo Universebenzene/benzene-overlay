@@ -27,6 +27,7 @@
 		<flag name="jpeg2k">Extra JPEG 2000 support via <pkg>dev-python/glymur</pkg></flag>
 		<flag name="map">Extra map support</flag>
 		<flag name="net">Extra net support</flag>
+		<flag name="skimage">Include optional scikit-image support via <pkg>dev-python/scikit-image</pkg></flag>
 		<flag name="timeseries">Extra timeseries support</flag>
 		<flag name="visualization">Extra visualization support</flag>
 	</use>
