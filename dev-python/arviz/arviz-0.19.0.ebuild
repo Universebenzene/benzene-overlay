@@ -31,7 +31,7 @@ RDEPEND=">=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
 	>=dev-python/xarray-2022.6.0[${PYTHON_USEDEP}]
 	>=dev-python/xarray-einstats-0.3[${PYTHON_USEDEP}]
 	all? (
-		<dev-python/bokeh-3.0[${PYTHON_USEDEP}]
+		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/contourpy[${PYTHON_USEDEP}]
 		dev-python/netcdf4[${PYTHON_USEDEP}]
 		dev-python/numba[${PYTHON_USEDEP}]
@@ -39,10 +39,11 @@ RDEPEND=">=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
 		dev-python/distributed[${PYTHON_USEDEP}]
 		dev-python/xarray-datatree[${PYTHON_USEDEP}]
 		>=dev-python/zarr-2.5.0[${PYTHON_USEDEP}]
+		<dev-python/zarr-3[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="test? (
-		dev-python/bokeh[${PYTHON_USEDEP}]
+		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/cloudpickle[${PYTHON_USEDEP}]
 		dev-python/cmdstanpy[${PYTHON_USEDEP}]
 		dev-python/emcee[${PYTHON_USEDEP}]
@@ -50,6 +51,7 @@ BDEPEND="test? (
 		dev-python/numba[${PYTHON_USEDEP}]
 		dev-python/xarray-datatree[${PYTHON_USEDEP}]
 		dev-python/zarr[${PYTHON_USEDEP}]
+		sci-geosciences/xyzservices[${PYTHON_USEDEP}]
 		media-video/ffmpeg
 	)
 "
