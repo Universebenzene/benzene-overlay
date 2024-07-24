@@ -39,15 +39,15 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-libs/expat-2.5.0:0=
-	>=dev-python/numpy-1.25:=[${PYTHON_USEDEP}]
+	>=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]
 	>=dev-python/pyerfa-2.0.1.1[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
-	>=sci-astronomy/wcslib-8.2.2:0=
+	>=sci-astronomy/wcslib-8.3:0=
 	>=sci-libs/cfitsio-4.2.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2024.5.27.0.30.8[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2024.7.1.0.34.3[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
@@ -66,9 +66,9 @@ BDEPEND=">=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-astropy-1.9.1[${PYTHON_USEDEP},confv2]
 		>=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}]
 		dev-python/sphinx-design[${PYTHON_USEDEP}]
-		dev-python/sphinxcontrib-globalsubs[${PYTHON_USEDEP}]
+		>=dev-python/sphinxcontrib-globalsubs-0.1.1[${PYTHON_USEDEP}]
 		>=dev-python/jinja-3.1.3[${PYTHON_USEDEP}]
-		>dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.9.1[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
 		$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
