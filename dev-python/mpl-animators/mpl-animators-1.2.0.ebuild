@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..12} )
 
-inherit distutils-r1 optfeature pypi
+inherit distutils-r1 pypi
 
 DESCRIPTION="An interative animation framework for matplotlib"
 HOMEPAGE="https://sunpy.org"
@@ -14,23 +14,26 @@ KEYWORDS="~amd64 ~x86"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="all"
+RESTRICT="doc? ( network-sandbox )"
 
 RDEPEND=">=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
-	all? ( >=dev-python/astropy-5.0.6[${PYTHON_USEDEP}] )
+	>=dev-python/astropy-5.6.0[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
+		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
-		dev-python/astropy[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/sunpy-sphinx-theme dev-python/astropy
+distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/sphinx-gallery dev-python/sunpy-sphinx-theme \
+	dev-python/scipy \
+	dev-python/sunpy
 
-pkg_postinst() {
-	optfeature "WCS support" ">=dev-python/astropy-5.0.6"
+python_install() {
+	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/{docs,examples,licenses} || die
+	distutils-r1_python_install
 }

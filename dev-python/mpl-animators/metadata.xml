@@ -9,7 +9,4 @@
 		<remote-id type="pypi">mpl-animators</remote-id>
 		<remote-id type="github">sunpy/mpl-animators</remote-id>
 	</upstream>
-	<use>
-		<flag name="all">Full function includes WCS support</flag>
-	</use>
 </pkgmetadata>
