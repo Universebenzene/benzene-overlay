@@ -20,6 +20,7 @@ RDEPEND=">=dev-python/markdown-it-py-2.1.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
+		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 		dev-python/linkify-it-py[${PYTHON_USEDEP}]
 		dev-python/tree-sitter-languages[${PYTHON_USEDEP}]
 	)
