@@ -36,10 +36,10 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.23:=[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2.0.0_rc1:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
-	>=dev-python/astropy-healpix-0.6[${PYTHON_USEDEP}]
+	>=dev-python/astropy-healpix-1.0[${PYTHON_USEDEP}]
 	dev-python/cloudpickle[${PYTHON_USEDEP}]
 	>=dev-python/dask-2021.8[${PYTHON_USEDEP}]
 	dev-python/fsspec[${PYTHON_USEDEP}]
@@ -63,7 +63,8 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
-		dev-python/sunpy[${PYTHON_USEDEP}]
+		dev-python/mpl-animators[${PYTHON_USEDEP}]
+		>=dev-python/sunpy-6.0.0[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 "
