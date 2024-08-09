@@ -21,7 +21,7 @@ RDEPEND=">=dev-python/docutils-0.18[${PYTHON_USEDEP}]
 	>=dev-python/invoke-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-5.0.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-6.2.0[${PYTHON_USEDEP}]
 	>=dev-python/watchdog-2.1.0[${PYTHON_USEDEP}]
 	markdown? ( >=dev-python/myst-parser-0.17.0[${PYTHON_USEDEP}] )
 	notebook? (
@@ -35,7 +35,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 		virtual/pandoc
 	)
-	test? ( dev-python/defusedxml[${PYTHON_USEDEP}] )
 "
 
 distutils_enable_tests pytest
