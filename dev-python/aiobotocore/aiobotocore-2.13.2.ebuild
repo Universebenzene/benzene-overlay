@@ -52,7 +52,7 @@ EPYTEST_IGNORE=(
 python_prepare_all() {
 	# Work-around test failures with moto 5.x
 	# See: https://github.com/aio-libs/aiobotocore/issues/1108
-	use test && eapply "${FILESDIR}"/${PN}-2.12.3-moto-5.x.diff
+	use test && { eapply "${FILESDIR}"/${PN}-2.12.3-moto-5.x.diff ; sed -i "s/pip._vendor.//" tests/test_version.py || die ; }
 
 	distutils-r1_python_prepare_all
 }
