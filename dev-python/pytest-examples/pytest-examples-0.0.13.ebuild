@@ -6,16 +6,15 @@ EAPI=8
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{10..13} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="Pytest plugin for testing examples in docstrings and markdown files"
 HOMEPAGE="https://github.com/pydantic/pytest-examples"
-SRC_URI="https://github.com/pydantic/pytest-examples/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+#SRC_URI="https://github.com/pydantic/pytest-examples/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples"
 
 RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 	>=dev-python/black-23[${PYTHON_USEDEP}]
@@ -24,12 +23,12 @@ RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 
-python_install_all() {
-	if use examples; then
-		docompress -x "/usr/share/doc/${PF}/examples"
-		docinto examples
-		dodoc -r example/.
-	fi
-
-	distutils-r1_python_install_all
-}
+#python_install_all() {
+#	if use examples; then
+#		docompress -x "/usr/share/doc/${PF}/examples"
+#		docinto examples
+#		dodoc -r example/.
+#	fi
+#
+#	distutils-r1_python_install_all
+#}
