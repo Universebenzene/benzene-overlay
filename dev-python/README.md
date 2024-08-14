@@ -19,7 +19,7 @@ dev-python/astlib              | 0.11.3-r1; 0.11.10-r1; 0.12.0                  
 dev-python/astrodendro         | 0.2.0-r2; (live)                                     | 0.2.0 was really old. Live version should be much better.
 dev-python/astroml             | 0.4.1; 1.0.2\_p1                                     |
 dev-python/astropy-healpix     | 0.5; 1.0.3                                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/astroplan           | 0.6; 0.10                                            | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building may not complete, as it needs lots of online data.
+dev-python/astroplan           | 0.6; 0.10.1                                          | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building may not complete, as it needs lots of online data.
 dev-python/astroquery          | 0.3.10; 0.4.7                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/astroscrappy        | 1.0.8; 1.2.0                                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/atpy                | 0.9.7                                                | Old package, so the test phase may fail
