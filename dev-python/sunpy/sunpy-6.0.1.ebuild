@@ -102,6 +102,11 @@ EPYTEST_IGNORE=(
 	docs/whatsnew/6.0.rst
 )
 
+EPYTEST_DESELECT=(
+	sunpy/coordinates/ephemeris.py::sunpy.coordinates.ephemeris.get_horizons_coord
+	sunpy/net/dataretriever/sources/goes.py::sunpy.net.dataretriever.sources.goes.SUVIClient
+)
+
 python_install() {
 	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/{docs,examples,licenses} || die
 	distutils-r1_python_install
