@@ -189,7 +189,7 @@ dev-python/sphinx-readable-theme        | 1.3.0                 |
 dev-python/sphinx-thebe                 | 0.2.1; 0.3.1          |
 dev-python/sphinx-togglebutton          | 0.3.2                 |
 dev-python/sphinx-contributors          | 0.2.7                 |
-dev-python/sphinx-mdinclude             | 0.6.1                 |
+dev-python/sphinx-mdinclude             | 0.6.2                 |
 dev-python/sphinxcontrib-globalsubs     | 0.1.1                 |
 dev-python/sphinxcontrib-srclink        | 0.2.4                 |
 dev-python/sphinxcontrib-youtube        | 1.2.0; 1.4.1          | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
