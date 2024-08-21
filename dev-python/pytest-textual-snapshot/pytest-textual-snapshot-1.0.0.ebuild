@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"	# tree-sitter-languages, textual no x86
 RESTRICT="test"	# No usable test phases
 
-RDEPEND=">=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-12.0.0[${PYTHON_USEDEP}]
 	>=dev-python/syrupy-4.0.0[${PYTHON_USEDEP}]
