@@ -19,7 +19,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="!dev-python/dm-tree-bin"
-BDEPEND="
+BDEPEND="dev-build/cmake
+	dev-cpp/abseil-cpp
+	dev-python/pybind11[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/absl-py-0.6.1[${PYTHON_USEDEP}]
 		>=dev-python/attrs-18.2.0[${PYTHON_USEDEP}]
