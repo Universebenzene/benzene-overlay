@@ -16,6 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 RDEPEND=">=dev-python/markdown-it-py-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-13.3.3[${PYTHON_USEDEP}]
+	>=dev-python/platformdirs-4.2.2[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
