@@ -47,7 +47,7 @@ DEPEND=">=dev-libs/expat-2.5.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2024.7.1.0.34.3[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2024.7.29.0.32.7[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
@@ -71,7 +71,7 @@ BDEPEND=">=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.9.1[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.5[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
+		dev-python/tomli[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
@@ -116,6 +116,7 @@ distutils_enable_tests pytest
 
 python_prepare_all() {
 	rm -r ${PN}/extern/{configobj,ply} || die
+	use doc && { sed -i "/numpy<2.0/d" pyproject.toml || die ; }
 	if use doc && ! use intersphinx; then
 		for ddv in "${DISTDIR}"/*-dv-*; do { cp ${ddv} "${S}"/docs/visualization/${ddv##*-dv-} || die ; } ; done
 		for dvw in "${DISTDIR}"/*-dvw-*; do { cp ${dvw} "${S}"/docs/visualization/wcsaxes/${dvw##*-dvw-} || die ; } ; done
@@ -138,8 +139,8 @@ python_compile_all() {
 	if use doc; then
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
 			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
-		cp -r docs/{_static/*,_build/html/_static} || die
-		cp -r docs/{_static/*,_build/html/_images} || die
+#		cp -r docs/{_static/*,_build/html/_static} || die
+#		cp -r docs/{_static/*,_build/html/_images} || die
 		HTML_DOCS=( docs/_build/html/. )
 	fi
 }
@@ -190,5 +191,5 @@ the requests package)." dev-python/certifi
 	optfeature "automate testing and documentation builds" dev-python/tox
 	optfeature "testing Solar System coordinates" dev-python/skyfield
 	optfeature "testing satellite positions" dev-python/sgp4
-	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-5.0.0[parquet,snappy]"
+	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-7.0.0[parquet,snappy]"
 }
