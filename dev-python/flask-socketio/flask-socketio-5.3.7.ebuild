@@ -4,15 +4,12 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN=Flask-SocketIO
 PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
 
 DESCRIPTION="Socket.IO integration for Flask applications"
 HOMEPAGE="http://flask-socketio.readthedocs.io"
-SRC_URI+=" test? ( https://github.com/miguelgrinberg/Flask-SocketIO/raw/v${PV}/test_socketio.py -> ${P}-t-test_socketio.py )"
 
 LICENSE="MIT"
 SLOT="0"
@@ -24,13 +21,10 @@ RDEPEND=">=dev-python/flask-0.9[${PYTHON_USEDEP}]
 BDEPEND="test? ( dev-python/redis[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
+distutils_enable_sphinx docs
 
-python_prepare_all() {
-	use test && { cp {"${DISTDIR}"/${P}-t-,"${S}"/}test_socketio.py || die ; }
-
-	distutils-r1_python_prepare_all
-}
-
-python_test() {
-	epytest test_socketio.py
-}
+#python_prepare_all() {
+#	use doc && { sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
