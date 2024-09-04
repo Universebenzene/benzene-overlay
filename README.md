@@ -113,7 +113,6 @@ dev-python/adal                    | 1.2.7                                      
 dev-python/abg-python              | 1.1.4                                                      | Optional for yt
 dev-python/aggdraw                 | 1.3.16; 1.3.18\_p0                                         | Optional for ginga
 dev-python/aiobotocore             | 2.13.2                                                     | Pulled in by s3fs
-dev-python/aioitertools            | 0.11.0                                                     | Pulled in by s3fs
 dev-python/arviz                   | 0.17.1; 0.19.0                                             | Optional for corner.py.
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
 dev-python/azure-core              | 1.26.3; 1.30.2                                             | Required by new msrest
