@@ -18,7 +18,7 @@ IUSE="examples jupyter"
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.23[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	dev-python/fasteners[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.10.0[${PYTHON_USEDEP}]
 	jupyter? (
