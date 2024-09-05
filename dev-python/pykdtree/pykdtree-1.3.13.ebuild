@@ -16,7 +16,7 @@ LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 BDEPEND=">=dev-python/cython-3[${PYTHON_USEDEP}]"
 

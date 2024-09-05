@@ -138,7 +138,7 @@ dev-python/miniballcpp             | 0.2.3                                      
 dev-python/msrest                  | 0.7.1                                                      | SunPy, h5pyd related
 dev-python/msrestazure             | 0.6.4                                                      | SunPy, h5pyd related
 dev-python/numcodecs               | 0.12.1; 0.13.0                                             | Pulled in by zarr
-dev-python/pykdtree                | 1.3.12                                                     | Optional for yt
+dev-python/pykdtree                | 1.3.13                                                     | Optional for yt
 dev-python/pytest-examples         | 0.0.13                                                     | Test dependency for pydantic-settings
 dev-python/pytest-repeat           | 0.9.3                                                      | Test dependency for new zict
 dev-python/pytest-textual-snapshot | 1.0.0                                                      | Test dependency for new memray. Dependency syrupy is included but not listed in the table
