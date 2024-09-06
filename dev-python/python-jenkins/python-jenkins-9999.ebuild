@@ -22,7 +22,6 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-RESTRICT="test"	# object has no attribute 'j'
 
 RDEPEND="dev-python/multi_key_dict[${PYTHON_USEDEP}]
 	>=dev-python/pbr-0.8.2[${PYTHON_USEDEP}]
@@ -39,7 +38,7 @@ BDEPEND="dev-python/pbr[${PYTHON_USEDEP}]
 	)
 "
 
-distutils_enable_tests pytest
+distutils_enable_tests unittest
 distutils_enable_sphinx doc/source
 
 python_prepare_all() {
