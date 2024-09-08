@@ -12,7 +12,7 @@ SRC_URI="https://d-updater.i4.cn/i4linux/deb/i4tools_v${PV}.deb"
 LICENSE="i4"
 SLOT="0"
 RESTRICT="strip"
-KEYWORDS="~amd64"
+#KEYWORDS="~amd64"
 IUSE="fcitx fcitx5 ibus"
 
 RDEPEND="media-video/ffmpeg[cdio,iec61883,ieee1394,jack,libcaca,librtmp,sdl,speex,twolame,webp]
