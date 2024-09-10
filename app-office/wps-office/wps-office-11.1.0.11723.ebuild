@@ -16,8 +16,8 @@ KEYWORDS="~amd64"
 
 SRC_URI="fetch+https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/${MY_PV}/${MY_P}.XA_amd64.deb
 	fetch+https://github.com/gromko/wps-office-mui/archive/${MUI_PV}.tar.gz -> ${PN}-mui-${MUI_PV}.tar.gz
-	cn? ( https://wb9.s-ton.top/wps302/${PV}/amd64 -> ${MY_P}_amd64.deb )
-	l10n_zh-CN? ( https://wb9.s-ton.top/wps302/${PV}/amd64 -> ${MY_P}_amd64.deb )
+	cn? ( https://dogfood.gnupg.uk/wps302/${PV}/amd64 -> ${MY_P}_amd64.deb )
+	l10n_zh-CN? ( https://dogfood.gnupg.uk/wps302/${PV}/amd64 -> ${MY_P}_amd64.deb )
 "
 #	cn? ( https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb )
 #	l10n_zh-CN? ( https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2019/${MY_PV}/${MY_P}_amd64.deb )
