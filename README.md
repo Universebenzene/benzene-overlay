@@ -183,7 +183,7 @@ dev-python/sphinx-click                 | 6.0.0                          |
 dev-python/sphinx-codeautolink          | 0.15.2                         |
 dev-python/sphinx-design                | 0.6.1                          |
 dev-python/sphinx-examples              | 0.0.5                          |
-dev-python/sphinx-hoverxref             | 1.4.0                          |
+dev-python/sphinx-hoverxref             | 1.4.1                          |
 dev-python/sphinx-readable-theme        | 1.3.0                          |
 dev-python/sphinx-thebe                 | 0.2.1; 0.3.1                   |
 dev-python/sphinx-togglebutton          | 0.3.2                          |
