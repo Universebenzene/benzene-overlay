@@ -9,11 +9,12 @@ PYTHON_COMPAT=( python3_{10..13} )
 
 inherit distutils-r1 pypi
 
-MY_PV=$(pypi_translate_version ${PV})
+#MY_PV=$(pypi_translate_version ${PV})
 
 DESCRIPTION="High quality drawing interface for PIL"
 HOMEPAGE="https://aggdraw.readthedocs.io"
-SRC_URI+=" test? ( https://github.com/pytroll/aggdraw/raw/v${MY_PV}/selftest.py -> ${P}-selftest.py )"
+SRC_URI+=" test? ( https://github.com/pytroll/aggdraw/raw/v${PV}/selftest.py -> ${P}-selftest.py )"
+#SRC_URI+=" test? ( https://github.com/pytroll/aggdraw/raw/v${MY_PV}/selftest.py -> ${P}-selftest.py )"
 
 LICENSE="MIT"
 SLOT="0"
