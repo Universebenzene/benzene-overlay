@@ -32,5 +32,5 @@ distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# ModuleNotFoundError: No module named 'azure'
-	tests/test_docs.py::test_docs_examples[docs/index.md:1212-1256]
+	tests/test_docs.py::test_docs_examples[docs/index.md:1339-1383]
 )
