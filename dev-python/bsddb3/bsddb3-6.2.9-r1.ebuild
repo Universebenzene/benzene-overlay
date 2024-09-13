@@ -16,7 +16,7 @@ SRC_URI+=" https://dev.gentoo.org/~arthurzam/patches/dev-python/${P}-fix-py3.10.
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~mips ppc ppc64 ~riscv sparc x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha amd64 arm arm64 ~hppa ~mips ppc ppc64 ~riscv sparc x86 ~amd64-linux ~x86-linux"
 
 RDEPEND="
 	<sys-libs/db-6.1:=
