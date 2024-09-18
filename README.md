@@ -165,39 +165,39 @@ dev-python/zict                    | 2.2.0; 3.0.0                               
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-dev-python/sphinx                       | 5.1.1; 7.1.2                   | 5 for old myst-parser and myst-nb; 7.1 for glue-qt doc <!-- sphinx>=6 <- copybutton <-doc- sphinx-thebe -doc-> myst-nb -> myst-parser(oldver needs sphinx<6) -->
-dev-python/ablog                        | 0.11.11                        |
-dev-python/jupyter-cache                | 0.6.1; 1.0.0                   |
-dev-python/jupyter-sphinx               | 0.5.3                          |
-dev-python/jupytext                     | 1.16.4                         | Build with wheel source to include Jupyter Lab Extenstion
-dev-python/myst-nb                      | 0.17.2; 1.1.1                  |
-dev-python/myst-parser                  | 0.18.1-r1                      | Only for myst-nb that depends on old version
-dev-python/runnotebook                  | 0.3.1; (live)                  |
-dev-python/sphinx-astropy               | 1.6.0; 1.9.1                   | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
-dev-python/sphinx-asdf                  | 0.1.3; 0.1.4; 0.2.4            |
-dev-python/sphinx-autobuild             | 2021.3.14; 2024.4.16; 2024.9.3 |
-dev-python/sphinx-autosummary-accessors | 2023.4.0                       |
-dev-python/sphinx-book-theme            | 0.2.0; 1.0.1; 1.1.3            | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
-dev-python/sphinx-changelog             | 1.6.0                          |
-dev-python/sphinx-click                 | 6.0.0                          |
-dev-python/sphinx-codeautolink          | 0.15.2                         |
-dev-python/sphinx-design                | 0.6.1                          |
-dev-python/sphinx-examples              | 0.0.5                          |
-dev-python/sphinx-hoverxref             | 1.4.1                          |
-dev-python/sphinx-readable-theme        | 1.3.0                          |
-dev-python/sphinx-thebe                 | 0.2.1; 0.3.1                   |
-dev-python/sphinx-togglebutton          | 0.3.2                          |
-dev-python/sphinx-contributors          | 0.2.7                          |
-dev-python/sphinx-mdinclude             | 0.6.2                          |
-dev-python/sphinxcontrib-globalsubs     | 0.1.2                          |
-dev-python/sphinxcontrib-srclink        | 0.2.4                          |
-dev-python/sphinxcontrib-youtube        | 1.2.0; 1.4.1                   | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
-dev-python/sphinxext-opengraph          | 0.9.1                          |
-dev-python/dask-sphinx-theme            | 3.0.5                          |
-dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.0.16          |
-dev-python/pydata-sphinx-theme          | 0.13.3-r1                      | Old version dropped by official portage, required by sunpy-sphinx-theme
-dev-python/mistune                      | 0.8.4-r1; 2.0.5                | For sphinx-asdf and sphinx-mdinclude that depend on old version
-dev-python/nbconvert                    | 6.4.5                          | Depends on old mistune
+dev-python/sphinx                       | 5.1.1; 7.1.2                    | 5 for old myst-parser and myst-nb; 7.1 for glue-qt doc <!-- sphinx>=6 <- copybutton <-doc- sphinx-thebe -doc-> myst-nb -> myst-parser(oldver needs sphinx<6) -->
+dev-python/ablog                        | 0.11.11                         |
+dev-python/jupyter-cache                | 0.6.1; 1.0.0                    |
+dev-python/jupyter-sphinx               | 0.5.3                           |
+dev-python/jupytext                     | 1.16.4                          | Build with wheel source to include Jupyter Lab Extenstion
+dev-python/myst-nb                      | 0.17.2; 1.1.1                   |
+dev-python/myst-parser                  | 0.18.1-r1                       | Only for myst-nb that depends on old version
+dev-python/runnotebook                  | 0.3.1; (live)                   |
+dev-python/sphinx-astropy               | 1.6.0; 1.9.1                    | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
+dev-python/sphinx-asdf                  | 0.1.3; 0.1.4; 0.2.4             |
+dev-python/sphinx-autobuild             | 2021.3.14; 2024.4.16; 2024.9.17 |
+dev-python/sphinx-autosummary-accessors | 2023.4.0                        |
+dev-python/sphinx-book-theme            | 0.2.0; 1.0.1; 1.1.3             | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
+dev-python/sphinx-changelog             | 1.6.0                           |
+dev-python/sphinx-click                 | 6.0.0                           |
+dev-python/sphinx-codeautolink          | 0.15.2                          |
+dev-python/sphinx-design                | 0.6.1                           |
+dev-python/sphinx-examples              | 0.0.5                           |
+dev-python/sphinx-hoverxref             | 1.4.1                           |
+dev-python/sphinx-readable-theme        | 1.3.0                           |
+dev-python/sphinx-thebe                 | 0.2.1; 0.3.1                    |
+dev-python/sphinx-togglebutton          | 0.3.2                           |
+dev-python/sphinx-contributors          | 0.2.7                           |
+dev-python/sphinx-mdinclude             | 0.6.2                           |
+dev-python/sphinxcontrib-globalsubs     | 0.1.2                           |
+dev-python/sphinxcontrib-srclink        | 0.2.4                           |
+dev-python/sphinxcontrib-youtube        | 1.2.0; 1.4.1                    | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
+dev-python/sphinxext-opengraph          | 0.9.1                           |
+dev-python/dask-sphinx-theme            | 3.0.5                           |
+dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.0.16           |
+dev-python/pydata-sphinx-theme          | 0.13.3-r1                       | Old version dropped by official portage, required by sunpy-sphinx-theme
+dev-python/mistune                      | 0.8.4-r1; 2.0.5                 | For sphinx-asdf and sphinx-mdinclude that depend on old version
+dev-python/nbconvert                    | 6.4.5                           | Depends on old mistune
 
 <!--</details>-->
 
