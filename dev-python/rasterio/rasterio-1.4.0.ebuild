@@ -30,17 +30,19 @@ RDEPEND="${DEPEND}
 	>=dev-python/click-4.0[${PYTHON_USEDEP}]
 	dev-python/click-plugins[${PYTHON_USEDEP}]
 	>=dev-python/cligj-0.5[${PYTHON_USEDEP}]
-	>=dev-python/snuggs-1.4.1[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/pyparsing[${PYTHON_USEDEP}]
 	ipython? ( >=dev-python/ipython-2.0[${PYTHON_USEDEP}] )
 	plot? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/boto3-1.2.4[${PYTHON_USEDEP}] )
 "
 BDEPEND=">=dev-python/cython-3.0.2[${PYTHON_USEDEP}]
 	test? (
+		dev-python/aiohttp[${PYTHON_USEDEP}]
 		>=dev-python/boto3-1.2.4[${PYTHON_USEDEP}]
+		dev-python/fsspec[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		sci-libs/gdal:=[aux-xml(+),hdf5,jpeg,netcdf,png,threads(+)]
 		sci-libs/hdf5
@@ -48,18 +50,16 @@ BDEPEND=">=dev-python/cython-3.0.2[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
+distutils_enable_sphinx docs dev-python/sphinx-click dev-python/sphinx-rtd-theme
 
-python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${PN}-1.3.6-add-import-to-confpy.patch ; \
-#		sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ; \
-	}
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+#	use doc && { sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
 
 python_compile_all() {
-	# No module named 'rasterio._version'
+	# No module named 'rasterio._io'
 	use doc && [[ -d ${PN} ]] && { mv {,_}${PN} || die ; }
 	sphinx_compile_all
 	[[ -d _${PN} ]] && { mv {_,}${PN} || die ; }
@@ -76,7 +76,7 @@ python_install_all() {
 }
 
 python_test() {
-	# No module named 'rasterio._version'
+	# No module named 'rasterio._io'
 	[[ -d ${PN} ]] && { mv {,_}${PN} || die ; }
 	epytest
 	[[ -d _${PN} ]] && { mv {_,}${PN} || die ; }
