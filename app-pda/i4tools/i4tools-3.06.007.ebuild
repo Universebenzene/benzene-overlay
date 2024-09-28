@@ -32,7 +32,7 @@ S="${WORKDIR}"
 
 src_prepare() {
 	sed -i -e "/Exec/c Exec=i4tools" -e "/Icon/c Icon=i4tools" usr/share/applications/cn.${MY_PN}.desktop || die
-	sed -e '/echo/a \    export LD_LIBRARY_PATH=/opt/i4Tools/lib:$LD_LIBRARY_PATH' \
+	sed -e '/echo/a \    export LD_LIBRARY_PATH=/opt/i4tools/lib:$LD_LIBRARY_PATH' \
 		-e 's:$CUR_PATH:/opt/i4tools:g' -e 's:\.\/:/opt/i4tools/:' -i opt/apps/cn.${MY_PN}/run.sh || die
 	default
 }
