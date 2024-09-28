@@ -41,8 +41,8 @@ BDEPEND="${RDEPEND}
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 	test? (
-		dev-python/pytest-arraydiff[${PYTHON_USEDEP}]
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
+		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 	)
 "
