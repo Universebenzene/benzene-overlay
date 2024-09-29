@@ -20,7 +20,6 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 RDEPEND=">=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
-	|| ( >=dev-python/dm-tree-0.1.8[${PYTHON_USEDEP}] >=dev-python/dm-tree-bin-0.1.8[${PYTHON_USEDEP}] )
 	>=dev-python/h5netcdf-1.0.2[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -33,6 +32,7 @@ RDEPEND=">=dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
 	all? (
 		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/contourpy[${PYTHON_USEDEP}]
+		|| ( >=dev-python/dm-tree-0.1.8[${PYTHON_USEDEP}] >=dev-python/dm-tree-bin-0.1.8[${PYTHON_USEDEP}] )
 		dev-python/netcdf4[${PYTHON_USEDEP}]
 		dev-python/numba[${PYTHON_USEDEP}]
 		dev-python/ujson[${PYTHON_USEDEP}]
@@ -46,6 +46,7 @@ BDEPEND="test? (
 		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/cloudpickle[${PYTHON_USEDEP}]
 		dev-python/cmdstanpy[${PYTHON_USEDEP}]
+		|| ( >=dev-python/dm-tree-0.1.8[${PYTHON_USEDEP}] >=dev-python/dm-tree-bin-0.1.8[${PYTHON_USEDEP}] )
 		dev-python/emcee[${PYTHON_USEDEP}]
 		dev-python/netcdf4[${PYTHON_USEDEP}]
 		dev-python/numba[${PYTHON_USEDEP}]
