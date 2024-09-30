@@ -112,7 +112,7 @@ Package name | Available version | Additional information
 dev-python/adal                    | 1.2.7                                                      | SunPy, h5pyd related
 dev-python/abg-python              | 1.1.4                                                      | Optional for yt
 dev-python/aggdraw                 | 1.3.16; 1.3.19                                             | Optional for ginga
-dev-python/aiobotocore             | 2.13.2                                                     | Pulled in by s3fs
+dev-python/aiobotocore             | 2.15.1                                                     | Pulled in by s3fs
 dev-python/arviz                   | 0.17.1; 0.20.0                                             | Optional for corner.py.
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
 dev-python/azure-core              | 1.26.3; 1.31.0                                             | Required by new msrest
