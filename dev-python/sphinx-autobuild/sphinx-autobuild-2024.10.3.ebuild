@@ -7,7 +7,8 @@ DISTUTILS_USE_PEP517=flit
 PYTHON_COMPAT=( python3_{10..13} )
 
 #MY_PV="$(ver_cut 1).0$(ver_cut 2).0$(ver_cut 3)"
-MY_PV="$(ver_cut 1).0$(ver_cut 2).$(ver_cut 3)"
+#MY_PV="$(ver_cut 1).0$(ver_cut 2).$(ver_cut 3)"
+MY_PV="$(ver_cut 1).$(ver_cut 2).0$(ver_cut 3)"
 MY_P="${PN}-${MY_PV}"
 
 inherit distutils-r1 pypi
