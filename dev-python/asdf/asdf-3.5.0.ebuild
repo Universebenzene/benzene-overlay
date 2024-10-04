@@ -37,7 +37,9 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-asdf-0.2.2[${PYTHON_USEDEP}]
 		dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
 		>=dev-python/mistune-3[${PYTHON_USEDEP}]
-		dev-python/tomli[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '
+			dev-python/tomli[${PYTHON_USEDEP}]
+		' python3_10)
 		media-gfx/graphviz
 	)
 	test? (
