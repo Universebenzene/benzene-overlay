@@ -17,14 +17,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-DEPEND=">=dev-python/numpy-1.16[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-4.0[${PYTHON_USEDEP}]
-	>=dev-python/pyparsing-2.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5[${PYTHON_USEDEP}]
+	>=dev-python/pyparsing-2[${PYTHON_USEDEP}]
 "
 BDEPEND="${DEPEND}
+	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
-	dev-python/cython[${PYTHON_USEDEP}]
+	<dev-python/cython-4[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
