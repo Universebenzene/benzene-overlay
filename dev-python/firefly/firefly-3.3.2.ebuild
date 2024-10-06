@@ -25,7 +25,6 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	>=dev-python/abg-python-1.1.1[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 

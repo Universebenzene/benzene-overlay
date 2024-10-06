@@ -117,7 +117,7 @@ dev-python/arviz                   | 0.17.1; 0.20.0                             
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
 dev-python/azure-core              | 1.26.3; 1.31.0                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
-dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Required by firefly{,-viz}
+dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Test dependency for zarr
 dev-python/check-manifest          | 0.49                                                       | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.2.4                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/distributed             | 2024.4.1; 2024.8.2                                         | Optional for arviz and spectral-cube
@@ -126,7 +126,7 @@ dev-python/eventlet                | 0.33.3; 0.35.2                             
 dev-python/f90nml                  | 1.4.4                                                      | Optional for yt
 dev-python/fastcache               | 1.1.0                                                      | Optional for yt
 dev-python/firefly-viz             | 2.0.4                                                      | Optional for yt
-dev-python/firefly                 | 3.2.4                                                      | Optional for new yt
+dev-python/firefly                 | 3.3.2                                                      | Optional for new yt
 dev-python/flask-socketio          | 5.4.1                                                      | Optional for yt
 dev-python/fusepy                  | 3.0.1                                                      | Optional for yt
 dev-python/heapdict                | 1.0.1                                                      | Pulled in by zict and distributed
