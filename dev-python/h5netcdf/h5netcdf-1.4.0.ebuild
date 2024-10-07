@@ -28,3 +28,9 @@ BDEPEND=">=dev-python/setuptools-scm-7.0[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-book-theme
+
+python_prepare_all() {
+	use doc && { sed -i '/Type/s:   :   core.:g' doc/api.rst || die ; }
+
+	distutils-r1_python_prepare_all
+}
