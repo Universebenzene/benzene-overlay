@@ -28,18 +28,20 @@ RDEPEND="${DEPEND}
 BDEPEND=">dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
+	doc? ( dev-libs/zfp[python] )
 	test? (
+		dev-libs/zfp[python]
 		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
 	)
 "
-#	doc? ( dev-libs/zfp[python] )
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc dev-python/pydata-sphinx-theme
 
 python_prepare_all() {
 	use test && { sed -i "s/--cov=numcodecs --cov-report xml //" pyproject.toml || die ; }
+	sed -i "/_zfpy = None/a import zfpy as _zfpy" ${PN}/zfpy.py || die
 
 	distutils-r1_python_prepare_all
 }
