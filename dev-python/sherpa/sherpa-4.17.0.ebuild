@@ -11,7 +11,9 @@ inherit distutils-r1 optfeature pypi virtualx
 
 DESCRIPTION="Modeling and fitting package for scientific data analysis"
 HOMEPAGE="https://sherpa.readthedocs.io"
-SRC_URI+=" test? ( https://github.com/sherpa/sherpa-test-data/archive/refs/tags/${PV}.tar.gz -> ${P}-testdata.tar.gz )"
+SRC_URI+=" https://github.com/sherpa/sherpa/raw/refs/tags/${PV}/setup.cfg -> ${P}-setup.cfg
+	test? ( https://github.com/sherpa/sherpa-test-data/archive/refs/tags/${PV}.tar.gz -> ${P}-testdata.tar.gz )
+"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -27,21 +29,26 @@ DEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}"
 BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
 	doc? (
 		${RDEPEND}
+		<dev-python/sphinx-8[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		dev-python/nbsphinx[${PYTHON_USEDEP}]
-		dev-python/bokeh[${PYTHON_USEDEP}]
+		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		media-gfx/graphviz
+		sci-geosciences/xyzservices[${PYTHON_USEDEP}]
 		virtual/pandoc
 	)
 	test? (
 		dev-python/pytest-xvfb[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
-		dev-python/bokeh[${PYTHON_USEDEP}]
+		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
 		sci-astronomy/ds9-bin
+		sci-geosciences/xyzservices[${PYTHON_USEDEP}]
 	)
 "
 
@@ -51,23 +58,27 @@ distutils_enable_tests pytest
 
 python_prepare_all() {
 	rm -r extern/fftw-* || die
+	mv setup.cfg pypi-setup.cfg || die
+	cp {"${DISTDIR}"/${P}-,}setup.cfg || die
+	sed -n '/egg_info/,$p' pypi-setup.cfg >> setup.cfg || die
+
 	sed -e "s|#fftw=local|fftw=local|" -e "s|#fftw-include[-_]dirs.*$|fftw-include_dirs=/usr/include|" \
 		-e "s|#fftw-lib-dirs.*$|fftw-lib-dirs=/usr/$(get_libdir)|" -e "s|#fftw-libraries|fftw-libraries|" \
 		-e "/group-location/a group-location=extern/grplib-4.9/python/.libs/group.so" \
 		-e "/stk-location/a stk-location=extern/stklib-4.11/src/.libs/stk.so" -i setup.cfg || die
-	# Fix python3.12 and numpy>1.23
-	sed -e '/^import\ setuptools/c from setuptools import setup' -e '/distutils/d' -i setup.py || die
-	sed -e '/setuptools.command/s/^#\ //' -e '/distutils/d' -i helpers/__init__.py || die
-	sed -e "/^sherpa_inc/s/]/, numpy.get_include()]/" -e '/^from/a import numpy' -i helpers/extensions/__init__.py || die
+#	# Fix python3.12 and numpy>1.23
+#	sed -e '/^import\ setuptools/c from setuptools import setup' -e '/distutils/d' -i setup.py || die
+#	sed -e '/setuptools.command/s/^#\ //' -e '/distutils/d' -i helpers/__init__.py || die
+#	sed -e "/^sherpa_inc/s/]/, numpy.get_include()]/" -e '/^from/a import numpy' -i helpers/extensions/__init__.py || die
 
 	distutils-r1_python_prepare_all
 }
 
-python_compile() {
-	distutils-r1_python_compile
-	cp "${S}"/extern/grplib-4.9/python/.libs/group.so "${BUILD_DIR}"/install/$(python_get_sitedir) || die
-	cp "${S}"/extern/stklib-4.11/src/.libs/stk.so "${BUILD_DIR}"/install/$(python_get_sitedir) || die
-}
+#python_compile() {
+#	distutils-r1_python_compile
+#	cp "${S}"/extern/grplib-4.9/python/.libs/group.so "${BUILD_DIR}"/install/$(python_get_sitedir) || die
+#	cp "${S}"/extern/stklib-4.11/src/.libs/stk.so "${BUILD_DIR}"/install/$(python_get_sitedir) || die
+#}
 
 python_compile_all() {
 	if use doc; then
@@ -85,7 +96,7 @@ python_install_all() {
 	fi
 
 	distutils-r1_python_install_all
-	rm "${ED/%}"/usr/*.so || die
+#	rm "${ED/%}"/usr/*.so || die
 }
 
 python_test() {
