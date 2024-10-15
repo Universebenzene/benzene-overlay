@@ -28,7 +28,7 @@ BDEPEND="test? (
 distutils_enable_tests pytest
 
 python_prepare_all() {
-	use test && { sed -i "s/ --cov//" pyproject.toml || die ; }
+	use test && { sed -i -e '/--cov/d' pyproject.toml || die ; }
 
 	distutils-r1_python_prepare_all
 }
