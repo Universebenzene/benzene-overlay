@@ -38,15 +38,16 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )
 	doc? ( local-datasets )"
 
-DEPEND=">=dev-python/numpy-1.25[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.10[${PYTHON_USEDEP}]
 	all? (
 		dev-python/bottleneck[${PYTHON_USEDEP}]
-		>=dev-python/gwcs-0.18[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
+		>=dev-python/gwcs-0.19[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.7[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
+		>=dev-python/regions-0.9[${PYTHON_USEDEP}]
 		>=dev-python/scikit-image-0.20[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
@@ -54,21 +55,25 @@ RDEPEND="${DEPEND}
 "
 BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/cython-3.1.0[${PYTHON_USEDEP}]
+	<dev-python/cython-4[${PYTHON_USEDEP}]
 	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		>=dev-python/sphinx-astropy-1.9[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-astropy-1.9.1[${PYTHON_USEDEP},confv2]
+		dev-python/sphinx-design[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
 		media-gfx/graphviz
 	)
 	test? (
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
+		dev-python/bottleneck[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
+		dev-python/regions[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
@@ -92,7 +97,7 @@ distutils_enable_tests pytest
 #}
 
 python_prepare_all() {
-	use local-datasets && { eapply "${FILESDIR}/"${PN}-1.6.0-datasets-use-local.patch; mkdir -p ${PN}/datasets/data ; \
+	use local-datasets && { eapply "${FILESDIR}/"${P}-datasets-use-local.patch; mkdir -p ${PN}/datasets/data ; \
 		for ldata in "${DISTDIR}"/*-d-*; do { cp ${ldata} "${S}"/${PN}/datasets/data/${ldata##*-d-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
 }
@@ -110,11 +115,11 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "power a variety of features in several modules (strongly recommended)" ">=dev-python/scipy-1.8"
-	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.5"
+	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.7"
+	optfeature "perform aperture photometry using region objects" ">=dev-python/regions-0.9"
 	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.20"
-	optfeature "used in make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.18"
+	optfeature "make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.19"
 	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" dev-python/bottleneck
 	optfeature "display optional progress bars" dev-python/tqdm
-	optfeature "Used for converting source segments into polygon objects" dev-python/rasterio dev-python/shapely
+	optfeature "converting source segments into polygon objects" dev-python/rasterio dev-python/shapely
 }
