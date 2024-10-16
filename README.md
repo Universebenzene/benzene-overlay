@@ -212,7 +212,7 @@ dev-python/docstring-parser             | 0.16            | Optional dependency 
 dev-python/markdown-callouts            | 0.3.0; 0.4.0    | mkdocstrings related (should be test depend)
 dev-python/mkdocs-coverage              | 1.0.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-git-committers-plugin | 2.4.1           | mkdocstrings related (should be test depend)
-dev-python/mkdocs-jupyter               | 0.25.0          |
+dev-python/mkdocs-jupyter               | 0.25.1          |
 dev-python/mkdocs-literate-nav          | 0.6.1           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-section-index         | 0.3.9           | mkdocstrings related (should be test depend)
 dev-python/mkdocstrings-crystal         | 0.3.5; 0.3.7    |
