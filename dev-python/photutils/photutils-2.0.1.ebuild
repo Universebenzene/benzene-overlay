@@ -97,7 +97,7 @@ distutils_enable_tests pytest
 #}
 
 python_prepare_all() {
-	use local-datasets && { eapply "${FILESDIR}/"${P}-datasets-use-local.patch; mkdir -p ${PN}/datasets/data ; \
+	use local-datasets && { eapply "${FILESDIR}/"${PN}-2.0.0-datasets-use-local.patch; mkdir -p ${PN}/datasets/data ; \
 		for ldata in "${DISTDIR}"/*-d-*; do { cp ${ldata} "${S}"/${PN}/datasets/data/${ldata##*-d-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
 }
