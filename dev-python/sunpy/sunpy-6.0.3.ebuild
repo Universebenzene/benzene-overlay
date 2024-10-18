@@ -107,10 +107,10 @@ EPYTEST_DESELECT=(
 	sunpy/net/dataretriever/sources/goes.py::sunpy.net.dataretriever.sources.goes.SUVIClient
 )
 
-python_install() {
-	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/{docs,examples,licenses} || die
-	distutils-r1_python_install
-}
+#python_install() {
+#	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/{docs,examples,licenses} || die
+#	distutils-r1_python_install
+#}
 
 python_install_all() {
 	if use examples; then
