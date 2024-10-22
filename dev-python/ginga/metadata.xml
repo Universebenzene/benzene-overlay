@@ -23,7 +23,7 @@
 	</upstream>
 	<use>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
-		<flag name="gtk3">Enable support for GTK3 backend</flag>
+		<flag name="gtk">Enable support for GTK 3 or 4 backend</flag>
 		<flag name="pyside2">Enable support for PySide backend via <pkg>dev-python/pyside2</pkg></flag>
 		<flag name="pyside6">Enable support for PySide backend via <pkg>dev-python/pyside6</pkg></flag>
 		<flag name="qt5">Enable support for Qt5 backend via <pkg>dev-python/PyQt5</pkg></flag>
