@@ -30,7 +30,13 @@ BDEPEND="test? (
 
 distutils_enable_tests pytest
 
+EPYTEST_IGNORE=(
+	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-pydantic-settings/-/blob/main/PKGBUILD
+	# we don't yet have azure integration in the repos
+	tests/test_source_azure_key_vault.py
+)
+
 EPYTEST_DESELECT=(
 	# ModuleNotFoundError: No module named 'azure'
-	tests/test_docs.py::test_docs_examples[docs/index.md:1339-1383]
+	tests/test_docs.py::test_docs_examples[docs/index.md:1521-1565]
 )
