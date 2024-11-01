@@ -115,7 +115,7 @@ dev-python/aggdraw                 | 1.3.16; 1.3.19                             
 dev-python/aiobotocore             | 2.15.2                                                     | Pulled in by s3fs
 dev-python/arviz                   | 0.17.1; 0.20.0                                             | Optional for corner.py.
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
-dev-python/azure-core              | 1.26.3; 1.31.0                                             | Required by new msrest
+dev-python/azure-core              | 1.26.3; 1.32.0                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
 dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Test dependency for zarr
 dev-python/check-manifest          | 0.49; 0.50                                                 | Dropped by official portage. Build dependency for xarray-datatree
