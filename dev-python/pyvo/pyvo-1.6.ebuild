@@ -22,7 +22,10 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/astropy-4.1[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
-	all? ( dev-python/pillow[${PYTHON_USEDEP}] )
+	all? (
+		dev-python/defusedxml[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
+	)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
