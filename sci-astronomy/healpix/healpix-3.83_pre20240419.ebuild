@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit autotools toolchain-funcs java-pkg-opt-2 java-ant-2 vcs-snapshot
+inherit autotools toolchain-funcs java-pkg-opt-2 vcs-snapshot
 
 COMMIT="fcbb3999fc5b7968e8c4c65c783e272bbc7b9f7b"
 
@@ -31,7 +31,10 @@ RDEPEND="
 
 BDEPEND="${RDEPEND}
 	virtual/pkgconfig
-	java? ( >=virtual/jdk-1.8:* )
+	java? (
+		>=dev-java/ant-1.10.14-r3
+		>=virtual/jdk-1.8:*
+	)
 "
 #	java? ( >=virtual/jdk-1.8:* test? ( dev-java/ant-junit4:0 ) )
 

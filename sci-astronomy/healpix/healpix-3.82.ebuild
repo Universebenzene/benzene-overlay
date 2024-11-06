@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit autotools toolchain-funcs java-pkg-opt-2 java-ant-2
+inherit autotools toolchain-funcs java-pkg-opt-2
 
 MYP="Healpix_${PV}"
 MYPD=${MYP}_2022Jul28
@@ -32,7 +32,10 @@ RDEPEND="
 
 BDEPEND="${RDEPEND}
 	virtual/pkgconfig
-	java? ( >=virtual/jdk-1.8:* )
+	java? (
+		>=dev-java/ant-1.10.14-r3
+		>=virtual/jdk-1.8:*
+	)
 "
 #	java? ( >=virtual/jdk-1.8:* test? ( dev-java/ant-junit4:0 ) )
 
