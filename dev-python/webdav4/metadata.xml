@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">webdav4</remote-id>
+		<remote-id type="github">skshetry/webdav4</remote-id>
+	</upstream>
+	<use>
+		<flag name="http2">http2 support</flag>
+		<flag name="fsspec">consistent APIs to different storage backends via <pkg>dev-python/fsspec</pkg></flag>
+	</use>
+</pkgmetadata>
