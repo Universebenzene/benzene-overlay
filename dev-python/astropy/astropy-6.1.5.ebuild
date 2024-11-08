@@ -47,7 +47,7 @@ DEPEND=">=dev-libs/expat-2.5.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2024.8.27.10.28.29[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2024.10.28.0.34.7[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.13[${PYTHON_USEDEP}]
