@@ -1,0 +1,11 @@
+--- a/docs/index.rst	2024-04-22 02:15:14.000000000 +0800
++++ b/docs/index.rst	2024-11-07 18:59:05.247027138 +0800
+@@ -4,7 +4,7 @@
+    contain the root `toctree` directive.
+ 
+ Welcome to PySquashfsImage's documentation!
+-========================================
++===========================================
+ 
+ Contents:
+ 
