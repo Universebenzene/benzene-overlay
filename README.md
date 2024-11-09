@@ -125,6 +125,7 @@ dev-python/dm-tree{,-bin}          | 0.1.8                                      
 dev-python/eventlet                | 0.33.3; 0.35.2                                             | Dropped by official portage. Required by firefly{,-viz}
 dev-python/f90nml                  | 1.4.4                                                      | Optional for yt
 dev-python/fastcache               | 1.1.0                                                      | Optional for yt
+dev-python/fast-zip-decryption     | 3.0.0                                                      | Optional for new ratarmount{,core}
 dev-python/firefly-viz             | 2.0.4                                                      | Optional for yt
 dev-python/firefly                 | 3.3.2                                                      | Optional for new yt
 dev-python/flask-socketio          | 5.4.1                                                      | Optional for yt

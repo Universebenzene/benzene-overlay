@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Read Standard Zip Encryption 2.0 encrypted Zips 100x faster with
+		same interface as the CPython standard library's zipfile.ZipFile.
+		This is a fork of fastzipfile. I created this fork in order to
+		add automated testing, building, and uploading of wheels to my own
+		fast-zip-decryption PyPI repository so that installation is more hassle-free.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">fast-zip-decryption</remote-id>
+		<remote-id type="github">mxmlnkn/fast-zip-decryption</remote-id>
+	</upstream>
+</pkgmetadata>
