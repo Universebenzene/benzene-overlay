@@ -3,7 +3,7 @@ Universebenzene's personal Gentoo overlay.
 
 Including some old software that no longer supported by official portage.
 
-Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled. See the USE descriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages)
+Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled. See the USE descriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages))
 
 Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-testlay), with some packages testing. You can add it for interest.
 
@@ -102,7 +102,7 @@ Information for some of the astropy related packages are listed [here](https://g
 
 ### Some science related miscellaneous python packages
 
-Packages in this table might just be pulled in as dependencies by some sicense related python packages.
+Packages in this table might just be pulled in as dependencies by some sciense related python packages.
 
 <!--<details>
 <summary>(Click to unfold)</summary>-->
@@ -148,7 +148,7 @@ dev-python/python-socketio         | 5.9.0; 5.11.4                              
 dev-python/python-xz               | 0.5.0                                                      | Optional for yt
 dev-python/rasterio                | 1.3.8\_p2; 1.4.2                                           | Optional for photutils. Dependencies are not all listed in the table
 dev-python/ratarmount              | 0.14.2; 0.15.2                                             | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
-dev-python/s3fs                    | 2024.9.0; 2024.10.0                                        | Test dependency for zarr and astropy>=5.2
+dev-python/s3fs                    | 2024.10.0                                                  | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks                | 0.3.0                                                      | Optional for aioftp
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
 dev-python/textual                 | 0.85.2                                                     | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
