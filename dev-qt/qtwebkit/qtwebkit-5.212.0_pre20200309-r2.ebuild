@@ -96,8 +96,8 @@ PATCHES=(
 	"${FILESDIR}/${P}-cstdint.patch"
 	# GCC 14
 	"${FILESDIR}/${P}-fix-build-gcc14.patch"
-	# icu 75
-	"${FILESDIR}/${P}-icu-75.patch"
+	# icu 75 & 76
+	"${FILESDIR}/${P}-icu-75-76.patch"
 )
 
 _check_reqs() {
