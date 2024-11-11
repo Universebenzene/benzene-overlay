@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		mock-ssh-server packs a Python context manager that implements an
+		SSH server for testing purposes. It is built on top of paramiko,
+		so it does not need OpenSSH binaries to be installed.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">mock-ssh-server</remote-id>
+		<remote-id type="github">carletes/mock-ssh-server</remote-id>
+	</upstream>
+</pkgmetadata>
