@@ -32,7 +32,7 @@ RDEPEND=">=dev-libs/expat-2.2.9:0=
 BDEPEND="${RDEPEND}
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/jinja[${PYTHON_USEDEP}]
+	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-libs/libxml2

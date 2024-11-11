@@ -15,7 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"	# mkdocstrings{,-python} no x86
 
-RDEPEND=">=dev-python/jinja-2.11.2[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/jinja2-2.11.2[${PYTHON_USEDEP}]
 	>=dev-python/markdown-callouts-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-autorefs-0.3.1[${PYTHON_USEDEP}]

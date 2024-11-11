@@ -21,7 +21,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="test"	# Test phase runs with fails
 
-RDEPEND=">=dev-python/jinja-2.9[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/jinja2-2.9[${PYTHON_USEDEP}]
 	>=dev-python/rich-11.2.0[${PYTHON_USEDEP}]
 	app-arch/lz4
 	sys-libs/libunwind

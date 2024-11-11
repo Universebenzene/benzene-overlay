@@ -52,14 +52,14 @@ RDEPEND="${DEPEND}
 "
 BDEPEND="dev-python/extension-helpers[${PYTHON_USEDEP}]
 	>=dev-python/cython-0.29.22[${PYTHON_USEDEP}]
-	>=dev-python/jinja-3.0.3[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.6[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-changelog-1.1.0[${PYTHON_USEDEP}]
-		>=dev-python/jinja-3.0[${PYTHON_USEDEP}]
+		>=dev-python/jinja2-3.0[${PYTHON_USEDEP}]
 		>dev-python/matplotlib-3.4.0[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.3[${PYTHON_USEDEP}]
 		>=dev-python/pytest-7.0[${PYTHON_USEDEP}]

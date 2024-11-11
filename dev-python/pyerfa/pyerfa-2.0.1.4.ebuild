@@ -25,7 +25,7 @@ RDEPEND=">=sci-astronomy/erfa-2.0.1:0=
 DEPEND="${RDEPEND}"
 BDEPEND="${RDEPEND}
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
-	>=dev-python/jinja-2.10.3[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.10.3[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.3[${PYTHON_USEDEP}]

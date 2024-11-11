@@ -24,7 +24,7 @@ DEPEND="
 	>=sci-astronomy/erfa-1.4.0:0=
 	>=sci-astronomy/wcslib-5.16:0=
 	>=sci-libs/cfitsio-3.410:0=
-	>=dev-python/jinja-2.7[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.7[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.10.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}

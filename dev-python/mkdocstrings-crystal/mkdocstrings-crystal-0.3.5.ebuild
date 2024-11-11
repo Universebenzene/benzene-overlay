@@ -25,7 +25,7 @@ KEYWORDS="~amd64"	# mkdocstrings{,-python} no x86
 IUSE="examples"
 
 RDEPEND=">=dev-python/cached-property-1.5.2[${PYTHON_USEDEP}]
-	>=dev-python/jinja-2.11.2[${PYTHON_USEDEP}]
+	>=dev-python/jinja2-2.11.2[${PYTHON_USEDEP}]
 	>=dev-python/markdown-callouts-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-autorefs-0.2.0[${PYTHON_USEDEP}]

@@ -20,7 +20,7 @@ RDEPEND="
 	dev-python/bleach[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 	>=dev-python/entrypoints-0.2.2[${PYTHON_USEDEP}]
-	dev-python/jinja[${PYTHON_USEDEP}]
+	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/jupyter-core[${PYTHON_USEDEP}]
 	dev-python/jupyterlab-pygments[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-2.0[${PYTHON_USEDEP}]

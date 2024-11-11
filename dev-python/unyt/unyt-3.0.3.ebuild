@@ -24,7 +24,7 @@ BDEPEND=">=dev-python/setuptools-scm-7.0.1[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
-		dev-python/jinja[${PYTHON_USEDEP}]
+		dev-python/jinja2[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 	)
 "
