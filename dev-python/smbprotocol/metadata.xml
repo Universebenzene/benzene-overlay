@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		SMB is a network file sharing protocol and has numerous iterations
+		over the years. This library implements the SMBv2 and SMBv3 protocol
+		based on the MS-SMB2 document.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">smbprotocol</remote-id>
+		<remote-id type="github">jborean93/smbprotocol</remote-id>
+	</upstream>
+</pkgmetadata>

@@ -151,6 +151,7 @@ dev-python/rasterio                | 1.3.8\_p2; 1.4.2                           
 dev-python/ratarmount              | 0.14.2; 0.15.2                                             | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
 dev-python/s3fs                    | 2024.10.0                                                  | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks                | 0.3.0                                                      | Optional for aioftp
+dev-python/smbprotocol             | 1.15.0                                                     | Optional for new ratarmount{,core}
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
 dev-python/sshfs                   | 2024.9.0                                                   | Optional for new ratarmount{,core}. For running test, you need to forcely unmask paramiko[server], e.g. `echo "dev-python/paramiko -server" >> /etc/portage/profile/package.use.mask"`
 dev-python/textual                 | 0.85.2                                                     | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
