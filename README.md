@@ -154,6 +154,7 @@ dev-python/siosocks                | 0.3.0                                      
 dev-python/smbprotocol             | 1.15.0                                                     | Optional for new ratarmount{,core}
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
 dev-python/sshfs                   | 2024.9.0                                                   | Optional for new ratarmount{,core}. For running test, you need to forcely unmask paramiko[server], e.g. `echo "dev-python/paramiko -server" >> /etc/portage/profile/package.use.mask"`
+dev-python/stone                   | 3.3.8                                                      | Required by python dropbox
 dev-python/textual                 | 0.85.2                                                     | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
 dev-python/colorspacious           | 1.1.2                                                      | Pulled in by cmyt. Dropped by official portage
 dev-python/cmyt                    | 2.0.0                                                      | Pulled in by yt
