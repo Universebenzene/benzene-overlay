@@ -19,15 +19,15 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
-	>=dev-python/astropy-3.1[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-2.0[${PYTHON_USEDEP}]
-	>=dev-python/reproject-0.4[${PYTHON_USEDEP}]
-	>=dev-python/pyregion-2.0[${PYTHON_USEDEP}]
-	>=dev-python/pillow-4.3[${PYTHON_USEDEP}]
-	>=dev-python/pyavm-0.9.4[${PYTHON_USEDEP}]
-	>=dev-python/shapely-1.7[${PYTHON_USEDEP}]
-	>=dev-python/scikit-image-0.14[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
+	>=dev-python/reproject-0.9[${PYTHON_USEDEP}]
+	>=dev-python/pyregion-2.2[${PYTHON_USEDEP}]
+	>=dev-python/pillow-9.0[${PYTHON_USEDEP}]
+	>=dev-python/pyavm-0.9.6[${PYTHON_USEDEP}]
+	>=dev-python/shapely-2.0[${PYTHON_USEDEP}]
+	>=dev-python/scikit-image-0.20[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
@@ -35,6 +35,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
 	test? (
+		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
@@ -45,7 +46,7 @@ distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch; \
+	use doc && { eapply "${FILESDIR}"/${PN}-2.1.0-doc-use-local-fits.patch; \
 		cp "${DISTDIR}"/l1448_13co.fits "${S}"/docs/fitsfigure || die ; }
 	distutils-r1_python_prepare_all
 }
@@ -59,9 +60,6 @@ python_compile_all() {
 }
 
 python_test() {
+	use doc && local EPYTEST_IGNORE=( docs/_build )
 	epytest --remote-data
-}
-
-pkg_postinst() {
-	optfeature "enhance the functionality" "dev-python/montage-wrapper sci-astronomy/montage"
 }
