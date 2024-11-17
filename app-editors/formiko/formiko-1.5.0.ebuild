@@ -1,9 +1,9 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2023-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
 inherit distutils-r1 optfeature xdg
 
@@ -26,9 +26,9 @@ RDEPEND="app-text/gtkspell:3
 	dev-libs/gobject-introspection
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/pygobject[${PYTHON_USEDEP}]
-	net-libs/webkit-gtk:4
+	|| ( net-libs/webkit-gtk:4.1 net-libs/webkit-gtk:4 )
 	x11-libs/gtk+:3
-	x11-libs/gtksourceview:3.0
+	x11-libs/gtksourceview:4
 	vim? ( app-editors/vim )
 "
 
