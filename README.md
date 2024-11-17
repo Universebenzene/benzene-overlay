@@ -123,6 +123,7 @@ dev-python/check-manifest          | 0.49; 0.50                                 
 dev-python/cmdstanpy               | 1.0.8; 1.2.4                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/distributed             | 2024.4.1; 2024.8.2                                         | Optional for arviz and spectral-cube
 dev-python/dm-tree{,-bin}          | 0.1.8                                                      | Required by new arviz
+dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
 dev-python/eventlet                | 0.33.3; 0.35.2                                             | Dropped by official portage. Required by firefly{,-viz}
 dev-python/f90nml                  | 1.4.4                                                      | Optional for yt
 dev-python/fastcache               | 1.1.0                                                      | Optional for yt
