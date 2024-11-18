@@ -5,9 +5,9 @@ EAPI=8
 
 inherit autotools toolchain-funcs
 
-HEALPV="3.82"
+HEALPV="3.83"
 MYP="Healpix_${HEALPV}"
-MYPD=${MYP}_2022Jul28
+MYPD=${MYP}_2024Nov13
 
 DESCRIPTION="Library for fast spherical harmonic transforms"
 HOMEPAGE="https://github.com/Libsharp/libsharp https://healpix.jpl.nasa.gov"

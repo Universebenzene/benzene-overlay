@@ -6,14 +6,14 @@ EAPI=8
 inherit autotools toolchain-funcs java-pkg-opt-2
 
 MYP="Healpix_${PV}"
-MYPD=${MYP}_2022Jul28
+MYPD=${MYP}_2024Nov13
 
 DESCRIPTION="Hierarchical Equal Area isoLatitude Pixelization of a sphere"
 HOMEPAGE="http://healpix.sourceforge.net https://healpix.jpl.nasa.gov"
 SRC_URI="https://downloads.sourceforge.net/healpix/${MYP}/${MYPD}.tar.gz"
 
 LICENSE="GPL-2"
-SLOT="0/0-3"	# subslot = libchealpix/libhealpix_cxx.so soname version
+SLOT="0/0-4"	# subslot = libchealpix/libhealpix_cxx.so soname version
 KEYWORDS="~amd64 ~x86"
 
 # might add fortran in the future if requested
