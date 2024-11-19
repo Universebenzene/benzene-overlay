@@ -57,7 +57,7 @@ dev-python/pyregion            | 2.1.1; 2.3.0                                   
 dev-python/pyvo                | 1.2.1; 1.6                                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/radio-beam          | 0.3.8                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/regions             | 0.4; 0.10                                            | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/reproject           | 0.5.1; 0.12.0; 0.14.0                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/reproject           | 0.5.1; 0.12.0; 0.14.1                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sep                 | 1.2.1                                                |
 dev-python/sep-pjw             | 1.3.7                                                |
 dev-python/sgp4                | 2.22                                                 |

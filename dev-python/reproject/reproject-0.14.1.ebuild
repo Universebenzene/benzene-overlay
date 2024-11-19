@@ -64,7 +64,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/mpl-animators[${PYTHON_USEDEP}]
-		>=dev-python/sunpy-6.0.0[${PYTHON_USEDEP}]
+		>=dev-python/sunpy-6.0.1[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 "
