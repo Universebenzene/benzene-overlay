@@ -32,7 +32,7 @@ RESTRICT="test"
 BDEPEND="
 	test? (
 		$(python_gen_cond_dep '
-			dev-python/coverage[${PYTHON_USEDEP}]
+			!hppa? ( dev-python/coverage[${PYTHON_USEDEP}] )
 		' python3_{8..10} pypy3)
 		$(python_gen_cond_dep '
 			dev-python/twisted[${PYTHON_USEDEP}]
