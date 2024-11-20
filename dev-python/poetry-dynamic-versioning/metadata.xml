@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This is a Python 3.7+ plugin for Poetry 1.2.0+ and Poetry Core
+		1.0.0+ to enable dynamic versioning based on tags in your version
+		control system, powered by Dunamai. Many different version control
+		systems are supported, including Git and Mercurial; please refer to
+		the Dunamai page for the full list (and minimum supported version
+		where applicable).
+		poetry-dynamic-versioning provides a build backend that patches
+		Poetry Core to enable the versioning system in PEP 517 build frontends.
+		When installed with the plugin feature (i.e.,
+		poetry-dynamic-versioning[plugin]), it also integrates with the Poetry
+		CLI to trigger the versioning in commands like poetry build.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">poetry-dynamic-versioning</remote-id>
+		<remote-id type="github">mtkennerly/poetry-dynamic-versioning</remote-id>
+	</upstream>
+	<use>
+		<flag name="plugin">plugin support via <pkg>dev-python/poetry</pkg></flag>
+	</use>
+</pkgmetadata>
