@@ -1,0 +1,23 @@
+diff -Naur a/test_base58.py b/test_base58.py
+--- a/test_base58.py	2021-10-30 22:11:05.000000000 +0000
++++ b/test_base58.py	2021-11-06 21:14:01.613568037 +0000
+@@ -135,15 +135,15 @@
+ 
+ 
+ @pytest.mark.parametrize('length', [8, 32, 256, 1024])
+-def test_encode_random(benchmark, length) -> None:
++def test_encode_random(length) -> None:
+     data = getrandbits(length * 8).to_bytes(length, byteorder='big')
+-    encoded = benchmark(lambda: b58encode(data))
++    encoded = b58encode(data)
+     assert_that(b58decode(encoded), equal_to(data))
+ 
+ 
+ @pytest.mark.parametrize('length', [8, 32, 256, 1024])
+-def test_decode_random(benchmark, length) -> None:
++def test_decode_random(length) -> None:
+     origdata = getrandbits(length * 8).to_bytes(length, byteorder='big')
+     encoded = b58encode(origdata)
+-    data = benchmark(lambda: b58decode(encoded))
++    data = b58decode(encoded)
+     assert_that(data, equal_to(origdata))

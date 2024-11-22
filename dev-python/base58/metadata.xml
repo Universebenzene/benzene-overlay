@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Base58 and Base58Check implementation compatible with what is used
+		by the bitcoin network. Any other alternative alphabet
+		(like the XRP one) can be used.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">base58</remote-id>
+		<remote-id type="github">keis/base58</remote-id>
+	</upstream>
+</pkgmetadata>
