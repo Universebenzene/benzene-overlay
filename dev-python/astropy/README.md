@@ -24,7 +24,7 @@ If you still want the newest version, try the ones in [this overlay](https://git
 
 <!--Versions above `4.2.1` are not included in the overlay, as newest version of wcslib in the main tree is still `7.4` (2021-12), while astropy>=4.3.1 officially bundle the `7.7`.-->
 
-Ebuilds of versions of `4.2.1` and below might only be templates and are masked now. You'd better ignore them.
+Ebuilds of versions of `5.0.8` and below might only be templates and are masked now. You'd better ignore them.
 <!--We still keep `dev-python/pyerfa-1.7.2` in this overlay, as astropy 4.2.1 released before pyerfa 1.7.3 released.
 
 Old versions in this overlay might be removed in the future.
