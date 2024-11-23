@@ -26,19 +26,19 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.2[${PYTHON_USEDEP}]
 	>=dev-python/pvextractor-0.2[${PYTHON_USEDEP}]
 	>dev-python/qtconsole-5.4.2[${PYTHON_USEDEP}]
-	>=dev-python/QtPy-1.9[${PYTHON_USEDEP},designer,gui,testlib]
+	>=dev-python/qtpy-1.9[${PYTHON_USEDEP},designer,gui,testlib]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/importlib-metadata-3.6[${PYTHON_USEDEP}]
 	' python3_9)
-	qt? ( >=dev-python/PyQt5-5.14[${PYTHON_USEDEP}] )
+	qt? ( >=dev-python/pyqt5-5.14[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/pyarrow[${PYTHON_USEDEP}]
-		dev-python/PyQt5[${PYTHON_USEDEP}]
+		dev-python/pyqt5[${PYTHON_USEDEP}]
 	)
 "
 

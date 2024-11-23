@@ -21,7 +21,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 DEPEND=""
 RDEPEND="${DEPEND}
 	x11-themes/hicolor-icon-theme
-	dev-python/PyQt5[${PYTHON_USEDEP},webkit,declarative]
+	dev-python/pyqt5[${PYTHON_USEDEP},webkit,declarative]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/python-xlib[${PYTHON_USEDEP}]
 	dev-python/pygobject[${PYTHON_USEDEP}]
@@ -71,7 +71,7 @@ pkg_postinst() {
 	elog
 	elog "You can do these as follows:"
 	elog
-	elog " # echo \"dev-python/PyQt5 -webkit\" >> /etc/portage/profile/package.use.mask"
+	elog " # echo \"dev-python/pyqt5 -webkit\" >> /etc/portage/profile/package.use.mask"
 	elog " # emerge --oneshot qtwebkit::benzene-overlay PyQt5::benzene-overlay"
 	elog
 

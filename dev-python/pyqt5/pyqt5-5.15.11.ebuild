@@ -6,7 +6,9 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=sip
 PYPI_NO_NORMALIZE=1
+PYPI_PN=PyQt5
 PYTHON_COMPAT=( python3_{10..13} )
+
 inherit distutils-r1 flag-o-matic multiprocessing pypi qmake-utils
 
 DESCRIPTION="Python bindings for the Qt framework"
@@ -83,10 +85,10 @@ DEPEND="
 "
 RDEPEND="
 	${DEPEND}
-	>=dev-python/PyQt5-sip-12.15:=[${PYTHON_USEDEP}]
+	>=dev-python/pyqt5-sip-12.15:=[${PYTHON_USEDEP}]
 "
 BDEPEND="
-	>=dev-python/PyQt-builder-1.14.1[${PYTHON_USEDEP}]
+	>=dev-python/pyqt-builder-1.14.1[${PYTHON_USEDEP}]
 	>=dev-python/sip-6.8.6[${PYTHON_USEDEP}]
 	>=dev-qt/qtcore-${QT_PV}
 	dbus? ( virtual/pkgconfig )

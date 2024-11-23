@@ -27,13 +27,13 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/vispy-0.12.0[${PYTHON_USEDEP}]
 	pyqt? (
 		>=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]
-		dev-python/PyQt6[${PYTHON_USEDEP}]
-		dev-python/QtPy[${PYTHON_USEDEP},designer,gui]
+		dev-python/pyqt6[${PYTHON_USEDEP}]
+		dev-python/qtpy[${PYTHON_USEDEP},designer,gui]
 	)
 	pyside? (
 		>=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]
 		dev-python/pyside6[${PYTHON_USEDEP}]
-		dev-python/QtPy[${PYTHON_USEDEP},designer,gui]
+		dev-python/qtpy[${PYTHON_USEDEP},designer,gui]
 	)
 "
 

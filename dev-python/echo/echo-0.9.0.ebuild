@@ -18,14 +18,14 @@ IUSE="qt"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	qt? (
-		>=dev-python/PyQt5-5.9[${PYTHON_USEDEP}]
-		dev-python/QtPy[${PYTHON_USEDEP}]
+		>=dev-python/pyqt5-5.9[${PYTHON_USEDEP}]
+		dev-python/qtpy[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/PyQt5[${PYTHON_USEDEP}]
-		dev-python/QtPy[${PYTHON_USEDEP}]
+		dev-python/pyqt5[${PYTHON_USEDEP}]
+		dev-python/qtpy[${PYTHON_USEDEP}]
 	)
 "
 

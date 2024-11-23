@@ -23,11 +23,11 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/pyopengl[${PYTHON_USEDEP}]
-	dev-python/QtPy[${PYTHON_USEDEP},designer,gui]
+	dev-python/qtpy[${PYTHON_USEDEP},designer,gui]
 	dev-python/scipy[${PYTHON_USEDEP}]
 	>=dev-python/vispy-0.9.1[${PYTHON_USEDEP}]
 	all? ( dev-python/imageio[${PYTHON_USEDEP}] )
-	qt? ( >=dev-python/PyQt5-5.9[${PYTHON_USEDEP}] )
+	qt? ( >=dev-python/pyqt5-5.9[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? ( dev-python/mock[${PYTHON_USEDEP}] )"
 

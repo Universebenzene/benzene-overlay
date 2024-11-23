@@ -21,7 +21,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
-	>=dev-python/QtPy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/qtpy-2.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
 	>=dev-python/spectral-cube-0.4[${PYTHON_USEDEP}]
 "
@@ -33,7 +33,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/PyQt6[${PYTHON_USEDEP}]
+		dev-python/pyqt6[${PYTHON_USEDEP}]
 	)
 "
 

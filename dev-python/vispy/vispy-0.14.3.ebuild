@@ -49,13 +49,13 @@ RDEPEND="${DEPEND}
 	)
 	ipython-static? ( dev-python/ipython[${PYTHON_USEDEP}] )
 	pyglet? ( >=dev-python/pyglet-1.2[${PYTHON_USEDEP}] )
-	pyqt5? ( dev-python/PyQt5[${PYTHON_USEDEP},gui,testlib,widgets] )
-	pyqt6? ( dev-python/PyQt6[${PYTHON_USEDEP},gui,testlib,widgets] )
+	pyqt5? ( dev-python/pyqt5[${PYTHON_USEDEP},gui,testlib,widgets] )
+	pyqt6? ( dev-python/pyqt6[${PYTHON_USEDEP},gui,testlib,widgets] )
 	pyside2? ( $(python_gen_cond_dep '
 		dev-python/pyside2[${PYTHON_USEDEP},gui,testlib,widgets]
 	' python3_{10,11}) )
 	pyside6? ( dev-python/pyside6[${PYTHON_USEDEP},gui,testlib,widgets] )
-	sdl2? ( dev-python/PySDL2[${PYTHON_USEDEP}] )
+	sdl2? ( dev-python/pysdl2[${PYTHON_USEDEP}] )
 	wx? ( $(python_gen_cond_dep 'dev-python/wxpython[${PYTHON_USEDEP}]' python3_{10,11}) )
 "
 BDEPEND=">=dev-python/cython-3.0.0[${PYTHON_USEDEP}]

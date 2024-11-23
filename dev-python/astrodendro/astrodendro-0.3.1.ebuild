@@ -29,8 +29,8 @@ RDEPEND=">=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? ( || (
-		dev-python/PyQt5[${PYTHON_USEDEP},svg]
-		dev-python/PyQt6[${PYTHON_USEDEP},svg]
+		dev-python/pyqt5[${PYTHON_USEDEP},svg]
+		dev-python/pyqt6[${PYTHON_USEDEP},svg]
 	) )
 "
 

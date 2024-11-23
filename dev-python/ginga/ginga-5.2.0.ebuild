@@ -25,7 +25,7 @@ REQUIRED_USE="intersphinx? ( doc )
 RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	>=dev-python/pillow-9.2[${PYTHON_USEDEP}]
-	>=dev-python/QtPy-2.0.1[${PYTHON_USEDEP}]
+	>=dev-python/qtpy-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
 	>=dev-python/puremagic-1.28[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
@@ -36,8 +36,8 @@ RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	)
 	pyside2? ( $(python_gen_cond_dep 'dev-python/pyside2[${PYTHON_USEDEP}]' python3_{10,11}) )
 	pyside6? ( dev-python/pyside6[${PYTHON_USEDEP}] )
-	qt5? ( dev-python/PyQt5[${PYTHON_USEDEP}] )
-	qt6? ( dev-python/PyQt6[${PYTHON_USEDEP}] )
+	qt5? ( dev-python/pyqt5[${PYTHON_USEDEP}] )
+	qt6? ( dev-python/pyqt6[${PYTHON_USEDEP}] )
 	recommended? (
 		>=dev-python/astroquery-0.3.5[${PYTHON_USEDEP}]
 		>=dev-python/exifread-2.3.2[${PYTHON_USEDEP}]
