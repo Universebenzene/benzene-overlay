@@ -26,7 +26,7 @@ KEYWORDS="amd64 arm arm64 hppa ~mips ppc ppc64 ~riscv ~s390 sparc x86"
 
 RDEPEND="
 	dev-python/accessible-pygments[${PYTHON_USEDEP}]
-	dev-python/Babel[${PYTHON_USEDEP}]
+	dev-python/babel[${PYTHON_USEDEP}]
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 	dev-python/docutils[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]

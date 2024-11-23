@@ -26,7 +26,7 @@ KEYWORDS="~alpha amd64 arm arm64 hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390 
 IUSE="doc latex"
 
 RDEPEND="
-	>=dev-python/Babel-2.9[${PYTHON_USEDEP}]
+	>=dev-python/babel-2.9[${PYTHON_USEDEP}]
 	>=dev-python/docutils-0.18.1[${PYTHON_USEDEP}]
 	>=dev-python/imagesize-1.3[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0[${PYTHON_USEDEP}]
