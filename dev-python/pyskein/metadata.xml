@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		PySkein is an extension module for Python, implementing the Skein hash algorithm,
+		one of the five finalists of the NIST SHA-3 Competition. While ultimately not
+		selected as the winner of that competition, Skein may still be useful as an
+		alternative hash algorithm, offering flexible hashing modes with various parameters.
+		PySkein provides all features of Skein through a Pythonic interface and is released
+		as free software under the GNU General Public License.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pyskein</remote-id>
+	</upstream>
+</pkgmetadata>
