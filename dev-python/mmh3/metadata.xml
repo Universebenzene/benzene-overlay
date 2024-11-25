@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		mmh3 is a Python extension for MurmurHash (MurmurHash3), a set of
+		fast and robust non-cryptographic hash functions invented by Austin Appleby.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">mmh3</remote-id>
+		<remote-id type="github">hajimes/mmh3</remote-id>
+	</upstream>
+</pkgmetadata>
