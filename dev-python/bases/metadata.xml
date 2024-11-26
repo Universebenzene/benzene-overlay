@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Bases provides a customisable, parametric implementation of several
+		common styles of Base-N encoding, covering all cases appearing in the
+		multibase specification (except for proquints).
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">bases</remote-id>
+		<remote-id type="github">hashberg-io/bases</remote-id>
+	</upstream>
+</pkgmetadata>
