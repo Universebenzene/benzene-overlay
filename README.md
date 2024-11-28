@@ -123,6 +123,7 @@ dev-python/bidict                  | 0.22.0; 0.23.1                             
 dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Test dependency for zarr
 dev-python/check-manifest          | 0.49; 0.50                                                 | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.2.4                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
+dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/distributed             | 2024.4.1; 2024.8.2                                         | Optional for arviz and spectral-cube
 dev-python/dm-tree{,-bin}          | 0.1.8                                                      | Required by new arviz
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
@@ -208,7 +209,7 @@ dev-python/sphinxcontrib-srclink        | 0.2.4                           |
 dev-python/sphinxcontrib-youtube        | 1.2.0; 1.4.1                    | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
 dev-python/sphinxext-opengraph          | 0.9.1                           |
 dev-python/dask-sphinx-theme            | 3.0.6                           |
-dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.0.17           |
+dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.0.18           |
 dev-python/pydata-sphinx-theme          | 0.13.3-r1                       | Old version dropped by official portage, required by sunpy-sphinx-theme
 dev-python/mistune                      | 0.8.4-r1; 2.0.5                 | For sphinx-asdf and sphinx-mdinclude that depend on old version
 dev-python/nbconvert                    | 6.4.5                           | Depends on old mistune
