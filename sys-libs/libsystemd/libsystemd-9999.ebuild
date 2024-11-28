@@ -214,7 +214,6 @@ src_unpack() {
 
 src_prepare() {
 	local PATCHES=(
-		"${FILESDIR}/systemd-test-process-util.patch"
 	)
 
 	if ! use vanilla; then
