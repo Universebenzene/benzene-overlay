@@ -37,7 +37,7 @@ dev-cpp/gtkspellmm                                                              
 dev-lang/gdl                                                                         | 1.0.0\_rc3-r3; 1.0.1-r3; 1.0.4-r1                                                                                     | Allow `gdl` and the python module installed at the same time
 dev-python/aioftp                                                                    | 0.23.1                                                                                                                |
 dev-python/corner                                                                    | 2.2.2; 2.2.3                                                                                                          |
-dev-python/dask                                                                      | 2024.4.1; 2024.8.2                                                                                                    | Dropped by official portage
+dev-python/dask                                                                      | 2024.4.1; 2024.11.2                                                                                                   | Dropped by official portage
 dev-python/dropbox                                                                   | 12.0.2                                                                                                                |
 dev-python/exifread                                                                  | 3.0.0                                                                                                                 |
 dev-python/glfw                                                                      | 2.8.0                                                                                                                 | Dependency for glue-vispy-viewer>=1.2.0
@@ -124,7 +124,7 @@ dev-python/bsddb3                  | 6.2.9-r1                                   
 dev-python/check-manifest          | 0.49; 0.50                                                 | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.2.4                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec
-dev-python/distributed             | 2024.4.1; 2024.8.2                                         | Optional for arviz and spectral-cube
+dev-python/distributed             | 2024.4.1; 2024.11.2                                        | Optional for arviz and spectral-cube
 dev-python/dm-tree{,-bin}          | 0.1.8                                                      | Required by new arviz
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
 dev-python/eventlet                | 0.33.3; 0.35.2                                             | Dropped by official portage. Required by firefly{,-viz}

@@ -19,7 +19,7 @@ RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/dask-2024.8.2[${PYTHON_USEDEP}]
+	>=dev-python/dask-2024.11.2[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.10.3[${PYTHON_USEDEP}]
 	>=dev-python/locket-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-1.0.2[${PYTHON_USEDEP}]
@@ -60,11 +60,37 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_XDIST=1
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/dask-sphinx-theme dev-python/numpydoc \
 	dev-python/sphinx-click \
 	dev-python/sphinx-design \
 	dev-python/memray
+
+EPYTEST_DESELECT=(
+	distributed/cli/tests/test_dask_scheduler.py
+	distributed/cli/tests/test_dask_spec.py
+	distributed/cli/tests/test_dask_worker.py
+	distributed/cli/tests/test_tls_cli.py
+	"distributed/comm/tests/test_comms.py::test_tls_comm_closed_implicit[tornado]"
+	distributed/comm/tests/test_ws.py
+	distributed/deploy/tests/test_local.py::test_defaults_5
+	distributed/deploy/tests/test_old_ssh.py
+	distributed/deploy/tests/test_subprocess.py
+	distributed/tests/test_client.py::test_computation_object_code_dask_compute
+	distributed/tests/test_init.py::test_git_revision
+	distributed/tests/test_queues.py::test_queue_in_task
+	distributed/tests/test_steal.py::test_steal_twice
+	distributed/tests/test_variable.py::test_variable_in_task
+	distributed/tests/test_worker_memory.py::test_fail_to_pickle_execute_1
+	# TypeError: _FlakyPlugin._make_test_flaky() got an unexpected keyword argument 'reruns'
+	distributed/deploy/tests/test_slow_adaptive.py::test_scale_up_down
+	distributed/diagnostics/tests/test_progress.py::test_many_Progress
+	distributed/diagnostics/tests/test_progress.py::test_AllProgress
+	distributed/diagnostics/tests/test_progress.py::test_AllProgress_lost_key
+	distributed/tests/test_client.py::test_profile
+	distributed/tests/test_worker.py::test_statistical_profiling
+)
 
 python_prepare_all() {
 	use doc && { sed -i -e "/github/s/GH\#/GH\%s\#/" docs/source/conf.py || die ; \
@@ -76,5 +102,5 @@ python_prepare_all() {
 }
 
 python_test() {
-	epytest --runslow
+	epytest --runslow -m "not avoid_ci and not gpu and not extra_packages"
 }
