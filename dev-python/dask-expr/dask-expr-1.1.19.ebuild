@@ -24,8 +24,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~riscv ~x86"
 
 RDEPEND="
-	>=dev-python/dask-2024.8.0[${PYTHON_USEDEP}]
-	>=dev-python/pyarrow-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/dask-2024.11.2[${PYTHON_USEDEP}]
+	>=dev-python/pyarrow-14.0.1[${PYTHON_USEDEP}]
 	>=dev-python/pandas-2[${PYTHON_USEDEP}]
 "
 # TODO: make pandas depend on pyarrow unconditionally?  we're having
@@ -35,6 +35,7 @@ BDEPEND="
 	test? (
 		dev-libs/apache-arrow[parquet,snappy]
 		dev-python/pyarrow[parquet,${PYTHON_USEDEP}]
+		dev-python/sqlalchemy[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
 	)
 "

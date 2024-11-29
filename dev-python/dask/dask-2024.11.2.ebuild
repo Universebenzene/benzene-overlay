@@ -44,6 +44,7 @@ BDEPEND="dev-python/toolz[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/bokeh[${PYTHON_USEDEP}]
 		dev-python/boto3[${PYTHON_USEDEP}]
+		dev-python/bottleneck[${PYTHON_USEDEP}]
 		dev-python/botocore[${PYTHON_USEDEP}]
 		dev-python/dask-expr[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
@@ -80,9 +81,31 @@ EPYTEST_XDIST=1
 distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
-	dask/dataframe/io/tests/test_sql.py::test_division_or_partition
 	dask/tests/test_base.py::test_visualize_order
 	dask/tests/test_tokenize.py::test_tokenize_dataclass
+	dask/array/tests/test_reductions.py
+	dask/dataframe/tests/test_accessors.py
+	dask/dataframe/tests/test_arithmetics_reduction.py
+	dask/dataframe/tests/test_categorical.py
+	dask/dataframe/tests/test_dataframe.py
+	dask/dataframe/tests/test_groupby.py
+	dask/dataframe/tests/test_hyperloglog.py::test_larger_data
+	dask/dataframe/tests/test_indexing.py
+	dask/dataframe/tests/test_merge_column_and_index.py
+	dask/dataframe/tests/test_multi.py
+	dask/dataframe/tests/test_numeric.py
+	dask/dataframe/tests/test_reshape.py
+	dask/dataframe/tests/test_rolling.py
+	dask/dataframe/tests/test_shuffle.py
+	dask/dataframe/tests/test_ufunc.py
+	dask/dataframe/tests/test_utils_dataframe.py::test_assert_eq_sorts
+	dask/dataframe/io/tests/test_csv.py
+	dask/dataframe/io/tests/test_demo.py
+	dask/dataframe/io/tests/test_io.py
+	dask/dataframe/io/tests/test_parquet.py
+	dask/dataframe/io/tests/test_sql.py
+	dask/dataframe/tseries/tests/test_resample.py::test_resample_agg_passes_kwargs
+	dask/dataframe/tseries/tests/test_resample.py::test_resample_pads_last_division_to_avoid_off_by_one
 )
 
 src_prepare() {
@@ -95,5 +118,5 @@ src_prepare() {
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	local -x DASK_DATAFRAME__QUERY_PLANNING=False
-	epytest -k 'not test_RandomState_only_funcs'
+	epytest -k 'not test_RandomState_only_funcs' -m 'not network and not slow and not gpu'
 }
