@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This is a fully compliant Python implementation of the DAG-CBOR codec,
+		a subset of the Concise Binary Object Representation (CBOR) supporting
+		the IPLD Data Model and enforcing a unique (strict) encoded representation of items.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">dag-cbor</remote-id>
+		<remote-id type="github">hashberg-io/dag-cbor</remote-id>
+	</upstream>
+</pkgmetadata>
