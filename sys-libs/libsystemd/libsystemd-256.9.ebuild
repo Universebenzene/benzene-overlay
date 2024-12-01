@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
 # Avoid QA warnings
 TMPFILES_OPTIONAL=1
@@ -13,16 +13,14 @@ if [[ ${PV} == 9999 ]]; then
 	EGIT_REPO_URI="https://github.com/systemd/systemd.git"
 	inherit git-r3
 else
-	if [[ ${PV} == *.* ]]; then
-		MY_PN=systemd-stable
-	else
-		MY_PN=systemd
-	fi
 	MY_PV=${PV/_/-}
-	MY_P=${MY_PN}-${MY_PV}
+	MY_P=systemd-${MY_PV}
 	S=${WORKDIR}/${MY_P}
-	SRC_URI="https://github.com/systemd/${MY_PN}/archive/v${MY_PV}/${MY_P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
+	SRC_URI="https://github.com/systemd/systemd/archive/refs/tags/v${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+
+	if [[ ${PV} != *rc* ]] ; then
+		KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
+	fi
 fi
 
 inherit bash-completion-r1 linux-info meson-multilib ninja-utils pam python-single-r1
@@ -30,7 +28,7 @@ inherit bash-completion-r1 linux-info meson-multilib ninja-utils pam python-sing
 inherit secureboot toolchain-funcs #systemd udev usr-ldscript
 
 DESCRIPTION="A standalone package to provide libsystemd.so without systemd"
-HOMEPAGE="http://systemd.io/"
+HOMEPAGE="https://systemd.io/"
 
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/2"
@@ -55,14 +53,14 @@ RESTRICT="!test? ( test )"
 MINKV="4.15"
 
 COMMON_DEPEND="
-	>=sys-apps/util-linux-2.30:0=[${MULTILIB_USEDEP}]
+	>=sys-apps/util-linux-2.32:0=[${MULTILIB_USEDEP}]
 	sys-libs/libcap:0=[${MULTILIB_USEDEP}]
 	virtual/libcrypt:=[${MULTILIB_USEDEP}]
 	acl? ( sys-apps/acl:0= )
-	apparmor? ( sys-libs/libapparmor:0= )
+	apparmor? ( >=sys-libs/libapparmor-2.13:0= )
 	audit? ( >=sys-process/audit-2:0= )
 	cryptsetup? ( >=sys-fs/cryptsetup-2.0.1:0= )
-	curl? ( net-misc/curl:0= )
+	curl? ( >=net-misc/curl-7.32.0:0= )
 	elfutils? ( >=dev-libs/elfutils-0.158:0= )
 	fido2? ( dev-libs/libfido2:0= )
 	gcrypt? ( >=dev-libs/libgcrypt-1.4.5:0=[${MULTILIB_USEDEP}] )
@@ -79,12 +77,12 @@ COMMON_DEPEND="
 	iptables? ( net-firewall/iptables:0= )
 	openssl? ( >=dev-libs/openssl-1.1.0:0= )
 	pam? ( sys-libs/pam:=[${MULTILIB_USEDEP}] )
-	pkcs11? ( app-crypt/p11-kit:0= )
+	pkcs11? ( >=app-crypt/p11-kit-0.23.3:0= )
 	pcre? ( dev-libs/libpcre2 )
-	pwquality? ( dev-libs/libpwquality:0= )
-	qrcode? ( media-gfx/qrencode:0= )
+	pwquality? ( >=dev-libs/libpwquality-1.4.1:0= )
+	qrcode? ( >=media-gfx/qrencode-3:0= )
 	seccomp? ( >=sys-libs/libseccomp-2.3.3:0= )
-	selinux? ( sys-libs/libselinux:0= )
+	selinux? ( >=sys-libs/libselinux-2.1.9:0= )
 	tpm? ( app-crypt/tpm2-tss:0= )
 	xkb? ( >=x11-libs/libxkbcommon-0.4.1:0= )
 	zstd? ( >=app-arch/zstd-1.4.0:0=[${MULTILIB_USEDEP}] )
@@ -126,15 +124,42 @@ BDEPEND="
 	$(python_gen_cond_dep "
 		dev-python/jinja2[\${PYTHON_USEDEP}]
 		dev-python/lxml[\${PYTHON_USEDEP}]
-		boot? ( >=dev-python/pyelftools-0.30[\${PYTHON_USEDEP}] )
-		ukify? ( test? ( ${PEFILE_DEPEND} ) )
+		boot? (
+			>=dev-python/pyelftools-0.30[\${PYTHON_USEDEP}]
+			test? ( ${PEFILE_DEPEND} )
+		)
 	")
 "
 
 QA_FLAGS_IGNORED="usr/lib/systemd/boot/efi/.*"
 QA_EXECSTACK="usr/lib/systemd/boot/efi/*"
 
+check_cgroup_layout() {
+	# https://bugs.gentoo.org/935261
+	[[ ${MERGE_TYPE} != buildonly ]] || return
+	[[ -z ${ROOT} ]] || return
+	[[ -e /sys/fs/cgroup/unified ]] || return
+	grep -q 'SYSTEMD_CGROUP_ENABLE_LEGACY_FORCE=1' /proc/cmdline && return
+
+	eerror "This system appears to be booted with the 'hybrid' cgroup layout."
+	eerror "This layout obsolete and is disabled in systemd."
+
+	if grep -qF 'systemd.unified_cgroup_hierarchy'; then
+		eerror "Remove the systemd.unified_cgroup_hierarchy option"
+		eerror "from the kernel command line and reboot."
+		die "hybrid cgroup layout detected"
+	fi
+}
+
 pkg_pretend() {
+	check_cgroup_layout
+
+	if use cgroup-hybrid; then
+		eerror "Disable the 'cgroup-hybrid' USE flag."
+		eerror "Rebuild any initramfs images after rebuilding systemd."
+		die "cgroup-hybrid is no longer supported"
+	fi
+
 	if [[ ${MERGE_TYPE} != buildonly ]]; then
 		local CONFIG_CHECK="~BLK_DEV_BSG ~CGROUPS
 			~CGROUP_BPF ~DEVTMPFS ~EPOLL ~FANOTIFY ~FHANDLE
@@ -190,13 +215,10 @@ src_unpack() {
 src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}/systemd-test-process-util.patch"
-		"${FILESDIR}/systemd-253-initrd-generators.patch"
-		"${FILESDIR}/254-PrivateDevices-userdbd.patch"
 	)
 
 	if ! use vanilla; then
 		PATCHES+=(
-			"${FILESDIR}/gentoo-generator-path-r2.patch"
 			"${FILESDIR}/gentoo-journald-audit-r1.patch"
 		)
 	fi
@@ -219,6 +241,8 @@ src_configure() {
 multilib_src_configure() {
 	local myconf=(
 		--localstatedir="${EPREFIX}/var"
+		# default is developer, bug 918671
+		-Dmode=release
 		-Dsupport-url="https://gentoo.org/support/"
 		-Dpamlibdir="$(getpam_mod_dir)"
 		# avoid bash-completion dep
@@ -231,11 +255,11 @@ multilib_src_configure() {
 		# Disable compatibility with sysvinit
 		-Dsysvinit-path=
 		-Dsysvrcnd-path=
-		# Avoid infinite exec recursion, bug 642724
-		-Dtelinit-path="${EPREFIX}/lib/sysvinit/telinit"
 		# no deps
 		-Dima=true
-		-Ddefault-hierarchy=$(usex cgroup-hybrid hybrid unified)
+		# Match /etc/shells, bug 919749
+		-Ddebug-shell="${EPREFIX}/bin/sh"
+		-Ddefault-user-shell="${EPREFIX}/bin/bash"
 		# Optional components/dependencies
 		$(meson_native_use_bool acl)
 		$(meson_native_use_bool apparmor)
@@ -300,6 +324,14 @@ multilib_src_configure() {
 		$(meson_native_true tmpfiles)
 		$(meson_native_true vconsole)
 	)
+
+	case $(tc-arch) in
+		amd64|arm|arm64|ppc|ppc64|s390|x86)
+			# src/vmspawn/vmspawn-util.h: QEMU_MACHINE_TYPE
+			myconf+=( $(meson_native_enabled vmspawn) ) ;;
+		*)
+			myconf+=( -Dvmspawn=disabled ) ;;
+	esac
 
 	meson_src_configure "${myconf[@]}"
 }
