@@ -21,7 +21,7 @@ IUSE="all"
 
 DEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]
 	>sci-astronomy/healpix-3.82:=[cxx]
-	>=sci-libs/cfitsio-4.1.0:=
+	>=sci-libs/cfitsio-4.5.0:=
 	sci-libs/libsharp:=
 "
 RDEPEND="${DEPEND}
