@@ -115,7 +115,7 @@ src_install() {
 
 	# remove duplicates and non installable libraries
 	# cfitsio
-	rm "${ED}"/usr/bin/{fitscopy,imcopy,listhead} || die
+	#rm "${ED}"/usr/bin/{fitscopy,imcopy,listhead} || die
 	# cfitsio utilities
 	#rm "${ED}"/usr/bin/{fitsverify,imarith,imstat,liststruc,modhead,tablist,tabmerge} || die
 	#rm "${ED}"/usr/$(get_libdir)/lib*.a || die
