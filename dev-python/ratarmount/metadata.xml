@@ -9,4 +9,9 @@
 		<remote-id type="pypi">ratarmount</remote-id>
 		<remote-id type="github">mxmlnkn/ratarmount</remote-id>
 	</upstream>
+	<use>
+		<flag name="fsspec">Add extra support for fsspec</flag>
+		<flag name="full">Include most extra dependencies</flag>
+		<flag name="squashfs">Add extra support for squashfs</flag>
+	</use>
 </pkgmetadata>
