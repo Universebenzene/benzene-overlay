@@ -17,4 +17,7 @@
 		<remote-id type="pypi">glueviz</remote-id>
 		<remote-id type="github">glue-viz/glueviz</remote-id>
 	</upstream>
+	<use>
+		<flag name="qt">Include PyQt5 library</flag>
+	</use>
 </pkgmetadata>
