@@ -3,7 +3,7 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 pypi
@@ -17,9 +17,9 @@ KEYWORDS="~amd64"
 IUSE="doc"
 RESTRICT="test"	# No usable test phases
 
-RDEPEND=">=dev-python/glue-core-1.13.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/glue-core-1.13.0[${PYTHON_USEDEP},all]
+	>=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP},doc?]
 	>=dev-python/glue-vispy-viewers-1.0.3[${PYTHON_USEDEP}]
-	doc? ( >=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP},doc] )
 "
 
 #distutils_enable_tests nose
