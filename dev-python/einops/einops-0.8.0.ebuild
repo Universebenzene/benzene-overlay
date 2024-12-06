@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
 DOCS_BUILDER="mkdocs"
 DOCS_DEPEND="dev-python/mkdocs-jupyter"
@@ -20,7 +20,6 @@ SLOT="0"
 KEYWORDS="~amd64"	# mkdocstrings{,-python} no x86
 
 BDEPEND="doc? (
-	<dev-python/mkdocs-1.6.0
 	|| (
 		dev-python/mkdocstrings-python-legacy[${PYTHON_USEDEP}]
 		dev-python/mkdocstrings-python[${PYTHON_USEDEP}]
