@@ -36,5 +36,6 @@ distutils_enable_sphinx example/source dev-python/sphinx-bootstrap-theme dev-pyt
 
 python_prepare_all() {
 	sed -i "/sym.numbers.Number/s/sym.numbers/sym.core.numbers/" example/source/SymPy.ipynb || die
+	sed -i "s/from nbconvert/from nbconvert.exporters/" ${PYPI_PN}/notebook_sphinxext.py
 	distutils-r1_python_prepare_all
 }
