@@ -4,7 +4,7 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{{10..13},13t} )
 
 COMMIT="ded0323344f21311f366ffc711b65245aafc11f1"
 
