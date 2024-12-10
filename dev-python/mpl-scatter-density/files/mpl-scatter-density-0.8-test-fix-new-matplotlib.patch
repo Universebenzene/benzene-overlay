@@ -1,0 +1,32 @@
+From ffcd7d3350229b796b508bd91bf906959ac83fdb Mon Sep 17 00:00:00 2001
+From: Thomas Robitaille <thomas.robitaille@gmail.com>
+Date: Wed, 4 Dec 2024 11:32:27 +0000
+Subject: [PATCH] Fix usage of deprecated/removed qApp in test_resize_qt and
+ make sure we run this test in CI
+
+---
+ mpl_scatter_density/tests/test_scatter_density_artist.py | 4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/mpl_scatter_density/tests/test_scatter_density_artist.py b/mpl_scatter_density/tests/test_scatter_density_artist.py
+index 9135f0e..c4228c6 100644
+--- a/mpl_scatter_density/tests/test_scatter_density_artist.py
++++ b/mpl_scatter_density/tests/test_scatter_density_artist.py
+@@ -252,7 +252,7 @@ def test_resize_qt():
+ 
+     pytest.importorskip('PyQt5')
+ 
+-    from PyQt5.QtWidgets import QMainWindow
++    from PyQt5.QtWidgets import QMainWindow, QApplication
+ 
+     from matplotlib.figure import Figure
+     from matplotlib.backends.backend_qt5 import FigureManagerQT
+@@ -265,7 +265,7 @@ def test_resize_qt():
+ 
+     canvas.draw = Mock(side_effect=canvas.draw)
+ 
+-    from matplotlib.backends.backend_qt5 import qApp
++    qApp = QApplication.instance()
+ 
+     window = QMainWindow()
+     window.setCentralWidget(canvas)

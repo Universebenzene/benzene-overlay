@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 virtualx pypi
@@ -28,6 +27,8 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.5.2[${PYTHON_USEDEP},qt5]
 	)
 "
+
+PATCHES=( "${FILESDIR}/${P}-test-fix-new-matplotlib.patch" )
 
 distutils_enable_tests pytest
 
