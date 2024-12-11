@@ -65,7 +65,7 @@ RDEPEND="
 	sys-apps/util-linux
 	sys-libs/libcap
 	libsystemd? ( virtual/libsystemd )
-	sys-libs/libcxx
+	llvm-runtimes/libcxx
 	sys-libs/zlib:0
 	virtual/glu
 	x11-libs/gtk+:2
