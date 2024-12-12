@@ -32,7 +32,7 @@ BDEPEND="test? (
 		dev-python/greenlet[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
 		dev-debug/gdb[lzma]
-		dev-debug/lldb[lzma]
+		llvm-core/lldb[lzma]
 	)
 "
 

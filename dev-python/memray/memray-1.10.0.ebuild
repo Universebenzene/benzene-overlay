@@ -29,7 +29,7 @@ RDEPEND=">=dev-python/jinja2-2.9[${PYTHON_USEDEP}]
 BDEPEND="test? (
 		dev-python/ipython[${PYTHON_USEDEP}]
 		dev-debug/gdb
-		dev-debug/lldb
+		llvm-core/lldb
 	)
 "
 
