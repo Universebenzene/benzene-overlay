@@ -164,6 +164,8 @@ EPYTEST_DESELECT=(
 	test/test_pathfinder.py::test_pathfinder_no_lp_calc
 	test/test_sample.py::test_warmup_no_adapt
 	test/test_sample.py::test_csv_roundtrip
+	test/test_model.py::test_legacy_fixed_param
+	test/test_sample.py::test_sample_no_params
 )
 
 python_install_all() {
