@@ -21,6 +21,7 @@ RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	dev-python/fasteners[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.10.0[${PYTHON_USEDEP}]
+	<dev-python/numcodecs-0.14.0[${PYTHON_USEDEP}]
 	jupyter? (
 		>=dev-python/ipywidgets-8.0.0[${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]
@@ -28,7 +29,6 @@ RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/bsddb3[${PYTHON_USEDEP}]
 		dev-python/fsspec[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
 		dev-python/lmdb[${PYTHON_USEDEP}]
@@ -46,7 +46,8 @@ distutils_enable_sphinx docs dev-python/numpydoc \
 	dev-python/sphinx-copybutton \
 	dev-python/sphinx-issues \
 	dev-python/sphinx-design \
-	dev-python/pydata-sphinx-theme
+	dev-python/pydata-sphinx-theme \
+	dev-python/pytest-doctestplus
 
 # No module named 'azure'
 EPYTEST_DESELECT=(
