@@ -17,7 +17,7 @@ SLOT="2"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="test"	# No usable test phases
 
-RDEPEND="dev-python/GitPython[${PYTHON_USEDEP}]
+RDEPEND="dev-python/gitpython[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-1.0.3[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
