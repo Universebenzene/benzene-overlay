@@ -18,11 +18,11 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/asdf-2.8.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/asdf-3.3.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-wcs-schemas-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-astropy-0.2.0[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.3[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
+	>=dev-python/asdf-astropy-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.0[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.14.1[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 	doc? (
@@ -31,10 +31,7 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 		dev-python/sphinx-asdf[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
-	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/typeguard[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
 "
 
 distutils_enable_tests pytest
