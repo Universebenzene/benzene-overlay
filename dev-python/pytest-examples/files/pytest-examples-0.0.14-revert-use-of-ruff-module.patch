@@ -1,0 +1,35 @@
+https://github.com/pydantic/pytest-examples/commit/d7e8b5fb8cbcb70e32a1dc5db072a321be200445
+https://github.com/pydantic/pytest-examples/pull/41
+
+From dfd0cc36485fcdcf3ca4959899dede4a42e275fc Mon Sep 17 00:00:00 2001
+From: Alfred Wingate <parona@protonmail.com>
+Date: Sun, 17 Nov 2024 07:52:09 +0200
+Subject: [PATCH] Revert "lint: use python helper to point to the ruff bin
+ (#41)"
+
+Gentoo ruff packaging doesn't include the python module.
+
+This reverts commit d7e8b5fb8cbcb70e32a1dc5db072a321be200445.
+--- a/pytest_examples/lint.py
++++ b/pytest_examples/lint.py
+@@ -7,7 +7,6 @@ from typing import TYPE_CHECKING
+ 
+ from black import format_str as black_format_str
+ from black.output import diff as black_diff
+-from ruff.__main__ import find_ruff_bin
+ 
+ from .config import ExamplesConfig
+ 
+@@ -48,8 +47,7 @@ def ruff_check(
+     *,
+     extra_ruff_args: tuple[str, ...] = (),
+ ) -> str:
+-    ruff = find_ruff_bin()
+-    args = ruff, 'check', '-', *config.ruff_config(), *extra_ruff_args
++    args = 'ruff', 'check', '-', *config.ruff_config(), *extra_ruff_args
+ 
+     p = Popen(args, stdin=PIPE, stdout=PIPE, stderr=PIPE, universal_newlines=True)
+     stdout, stderr = p.communicate(example.source, timeout=10)
+-- 
+2.47.0
+

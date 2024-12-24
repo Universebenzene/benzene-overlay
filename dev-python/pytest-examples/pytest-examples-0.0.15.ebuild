@@ -21,6 +21,8 @@ RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 	>=dev-util/ruff-0.5.0
 "
 
+PATCHES=( "${FILESDIR}/${PN}-0.0.14-revert-use-of-ruff-module.patch" )
+
 distutils_enable_tests pytest
 
 #python_install_all() {
