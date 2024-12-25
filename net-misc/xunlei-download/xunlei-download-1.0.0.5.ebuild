@@ -10,8 +10,8 @@ MY_PN="com.${PN/-/.}"
 DESCRIPTION="Xunlei download"
 HOMEPAGE="https://www.xunlei.com"
 SRC_URI="
-	amd64? ( https://cdn-package-store6.deepin.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_amd64.deb )
-	arm64? ( https://cdn-package-store6.deepin.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_arm64.deb )
+	amd64? ( https://com-store-packages.uniontech.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_amd64.deb )
+	arm64? ( https://com-store-packages.uniontech.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_arm64.deb )
 "
 
 LICENSE="com.xunlei.download"
