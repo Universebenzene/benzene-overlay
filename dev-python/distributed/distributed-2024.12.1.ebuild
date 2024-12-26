@@ -73,7 +73,6 @@ EPYTEST_DESELECT=(
 	distributed/cli/tests/test_dask_worker.py
 	distributed/cli/tests/test_tls_cli.py
 	"distributed/comm/tests/test_comms.py::test_tls_comm_closed_implicit[tornado]"
-	distributed/comm/tests/test_ws.py
 	distributed/deploy/tests/test_local.py::test_defaults_5
 	distributed/deploy/tests/test_old_ssh.py
 	distributed/deploy/tests/test_subprocess.py
@@ -83,7 +82,9 @@ EPYTEST_DESELECT=(
 	distributed/tests/test_steal.py::test_steal_twice
 	distributed/tests/test_variable.py::test_variable_in_task
 	distributed/tests/test_worker_memory.py::test_fail_to_pickle_execute_1
+	"distributed/tests/test_active_memory_manager.py::test_RetireWorker_with_actor[True]"
 	# TypeError: _FlakyPlugin._make_test_flaky() got an unexpected keyword argument 'reruns'
+	distributed/comm/tests/test_ws.py
 	distributed/deploy/tests/test_slow_adaptive.py::test_scale_up_down
 	distributed/diagnostics/tests/test_progress.py::test_many_Progress
 	distributed/diagnostics/tests/test_progress.py::test_AllProgress

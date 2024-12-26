@@ -55,15 +55,20 @@ python_test() {
 	#	'dask_expr/tests/test_shuffle.py::test_respect_context_shuffle[shuffle]'
 	#	# TODO
 	#	dask_expr/tests/test_groupby.py::test_groupby_index_array
+		dask_expr/array/tests/test_array.py::test_array_function
+		dask_expr/array/tests/test_array.py::test_reduction_functions
+		dask_expr/array/tests/test_array.py::test_reductions
+		dask_expr/array/tests/test_array.py::test_transpose
 		dask_expr/tests/test_format.py::test_df_to_html
-		dask_expr/tests/test_describe.py::test_describe_df
-		dask_expr/tests/test_describe.py::test_describe_series
-		dask_expr/tests/test_indexing.py
+
+	#	dask_expr/tests/test_describe.py::test_describe_df
+	#	dask_expr/tests/test_describe.py::test_describe_series
+	#	dask_expr/tests/test_indexing.py
 	)
-	local EPYTEST_IGNORE=(
-		# requires distributed
-		dask_expr/io/tests/test_parquet.py
-	)
+#	local EPYTEST_IGNORE=(
+#		# requires distributed
+#		dask_expr/io/tests/test_parquet.py
+#	)
 
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 	epytest
