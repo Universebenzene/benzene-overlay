@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_SETUPTOOLS=rdepend
 PYPI_NO_NORMALIZE=1
 PYPI_PN=APLpy
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit distutils-r1 virtualx optfeature pypi
 
