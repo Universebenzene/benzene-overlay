@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -36,6 +36,7 @@ BDEPEND="test? (
 		dev-python/openapi-spec-validator[${PYTHON_USEDEP}]
 		dev-python/pip[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
+		dev-python/time-machine[${PYTHON_USEDEP}]
 	)
 "
 
@@ -58,5 +59,5 @@ python_prepare_all() {
 }
 
 python_test() {
-	epytest -m moto
+	epytest -m "not localonly"
 }
