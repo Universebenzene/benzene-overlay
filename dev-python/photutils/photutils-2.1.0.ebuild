@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -40,11 +40,11 @@ REQUIRED_USE="intersphinx? ( doc )
 
 DEPEND=">=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5.3[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.10[${PYTHON_USEDEP}]
 	all? (
 		dev-python/bottleneck[${PYTHON_USEDEP}]
-		>=dev-python/gwcs-0.19[${PYTHON_USEDEP}]
+		>=dev-python/gwcs-0.20[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.7[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
 		>=dev-python/regions-0.9[${PYTHON_USEDEP}]
