@@ -1,4 +1,4 @@
-# Copyright 2019-2024 Gentoo Authors
+# Copyright 2019-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -54,12 +54,12 @@ RDEPEND="${DEPEND}
 
 EGO_BUILD_FLAGS="-ldflags=-s"
 
-src_prepare() {
-	pushd src/${EGO_PN} || die
-	eapply "${FILESDIR}/${P}-fix-go-1.23.patch"
-	popd || die
-	default
-}
+#src_prepare() {
+#	pushd src/${EGO_PN} || die
+#	eapply "${FILESDIR}/${P}-fix-go-1.23.patch"
+#	popd || die
+#	default
+#}
 
 src_install() {
 	newbin ${MY_PN} ${PN}

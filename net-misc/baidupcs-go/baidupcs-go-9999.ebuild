@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -27,7 +27,7 @@ else
 		https://github.com/Universebenzene/ebuild-vendors/archive/refs/tags/${P}.tar.gz -> ${P}-vendor.tar.gz"
 
 	S="${WORKDIR}/${MY_PN}-${PV}"
-	PATCHES=( "${FILESDIR}/${PN}-3.9.6-fix-go-1.23.patch" )
+#	PATCHES=( "${FILESDIR}/${PN}-3.9.6-fix-go-1.23.patch" )
 fi
 
 RDEPEND="${DEPEND}
