@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Reader friendly Sphinx theme designed to provide great documentation
+		reading experience with a beautiful typography.
+		This theme is default theme of Documatt's open-source projects
+		but you are welcome to use it with any Sphinx project.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">sphinx-documatt-theme</remote-id>
+		<remote-id type="github">documatt/sphinx-themes</remote-id>
+	</upstream>
+</pkgmetadata>
