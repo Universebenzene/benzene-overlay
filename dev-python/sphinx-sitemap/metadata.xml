@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		A Sphinx extension to generate multiversion and multilanguage sitemaps.org
+		compliant sitemaps for the HTML version of your Sphinx documentation.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">sphinx-sitemap</remote-id>
+		<remote-id type="github">jdillard/sphinx-sitemap</remote-id>
+	</upstream>
+</pkgmetadata>
