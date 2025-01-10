@@ -131,6 +131,7 @@ dev-python/cmdstanpy               | 1.0.8; 1.2.5                               
 dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/distributed             | 2024.4.1; 2024.12.1                                        | Optional for arviz and spectral-cube
 dev-python/dm-tree{,-bin}          | 0.1.8                                                      | Required by new arviz
+dev-python/donfig                  | 0.8.1\_p1                                                  | Pulled in by zarr v3
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
 dev-python/eventlet                | 0.33.3; 0.35.2                                             | Dropped by official portage. Required by firefly{,-viz}
 dev-python/f90nml                  | 1.4.4                                                      | Optional for yt

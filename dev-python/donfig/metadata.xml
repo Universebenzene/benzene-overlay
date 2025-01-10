@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Donfig is a python library meant to make configuration easier for
+		other python packages. Donfig can be configured programmatically,
+		by environment variables, or from YAML files in standard locations.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">donfig</remote-id>
+		<remote-id type="github">pytroll/donfig</remote-id>
+	</upstream>
+</pkgmetadata>
