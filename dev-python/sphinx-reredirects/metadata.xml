@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		sphinx-reredirects is the extension for Sphinx documentation projects that
+		handles redirects for moved pages. It generates HTML pages with meta refresh
+		redirects to the new page location to prevent 404 errors if you rename or
+		move your documents.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">sphinx-reredirects</remote-id>
+		<remote-id type="github">documatt/sphinx-reredirects</remote-id>
+	</upstream>
+</pkgmetadata>
