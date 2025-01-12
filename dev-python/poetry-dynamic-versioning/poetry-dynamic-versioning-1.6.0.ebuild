@@ -27,7 +27,6 @@ BDEPEND="test? (
 		dev-python/cryptography[${PYTHON_USEDEP}]
 		dev-python/more-itertools[${PYTHON_USEDEP}]
 		dev-python/poetry[${PYTHON_USEDEP}]
-		dev-python/urllib3[${PYTHON_USEDEP}]
 	)
 "
 
