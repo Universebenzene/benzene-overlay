@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -44,11 +44,11 @@ EPYTEST_IGNORE=(
 	docs/tutorials
 )
 
-EPYTEST_DESELECT=(
-	# Stucked tests
-	tests/integration/test_processes.py::test_allocations_with_multiprocessing_following_fork
-	tests/integration/test_processes.py::test_pymalloc_allocations_after_fork
-)
+#EPYTEST_DESELECT=(
+#	# Stucked tests
+#	tests/integration/test_processes.py::test_allocations_with_multiprocessing_following_fork
+#	tests/integration/test_processes.py::test_pymalloc_allocations_after_fork
+#)
 
 python_compile() {
 	if use $(python_gen_useflags python3_12); then
