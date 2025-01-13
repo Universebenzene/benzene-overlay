@@ -1,4 +1,4 @@
-# Copyright 2022-2024 Gentoo Authors
+# Copyright 2022-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,10 +20,7 @@ IUSE="examples msgpack zfpy"
 DEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
-	zfpy? (
-		<dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]
-		dev-libs/zfp[python]
-	)
+	zfpy? ( dev-libs/zfp[python] )
 "
 BDEPEND=">dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]

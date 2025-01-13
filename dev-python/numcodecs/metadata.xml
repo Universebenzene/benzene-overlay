@@ -14,6 +14,8 @@
 		<remote-id type="github">zarr-developers/numcodecs</remote-id>
 	</upstream>
 	<use>
+		<flag name="crc32c">Extra CRC32 check support via <pkg>dev-python/crc32c</pkg></flag>
+		<flag name="doc">Build extra documentation. Should only be enabled for re-merge instead of new merge.</flag>
 		<flag name="msgpack">Extra MsgPack support via <pkg>dev-python/msgpack</pkg></flag>
 		<flag name="zfpy">Extra ZFPY support via <pkg>dev-python/zfp</pkg></flag>
 	</use>

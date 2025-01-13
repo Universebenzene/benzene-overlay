@@ -1,4 +1,4 @@
-# Copyright 2022-2024 Gentoo Authors
+# Copyright 2022-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,28 +15,37 @@ HOMEPAGE="http://numcodecs.readthedocs.io"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples msgpack zfpy"
+IUSE="crc32c examples msgpack zfpy"
 
-RDEPEND=">=dev-python/numpy-1.7[${PYTHON_USEDEP}]
+DEPEND=">dev-python/numpy-2[${PYTHON_USEDEP}]"
+RDEPEND="${DEPEND}
+	crc32c? ( >=dev-python/crc32c-2.7[${PYTHON_USEDEP}] )
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	zfpy? ( dev-libs/zfp[python] )
 "
 BDEPEND=">dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
-	doc? ( dev-libs/zfp[python] )
+	doc? (
+		dev-libs/zfp[python]
+		dev-python/crc32c[${PYTHON_USEDEP}]
+		>=dev-python/zarr-3[${PYTHON_USEDEP}]
+	)
 	test? (
+		dev-libs/zfp[python]
+		dev-python/crc32c[${PYTHON_USEDEP}]
 		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
-		dev-libs/zfp[python]
 	)
 "
+PDEPEND="test? ( >=dev-python/zarr-3[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc
+distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc dev-python/pydata-sphinx-theme
 
 python_prepare_all() {
 	use test && { sed -i "s/--cov=numcodecs --cov-report xml //" pyproject.toml || die ; }
+	sed -i "/] = None/a import zfpy as _zfpy" ${PN}/zfpy.py || die
 
 	distutils-r1_python_prepare_all
 }

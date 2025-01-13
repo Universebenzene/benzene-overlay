@@ -15,5 +15,7 @@
 	</upstream>
 	<use>
 		<flag name="jupyter">Extra jupyter support</flag>
+		<flag name="optional">Additional optional dependencies <pkg>dev-python/rich</pkg></flag>
+		<flag name="remote">support for reading/writing to remote data stores via <pkg>dev-python/fsspec</pkg></flag>
 	</use>
 </pkgmetadata>
