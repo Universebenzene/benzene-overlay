@@ -1,4 +1,4 @@
-# Copyright 2020-2024 Gentoo Authors
+# Copyright 2020-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,7 +19,7 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
+DEPEND="dev-python/numpy:=[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
 BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0[${PYTHON_USEDEP}]
