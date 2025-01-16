@@ -203,7 +203,7 @@ dev-python/sphinx-autosummary-accessors | 2023.4.0                        |
 dev-python/sphinx-book-theme            | 0.2.0; 1.0.1; 1.1.3             | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
 dev-python/sphinx-changelog             | 1.6.0                           |
 dev-python/sphinx-click                 | 6.0.0                           |
-dev-python/sphinx-codeautolink          | 0.16.1                          |
+dev-python/sphinx-codeautolink          | 0.16.2                          |
 dev-python/sphinx-design                | 0.6.1                           |
 dev-python/sphinx-documatt-theme        | 0.0.6                           |
 dev-python/sphinx-examples              | 0.0.5                           |
