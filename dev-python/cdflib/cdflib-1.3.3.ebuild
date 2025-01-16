@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -87,11 +87,6 @@ python_prepare_all() {
 	sed -i -e '/--cov/d' setup.cfg || die
 
 	distutils-r1_python_prepare_all
-}
-
-python_install() {
-	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/tests || die
-	distutils-r1_python_install
 }
 
 python_test() {
