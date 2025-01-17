@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		A pytest fixture for benchmarking code. It will group the tests into
+		rounds that are calibrated to the chosen timer.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pytest-benchmark</remote-id>
+		<remote-id type="github">ionelmc/pytest-benchmark</remote-id>
+	</upstream>
+	<use>
+		<flag name="aspect">Experimental benchmark_weave fixture that can patch stuff using <pkg>dev-python/aspectlib</pkg>.</flag>
+		<flag name="elasticsearch">Elasticesearch support via<pkg>dev-python/elasticsearch</pkg>.</flag>
+		<flag name="histogram">Histogram plotting support</flag>
+	</use>
+</pkgmetadata>
