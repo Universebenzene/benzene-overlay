@@ -19,6 +19,7 @@ IUSE="crc32c examples msgpack zfpy"
 
 DEPEND=">dev-python/numpy-2[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
+	dev-python/deprecated[${PYTHON_USEDEP}]
 	crc32c? ( >=dev-python/crc32c-2.7[${PYTHON_USEDEP}] )
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	zfpy? ( dev-libs/zfp[python] )
