@@ -14,7 +14,8 @@ HOMEPAGE="http://zarr.readthedocs.io"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples optional remote"
+#IUSE="examples optional remote"
+IUSE="optional remote"
 
 RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
@@ -36,20 +37,20 @@ BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/numpydoc \
-	dev-python/sphinx-autoapi \
-	dev-python/sphinx-copybutton \
-	dev-python/sphinx-design \
-	dev-python/sphinx-issues \
-	dev-python/sphinx-reredirects \
-	dev-python/pydata-sphinx-theme
+#distutils_enable_sphinx docs dev-python/numpydoc \
+#	dev-python/sphinx-autoapi \
+#	dev-python/sphinx-copybutton \
+#	dev-python/sphinx-design \
+#	dev-python/sphinx-issues \
+#	dev-python/sphinx-reredirects \
+#	dev-python/pydata-sphinx-theme
 
-python_install_all() {
-	if use examples; then
-		docompress -x "/usr/share/doc/${PF}/notebooks"
-		docinto notebooks
-		dodoc -r notebooks/.
-	fi
-
-	distutils-r1_python_install_all
-}
+#python_install_all() {
+#	if use examples; then
+#		docompress -x "/usr/share/doc/${PF}/notebooks"
+#		docinto notebooks
+#		dodoc -r notebooks/.
+#	fi
+#
+#	distutils-r1_python_install_all
+#}
