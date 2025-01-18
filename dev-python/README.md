@@ -45,7 +45,7 @@ dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                
 dev-python/montage-wrapper     | 0.9.9                                                |
 dev-python/mpl-animator        | 1.2.0                                                | `network-sandbox` FEATURE will be disabled for doc building, as it needs downloading sunpy related data.
 dev-python/mpl-scatter-density | 0.8                                                  | Glueviz releated.
-dev-python/naima               | 0.10.0                                               |
+dev-python/naima               | 0.10.2                                               |
 dev-python/ndcube              | 2.2.0; 2.3.0                                         | SunPy releated. Dependency of specutils.
 dev-python/photutils           | 1.9.0; 1.12.0; 2.1.0                                 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pvextractor         | 0.4                                                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.

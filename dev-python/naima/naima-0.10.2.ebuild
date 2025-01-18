@@ -1,15 +1,30 @@
-# Copyright 2022-2024 Gentoo Authors
+# Copyright 2022-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{10..12} )
+
+GIT_RAW_URI="https://github.com/zblz/naima/raw/refs/tags/${PV}/docs/_static"
 
 inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Derivation of non-thermal particle distributions through MCMC spectral fitting"
 HOMEPAGE="http://naima.readthedocs.io"
+SRC_URI+=" doc? (
+		${GIT_RAW_URI}/CrabNebula_SynSSC.png -> ${P}-d-CrabNebula_SynSSC.png
+		${GIT_RAW_URI}/RXJ1713_IC_chain_index.png -> ${P}-d-RXJ1713_IC_chain_index.png
+		${GIT_RAW_URI}/RXJ1713_IC_chain_cutoff.png -> ${P}-d-RXJ1713_IC_chain_cutoff.png
+		${GIT_RAW_URI}/RXJ1713_IC_corner.png -> ${P}-d-RXJ1713_IC_corner.png
+		${GIT_RAW_URI}/RXJ1713_IC_model_samples.png -> ${P}-d-RXJ1713_IC_model_samples.png
+		${GIT_RAW_URI}/RXJ1713_IC_model_samples_erange.png -> ${P}-d-RXJ1713_IC_model_samples_erange.png
+		${GIT_RAW_URI}/RXJ1713_IC_model_confs.png -> ${P}-d-RXJ1713_IC_model_confs.png
+		${GIT_RAW_URI}/RXJ1713_IC_model_confs_erange.png -> ${P}-d-RXJ1713_IC_model_confs_erange.png
+		${GIT_RAW_URI}/RXJ1713_IC_pdist.png -> ${P}-d-RXJ1713_IC_pdist.png
+		${GIT_RAW_URI}/RXJ1713_IC_We.png -> ${P}-d-RXJ1713_IC_We.png
+	)
+"
 
 LICENSE="BSD"
 SLOT="0"
@@ -18,15 +33,16 @@ IUSE="doc examples intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/astropy-4.3[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-6.1[${PYTHON_USEDEP}]
 	dev-python/corner[${PYTHON_USEDEP}]
 	dev-python/emcee[${PYTHON_USEDEP}]
 	dev-python/h5py[${PYTHON_USEDEP}]
-	dev-python/matplotlib[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-1.4.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-2.0[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
@@ -39,6 +55,7 @@ distutils_enable_tests pytest
 
 python_prepare_all() {
 	sed -e '/auto_use/s/True/False/' -i setup.cfg || die
+	use doc && { for dpg in "${DISTDIR}"/*-d-*png; do { cp ${dpg} "${S}"/docs/_static/${dpg##*-d-} || die ; } ; done ; }
 
 	distutils-r1_python_prepare_all
 }
