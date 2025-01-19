@@ -1,4 +1,4 @@
-# Copyright 2022-2024 Gentoo Authors
+# Copyright 2022-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,7 +19,7 @@ RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/dask-2024.11.2[${PYTHON_USEDEP}]
+	>=dev-python/dask-2025.1.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.10.3[${PYTHON_USEDEP}]
 	>=dev-python/locket-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-1.0.2[${PYTHON_USEDEP}]
@@ -39,7 +39,6 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/asyncssh[${PYTHON_USEDEP}]
 		dev-python/bokeh[${PYTHON_USEDEP}]
-		dev-python/dask-expr[${PYTHON_USEDEP}]
 		dev-python/flaky[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
 		dev-python/ipywidgets[${PYTHON_USEDEP}]
