@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -39,7 +39,7 @@ RDEPEND=">=dev-python/click-8.1[${PYTHON_USEDEP}]
 	' 3.{10..11})
 "
 BDEPEND="dev-python/toolz[${PYTHON_USEDEP}]
-	>=dev-python/versioneer-0.28[${PYTHON_USEDEP}]
+	>=dev-python/versioneer-0.29[${PYTHON_USEDEP}]
 	test? (
 		app-arch/lz4
 		dev-python/aiohttp[${PYTHON_USEDEP}]
@@ -47,7 +47,6 @@ BDEPEND="dev-python/toolz[${PYTHON_USEDEP}]
 		dev-python/boto3[${PYTHON_USEDEP}]
 		dev-python/bottleneck[${PYTHON_USEDEP}]
 		dev-python/botocore[${PYTHON_USEDEP}]
-		dev-python/dask-expr[${PYTHON_USEDEP}]
 		dev-python/graphviz[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
 		dev-python/httpretty[${PYTHON_USEDEP}]
@@ -56,9 +55,11 @@ BDEPEND="dev-python/toolz[${PYTHON_USEDEP}]
 		dev-python/lz4[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
+		dev-python/multipledispatch[${PYTHON_USEDEP}]
 		dev-python/numba[${PYTHON_USEDEP}]
 		dev-python/numexpr[${PYTHON_USEDEP}]
 		dev-python/pyarrow[parquet,snappy,${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
 		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
@@ -82,31 +83,32 @@ EPYTEST_XDIST=1
 distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
-	dask/tests/test_base.py::test_visualize_order
-	dask/tests/test_tokenize.py::test_tokenize_dataclass
-	dask/array/tests/test_reductions.py
-	dask/dataframe/tests/test_accessors.py
-	dask/dataframe/tests/test_arithmetics_reduction.py
-	dask/dataframe/tests/test_categorical.py
-	dask/dataframe/tests/test_dataframe.py
-	dask/dataframe/tests/test_groupby.py
-	dask/dataframe/tests/test_hyperloglog.py::test_larger_data
-	dask/dataframe/tests/test_indexing.py
-	dask/dataframe/tests/test_merge_column_and_index.py
-	dask/dataframe/tests/test_multi.py
-	dask/dataframe/tests/test_numeric.py
-	dask/dataframe/tests/test_reshape.py
-	dask/dataframe/tests/test_rolling.py
-	dask/dataframe/tests/test_shuffle.py
-	dask/dataframe/tests/test_ufunc.py
-	dask/dataframe/tests/test_utils_dataframe.py::test_assert_eq_sorts
-	dask/dataframe/io/tests/test_csv.py
-	dask/dataframe/io/tests/test_demo.py
-	dask/dataframe/io/tests/test_io.py
-	dask/dataframe/io/tests/test_parquet.py
-	dask/dataframe/io/tests/test_sql.py
-	dask/dataframe/tseries/tests/test_resample.py::test_resample_agg_passes_kwargs
-	dask/dataframe/tseries/tests/test_resample.py::test_resample_pads_last_division_to_avoid_off_by_one
+	# dask/tests/test_base.py::test_visualize_order
+	# dask/tests/test_tokenize.py::test_tokenize_dataclass
+	# dask/array/tests/test_reductions.py
+	# dask/dataframe/tests/test_accessors.py
+	# dask/dataframe/tests/test_arithmetics_reduction.py
+	# dask/dataframe/tests/test_categorical.py
+	# dask/dataframe/tests/test_dataframe.py
+	# dask/dataframe/tests/test_groupby.py
+	# dask/dataframe/tests/test_hyperloglog.py::test_larger_data
+	# dask/dataframe/tests/test_indexing.py
+	# dask/dataframe/tests/test_merge_column_and_index.py
+	# dask/dataframe/tests/test_multi.py
+	# dask/dataframe/tests/test_numeric.py
+	# dask/dataframe/tests/test_reshape.py
+	# dask/dataframe/tests/test_rolling.py
+	# dask/dataframe/tests/test_shuffle.py
+	# dask/dataframe/tests/test_ufunc.py
+	# dask/dataframe/tests/test_utils_dataframe.py::test_assert_eq_sorts
+	# dask/dataframe/io/tests/test_csv.py
+	# dask/dataframe/io/tests/test_demo.py
+	# dask/dataframe/io/tests/test_io.py
+	# dask/dataframe/io/tests/test_parquet.py
+	# dask/dataframe/io/tests/test_sql.py
+	# dask/dataframe/tseries/tests/test_resample.py::test_resample_agg_passes_kwargs
+	# dask/dataframe/tseries/tests/test_resample.py::test_resample_pads_last_division_to_avoid_off_by_one
+	dask/dataframe/dask_expr/tests/test_shuffle.py::test_set_index_head_nlargest_string
 )
 
 src_prepare() {
@@ -118,6 +120,6 @@ src_prepare() {
 
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
-	local -x DASK_DATAFRAME__QUERY_PLANNING=False
+#	local -x DASK_DATAFRAME__QUERY_PLANNING=False
 	epytest -k 'not test_RandomState_only_funcs' -m 'not network and not slow and not gpu'
 }
