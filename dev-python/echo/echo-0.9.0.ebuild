@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,13 +18,13 @@ IUSE="qt"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	qt? (
-		>=dev-python/pyqt5-5.9[${PYTHON_USEDEP}]
+		|| ( dev-python/pyqt6[${PYTHON_USEDEP}] >=dev-python/pyqt5-5.9[${PYTHON_USEDEP}] )
 		dev-python/qtpy[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pyqt5[${PYTHON_USEDEP}]
+		|| ( dev-python/pyqt6[${PYTHON_USEDEP}] dev-python/pyqt5[${PYTHON_USEDEP}] )
 		dev-python/qtpy[${PYTHON_USEDEP}]
 	)
 "

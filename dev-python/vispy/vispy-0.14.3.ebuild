@@ -1,4 +1,4 @@
-# Copyright 2022-2024 Gentoo Authors
+# Copyright 2022-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -29,7 +29,7 @@ SRC_URI+=" doc? (
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"	# no x86 KEYWORD for meshio PyQt6 pyside6
-IUSE="examples glfw io ipython-static pyglet +pyqt5 pyqt6 pyside2 pyside6 sdl2 wx"
+IUSE="examples glfw io ipython-static pyglet pyqt5 +pyqt6 pyside2 pyside6 sdl2 wx"
 PROPERTIES="test_network"
 RESTRICT="test"
 REQUIRED_USE="|| ( pyglet pyqt5 pyqt6 pyside2 pyside6 sdl2 wx )
