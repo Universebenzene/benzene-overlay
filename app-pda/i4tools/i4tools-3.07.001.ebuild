@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -50,4 +50,11 @@ src_install() {
 	newicon -s scalable ${OPD}/share/icons/hicolor/scalable/apps/cn.${MY_PN}.svg ${PN}.svg
 	newicon ${OPD}/resources/logo.png ${PN}.png
 	newmenu usr/share/applications/cn.${MY_PN}.desktop ${PN}.desktop
+}
+
+pkg_postinst() {
+	ewarn
+	ewarn "If i4Tools doesn't respond after plugging in the device,"
+	ewarn "try running \`usbmuxd --user usbmux\` first."
+	ewarn
 }
