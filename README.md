@@ -177,7 +177,7 @@ dev-python/stone                   | 3.3.8                                      
 dev-python/textual                 | 1.0.0                                                      | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
 dev-python/typing-validation       | 1.2.11\_p4                                                 | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/colorspacious           | 1.1.2                                                      | Pulled in by cmyt. Dropped by official portage
-dev-python/cmyt                    | 2.0.0; 2.0.1                                               | Pulled in by yt
+dev-python/cmyt                    | 2.0.0; 2.0.2                                               | Pulled in by yt
 dev-python/unyt                    | 2.9.5; 3.0.3                                               | Pulled in by yt
 dev-python/webdav4                 | 0.10.0                                                     | Optional for new ratarmount{,core}
 dev-python/wsgidav                 | 4.3.3                                                      | Test dependency for webdav4
