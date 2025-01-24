@@ -161,7 +161,7 @@ dev-python/pygaljs                 | 1.0.2                                      
 dev-python/pykdtree                | 1.3.13                                                     | Optional for yt
 dev-python/pysquashfsimage         | 0.9.0\_p20240421181514                                     | Optional for new ratarmount{,core}
 dev-python/pytest-examples         | 0.0.15                                                     | Test dependency for pydantic-settings
-dev-python/pytest-textual-snapshot | 1.0.0                                                      | Test dependency for new memray. Dependency syrupy is included but not listed in the table
+dev-python/pytest-textual-snapshot | 1.1.0                                                      | Test dependency for new memray. Dependency syrupy is included but not listed in the table
 dev-python/python-pkcs11           | 0.7.0-r1                                                   | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
 dev-python/python-socketio         | 5.9.0; 5.12.1                                              | Optional for yt
 dev-python/python-xz               | 0.5.0                                                      | Optional for yt
