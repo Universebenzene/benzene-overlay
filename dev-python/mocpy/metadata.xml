@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		MOCPy is a Python library allowing easy creation and manipulation of MOCs (Multi-Order Coverage maps).
+		MOC is an IVOA standard enabling description of arbitrary sky regions. Based on the HEALPix sky tessellation,
+		it maps regions on the sky into hierarchically grouped predefined cells.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">mocpy</remote-id>
+		<remote-id type="github">cds-astro/mocpy</remote-id>
+	</upstream>
+	<use>
+		<flag name="astropy_regions">MOC.from_astropy_regions support via <pkg>dev-python/regions</pkg>.</flag>
+		<flag name="query_fits">query FITS files by url via<pkg>dev-python/requests</pkg>.</flag>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
+</pkgmetadata>

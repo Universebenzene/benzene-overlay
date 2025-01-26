@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This is a BSD-licensed HEALPix package which is wrapped around the cdshealpix Rust crate.
+		cdshealpix is multi-platform and is currently deployed on PyPI for i686, x86_64 and aarch64 archs.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">cdshealpix</remote-id>
+		<remote-id type="github">cds-astro/cds-healpix-python</remote-id>
+	</upstream>
+	<use>
+		<flag name="doc">Build extra documentation. Should only be enabled for re-merge instead of new merge.</flag>
+		<flag name="plot">Support for quick_plot for Skymap via <pkg>dev-python/matplotlib</pkg>.</flag>
+	</use>
+</pkgmetadata>
