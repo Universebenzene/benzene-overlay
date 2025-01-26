@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Sphinx-Collections is a Sphinx extension to collect and generate
+		additional files from different sources. These files are added to the
+		Sphinx Source Folder, so that Sphinx takes them into account for the
+		overall documentation build.
+		Sphinx Collections supports multiple collections, where each collection
+		has its own source and target folder, specific configuration and use case
+		based driver.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">sphinx-collections</remote-id>
+		<remote-id type="github">useblocks/sphinx-collections</remote-id>
+	</upstream>
+</pkgmetadata>
