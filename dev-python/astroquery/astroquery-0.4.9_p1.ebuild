@@ -15,8 +15,10 @@ SRC_URI+=" doc? ( https://irsa.ipac.caltech.edu/data/SPITZER/Enhanced/SEIP/image
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc intersphinx"
-RESTRICT="intersphinx? ( network-sandbox )"
+IUSE="all doc intersphinx"
+PROPERTIES="test_network"
+RESTRICT="test
+	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/astropy-5.0[${PYTHON_USEDEP}]
@@ -26,6 +28,12 @@ RDEPEND=">=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.20[${PYTHON_USEDEP}]
 	>=dev-python/pyvo-1.5[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.19[${PYTHON_USEDEP}]
+	all? (
+		dev-python/astropy-healpix[${PYTHON_USEDEP}]
+		dev-python/boto3[${PYTHON_USEDEP}]
+		>=dev-python/mocpy-0.12[${PYTHON_USEDEP}]
+		>=dev-python/regions-0.5[${PYTHON_USEDEP}]
+	)
 "
 BDEPEND=">=dev-python/astropy-helpers-4.0.1[${PYTHON_USEDEP}]
 	doc? (
@@ -39,16 +47,28 @@ BDEPEND=">=dev-python/astropy-helpers-4.0.1[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-astropy[${PYTHON_USEDEP}]
 		dev-python/pytest-dependency[${PYTHON_USEDEP}]
+		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
 		dev-python/boto3[${PYTHON_USEDEP}]
 		dev-python/flaky[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/mocpy[${PYTHON_USEDEP}]
+		dev-python/moto[${PYTHON_USEDEP}]
+		dev-python/photutils[${PYTHON_USEDEP}]
 		dev-python/regions[${PYTHON_USEDEP}]
 		net-misc/curl
 	)
 "
 
 distutils_enable_tests pytest
+
+EPYTEST_DESELECT=(
+#	Stucked when network no good
+	astroquery/cadc/tests/test_cadctap_remote.py::TestCadcClass::test_query
+	"astroquery/esasky/tests/test_esasky_remote.py::TestESASky::test_esasky_get_images[Spitzer]"
+	docs/cadc/cadc.rst::cadc.rst
+	docs/esa/jwst/jwst.rst::jwst.rst
+)
 
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
@@ -71,11 +91,11 @@ python_compile_all() {
 }
 
 python_test() {
-	epytest "${BUILD_DIR}"
+	epytest --remote-data
 }
 
 pkg_postinst() {
 	optfeature "running the tests" "dev-python/pytest-astropy net-misc/curl"
-	optfeature "the full functionality of the mocserver, alma, and xmatch module" "dev-python/astropy-healpix dev-python/regions"
+	optfeature "the full functionality of the mocserver, alma, and xmatch module" "dev-python/astropy-healpix dev-python/regions" ">=dev-python/mocpy-0.12"
 	optfeature "the full functionality of the mast module"	dev-python/boto3
 }

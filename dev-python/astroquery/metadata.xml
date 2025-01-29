@@ -19,6 +19,7 @@
 		<remote-id type="github">astropy/astroquery</remote-id>
 	</upstream>
 	<use>
+		<flag name="all">Full functionality of the mocserver, alma xmatch and mast modules</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 	</use>
 </pkgmetadata>
