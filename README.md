@@ -158,7 +158,7 @@ dev-python/multiformats            | 0.3.1\_p4                                  
 dev-python/numcodecs               | 0.13.1; 0.15.0                                             | Pulled in by zarr
 dev-python/pyfatfs                 | 1.1.0                                                      | Optional for new ratarmount{,core}
 dev-python/pygaljs                 | 1.0.2                                                      | Optional for pytest-benchmark
-dev-python/pykdtree                | 1.4.0                                                      | Optional for yt
+dev-python/pykdtree                | 1.4.1                                                      | Optional for yt
 dev-python/pysquashfsimage         | 0.9.0\_p20240421181514                                     | Optional for new ratarmount{,core}
 dev-python/pytest-examples         | 0.0.15                                                     | Test dependency for pydantic-settings
 dev-python/pytest-textual-snapshot | 1.1.0                                                      | Test dependency for new memray. Dependency syrupy is included but not listed in the table
