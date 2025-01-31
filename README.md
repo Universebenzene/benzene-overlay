@@ -133,7 +133,7 @@ dev-python/check-manifest          | 0.49; 0.50                                 
 dev-python/cmdstanpy               | 1.0.8; 1.2.5                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/distributed             | 2024.4.1; 2025.1.0                                         | Optional for arviz and spectral-cube
-dev-python/dm-tree{,-bin}          | 0.1.8                                                      | Required by new arviz
+dev-python/dm-tree                 | 0.1.9                                                      | Required by new arviz
 dev-python/donfig                  | 0.8.1\_p1                                                  | Pulled in by zarr v3
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
 dev-python/eventlet                | 0.33.3; 0.35.2                                             | Dropped by official portage. Required by firefly{,-viz}
