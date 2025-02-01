@@ -1,4 +1,4 @@
-# Copyright 2019-2024 Gentoo Authors
+# Copyright 2019-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -31,11 +31,12 @@ RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	' python3_10)
 	all? ( >=dev-python/lz4-0.10[${PYTHON_USEDEP}] )
 "
-BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-asdf-0.2.2[${PYTHON_USEDEP}]
 		dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
+		dev-python/furo[${PYTHON_USEDEP}]
 		>=dev-python/mistune-3[${PYTHON_USEDEP}]
 		$(python_gen_cond_dep '
 			dev-python/tomli[${PYTHON_USEDEP}]
