@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Universal Pathlib is a Python library that extends the pathlib.Path API
+		to support a variety of backend filesystems via filesystem_spec.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">universal-pathlib</remote-id>
+		<remote-id type="github">fsspec/universal_pathlib</remote-id>
+	</upstream>
+</pkgmetadata>
