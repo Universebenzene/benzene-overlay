@@ -9,4 +9,7 @@
 		<remote-id type="pypi">sep</remote-id>
 		<remote-id type="github">kbarbary/sep</remote-id>
 	</upstream>
+	<use>
+		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+	</use>
 </pkgmetadata>
