@@ -1,4 +1,4 @@
-# Copyright 2020-2024 Gentoo Authors
+# Copyright 2020-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,14 +17,12 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc intersphinx"
-# healpy related tests run with fails
-RESTRICT="test
-	intersphinx? ( network-sandbox )"
+RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.19:=[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-1.25:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-3[${PYTHON_USEDEP}]
+	>=dev-python/astropy-5[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
