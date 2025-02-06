@@ -3,7 +3,7 @@ Universebenzene's personal Gentoo overlay.
 
 Including some old software that no longer supported by official portage.
 
-Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is diabled. See the USE descriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages))
+Alternative building of astropy related packages (more improvement for the doc building and testing, though some of them only work when the `network-sandbox` FEATURE is disabled. See the USE descriptions for details. [(more information)](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages))
 
 Related overlay: [benzene-testlay](https://github.com/Universebenzene/benzene-testlay), with some packages testing. You can add it for interest.
 
@@ -63,7 +63,7 @@ dev-python/api4jenkins                                                          
 dev-python/python-jenkins                                                            | 1.8.2; (live)                                                                                                         | Dependency multi\_key\_dict is also included but not listed here
 dev-python/vispy                                                                     | 0.13.0; 0.14.3                                                                                                        |
 dev-python/yt                                                                        | 4.0.5; 4.1.4; 4.2.2; 4.3.0; 4.4.0                                                                                     | Full doc building needs huge amount of data, so cannot complete locally.
-dev-python/zarr                                                                      | 2.18.4; 3.0.1                                                                                                         |
+dev-python/zarr                                                                      | 2.18.4; 3.0.2                                                                                                         |
 dev-qt/qtwebkit                                                                      | 5.212.0\_pre20200309-{r1,r2}                                                                                          | Add [patch](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-qt/qtwebkit/files/qtwebkit-5.212.0_pre20200309-position.patch) to get **youdao-dict** in this overlay work (the -r2 is a test for upgrade EAPI to 8, and might be a little buggy with youdao-dict.)
 [dev-util/micromamba{,-bin}](https://mamba.readthedocs.io)                           | [1.5.6](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-util/micromamba/micromamba-1.5.6.ebuild)                                        | `dev-util/mamba[micromamba]` in [gentoo-zh](https://github.com/microcai/gentoo-zh) is **recommended** if you want source version and don't care about testing. Also need [gentoo-zh](https://github.com/microcai/gentoo-zh) to provide dependency `dev-cpp/reproc`, `dev-cpp/tl-expected` and `sys-libs/libsolv` .
 gnome-base/gconf                                                                     | 3.2.6-r6                                                                                                              | Dropped by official portage but required by `net-misc/oss-browser-bin`. Copied from [KBrown-pub](https://git.softwarelibre.mx/KBrown/gentoo-overlay/-/blob/KBrown-pub/gnome-base/gconf) and [kzd](https://gitlab.com/kzdixon/kzd-ebuilds/-/blob/master/gnome-base/gconf) overlays but fix dependency `dev-util/gtk-doc-am` → `dev-build/gtk-doc-am`
@@ -172,7 +172,7 @@ dev-python/s3fs                    | 2024.12.0; 2025.2.0                        
 dev-python/siosocks                | 0.3.0                                                      | Optional for aioftp
 dev-python/smbprotocol             | 1.15.0                                                     | Optional for new ratarmount{,core}
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
-dev-python/sshfs                   | 2024.9.0                                                   | Optional for new ratarmount{,core}. For running test, you need to forcely unmask paramiko[server], e.g. `echo "dev-python/paramiko -server" >> /etc/portage/profile/package.use.mask"`
+dev-python/sshfs                   | 2025.2.0                                                   | Optional for new ratarmount{,core}. For running test, you need to forcely unmask paramiko[server], e.g. `echo "dev-python/paramiko -server" >> /etc/portage/profile/package.use.mask"`
 dev-python/stone                   | 3.3.8                                                      | Required by python dropbox
 dev-python/textual                 | 1.0.0                                                      | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
 dev-python/typing-validation       | 1.2.11\_p4                                                 | Optional for new ratarmount{,core} <- ipfsspec
