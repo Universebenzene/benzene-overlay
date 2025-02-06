@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,9 +20,9 @@ RESTRICT="test
 	examples? ( network-sandbox )"
 REQUIRED_USE="examples? ( doc )"
 
-RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.23.5[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.5.1[${PYTHON_USEDEP}]
+	>=dev-python/packaging-23.0[${PYTHON_USEDEP}]
 "
 
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -41,7 +41,8 @@ distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinx-hoverxref \
 	dev-python/sphinx-gallery \
 	dev-python/sunpy-sphinx-theme \
-	dev-python/astropy
+	dev-python/astropy \
+	dev-python/matplotlib
 
 python_install_all() {
 	if use examples; then
