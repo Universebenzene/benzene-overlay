@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -43,11 +43,11 @@ DEPEND=">=dev-libs/expat-2.5.0:0=
 	>=dev-python/pyerfa-2.0.1.1[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
 	>=sci-astronomy/wcslib-8.3:0=
-	>=sci-libs/cfitsio-4.4.1:0=
+	>=sci-libs/cfitsio-4.5.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2024.10.28.0.34.7[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2025.1.31.12.41.4[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
