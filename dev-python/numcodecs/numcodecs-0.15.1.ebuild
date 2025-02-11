@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	zfpy? ( dev-libs/zfp[python] )
 "
-BDEPEND=">dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
 	doc? (
