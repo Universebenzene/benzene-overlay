@@ -1,4 +1,4 @@
-# Copyright 2022-2024 Gentoo Authors
+# Copyright 2022-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -25,7 +25,7 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/h5py-2.10[${PYTHON_USEDEP}]
 	>=dev-python/ipython-4.0[${PYTHON_USEDEP}]
 	>=dev-python/matplotlib-3.2[${PYTHON_USEDEP}]
-	>=dev-python/mpl-scatter-density-0.7[${PYTHON_USEDEP}]
+	>=dev-python/mpl-scatter-density-0.8[${PYTHON_USEDEP}]
 	>=dev-python/openpyxl-3.0[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.2[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
