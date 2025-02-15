@@ -58,3 +58,7 @@ distutils_enable_tests pytest
 #
 #	distutils-r1_python_install_all
 #}
+
+python_test() {
+	epytest  --run-slow-hypothesis
+}
