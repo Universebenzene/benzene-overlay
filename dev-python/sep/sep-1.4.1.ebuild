@@ -20,7 +20,7 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.23.5[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2.0.0_rc2[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 BDEPEND=">=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
