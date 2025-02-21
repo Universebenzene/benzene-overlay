@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,8 +21,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="code_style"
 RESTRICT="doc? ( network-sandbox )"
 
-RDEPEND=">=dev-python/sphinx-5[${PYTHON_USEDEP}]
-	>=dev-python/pydata-sphinx-theme-0.15.2[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-6.1[${PYTHON_USEDEP}]
+	>=dev-python/pydata-sphinx-theme-0.15.4[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 "
 BDEPEND="test? (
