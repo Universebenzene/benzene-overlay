@@ -1,10 +1,10 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
 inherit distutils-r1 optfeature pypi
 
@@ -23,7 +23,6 @@ BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 		dev-python/linkify-it-py[${PYTHON_USEDEP}]
-		dev-python/tree-sitter-languages[${PYTHON_USEDEP}]
 	)
 "
 
@@ -32,6 +31,7 @@ distutils_enable_tests pytest
 EPYTEST_IGNORE=(
 	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-textual/-/blob/main/PKGBUILD?ref_type=heads
 	tests/snapshot_tests/test_snapshots.py
+	tests/text_area/test_languages.py
 )
 
 python_test() {
