@@ -21,7 +21,7 @@ RESTRICT="test"
 
 RDEPEND=">=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/botocore-1.36.0[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.36.20[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
@@ -56,7 +56,8 @@ EPYTEST_IGNORE=(
 python_prepare_all() {
 	# Work-around test failures with moto 5.x
 	# See: https://github.com/aio-libs/aiobotocore/issues/1108
-	use test && { eapply "${FILESDIR}"/${PN}-2.12.3-moto-5.x.diff ; sed -i "s/pip._vendor.//" tests/test_version.py || die ; }
+	#use test && { eapply "${FILESDIR}"/${PN}-2.12.3-moto-5.x.diff ; sed -i "s/pip._vendor.//" tests/test_version.py || die ; }
+	use test && { sed -i "s/pip._vendor.//" tests/test_version.py || die ; }
 
 	distutils-r1_python_prepare_all
 }
