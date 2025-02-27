@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,30 +15,32 @@ HOMEPAGE="https://sunpy.org"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="asdf dask database examples image jpeg2k map net skimage timeseries visualization"
+IUSE="asdf dask database examples image jpeg2k map net s3 skimage timeseries visualization"
 PROPERTIES="test_network"
 RESTRICT="test"
 
 DEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-5.3.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.0[${PYTHON_USEDEP}]
 	>=dev-python/parfive-2.0.0[${PYTHON_USEDEP},ftp]
+	>=dev-python/fsspec-2023.3.0[${PYTHON_USEDEP}]
 	asdf? (
 		>=dev-python/asdf-2.13.0[${PYTHON_USEDEP}]
-		>=dev-python/asdf-astropy-0.4.0[${PYTHON_USEDEP}]
+		>=dev-python/asdf-astropy-0.5.0[${PYTHON_USEDEP}]
 	)
 	dask? ( >=dev-python/dask-2022.5.2[${PYTHON_USEDEP}] )
-	image? ( >dev-python/scipy-1.10.0[${PYTHON_USEDEP}] )
+	image? ( >=dev-python/scipy-1.10.1[${PYTHON_USEDEP}] )
 	jpeg2k? (
 		>=dev-python/glymur-0.11.0[${PYTHON_USEDEP}]
 		>dev-python/lxml-5.0.0[${PYTHON_USEDEP}]
 	)
 	map? (
-		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
+		>=dev-python/contourpy-1.0.1[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0.0[${PYTHON_USEDEP}]
-		>=dev-python/reproject-0.9.0[${PYTHON_USEDEP}]
-		>dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
+		>=dev-python/reproject-0.10.0[${PYTHON_USEDEP}]
+		>dev-python/scipy-1.10.1[${PYTHON_USEDEP}]
 	)
 	net? (
 		>=dev-python/beautifulsoup4-4.11.0[${PYTHON_USEDEP}]
@@ -47,16 +49,20 @@ RDEPEND="${DEPEND}
 		>=dev-python/tqdm-4.64.0[${PYTHON_USEDEP}]
 		>=dev-python/zeep-4.1.0[${PYTHON_USEDEP}]
 	)
-	skimage? ( >=dev-python/scikit-image-0.19.0[${PYTHON_USEDEP}] )
+	s3? (
+		>=dev-python/s3fs-2023.3.0[${PYTHON_USEDEP}]
+		>=dev-python/aiobotocore-1.26.41[${PYTHON_USEDEP},boto3]
+	)
+	skimage? ( >=dev-python/scikit-image-0.20.0[${PYTHON_USEDEP}] )
 	timeseries? (
-		>=dev-python/cdflib-0.4.4[${PYTHON_USEDEP}]
+		>=dev-python/cdflib-1.3.2[${PYTHON_USEDEP}]
 		>=dev-python/h5netcdf-1.0.0[${PYTHON_USEDEP}]
-		>=dev-python/h5py-3.7.0[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
-		>=dev-python/pandas-1.4.0[${PYTHON_USEDEP}]
+		>=dev-python/h5py-3.8.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
+		>=dev-python/pandas-1.5.0[${PYTHON_USEDEP}]
 	)
 	visualization? (
-		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.0.0[${PYTHON_USEDEP}]
 	)
 "
@@ -83,6 +89,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 		dev-python/lxml[${PYTHON_USEDEP}]
 		dev-python/mpl-animators[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
+		dev-python/s3fs[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/zeep[${PYTHON_USEDEP}]
