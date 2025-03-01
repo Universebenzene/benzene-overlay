@@ -4,10 +4,18 @@
 EAPI=8
 
 #DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{10..12} )
 
-inherit distutils-r1 desktop pypi virtualx xdg
+DOCS_BUILDER="sphinx"
+DOCS_DEPEND="<dev-python/sphinx-7.2
+	dev-python/sphinx-automodapi
+	dev-python/sphinxcontrib-spelling
+	dev-python/sphinx-book-theme
+	dev-python/numpydoc
+"
+DOCS_DIR="doc"
+
+inherit distutils-r1 desktop docs pypi virtualx xdg
 
 DESCRIPTION="Multidimensional data visualization across files"
 HOMEPAGE="http://glueviz.org"
@@ -46,10 +54,11 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx doc "<dev-python/sphinx-7.2" dev-python/sphinx-automodapi \
-	dev-python/sphinxcontrib-spelling \
-	dev-python/sphinx-book-theme \
-	dev-python/numpydoc
+# needs sphinx>=7.2.6
+#distutils_enable_sphinx doc "<dev-python/sphinx-7.2" dev-python/sphinx-automodapi \
+#	dev-python/sphinxcontrib-spelling \
+#	dev-python/sphinx-book-theme \
+#	dev-python/numpydoc
 
 python_install_all() {
 	distutils-r1_python_prepare_all
