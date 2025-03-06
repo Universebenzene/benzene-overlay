@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -39,8 +39,8 @@ EPYTEST_IGNORE=(
 python_prepare_all() {
 	echo "Version: ${PV}" > "${S}"/PKG-INFO || die
 	echo "__version__ = \"${PV}\"" > "${S}"/src/isal/_version.py || die
-	use doc && { mkdir -p docs/_static || die ; \
-		sed -i "s/display_version/version_selector/" docs/conf.py || die ; }
+	use doc && { mkdir -p docs/_static || die ; }
+#		sed -i "s/display_version/version_selector/" docs/conf.py || die ; }
 
 	distutils-r1_python_prepare_all
 }
