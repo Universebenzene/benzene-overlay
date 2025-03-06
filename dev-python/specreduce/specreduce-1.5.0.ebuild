@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -80,7 +80,7 @@ distutils_enable_tests pytest
 #}
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}/"${P}-doc-use-local-data.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; \
+	use doc && { eapply "${FILESDIR}/"${PN}-1.4.1-doc-use-local-data.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; \
 		for dat in "${DISTDIR}"/*-d-*; do { cp ${dat} "${S}"/docs/${dat##*-d-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
 }
