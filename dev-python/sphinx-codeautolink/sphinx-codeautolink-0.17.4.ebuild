@@ -25,4 +25,5 @@ RDEPEND=">=dev-python/sphinx-3.2.0[${PYTHON_USEDEP}]
 BDEPEND="test? ( dev-python/ipython[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs/src dev-python/sphinx-rtd-theme dev-python/ipython dev-python/matplotlib
+distutils_enable_sphinx docs/src dev-python/sphinx-rtd-theme \
+	dev-python/ipython dev-python/matplotlib dev-python/pickleshare
