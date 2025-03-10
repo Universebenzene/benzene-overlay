@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -10,10 +10,12 @@ DOCS_BUILDER="mkdocs"
 DOCS_DEPEND="dev-python/mkdocs-material
 	dev-python/mkdocs-gen-files
 	dev-python/mkdocs-literate-nav
+	dev-python/mkdocs-section-index
 	dev-python/mkdocs-coverage
 	dev-python/mkdocstrings-python
 	dev-python/markdown-callouts
 	dev-python/markdown-exec
+	dev-python/pydantic
 "
 
 inherit distutils-r1 docs pypi

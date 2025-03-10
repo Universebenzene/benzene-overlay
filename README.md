@@ -251,6 +251,6 @@ dev-python/mkdocs-literate-nav          | 0.6.1           | mkdocstrings related
 dev-python/mkdocs-section-index         | 0.3.9           | mkdocstrings related (should be test depend)
 dev-python/mkdocstrings-crystal         | 0.3.5; 0.3.7    |
 dev-python/mkdocstrings-python-legacy   | 0.2.4           |
-dev-python/pytkdocs                     | 0.16.2          | Dependency of mkdocstrings-python-legacy
+dev-python/pytkdocs                     | 0.16.5          | Dependency of mkdocstrings-python-legacy
 
 <!--</details>-->
