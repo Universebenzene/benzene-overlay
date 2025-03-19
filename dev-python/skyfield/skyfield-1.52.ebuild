@@ -24,7 +24,7 @@ RESTRICT="test"	# Test phase runs with fails
 RDEPEND=">dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/jplephem-2.13[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
-	>=dev-python/sgp4-2.2[${PYTHON_USEDEP}]
+	>=dev-python/sgp4-2.13[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/assay[${PYTHON_USEDEP}]
