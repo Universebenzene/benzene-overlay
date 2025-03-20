@@ -10,7 +10,9 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Collection of packages to access online astronomical resources"
 HOMEPAGE="https://astroquery.readthedocs.io"
-SRC_URI+=" doc? ( https://irsa.ipac.caltech.edu/data/SPITZER/Enhanced/SEIP/images/6/0095/60095931/4/60095931-14/60095931.60095931-14.IRAC.4.mosaic.fits )"
+SRC_URI+=" doc? ( https://irsa.ipac.caltech.edu/data/SPITZER/Enhanced/SEIP/images/6/0095/60095931/4/60095931-14/60095931.60095931-14.IRAC.4.mosaic.fits )
+	test? ( https://github.com/astropy/astroquery/raw/refs/tags/v0.4.10/conftest.py -> ${P}-conftest.py )
+"
 
 LICENSE="BSD"
 SLOT="0"
@@ -73,8 +75,9 @@ EPYTEST_DESELECT=(
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
 	DISTUTILS_ARGS=( --offline )
-	use doc && { use intersphinx || { eapply "${FILESDIR}"/${PN}-0.4.7-doc-irsa-offline.patch ; \
+	use doc && { use intersphinx || { eapply "${FILESDIR}"/${PN}-0.4.10-doc-irsa-offline.patch ; \
 		cp "${DISTDIR}"/*.fits docs/ipac/irsa || die ; } ; }
+	use test && { cp {"${DISTDIR}"/${P}-,${S}/}conftest.py || die ; }
 	distutils-r1_python_prepare_all
 }
 
