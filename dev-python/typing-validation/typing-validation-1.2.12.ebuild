@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,4 +21,4 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
+distutils_enable_sphinx docs dev-python/sphinx-autodoc-typehints dev-python/sphinx-rtd-theme
