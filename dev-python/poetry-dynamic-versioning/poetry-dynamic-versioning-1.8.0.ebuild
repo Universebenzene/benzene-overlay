@@ -15,9 +15,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="plugin"
-PROPERTIES="test_network"
-RESTRICT="test"
-RDEPEND=">=dev-python/dunamai-1.21.0[${PYTHON_USEDEP}]
+#PROPERTIES="test_network"
+#RESTRICT="test"
+RDEPEND=">=dev-python/dunamai-1.23.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.11.0[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.4[${PYTHON_USEDEP}]
 	plugin? ( >=dev-python/poetry-1.2.0[${PYTHON_USEDEP}] )
