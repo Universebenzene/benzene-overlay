@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,7 +21,11 @@ RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 	>=dev-util/ruff-0.5.0
 "
 
-PATCHES=( "${FILESDIR}/${PN}-0.0.14-revert-use-of-ruff-module.patch" )
+# Thanks parona-overlay
+PATCHES=(
+	"${FILESDIR}/${PN}-0.0.14-revert-use-of-ruff-module.patch"
+	"${FILESDIR}/${PN}-0.0.15-pytest-8.3.4-test-fix.patch"
+)
 
 distutils_enable_tests pytest
 
