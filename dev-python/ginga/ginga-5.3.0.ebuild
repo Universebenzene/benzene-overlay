@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,37 +14,35 @@ HOMEPAGE="https://ejeschke.github.io/ginga"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc gtk intersphinx pyside2 pyside6 qt5 qt6 recommended tk web"
+IUSE="doc gtk intersphinx pyside6 qt5 qt6 recommended tk web"
 # Tests phase runs with fails
 #RESTRICT="test
 #	intersphinx? ( network-sandbox )"
 RESTRICT="intersphinx? ( network-sandbox )"
-REQUIRED_USE="intersphinx? ( doc )
-	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
+REQUIRED_USE="intersphinx? ( doc )"
+#	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
 
-RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
-	>=dev-python/pillow-9.2[${PYTHON_USEDEP}]
-	>=dev-python/qtpy-2.0.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.0.1[${PYTHON_USEDEP}]
+	>=dev-python/pillow-11.1.0[${PYTHON_USEDEP}]
+	>=dev-python/qtpy-2.4.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
 	>=dev-python/puremagic-1.28[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]' python3_10)
 	gtk? (
 		dev-python/pycairo[${PYTHON_USEDEP}]
 		>=dev-python/pygobject-3.48.1[${PYTHON_USEDEP}]
 	)
-	pyside2? ( $(python_gen_cond_dep 'dev-python/pyside2[${PYTHON_USEDEP}]' python3_{10,11}) )
-	pyside6? ( dev-python/pyside6[${PYTHON_USEDEP}] )
+	pyside6? ( dev-python/pyside[${PYTHON_USEDEP}] )
 	qt5? ( dev-python/pyqt5[${PYTHON_USEDEP}] )
 	qt6? ( dev-python/pyqt6[${PYTHON_USEDEP}] )
 	recommended? (
-		>=dev-python/astroquery-0.3.5[${PYTHON_USEDEP}]
+		>=dev-python/astroquery-0.4.7[${PYTHON_USEDEP}]
 		>=dev-python/exifread-2.3.2[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.8[${PYTHON_USEDEP}]
 		>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 		>=dev-python/python-magic-0.4.15[${PYTHON_USEDEP}]
-		>=dev-python/scipy-0.18.1[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.11.4[${PYTHON_USEDEP}]
 		>=media-libs/opencv-4.5.4.58[${PYTHON_USEDEP},python]
 		dev-python/photutils[${PYTHON_USEDEP}]
 	)
@@ -54,6 +52,8 @@ RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 		dev-python/tornado[${PYTHON_USEDEP}]
 	)
 "
+#	$(python_gen_cond_dep '>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]' python3_10)
+#	pyside2? ( $(python_gen_cond_dep 'dev-python/pyside2[${PYTHON_USEDEP}]' python3_{10,11}) )
 BDEPEND=">=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
