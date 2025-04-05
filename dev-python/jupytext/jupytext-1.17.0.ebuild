@@ -27,6 +27,7 @@ RDEPEND=">=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
 "
 BDEPEND="test? (
+		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/autopep8[${PYTHON_USEDEP}]
 		dev-python/black[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
@@ -35,10 +36,10 @@ BDEPEND="test? (
 		dev-python/myst-parser[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}]
 		virtual/pandoc
 	)
 "
-#		dev-python/sphinx-gallery[${PYTHON_USEDEP}]	0.7.0 only
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/myst-parser
