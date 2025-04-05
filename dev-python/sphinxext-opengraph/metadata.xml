@@ -9,4 +9,8 @@
 		<remote-id type="pypi">sphinxext-opengraph</remote-id>
 		<remote-id type="github">wpilibsuite/sphinxext-opengraph</remote-id>
 	</upstream>
+	<use>
+		<flag name="rtd">Extra rtd support</flag>
+		<flag name="social_cards">To generate social cards via <pkg>dev-python/matplotlib</pkg></flag>
+	</use>
 </pkgmetadata>
