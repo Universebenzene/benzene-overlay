@@ -5,15 +5,12 @@
 		<email>universebenzene@sina.com</email>
 		<name>Astro Benzene</name>
 	</maintainer>
-	<longdescription lang="en">
-		This Pytest plugin allows for the doctesting of C extension modules
-		for Python, specifically created through Cython.
-	</longdescription>
 	<upstream>
 		<remote-id type="pypi">azure-core</remote-id>
 		<remote-id type="github">Azure/azure-sdk-for-python</remote-id>
 	</upstream>
 	<use>
 		<flag name="aio">Extra aio support via <pkg>dev-python/aiohttp</pkg></flag>
+		<flag name="tracing">Extra tracing support via <pkg>dev-python/opentelemetry-api</pkg></flag>
 	</use>
 </pkgmetadata>

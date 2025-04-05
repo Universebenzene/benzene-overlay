@@ -127,7 +127,7 @@ dev-python/aiohttp-retry           | 2.9.1                                      
 dev-python/arviz                   | 0.17.1; 0.21.0                                             | Optional for corner.py.
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
 dev-python/aspectlib               | 2.0.0                                                      | Optional for pytest-benchmark
-dev-python/azure-core              | 1.26.3; 1.32.0                                             | Required by new msrest
+dev-python/azure-core              | 1.26.3; 1.33.0                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
 dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Test dependency for zarr
 dev-python/check-manifest          | 0.49; 0.50                                                 | Dropped by official portage. Build dependency for xarray-datatree
