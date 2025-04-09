@@ -21,6 +21,7 @@ RDEPEND="dev-python/asciitree[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	dev-python/fasteners[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.10.0[${PYTHON_USEDEP}]
+	<dev-python/numcodecs-0.16[${PYTHON_USEDEP}]
 	jupyter? (
 		>=dev-python/ipywidgets-8.0.0[${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]
