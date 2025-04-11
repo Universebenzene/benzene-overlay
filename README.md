@@ -138,7 +138,7 @@ dev-python/dm-tree                 | 0.1.9                                      
 dev-python/donfig                  | 0.8.1\_p1                                                  | Pulled in by zarr v3
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
 dev-python/eventlet                | 0.33.3; 0.35.2                                             | Dropped by official portage. Required by firefly{,-viz}
-dev-python/f90nml                  | 1.4.4                                                      | Optional for yt
+dev-python/f90nml                  | 1.4.5                                                      | Optional for yt
 dev-python/fastcache               | 1.1.0                                                      | Optional for yt
 dev-python/fast-zip-decryption     | 3.0.0                                                      | Optional for new ratarmount{,core}
 dev-python/firefly-viz             | 2.0.4                                                      | Optional for yt
