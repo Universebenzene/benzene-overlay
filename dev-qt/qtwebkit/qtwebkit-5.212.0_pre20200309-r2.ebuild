@@ -14,7 +14,7 @@ else
 	S="${WORKDIR}/${MY_P}"
 fi
 PYTHON_COMPAT=( python3_{10..12} )
-USE_RUBY="ruby27 ruby31 ruby32 ruby33"
+USE_RUBY="ruby27 ruby31 ruby32 ruby33 ruby34"
 inherit check-reqs cmake flag-o-matic python-any-r1 qmake-utils ruby-single toolchain-funcs
 
 DESCRIPTION="WebKit rendering library for the Qt5 framework (deprecated)"
