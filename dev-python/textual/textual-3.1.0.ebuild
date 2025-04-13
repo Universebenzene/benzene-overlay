@@ -26,7 +26,7 @@ BDEPEND="test? (
 	)
 "
 
-PATCHES=( "${FILESDIR}/${P}-fix_tests_with_pytest-asyncio_0.25.0.patch" )
+#PATCHES=( "${FILESDIR}/${P}-fix_tests_with_pytest-asyncio_0.25.0.patch" )
 
 distutils_enable_tests pytest
 
