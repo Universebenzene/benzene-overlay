@@ -3,8 +3,7 @@
 
 EAPI=8
 
-#DISTUTILS_USE_PEP517=setuptools
-DISTUTILS_USE_SETUPTOOLS=rdepend
+DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{10..13} )
 
@@ -19,7 +18,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="sphinx"
 RESTRICT="test"	# No usable test phases
 
-RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
+RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/wheel[${PYTHON_USEDEP}]
 	sphinx? (
 		dev-python/matplotlib[${PYTHON_USEDEP}]
