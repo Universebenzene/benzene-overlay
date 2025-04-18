@@ -29,7 +29,6 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/openpyxl-3.0[${PYTHON_USEDEP}]
 	>=dev-python/pandas-1.2[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
 	>=dev-python/shapely-2.0[${PYTHON_USEDEP}]
 	>=dev-python/xlrd-1.2[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
