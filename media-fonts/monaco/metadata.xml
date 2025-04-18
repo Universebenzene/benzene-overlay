@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		The original monaco.ttf improved: add some special characters
+		(which are from "DejaVu Sans Mono")
+	</longdescription>
+	<upstream>
+		<remote-id type="github">taodongl/monaco.ttf</remote-id>
+	</upstream>
+</pkgmetadata>
+
