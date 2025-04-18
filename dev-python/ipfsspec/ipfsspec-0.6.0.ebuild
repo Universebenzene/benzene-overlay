@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,7 +20,7 @@ RESTRICT="test"	# IPFS Gateway could not be found!
 RDEPEND="dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/aiohttp-retry[${PYTHON_USEDEP}]
 	>=dev-python/dag-cbor-0.2.2[${PYTHON_USEDEP}]
-	>=dev-python/fsspec-0.9.0[${PYTHON_USEDEP}]
+	>=dev-python/fsspec-2024.12.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-validation-1.1.0[${PYTHON_USEDEP}]
 	dev-python/multiformats[${PYTHON_USEDEP}]
 	>=dev-python/pure-protobuf-2.1.0[${PYTHON_USEDEP}]
