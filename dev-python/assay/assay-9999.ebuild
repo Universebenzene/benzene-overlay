@@ -1,9 +1,10 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-DISTUTILS_USE_SETUPTOOLS=no
+#DISTUTILS_USE_SETUPTOOLS=no
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{10..13} )
 
 inherit distutils-r1
@@ -26,8 +27,14 @@ RESTRICT="bindist mirror test"	# Test phase runs with fails
 
 BDEPEND="test? ( dev-python/pyflakes[${PYTHON_USEDEP}] )"
 
-python_prepare() {
-	sed -i -e "/python2/d" -e "s/python3/${EPYTHON}/" test.sh || die
+#python_prepare() {
+#   DISTUTILS_IN_SOURCE_BUILD is not supported in PEP517 mode
+#	sed -i -e "/python2/d" -e "s/python3/${EPYTHON}/" test.sh || die
+#}
+
+python_prepare_all() {
+	use test && { sed -i -e "/python2/d" test.sh || die ; }
+	distutils-r1_python_prepare_all
 }
 
 python_test() {
