@@ -1,4 +1,4 @@
-# Copyright 2022-2024 Gentoo Authors
+# Copyright 2022-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -48,11 +48,11 @@ RDEPEND="${DEPEND}
 	pyglet? ( >=dev-python/pyglet-1.2[${PYTHON_USEDEP}] )
 	pyqt5? ( dev-python/pyqt5[${PYTHON_USEDEP},gui,testlib,widgets] )
 	pyqt6? ( dev-python/pyqt6[${PYTHON_USEDEP},gui,testlib,widgets] )
-	pyside2? ( dev-python/pyside2[${PYTHON_USEDEP},gui,testlib,widgets] )
-	pyside6? ( dev-python/pyside6[${PYTHON_USEDEP},gui,testlib,widgets] )
+	pyside6? ( dev-python/pyside:6[${PYTHON_USEDEP},gui,testlib,widgets] )
 	sdl2? ( dev-python/pysdl2[${PYTHON_USEDEP}] )
 	wx? ( dev-python/wxpython[${PYTHON_USEDEP}] )
 "
+#	pyside2? ( dev-python/pyside2[${PYTHON_USEDEP},gui,testlib,widgets] )
 BDEPEND=">=dev-python/cython-0.29.2[${PYTHON_USEDEP}]
 	doc? (
 		media-libs/fontconfig
