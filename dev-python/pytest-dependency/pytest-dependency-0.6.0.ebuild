@@ -3,7 +3,8 @@
 
 EAPI=8
 
-DISTUTILS_USE_SETUPTOOLS=rdepend
+DISTUTILS_USE_PEP517=setuptools
+#DISTUTILS_USE_SETUPTOOLS=rdepend
 PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{{10..13},13t} )
 
@@ -17,7 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 
-RDEPEND=">=dev-python/pytest-3.7.0[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/pytest-3.7.0[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]
+"
 
 distutils_enable_tests pytest
 
