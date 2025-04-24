@@ -455,7 +455,7 @@ go-module-vendor_src_unpack() {
 	fi
 	GOFLAGS="${GOFLAGS} -p=$(makeopts_jobs)"
 	if [[ "${#EGO_SUM[@]}" -gt 0 ]]; then
-		eqawarn "This ebuild uses EGO_SUM which is deprecated"
+		eqawarn "QA Notice: This ebuild uses EGO_SUM which is deprecated"
 		eqawarn "Please migrate to a dependency tarball"
 		eqawarn "This will become a fatal error in the future"
 		_go-module-vendor_src_unpack_gosum
