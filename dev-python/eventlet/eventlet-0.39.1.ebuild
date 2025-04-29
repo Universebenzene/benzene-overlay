@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -32,12 +32,12 @@ BDEPEND=">=dev-python/hatch-vcs-0.3[${PYTHON_USEDEP}]
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}/eventlet-0.25.1-tests.patch"
-	"${FILESDIR}/eventlet-0.30.0-tests-socket.patch"
-	"${FILESDIR}/eventlet-0.30.2-test-timeout.patch"
-	"${FILESDIR}/${PN}-0.33.2-python310.patch"
-)
+#PATCHES=(
+#	"${FILESDIR}/eventlet-0.25.1-tests.patch"
+#	"${FILESDIR}/eventlet-0.30.0-tests-socket.patch"
+#	"${FILESDIR}/eventlet-0.30.2-test-timeout.patch"
+#	"${FILESDIR}/${PN}-0.33.2-python310.patch"
+#)
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc/source dev-python/sphinxcontrib-apidoc \
@@ -48,8 +48,8 @@ distutils_enable_sphinx doc/source dev-python/sphinxcontrib-apidoc \
 	dev-python/thrift
 
 src_prepare() {
-	# increase timeout - #791748
-	sed -e '/eventlet.sleep/s/0.1/5.0/' -i tests/isolated/patcher_fork_after_monkey_patch.py || die
+#	# increase timeout - #791748
+#	sed -e '/eventlet.sleep/s/0.1/5.0/' -i tests/isolated/patcher_fork_after_monkey_patch.py || die
 	use doc && { mkdir -p doc/source/_static || die ; }
 
 	distutils-r1_src_prepare
