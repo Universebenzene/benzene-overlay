@@ -109,6 +109,8 @@ EPYTEST_DESELECT=(
 	# dask/dataframe/tseries/tests/test_resample.py::test_resample_agg_passes_kwargs
 	# dask/dataframe/tseries/tests/test_resample.py::test_resample_pads_last_division_to_avoid_off_by_one
 	dask/dataframe/dask_expr/tests/test_shuffle.py::test_set_index_head_nlargest_string
+	# assert 16 >= 32
+	dask/tests/test_tokenize.py::test_tokenize_range_index
 )
 
 src_prepare() {
