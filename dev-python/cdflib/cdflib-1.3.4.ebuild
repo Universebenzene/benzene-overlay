@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
 CDFLIB_TEST_URI="https://lasp.colorado.edu/maven/sdc/public/data/sdc/web/cdflib_testing"
 
