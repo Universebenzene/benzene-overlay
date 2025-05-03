@@ -17,7 +17,7 @@
 		<remote-id type="pypi">pyregion</remote-id>
 		<remote-id type="github">astropy/pyregion</remote-id>
 	</upstream>
-	<use>
+	<!--<use>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
-	</use>
+	</use>-->
 </pkgmetadata>

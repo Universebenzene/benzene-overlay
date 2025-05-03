@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,7 +7,7 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
 PYPI_PN="${PN/-bin}"
 MY_PN="${PYPI_PN/dm-}"
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{11..12} )
 
 inherit distutils-r1 pypi
 
@@ -16,7 +16,6 @@ HOMEPAGE="https://tree.readthedocs.io"
 SRC_URI="https://github.com/google-deepmind/tree/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz
 	$(python_gen_useflags python3_12)? ( $(pypi_wheel_url ${PYPI_PN} ${PV} "cp312" "cp312-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 	$(python_gen_useflags python3_11)? ( $(pypi_wheel_url ${PYPI_PN} ${PV} "cp311" "cp311-manylinux_2_17_x86_64.manylinux2014_x86_64") )
-	$(python_gen_useflags python3_10)? ( $(pypi_wheel_url ${PYPI_PN} ${PV} "cp310" "cp310-manylinux_2_17_x86_64.manylinux2014_x86_64") )
 
 "
 

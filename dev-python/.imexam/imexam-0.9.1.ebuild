@@ -15,7 +15,7 @@ HOMEPAGE="http://pvextractor.readthedocs.io"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
 IUSE="examples photometry"
 #IUSE="doc intersphinx examples"
 #RESTRICT="test"	# 1 test failed
