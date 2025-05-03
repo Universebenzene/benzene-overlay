@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -37,8 +37,11 @@ DOCS=( {CHANGELOG,CLIENT_LIBRARY_DEVELOPER,README}.md )
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
+	# E   ModuleNotFoundError: No module named 'azure.storage'
 	# E   ModuleNotFoundError: No module named 'opentelemetry.instrumentation'
+	tests/test_tracing_live.py
 	tests/test_tracing_policy.py
+	tests/async_tests/test_tracing_live_async.py
 )
 
 python_install_all() {
