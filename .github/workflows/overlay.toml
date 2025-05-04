@@ -2,11 +2,10 @@
 oldver = "old_ver.json"
 newver = "new_ver.json"
 
-#["app-editors/formiko"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "ondratu/formiko"
+["app-editors/formiko"]
+source = "pypi"
+use_max_tag = true
+pypi = "formiko"
 
 #["app-i18n/fcitx-configtool"]
 #source = "github"
@@ -112,34 +111,30 @@ newver = "new_ver.json"
 
 #["dev-python/imexam"]
 
-#["dev-python/abg-python"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "agurvich/abg_python"
+["dev-python/abg-python"]
+source = "pypi"
+use_max_tag = true
+pypi = "abg-python"
 
 ["dev-python/ablog"]
 source = "pypi"
 use_max_tag = true
 pypi = "ablog"
 
-#["dev-python/adal"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "AzureAD/azure-activedirectory-library-for-python"
+["dev-python/adal"]
+source = "pypi"
+use_max_tag = true
+pypi = "adal"
 
-#["dev-python/affine"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "rasterio/affine"
+["dev-python/affine"]
+source = "pypi"
+use_max_tag = true
+pypi = "affine"
 
-#["dev-python/aggdraw"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "pytroll/aggdraw"
+["dev-python/aggdraw"]
+source = "pypi"
+use_max_tag = true
+pypi = "aggdraw"
 
 #["dev-python/aiobotocore"]
 #source = "github"
@@ -147,10 +142,10 @@ pypi = "ablog"
 #prefix = "v"
 #github = "aio-libs/aiobotocore"
 
-#["dev-python/aioftp"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "aioftp"
+["dev-python/aioftp"]
+source = "pypi"
+use_max_tag = true
+pypi = "aioftp"
 
 #["dev-python/aiohttp-retry"]
 #source = "github"

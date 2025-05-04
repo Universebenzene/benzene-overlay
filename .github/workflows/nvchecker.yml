@@ -85,6 +85,6 @@ jobs:
         name: ${{ matrix.name }}
         newver: ${{ matrix.newver }}
         oldver: ${{ matrix.oldver }}
-        GITHUB_TOKEN: ${{ secrets.GENTOO_ZH_NVCHECKER_PAT }} # https://github.com/microcai/gentoo-zh/pull/3130
+        GITHUB_TOKEN: ${{ secrets.BENZENE_OVERLAY_NVCHECKER_PAT }} # https://github.com/microcai/gentoo-zh/pull/3130
       run: |
         go run . --file benzene-overlay/.github/workflows/overlay.toml --name "$name" --newver "$newver" --oldver "$oldver"
