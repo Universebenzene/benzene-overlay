@@ -1,0 +1,1727 @@
+[__config__]
+oldver = "old_ver.json"
+newver = "new_ver.json"
+
+#["app-editors/formiko"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ondratu/formiko"
+
+#["app-i18n/fcitx-configtool"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fcitx/fcitx-configtool"
+
+#["app-i18n/fcitx-qt5"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fcitx/fcitx-qt5"
+
+#["app-i18n/fcitx-table-extra"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fcitx/fcitx-table-extra"
+
+#["app-i18n/fcitx-table-other"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fcitx/fcitx-table-other"
+
+#["app-i18n/fcitx"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fcitx/fcitx"
+
+#["app-i18n/mozc"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "google/mozc"
+
+#["app-office/wps-office"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "gromko/wps-office-mui"
+
+#["app-pda/i4tools"]
+
+#["app-text/dehelper"]
+
+#["app-text/eshelper"]
+
+#["app-text/eudic"]
+
+#["app-text/frhelper"]
+
+#["app-text/goldendict"]
+
+#["app-text/powerword"]
+
+#["app-text/ydcv-rs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "farseerfc/ydcv-rs"
+
+#["app-text/ydcv"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "felixonmars/ydcv"
+
+#["app-text/ydgo"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "boypt/ydgo"
+
+#["app-text/youdao-dict"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Universebenzene/benzene-overlay"
+
+#["app-vim/indentLine"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Yggdroot/indentLine.git"
+
+#["app-vim/vim-indent-guides"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "preservim/vim-indent-guides.git"
+
+#["dev-cpp/gtkspellmm"]
+
+#["dev-lang/gdl"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "gnudatalanguage/gdl"
+
+#["dev-libs/libappindicator"]
+
+#["dev-python/imexam"]
+
+#["dev-python/abg-python"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "agurvich/abg_python"
+
+["dev-python/ablog"]
+source = "pypi"
+use_max_tag = true
+pypi = "ablog"
+
+#["dev-python/adal"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "AzureAD/azure-activedirectory-library-for-python"
+
+#["dev-python/affine"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "rasterio/affine"
+
+#["dev-python/aggdraw"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "pytroll/aggdraw"
+
+#["dev-python/aiobotocore"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "aio-libs/aiobotocore"
+
+#["dev-python/aioftp"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "aioftp"
+
+#["dev-python/aiohttp-retry"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "inyutin/aiohttp_retry"
+
+#["dev-python/api4jenkins"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "joelee2012/api4jenkins"
+
+#["dev-python/aplpy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "aplpy"
+
+#["dev-python/arviz"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "arviz-devs/arviz"
+
+#["dev-python/asciitree"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mbr/asciitree"
+
+#["dev-python/asdf-astropy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "asdf-astropy"
+
+#["dev-python/asdf-coordinates-schemas"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "asdf-format/asdf-coordinates-schemas"
+
+#["dev-python/asdf-standard"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "asdf-standard"
+
+#["dev-python/asdf-transform-schemas"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "asdf-transform-schemas"
+
+#["dev-python/asdf-unit-schemas"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "asdf-unit-schemas"
+
+#["dev-python/asdf-wcs-schemas"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "asdf-format/asdf-wcs-schemas"
+
+#["dev-python/asdf"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "asdf"
+
+#["dev-python/aspectlib"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "aspectlib"
+
+#["dev-python/assay"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "brandon-rhodes/assay"
+
+#["dev-python/astlib"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "astlib"
+
+#["dev-python/astroalign"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "astroalign"
+
+#["dev-python/astrodendro"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "dendrograms/${PN}.git"
+
+#["dev-python/astroml"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "astroml"
+
+#["dev-python/astroplan"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "astroplan"
+
+#["dev-python/astropy-healpix"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "astropy-healpix"
+
+#["dev-python/astropy-helpers"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "astropy-helpers"
+
+#["dev-python/astropy-iers-data"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/astropy-iers-data"
+
+#["dev-python/astropy-sphinx-theme"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/astropy-sphinx-theme"
+
+#["dev-python/astropy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "astropy"
+
+#["dev-python/astroquery"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/astroquery"
+
+#["dev-python/astroscrappy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "astroscrappy"
+
+#["dev-python/asynctest"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "asynctest"
+
+#["dev-python/atpy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "atpy"
+
+#["dev-python/azure-core"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Azure/azure-sdk-for-python"
+
+#["dev-python/base58"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "keis/base58"
+
+#["dev-python/bases"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "bases"
+
+#["dev-python/bidict"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "jab/bidict"
+
+#["dev-python/bsddb3"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "bsddb3"
+
+#["dev-python/casa-formats-io"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "casa-formats-io"
+
+#["dev-python/ccdproc"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "ccdproc"
+
+#["dev-python/cdflib"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "MAVENSDC/cdflib"
+
+#["dev-python/cdshealpix"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "cdshealpix"
+
+#["dev-python/check-manifest"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mgedmin/check-manifest"
+
+#["dev-python/cligj"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mapbox/cligj"
+
+#["dev-python/cmdstanpy"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "stan-dev/cmdstanpy"
+
+#["dev-python/cmyt"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "yt-project/cmyt"
+
+#["dev-python/colorspacious"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "colorspacious"
+
+#["dev-python/corner"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "corner"
+
+#["dev-python/dag-cbor"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "dag-cbor"
+
+#["dev-python/dask-expr"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "dask/dask-expr"
+
+#["dev-python/dask-sphinx-theme"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "dask/dask-sphinx-theme"
+
+#["dev-python/dask"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "dask/dask"
+
+#["dev-python/distributed"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "dask/distributed"
+
+#["dev-python/dm-tree-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "google-deepmind/tree"
+
+#["dev-python/dm-tree"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "dm-tree"
+
+#["dev-python/docstring-parser"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "rr-/docstring_parser"
+
+#["dev-python/donfig"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "donfig"
+
+#["dev-python/drms"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "drms"
+
+#["dev-python/dropbox"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "dropbox/dropbox-sdk-python"
+
+#["dev-python/dropboxdrivefs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fsspec/dropboxdrivefs"
+
+#["dev-python/dunamai"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "dunamai"
+
+#["dev-python/dust-extinction"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "dust-extinction"
+
+#["dev-python/echo"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "echo"
+
+#["dev-python/einops"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "einops"
+
+#["dev-python/eventlet"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "eventlet/eventlet"
+
+#["dev-python/ewah-bool-utils"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "yt-project/ewah_bool_utils"
+
+#["dev-python/exifread"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ianare/exif-py"
+
+#["dev-python/extension-helpers"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "extension-helpers"
+
+#["dev-python/f90nml"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "f90nml"
+
+#["dev-python/fast-histogram"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astrofrog/fast-histogram"
+
+#["dev-python/fast-zip-decryption"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mxmlnkn/fast-zip-decryption"
+
+#["dev-python/fastcache"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "pbrady/fastcache"
+
+#["dev-python/feedgen"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "feedgen"
+
+#["dev-python/firefly-vis"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ageller/Firefly"
+
+#["dev-python/firefly"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ageller/Firefly"
+
+#["dev-python/flask-socketio"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "flask-socketio"
+
+#["dev-python/fluidity"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "nsi-iff/fluidity"
+
+#["dev-python/fusepy"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fusepy/fusepy"
+
+#["dev-python/ginga"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "ginga"
+
+#["dev-python/glfw"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "FlorianRhiem/pyGLFW"
+
+#["dev-python/glue-core"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "glue-core"
+
+#["dev-python/glue-qt"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "glue-qt"
+
+#["dev-python/glue-vispy-viewers"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "glue-vispy-viewers"
+
+#["dev-python/glueviz"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "glueviz"
+
+#["dev-python/glymur"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "glymur"
+
+#["dev-python/gwcs"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "gwcs"
+
+#["dev-python/h5netcdf"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "h5netcdf"
+
+#["dev-python/h5pyd"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "HDFGroup/h5pyd"
+
+#["dev-python/healpy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "healpy"
+
+#["dev-python/heapdict"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "heapdict"
+
+#["dev-python/hsluv"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "hsluv"
+
+#["dev-python/hvpy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "hvpy"
+
+#["dev-python/icecream"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "gruns/icecream"
+
+#["dev-python/indexed-bzip2"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mxmlnkn/indexed_bzip2"
+
+#["dev-python/indexed-zstd"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "martinellimarco/indexed_zstd"
+
+#["dev-python/invoke"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "invoke"
+
+#["dev-python/ipfsspec"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fsspec/ipfsspec"
+
+#["dev-python/isal"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "pycompression/python-isal"
+
+#["dev-python/jplephem"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "brandon-rhodes/python-jplephem"
+
+#["dev-python/jsonschema"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "python-jsonschema/jsonschema"
+
+#["dev-python/jupyter-cache"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "executablebooks/jupyter-cache"
+
+#["dev-python/jupyter-sphinx"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "jupyter/jupyter-sphinx"
+
+#["dev-python/jupytext"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mwouts/jupytext"
+
+#["dev-python/lexicon"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "bitprophet/lexicon"
+
+#["dev-python/libconf"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ChrisAichinger/python-libconf"
+
+#["dev-python/markdown-callouts"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "markdown-callouts"
+
+#["dev-python/memory-profiler"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "pythonprofilers/memory_profiler"
+
+#["dev-python/memray"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "bloomberg/memray"
+
+#["dev-python/miniballcpp"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "weddige/miniball"
+
+#["dev-python/mistune"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "lepture/mistune"
+
+#["dev-python/mkdocs-coverage"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "mkdocs-coverage"
+
+#["dev-python/mkdocs-git-committers-plugin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ojacques/mkdocs-git-committers-plugin-2"
+
+#["dev-python/mkdocs-jupyter"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "mkdocs-jupyter"
+
+#["dev-python/mkdocs-literate-nav"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "mkdocs-literate-nav"
+
+#["dev-python/mkdocs-section-index"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "oprypin/mkdocs-section-index"
+
+#["dev-python/mkdocstrings-crystal"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "mkdocstrings-crystal"
+
+#["dev-python/mkdocstrings-python-legacy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "mkdocstrings-python-legacy"
+
+#["dev-python/mmh3"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "hajimes/mmh3"
+
+#["dev-python/mock-ssh-server"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "carletes/mock-ssh-server"
+
+#["dev-python/mocpy"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "cds-astro/cds-moc-rust;f252c2ea3f66cef60e501c2beca2977c439236f8;cds-moc-rust-%commit%'"
+
+#["dev-python/montage-wrapper"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "montage-wrapper"
+
+#["dev-python/mpl-animators"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "sunpy/data"
+
+#["dev-python/mpl-scatter-density"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astrofrog/mpl-scatter-density"
+
+#["dev-python/msrest"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Azure/msrest-for-python"
+
+#["dev-python/msrestazure"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Azure/msrestazure-for-python"
+
+#["dev-python/multi_key_dict"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "formiaczek/multi_key_dict"
+
+#["dev-python/multiformats-config"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "hashberg-io/multiformats-config"
+
+#["dev-python/multiformats"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "multiformats"
+
+#["dev-python/myst-nb"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "executablebooks/MyST-NB"
+
+#["dev-python/myst-parser"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "executablebooks/MyST-Parser"
+
+#["dev-python/naima"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "zblz/naima"
+
+#["dev-python/nbconvert"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "nbconvert"
+
+#["dev-python/ndcube"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "sunpy/data"
+
+#["dev-python/nose"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "nose-devs/nose"
+
+#["dev-python/numcodecs"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "numcodecs"
+
+#["dev-python/oldest-supported-numpy"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "scipy/oldest-supported-numpy"
+
+#["dev-python/oscrypto"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "wbond/oscrypto"
+
+#["dev-python/parfive"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "parfive"
+
+#["dev-python/photutils"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/photutils-datasets"
+
+#["dev-python/poetry-dynamic-versioning"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mtkennerly/poetry-dynamic-versioning"
+
+#["dev-python/pure-protobuf"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "eigenein/protobuf"
+
+#["dev-python/pvextractor"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pvextractor"
+
+#["dev-python/pyavm"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pyavm"
+
+#["dev-python/pydantic-settings"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pydantic-settings"
+
+#["dev-python/pydata-sphinx-theme"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "pydata/pydata-sphinx-theme"
+
+#["dev-python/pydl"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pydl"
+
+#["dev-python/pyerfa"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pyerfa"
+
+#["dev-python/pyfatfs"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pyfatfs"
+
+#["dev-python/pygaljs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Kozea/pygal.js"
+
+#["dev-python/pykdtree"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "storpipfugl/pykdtree"
+
+#["dev-python/pymoc"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pymoc"
+
+#["dev-python/pyqt5"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pyqt5"
+
+#["dev-python/pyregion"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pyregion"
+
+#["dev-python/pyskein"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pyskein"
+
+#["dev-python/pysquashfsimage"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "matteomattei/PySquashfsImage"
+
+#["dev-python/pytest-arraydiff"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/pytest-arraydiff"
+
+#["dev-python/pytest-astropy-header"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/pytest-astropy-header"
+
+#["dev-python/pytest-astropy"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/pytest-astropy"
+
+#["dev-python/pytest-benchmark"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ionelmc/pytest-benchmark"
+
+#["dev-python/pytest-cython"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "lgpage/pytest-cython"
+
+#["dev-python/pytest-dependency"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pytest-dependency"
+
+#["dev-python/pytest-doctestplus"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/pytest-doctestplus"
+
+#["dev-python/pytest-examples"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "pydantic/pytest-examples"
+
+#["dev-python/pytest-filter-subpackage"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/pytest-filter-subpackage"
+
+#["dev-python/pytest-openfiles"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/pytest-openfiles"
+
+#["dev-python/pytest-relaxed"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "bitprophet/pytest-relaxed"
+
+#["dev-python/pytest-remotedata"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/pytest-remotedata"
+
+#["dev-python/pytest-socket"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "miketheman/pytest-socket"
+
+#["dev-python/pytest-textual-snapshot"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "westurner/sphinxcontrib-srclinks"
+
+#["dev-python/python-jenkins"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "python-jenkins"
+
+#["dev-python/python-pkcs11"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "danni/python-pkcs11"
+
+#["dev-python/python-socketio"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "miguelgrinberg/python-socketio"
+
+#["dev-python/python-xz"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "rogdham/python-xz"
+
+#["dev-python/pytkdocs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mkdocstrings/autorefs"
+
+#["dev-python/pyvo"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pyvo"
+
+#["dev-python/radio-beam"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "radio-beam"
+
+#["dev-python/rapidgzip"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "rapidgzip"
+
+#["dev-python/rasterio"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "rasterio/rasterio"
+
+#["dev-python/ratarmount"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mxmlnkn/ratarmount"
+
+#["dev-python/ratarmountcore"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mxmlnkn/ratarmount"
+
+#["dev-python/regions"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "regions"
+
+#["dev-python/reproject"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "reproject"
+
+#["dev-python/runnotebook"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ngoldbaum/RunNotebook"
+
+#["dev-python/s3fs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fsspec/s3fs"
+
+#["dev-python/sep-pjw"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sep-pjw"
+
+#["dev-python/sep"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "kbarbary/sep"
+
+#["dev-python/sgp4"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "brandon-rhodes/python-sgp4"
+
+#["dev-python/sherpa"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "sherpa/sherpa"
+
+#["dev-python/should-dsl"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "nsi-iff/${PN}"
+
+#["dev-python/siosocks"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "pohmelie/siosocks"
+
+#["dev-python/skyfield"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "skyfielders/python-skyfield"
+
+#["dev-python/smbprotocol"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "jborean93/smbprotocol"
+
+#["dev-python/snuggs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mapbox/snuggs"
+
+#["dev-python/sortedcollections"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "grantjenks/python-sortedcollections"
+
+#["dev-python/specreduce"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/specreduce-data"
+
+#["dev-python/spectral-cube"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "spectral-cube"
+
+#["dev-python/specutils"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "specutils"
+
+#["dev-python/sphinx-asdf"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "spacetelescope/sphinx-asdf"
+
+#["dev-python/sphinx-astropy"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "astropy/sphinx-astropy"
+
+#["dev-python/sphinx-autobuild"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "executablebooks/sphinx-autobuild"
+
+#["dev-python/sphinx-automodapi"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-automodapi"
+
+#["dev-python/sphinx-autosummary-accessors"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-autosummary-accessors"
+
+#["dev-python/sphinx-book-theme"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "executablebooks/sphinx-book-theme"
+
+#["dev-python/sphinx-changelog"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "OpenAstronomy/sphinx-changelog"
+
+#["dev-python/sphinx-click"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-click"
+
+#["dev-python/sphinx-codeautolink"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-codeautolink"
+
+#["dev-python/sphinx-collections"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "useblocks/sphinx-collections"
+
+#["dev-python/sphinx-contributors"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-contributors"
+
+#["dev-python/sphinx-design"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "executablebooks/sphinx-design"
+
+#["dev-python/sphinx-documatt-theme"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-documatt-theme"
+
+#["dev-python/sphinx-examples"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-examples"
+
+#["dev-python/sphinx-hoverxref"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "readthedocs/sphinx-hoverxref"
+
+#["dev-python/sphinx-mdinclude"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-mdinclude"
+
+#["dev-python/sphinx-py3doc-enhanced-theme"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "ionelmc/sphinx-py3doc-enhanced-theme"
+
+#["dev-python/sphinx-readable-theme"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-readable-theme"
+
+#["dev-python/sphinx-reredirects"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "documatt/sphinx-reredirects"
+
+#["dev-python/sphinx-sitemap"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "jdillard/sphinx-sitemap"
+
+#["dev-python/sphinx-thebe"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-thebe"
+
+#["dev-python/sphinx-togglebutton"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinx-togglebutton"
+
+#["dev-python/sphinx"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "sphinx-doc/sphinx"
+
+#["dev-python/sphinxcontrib-globalsubs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "missinglinkelectronics/sphinxcontrib-globalsubs"
+
+#["dev-python/sphinxcontrib-srclinks"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "westurner/sphinxcontrib-srclinks"
+
+#["dev-python/sphinxcontrib-youtube"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "sphinx-contrib/youtube"
+
+#["dev-python/sphinxext-opengraph"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sphinxext-opengraph"
+
+#["dev-python/sshfs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fsspec/sshfs"
+
+#["dev-python/stanio"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "WardBrian/stanio"
+
+#["dev-python/starlink-pyast"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "starlink-pyast"
+
+#["dev-python/stone"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "dropbox/stone"
+
+#["dev-python/sunpy-sphinx-theme"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "sunpy/sunpy-sphinx-theme"
+
+#["dev-python/sunpy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sunpy"
+
+#["dev-python/synphot"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "synphot"
+
+#["dev-python/syrupy"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "tophat/syrupy"
+
+#["dev-python/textual"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "textual"
+
+#["dev-python/toml"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "uiri/toml"
+
+#["dev-python/tree-sitter-languages"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "grantjenks/py-tree-sitter-languages"
+
+#["dev-python/typing-validation"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "typing-validation"
+
+#["dev-python/universal-pathlib"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "fsspec/universal_pathlib"
+
+#["dev-python/unyt"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "unyt"
+
+#["dev-python/vispy"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "vispy/demo-data"
+
+#["dev-python/webdav4"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "webdav4"
+
+#["dev-python/wsgidav"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mar10/wsgidav"
+
+#["dev-python/xarray-datatree"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "xarray-datatree"
+
+#["dev-python/xarray-einstats"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "arviz-devs/xarray-einstats"
+
+#["dev-python/yt"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "yt"
+
+#["dev-python/zarr"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "zarr"
+
+#["dev-python/zict"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "zict"
+
+#["dev-qt/qtwebkit"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "qtwebkit/qtwebkit.git"
+
+#["dev-util/micromamba-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mamba-org/mamba"
+
+#["dev-util/micromamba"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mamba-org/mamba"
+
+#["gnome-base/gconf"]
+
+#["gui-apps/regreet"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "rharish101/ReGreet"
+
+#["media-fonts/monaco"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "taodongl/monaco.ttf"
+
+#["media-fonts/wps-office-fonts"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Universebenzene/wps-office-fonts"
+
+#["media-gfx/fontweak"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "guoyunhe/fontweak"
+
+#["media-gfx/gpaint"]
+
+#["media-libs/freetype-wps"]
+
+#["media-libs/gmtk"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "kdekorte/gmtk"
+
+#["media-sound/ting-de-bin"]
+
+#["media-sound/ting-en-bin"]
+
+#["media-sound/ting-es-bin"]
+
+#["media-sound/ting-fr-bin"]
+
+#["media-video/bcwc_pcie"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "patjak/bcwc_pcie"
+
+#["media-video/facetimehd-firmware"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "patjak/facetimehd-firmware"
+
+#["media-video/gnome-mplayer"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "kdekorte/gnome-mplayer"
+
+#["net-fs/ossfs"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "aliyun/ossfs"
+
+#["net-im/electron-qq-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Clansty/Icalingua"
+
+#["net-im/electron-wechat-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "eNkru/freechat"
+
+#["net-im/electronic-wechat-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Riceneeder/electronic-wechat"
+
+#["net-im/icalingua++-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Icalingua-plus-plus/Icalingua-plus-plus"
+
+#["net-im/wemeet"]
+
+#["net-libs/libaxon-bin"]
+
+#["net-misc/baidunetdisk"]
+
+#["net-misc/baidupcs-go-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "qjfoidnh/BaiduPCS-Go"
+
+#["net-misc/baidupcs-go"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "qjfoidnh/BaiduPCS-Go"
+
+#["net-misc/landrop"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "${MY_PN}/${MY_PN}.git"
+
+#["net-misc/oss-browser-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "aliyun/oss-browser"
+
+#["net-misc/ossutil"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "aliyun/ossutil"
+
+#["net-misc/sunloginclient"]
+
+#["net-misc/todesk"]
+
+#["net-misc/xunlei-download"]
+
+#["net-nds/openldap-compat"]
+
+#["net-news/quiterss"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "QuiteRSS/quiterss.git"
+
+#["net-proxy/gg"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "mzz2017/gg"
+
+#["net-proxy/v2raya-bin"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "v2rayA/v2rayA"
+
+#["sci-astronomy/aladin-bin"]
+
+#["sci-astronomy/astrometry"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "dstndstn/astrometry.net"
+
+#["sci-astronomy/erfa"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "liberfa/erfa"
+
+#["sci-astronomy/healpix"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "healpy/healpixmirror"
+
+#["sci-astronomy/topcat"]
+
+#["sci-astronomy/wcslib"]
+
+#["sci-libs/libsharp"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "Libsharp/libsharp"
+
+#["sys-block/diskus"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "sharkdp/diskus"
+
+#["sys-libs/elogind-libsystemd"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "elogind/elogind"
+
+#["sys-libs/libsystemd"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "systemd/systemd.git"
+
+#["www-plugins/adobe-flash"]
+
+#["x11-libs/lain"]
+#source = "github"
+#use_max_tag = true
+#prefix = "v"
+#github = "lcpz/lain"
+
+#["x11-plugins/purple-oicq"]
+
