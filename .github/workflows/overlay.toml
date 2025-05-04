@@ -1447,11 +1447,10 @@ pypi = "aioftp"
 #use_max_tag = true
 #pypi = "unyt"
 
-#["dev-python/vispy"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "vispy/demo-data"
+["dev-python/vispy"]
+source = "pypi"
+use_max_tag = true
+pypi = "vispy"
 
 #["dev-python/webdav4"]
 #source = "pypi"
