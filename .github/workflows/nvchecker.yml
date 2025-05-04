@@ -55,7 +55,9 @@ jobs:
         echo "::group::nvchecker"
         cd .github/workflows/
         echo -e "[keys]\ngithub = \"${{ secrets.GITHUB_TOKEN }}\"" > keyfile.toml
-        nvchecker --file overlay.toml --keyfile keyfile.toml
+        echo "start nvchecker"
+        nvchecker --logging debug --file overlay.toml --keyfile keyfile.toml
+        echo "end nvchecker"
         echo "::endgroup::"
 
         echo "::group::nvcmp"
