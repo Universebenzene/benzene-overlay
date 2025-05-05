@@ -219,96 +219,90 @@ pypi = "aspectlib"
 #prefix = "v"
 #github = "brandon-rhodes/assay"
 
-#["dev-python/astlib"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "astlib"
+["dev-python/astlib"]
+source = "pypi"
+use_max_tag = true
+pypi = "astlib"
 
-#["dev-python/astroalign"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "astroalign"
+["dev-python/astroalign"]
+source = "pypi"
+use_max_tag = true
+pypi = "astroalign"
 
-#["dev-python/astrodendro"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "dendrograms/${PN}.git"
+["dev-python/astrodendro"]
+source = "pypi"
+use_max_tag = true
+pypi = "astrodendro"
 
-#["dev-python/astroml"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "astroml"
+["dev-python/astroml"]
+source = "pypi"
+use_max_tag = true
+pypi = "astroml"
 
-#["dev-python/astroplan"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "astroplan"
+["dev-python/astroplan"]
+source = "pypi"
+use_max_tag = true
+pypi = "astroplan"
 
-#["dev-python/astropy-healpix"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "astropy-healpix"
+["dev-python/astropy-healpix"]
+source = "pypi"
+use_max_tag = true
+pypi = "astropy-healpix"
 
-#["dev-python/astropy-helpers"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "astropy-helpers"
+["dev-python/astropy-helpers"]
+source = "pypi"
+use_max_tag = true
+pypi = "astropy-helpers"
 
-#["dev-python/astropy-iers-data"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/astropy-iers-data"
+["dev-python/astropy-iers-data"]
+source = "pypi"
+use_max_tag = true
+pypi = "astropy-iers-data"
 
-#["dev-python/astropy-sphinx-theme"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/astropy-sphinx-theme"
+["dev-python/astropy-sphinx-theme"]
+source = "pypi"
+use_max_tag = true
+pypi = "astropy-sphinx-theme"
 
-#["dev-python/astropy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "astropy"
+["dev-python/astropy"]
+source = "pypi"
+use_max_tag = true
+pypi = "astropy"
 
-#["dev-python/astroquery"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/astroquery"
+["dev-python/astroquery"]
+source = "pypi"
+use_max_tag = true
+pypi = "astroquery"
 
-#["dev-python/astroscrappy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "astroscrappy"
+["dev-python/astroscrappy"]
+source = "pypi"
+use_max_tag = true
+pypi = "astroscrappy"
 
-#["dev-python/asynctest"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "asynctest"
+["dev-python/asynctest"]
+source = "pypi"
+use_max_tag = true
+pypi = "asynctest"
 
-#["dev-python/atpy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "atpy"
+["dev-python/atpy"]
+source = "pypi"
+use_max_tag = true
+pypi = "atpy"
 
-#["dev-python/azure-core"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "Azure/azure-sdk-for-python"
+["dev-python/azure-core"]
+source = "pypi"
+use_max_tag = true
+pypi = "azure-core"
 
-#["dev-python/base58"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "keis/base58"
+["dev-python/base58"]
+source = "pypi"
+use_max_tag = true
+pypi = "base58"
 
-#["dev-python/bases"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "bases"
+["dev-python/bases"]
+source = "pypi"
+use_max_tag = true
+pypi = "bases"
 
 #["dev-python/bidict"]
 #source = "github"
@@ -371,10 +365,10 @@ pypi = "aspectlib"
 #use_max_tag = true
 #pypi = "colorspacious"
 
-#["dev-python/corner"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "corner"
+["dev-python/corner"]
+source = "pypi"
+use_max_tag = true
+pypi = "corner"
 
 #["dev-python/dag-cbor"]
 #source = "pypi"
@@ -1411,6 +1405,7 @@ pypi = "sherpa"
 ["dev-python/textual"]
 source = "archpkg"
 archpkg = "python-textual"
+strip_release = true
 
 #["dev-python/toml"]
 #source = "github"
