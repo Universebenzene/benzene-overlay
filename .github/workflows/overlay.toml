@@ -239,7 +239,7 @@ pypi = "astrodendro"
 source = "pypi"
 use_max_tag = true
 pypi = "astroml"
-version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+version_filter = "substitute: s/\\.post([0-9]+)/_p\\1/"
 
 ["dev-python/astroplan"]
 source = "pypi"
@@ -317,33 +317,31 @@ pypi = "bidict"
 #use_max_tag = true
 #pypi = "bsddb3"
 
-#["dev-python/casa-formats-io"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "casa-formats-io"
+["dev-python/casa-formats-io"]
+source = "pypi"
+use_max_tag = true
+pypi = "casa-formats-io"
 
-#["dev-python/ccdproc"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "ccdproc"
-#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+["dev-python/ccdproc"]
+source = "pypi"
+use_max_tag = true
+pypi = "ccdproc"
+version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
-#["dev-python/cdflib"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "MAVENSDC/cdflib"
+["dev-python/cdflib"]
+source = "pypi"
+use_max_tag = true
+pypi = "cdflib"
 
-#["dev-python/cdshealpix"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "cdshealpix"
+["dev-python/cdshealpix"]
+source = "pypi"
+use_max_tag = true
+pypi = "cdshealpix"
 
-#["dev-python/check-manifest"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mgedmin/check-manifest"
+["dev-python/check-manifest"]
+source = "pypi"
+use_max_tag = true
+pypi = "check-manifest"
 
 #["dev-python/cligj"]
 #source = "github"
