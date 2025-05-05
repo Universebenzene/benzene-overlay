@@ -120,6 +120,7 @@ pypi = "abg-python"
 source = "pypi"
 use_max_tag = true
 pypi = "ablog"
+version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 ["dev-python/adal"]
 source = "pypi"
@@ -238,6 +239,7 @@ pypi = "astrodendro"
 source = "pypi"
 use_max_tag = true
 pypi = "astroml"
+version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 ["dev-python/astroplan"]
 source = "pypi"
@@ -273,6 +275,7 @@ pypi = "astropy"
 source = "pypi"
 use_max_tag = true
 pypi = "astroquery"
+version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 ["dev-python/astroscrappy"]
 source = "pypi"
@@ -304,11 +307,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "bases"
 
-#["dev-python/bidict"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "jab/bidict"
+["dev-python/bidict"]
+source = "pypi"
+use_max_tag = true
+pypi = "bidict"
 
 #["dev-python/bsddb3"]
 #source = "pypi"
@@ -324,6 +326,7 @@ pypi = "bases"
 #source = "pypi"
 #use_max_tag = true
 #pypi = "ccdproc"
+#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 #["dev-python/cdflib"]
 #source = "github"
@@ -420,6 +423,7 @@ pypi = "corner"
 #source = "pypi"
 #use_max_tag = true
 #pypi = "donfig"
+#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 #["dev-python/drms"]
 #source = "pypi"
@@ -573,6 +577,7 @@ pypi = "corner"
 #source = "pypi"
 #use_max_tag = true
 #pypi = "glymur"
+#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 #["dev-python/gwcs"]
 #source = "pypi"
@@ -1098,6 +1103,7 @@ pypi = "corner"
 #use_max_tag = true
 #prefix = "v"
 #github = "rasterio/rasterio"
+#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 #["dev-python/ratarmount"]
 #source = "github"
