@@ -157,16 +157,15 @@ source = "pypi"
 use_max_tag = true
 pypi = "api4jenkins"
 
-#["dev-python/aplpy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "aplpy"
+["dev-python/aplpy"]
+source = "pypi"
+use_max_tag = true
+pypi = "aplpy"
 
-#["dev-python/arviz"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "arviz-devs/arviz"
+["dev-python/arviz"]
+source = "pypi"
+use_max_tag = true
+pypi = "arviz"
 
 #["dev-python/asciitree"]
 #source = "github"
@@ -174,47 +173,45 @@ pypi = "api4jenkins"
 #prefix = "v"
 #github = "mbr/asciitree"
 
-#["dev-python/asdf-astropy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "asdf-astropy"
+["dev-python/asdf-astropy"]
+source = "pypi"
+use_max_tag = true
+pypi = "asdf-astropy"
 
-#["dev-python/asdf-coordinates-schemas"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "asdf-format/asdf-coordinates-schemas"
+["dev-python/asdf-coordinates-schemas"]
+source = "pypi"
+use_max_tag = true
+pypi = "asdf-coordinates-schemas"
 
-#["dev-python/asdf-standard"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "asdf-standard"
+["dev-python/asdf-standard"]
+source = "pypi"
+use_max_tag = true
+pypi = "asdf-standard"
 
-#["dev-python/asdf-transform-schemas"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "asdf-transform-schemas"
+["dev-python/asdf-transform-schemas"]
+source = "pypi"
+use_max_tag = true
+pypi = "asdf-transform-schemas"
 
-#["dev-python/asdf-unit-schemas"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "asdf-unit-schemas"
+["dev-python/asdf-unit-schemas"]
+source = "pypi"
+use_max_tag = true
+pypi = "asdf-unit-schemas"
 
-#["dev-python/asdf-wcs-schemas"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "asdf-format/asdf-wcs-schemas"
+["dev-python/asdf-wcs-schemas"]
+source = "pypi"
+use_max_tag = true
+pypi = "asdf-wcs-schemas"
 
-#["dev-python/asdf"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "asdf"
+["dev-python/asdf"]
+source = "pypi"
+use_max_tag = true
+pypi = "asdf"
 
-#["dev-python/aspectlib"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "aspectlib"
+["dev-python/aspectlib"]
+source = "pypi"
+use_max_tag = true
+pypi = "aspectlib"
 
 #["dev-python/assay"]
 #source = "github"
@@ -1159,11 +1156,10 @@ pypi = "api4jenkins"
 #prefix = "v"
 #github = "brandon-rhodes/python-sgp4"
 
-#["dev-python/sherpa"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "sherpa/sherpa"
+["dev-python/sherpa"]
+source = "pypi"
+use_max_tag = true
+pypi = "sherpa"
 
 #["dev-python/should-dsl"]
 #source = "github"
@@ -1412,10 +1408,9 @@ pypi = "api4jenkins"
 #prefix = "v"
 #github = "tophat/syrupy"
 
-#["dev-python/textual"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "textual"
+["dev-python/textual"]
+source = "archpkg"
+archpkg = "python-textual"
 
 #["dev-python/toml"]
 #source = "github"
