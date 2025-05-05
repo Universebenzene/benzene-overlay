@@ -120,7 +120,7 @@ pypi = "abg-python"
 source = "pypi"
 use_max_tag = true
 pypi = "ablog"
-version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 ["dev-python/adal"]
 source = "pypi"
@@ -239,7 +239,9 @@ pypi = "astrodendro"
 source = "pypi"
 use_max_tag = true
 pypi = "astroml"
-version_filter = "substitute: s/\\.post([0-9]+)/_p\\1/"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
+#version_filter = "substitute: s/\\.post([0-9]+)/_p\\1/"
 
 ["dev-python/astroplan"]
 source = "pypi"
@@ -275,7 +277,7 @@ pypi = "astropy"
 source = "pypi"
 use_max_tag = true
 pypi = "astroquery"
-version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 ["dev-python/astroscrappy"]
 source = "pypi"
@@ -326,7 +328,7 @@ pypi = "casa-formats-io"
 source = "pypi"
 use_max_tag = true
 pypi = "ccdproc"
-version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 ["dev-python/cdflib"]
 source = "pypi"
@@ -343,28 +345,25 @@ source = "pypi"
 use_max_tag = true
 pypi = "check-manifest"
 
-#["dev-python/cligj"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mapbox/cligj"
+["dev-python/cligj"]
+source = "pypi"
+use_max_tag = true
+pypi = "cligj"
 
-#["dev-python/cmdstanpy"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "stan-dev/cmdstanpy"
+["dev-python/cmdstanpy"]
+source = "pypi"
+use_max_tag = true
+pypi = "cmdstanpy"
 
-#["dev-python/cmyt"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "yt-project/cmyt"
+["dev-python/cmyt"]
+source = "pypi"
+use_max_tag = true
+pypi = "cmyt"
 
-#["dev-python/colorspacious"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "colorspacious"
+["dev-python/colorspacious"]
+source = "pypi"
+use_max_tag = true
+pypi = "colorspacious"
 
 ["dev-python/corner"]
 source = "pypi"
@@ -421,7 +420,7 @@ pypi = "corner"
 #source = "pypi"
 #use_max_tag = true
 #pypi = "donfig"
-#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+##version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 #["dev-python/drms"]
 #source = "pypi"
@@ -575,7 +574,7 @@ pypi = "corner"
 #source = "pypi"
 #use_max_tag = true
 #pypi = "glymur"
-#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+##version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 #["dev-python/gwcs"]
 #source = "pypi"
@@ -1101,7 +1100,7 @@ pypi = "corner"
 #use_max_tag = true
 #prefix = "v"
 #github = "rasterio/rasterio"
-#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+##version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
 
 #["dev-python/ratarmount"]
 #source = "github"
