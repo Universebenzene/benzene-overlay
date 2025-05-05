@@ -147,17 +147,15 @@ source = "pypi"
 use_max_tag = true
 pypi = "aioftp"
 
-#["dev-python/aiohttp-retry"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "inyutin/aiohttp_retry"
+["dev-python/aiohttp-retry"]
+source = "pypi"
+use_max_tag = true
+pypi = "aiohttp-retry"
 
-#["dev-python/api4jenkins"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "joelee2012/api4jenkins"
+["dev-python/api4jenkins"]
+source = "pypi"
+use_max_tag = true
+pypi = "api4jenkins"
 
 #["dev-python/aplpy"]
 #source = "pypi"
