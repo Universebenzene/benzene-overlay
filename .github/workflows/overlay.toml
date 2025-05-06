@@ -120,7 +120,8 @@ pypi = "abg-python"
 source = "pypi"
 use_max_tag = true
 pypi = "ablog"
-#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 
 ["dev-python/adal"]
 source = "pypi"
@@ -241,7 +242,6 @@ use_max_tag = true
 pypi = "astroml"
 from_pattern = "(.*).post(.*)"
 to_pattern = '\1_p\2'
-#version_filter = "substitute: s/\\.post([0-9]+)/_p\\1/"
 
 ["dev-python/astroplan"]
 source = "pypi"
@@ -277,7 +277,8 @@ pypi = "astropy"
 source = "pypi"
 use_max_tag = true
 pypi = "astroquery"
-#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 
 ["dev-python/astroscrappy"]
 source = "pypi"
@@ -328,7 +329,8 @@ pypi = "casa-formats-io"
 source = "pypi"
 use_max_tag = true
 pypi = "ccdproc"
-#version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 
 ["dev-python/cdflib"]
 source = "pypi"
@@ -370,10 +372,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "corner"
 
-#["dev-python/dag-cbor"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "dag-cbor"
+["dev-python/dag-cbor"]
+source = "pypi"
+use_max_tag = true
+pypi = "dag-cbor"
 
 #["dev-python/dask-expr"]
 #source = "github"
@@ -405,10 +407,11 @@ pypi = "corner"
 #prefix = "v"
 #github = "google-deepmind/tree"
 
-#["dev-python/dm-tree"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "dm-tree"
+["dev-python/dm-tree"]
+source = "debianpkg"
+debianpkg = "python3-dm-tree"
+suite = "sid"
+strip_release = true
 
 #["dev-python/docstring-parser"]
 #source = "github"
@@ -420,7 +423,8 @@ pypi = "corner"
 #source = "pypi"
 #use_max_tag = true
 #pypi = "donfig"
-##version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+#from_pattern = "(.*).post(.*)"
+#to_pattern = '\1_p\2'
 
 #["dev-python/drms"]
 #source = "pypi"
@@ -574,7 +578,8 @@ pypi = "corner"
 #source = "pypi"
 #use_max_tag = true
 #pypi = "glymur"
-##version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+#from_pattern = "(.*).post(.*)"
+#to_pattern = '\1_p\2'
 
 #["dev-python/gwcs"]
 #source = "pypi"
@@ -1100,7 +1105,8 @@ pypi = "corner"
 #use_max_tag = true
 #prefix = "v"
 #github = "rasterio/rasterio"
-##version_filter = "substitute: s/\\.post(\\d+)/_p\\1/"
+#from_pattern = "(.*).post(.*)"
+#to_pattern = '\1_p\2'
 
 #["dev-python/ratarmount"]
 #source = "github"
