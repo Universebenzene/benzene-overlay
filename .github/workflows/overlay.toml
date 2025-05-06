@@ -290,10 +290,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "asynctest"
 
-["dev-python/atpy"]
-source = "pypi"
-use_max_tag = true
-pypi = "atpy"
+#["dev-python/atpy"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "atpy"
 
 ["dev-python/azure-core"]
 source = "pypi"
@@ -410,23 +410,22 @@ debianpkg = "dm-tree"
 suite = "sid"
 strip_release = true
 
-#["dev-python/docstring-parser"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "rr-/docstring_parser"
+["dev-python/docstring-parser"]
+source = "pypi"
+use_max_tag = true
+pypi = "docstring-parser"
 
-#["dev-python/donfig"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "donfig"
-#from_pattern = "(.*).post(.*)"
-#to_pattern = '\1_p\2'
+["dev-python/donfig"]
+source = "pypi"
+use_max_tag = true
+pypi = "donfig"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 
-#["dev-python/drms"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "drms"
+["dev-python/drms"]
+source = "pypi"
+use_max_tag = true
+pypi = "drms"
 
 #["dev-python/dropbox"]
 #source = "github"
