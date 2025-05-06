@@ -383,23 +383,20 @@ pypi = "dag-cbor"
 #prefix = "v"
 #github = "dask/dask-expr"
 
-#["dev-python/dask-sphinx-theme"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "dask/dask-sphinx-theme"
+["dev-python/dask-sphinx-theme"]
+source = "pypi"
+use_max_tag = true
+pypi = "dask-sphinx-theme"
 
-#["dev-python/dask"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "dask/dask"
+["dev-python/dask"]
+source = "archpkg"
+archpkg = "python-dask"
+strip_release = true
 
-#["dev-python/distributed"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "dask/distributed"
+["dev-python/distributed"]
+source = "archpkg"
+archpkg = "python-distributed"
+strip_release = true
 
 #["dev-python/dm-tree-bin"]
 #source = "github"
@@ -409,7 +406,7 @@ pypi = "dag-cbor"
 
 ["dev-python/dm-tree"]
 source = "debianpkg"
-debianpkg = "python3-dm-tree"
+debianpkg = "dm-tree"
 suite = "sid"
 strip_release = true
 
