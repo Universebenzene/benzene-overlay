@@ -504,7 +504,7 @@ strip_release = true
 ["dev-python/firefly-vis"]
 source = "pypi"
 use_max_tag = true
-pypi = "firefly-viz"
+pypi = "firefly-vis"
 
 ["dev-python/firefly"]
 source = "pypi"
@@ -573,37 +573,35 @@ source = "pypi"
 use_max_tag = true
 pypi = "h5netcdf"
 
-#["dev-python/h5pyd"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "HDFGroup/h5pyd"
+["dev-python/h5pyd"]
+source = "pypi"
+use_max_tag = true
+pypi = "h5pyd"
 
-#["dev-python/healpy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "healpy"
+["dev-python/healpy"]
+source = "pypi"
+use_max_tag = true
+pypi = "healpy"
 
-#["dev-python/heapdict"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "heapdict"
+["dev-python/heapdict"]
+source = "pypi"
+use_max_tag = true
+pypi = "heapdict"
 
-#["dev-python/hsluv"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "hsluv"
+["dev-python/hsluv"]
+source = "pypi"
+use_max_tag = true
+pypi = "hsluv"
 
-#["dev-python/hvpy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "hvpy"
+["dev-python/hvpy"]
+source = "pypi"
+use_max_tag = true
+pypi = "hvpy"
 
-#["dev-python/icecream"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "gruns/icecream"
+["dev-python/icecream"]
+source = "archpkg"
+archpkg = "python-icecream"
+strip_release = true
 
 #["dev-python/indexed-bzip2"]
 #source = "github"
