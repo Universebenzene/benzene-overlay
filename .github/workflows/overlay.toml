@@ -63,11 +63,11 @@ pypi = "formiko"
 
 #["app-text/powerword"]
 
-#["app-text/ydcv-rs"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "farseerfc/ydcv-rs"
+["app-text/ydcv-rs"]
+source = "github"
+use_max_tag = true
+prefix = "v"
+github = "farseerfc/ydcv-rs"
 
 #["app-text/ydcv"]
 #source = "github"
@@ -461,27 +461,25 @@ source = "archpkg"
 archpkg = "python-eventlet"
 strip_release = true
 
-#["dev-python/ewah-bool-utils"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "yt-project/ewah_bool_utils"
+["dev-python/ewah-bool-utils"]
+source = "pypi"
+use_max_tag = true
+pypi = "ewah-bool-utils"
 
-#["dev-python/exifread"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "ianare/exif-py"
+["dev-python/exifread"]
+source = "pypi"
+use_max_tag = true
+pypi = "exifread"
 
-#["dev-python/extension-helpers"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "extension-helpers"
+["dev-python/extension-helpers"]
+source = "pypi"
+use_max_tag = true
+pypi = "extension-helpers"
 
-#["dev-python/f90nml"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "f90nml"
+["dev-python/f90nml"]
+source = "pypi"
+use_max_tag = true
+pypi = "f90nml"
 
 #["dev-python/fast-histogram"]
 #source = "github"
@@ -901,10 +899,10 @@ strip_release = true
 #use_max_tag = true
 #pypi = "pyavm"
 
-#["dev-python/pydantic-settings"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pydantic-settings"
+["dev-python/pydantic-settings"]
+source = "archpkg"
+archpkg = "python-pydantic-settings"
+strip_release = true
 
 #["dev-python/pydata-sphinx-theme"]
 #source = "github"
