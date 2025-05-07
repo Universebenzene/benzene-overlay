@@ -481,51 +481,45 @@ source = "pypi"
 use_max_tag = true
 pypi = "f90nml"
 
-#["dev-python/fast-histogram"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astrofrog/fast-histogram"
+["dev-python/fast-histogram"]
+source = "pypi"
+use_max_tag = true
+pypi = "fast-histogram"
 
-#["dev-python/fast-zip-decryption"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mxmlnkn/fast-zip-decryption"
+["dev-python/fast-zip-decryption"]
+source = "pypi"
+use_max_tag = true
+pypi = "fast-zip-decryption"
 
-#["dev-python/fastcache"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "pbrady/fastcache"
+["dev-python/fastcache"]
+source = "pypi"
+use_max_tag = true
+pypi = "fastcache"
 
-#["dev-python/feedgen"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "feedgen"
+["dev-python/feedgen"]
+source = "archpkg"
+archpkg = "python-feedgen"
+strip_release = true
 
-#["dev-python/firefly-vis"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "ageller/Firefly"
+["dev-python/firefly-vis"]
+source = "pypi"
+use_max_tag = true
+pypi = "firefly-viz"
 
-#["dev-python/firefly"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "ageller/Firefly"
+["dev-python/firefly"]
+source = "pypi"
+use_max_tag = true
+pypi = "firefly"
 
-#["dev-python/flask-socketio"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "flask-socketio"
+["dev-python/flask-socketio"]
+source = "pypi"
+use_max_tag = true
+pypi = "flask-socketio"
 
-#["dev-python/fluidity"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "nsi-iff/fluidity"
+["dev-python/fluidity"]
+source = "archpkg"
+archpkg = "python-fluidity"
+strip_release = true
 
 #["dev-python/fusepy"]
 #source = "github"
@@ -866,10 +860,10 @@ pypi = "f90nml"
 #prefix = "v"
 #github = "wbond/oscrypto"
 
-#["dev-python/parfive"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "parfive"
+["dev-python/parfive"]
+source = "pypi"
+use_max_tag = true
+pypi = "parfive"
 
 #["dev-python/photutils"]
 #source = "github"
