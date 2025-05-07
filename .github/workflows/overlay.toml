@@ -437,9 +437,9 @@ use_max_tag = true
 pypi = "dropboxdrivefs"
 
 ["dev-python/dunamai"]
-source = "pypi"
-use_max_tag = true
-pypi = "dunamai"
+source = "archpkg"
+archpkg = "python-dunamai"
+strip_release = true
 
 ["dev-python/dust-extinction"]
 source = "pypi"
@@ -521,59 +521,57 @@ source = "archpkg"
 archpkg = "python-fluidity"
 strip_release = true
 
-#["dev-python/fusepy"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "fusepy/fusepy"
+["dev-python/fusepy"]
+source = "pypi"
+use_max_tag = true
+pypi = "fusepy"
 
-#["dev-python/ginga"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "ginga"
+["dev-python/ginga"]
+source = "pypi"
+use_max_tag = true
+pypi = "ginga"
 
-#["dev-python/glfw"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "FlorianRhiem/pyGLFW"
+["dev-python/glfw"]
+source = "pypi"
+use_max_tag = true
+pypi = "glfw"
 
-#["dev-python/glue-core"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "glue-core"
+["dev-python/glue-core"]
+source = "pypi"
+use_max_tag = true
+pypi = "glue-core"
 
-#["dev-python/glue-qt"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "glue-qt"
+["dev-python/glue-qt"]
+source = "pypi"
+use_max_tag = true
+pypi = "glue-qt"
 
-#["dev-python/glue-vispy-viewers"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "glue-vispy-viewers"
+["dev-python/glue-vispy-viewers"]
+source = "pypi"
+use_max_tag = true
+pypi = "glue-vispy-viewers"
 
-#["dev-python/glueviz"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "glueviz"
+["dev-python/glueviz"]
+source = "pypi"
+use_max_tag = true
+pypi = "glueviz"
 
-#["dev-python/glymur"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "glymur"
-#from_pattern = "(.*).post(.*)"
-#to_pattern = '\1_p\2'
+["dev-python/glymur"]
+source = "pypi"
+use_max_tag = true
+pypi = "glymur"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 
-#["dev-python/gwcs"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "gwcs"
+["dev-python/gwcs"]
+source = "pypi"
+use_max_tag = true
+pypi = "gwcs"
 
-#["dev-python/h5netcdf"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "h5netcdf"
+["dev-python/h5netcdf"]
+source = "pypi"
+use_max_tag = true
+pypi = "h5netcdf"
 
 #["dev-python/h5pyd"]
 #source = "github"
@@ -1193,10 +1191,10 @@ pypi = "sherpa"
 #use_max_tag = true
 #pypi = "spectral-cube"
 
-#["dev-python/specutils"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "specutils"
+["dev-python/specutils"]
+source = "pypi"
+use_max_tag = true
+pypi = "specutils"
 
 #["dev-python/sphinx-asdf"]
 #source = "github"
