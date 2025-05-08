@@ -603,22 +603,20 @@ source = "archpkg"
 archpkg = "python-icecream"
 strip_release = true
 
-#["dev-python/indexed-bzip2"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mxmlnkn/indexed_bzip2"
+["dev-python/indexed-bzip2"]
+source = "pypi"
+use_max_tag = true
+pypi = "indexed-bzip2"
 
-#["dev-python/indexed-zstd"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "martinellimarco/indexed_zstd"
+["dev-python/indexed-zstd"]
+source = "pypi"
+use_max_tag = true
+pypi = "indexed-zstd"
 
-#["dev-python/invoke"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "invoke"
+["dev-python/invoke"]
+source = "archpkg"
+archpkg = "python-invoke"
+strip_release = true
 
 #["dev-python/ipfsspec"]
 #source = "github"
