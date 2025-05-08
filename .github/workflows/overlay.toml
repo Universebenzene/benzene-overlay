@@ -618,23 +618,20 @@ source = "archpkg"
 archpkg = "python-invoke"
 strip_release = true
 
-#["dev-python/ipfsspec"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "fsspec/ipfsspec"
+["dev-python/ipfsspec"]
+source = "pypi"
+use_max_tag = true
+pypi = "ipfsspec"
 
-#["dev-python/isal"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "pycompression/python-isal"
+["dev-python/isal"]
+source = "pypi"
+use_max_tag = true
+pypi = "isal"
 
-#["dev-python/jplephem"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "brandon-rhodes/python-jplephem"
+["dev-python/jplephem"]
+source = "pypi"
+use_max_tag = true
+pypi = "jplephem"
 
 #["dev-python/jsonschema"]
 #source = "github"
@@ -1084,17 +1081,15 @@ strip_release = true
 #from_pattern = "(.*).post(.*)"
 #to_pattern = '\1_p\2'
 
-#["dev-python/ratarmount"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mxmlnkn/ratarmount"
+["dev-python/ratarmount"]
+source = "pypi"
+use_max_tag = true
+pypi = "ratarmount"
 
-#["dev-python/ratarmountcore"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mxmlnkn/ratarmount"
+["dev-python/ratarmountcore"]
+source = "pypi"
+use_max_tag = true
+pypi = "ratarmountcore"
 
 #["dev-python/regions"]
 #source = "pypi"
