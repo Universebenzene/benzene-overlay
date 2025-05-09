@@ -639,29 +639,25 @@ pypi = "jplephem"
 #prefix = "v"
 #github = "python-jsonschema/jsonschema"
 
-#["dev-python/jupyter-cache"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "executablebooks/jupyter-cache"
+["dev-python/jupyter-cache"]
+source = "pypi"
+use_max_tag = true
+pypi = "jupyter-cache"
 
-#["dev-python/jupyter-sphinx"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "jupyter/jupyter-sphinx"
+["dev-python/jupyter-sphinx"]
+source = "pypi"
+use_max_tag = true
+pypi = "jupyter-sphinx"
 
-#["dev-python/jupytext"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mwouts/jupytext"
+["dev-python/jupytext"]
+source = "pypi"
+use_max_tag = true
+pypi = "jupytext"
 
-#["dev-python/lexicon"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "bitprophet/lexicon"
+["dev-python/lexicon"]
+source = "archpkg"
+archpkg = "python-lexicon"
+strip_release = true
 
 #["dev-python/libconf"]
 #source = "github"
