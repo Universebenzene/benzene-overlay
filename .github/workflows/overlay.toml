@@ -673,6 +673,8 @@ pypi = "markdown-callouts"
 source = "pypi"
 use_max_tag = true
 pypi = "memory-profiler"
+from_pattern = "(.*).0"
+to_pattern = '\1'
 
 ["dev-python/memray"]
 source = "archpkg"
@@ -690,42 +692,40 @@ pypi = "miniballcpp"
 #prefix = "v"
 #github = "lepture/mistune"
 
-#["dev-python/mkdocs-coverage"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "mkdocs-coverage"
+["dev-python/mkdocs-coverage"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocs-coverage"
 
-#["dev-python/mkdocs-git-committers-plugin"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "ojacques/mkdocs-git-committers-plugin-2"
+["dev-python/mkdocs-git-committers-plugin"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocs-git-committers-plugin-2"
 
-#["dev-python/mkdocs-jupyter"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "mkdocs-jupyter"
+["dev-python/mkdocs-jupyter"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocs-jupyter"
 
-#["dev-python/mkdocs-literate-nav"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "mkdocs-literate-nav"
+["dev-python/mkdocs-literate-nav"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocs-literate-nav"
 
-#["dev-python/mkdocs-section-index"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "oprypin/mkdocs-section-index"
+["dev-python/mkdocs-section-index"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocs-section-index"
 
-#["dev-python/mkdocstrings-crystal"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "mkdocstrings-crystal"
+["dev-python/mkdocstrings-crystal"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocstrings-crystal"
 
-#["dev-python/mkdocstrings-python-legacy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "mkdocstrings-python-legacy"
+["dev-python/mkdocstrings-python-legacy"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocstrings-python-legacy"
 
 #["dev-python/mmh3"]
 #source = "github"
