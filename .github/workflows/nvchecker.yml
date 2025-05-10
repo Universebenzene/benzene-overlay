@@ -8,8 +8,8 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     # UTC 09:00 -> CST (China) 17:00, see https://datetime360.com/cn/utc-cst-china-time/
-    # 0 * * * * means every hour at 0th min
-    - cron: '0 * * * *'
+    # 0 */3 * * * means every 3 hour at 0th min
+    - cron: '0 */3 * * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

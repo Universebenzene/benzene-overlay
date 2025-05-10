@@ -659,34 +659,30 @@ source = "archpkg"
 archpkg = "python-lexicon"
 strip_release = true
 
-#["dev-python/libconf"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "ChrisAichinger/python-libconf"
+["dev-python/libconf"]
+source = "pypi"
+use_max_tag = true
+pypi = "libconf"
 
-#["dev-python/markdown-callouts"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "markdown-callouts"
+["dev-python/markdown-callouts"]
+source = "pypi"
+use_max_tag = true
+pypi = "markdown-callouts"
 
-#["dev-python/memory-profiler"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "pythonprofilers/memory_profiler"
+["dev-python/memory-profiler"]
+source = "pypi"
+use_max_tag = true
+pypi = "memory-profiler"
 
-#["dev-python/memray"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "bloomberg/memray"
+["dev-python/memray"]
+source = "archpkg"
+archpkg = "python-memray"
+strip_release = true
 
-#["dev-python/miniballcpp"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "weddige/miniball"
+["dev-python/miniballcpp"]
+source = "pypi"
+use_max_tag = true
+pypi = "miniballcpp"
 
 #["dev-python/mistune"]
 #source = "github"
