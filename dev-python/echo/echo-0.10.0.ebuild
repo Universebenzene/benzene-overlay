@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi virtualx
 
@@ -18,7 +18,7 @@ IUSE="qt"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	qt? (
-		|| ( dev-python/pyqt6[${PYTHON_USEDEP}] >=dev-python/pyqt5-5.9[${PYTHON_USEDEP}] )
+		|| ( dev-python/pyqt6[${PYTHON_USEDEP}] >=dev-python/pyqt5-5.14[${PYTHON_USEDEP}] )
 		dev-python/qtpy[${PYTHON_USEDEP}]
 	)
 "
