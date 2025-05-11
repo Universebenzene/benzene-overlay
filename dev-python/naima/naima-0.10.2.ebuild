@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 GIT_RAW_URI="https://github.com/zblz/naima/raw/refs/tags/${PV}/docs/_static"
 
