@@ -155,7 +155,7 @@ dev-python/libconf                 | 2.0.1                                      
 dev-python/memory-profiler         | 0.61                                                       | Dropped by official portage. Test dependency for ccdproc
 dev-python/miniballcpp             | 0.2.3                                                      | Optional for yt
 dev-python/msrest                  | 0.7.1                                                      | SunPy, h5pyd related
-dev-python/msrestazure             | 0.6.4                                                      | SunPy, h5pyd related
+dev-python/msrestazure             | 0.6.4\_p1                                                  | SunPy, h5pyd related
 dev-python/multiformats            | 0.3.1\_p4                                                  | Optional for new ratarmount{,core} <- ipfsspec. Dependencies like bases(base58) and multiformats-config are not included in this table. For more functions with pycryptodomex you need to add [parona-overlay](https://gitlab.com/Parona/parona-overlay)
 dev-python/numcodecs               | 0.13.1; 0.15.1; 0.16.0                                     | Pulled in by zarr
 dev-python/oscrypto                | 1.3.0                                                      | Test dependency for python-pkcs11
