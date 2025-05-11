@@ -727,58 +727,52 @@ source = "pypi"
 use_max_tag = true
 pypi = "mkdocstrings-python-legacy"
 
-#["dev-python/mmh3"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "hajimes/mmh3"
+["dev-python/mmh3"]
+source = "pypi"
+use_max_tag = true
+pypi = "mmh3"
 
-#["dev-python/mock-ssh-server"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "carletes/mock-ssh-server"
+["dev-python/mock-ssh-server"]
+source = "pypi"
+use_max_tag = true
+pypi = "mock-ssh-server"
 
-#["dev-python/mocpy"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "cds-astro/cds-moc-rust;f252c2ea3f66cef60e501c2beca2977c439236f8;cds-moc-rust-%commit%'"
+["dev-python/mocpy"]
+source = "pypi"
+use_max_tag = true
+pypi = "mocpy"
 
 #["dev-python/montage-wrapper"]
 #source = "pypi"
 #use_max_tag = true
 #pypi = "montage-wrapper"
 
-#["dev-python/mpl-animators"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "sunpy/data"
+["dev-python/mpl-animators"]
+source = "pypi"
+use_max_tag = true
+pypi = "mpl-animators"
 
-#["dev-python/mpl-scatter-density"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astrofrog/mpl-scatter-density"
+["dev-python/mpl-scatter-density"]
+source = "pypi"
+use_max_tag = true
+pypi = "mpl-scatter-density"
 
-#["dev-python/msrest"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "Azure/msrest-for-python"
+["dev-python/msrest"]
+source = "pypi"
+use_max_tag = true
+pypi = "msrest"
 
-#["dev-python/msrestazure"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "Azure/msrestazure-for-python"
+["dev-python/msrestazure"]
+source = "pypi"
+use_max_tag = true
+pypi = "msrestazure"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 
-#["dev-python/multi_key_dict"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "formiaczek/multi_key_dict"
+["dev-python/multi_key_dict"]
+source = "pypi"
+use_max_tag = true
+pypi = "multi_key_dict"
 
 #["dev-python/multiformats-config"]
 #source = "github"
