@@ -774,22 +774,24 @@ source = "pypi"
 use_max_tag = true
 pypi = "multi_key_dict"
 
-#["dev-python/multiformats-config"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "hashberg-io/multiformats-config"
+["dev-python/multiformats-config"]
+source = "pypi"
+use_max_tag = true
+pypi = "multiformats-config"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 
-#["dev-python/multiformats"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "multiformats"
+["dev-python/multiformats"]
+source = "pypi"
+use_max_tag = true
+pypi = "multiformats"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 
-#["dev-python/myst-nb"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "executablebooks/MyST-NB"
+["dev-python/myst-nb"]
+source = "pypi"
+use_max_tag = true
+pypi = "myst-nb"
 
 #["dev-python/myst-parser"]
 #source = "github"
@@ -797,22 +799,20 @@ pypi = "multi_key_dict"
 #prefix = "v"
 #github = "executablebooks/MyST-Parser"
 
-#["dev-python/naima"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "zblz/naima"
+["dev-python/naima"]
+source = "pypi"
+use_max_tag = true
+pypi = "naima"
 
 #["dev-python/nbconvert"]
 #source = "pypi"
 #use_max_tag = true
 #pypi = "nbconvert"
 
-#["dev-python/ndcube"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "sunpy/data"
+["dev-python/ndcube"]
+source = "pypi"
+use_max_tag = true
+pypi = "ndcube"
 
 #["dev-python/nose"]
 #source = "github"
@@ -820,22 +820,20 @@ pypi = "multi_key_dict"
 #prefix = "v"
 #github = "nose-devs/nose"
 
-#["dev-python/numcodecs"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "numcodecs"
+["dev-python/numcodecs"]
+source = "pypi"
+use_max_tag = true
+pypi = "numcodecs"
 
-#["dev-python/oldest-supported-numpy"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "scipy/oldest-supported-numpy"
+["dev-python/oldest-supported-numpy"]
+source = "pypi"
+use_max_tag = true
+pypi = "oldest-supported-numpy"
 
-#["dev-python/oscrypto"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "wbond/oscrypto"
+["dev-python/oscrypto"]
+source = "archpkg"
+archpkg = "python-oscrypto"
+strip_release = true
 
 ["dev-python/parfive"]
 source = "pypi"
