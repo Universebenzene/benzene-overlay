@@ -840,7 +840,7 @@ source = "pypi"
 use_max_tag = true
 pypi = "parfive"
 
-"dev-python/photutils"]
+["dev-python/photutils"]
 source = "pypi"
 use_max_tag = true
 pypi = "photutils"
