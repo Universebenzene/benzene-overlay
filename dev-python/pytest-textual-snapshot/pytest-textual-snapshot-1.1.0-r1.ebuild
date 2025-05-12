@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -24,3 +24,9 @@ RDEPEND=">=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
 "
 
 #distutils_enable_tests nose
+
+python_install() {
+	distutils-r1_python_install
+	python_moduleinto resources
+	python_domodule resources/snapshot_report_template.jinja2
+}
