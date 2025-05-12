@@ -678,7 +678,7 @@ to_pattern = '\1'
 
 ["dev-python/memray"]
 source = "archpkg"
-archpkg = "python-memray"
+archpkg = "memray"
 strip_release = true
 
 ["dev-python/miniballcpp"]
@@ -840,33 +840,30 @@ source = "pypi"
 use_max_tag = true
 pypi = "parfive"
 
-#["dev-python/photutils"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/photutils-datasets"
+"dev-python/photutils"]
+source = "pypi"
+use_max_tag = true
+pypi = "photutils"
 
-#["dev-python/poetry-dynamic-versioning"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mtkennerly/poetry-dynamic-versioning"
+["dev-python/poetry-dynamic-versioning"]
+source = "archpkg"
+archpkg = "python-poetry-dynamic-versioning"
+strip_release = true
 
-#["dev-python/pure-protobuf"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "eigenein/protobuf"
+["dev-python/pure-protobuf"]
+source = "pypi"
+use_max_tag = true
+pypi = "pure-protobuf"
 
-#["dev-python/pvextractor"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pvextractor"
+["dev-python/pvextractor"]
+source = "pypi"
+use_max_tag = true
+pypi = "pvextractor"
 
-#["dev-python/pyavm"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pyavm"
+["dev-python/pyavm"]
+source = "pypi"
+use_max_tag = true
+pypi = "pyavm"
 
 ["dev-python/pydantic-settings"]
 source = "archpkg"
