@@ -48,8 +48,6 @@ EPYTEST_IGNORE=(
 	tests/test_tui_reporter.py
 	tests/integration/test_attach.py
 	tests/integration/test_greenlet.py
-	tests/test_tui_reporter.py
-	tests/integration/test_attach.py
 )
 
 #EPYTEST_DESELECT=(
