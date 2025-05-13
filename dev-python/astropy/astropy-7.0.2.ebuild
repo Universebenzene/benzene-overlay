@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 DATA_URI="http://www.astropy.org/astropy-data"
 
@@ -47,7 +47,7 @@ DEPEND=">=dev-libs/expat-2.5.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2025.1.31.12.41.4[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2025.4.28.0.37.27[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
