@@ -876,52 +876,50 @@ strip_release = true
 #prefix = "v"
 #github = "pydata/pydata-sphinx-theme"
 
-#["dev-python/pydl"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pydl"
+["dev-python/pydl"]
+source = "pypi"
+use_max_tag = true
+pypi = "pydl"
 
-#["dev-python/pyerfa"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pyerfa"
+["dev-python/pyerfa"]
+source = "pypi"
+use_max_tag = true
+pypi = "pyerfa"
 
-#["dev-python/pyfatfs"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pyfatfs"
+["dev-python/pyfatfs"]
+source = "pypi"
+use_max_tag = true
+pypi = "pyfatfs"
 
-#["dev-python/pygaljs"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "Kozea/pygal.js"
+["dev-python/pygaljs"]
+source = "pypi"
+use_max_tag = true
+pypi = "pygaljs"
 
-#["dev-python/pykdtree"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "storpipfugl/pykdtree"
+["dev-python/pykdtree"]
+source = "pypi"
+use_max_tag = true
+pypi = "pykdtree"
 
-#["dev-python/pymoc"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pymoc"
+["dev-python/pymoc"]
+source = "pypi"
+use_max_tag = true
+pypi = "pymoc"
 
 #["dev-python/pyqt5"]
 #source = "pypi"
 #use_max_tag = true
 #pypi = "pyqt5"
 
-#["dev-python/pyregion"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pyregion"
+["dev-python/pyregion"]
+source = "pypi"
+use_max_tag = true
+pypi = "pyregion"
 
-#["dev-python/pyskein"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pyskein"
+["dev-python/pyskein"]
+source = "pypi"
+use_max_tag = true
+pypi = "pyskein"
 
 #["dev-python/pysquashfsimage"]
 #source = "github"
