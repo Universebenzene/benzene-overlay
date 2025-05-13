@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 #PYPI_NO_NORMALIZE=1
 #PYPI_PN="ExifRead"
-PYTHON_COMPAT=( python3_{{10..13},13t} )
+PYTHON_COMPAT=( python3_{{11..13},13t} )
 
 inherit distutils-r1 #pypi
 
@@ -21,8 +21,3 @@ KEYWORDS="~amd64 ~x86"
 S="${WORKDIR}/exif-py-${PV}"
 
 distutils_enable_tests pytest
-
-python_install() {
-	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/tests || die
-	distutils-r1_python_install
-}
