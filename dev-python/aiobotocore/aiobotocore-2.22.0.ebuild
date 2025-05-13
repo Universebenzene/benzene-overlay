@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -21,7 +21,7 @@ RESTRICT="test"
 
 RDEPEND=">=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/botocore-1.37.0[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.37.2[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
@@ -51,6 +51,15 @@ EPYTEST_IGNORE=(
 	# test_lambda uses moto.awslambda, which requires a running Docker service
 	# See: https://github.com/spulec/moto/issues/3276
 	tests/test_lambda.py
+)
+
+EPYTEST_DESELECT=(
+	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-aiobotocore/-/blob/main/PKGBUILD
+	'tests/test_patches.py::test_patches[BaseClient._make_api_call-digests12]'
+	'tests/test_patches.py::test_patches[Config-digests21]'
+	'tests/test_patches.py::test_patches[EndpointRulesetResolver._get_provider_params-digests117]'
+	'tests/test_patches.py::test_patches[Session.create_client-digests123]'
+	'tests/test_patches.py::test_patches[Waiter.wait-digests191]'
 )
 
 python_prepare_all() {
