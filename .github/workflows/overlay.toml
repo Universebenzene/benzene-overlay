@@ -921,45 +921,40 @@ source = "pypi"
 use_max_tag = true
 pypi = "pyskein"
 
-#["dev-python/pysquashfsimage"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "matteomattei/PySquashfsImage"
+["dev-python/pysquashfsimage"]
+source = "pypi"
+use_max_tag = true
+pypi = "pysquashfsimage"
 
-#["dev-python/pytest-arraydiff"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/pytest-arraydiff"
+["dev-python/pytest-arraydiff"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-arraydiff"
 
-#["dev-python/pytest-astropy-header"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/pytest-astropy-header"
+["dev-python/pytest-astropy-header"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-astropy-header"
 
-#["dev-python/pytest-astropy"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/pytest-astropy"
+["dev-python/pytest-astropy"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-astropy"
 
 ["dev-python/pytest-benchmark"]
 source = "archpkg"
 archpkg = "python-pytest-benchmark"
 strip_release = true
 
-#["dev-python/pytest-cython"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "lgpage/pytest-cython"
+["dev-python/pytest-cython"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-cython"
 
-#["dev-python/pytest-dependency"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pytest-dependency"
+["dev-python/pytest-dependency"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-dependency"
 
 #["dev-python/pytest-doctestplus"]
 #source = "github"
