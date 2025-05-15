@@ -956,34 +956,30 @@ source = "pypi"
 use_max_tag = true
 pypi = "pytest-dependency"
 
-#["dev-python/pytest-doctestplus"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/pytest-doctestplus"
+["dev-python/pytest-doctestplus"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-doctestplus"
 
 ["dev-python/pytest-examples"]
 source = "archpkg"
 archpkg = "python-pytest-examples"
 strip_release = true
 
-#["dev-python/pytest-filter-subpackage"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/pytest-filter-subpackage"
+["dev-python/pytest-filter-subpackage"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-filter-subpackage"
 
-#["dev-python/pytest-openfiles"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/pytest-openfiles"
+["dev-python/pytest-openfiles"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-filter-subpackage"
 
-#["dev-python/pytest-relaxed"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "bitprophet/pytest-relaxed"
+["dev-python/pytest-relaxed"]
+source = "archpkg"
+archpkg = "python-relaxed"
+strip_release = true
 
 #["dev-python/pytest-remotedata"]
 #source = "github"
