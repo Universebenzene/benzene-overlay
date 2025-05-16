@@ -19,11 +19,11 @@
 		<flag name="io">Extra io support</flag>
 		<flag name="ipython-static">ipython-static support via <pkg>dev-python/ipython</pkg></flag>
 		<flag name="pyglet">Enable support for pyglet backend via <pkg>dev-python/pyglet</pkg></flag>
-		<flag name="pyqt5">Enable support for pyqt5 backend via <pkg>dev-python/PyQt5</pkg></flag>
-		<flag name="pyqt6">Enable support for pyqt6 backend via <pkg>dev-python/PyQt6</pkg></flag>
+		<flag name="pyqt5">Enable support for pyqt5 backend via <pkg>dev-python/pyqt5</pkg></flag>
+		<flag name="pyqt6">Enable support for pyqt6 backend via <pkg>dev-python/pyqt6</pkg></flag>
 		<flag name="pyside2">Enable support for pyside2 backend via <pkg>dev-python/pyside2</pkg></flag>
-		<flag name="pyside6">Enable support for pyside6 backend via <pkg>dev-python/pyside6</pkg></flag>
-		<flag name="sdl2">Enable support for sdl backend via <pkg>dev-python/PySDL2</pkg></flag>
+		<flag name="pyside6">Enable support for pyside6 backend via <pkg>dev-python/pyside</pkg></flag>
+		<flag name="sdl2">Enable support for sdl backend via <pkg>dev-python/pysdl2</pkg></flag>
 		<flag name="wx">Enable support for wx backend via <pkg>dev-python/wxpython</pkg></flag>
 	</use>
 </pkgmetadata>

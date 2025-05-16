@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 DATA_COM="5a3db8447d3e13ed402545662f20f5ff191a6d42"
 DATA_DATE="20190506"
@@ -32,7 +32,7 @@ KEYWORDS="~amd64"	# no x86 KEYWORD for meshio PyQt6 pyside6
 IUSE="examples glfw io ipython-static pyglet pyqt5 +pyqt6 pyside2 pyside6 sdl2 wx"
 PROPERTIES="test_network"
 RESTRICT="test"
-REQUIRED_USE="|| ( pyglet pyqt5 pyqt6 pyside2 pyside6 sdl2 wx )
+REQUIRED_USE="|| ( pyglet pyqt5 pyqt6 pyside2 pyside6 sdl2 wx ) doc? ( pyqt5 )
 	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )
 	wx? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
 
@@ -70,6 +70,7 @@ BDEPEND=">=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 		dev-python/networkx[${PYTHON_USEDEP}]
 		dev-python/numpydoc[${PYTHON_USEDEP}]
 		dev-python/pyopengl[${PYTHON_USEDEP}]
+		dev-python/pyqt5[${PYTHON_USEDEP},gui,testlib,widgets]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/sphinx-gallery[${PYTHON_USEDEP}]
 		media-libs/fontconfig
@@ -77,6 +78,8 @@ BDEPEND=">=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 	)
 "
 #dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
+
+#PATCHES=( "${FILESDIR}/${P}-qt6-backends-prior.patch" )
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-gallery \
@@ -90,7 +93,7 @@ distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/pytest
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${PN}-0.14.0-use-local-demo-data.patch ; \
+	use doc && { eapply "${FILESDIR}"/${P}-use-local-demo-data.patch ; \
 		for dat in "${DISTDIR}"/*-d-*; do { cp ${dat} "${S}"/examples/scene/${dat##*-d-} || die ; } ; done ; \
 		cp {"${DISTDIR}"/${PN}-${DATA_DATE}-d-,"${S}"/examples/plotting/}mri.npz || die ; }
 	xdg_environment_reset

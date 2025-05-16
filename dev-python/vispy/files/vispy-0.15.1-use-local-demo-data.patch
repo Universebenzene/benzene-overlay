@@ -1,0 +1,231 @@
+--- a/examples/plotting/volume_plot.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/plotting/volume_plot.py	2025-05-15 13:57:50.489117773 +0800
+@@ -15,7 +15,8 @@
+ 
+ fig = vp.Fig(bgcolor='k', size=(800, 800), show=False)
+ 
+-vol_data = np.load(io.load_data_file('brain/mri.npz'))['data']
++try: vol_data = np.load(io.load_data_file('brain/mri.npz'))['data']
++except Exception: vol_data = np.load('mri.npz')['data']
+ vol_data = np.flipud(np.rollaxis(vol_data, 1))
+ vol_data = vol_data.astype(np.float32)
+ 
+--- a/examples/scene/clipping_planes.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/clipping_planes.py	2025-05-15 13:57:50.489223665 +0800
+@@ -24,7 +24,8 @@
+ view = canvas.central_widget.add_view()
+ 
+ # Create the visuals
+-vol = np.load(io.load_data_file('volume/stent.npz'))['arr_0']
++try: vol = np.load(io.load_data_file('volume/stent.npz'))['arr_0']
++except Exception: vol = np.load('stent.npz')['arr_0']
+ volume = scene.visuals.Volume(vol, parent=view.scene, threshold=0.225)
+ 
+ np.random.seed(1)
+--- a/examples/scene/contour.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/contour.py	2025-05-15 13:57:50.489311413 +0800
+@@ -24,7 +24,8 @@
+ view = canvas.central_widget.add_view()
+ 
+ interpolation = 'cubic'
+-img_data = read_png(load_data_file('mona_lisa/mona_lisa_sm.png'))
++try: img_data = read_png(load_data_file('mona_lisa/mona_lisa_sm.png'))
++except Exception: img_data = read_png('mona_lisa_sm.png')
+ image = scene.visuals.Image(img_data, interpolation=interpolation,
+                             parent=view.scene, method='impostor')
+ level = 10
+--- a/examples/scene/face_picking.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/face_picking.py	2025-05-15 13:57:50.489411896 +0800
+@@ -33,7 +33,8 @@
+ 
+ 
+ parser = argparse.ArgumentParser()
+-default_mesh = load_data_file('orig/triceratops.obj.gz')
++try: default_mesh = load_data_file('orig/triceratops.obj.gz')
++except Exception: default_mesh = 'triceratops.obj.gz'
+ parser.add_argument('--mesh', default=default_mesh)
+ args, _ = parser.parse_known_args()
+ 
+--- a/examples/scene/flipped_axis.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/flipped_axis.py	2025-05-15 13:57:50.489503207 +0800
+@@ -27,7 +27,8 @@
+ from vispy import app, scene, io
+ 
+ # Read volume
+-vol1 = np.load(io.load_data_file('volume/stent.npz'))['arr_0']
++try: vol1 = np.load(io.load_data_file('volume/stent.npz'))['arr_0']
++except Exception: vol1 = np.load('stent.npz')['arr_0']
+ 
+ # Prepare canvas
+ canvas = scene.SceneCanvas(keys='interactive', size=(800, 600), show=True)
+--- a/examples/scene/image_custom_kernel.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/image_custom_kernel.py	2025-05-15 13:57:50.489586891 +0800
+@@ -32,10 +32,14 @@
+ view = canvas.central_widget.add_view()
+ 
+ # Load the image with a slight blur (so we can later show the sharpening filter)
+-img_data = gaussian_filter(
+-    read_png(load_data_file('mona_lisa/mona_lisa_sm.png')),
+-    sigma=1,
+-)
++try: img_data = gaussian_filter(
++        read_png(load_data_file('mona_lisa/mona_lisa_sm.png')),
++        sigma=1,
++     )
++except Exception: img_data = gaussian_filter(
++        read_png('mona_lisa_sm.png'),
++        sigma=1,
++     )
+ 
+ # build gaussian kernel
+ small_gaussian_window = gaussian(5, 1)
+--- a/examples/scene/image.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/image.py	2025-05-15 13:57:50.489679117 +0800
+@@ -25,7 +25,8 @@
+ view = canvas.central_widget.add_view()
+ 
+ # Create the image
+-img_data = read_png(load_data_file('mona_lisa/mona_lisa_sm.png'))
++try: img_data = read_png(load_data_file('mona_lisa/mona_lisa_sm.png'))
++except Exception: img_data = read_png('mona_lisa_sm.png')
+ interpolation = 'nearest'
+ 
+ image = scene.visuals.Image(img_data, interpolation=interpolation,
+--- a/examples/scene/instanced_mesh_picking.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/instanced_mesh_picking.py	2025-05-15 13:59:24.127582104 +0800
+@@ -30,7 +30,8 @@
+ view.camera.depth_value = 1e3
+ 
+ #Load an mesh file
+-mesh_path = load_data_file('spot/spot.obj.gz')
++try: mesh_path = load_data_file('spot/spot.obj.gz')
++except Exception: mesh_path = 'spot.obj.gz'
+ 
+ n_instances = 8
+ vertices, faces, normals, texcoords = read_mesh(mesh_path)
+--- a/examples/scene/instanced_mesh.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/instanced_mesh.py	2025-05-15 13:57:50.489766242 +0800
+@@ -98,7 +98,8 @@
+ 
+ N = 1000
+ 
+-mesh_file = load_data_file('orig/triceratops.obj.gz')
++try: mesh_file = load_data_file('orig/triceratops.obj.gz')
++except Exception: mesh_file = 'triceratops.obj.gz'
+ vertices, faces, _, _ = read_mesh(mesh_file)
+ 
+ np.random.seed(0)
+--- a/examples/scene/instanced_mesh_visual.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/instanced_mesh_visual.py	2025-05-15 13:57:50.489857811 +0800
+@@ -24,8 +24,10 @@
+ use(gl='gl+')
+ 
+ 
+-mesh_path = load_data_file('spot/spot.obj.gz')
+-texture_path = load_data_file('spot/spot.png')
++try: mesh_path = load_data_file('spot/spot.obj.gz')
++except Exception: mesh_path = 'spot.obj.gz'
++try: texture_path = load_data_file('spot/spot.png')
++except Exception: texture_path = 'spot.png'
+ vertices, faces, normals, texcoords = read_mesh(mesh_path)
+ texture = np.flipud(imread(texture_path))
+ 
+--- a/examples/scene/mesh_normals.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/mesh_normals.py	2025-05-15 13:57:50.489956883 +0800
+@@ -17,7 +17,8 @@
+ from vispy.visuals.filters import WireframeFilter
+ 
+ 
+-mesh_file = load_data_file('orig/triceratops.obj.gz')
++try: mesh_file = load_data_file('orig/triceratops.obj.gz')
++except Exception: mesh_file = 'triceratops.obj.gz'
+ vertices, faces, _, _ = read_mesh(mesh_file)
+ 
+ mesh = Mesh(vertices, faces, shading='flat')
+--- a/examples/scene/mesh_shading.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/mesh_shading.py	2025-05-15 13:57:50.490040568 +0800
+@@ -21,7 +21,8 @@
+ 
+ 
+ parser = argparse.ArgumentParser()
+-default_mesh = load_data_file('orig/triceratops.obj.gz')
++try: default_mesh = load_data_file('orig/triceratops.obj.gz')
++except Exception: default_mesh = 'triceratops.obj.gz'
+ parser.add_argument('--mesh', default=default_mesh)
+ parser.add_argument('--shininess', default=100)
+ parser.add_argument('--wireframe-width', default=1)
+--- a/examples/scene/mesh_texture.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/mesh_texture.py	2025-05-15 13:57:50.490114316 +0800
+@@ -27,8 +27,10 @@
+                     help="shading mode")
+ args, _ = parser.parse_known_args()
+ 
+-mesh_path = load_data_file('spot/spot.obj.gz')
+-texture_path = load_data_file('spot/spot.png')
++try: mesh_path = load_data_file('spot/spot.obj.gz')
++except Exception: mesh_path = 'spot.obj.gz'
++try: texture_path = load_data_file('spot/spot.png')
++except Exception: texture_path = 'spot.png'
+ vertices, faces, normals, texcoords = read_mesh(mesh_path)
+ texture = np.flipud(imread(texture_path))
+ 
+--- a/examples/scene/one_cam_two_scenes.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/one_cam_two_scenes.py	2025-05-15 13:57:50.490186495 +0800
+@@ -31,7 +31,8 @@
+ grid.add_widget(vb2, 0, 1)
+ 
+ # Create the image
+-im1 = io.load_crate().astype('float32') / 255
++try: im1 = io.load_crate().astype('float32') / 255
++except Exception: im1 = np.load('crate.npz')['crate'].astype('float32') / 255
+ # Make gray, smooth, and take derivatives: edge enhancement
+ im2 = im1[:, :, 1]
+ im2 = (im2[1:-1, 1:-1] + im2[0:-2, 1:-1] + im2[2:, 1:-1] + 
+--- a/examples/scene/one_scene_four_cams.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/one_scene_four_cams.py	2025-05-15 13:57:50.490261798 +0800
+@@ -20,6 +20,8 @@
+ 
+ import sys
+ 
++import numpy as np
++
+ from vispy import app, scene, io
+ 
+ canvas = scene.SceneCanvas(keys='interactive')
+@@ -42,7 +44,8 @@
+ grid.add_widget(vb4, 1, 1)
+ 
+ # Create some visuals to show
+-im1 = io.load_crate().astype('float32') / 255
++try: im1 = io.load_crate().astype('float32') / 255
++except Exception: im1 = np.load('crate.npz')['crate'].astype('float32') / 255
+ for par in scenes:
+     image = scene.visuals.Image(im1, grid=(20, 20), parent=par)
+ 
+--- a/examples/scene/volume_plane.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/volume_plane.py	2025-05-15 13:57:50.490345071 +0800
+@@ -25,7 +25,8 @@
+ from vispy.visuals.transforms import STTransform
+ 
+ # Read volume
+-vol = np.load(io.load_data_file('volume/stent.npz'))['arr_0']
++try: vol = np.load(io.load_data_file('volume/stent.npz'))['arr_0']
++except Exception: vol = np.load('stent.npz')['arr_0']
+ 
+ # Prepare canvas
+ canvas = scene.SceneCanvas(keys='interactive', show=True)
+--- a/examples/scene/volume.py	2025-05-15 09:50:34.000000000 +0800
++++ b/examples/scene/volume.py	2025-05-15 13:57:50.490444680 +0800
+@@ -39,8 +39,10 @@
+ from vispy.visuals.transforms import STTransform
+ 
+ # Read volume
+-vol1 = np.load(io.load_data_file('volume/stent.npz'))['arr_0']
+-vol2 = np.load(io.load_data_file('brain/mri.npz'))['data']
++try: vol1 = np.load(io.load_data_file('volume/stent.npz'))['arr_0']
++except Exception: vol1 = np.load('stent.npz')['arr_0']
++try: vol2 = np.load(io.load_data_file('brain/mri.npz'))['data']
++except Exception: vol2 = np.load('mri.npz')['data']
+ vol2 = np.flipud(np.rollaxis(vol2, 1))
+ 
+ # Prepare canvas

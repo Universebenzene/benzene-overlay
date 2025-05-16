@@ -1,0 +1,52 @@
+--- a/vispy/app/backends/__init__.py	2025-05-15 09:50:34.000000000 +0800
++++ b/vispy/app/backends/__init__.py	2025-05-15 14:47:53.118478933 +0800
+@@ -14,8 +14,8 @@
+ # This is the order in which they are attempted to be imported.
+ CORE_BACKENDS = [
+     ('PyQt4', '_pyqt4', 'PyQt4'),
+-    ('PyQt5', '_pyqt5', 'PyQt5'),
+     ('PyQt6', '_pyqt6', 'PyQt6'),
++    ('PyQt5', '_pyqt5', 'PyQt5'),
+     ('PySide', '_pyside', 'PySide'),
+     ('PySide2', '_pyside2', 'PySide2'),
+     ('PySide6', '_pyside6', 'PySide6'),
+--- a/vispy/app/backends/_qt.py	2025-05-15 09:50:34.000000000 +0800
++++ b/vispy/app/backends/_qt.py	2025-05-15 14:38:28.269258297 +0800
+@@ -87,18 +87,6 @@
+         from PyQt4.QtOpenGL import QGLWidget, QGLFormat
+     from PyQt4 import QtGui, QtCore, QtTest
+     QWidget, QApplication = QtGui.QWidget, QtGui.QApplication  # Compat
+-elif qt_lib == 'pyqt5':
+-    _check_imports('PyQt5')
+-    if not USE_EGL:
+-        from PyQt5.QtCore import QT_VERSION_STR
+-        if Version(QT_VERSION_STR) >= Version('5.4.0'):
+-            from PyQt5.QtWidgets import QOpenGLWidget as QGLWidget
+-            from PyQt5.QtGui import QSurfaceFormat as QGLFormat
+-            QT5_NEW_API = True
+-        else:
+-            from PyQt5.QtOpenGL import QGLWidget, QGLFormat
+-    from PyQt5 import QtGui, QtCore, QtWidgets, QtTest
+-    QWidget, QApplication = QtWidgets.QWidget, QtWidgets.QApplication  # Compat
+ elif qt_lib == 'pyqt6':
+     _check_imports('PyQt6')
+     if not USE_EGL:
+@@ -111,6 +99,18 @@
+             from PyQt6.QtOpenGL import QGLWidget, QGLFormat
+     from PyQt6 import QtGui, QtCore, QtWidgets, QtTest
+     QWidget, QApplication = QtWidgets.QWidget, QtWidgets.QApplication  # Compat
++elif qt_lib == 'pyqt5':
++    _check_imports('PyQt5')
++    if not USE_EGL:
++        from PyQt5.QtCore import QT_VERSION_STR
++        if Version(QT_VERSION_STR) >= Version('5.4.0'):
++            from PyQt5.QtWidgets import QOpenGLWidget as QGLWidget
++            from PyQt5.QtGui import QSurfaceFormat as QGLFormat
++            QT5_NEW_API = True
++        else:
++            from PyQt5.QtOpenGL import QGLWidget, QGLFormat
++    from PyQt5 import QtGui, QtCore, QtWidgets, QtTest
++    QWidget, QApplication = QtWidgets.QWidget, QtWidgets.QApplication  # Compat
+ elif qt_lib == 'pyside6':
+     _check_imports('PySide6')
+     if not USE_EGL:
