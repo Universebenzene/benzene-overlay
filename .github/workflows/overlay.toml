@@ -981,67 +981,60 @@ source = "archpkg"
 archpkg = "python-relaxed"
 strip_release = true
 
-#["dev-python/pytest-remotedata"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/pytest-remotedata"
+["dev-python/pytest-remotedata"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-pytest-remotedata"
 
-#["dev-python/pytest-socket"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "miketheman/pytest-socket"
+["dev-python/pytest-socket"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-socket"
 
-#["dev-python/pytest-textual-snapshot"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "westurner/sphinxcontrib-srclinks"
+["dev-python/pytest-textual-snapshot"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-textual-snapshot"
 
-#["dev-python/python-jenkins"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "python-jenkins"
+["dev-python/python-jenkins"]
+source = "pypi"
+use_max_tag = true
+pypi = "python-jenkins"
 
-#["dev-python/python-pkcs11"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "danni/python-pkcs11"
+["dev-python/python-pkcs11"]
+source = "archpkg"
+archpkg = "python-python-pkcs11"
+strip_release = true
 
-#["dev-python/python-socketio"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "miguelgrinberg/python-socketio"
+["dev-python/python-socketio"]
+source = "pypi"
+use_max_tag = true
+pypi = "python-socketio"
 
-#["dev-python/python-xz"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "rogdham/python-xz"
+["dev-python/python-xz"]
+source = "pypi"
+use_max_tag = true
+pypi = "python-xz"
 
-#["dev-python/pytkdocs"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mkdocstrings/autorefs"
+["dev-python/pytkdocs"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytkdocs"
 
-#["dev-python/pyvo"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pyvo"
+["dev-python/pyvo"]
+source = "pypi"
+use_max_tag = true
+pypi = "pyvo"
 
-#["dev-python/radio-beam"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "radio-beam"
+["dev-python/radio-beam"]
+source = "pypi"
+use_max_tag = true
+pypi = "radio-beam"
 
-#["dev-python/rapidgzip"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "rapidgzip"
+["dev-python/rapidgzip"]
+source = "pypi"
+use_max_tag = true
+pypi = "rapidgzip"
 
 #["dev-python/rasterio"]
 #source = "github"
