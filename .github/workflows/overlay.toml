@@ -1107,96 +1107,87 @@ strip_release = true
 ["dev-python/siosocks"]
 source = "pypi"
 use_max_tag = true
-pypi = "sherpa"
+pypi = "siosocks"
 
 ["dev-python/skyfield"]
 source = "pypi"
 use_max_tag = true
 pypi = "skyfield"
 
-#["dev-python/smbprotocol"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "jborean93/smbprotocol"
+["dev-python/smbprotocol"]
+source = "pypi"
+use_max_tag = true
+pypi = "smbprotocol"
 
-#["dev-python/snuggs"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mapbox/snuggs"
+["dev-python/snuggs"]
+source = "pypi"
+use_max_tag = true
+pypi = "snuggs"
 
-#["dev-python/sortedcollections"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "grantjenks/python-sortedcollections"
+["dev-python/sortedcollections"]
+source = "pypi"
+use_max_tag = true
+pypi = "sortedcollections"
 
-#["dev-python/specreduce"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/specreduce-data"
+["dev-python/specreduce"]
+source = "pypi"
+use_max_tag = true
+pypi = "specreduce"
 
-#["dev-python/spectral-cube"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "spectral-cube"
+["dev-python/spectral-cube"]
+source = "pypi"
+use_max_tag = true
+pypi = "spectral-cube"
 
 ["dev-python/specutils"]
 source = "pypi"
 use_max_tag = true
 pypi = "specutils"
 
-#["dev-python/sphinx-asdf"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "spacetelescope/sphinx-asdf"
+["dev-python/sphinx-asdf"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-asdf"
 
-#["dev-python/sphinx-astropy"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "astropy/sphinx-astropy"
+["dev-python/sphinx-astropy"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-astropy"
 
-#["dev-python/sphinx-autobuild"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "executablebooks/sphinx-autobuild"
+["dev-python/sphinx-autobuild"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-autobuild"
 
-#["dev-python/sphinx-automodapi"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-automodapi"
+["dev-python/sphinx-automodapi"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-automodapi"
 
-#["dev-python/sphinx-autosummary-accessors"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-autosummary-accessors"
+["dev-python/sphinx-autosummary-accessors"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-autosummary-accessors"
 
-#["dev-python/sphinx-book-theme"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "executablebooks/sphinx-book-theme"
+["dev-python/sphinx-book-theme"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-book-theme"
 
-#["dev-python/sphinx-changelog"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "OpenAstronomy/sphinx-changelog"
+["dev-python/sphinx-changelog"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-changelog"
 
-#["dev-python/sphinx-click"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-click"
+["dev-python/sphinx-click"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-click"
 
-#["dev-python/sphinx-codeautolink"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-codeautolink"
+["dev-python/sphinx-codeautolink"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-codeautolink"
 
 #["dev-python/sphinx-collections"]
 #source = "github"
