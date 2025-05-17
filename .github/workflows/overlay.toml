@@ -984,7 +984,7 @@ strip_release = true
 ["dev-python/pytest-remotedata"]
 source = "pypi"
 use_max_tag = true
-pypi = "pytest-pytest-remotedata"
+pypi = "pytest-remotedata"
 
 ["dev-python/pytest-socket"]
 source = "pypi"
@@ -1189,76 +1189,70 @@ source = "pypi"
 use_max_tag = true
 pypi = "sphinx-codeautolink"
 
-#["dev-python/sphinx-collections"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "useblocks/sphinx-collections"
+["dev-python/sphinx-collections"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-collections"
 
-#["dev-python/sphinx-contributors"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-contributors"
+["dev-python/sphinx-contributors"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-contributors"
 
-#["dev-python/sphinx-design"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "executablebooks/sphinx-design"
+["dev-python/sphinx-design"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-design"
 
-#["dev-python/sphinx-documatt-theme"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-documatt-theme"
+["dev-python/sphinx-documatt-theme"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-documatt-theme"
 
-#["dev-python/sphinx-examples"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-examples"
+["dev-python/sphinx-examples"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-examples"
 
-#["dev-python/sphinx-hoverxref"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "readthedocs/sphinx-hoverxref"
+["dev-python/sphinx-hoverxref"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-hoverxref"
 
-#["dev-python/sphinx-mdinclude"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-mdinclude"
+["dev-python/sphinx-mdinclude"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-mdinclude"
 
-#["dev-python/sphinx-py3doc-enhanced-theme"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "ionelmc/sphinx-py3doc-enhanced-theme"
+["dev-python/sphinx-py3doc-enhanced-theme"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-py3doc-enhanced-theme"
 
-#["dev-python/sphinx-readable-theme"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-readable-theme"
+["dev-python/sphinx-readable-theme"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-readable-theme"
 
-#["dev-python/sphinx-reredirects"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "documatt/sphinx-reredirects"
+["dev-python/sphinx-reredirects"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-reredirects"
 
-#["dev-python/sphinx-sitemap"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "jdillard/sphinx-sitemap"
+["dev-python/sphinx-sitemap"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-sitemap"
 
-#["dev-python/sphinx-thebe"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-thebe"
+["dev-python/sphinx-thebe"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-thebe"
 
-#["dev-python/sphinx-togglebutton"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinx-togglebutton"
+["dev-python/sphinx-togglebutton"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-togglebutton"
 
 #["dev-python/sphinx"]
 #source = "github"
