@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -90,6 +90,8 @@ EPYTEST_DESELECT=(
 	distributed/diagnostics/tests/test_progress.py::test_AllProgress_lost_key
 	distributed/tests/test_client.py::test_profile
 	distributed/tests/test_worker.py::test_statistical_profiling
+	# TimeoutError: Test timeout (30) hit after ...
+	distributed/tests/test_scheduler.py::test_resubmit_nondeterministic_task_different_deps
 )
 
 python_prepare_all() {
