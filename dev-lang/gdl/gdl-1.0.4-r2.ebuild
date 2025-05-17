@@ -1,10 +1,10 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 WX_GTK_VER="3.2-gtk3"
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit cmake flag-o-matic python-r1 toolchain-funcs virtualx wxwidgets
 
@@ -56,7 +56,7 @@ RDEPEND="
 		sci-libs/libgeotiff:=
 	)
 	udunits? ( sci-libs/udunits )
-	wxwidgets? ( x11-libs/wxGTK:${WX_GTK_VER}[X] )
+	wxwidgets? ( x11-libs/wxGTK:${WX_GTK_VER}=[X] )
 "
 DEPEND="${RDEPEND}
 	eigen? ( dev-cpp/eigen:3 )
