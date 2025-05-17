@@ -24,7 +24,7 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/numpy-1.21:=[${PYTHON_USEDEP}]
 	sci-libs/fftw:3.0=
 "
 RDEPEND="${DEPEND}"
@@ -32,21 +32,23 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
 	doc? (
 		${RDEPEND}
-		<dev-python/sphinx-8[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		dev-python/nbsphinx[${PYTHON_USEDEP}]
+		dev-python/arviz[${PYTHON_USEDEP}]
 		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 		sci-geosciences/xyzservices[${PYTHON_USEDEP}]
 		virtual/pandoc
 	)
 	test? (
-		dev-python/pytest-xvfb[${PYTHON_USEDEP}]
+		dev-python/arviz[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
+		dev-python/typing-extensions[${PYTHON_USEDEP}]
+		dev-libs/libxml2:2
 		sci-astronomy/ds9-bin
 		sci-geosciences/xyzservices[${PYTHON_USEDEP}]
 	)
@@ -62,10 +64,10 @@ python_prepare_all() {
 	cp {"${DISTDIR}"/${P}-,}setup.cfg || die
 	sed -n '/egg_info/,$p' pypi-setup.cfg >> setup.cfg || die
 
-	sed -e "s|#fftw=local|fftw=local|" -e "s|#fftw-include[-_]dirs.*$|fftw-include_dirs=/usr/include|" \
-		-e "s|#fftw-lib-dirs.*$|fftw-lib-dirs=/usr/$(get_libdir)|" -e "s|#fftw-libraries|fftw-libraries|" \
-		-e "/group-location/a group-location=extern/grplib-4.9/python/.libs/group.so" \
-		-e "/stk-location/a stk-location=extern/stklib-4.11/src/.libs/stk.so" -i setup.cfg || die
+	sed -e "s|#fftw=local|fftw=local|" -e "s|#fftw_include[-_]dirs.*$|fftw_include_dirs=/usr/include|" \
+		-e "s|#fftw_lib_dirs.*$|fftw_lib_dirs=/usr/$(get_libdir)|" -e "s|#fftw_libraries|fftw_libraries|" \
+		-e "/group_location/a group_location=extern/grplib-4.9/python/.libs/group.so" \
+		-e "/stk_location/a stk_location=extern/stklib-4.11/src/.libs/stk.so" -i setup.cfg || die
 #	# Fix python3.12 and numpy>1.23
 #	sed -e '/^import\ setuptools/c from setuptools import setup' -e '/distutils/d' -i setup.py || die
 #	sed -e '/setuptools.command/s/^#\ //' -e '/distutils/d' -i helpers/__init__.py || die
