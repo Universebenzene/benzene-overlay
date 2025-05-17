@@ -1036,13 +1036,16 @@ source = "pypi"
 use_max_tag = true
 pypi = "rapidgzip"
 
-#["dev-python/rasterio"]
+["dev-python/rasterio"]
+source = "pypi"
+use_max_tag = true
+pypi = "rasterio"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
 #source = "github"
 #use_max_tag = true
 #prefix = "v"
 #github = "rasterio/rasterio"
-#from_pattern = "(.*).post(.*)"
-#to_pattern = '\1_p\2'
 
 ["dev-python/ratarmount"]
 source = "pypi"
@@ -1054,15 +1057,15 @@ source = "pypi"
 use_max_tag = true
 pypi = "ratarmountcore"
 
-#["dev-python/regions"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "regions"
+["dev-python/regions"]
+source = "pypi"
+use_max_tag = true
+pypi = "regions"
 
-#["dev-python/reproject"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "reproject"
+["dev-python/reproject"]
+source = "pypi"
+use_max_tag = true
+pypi = "reproject"
 
 #["dev-python/runnotebook"]
 #source = "github"
@@ -1076,45 +1079,40 @@ pypi = "ratarmountcore"
 #prefix = "v"
 #github = "fsspec/s3fs"
 
-#["dev-python/sep-pjw"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sep-pjw"
+["dev-python/sep-pjw"]
+source = "pypi"
+use_max_tag = true
+pypi = "sep-pjw"
 
-#["dev-python/sep"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "kbarbary/sep"
+["dev-python/sep"]
+source = "pypi"
+use_max_tag = true
+pypi = "sep-pjw"
 
-#["dev-python/sgp4"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "brandon-rhodes/python-sgp4"
+["dev-python/sgp4"]
+source = "pypi"
+use_max_tag = true
+pypi = "sep-pjw"
 
 ["dev-python/sherpa"]
 source = "pypi"
 use_max_tag = true
 pypi = "sherpa"
 
-#["dev-python/should-dsl"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "nsi-iff/${PN}"
+["dev-python/should-dsl"]
+source = "archpkg"
+archpkg = "python-should-dsl"
+strip_release = true
 
-#["dev-python/siosocks"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "pohmelie/siosocks"
+["dev-python/siosocks"]
+source = "pypi"
+use_max_tag = true
+pypi = "sherpa"
 
-#["dev-python/skyfield"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "skyfielders/python-skyfield"
+["dev-python/skyfield"]
+source = "pypi"
+use_max_tag = true
+pypi = "skyfield"
 
 #["dev-python/smbprotocol"]
 #source = "github"
