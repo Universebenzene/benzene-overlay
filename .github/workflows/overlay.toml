@@ -1260,73 +1260,65 @@ pypi = "sphinx-togglebutton"
 #prefix = "v"
 #github = "sphinx-doc/sphinx"
 
-#["dev-python/sphinxcontrib-globalsubs"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "missinglinkelectronics/sphinxcontrib-globalsubs"
+["dev-python/sphinxcontrib-globalsubs"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinxcontrib-globalsubs"
 
-#["dev-python/sphinxcontrib-srclinks"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "westurner/sphinxcontrib-srclinks"
+["dev-python/sphinxcontrib-srclinks"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinxcontrib-srclinks"
 
-#["dev-python/sphinxcontrib-youtube"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "sphinx-contrib/youtube"
+["dev-python/sphinxcontrib-youtube"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinxcontrib-youtube"
 
-#["dev-python/sphinxext-opengraph"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sphinxext-opengraph"
+["dev-python/sphinxext-opengraph"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinxext-opengraph"
 
-#["dev-python/sshfs"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "fsspec/sshfs"
+["dev-python/sshfs"]
+source = "pypi"
+use_max_tag = true
+pypi = "sshfs"
 
-#["dev-python/stanio"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "WardBrian/stanio"
+["dev-python/stanio"]
+source = "pypi"
+use_max_tag = true
+pypi = "stanio"
 
-#["dev-python/starlink-pyast"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "starlink-pyast"
+["dev-python/starlink-pyast"]
+source = "pypi"
+use_max_tag = true
+pypi = "starlink-pyast"
 
-#["dev-python/stone"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "dropbox/stone"
+["dev-python/stone"]
+source = "pypi"
+use_max_tag = true
+pypi = "stone"
 
-#["dev-python/sunpy-sphinx-theme"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "sunpy/sunpy-sphinx-theme"
+["dev-python/sunpy-sphinx-theme"]
+source = "pypi"
+use_max_tag = true
+pypi = "sunpy-sphinx-theme"
 
-#["dev-python/sunpy"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "sunpy"
+["dev-python/sunpy"]
+source = "pypi"
+use_max_tag = true
+pypi = "sunpy"
 
-#["dev-python/synphot"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "synphot"
+["dev-python/synphot"]
+source = "pypi"
+use_max_tag = true
+pypi = "synphot"
 
-#["dev-python/syrupy"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "tophat/syrupy"
+["dev-python/syrupy"]
+source = "pypi"
+use_max_tag = true
+pypi = "syrupy"
 
 ["dev-python/textual"]
 source = "archpkg"
