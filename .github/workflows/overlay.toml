@@ -1325,43 +1325,40 @@ source = "archpkg"
 archpkg = "python-textual"
 strip_release = true
 
-#["dev-python/toml"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "uiri/toml"
+["dev-python/toml"]
+source = "pypi"
+use_max_tag = true
+pypi = "toml"
 
-#["dev-python/tree-sitter-languages"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "grantjenks/py-tree-sitter-languages"
+["dev-python/tree-sitter-languages"]
+source = "pypi"
+use_max_tag = true
+pypi = "tree-sitter-languages"
 
-#["dev-python/typing-validation"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "typing-validation"
+["dev-python/typing-validation"]
+source = "pypi"
+use_max_tag = true
+pypi = "typing-validation"
 
-#["dev-python/universal-pathlib"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "fsspec/universal_pathlib"
+["dev-python/universal-pathlib"]
+source = "pypi"
+use_max_tag = true
+pypi = "universal_pathlib"
 
-#["dev-python/unyt"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "unyt"
+["dev-python/unyt"]
+source = "pypi"
+use_max_tag = true
+pypi = "unyt"
 
 ["dev-python/vispy"]
 source = "pypi"
 use_max_tag = true
 pypi = "vispy"
 
-#["dev-python/webdav4"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "webdav4"
+["dev-python/webdav4"]
+source = "pypi"
+use_max_tag = true
+pypi = "webdav4"
 
 #["dev-python/wsgidav"]
 #source = "github"
