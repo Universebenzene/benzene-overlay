@@ -79,7 +79,7 @@ BDEPEND=">=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 "
 #dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
 
-#PATCHES=( "${FILESDIR}/${P}-qt6-backends-prior.patch" )
+#PATCHES=( "${FILESDIR}/${PN}-0.15.1-qt6-backends-prior.patch" )
 
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-gallery \
@@ -93,7 +93,7 @@ distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/pytest
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-use-local-demo-data.patch ; \
+	use doc && { eapply "${FILESDIR}"/${PN}-0.15.1-use-local-demo-data.patch ; \
 		for dat in "${DISTDIR}"/*-d-*; do { cp ${dat} "${S}"/examples/scene/${dat##*-d-} || die ; } ; done ; \
 		cp {"${DISTDIR}"/${PN}-${DATA_DATE}-d-,"${S}"/examples/plotting/}mri.npz || die ; }
 	xdg_environment_reset
