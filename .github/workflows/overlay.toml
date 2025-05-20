@@ -1360,37 +1360,35 @@ source = "pypi"
 use_max_tag = true
 pypi = "webdav4"
 
-#["dev-python/wsgidav"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mar10/wsgidav"
+["dev-python/wsgidav"]
+source = "pypi"
+use_max_tag = true
+pypi = "wsgidav"
 
-#["dev-python/xarray-datatree"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "xarray-datatree"
+["dev-python/xarray-datatree"]
+source = "pypi"
+use_max_tag = true
+pypi = "xarray-datatree"
 
-#["dev-python/xarray-einstats"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "arviz-devs/xarray-einstats"
+["dev-python/xarray-einstats"]
+source = "pypi"
+use_max_tag = true
+pypi = "xarray-einstats"
 
-#["dev-python/yt"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "yt"
+["dev-python/yt"]
+source = "pypi"
+use_max_tag = true
+pypi = "yt"
 
-#["dev-python/zarr"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "zarr"
+["dev-python/zarr"]
+source = "pypi"
+use_max_tag = true
+pypi = "zarr"
 
-#["dev-python/zict"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "zict"
+["dev-python/zict"]
+source = "pypi"
+use_max_tag = true
+pypi = "zict"
 
 #["dev-qt/qtwebkit"]
 #source = "github"
