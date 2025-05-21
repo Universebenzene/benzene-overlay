@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		uncompresspy is a pure Python package for uncompressing LZW files (.Z),
+		such as the ones created by Unix's shell tool compress. It is available on
+		PyPI for Python 3.10+.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">uncompresspy</remote-id>
+		<remote-id type="github">kYwzor/uncompresspy</remote-id>
+	</upstream>
+</pkgmetadata>

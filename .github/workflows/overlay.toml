@@ -1343,6 +1343,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "typing-validation"
 
+["dev-python/uncompresspy"]
+source = "pypi"
+use_max_tag = true
+pypi = "uncompresspy"
+
 ["dev-python/universal-pathlib"]
 source = "pypi"
 use_max_tag = true
@@ -1595,11 +1600,11 @@ pypi = "zict"
 #prefix = "v"
 #github = "Libsharp/libsharp"
 
-#["sys-block/diskus"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "sharkdp/diskus"
+["sys-block/diskus"]
+source = "github"
+use_max_tag = true
+prefix = "v"
+github = "sharkdp/diskus"
 
 #["sys-libs/elogind-libsystemd"]
 #source = "github"
