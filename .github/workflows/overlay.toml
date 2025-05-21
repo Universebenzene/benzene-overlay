@@ -49,7 +49,10 @@ pypi = "formiko"
 #prefix = "v"
 #github = "gromko/wps-office-mui"
 
-#["app-pda/i4tools"]
+["app-pda/i4tools"]
+source = "aur"
+aur = "i4tools-bin"
+strip_release = true
 
 #["app-text/dehelper"]
 
