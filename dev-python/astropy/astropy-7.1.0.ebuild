@@ -32,7 +32,7 @@ SRC_URI+=" doc? (
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples intersphinx recommended"
+IUSE="doc intersphinx recommended"
 PROPERTIES="test_network"
 RESTRICT="test
 	intersphinx? ( network-sandbox )"
@@ -95,6 +95,7 @@ BDEPEND=">=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 		dev-python/skyfield[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 		>=dev-python/threadpoolctl-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/uncompresspy-0.4.0[${PYTHON_USEDEP}]
 	)
 "
 
@@ -126,7 +127,7 @@ python_prepare_all() {
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/convolution/}gc_msx_e.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/modeling/}l1448_13co.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/wcs/}l1448_13co.fits || die
-		eapply "${FILESDIR}"/${PN}-7.0.0-doc-use-local-data.patch
+		eapply "${FILESDIR}"/${P}-doc-use-local-data.patch
 	fi
 
 	distutils-r1_python_prepare_all
@@ -144,16 +145,6 @@ python_compile_all() {
 #		cp -r docs/{_static/*,_build/html/_images} || die
 		HTML_DOCS=( docs/_build/html/. )
 	fi
-}
-
-python_install_all() {
-	if use examples; then
-		docompress -x "/usr/share/doc/${PF}/examples"
-		docinto examples
-		dodoc -r examples/.
-	fi
-
-	distutils-r1_python_install_all
 }
 
 python_test() {
@@ -194,4 +185,5 @@ the requests package)." dev-python/certifi
 	optfeature "testing Solar System coordinates" dev-python/skyfield
 	optfeature "testing satellite positions" dev-python/sgp4
 	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-10.0.1[parquet,snappy]"
+	optfeature "supports on-the-fly decompression of LZW-compressed files (typically “.Z” extension)" ">=dev-python/uncompresspy-0.4.0"
 }
