@@ -1436,11 +1436,10 @@ pypi = "zict"
 #prefix = "v"
 #github = "Universebenzene/wps-office-fonts"
 
-#["media-gfx/fontweak"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "guoyunhe/fontweak"
+["media-gfx/fontweak"]
+source = "aur"
+aur = "fontweak"
+strip_release = true
 
 #["media-gfx/gpaint"]
 
