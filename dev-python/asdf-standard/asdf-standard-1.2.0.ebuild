@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -22,6 +22,8 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-asdf-0.1.4[${PYTHON_USEDEP}]
+		dev-python/furo[${PYTHON_USEDEP}]
+		dev-python/tomli[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? ( >=dev-python/packaging-16.0[${PYTHON_USEDEP}] )
@@ -30,6 +32,12 @@ PDEPEND="test? ( >=dev-python/asdf-3.0.0[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs/source '>=dev-python/sphinx-asdf-0.1.4'
+
+python_prepare_all() {
+	use doc && { mkdir -p docs/_static || die ; }
+
+	distutils-r1_python_prepare_all
+}
 
 python_compile_all() {
 	if use doc; then
