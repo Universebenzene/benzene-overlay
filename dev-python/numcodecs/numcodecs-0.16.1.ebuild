@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -27,11 +27,7 @@ RDEPEND="${DEPEND}
 BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
-	doc? (
-		dev-libs/zfp[python]
-		dev-python/crc32c[${PYTHON_USEDEP}]
-		>=dev-python/zarr-3[${PYTHON_USEDEP}]
-	)
+	doc? ( dev-libs/zfp[python] )
 	test? (
 		dev-libs/zfp[python]
 		dev-python/crc32c[${PYTHON_USEDEP}]
@@ -42,7 +38,9 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 PDEPEND="test? ( >=dev-python/zarr-3[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc dev-python/pydata-sphinx-theme
+distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc dev-python/pydata-sphinx-theme \
+	dev-python/crc32c \
+	">=dev-python/zarr-3"
 
 python_prepare_all() {
 	use test && { sed -i "s/--cov=numcodecs --cov-report xml //" pyproject.toml || die ; }
