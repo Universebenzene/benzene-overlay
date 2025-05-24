@@ -1445,7 +1445,7 @@ strip_release = true
 
 #["media-libs/freetype-wps"]
 
-#["media-libs/gmtk"]
+["media-libs/gmtk"]
 source = "archpkg"
 archpkg = "gmtk"
 strip_release = true
