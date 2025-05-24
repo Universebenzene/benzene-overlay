@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="einops numba"
 
-RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
-	>=dev-python/xarray-2022.09.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.25[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.11[${PYTHON_USEDEP}]
+	>=dev-python/xarray-2023.06.0[${PYTHON_USEDEP}]
 	einops? ( dev-python/einops[${PYTHON_USEDEP}] )
 	numba? ( >=dev-python/numba-0.55[${PYTHON_USEDEP}] )
 "
