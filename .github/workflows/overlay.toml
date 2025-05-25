@@ -1076,11 +1076,10 @@ pypi = "reproject"
 #prefix = "v"
 #github = "ngoldbaum/RunNotebook"
 
-#["dev-python/s3fs"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "fsspec/s3fs"
+["dev-python/s3fs"]
+source = "repology"
+repology = "python:fsspec"
+repo = "gentoo"
 
 ["dev-python/sep-pjw"]
 source = "pypi"
@@ -1470,11 +1469,10 @@ strip_release = true
 #prefix = "v"
 #github = "patjak/facetimehd-firmware"
 
-#["media-video/gnome-mplayer"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "kdekorte/gnome-mplayer"
+["media-video/gnome-mplayer"]
+source = "archpkg"
+archpkg = "gnome-mplayer"
+strip_release = true
 
 #["net-fs/ossfs"]
 #source = "github"
