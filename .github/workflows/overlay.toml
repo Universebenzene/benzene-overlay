@@ -104,11 +104,10 @@ github = "preservim/vim-indent-guides.git"
 
 #["dev-cpp/gtkspellmm"]
 
-#["dev-lang/gdl"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "gnudatalanguage/gdl"
+["dev-lang/gdl"]
+source = "repology"
+repology = "gnudatalanguage"
+repo = "gentoo"
 
 #["dev-libs/libappindicator"]
 
