@@ -151,10 +151,8 @@ python_prepare_all() {
 #	EOF
 	use doc && { eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch ; cp "${DISTDIR}"/*.fits docs/examples || die ; }
 #	sed -e '/"source":/s|../||' -e '/"target":/s|note|docs/note|' -i docs/conf.py || die
-	use test && {
-		sed -e "/pathlib/a import os" -e "/parent/c \        Path(os.environ['S'])" \
-		-i python/mocpy/tests/test_sfmoc.py || die ;
-	}
+	use test && { sed -e "/pathlib/a import os" -e "/parent/c \        Path(os.environ['S'])" \
+		-i python/mocpy/tests/test_sfmoc.py || die ; }
 
 	distutils-r1_python_prepare_all
 }
