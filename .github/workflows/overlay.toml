@@ -37,11 +37,10 @@ pypi = "formiko"
 #prefix = "v"
 #github = "fcitx/fcitx"
 
-#["app-i18n/mozc"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "google/mozc"
+["app-i18n/mozc"]
+source = "repology"
+repology = "mozc"
+repo = "gentoo"
 
 #["app-office/wps-office"]
 #source = "github"
