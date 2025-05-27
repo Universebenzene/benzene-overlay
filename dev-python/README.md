@@ -43,7 +43,7 @@ dev-python/imexam              | 0.9.1                                          
 dev-python/jplephem            | 2.22                                                 |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                      | Old version for dev-python/asdf
 dev-python/montage-wrapper     | 0.9.9                                                |
-dev-python/mocpy               | 0.17.2                                               | Dependency cdshealpix are also in this overlay but not listed in this table
+dev-python/mocpy               | 0.18.0                                               | Dependency cdshealpix are also in this overlay but not listed in this table
 dev-python/mpl-animator        | 1.2.1                                                |
 dev-python/mpl-scatter-density | 0.8                                                  | Glueviz releated.
 dev-python/naima               | 0.10.2                                               |
