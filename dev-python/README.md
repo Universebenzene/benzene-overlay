@@ -65,7 +65,7 @@ dev-python/sgp4                | 2.22                                           
 dev-python/sherpa              | 4.15.0; 4.15.1-r1; 4.17.1                            | `XSPEC` support is not included while building. See [here](https://sherpa.readthedocs.io/en/latest/install.html#building-from-source) for more details to build with `XSPEC` manually.
 dev-python/skyfield            | 1.45; 1.46; 1.53                                     |
 dev-python/spectral-cube       | 0.6.6                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/specutils           | 1.1.1; 1.20.1                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/specutils           | 1.1.1; 1.20.2                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/specreduce          | 1.5.1                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Some images cannot be plotted if intersphinx is disabled.
 dev-python/starlink-pyast      | 0.2.1                                                | Starlink WCS library for ginga
 dev-python/sunpy               | 5.1.5; 6.1.1                                         | Doc building is really hard to run, so not supported right now.
