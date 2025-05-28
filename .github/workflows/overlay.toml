@@ -71,11 +71,11 @@ use_max_tag = true
 prefix = "v"
 github = "farseerfc/ydcv-rs"
 
-#["app-text/ydcv"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "felixonmars/ydcv"
+["app-text/ydcv"]
+source = "github"
+use_max_tag = true
+prefix = "v"
+github = "felixonmars/ydcv"
 
 #["app-text/ydgo"]
 #source = "github"
