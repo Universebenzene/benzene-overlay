@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -23,8 +23,9 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		${RDEPEND}
 		>=dev-python/sphinx-asdf-0.1.3[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		dev-python/furo[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
-		dev-python/toml[${PYTHON_USEDEP}]
+		dev-python/tomli[${PYTHON_USEDEP}]
 	)
 "
 PDEPEND="test? ( <dev-python/asdf-3.0.0[${PYTHON_USEDEP}] )"
