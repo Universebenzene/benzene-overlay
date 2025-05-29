@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -22,9 +22,10 @@ SRC_URI+=" doc? (
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="wcs"
 
 RDEPEND=">=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.6.0[${PYTHON_USEDEP}]
+	wcs? ( >=dev-python/astropy-5.3.0[${PYTHON_USEDEP}] )
 "
 BDEPEND="${RDEPEND}
 	>=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
@@ -32,18 +33,18 @@ BDEPEND="${RDEPEND}
 	test? (
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
+		dev-python/astropy[${PYTHON_USEDEP}]
 	)
 "
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/sphinx-changelog dev-python/sphinx-gallery \
 	dev-python/sunpy-sphinx-theme \
-	dev-python/ipython \
 	dev-python/scipy \
 	dev-python/sunpy
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-examples-use-local-fits.patch ; \
+	use doc && { eapply "${FILESDIR}"/${PN}-1.2.1-examples-use-local-fits.patch ; \
 		for edat in "${DISTDIR}"/*-d-*; do { cp ${edat} "${S}"/examples/${edat##*-d-} || die ; } ; done ; }
 
 	distutils-r1_python_prepare_all

@@ -9,4 +9,7 @@
 		<remote-id type="pypi">mpl-animators</remote-id>
 		<remote-id type="github">sunpy/mpl-animators</remote-id>
 	</upstream>
+	<use>
+		<flag name="wcs">make line or image plots for a numpy array and associated WCS object from <pkg>dev-python/astropy</pkg>.</flag>
+	</use>
 </pkgmetadata>
