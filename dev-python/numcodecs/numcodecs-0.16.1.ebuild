@@ -49,6 +49,10 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
+python_configure_all() {
+	append-flags -std=gnu17
+}
+
 python_compile_all() {
 #	ModuleNotFoundError: No module named 'numcodecs._shuffle'
 	use doc && [[ -d ${PN} ]] && { mv {,_}${PN} || die ; }

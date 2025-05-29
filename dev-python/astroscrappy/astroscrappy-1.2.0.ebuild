@@ -45,6 +45,10 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
+python_configure_all() {
+	append-flags -std=gnu17
+}
+
 python_compile_all() {
 	if use doc; then
 		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
