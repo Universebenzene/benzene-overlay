@@ -101,7 +101,10 @@ use_max_tag = true
 prefix = "v"
 github = "preservim/vim-indent-guides.git"
 
-#["dev-cpp/gtkspellmm"]
+["dev-cpp/gtkspellmm"]
+source = "archpkg"
+archpkg = "gtkspellmm"
+strip_release = true
 
 ["dev-lang/gdl"]
 source = "repology"
