@@ -3,7 +3,8 @@
 
 EAPI="8"
 
-PYTHON_COMPAT=( python3_{{10..13},13t} )
+PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
+#PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 
 inherit desktop edo elisp-common multiprocessing python-any-r1 savedconfig toolchain-funcs xdg
 
@@ -46,7 +47,7 @@ fi
 # japanese-usage-dictionary: BSD-2
 LICENSE="BSD BSD-2 ipadic public-domain unicode"
 SLOT="0"
-KEYWORDS="amd64 arm64 ~loong x86"
+KEYWORDS="~amd64 ~arm64 ~loong ~x86"
 IUSE="debug emacs fcitx4 fcitx5 +gui ibus renderer test"
 REQUIRED_USE="|| ( emacs fcitx4 fcitx5 ibus )"
 RESTRICT="!test? ( test )"
@@ -62,7 +63,7 @@ BDEPEND="
 	fcitx5? ( sys-devel/gettext )
 "
 DEPEND="
-	>=dev-cpp/abseil-cpp-20240116.0:=
+	>=dev-cpp/abseil-cpp-20250127.0:=
 	>=dev-libs/protobuf-3.0.0:=
 	fcitx4? (
 		app-i18n/fcitx:4
@@ -135,6 +136,7 @@ PATCHES=(
 	"${FILESDIR}"/mozc-2.28.5029.102-abseil.patch
 	"${FILESDIR}"/mozc-2.28.5029.102-abseil-20230802.0.patch
 	"${FILESDIR}"/mozc-2.28.5029.102-abseil-20240116.patch
+	"${FILESDIR}"/mozc-2.28.5029.102-abseil-20250127.patch
 )
 
 python_check_deps() {
