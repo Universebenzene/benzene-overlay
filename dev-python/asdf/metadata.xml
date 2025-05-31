@@ -23,8 +23,10 @@
 		<remote-id type="github">asdf-format/asdf</remote-id>
 	</upstream>
 	<use>
-		<flag name="all">Including optional support for lz4 compression provided by <pkg>dev-python/lz4</pkg>.</flag>
+		<flag name="all">Including all optional supports.</flag>
 		<flag name="doc">Build extra documentation. Should only be enabled for re-merge instead of new merge.</flag>
+		<flag name="http">asdf.open with urls (like those for s3 resources) provided using <pkg>dev-python/fsspec</pkg>.</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
+		<flag name="lz4">Including optional support for lz4 compression provided by <pkg>dev-python/lz4</pkg>.</flag>
 	</use>
 </pkgmetadata>

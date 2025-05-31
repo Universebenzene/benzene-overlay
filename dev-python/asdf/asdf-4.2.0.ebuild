@@ -14,9 +14,10 @@ HOMEPAGE="https://asdf.readthedocs.io"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="all doc intersphinx"
+IUSE="all doc http intersphinx lz4"
 RESTRICT="intersphinx? ( network-sandbox )"
-REQUIRED_USE="intersphinx? ( doc )"
+REQUIRED_USE="intersphinx? ( doc )
+	all? ( http lz4 )"
 
 RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
@@ -29,7 +30,11 @@ RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]
 	' python3_10)
-	all? ( >=dev-python/lz4-0.10[${PYTHON_USEDEP}] )
+	http? (
+		>=dev-python/fsspec-2022.8.2[${PYTHON_USEDEP}]
+		dev-python/aiohttp[${PYTHON_USEDEP}]
+	)
+	lz4? ( >=dev-python/lz4-0.10[${PYTHON_USEDEP}] )
 "
 BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 	doc? (
