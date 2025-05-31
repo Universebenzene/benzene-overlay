@@ -83,11 +83,10 @@ use_max_tag = true
 prefix = "v"
 github = "boypt/ydgo"
 
-#["app-text/youdao-dict"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "Universebenzene/benzene-overlay"
+["app-text/youdao-dict"]
+source = "aur"
+aur = "youdao-dict"
+strip_release = true
 
 #["app-vim/indentLine"]
 #source = "github"
