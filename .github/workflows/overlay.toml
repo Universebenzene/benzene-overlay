@@ -1474,11 +1474,11 @@ source = "archpkg"
 archpkg = "gnome-mplayer"
 strip_release = true
 
-#["net-fs/ossfs"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "aliyun/ossfs"
+["net-fs/ossfs"]
+source = "github"
+use_max_tag = true
+prefix = "v"
+github = "aliyun/ossfs"
 
 #["net-im/electron-qq-bin"]
 #source = "github"
