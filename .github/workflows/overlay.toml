@@ -1498,11 +1498,11 @@ github = "aliyun/ossfs"
 #prefix = "v"
 #github = "Riceneeder/electronic-wechat"
 
-#["net-im/icalingua++-bin"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "Icalingua-plus-plus/Icalingua-plus-plus"
+["net-im/icalingua++-bin"]
+source = "github"
+use_max_tag = true
+prefix = "v"
+github = "Icalingua-plus-plus/Icalingua-plus-plus"
 
 #["net-im/wemeet"]
 
