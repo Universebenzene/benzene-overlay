@@ -1522,11 +1522,11 @@ use_max_tag = true
 prefix = "v"
 github = "qjfoidnh/BaiduPCS-Go"
 
-#["net-misc/landrop"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "${MY_PN}/${MY_PN}.git"
+["net-misc/landrop"]
+source = "github"
+use_max_tag = true
+prefix = "v"
+github = "LANDrop/LANDrop.git"
 
 #["net-misc/oss-browser-bin"]
 #source = "github"
