@@ -39,6 +39,7 @@ RDEPEND=">=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND=">=dev-python/astropy-helpers-4.0.1[${PYTHON_USEDEP}]
+	<dev-python/setuptools-80.3.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.2[${PYTHON_USEDEP}]
@@ -75,7 +76,7 @@ EPYTEST_DESELECT=(
 
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
-#	DISTUTILS_ARGS=( --offline )
+	DISTUTILS_ARGS=( --offline )
 	use doc && { use intersphinx || { eapply "${FILESDIR}"/${PN}-0.4.10-doc-irsa-offline.patch ; \
 		cp "${DISTDIR}"/*.fits docs/ipac/irsa || die ; } ; }
 	use test && { cp {"${DISTDIR}"/${P}-,${S}/}conftest.py || die ; }
@@ -88,7 +89,7 @@ python_prepare_all() {
 
 python_compile_all() {
 	if use doc; then
-		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/lib \
+		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
 			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
