@@ -52,7 +52,7 @@ dev-python/hsluv                                                                
 [dev-python/memray](https://bloomberg.github.io/memray)                              | 1.10.0; [1.17.2](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-python/memray/memray-1.17.2.ebuild)                                    | **BINARY WHEEL VERSIONS** are used to avoid npm building
 dev-python/nose                                                                      | 1.3.7\_p20221026-{r1,r2}                                                                                                                          | Dropped by official portage
 dev-python/oldest-supported-numpy                                                    | 2023.12.21                                                                                                                                        | The numpy version limitations are changed from `==` into `>=`. If you have better solution, just bring issues or pull requests.
-dev-python/parfive                                                                   | 1.5.1; 2.2.0                                                                                                                                      |
+dev-python/parfive                                                                   | 2.2.0                                                                                                                                             |
 dev-python/poetry-dynamic-versioning                                                 | 1.8.2                                                                                                                                             | Dependency dunamai also included but not listed in the table
 dev-python/pyqt5                                                                     | 5.15.11{,-r1}                                                                                                                                     | Add `webkit` USE flag (dropped by official portage) to get **youdao-dict** in this overlay work
 dev-python/pydantic-settngs                                                          | 2.9.1                                                                                                                                             |
@@ -130,7 +130,6 @@ dev-python/asciitree               | 0.3.3                                      
 dev-python/aspectlib               | 2.0.0                                                      | Optional for pytest-benchmark
 dev-python/azure-core              | 1.26.3; 1.34.0                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
-dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Test dependency for zarr
 dev-python/check-manifest          | 0.49; 0.50                                                 | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.2.5                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec
@@ -205,11 +204,11 @@ dev-python/jupytext                     | 1.17.2                          | Buil
 dev-python/myst-nb                      | 0.17.2; 1.2.0                   |
 dev-python/myst-parser                  | 0.18.1-r1                       | Only for myst-nb that depends on old version
 dev-python/runnotebook                  | 0.3.1; (live)                   |
-dev-python/sphinx-astropy               | 1.6.0; 1.9.1                    | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
+dev-python/sphinx-astropy               | 1.9.1                           | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
 dev-python/sphinx-asdf                  | 0.1.3; 0.1.4; 0.2.4             |
 dev-python/sphinx-autobuild             | 2021.3.14; 2024.4.16; 2024.10.3 |
 dev-python/sphinx-autosummary-accessors | 2025.3.1                        |
-dev-python/sphinx-book-theme            | 0.2.0; 1.0.1; 1.1.4             | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
+dev-python/sphinx-book-theme            | 1.0.1; 1.1.4                    | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
 dev-python/sphinx-changelog             | 1.6.0                           |
 dev-python/sphinx-click                 | 6.0.0                           |
 dev-python/sphinx-codeautolink          | 0.17.4                          |
@@ -238,6 +237,8 @@ dev-python/mistune                      | 0.8.4-r1; 2.0.5                 | For 
 dev-python/nbconvert                    | 6.4.5                           | Depends on old mistune
 
 <!--</details>-->
+
+<!--dev-python/bsddb3                  | 6.2.9-r1                                                   | Dropped by official portage. Test dependency for zarr-->
 
 ### Doc/MkDocs related packages
 

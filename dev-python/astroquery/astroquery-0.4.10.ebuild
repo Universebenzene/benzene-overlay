@@ -3,8 +3,9 @@
 
 EAPI=8
 
-DISTUTILS_USE_SETUPTOOLS=bdepend
-PYTHON_COMPAT=( python3_{10..13} )
+#DISTUTILS_USE_SETUPTOOLS=bdepend
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 optfeature pypi
 
@@ -74,16 +75,16 @@ EPYTEST_DESELECT=(
 
 python_prepare_all() {
 	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
-	DISTUTILS_ARGS=( --offline )
+#	DISTUTILS_ARGS=( --offline )
 	use doc && { use intersphinx || { eapply "${FILESDIR}"/${PN}-0.4.10-doc-irsa-offline.patch ; \
 		cp "${DISTDIR}"/*.fits docs/ipac/irsa || die ; } ; }
 	use test && { cp {"${DISTDIR}"/${P}-,${S}/}conftest.py || die ; }
 	distutils-r1_python_prepare_all
 }
 
-python_compile() {
-	distutils-r1_python_compile --use-system-libraries
-}
+#python_compile() {
+#	distutils-r1_python_compile --use-system-libraries
+#}
 
 python_compile_all() {
 	if use doc; then

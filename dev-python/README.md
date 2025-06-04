@@ -10,12 +10,12 @@ dev-python/astroalign          | 2.6.1                                          
 dev-python/astropy-iers-data   | 0.2025.6.2.0.38.23                                   | Required by astropy>=6.0.0
 dev-python/astropy-helpers     | 2.0.11; 3.0.2; 3.1.1; 4.0.1-r1                       | With patches for better doc building. Same as the [AUR](https://aur.archlinux.org/packages/python-astropy-helpers) ones
 dev-python/pytest-astropy      | 0.8.0; 0.11.0                                        | Test plugins for astropy. Dependencies are also in this overlay but not listed in this table
-dev-python/sphinx-astropy      | 1.6.0; 1.9.1                                         | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not listed in this table
+dev-python/sphinx-astropy      | 1.9.1                                                | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not listed in this table
 dev-python/sphinx-asdf         | 0.1.3; 0.1.4; 0.2.4                                  |
 dev-python/aplpy               | 2.2.0                                                | Versions below 2.1.0 are included but masked. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/aplpy#note-for-aplpy) for more details. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/asdf                | 2.7.2; 2.9.2; 2.10.1; 2.13.0; 2.15.0; 2.15.2; 4.2.0  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building should only be enabled for re-merge to prevent circular depenencies.
+dev-python/asdf                | 2.10.1; 2.13.0; 2.15.0; 2.15.2; 4.2.0                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building should only be enabled for re-merge to prevent circular depenencies.
 dev-python/asdf-astropy        | 0.2.1; 0.7.1                                         | Dependencies are also in this overlay but not listed in this table. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/astlib              | 0.11.3-r1; 0.11.10-r1; 0.12.1                        | astLib WCS library for ginga
+dev-python/astlib              | 0.11.10-r1; 0.12.1                                   | astLib WCS library for ginga
 dev-python/astrodendro         | 0.3.0; (live)                                        |
 dev-python/astroml             | 0.4.1; 1.0.2\_p1                                     |
 dev-python/astropy-healpix     | 0.5; 1.1.2                                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
@@ -34,7 +34,7 @@ dev-python/fast-histogram      | 0.14                                           
 dev-python/ginga               | 5.3.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/glueviz             | 1.4.0 (glue-core: 1.17.1, 1.22.2; glue-qt: 0.3.3)    | Meta package, core package and qt package versions are all shown.
 dev-python/glue-vispy-viewers  | 1.1.0; 1.2.3                                         |
-dev-python/gwcs                | 0.17.1; 0.24.0                                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
+dev-python/gwcs                | 0.24.0                                               | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/h5netcdf            | 1.6.1                                                |
 dev-python/h5pyd               | 0.12.2; 0.17.0; 0.18.0                               |
 dev-python/healpy              | 1.16.6; 1.18.1                                       |
@@ -42,7 +42,6 @@ dev-python/hvpy                | 1.1.0                                          
 dev-python/imexam              | 0.9.1                                                | With [my issue](https://github.com/spacetelescope/imexam/issues/252) unsolved. [NOT COMPATIBLE WITH PY3.11 YET](https://github.com/spacetelescope/imexam/issues/256)
 dev-python/jplephem            | 2.22                                                 |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                      | Old version for dev-python/asdf
-dev-python/montage-wrapper     | 0.9.9                                                |
 dev-python/mocpy               | 0.18.0                                               | Dependency cdshealpix are also in this overlay but not listed in this table
 dev-python/mpl-animator        | 1.2.3                                                |
 dev-python/mpl-scatter-density | 0.8                                                  | Glueviz releated.
@@ -52,22 +51,24 @@ dev-python/photutils           | 1.9.0; 1.12.0; 2.2.0                           
 dev-python/pvextractor         | 0.4                                                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pyavm               | 0.9.6                                                |
 dev-python/pyerfa              | 1.7.2; 2.0.1.5                                       | Fixed test phase. One of the deps of `astropy`. `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
-dev-python/pydl                | 0.7.0; 1.0.1                                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
+dev-python/pydl                | 1.0.1                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pymoc               | 0.5.2                                                |
 dev-python/pyregion            | 2.1.1; 2.3.0                                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/pyvo                | 1.2.1; 1.7                                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/radio-beam          | 0.3.8                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/regions             | 0.4; 0.10                                            | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/reproject           | 0.5.1; 0.12.0; 0.14.1                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/regions             | 0.10                                                 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/reproject           | 0.12.0; 0.14.1                                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sep                 | 1.4.0                                                |
 dev-python/sep-pjw             | 1.3.8                                                |
 dev-python/sgp4                | 2.22                                                 |
 dev-python/sherpa              | 4.15.0; 4.15.1-r1; 4.17.1                            | `XSPEC` support is not included while building. See [here](https://sherpa.readthedocs.io/en/latest/install.html#building-from-source) for more details to build with `XSPEC` manually.
-dev-python/skyfield            | 1.45; 1.46; 1.53                                     |
+dev-python/skyfield            | 1.53                                                 |
 dev-python/spectral-cube       | 0.6.6                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/specutils           | 1.1.1; 1.20.2                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/specutils           | 1.20.2                                               | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/specreduce          | 1.5.1                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Some images cannot be plotted if intersphinx is disabled.
 dev-python/starlink-pyast      | 0.2.1                                                | Starlink WCS library for ginga
 dev-python/sunpy               | 5.1.5; 6.1.1                                         | Doc building is really hard to run, so not supported right now.
 dev-python/synphot             | 1.5.0                                                |
 dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.0.19                                |
+
+<!--dev-python/montage-wrapper     | 0.9.9                                                |-->
