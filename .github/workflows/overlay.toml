@@ -1397,6 +1397,16 @@ source = "pypi"
 use_max_tag = true
 pypi = "zict"
 
+["dev-qt/qtsensors"]
+source = "archpkg"
+archpkg = "qt5-sensors"
+strip_release = true
+
+["dev-qt/qtwebchannel"]
+source = "archpkg"
+archpkg = "qt5-webchannel"
+strip_release = true
+
 #["dev-qt/qtwebkit"]
 #source = "github"
 #use_max_tag = true
@@ -1534,11 +1544,10 @@ use_max_tag = true
 prefix = "v"
 github = "aliyun/oss-browser"
 
-#["net-misc/ossutil"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "aliyun/ossutil"
+["net-misc/ossutil"]
+source = "aur"
+aur = "ossutil"
+strip_release = true
 
 #["net-misc/sunloginclient"]
 
