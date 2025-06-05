@@ -98,7 +98,7 @@ strip_release = true
 source = "github"
 use_max_tag = true
 prefix = "v"
-github = "preservim/vim-indent-guides.git"
+github = "preservim/vim-indent-guides"
 
 ["dev-cpp/gtkspellmm"]
 source = "archpkg"
@@ -981,7 +981,7 @@ pypi = "pytest-filter-subpackage"
 
 ["dev-python/pytest-relaxed"]
 source = "archpkg"
-archpkg = "python-relaxed"
+archpkg = "python-pytest-relaxed"
 strip_release = true
 
 ["dev-python/pytest-remotedata"]
@@ -1526,13 +1526,13 @@ github = "qjfoidnh/BaiduPCS-Go"
 source = "github"
 use_max_tag = true
 prefix = "v"
-github = "LANDrop/LANDrop.git"
+github = "LANDrop/LANDrop"
 
-#["net-misc/oss-browser-bin"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "aliyun/oss-browser"
+["net-misc/oss-browser-bin"]
+source = "github"
+use_max_tag = true
+prefix = "v"
+github = "aliyun/oss-browser"
 
 #["net-misc/ossutil"]
 #source = "github"
