@@ -1557,7 +1557,10 @@ strip_release = true
 
 #["net-nds/openldap-compat"]
 
-#["net-news/quiterss"]
+["net-news/quiterss"]
+source = "aur"
+aur = "quiterss"
+strip_release = true
 #source = "github"
 #use_max_tag = true
 #prefix = "v"
