@@ -1566,11 +1566,11 @@ strip_release = true
 #prefix = "v"
 #github = "QuiteRSS/quiterss.git"
 
-#["net-proxy/gg"]
-#source = "github"
-#use_max_tag = true
-#prefix = "v"
-#github = "mzz2017/gg"
+["net-proxy/gg"]
+source = "github"
+use_max_tag = true
+prefix = "v"
+github = "mzz2017/gg"
 
 #["net-proxy/v2raya-bin"]
 #source = "github"
