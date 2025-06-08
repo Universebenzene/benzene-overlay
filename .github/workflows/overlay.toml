@@ -1572,7 +1572,10 @@ use_max_tag = true
 prefix = "v"
 github = "mzz2017/gg"
 
-#["net-proxy/v2raya-bin"]
+["net-proxy/v2raya-bin"]
+source = "aur"
+aur = "v2raya-bin"
+strip_release = true
 #source = "github"
 #use_max_tag = true
 #prefix = "v"
