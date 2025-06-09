@@ -1581,7 +1581,10 @@ strip_release = true
 #prefix = "v"
 #github = "v2rayA/v2rayA"
 
-#["sci-astronomy/aladin-bin"]
+["sci-astronomy/aladin-bin"]
+source = "aur"
+aur = "aladin"
+strip_release = true
 
 #["sci-astronomy/astrometry"]
 #source = "github"
