@@ -1604,7 +1604,10 @@ strip_release = true
 #prefix = "v"
 #github = "healpy/healpixmirror"
 
-#["sci-astronomy/topcat"]
+["sci-astronomy/topcat"]
+source = "aur"
+aur = "topcat"
+strip_release = true
 
 #["sci-astronomy/wcslib"]
 
