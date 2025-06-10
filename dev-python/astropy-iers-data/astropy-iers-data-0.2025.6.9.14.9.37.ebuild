@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
 #PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 
@@ -17,6 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="test"	# No usable test phases
 
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
+BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]"
 
 #distutils_enable_tests nose
