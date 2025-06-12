@@ -33,11 +33,11 @@ PDEPEND="test? ( >=dev-python/asdf-3.0.0[${PYTHON_USEDEP}] )"
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs/source '>=dev-python/sphinx-asdf-0.1.4'
 
-python_prepare_all() {
-	use doc && { mkdir -p docs/_static || die ; }
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+#	use doc && { mkdir -p docs/_static || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
 
 python_compile_all() {
 	if use doc; then
