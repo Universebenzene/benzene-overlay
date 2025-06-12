@@ -19,15 +19,17 @@ RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-standard-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-transform-schemas-0.5.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-coordinates-schemas-0.3.0[${PYTHON_USEDEP}]
+	>=dev-python/asdf-transform-schemas-0.6.0[${PYTHON_USEDEP}]
+	>=dev-python/asdf-coordinates-schemas-0.4.0[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-asdf-0.1.3[${PYTHON_USEDEP}]
+		dev-python/furo[${PYTHON_USEDEP}]
 		>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
+		dev-python/tomli[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 "
