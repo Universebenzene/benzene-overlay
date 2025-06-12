@@ -18,11 +18,11 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/asdf-2.14.4[${PYTHON_USEDEP}]
-	>=dev-python/asdf-coordinates-schemas-0.3[${PYTHON_USEDEP}]
-	>=dev-python/asdf-transform-schemas-0.5[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/asdf-2.15.0[${PYTHON_USEDEP}]
+	>=dev-python/asdf-coordinates-schemas-0.4[${PYTHON_USEDEP}]
+	>=dev-python/asdf-transform-schemas-0.6[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.2.0[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.24[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
