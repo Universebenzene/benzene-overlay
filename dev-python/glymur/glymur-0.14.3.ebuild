@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -21,7 +21,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]
 	test? (
-		sci-libs/gdal[python]
+		sci-libs/gdal[jpeg2k,python]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 		media-libs/openjpeg:2
 	)
@@ -31,7 +31,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx-rtd-theme
 
 python_prepare_all() {
-	sed -i "s/'MIT'/{ text = 'MIT' }/" pyproject.toml || die
+#	sed -i "s/'MIT'/{ text = 'MIT' }/" pyproject.toml || die
 	use doc && { mkdir docs/source/_static || die ; }
 	# NO RECORD files in *.dist-info
 #	use test && { sed -e "/os_release/s/and/or/" -e "/os_release/s/id/ID/" \
