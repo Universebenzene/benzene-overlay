@@ -909,10 +909,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "pymoc"
 
-#["dev-python/pyqt5"]
-#source = "pypi"
-#use_max_tag = true
-#pypi = "pyqt5"
+["dev-python/pyqt5"]
+source = "repology"
+repology = "python:pyqt5"
+repo = "gentoo"
 
 ["dev-python/pyregion"]
 source = "pypi"
