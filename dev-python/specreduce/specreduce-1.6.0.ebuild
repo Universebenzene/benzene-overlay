@@ -38,13 +38,13 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-5.3[${PYTHON_USEDEP}]
 	dev-python/gwcs[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.10[${PYTHON_USEDEP}]
 	>=dev-python/specutils-1.9.1[${PYTHON_USEDEP}]
 	all? (
-		dev-python/matplotlib[${PYTHON_USEDEP}]
-		dev-python/photutils[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.7[${PYTHON_USEDEP}]
+		>=dev-python/photutils-1.0[${PYTHON_USEDEP}]
 		dev-python/synphot[${PYTHON_USEDEP}]
 	)
 "
@@ -60,6 +60,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
 		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/photutils[${PYTHON_USEDEP}]
+		<dev-python/specutils-2[${PYTHON_USEDEP}]
 		dev-python/synphot[${PYTHON_USEDEP}]
 	)
 "
