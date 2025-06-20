@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -19,16 +19,19 @@ RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/asdf-3.3.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-wcs-schemas-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-astropy-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/asdf-wcs-schemas-0.5.0[${PYTHON_USEDEP}]
+	>=dev-python/asdf-astropy-0.8.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-6.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.14.1[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]' python3_11)
 "
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP},confv2]
 		dev-python/sphinx-asdf[${PYTHON_USEDEP}]
+		dev-python/sphinx-tabs[${PYTHON_USEDEP}]
+		dev-python/furo[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
