@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
-DATA_COM="404adbc"
+DATA_COM="15f5a7e"
 DATA_URI="https://github.com/sunpy/data/raw/${DATA_COM}/sunpy/v1"
 
 DESCRIPTION="An interative animation framework for matplotlib"
