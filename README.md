@@ -223,6 +223,7 @@ dev-python/sphinx-readable-theme        | 1.3.0                           |
 dev-python/sphinx-thebe                 | 0.2.1; 0.3.1                    |
 dev-python/sphinx-togglebutton          | 0.3.2                           |
 dev-python/sphinx-contributors          | 0.2.7                           |
+dev-python/sphinx-last-updated-by-git   | 0.3.8                           | Required by new sphinx-sitemap
 dev-python/sphinx-mdinclude             | 0.6.2                           |
 dev-python/sphinx-reredirects           | 1.0.0                           |
 dev-python/sphinx-sitemap               | 2.6.0                           |

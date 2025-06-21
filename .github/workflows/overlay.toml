@@ -1221,6 +1221,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "sphinx-hoverxref"
 
+["dev-python/sphinx-last-updated-by-git"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-last-updated-by-git"
+
 ["dev-python/sphinx-mdinclude"]
 source = "pypi"
 use_max_tag = true
