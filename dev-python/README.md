@@ -40,7 +40,7 @@ dev-python/h5pyd               | 0.12.2; 0.17.0; 0.18.0                         
 dev-python/healpy              | 1.16.6; 1.18.1                                       |
 dev-python/hvpy                | 1.1.0                                                | Test dependency and optional for sunpy.
 dev-python/imexam              | 0.9.1                                                | With [my issue](https://github.com/spacetelescope/imexam/issues/252) unsolved. [NOT COMPATIBLE WITH PY3.11 YET](https://github.com/spacetelescope/imexam/issues/256)
-dev-python/jplephem            | 2.22                                                 |
+dev-python/jplephem            | 2.23                                                 |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                      | Old version for dev-python/asdf
 dev-python/mocpy               | 0.18.0                                               | Dependency cdshealpix are also in this overlay but not listed in this table
 dev-python/mpl-animator        | 1.2.4                                                |
