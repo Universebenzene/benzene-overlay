@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Pyzstd module provides classes and functions for compressing and decompressing data,
+		using Facebook's Zstandard (or zstd as short name) algorithm.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pyzstd</remote-id>
+		<remote-id type="github">Rogdham/pyzstd</remote-id>
+	</upstream>
+</pkgmetadata>

@@ -168,6 +168,7 @@ dev-python/pytest-textual-snapshot | 1.1.0-r1                                   
 dev-python/python-pkcs11           | 0.7.0-r1                                                   | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
 dev-python/python-socketio         | 5.9.0; 5.13.0                                              | Optional for yt
 dev-python/python-xz               | 0.5.0                                                      | Optional for yt
+dev-python/pyzstd                  | 0.17.0                                                     | Optional for new ratarmount{,core}
 dev-python/pure-protobuf           | 2.3.0; 3.1.4                                               | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/rasterio                | 1.3.8\_p2; 1.4.3                                           | Optional for photutils. Dependencies are not all listed in the table
 dev-python/ratarmount              | 0.14.2; 0.15.2; 1.0.0                                      | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
