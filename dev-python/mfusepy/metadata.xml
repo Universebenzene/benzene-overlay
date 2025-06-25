@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		mfusepy is a Python module that provides a simple interface to FUSE and macFUSE.
+		It's just one file and is implemented using ctypes to use libfuse.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">mfusepy</remote-id>
+		<remote-id type="github">mxmlnkn/mfusepy</remote-id>
+	</upstream>
+</pkgmetadata>
