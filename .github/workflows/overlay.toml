@@ -464,6 +464,11 @@ source = "archpkg"
 archpkg = "python-eventlet"
 strip_release = true
 
+["dev-python/ext4"]
+source = "pypi"
+use_max_tag = true
+pypi = "ext4"
+
 ["dev-python/ewah-bool-utils"]
 source = "pypi"
 use_max_tag = true
@@ -683,6 +688,11 @@ to_pattern = '\1'
 source = "archpkg"
 archpkg = "memray"
 strip_release = true
+
+["dev-python/mfusepy"]
+source = "pypi"
+use_max_tag = true
+pypi = "mfusepy"
 
 ["dev-python/miniballcpp"]
 source = "pypi"
