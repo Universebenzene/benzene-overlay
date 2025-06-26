@@ -878,6 +878,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pyavm"
 
+["dev-python/pycryptodomex"]
+source = "repology"
+repology = "python:pycryptodome"
+repo = "gentoo"
+
 ["dev-python/pydantic-settings"]
 source = "archpkg"
 archpkg = "python-pydantic-settings"
