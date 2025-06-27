@@ -68,7 +68,7 @@ dev-python/specutils           | 1.20.3; 2.0.0                                  
 dev-python/specreduce          | 1.6.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Some images cannot be plotted if intersphinx is disabled.
 dev-python/starlink-pyast      | 0.2.1                                                | Starlink WCS library for ginga
 dev-python/sunpy               | 5.1.5; 6.1.1                                         | Doc building is really hard to run, so not supported right now.
-dev-python/synphot             | 1.5.0                                                |
+dev-python/synphot             | 1.6.0                                                |
 dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.0.20                                |
 
 <!--dev-python/montage-wrapper     | 0.9.9                                                |-->

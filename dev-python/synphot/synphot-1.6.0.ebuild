@@ -21,13 +21,13 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-1.23[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-6[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.9[${PYTHON_USEDEP}]
 	all? (
 		dev-python/dust-extinction[${PYTHON_USEDEP}]
-		>=dev-python/specutils-0.7[${PYTHON_USEDEP}]
+		>=dev-python/specutils-1.10[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
