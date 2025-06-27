@@ -16,10 +16,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/flask-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.28.1[${PYTHON_USEDEP}]
-	dev-python/sphinx-last-updated-by-git[${PYTHON_USEDEP}]
-"
+RDEPEND="dev-python/sphinx-last-updated-by-git[${PYTHON_USEDEP}]"
 BDEPEND="test? ( dev-python/gitpython[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
