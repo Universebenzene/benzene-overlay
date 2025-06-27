@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -42,5 +42,6 @@ EPYTEST_IGNORE=(
 
 EPYTEST_DESELECT=(
 	# ModuleNotFoundError: No module named 'azure'
-	tests/test_docs.py::test_docs_examples[docs/index.md:1847-1890]
+	tests/test_docs.py::test_docs_examples[docs/index.md:1905-1948]
+	tests/test_docs.py::test_docs_examples[docs/index.md:1956-1989]
 )
