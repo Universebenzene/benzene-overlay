@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		pyppmd module provides classes and functions for compressing and decompressing
+		text data, using PPM(Prediction by partial matching) compression algorithm which
+		has several variations of implementations. PPMd is the implementation by
+		Dmitry Shkarin. PyPPMD use Igor Pavlov's range coder introduced in 7-zip.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pyppmd</remote-id>
+		<remote-id type="codeberg">miurahr/pyppmd</remote-id>
+	</upstream>
+</pkgmetadata>

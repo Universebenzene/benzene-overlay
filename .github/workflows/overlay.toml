@@ -924,6 +924,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pymoc"
 
+["dev-python/pyppmd"]
+source = "pypi"
+use_max_tag = true
+pypi = "pyppmd"
+
 ["dev-python/pyqt5"]
 source = "repology"
 repology = "python:pyqt5"
