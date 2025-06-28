@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		pybcj is a python bindings with BCJ implementation by C language.
+		The C codes are derived from p7zip, portable 7-zip implementation.
+		pybcj support Intel/Amd x86/x86_64, Arm/Arm64, ArmThumb, Sparc, PPC, and IA64.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pybcj</remote-id>
+		<remote-id type="codeberg">miurahr/pybcj</remote-id>
+	</upstream>
+</pkgmetadata>

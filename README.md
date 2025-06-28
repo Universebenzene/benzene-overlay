@@ -162,6 +162,7 @@ dev-python/msrestazure             | 0.6.4\_p1                                  
 dev-python/multiformats            | 0.3.1\_p4                                                  | Optional for new ratarmount{,core} <- ipfsspec. Dependencies like bases(base58) and multiformats-config are not included in this table. For more functions with pycryptodomex you need to add [parona-overlay](https://gitlab.com/Parona/parona-overlay)
 dev-python/numcodecs               | 0.13.1; 0.15.1; 0.16.1                                     | Pulled in by zarr
 dev-python/oscrypto                | 1.3.0                                                      | Test dependency for python-pkcs11
+dev-python/pybcj                   | 1.0.6                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/pyfatfs                 | 1.1.0                                                      | Optional for new ratarmount{,core}
 dev-python/pygaljs                 | 1.0.2                                                      | Optional for pytest-benchmark
 dev-python/pykdtree                | 1.4.1                                                      | Optional for yt

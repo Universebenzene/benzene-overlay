@@ -878,6 +878,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pyavm"
 
+["dev-python/pybcj"]
+source = "pypi"
+use_max_tag = true
+pypi = "pybcj"
+
 ["dev-python/pycryptodomex"]
 source = "repology"
 repology = "python:pycryptodome"
