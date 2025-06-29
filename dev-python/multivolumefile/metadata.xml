@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		MultiVolumefile is a python library to provide a file-object wrapping
+		multiple files as virtually like as a single file. It inherit io.RawIOBase
+		class and support some of its standard methods.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">multivolumefile</remote-id>
+		<remote-id type="github">miurahr/multivolume</remote-id>
+		<remote-id type="codeberg">miurahr/multivolume</remote-id>
+	</upstream>
+</pkgmetadata>

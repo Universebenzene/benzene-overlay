@@ -801,6 +801,11 @@ pypi = "multiformats"
 from_pattern = "(.*).post(.*)"
 to_pattern = '\1_p\2'
 
+["dev-python/multivolumefile"]
+source = "pypi"
+use_max_tag = true
+pypi = "multivolumefile"
+
 ["dev-python/myst-nb"]
 source = "pypi"
 use_max_tag = true
