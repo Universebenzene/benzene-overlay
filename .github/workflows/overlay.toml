@@ -621,6 +621,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "indexed-zstd"
 
+["dev-python/inflate64"]
+source = "pypi"
+use_max_tag = true
+pypi = "inflate64"
+
 ["dev-python/invoke"]
 source = "archpkg"
 archpkg = "python-invoke"

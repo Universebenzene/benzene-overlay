@@ -151,6 +151,7 @@ dev-python/fusepy                  | 3.0.1                                      
 dev-python/mfusepy                 | 1.1.0                                                      | Optional for new ratarmount
 dev-python/heapdict                | 1.0.1                                                      | Pulled in by zict and distributed
 dev-python/indexed\-{bzip2,zstd}   | 1.6.0 / 1.6.1                                              | Optional for yt (ratarmount{,core})
+dev-python/inflate64               | 1.0.3                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/ipfsspec                | 0.6.0                                                      | Optional for new ratarmount{,core}
 dev-python/isal                    | 1.7.2                                                      | Optional for new ratarmount{,core}
 dev-python/rapidgzip               | 0.14.3                                                     | Optional for new ratarmount{,core}

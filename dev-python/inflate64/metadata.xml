@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		The inflate64 is a python package to provide Deflater and Inflater class to
+		compress and decompress with Enhanced Deflate compression algorithm.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">inflate64</remote-id>
+		<remote-id type="github">miurahr/inflate64</remote-id>
+	</upstream>
+</pkgmetadata>
