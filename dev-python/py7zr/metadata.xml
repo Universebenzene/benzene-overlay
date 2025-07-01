@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		py7zr is a library and utility to support 7zip archive compression, decompression,
+		encryption and decryption written by Python programming language.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">py7zr</remote-id>
+		<remote-id type="github">miurahr/py7zr</remote-id>
+	</upstream>
+</pkgmetadata>

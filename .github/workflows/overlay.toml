@@ -883,6 +883,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pvextractor"
 
+["dev-python/py7zr"]
+source = "pypi"
+use_max_tag = true
+pypi = "py7zr"
+
 ["dev-python/pyavm"]
 source = "pypi"
 use_max_tag = true
