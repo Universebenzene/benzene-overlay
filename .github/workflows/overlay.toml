@@ -1332,6 +1332,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "sphinxext-opengraph"
 
+["dev-python/sqlcipher3"]
+source = "pypi"
+use_max_tag = true
+pypi = "sqlcipher3"
+
 ["dev-python/sshfs"]
 source = "pypi"
 use_max_tag = true

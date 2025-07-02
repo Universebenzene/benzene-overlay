@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This library takes pysqlite3 and makes some small modifications
+		so it is suitable for use with sqlcipher (sqlite with encryption).
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">sqlcipher3</remote-id>
+		<remote-id type="github">coleifer/sqlcipher3</remote-id>
+	</upstream>
+</pkgmetadata>
