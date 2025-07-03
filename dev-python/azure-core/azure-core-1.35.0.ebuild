@@ -28,6 +28,7 @@ BDEPEND="test? (
 		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/pytest-trio[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
+		dev-python/isodate[${PYTHON_USEDEP}]
 		dev-python/opentelemetry-sdk[${PYTHON_USEDEP}]
 	)
 "
@@ -53,4 +54,8 @@ python_install_all() {
 	fi
 
 	distutils-r1_python_install_all
+}
+
+python_test() {
+	PYTHONPATH="${S}"/tests/specs_sdk/modeltypes epytest
 }
