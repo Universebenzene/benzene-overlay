@@ -9,7 +9,7 @@ DESCRIPTION="Export s3fs for aliyun oss"
 HOMEPAGE="https://github.com/aliyun/ossfs
 	https://help.aliyun.com/zh/oss/developer-reference/use-ossfs-to-mount-an-oss-bucket-to-the-local-directories-of-an-ecs-instance
 "
-SRC_URI="https://github.com/aliyun/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/aliyun/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
