@@ -10,8 +10,11 @@
 		<remote-id type="github">mxmlnkn/ratarmount</remote-id>
 	</upstream>
 	<use>
+		<flag name="ext4">Add extra support for ext4</flag>
 		<flag name="fsspec">Add extra support for fsspec</flag>
 		<flag name="full">Include most extra dependencies</flag>
+		<flag name="git">Add extra support for git</flag>
+		<flag name="sqlar">Add extra support for sqlar</flag>
 		<flag name="squashfs">Add extra support for squashfs</flag>
 	</use>
 </pkgmetadata>

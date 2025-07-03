@@ -11,6 +11,7 @@
 	<use>
 		<flag name="7z">Add extra support for 7z</flag>
 		<flag name="bzip2">Add extra support for bzip2</flag>
+		<flag name="ext4">Add extra support for ext4 via <pkg>dev-python/ext4</pkg></flag>
 		<flag name="fat">Add extra support for fat via <pkg>dev-python/pyfatfs</pkg></flag>
 		<flag name="fsspec">Add extra support for fsspec</flag>
 		<flag name="fsspec-backends">Add extra support for more fsspec backends</flag>
@@ -19,6 +20,7 @@
 		<flag name="git">Add extra support for git</flag>
 		<flag name="gzip">Add extra support for gzip</flag>
 		<flag name="rar">Add extra support for rar</flag>
+		<flag name="sqlar">Add extra support for sqlar</flag>
 		<flag name="squashfs">Add extra support for squashfs</flag>
 		<flag name="xz">Add extra support for xz</flag>
 		<flag name="zip">Add extra support for zip</flag>

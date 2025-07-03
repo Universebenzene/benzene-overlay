@@ -17,26 +17,38 @@ SRC_URI+=" test? (
 		${GIT_RAW_URI}/tests/concatenated.tar -> ${P}-t-concatenated.tar
 		${GIT_RAW_URI}/tests/denormal-paths.tar -> ${P}-t-denormal-paths.tar
 		${GIT_RAW_URI}/tests/denormal-paths.rar -> ${P}-t-denormal-paths.rar
+		${GIT_RAW_URI}/tests/denormal-paths.zip -> ${P}-t-denormal-paths.zip
 		${GIT_RAW_URI}/tests/directly-nested-tar.tar -> ${P}-t-directly-nested-tar.tar
 		${GIT_RAW_URI}/tests/double-compressed-nested-tar.tar.7z.7z -> ${P}-t-double-compressed-nested-tar.tar.7z.7z
 		${GIT_RAW_URI}/tests/encrypted-nested-tar.rar -> ${P}-t-encrypted-nested-tar.rar
 		${GIT_RAW_URI}/tests/encrypted-nested-tar.zip -> ${P}-t-encrypted-nested-tar.zip
+		${GIT_RAW_URI}/tests/encrypted-nested-tar.sqlar -> ${P}-t-encrypted-nested-tar.sqlar
 		${GIT_RAW_URI}/tests/file-existing-as-non-link-and-link.tar -> ${P}-t-file-existing-as-non-link-and-link.tar
 		${GIT_RAW_URI}/tests/file-in-non-existing-folder.7z -> ${P}-t-file-in-non-existing-folder.7z
 		${GIT_RAW_URI}/tests/file-in-non-existing-folder.rar -> ${P}-t-file-in-non-existing-folder.rar
+		${GIT_RAW_URI}/tests/file-in-non-existing-folder.zip -> ${P}-t-file-in-non-existing-folder.zip
 		${GIT_RAW_URI}/tests/folder-symlink.7z -> ${P}-t-folder-symlink.7z
 		${GIT_RAW_URI}/tests/folder-symlink.rar -> ${P}-t-folder-symlink.rar
+		${GIT_RAW_URI}/tests/folder-symlink.zip -> ${P}-t-folder-symlink.zip
 		${GIT_RAW_URI}/tests/folder-with-leading-dot-slash.tar -> ${P}-t-folder-with-leading-dot-slash.tar
 		${GIT_RAW_URI}/tests/gnu-sparse-files.tar -> ${P}-t-gnu-sparse-files.tar
 		${GIT_RAW_URI}/tests/hardlink.tar -> ${P}-t-hardlink.tar
 		${GIT_RAW_URI}/tests/hello-world.warc -> ${P}-t-hello-world.warc
 		${GIT_RAW_URI}/tests/incremental-backup.level.0.tar -> ${P}-t-incremental-backup.level.0.tar
 		${GIT_RAW_URI}/tests/incremental-backup.level.1.tar -> ${P}-t-incremental-backup.level.1.tar
+		${GIT_RAW_URI}/tests/mockup-self-extracting.zip -> ${P}-t-mockup-self-extracting.zip
+		${GIT_RAW_URI}/tests/nested-tar.asar -> ${P}-t-nested-tar.asar
+		${GIT_RAW_URI}/tests/nested-tar.sqlar -> ${P}-t-nested-tar.sqlar
 		${GIT_RAW_URI}/tests/nested-tar.tar -> ${P}-t-nested-tar.tar
 		${GIT_RAW_URI}/tests/nested-directly-compressed.tar.bz2 -> ${P}-t-nested-directly-compressed.tar.bz2
 		${GIT_RAW_URI}/tests/nested-symlinks.tar -> ${P}-t-nested-symlinks.tar
+		${GIT_RAW_URI}/tests/nested-tar-compressed.sqlar -> ${P}-t-nested-tar-compressed.sqlar
 		${GIT_RAW_URI}/tests/nested-tar-with-overlapping-name.tar -> ${P}-t-nested-tar-with-overlapping-name.tar
+		${GIT_RAW_URI}/tests/nested-tar-1M.ext4.bz2 -> ${P}-t-nested-tar-1M.ext4.bz2
+		${GIT_RAW_URI}/tests/nested-tar-10M.ext4.bz2 -> ${P}-t-nested-tar-10M.ext4.bz2
 		${GIT_RAW_URI}/tests/nested-with-symlink.7z -> ${P}-t-nested-with-symlink.7z
+		${GIT_RAW_URI}/tests/nested-with-symlink.zip -> ${P}-t-nested-with-symlink.zip
+		${GIT_RAW_URI}/tests/rar.zip -> ${P}-t-rar.zip
 		${GIT_RAW_URI}/tests/simple.bz2 -> ${P}-t-simple.bz2
 		${GIT_RAW_URI}/tests/simple.gz -> ${P}-t-simple.gz
 		${GIT_RAW_URI}/tests/simple.lrz -> ${P}-t-simple.lrz
@@ -77,16 +89,22 @@ SRC_URI+=" test? (
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"	# RuntimeError: Expected mount point but it isn't one!
+IUSE="ext4 fsspec full git sqlar squashfs"
+RESTRICT="test"	# ratarmountcore.utils.RatarmountError: FUSE mountpoint could not be created.
 
-RDEPEND="<dev-python/ratarmountcore-0.8.0[${PYTHON_USEDEP}]
-	dev-python/fusepy[${PYTHON_USEDEP}]
-	>=dev-python/indexed-gzip-1.6.3[${PYTHON_USEDEP}]
-	>=dev-python/indexed-zstd-1.2.2[${PYTHON_USEDEP}]
-	>=dev-python/libarchive-c-5.1[${PYTHON_USEDEP}]
-	>=dev-python/python-xz-0.4.0[${PYTHON_USEDEP}]
-	>=dev-python/rapidgzip-0.13.1[${PYTHON_USEDEP}]
-	>=dev-python/rarfile-4.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/mfusepy-1.0[${PYTHON_USEDEP}]
+	>=dev-python/ratarmountcore-0.9.0[${PYTHON_USEDEP},7z,bzip2,ext4?,fat,full?,git?,gzip,rar,sqlar?,squashfs?,xz,zip,zstd]
+	fsspec? ( >=dev-python/ratarmountcore-0.9.0[${PYTHON_USEDEP},fsspec-backends] )
+"
+BDEPEND="test? (
+		app-arch/lrzip
+		app-arch/lzop
+		|| ( app-arch/unrar app-arch/rar )
+		dev-python/ext4[${PYTHON_USEDEP}]
+		dev-python/cryptography[${PYTHON_USEDEP}]
+		dev-python/sqlcipher3[${PYTHON_USEDEP}]
+		sys-fs/fuse:0
+	)
 "
 
 distutils_enable_tests pytest
