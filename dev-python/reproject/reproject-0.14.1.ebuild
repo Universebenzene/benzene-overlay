@@ -1,11 +1,11 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 TMASS_IM_URI="https://irsa.ipac.caltech.edu:443/cgi-bin/2MASS/IM"
 
@@ -49,7 +49,6 @@ RDEPEND="${DEPEND}
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	>=dev-python/cython-3[${PYTHON_USEDEP}]
-	<dev-python/cython-3.1[${PYTHON_USEDEP}]
 	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}

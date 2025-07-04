@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -31,7 +31,6 @@ RDEPEND="${DEPEND}
 "
 BDEPEND="${RDEPEND}
 	>=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
-	<dev-python/cython-3.1.0[${PYTHON_USEDEP}]
 	dev-python/extension-helpers[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? (
