@@ -18,7 +18,7 @@
 		<remote-id type="pypi">ccdproc</remote-id>
 		<remote-id type="github">astropy/ccdproc</remote-id>
 	</upstream>
-	<!--<use>
+	<use>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
-	</use>-->
+	</use>
 </pkgmetadata>
