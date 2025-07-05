@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -18,7 +18,9 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
-BDEPEND=">=dev-python/cython-3[${PYTHON_USEDEP}]"
+BDEPEND=">=dev-python/cython-3[${PYTHON_USEDEP}]
+	test? ( dev-python/mypy[${PYTHON_USEDEP}] )
+"
 
 distutils_enable_tests pytest
 
