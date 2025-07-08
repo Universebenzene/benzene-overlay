@@ -5,8 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 edo pypi
 
@@ -20,14 +19,15 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/asn1crypto-0.22.0[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/asn1crypto-1.5.1[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/setuptools-scm[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-8.3.1[${PYTHON_USEDEP}]
 	test? (
 		dev-libs/openssl
 		dev-libs/softhsm
 		dev-python/cryptography[${PYTHON_USEDEP}]
 		dev-python/oscrypto[${PYTHON_USEDEP}]
+		dev-python/parameterized[${PYTHON_USEDEP}]
 	)
 "
 
@@ -35,7 +35,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 # https://github.com/pyauth/python-pkcs11/pull/176
-PATCHES=( "${FILESDIR}"/${P}-use-functools-cached-property.patch )
+#PATCHES=( "${FILESDIR}"/${P}-use-functools-cached-property.patch )
 
 python_prepare_all() {
 	use doc && { mkdir docs/_static || die ; \
@@ -44,7 +44,7 @@ python_prepare_all() {
 
 	# test_sign_eddsa and test_self_sign_certificate always fail in our build environment
 	# (https://github.com/danni/python-pkcs11/issues/63#issuecomment-526812900)
-	use test && eapply "${FILESDIR}"/${P}-mark-tests-as-xfail.patch
+	#use test && eapply "${FILESDIR}"/${P}-mark-tests-as-xfail.patch
 
 	distutils-r1_python_prepare_all
 }
