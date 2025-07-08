@@ -90,7 +90,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="ext4 fsspec full git sqlar squashfs"
-RESTRICT="test"	# ratarmountcore.utils.RatarmountError: FUSE mountpoint could not be created.
+PROPERTIES="test_privileged"
+RESTRICT="test"
 
 RDEPEND=">=dev-python/mfusepy-1.0[${PYTHON_USEDEP}]
 	>=dev-python/ratarmountcore-0.9.0[${PYTHON_USEDEP},7z,bzip2,ext4?,fat,full?,git?,gzip,rar,sqlar?,squashfs?,xz,zip,zstd]
@@ -117,4 +118,9 @@ python_prepare_all() {
 	use test && { for tdata in "${DISTDIR}"/*-t-*; do { cp ${tdata} "${S}"/tests/${tdata##*-t-} || die ; } ; done ; }
 
 	distutils-r1_python_prepare_all
+}
+
+python_test() {
+	addwrite /dev/fuse
+	epytest
 }
