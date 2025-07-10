@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -26,4 +26,4 @@ BDEPEND="test? ( dev-python/ipython[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/src dev-python/sphinx-rtd-theme \
-	dev-python/ipython dev-python/matplotlib dev-python/pickleshare
+	dev-python/ipython dev-python/matplotlib
