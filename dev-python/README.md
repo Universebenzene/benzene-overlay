@@ -69,6 +69,6 @@ dev-python/specreduce          | 1.6.0                                          
 dev-python/starlink-pyast      | 0.2.1                                                | Starlink WCS library for ginga
 dev-python/sunpy               | 5.1.5; 6.1.1                                         | Doc building is really hard to run, so not supported right now.
 dev-python/synphot             | 1.6.0                                                |
-dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.0.20                                |
+dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.0.21                                |
 
 <!--dev-python/montage-wrapper     | 0.9.9                                                |-->
