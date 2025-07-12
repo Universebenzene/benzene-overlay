@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,7 +7,8 @@ MY_PV="${PV%_p*}"
 MY_P="${PN}-${MY_PV}"
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{{10..13},13t} pypy3 )
+PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
+#PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 PYTHON_REQ_USE="threads(+)"
 
 inherit distutils-r1 pypi
@@ -29,16 +30,16 @@ IUSE="examples test"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-BDEPEND="
-	test? (
-		$(python_gen_cond_dep '
-			!hppa? ( dev-python/coverage[${PYTHON_USEDEP}] )
-		' python3_{8..10} pypy3)
-		$(python_gen_cond_dep '
-			dev-python/twisted[${PYTHON_USEDEP}]
-		' python3_{8..10})
-	)
-"
+#BDEPEND="
+#	test? (
+#		$(python_gen_cond_dep '
+#			!hppa? ( dev-python/coverage[${PYTHON_USEDEP}] )
+#		' python3_{8..10} pypy3)
+#		$(python_gen_cond_dep '
+#			dev-python/twisted[${PYTHON_USEDEP}]
+#		' python3_{8..10})
+#	)
+#"
 
 PATCHES=(
 	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-nose/-/blob/main/PKGBUILD
