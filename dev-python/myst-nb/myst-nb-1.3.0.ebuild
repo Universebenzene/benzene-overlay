@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 MY_PN=MyST-NB
 MY_P=${MY_PN}-${PV}
@@ -55,5 +55,5 @@ pkg_postinst() {
 	optfeature "extra rtd support" "dev-python/alabaster dev-python/altair dev-python/bokeh \
 		dev-python/ipywidgets>=8 dev-python/jupytext dev-python/numpy dev-python/matplotlib dev-python/pandas \
 		dev-python/plotly dev-python/sphinx-book-theme dev-python/sphinx-copybutton dev-python/sphinx-design \
-		dev-python/sphinxcontrib-bibtex dev-python/sympy>=1.10.1"
+		dev-python/sphinxcontrib-bibtex dev-python/sympy>=1.10.1 dev-python/sphinx-autodoc-typehints"
 }
