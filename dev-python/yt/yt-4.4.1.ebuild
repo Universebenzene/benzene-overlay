@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://yt-project.org"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-PROPERTIES="test_network"
+PROPERTIES="test_network test_privileged"
 RESTRICT="test"
 IUSE="full"
 
@@ -39,7 +39,7 @@ RDEPEND="${DEPEND}
 		>=dev-python/glueviz-0.13.3[${PYTHON_USEDEP}]
 		>dev-python/glue-core-1.2.4[${PYTHON_USEDEP}]
 		>=dev-python/h5py-3.1.0[${PYTHON_USEDEP}]
-		>=dev-python/ipython-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/ipython-7.16.2[${PYTHON_USEDEP}]
 		>=dev-python/ipywidgets-8.0.0[${PYTHON_USEDEP}]
 		>=dev-python/libconf-1.0.1[${PYTHON_USEDEP}]
 		>=dev-python/miniballcpp-0.2.1[${PYTHON_USEDEP}]
@@ -50,7 +50,7 @@ RDEPEND="${DEPEND}
 		>=dev-python/pyaml-17.10.0[${PYTHON_USEDEP}]
 		>=dev-python/pykdtree-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/pyx-0.15[${PYTHON_USEDEP}]
-		>=dev-python/ratarmount-0.8.1[${PYTHON_USEDEP}]
+		<dev-python/ratarmount-0.9[${PYTHON_USEDEP}]
 		>=dev-python/regions-0.7[${PYTHON_USEDEP}]
 		>=dev-python/requests-2.20.0[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.5.0[${PYTHON_USEDEP}]
@@ -73,7 +73,7 @@ BDEPEND=">=dev-python/cython-3.0.3[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		dev-python/pooch[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
-		dev-python/ratarmount[${PYTHON_USEDEP}]
+		<dev-python/ratarmount-0.9[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
 		sci-libs/cartopy
 	)
@@ -96,13 +96,16 @@ EPYTEST_IGNORE=(
 #	Unknown pytest.mark.answer_test
 #	Failed: In test_sedov_tunnel: function uses no argument 'axis'
 	yt/frontends/gdf/tests/test_outputs_nose.py
+#	Failed: 'yield' keyword is allowed in fixtures, but not in tests
+	yt/data_objects/tests/test_connected_sets.py
+	yt/geometry/coordinates/tests/test_axial_pixelization.py
 )
 
-python_prepare_all() {
-	sed -i -e 's/import TarMount/import FuseMount as TarMount/g' yt/utilities/on_demand_imports.py || die
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+#	sed -i -e 's/import TarMount/import FuseMount as TarMount/g' yt/utilities/on_demand_imports.py || die
+#
+#	distutils-r1_python_prepare_all
+#}
 
 python_compile_all() {
 	use doc && { [[ -d ${PN} ]] && { mv {,_}${PN} || die ; } ; cp -r "${S}"{/doc/helper_scripts,} || die ; }
@@ -111,6 +114,7 @@ python_compile_all() {
 }
 
 python_test() {
+	addwrite /dev/fuse
 	pushd "${BUILD_DIR}/install/$(python_get_sitedir)" || die
 	cp "${S}"/conftest.py . || die
 	epytest
