@@ -67,5 +67,5 @@ EPYTEST_IGNORE=(
 )
 
 python_test() {
-	epytest  --run-slow-hypothesis
+	epytest --run-slow-hypothesis -Werror::zarr.core.dtype.common.UnstableSpecificationWarning
 }
