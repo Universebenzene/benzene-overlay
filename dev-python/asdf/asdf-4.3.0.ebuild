@@ -70,7 +70,7 @@ python_compile_all() {
 }
 
 python_test() {
-	epytest --remote-data
+	epytest --remote-data -Werror
 }
 
 pkg_postinst() {
