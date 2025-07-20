@@ -19,7 +19,7 @@ RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/dask-2025.2.0[${PYTHON_USEDEP}]
+	>=dev-python/dask-2025.7.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.10.3[${PYTHON_USEDEP}]
 	>=dev-python/locket-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-1.0.2[${PYTHON_USEDEP}]
