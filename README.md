@@ -154,7 +154,7 @@ dev-python/indexed\-{bzip2,zstd}   | 1.7.0 / 1.6.1                              
 dev-python/inflate64               | 1.0.3                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/ipfsspec                | 0.6.0                                                      | Optional for new ratarmount{,core}
 dev-python/isal                    | 1.7.2                                                      | Optional for new ratarmount{,core}
-dev-python/rapidgzip               | 0.14.4                                                     | Optional for new ratarmount{,core}
+dev-python/rapidgzip               | 0.14.5                                                     | Optional for new ratarmount{,core}
 dev-python/libconf                 | 2.0.1                                                      | Optional for yt
 dev-python/memory-profiler         | 0.61                                                       | Dropped by official portage. Test dependency for ccdproc
 dev-python/miniballcpp             | 0.2.3                                                      | Optional for yt
