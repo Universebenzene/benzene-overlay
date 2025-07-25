@@ -3,6 +3,8 @@
 
 EAPI=8
 
+CORE_VER="0.9.1"
+
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
@@ -40,6 +42,7 @@ SRC_URI+=" test? (
 		${GIT_RAW_URI}/tests/nested-tar.asar -> ${P}-t-nested-tar.asar
 		${GIT_RAW_URI}/tests/nested-tar.sqlar -> ${P}-t-nested-tar.sqlar
 		${GIT_RAW_URI}/tests/nested-tar.tar -> ${P}-t-nested-tar.tar
+		${GIT_RAW_URI}/tests/nested-tar.tar.pzstd -> ${P}-t-nested-tar.tar.pzstd
 		${GIT_RAW_URI}/tests/nested-directly-compressed.tar.bz2 -> ${P}-t-nested-directly-compressed.tar.bz2
 		${GIT_RAW_URI}/tests/nested-symlinks.tar -> ${P}-t-nested-symlinks.tar
 		${GIT_RAW_URI}/tests/nested-tar-compressed.sqlar -> ${P}-t-nested-tar-compressed.sqlar
@@ -77,12 +80,14 @@ SRC_URI+=" test? (
 		${GIT_RAW_URI}/tests/single-file-with-leading-dot-slash.tar -> ${P}-t-single-file-with-leading-dot-slash.tar
 		${GIT_RAW_URI}/tests/single-nested-file.tar -> ${P}-t-single-nested-file.tar
 		${GIT_RAW_URI}/tests/single-nested-folder.tar -> ${P}-t-single-nested-folder.tar
+		${GIT_RAW_URI}/tests/sparse-file-larger-than-8GiB-followed-by-normal-file.tar.zst.zst -> ${P}-t-sparse-file-larger-than-8GiB-followed-by-normal-file.tar.zst.zst
 		${GIT_RAW_URI}/tests/two-self-links-to-existing-file.tar -> ${P}-t-two-self-links-to-existing-file.tar
 		${GIT_RAW_URI}/tests/updated-file.tar -> ${P}-t-updated-file.tar
 		${GIT_RAW_URI}/tests/updated-file-implicitly-with-folder.tar -> ${P}-t-updated-file-implicitly-with-folder.tar
 		${GIT_RAW_URI}/tests/updated-file-with-folder.tar -> ${P}-t-updated-file-with-folder.tar
 		${GIT_RAW_URI}/tests/updated-folder-with-file.tar -> ${P}-t-updated-folder-with-file.tar
 		${GIT_RAW_URI}/tests/zip.7z -> ${P}-t-zip.7z
+		https://github.com/mxmlnkn/ratarmount/raw/core-v${CORE_VER}/core/tests/helpers.py -> ${PN}core-${CORE_VER}-t-helpers.py
 	)
 "
 
