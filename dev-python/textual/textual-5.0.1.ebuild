@@ -17,6 +17,7 @@ KEYWORDS="~amd64"
 RDEPEND=">=dev-python/markdown-it-py-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-13.3.3[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-4.2.2[${PYTHON_USEDEP}]
+	>=dev-python/pygments-2.19.2[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
@@ -43,7 +44,7 @@ python_test() {
 
 pkg_postinst() {
 	optfeature_header "Extra syntax support:"
-	optfeature "bindings for python" ">=dev-python/tree-sitter-0.23.0"
+	optfeature "bindings for python" ">=dev-python/tree-sitter-0.25.0"
 	optfeature "suppor for python" ">=dev-python/tree-sitter-python-0.23.0"
 	optfeature "suppor for markdown" ">=dev-python/tree-sitter-markdown-0.3.0"
 	optfeature "suppor for json" ">=dev-python/tree-sitter-json-0.24.0"
