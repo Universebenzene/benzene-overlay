@@ -63,7 +63,7 @@ distutils_enable_tests pytest
 EPYTEST_IGNORE=(
 	# Ignore uv related tests
 	tests/test_examples.py
-	tests/test_regression/test_v2_dtype_regression.py
+#	tests/test_regression/test_v2_dtype_regression.py
 )
 
 python_test() {
