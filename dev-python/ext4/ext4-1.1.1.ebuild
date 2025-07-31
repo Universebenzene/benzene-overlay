@@ -26,8 +26,10 @@ python_prepare_all() {
 	if use test; then
 		# https://github.com/Eeems/python-ext4/blob/main/test.sh
 		install -Dm644 "${FILESDIR}"/${P}-test.txt "${T}"/txt_tmp/test.txt || die
-		dd if=/dev/zero of=test.ext4 count=1024 bs=1024 || die
-		mkfs.ext4 test.ext4 -d "${T}"/txt_tmp || die
+		dd if=/dev/zero of=test.ext4.tmp count=1024 bs=1024 || die
+		mkfs.ext4 test.ext4.tmp -d "${T}"/txt_tmp || die
+		echo -n F > test.ext4 || die
+		cat test.ext4.tmp >> test.ext4 || die
 	fi
 
 	distutils-r1_python_prepare_all
