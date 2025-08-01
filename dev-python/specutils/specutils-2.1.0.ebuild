@@ -50,7 +50,7 @@ distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; }
+	use doc && { eapply "${FILESDIR}"/${PN}-2.0.0-doc-use-local-fits.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; }
 
 	distutils-r1_python_prepare_all
 }
@@ -65,5 +65,5 @@ python_compile_all() {
 
 python_test() {
 	use doc && local EPYTEST_IGNORE=( docs/_build )
-	epytest --remote-data
+	epytest --remote-data -o tmp_path_retention_policy=all
 }
