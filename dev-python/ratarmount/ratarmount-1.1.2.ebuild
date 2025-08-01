@@ -3,7 +3,7 @@
 
 EAPI=8
 
-CORE_VER="0.9.1"
+CORE_VER="0.9.2"
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
