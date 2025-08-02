@@ -12,6 +12,7 @@ inherit distutils-r1 pypi
 DESCRIPTION="Ctypes bindings for the high-level API in libfuse 2 and 3"
 HOMEPAGE="https://github.com/mxmlnkn/mfusepy"
 SRC_URI+=" test? (
+		https://github.com/mxmlnkn/mfusepy/raw/refs/tags/v${PV}/examples/loopback.py -> ${P}-t-loopback.py
 		https://github.com/mxmlnkn/mfusepy/raw/refs/tags/v${PV}/examples/memory.py -> ${P}-t-memory.py
 		https://github.com/mxmlnkn/mfusepy/raw/refs/tags/v${PV}/examples/memory_nullpath.py -> ${P}-t-memory_nullpath.py
 	)
@@ -23,6 +24,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND="|| ( sys-fs/fuse:0 sys-fs/fuse:3 )"
 RDEPEND="${DEPEND}"
+BDEPEND="test? ( dev-python/ioctl-opt[${PYTHON_USEDEP}] )"
 PROPERTIES="test_privileged"
 RESTRICT="test"
 
