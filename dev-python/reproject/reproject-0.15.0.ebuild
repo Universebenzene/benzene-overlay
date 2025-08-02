@@ -36,19 +36,21 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-python/numpy-2.0.0_rc1:=[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-healpix-1.0[${PYTHON_USEDEP}]
 	dev-python/cloudpickle[${PYTHON_USEDEP}]
 	>=dev-python/dask-2021.8[${PYTHON_USEDEP}]
-	dev-python/fsspec[${PYTHON_USEDEP}]
+	>=dev-python/fsspec-2021.8[${PYTHON_USEDEP}]
+	>=dev-python/pillow-10.0[${PYTHON_USEDEP}]
+	>=dev-python/pyavm-0.9.6[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.9[${PYTHON_USEDEP}]
-	dev-python/zarr[${PYTHON_USEDEP}]
+	>=dev-python/zarr-2.11.0[${PYTHON_USEDEP}]
 	all? ( dev-python/shapely[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	>=dev-python/cython-3[${PYTHON_USEDEP}]
+	>=dev-python/cython-3.1[${PYTHON_USEDEP}]
 	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
