@@ -234,6 +234,9 @@ src_prepare() {
 		einfo "mozcdic-ut.txt found. Adding to mozc dictionary..."
 		cat mozcdic-ut.txt >> "${WORKDIR}/${P}/src/data/dictionary_oss/dictionary00.txt" || die
 	fi
+
+	# bug #960019
+	sed -i "/std=c++17/s/17/20/g" gyp/common.gypi || die
 }
 
 src_configure() {
