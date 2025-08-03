@@ -19,7 +19,7 @@ else
 	MY_PV=${PV^^}
 	MY_PV=${MY_PV/_/-}
 	SRC_URI="https://github.com/vedgy/${PN}/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
+	#KEYWORDS="~amd64 ~x86"
 fi
 
 LICENSE="GPL-3"
