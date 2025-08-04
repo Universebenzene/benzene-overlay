@@ -1,11 +1,10 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -27,11 +26,9 @@ RDEPEND="dev-python/multi_key_dict[${PYTHON_USEDEP}]
 	>=dev-python/pbr-0.8.2[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	>=dev-python/six-1.3.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/pbr[${PYTHON_USEDEP}]
 	test? (
-		dev-python/mock[${PYTHON_USEDEP}]
 		dev-python/multiprocess[${PYTHON_USEDEP}]
 		dev-python/requests-mock[${PYTHON_USEDEP}]
 		dev-python/testscenarios[${PYTHON_USEDEP}]
