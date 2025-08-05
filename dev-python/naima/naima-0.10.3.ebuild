@@ -34,13 +34,13 @@ RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/astropy-6.1[${PYTHON_USEDEP}]
-	dev-python/corner[${PYTHON_USEDEP}]
-	dev-python/emcee[${PYTHON_USEDEP}]
-	dev-python/h5py[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-1.4.0[${PYTHON_USEDEP}]
+	>=dev-python/corner-2.0[${PYTHON_USEDEP}]
+	>=dev-python/emcee-3.0[${PYTHON_USEDEP}]
+	>=dev-python/h5py-3.14.0[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.10.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-2.0[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.15.3[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	doc? (
@@ -54,7 +54,7 @@ distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
 python_prepare_all() {
-	sed -e '/auto_use/s/True/False/' -i setup.cfg || die
+#	sed -e '/auto_use/s/True/False/' -i setup.cfg || die
 	use doc && { for dpg in "${DISTDIR}"/*-d-*png; do { cp ${dpg} "${S}"/docs/_static/${dpg##*-d-} || die ; } ; done ; }
 
 	distutils-r1_python_prepare_all

@@ -45,7 +45,7 @@ dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                
 dev-python/mocpy               | 0.18.0                                               | Dependency cdshealpix are also in this overlay but not listed in this table
 dev-python/mpl-animator        | 1.2.4                                                |
 dev-python/mpl-scatter-density | 0.8                                                  | Glueviz releated.
-dev-python/naima               | 0.10.2                                               |
+dev-python/naima               | 0.10.3                                               |
 dev-python/ndcube              | 2.2.0; 2.3.2                                         | SunPy releated. Dependency of specutils.
 dev-python/photutils           | 1.9.0; 1.12.0; 2.2.0                                 | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/pvextractor         | 0.4                                                  | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
