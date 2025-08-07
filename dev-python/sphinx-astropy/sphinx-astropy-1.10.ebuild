@@ -4,8 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -18,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="confv2"
 PROPERTIES="test_network"
 RESTRICT="test"
-RDEPEND=">=dev-python/sphinx-3.0.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-4.0.0[${PYTHON_USEDEP}]
 	dev-python/astropy-sphinx-theme[${PYTHON_USEDEP}]
 	dev-python/numpydoc[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
@@ -34,7 +33,6 @@ RDEPEND=">=dev-python/sphinx-3.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}]
 		dev-python/sphinx-copybutton[${PYTHON_USEDEP}]
 	)
