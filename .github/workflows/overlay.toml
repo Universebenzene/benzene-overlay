@@ -61,9 +61,19 @@ strip_release = true
 
 #["app-text/frhelper"]
 
+["app-text/gimagereader"]
+source = "archpkg"
+archpkg = "gimagereader-common"
+strip_release = true
+
 #["app-text/goldendict"]
 
 #["app-text/powerword"]
+
+["app-text/qtspell"]
+source = "archpkg"
+archpkg = "qtspell"
+strip_release = true
 
 ["app-text/ydcv-rs"]
 source = "github"
