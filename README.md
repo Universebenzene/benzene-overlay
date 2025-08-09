@@ -189,7 +189,7 @@ dev-python/sortedcollections       | 2.1.0                                      
 dev-python/sqlcipher3              | 0.5.4                                                      | Optional for new ratarmount{,core}
 dev-python/sshfs                   | 2025.2.0                                                   | Optional for new ratarmount{,core}. For running test, you need to forcely unmask paramiko[server], e.g. `echo "dev-python/paramiko -server" >> /etc/portage/profile/package.use.mask"`
 dev-python/stone                   | 3.3.9                                                      | Required by python dropbox
-dev-python/textual                 | 5.2.0                                                      | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
+dev-python/textual                 | 5.3.0                                                      | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
 dev-python/typing-validation       | 1.2.12                                                     | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/colorspacious           | 1.1.2                                                      | Pulled in by cmyt. Dropped by official portage
 dev-python/cmyt                    | 2.0.0; 2.0.2                                               | Pulled in by yt
