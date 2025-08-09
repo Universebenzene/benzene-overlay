@@ -19,6 +19,9 @@ RDEPEND="app-text/enchant:2
 	app-text/iso-codes
 "
 DEPEND="${RDEPEND}"
+BDEPEND="qt5? ( dev-qt/linguist-tools:5 )
+	qt6? ( dev-qt/qttools:6[linguist] )
+"
 
 src_prepare() {
 	filter-flags '-flto*' '-fuse-linker-plugin' '-emit-llvm'
