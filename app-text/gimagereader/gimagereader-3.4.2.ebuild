@@ -3,7 +3,9 @@
 
 EAPI=8
 
-inherit cmake gnome2-utils xdg
+PYTHON_COMPAT=( python3_{11..14} )
+
+inherit cmake gnome2-utils python-any-r1 xdg
 
 DESCRIPTION="A Gtk/Qt front-end to tesseract-ocr"
 HOMEPAGE="https://github.com/manisandro/gImageReader"
@@ -20,31 +22,40 @@ DEPEND=">=app-text/tesseract-3.04
 	app-text/podofo:=
 	virtual/jpeg
 	app-text/djvu
-	dev-util/intltool
 	dev-libs/libzip
 	dev-libs/libxml2
 	app-text/enchant:2
+	gtk? (
+		dev-cpp/gtkmm:3.0
+		dev-cpp/gtksourceviewmm:=
+		dev-cpp/cairomm:0
+		dev-libs/json-glib
+		dev-cpp/libxmlpp:2.6
+		dev-cpp/gtkspellmm
+	)
 	qt5? (
 		app-text/qtspell[qt5]
 		app-text/poppler:=[qt5]
 		dev-libs/quazip:=[qt5]
+		dev-qt/qtimageformats:5
 	)
 	qt6? (
 		app-text/qtspell[qt6]
 		app-text/poppler:=[qt6]
 		dev-libs/quazip:=[qt6]
+		dev-qt/qtimageformats:6
 	)
-	gtk? (
-		dev-cpp/gtkmm
-		dev-cpp/gtksourceviewmm:=
-		dev-cpp/cairomm
-		dev-libs/json-glib
-		dev-cpp/libxmlpp:2.6
-		dev-python/pygobject
-		dev-cpp/gtkspellmm
-	)"
+"
+RDEPEND="${DEPEND}"
+BDEPEND="gtk? ( $(python_gen_any_dep 'dev-python/pygobject:3[${PYTHON_USEDEP}]') )
+	dev-util/intltool
+"
 
 PATCHES=( "${FILESDIR}/${P}-enchant-provider.patch" )
+
+python_check_deps() {
+	use gtk && python_has_version "dev-python/pygobject:3[${PYTHON_USEDEP}]"
+}
 
 src_configure() {
 	use gtk && local mycmakeargs=( -DINTERFACE_TYPE=gtk )

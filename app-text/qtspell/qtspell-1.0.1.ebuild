@@ -15,7 +15,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="qt5 +qt6"
 REQUIRED_USE="^^ ( qt5 qt6 )"
 
-RDEPEND="app-text/enchant:2"
+RDEPEND="app-text/enchant:2
+	app-text/iso-codes
+"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
