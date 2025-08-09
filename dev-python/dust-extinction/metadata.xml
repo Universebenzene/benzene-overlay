@@ -13,7 +13,7 @@
 		<remote-id type="pypi">dust-extinction</remote-id>
 		<remote-id type="github">karllark/dust_extinction</remote-id>
 	</upstream>
-	<use>
+	<!--<use>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
-	</use>
+	</use>-->
 </pkgmetadata>
