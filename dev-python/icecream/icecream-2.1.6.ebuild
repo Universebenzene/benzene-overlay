@@ -14,12 +14,12 @@ HOMEPAGE="https://github.com/gruns/icecream"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">=dev-python/asttokens-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.3.9[${PYTHON_USEDEP}]
 	>=dev-python/executing-0.3.1[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.2.0[${PYTHON_USEDEP}]
 "
+BDEPEND="test? ( dev-python/sympy[${PYTHON_USEDEP}] )"
 
 distutils_enable_tests pytest
