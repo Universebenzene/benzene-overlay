@@ -31,7 +31,7 @@ dev-python/dust-extinction     | 1.6                                            
 dev-python/echo                | 0.11.0                                               | Glueviz releated.
 dev-python/extension-helpers   | 1.4.0                                                |
 dev-python/fast-histogram      | 0.14                                                 | Glueviz releated.
-dev-python/ginga               | 5.3.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
+dev-python/ginga               | 5.4.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/glueviz             | 1.4.0 (glue-core: 1.17.1, 1.23.0; glue-qt: 0.3.3)    | Meta package, core package and qt package versions are all shown.
 dev-python/glue-vispy-viewers  | 1.1.0; 1.2.3                                         |
 dev-python/gwcs                | 0.25.2                                               | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
