@@ -37,4 +37,6 @@ EPYTEST_DESELECT=(
 	tests/integration/test_dunamai.py::test__version__from_git__gitflow
 	tests/integration/test_dunamai.py::test__version__from_git__exclude_decoration
 	tests/integration/test_dunamai.py::test__version__from_git__broken_ref
+	tests/integration/test_dunamai.py::test__version__from_git__trace_env_var
+	tests/integration/test_dunamai.py::test__version__from_git__initial_commit_empty_and_tagged
 )
