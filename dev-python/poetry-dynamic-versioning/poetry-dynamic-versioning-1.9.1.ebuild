@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="plugin"
 PROPERTIES="test_network"
 RESTRICT="test"
-RDEPEND=">=dev-python/dunamai-1.23.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/dunamai-1.25.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.11.1[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.4[${PYTHON_USEDEP}]
 	plugin? ( >=dev-python/poetry-1.2.0[${PYTHON_USEDEP}] )
