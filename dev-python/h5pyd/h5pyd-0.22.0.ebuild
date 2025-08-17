@@ -1,12 +1,12 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{11..13} )
 
-H5PY_EXPV="3.10.0"
+H5PY_EXPV="3.14.0"
 H5PY_EXP_URI="https://raw.githubusercontent.com/h5py/h5py/${H5PY_EXPV}/examples"
 
 inherit distutils-r1
@@ -17,7 +17,6 @@ SRC_URI="https://github.com/HDFGroup/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.
 	doc? (
 		${H5PY_EXP_URI}/bytesio.py -> h5py-${H5PY_EXPV}-e-bytesio.py
 		${H5PY_EXP_URI}/swmr_inotify_example.py -> h5py-${H5PY_EXPV}-e-swmr_inotify_example.py
-		${H5PY_EXP_URI}/swmr_multiprocess.py -> h5py-${H5PY_EXPV}-e-swmr_multiprocess.py
 	)
 "
 
@@ -27,9 +26,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="aws azure examples google hdf5"
 RESTRICT="test"	# need h5serv for testing
 
-RDEPEND=">=dev-python/numpy-1.17.3[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]
 	dev-python/pytz[${PYTHON_USEDEP}]
-	dev-python/pyjwt[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-python/requests-unixsocket[${PYTHON_USEDEP}]
 	aws? ( dev-python/s3fs[${PYTHON_USEDEP}] )
 	azure? (
@@ -43,10 +42,9 @@ RDEPEND=">=dev-python/numpy-1.17.3[${PYTHON_USEDEP}]
 	)
 	hdf5? ( dev-python/h5py[${PYTHON_USEDEP}] )
 "
-BDEPEND="dev-python/pkgconfig[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/furo
+distutils_enable_sphinx docs dev-python/furo dev-python/accessible-pygments
 
 python_prepare_all() {
 	use doc && { for epy in "${DISTDIR}"/*-e-*; do { cp ${epy} "${S}"/examples/${epy##*-e-} || die ; } ; done ; \
@@ -64,4 +62,9 @@ python_install_all() {
 	fi
 
 	distutils-r1_python_install_all
+}
+
+python_test() {
+	mkdir -p "${T}"/.test || die
+	H5PYD_TEST_FOLDER="${T}/.test" epytest
 }
