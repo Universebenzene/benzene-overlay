@@ -33,6 +33,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 		dev-python/crc32c[${PYTHON_USEDEP}]
 		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
+		dev-python/pyzstd[${PYTHON_USEDEP}]
 	)
 "
 PDEPEND="test? ( >=dev-python/zarr-3[${PYTHON_USEDEP}] )"
@@ -44,7 +45,7 @@ distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc dev-py
 
 python_prepare_all() {
 	use test && { sed -i "s/--cov=numcodecs --cov-report xml //" pyproject.toml || die ; }
-	sed -i "/] = None/a import zfpy as _zfpy" ${PN}/zfpy.py || die
+	sed -i "/None = None/a import zfpy as _zfpy" ${PN}/zfpy.py || die
 
 	distutils-r1_python_prepare_all
 }
