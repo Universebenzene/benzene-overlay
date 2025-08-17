@@ -23,6 +23,7 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx-contributors \
 	dev-python/sphinxemoji \
 	dev-python/sphinxext-opengraph \
+	dev-python/accessible-pygments \
 	dev-python/furo
 
 python_prepare_all() {
