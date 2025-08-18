@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/asttokens-2.0.1[${PYTHON_USEDEP}]
 	>=dev-python/colorama-0.3.9[${PYTHON_USEDEP}]
-	>=dev-python/executing-0.3.1[${PYTHON_USEDEP}]
+	>=dev-python/executing-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? ( dev-python/sympy[${PYTHON_USEDEP}] )"
