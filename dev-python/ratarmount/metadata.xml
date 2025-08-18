@@ -11,6 +11,7 @@
 	</upstream>
 	<use>
 		<flag name="ext4">Add extra support for ext4</flag>
+		<flag name="colors">Add extra colors support</flag>
 		<flag name="fsspec">Add extra support for fsspec</flag>
 		<flag name="full">Include most extra dependencies</flag>
 		<flag name="git">Add extra support for git</flag>

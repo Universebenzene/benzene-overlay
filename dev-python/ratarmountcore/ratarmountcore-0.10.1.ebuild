@@ -27,6 +27,7 @@ SRC_URI+=" test? (
 		${GIT_TEST_URI}/nested-tar-compressed.sqlar -> ${P}-t-nested-tar-compressed.sqlar
 		${GIT_TEST_URI}/nested-tar.index.sqlite -> ${P}-t-nested-tar.index.sqlite
 		${GIT_TEST_URI}/nested-tar.sqlar -> ${P}-t-nested-tar.sqlar
+		${GIT_TEST_URI}/nested-tar.tar -> ${P}-t-nested-tar.tar
 		${GIT_TEST_URI}/nested-tar-1M.ext4.bz2 -> ${P}-t-nested-tar-1M.ext4.bz2
 		${GIT_TEST_URI}/nested-tar-10M.ext4.bz2 -> ${P}-t-nested-tar-10M.ext4.bz2
 		${GIT_TEST_URI}/single-file.tar -> ${P}-t-single-file.tar
@@ -51,7 +52,7 @@ SRC_URI+=" test? (
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+7z +bzip2 ext4 +fat fsspec fsspec-backends full full-ssh git +gzip +rar sqlar squashfs +xz +zip +zstd"
+IUSE="+7z +bzip2 colors ext4 +fat fsspec fsspec-backends full full-ssh git +gzip +rar sqlar squashfs +xz +zip +zstd"
 REQUIRED_USE="full? ( 7z bzip2 fat fsspec-backends git gzip rar squashfs xz zip zstd )"
 
 RDEPEND="sys-fs/fuse
@@ -59,7 +60,8 @@ RDEPEND="sys-fs/fuse
 		>=dev-python/libarchive-c-5.1[${PYTHON_USEDEP}]
 		>=dev-python/py7zr-1.0[${PYTHON_USEDEP}]
 	)
-	bzip2? ( >=dev-python/rapidgzip-0.13.1[${PYTHON_USEDEP}] )
+	bzip2? ( >=dev-python/rapidgzip-0.15.0[${PYTHON_USEDEP}] )
+	colors? ( dev-python/rich[${PYTHON_USEDEP}] )
 	ext4? ( >=dev-python/ext4-1.1[${PYTHON_USEDEP}] )
 	fat? ( >=dev-python/pyfatfs-1.0[${PYTHON_USEDEP}] )
 	fsspec? ( dev-python/fsspec[${PYTHON_USEDEP}] )
@@ -85,7 +87,10 @@ RDEPEND="sys-fs/fuse
 		>=dev-python/python-pkcs11-0.7.0[${PYTHON_USEDEP}]
 	)
 	git? ( dev-python/pygit2[${PYTHON_USEDEP}] )
-	gzip? ( >=dev-python/indexed-gzip-1.6.3[${PYTHON_USEDEP}] )
+	gzip? (
+		>=dev-python/indexed-gzip-1.7[${PYTHON_USEDEP}]
+		>=dev-python/rapidgzip-0.15.0[${PYTHON_USEDEP}]
+	)
 	rar? ( >=dev-python/rarfile-4.0[${PYTHON_USEDEP}] )
 	sqlar? (
 		dev-python/cryptography[${PYTHON_USEDEP}]
