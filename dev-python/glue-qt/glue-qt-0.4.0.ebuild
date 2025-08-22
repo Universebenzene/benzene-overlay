@@ -54,7 +54,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
-# needs sphinx>=7.2.6
+# needs sphinx>=8.1.3 in eclass
 #distutils_enable_sphinx doc "<dev-python/sphinx-7.2" dev-python/sphinx-automodapi \
 #	dev-python/sphinxcontrib-spelling \
 #	dev-python/sphinx-book-theme \
