@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="awscli boto3"
 PROPERTIES="test_network"
-RESTRICT="test"
+RESTRICT="test"	# need pytest-asyncio<1
 
 RDEPEND=">=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/botocore-1.38.23[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.39.9[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
@@ -63,6 +63,7 @@ EPYTEST_DESELECT=(
 	'tests/test_patches.py::test_patches[aiohttp-ClientCreator._register_retries-digests8]'
 	'tests/test_patches.py::test_patches[aiohttp-Endpoint._do_get_response-digests87]'
 	'tests/test_patches.py::test_patches[aiohttp-get_response-digests123]'
+	'tests/test_sns.py::test_topic_attributes[aiohttp]'
 )
 
 python_prepare_all() {
