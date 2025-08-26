@@ -1,14 +1,14 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 #MY_PV="$(ver_cut 1).0$(ver_cut 2).0$(ver_cut 3)"
-#MY_PV="$(ver_cut 1).0$(ver_cut 2).$(ver_cut 3)"
-MY_PV="$(ver_cut 1).$(ver_cut 2).0$(ver_cut 3)"
+MY_PV="$(ver_cut 1).0$(ver_cut 2).$(ver_cut 3)"
+#MY_PV="$(ver_cut 1).$(ver_cut 2).0$(ver_cut 3)"
 MY_P="${PN}-${MY_PV}"
 
 inherit distutils-r1 pypi

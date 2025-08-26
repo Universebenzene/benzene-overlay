@@ -220,7 +220,7 @@ dev-python/myst-parser                  | 0.18.1-r1                       | Only
 dev-python/runnotebook                  | 0.3.1; (live)                   |
 dev-python/sphinx-astropy               | 1.10                            | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
 dev-python/sphinx-asdf                  | 0.1.3; 0.1.4; 0.3.0             |
-dev-python/sphinx-autobuild             | 2021.3.14; 2024.4.16; 2024.10.3 |
+dev-python/sphinx-autobuild             | 2021.3.14; 2024.4.16; 2025.8.25 |
 dev-python/sphinx-autosummary-accessors | 2025.3.1                        |
 dev-python/sphinx-book-theme            | 1.0.1; 1.1.4                    | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
 dev-python/sphinx-changelog             | 1.6.0                           |
