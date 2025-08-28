@@ -46,9 +46,11 @@ src_install() {
 	newbin "${DISTDIR}"/${P}-${ARCH} ${MY_PN}
 
 	newinitd "${FILESDIR}"/${MY_PN}.initd ${MY_PN}
-	newinitd "${FILESDIR}"/${MY_PN}-user.initd-r2 ${MY_PN}-user
 	newconfd "${FILESDIR}"/${MY_PN}.confd-r3 ${MY_PN}
-	newconfd "${FILESDIR}"/${MY_PN}-user.confd-r1 ${MY_PN}-user
+	exeinto /etc/user/init.d
+	newexe "${FILESDIR}"/${MY_PN}-user.initd-r3 ${MY_PN}-user
+	insinto /etc/user/conf.d
+	newins "${FILESDIR}"/${MY_PN}-user.confd-r2 ${MY_PN}-user
 	systemd_newunit "${FILESDIR}"/${MY_PN}-r3.service ${MY_PN}.service
 	systemd_newuserunit "${FILESDIR}"/${MY_PN}-lite-r1.service ${MY_PN}-lite.service
 
