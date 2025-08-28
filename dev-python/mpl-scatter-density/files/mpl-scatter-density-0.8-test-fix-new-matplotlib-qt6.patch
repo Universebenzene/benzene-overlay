@@ -1,0 +1,40 @@
+--- a/mpl_scatter_density/tests/test_base_image_artist.py   2019-05-28 23:57:39.000000000 +0800
++++ b/mpl_scatter_density/tests/test_base_image_artist.py   2025-08-26 17:03:02.254064992 +0800
+@@ -4,7 +4,7 @@
+ from matplotlib.backends.backend_agg import FigureCanvasAgg
+ 
+ try:
+-    from matplotlib.backends.backend_qt5 import FigureCanvasQT
++    from matplotlib.backends.backend_qt import FigureCanvasQT
+ except ImportError:
+     QT_INSTALLED = False
+ else:
+--- a/mpl_scatter_density/tests/test_scatter_density_artist.py  2024-12-03 22:07:35.000000000 +0800
++++ b/mpl_scatter_density/tests/test_scatter_density_artist.py  2025-08-27 13:08:11.252211300 +0800
+@@ -250,13 +250,13 @@
+     # This test just ensures that the code runs, but doesn't check for now 
+     # that the behavior is correct.
+ 
+-    pytest.importorskip('PyQt5')
++    pytest.importorskip('PyQt6')
+ 
+-    from PyQt5.QtWidgets import QMainWindow
++    from PyQt6.QtWidgets import QMainWindow, QApplication
+ 
+     from matplotlib.figure import Figure
+-    from matplotlib.backends.backend_qt5 import FigureManagerQT
+-    from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
++    from matplotlib.backends.backend_qt import FigureManagerQT
++    from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
+ 
+     fig = Figure()
+     canvas = FigureCanvasQTAgg(fig)
+@@ -265,7 +265,7 @@
+ 
+     canvas.draw = Mock(side_effect=canvas.draw)
+ 
+-    from matplotlib.backends.backend_qt5 import qApp
++    qApp = QApplication.instance()
+ 
+     window = QMainWindow()
+     window.setCentralWidget(canvas)

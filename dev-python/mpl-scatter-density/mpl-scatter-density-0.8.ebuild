@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 virtualx pypi
 
@@ -24,11 +24,11 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.5.2[${PYTHON_USEDEP},qt5]
+		>=dev-python/matplotlib-3.5.2[${PYTHON_USEDEP},qt6]
 	)
 "
 
-PATCHES=( "${FILESDIR}/${P}-test-fix-new-matplotlib.patch" )
+PATCHES=( "${FILESDIR}/${P}-test-fix-new-matplotlib-qt6.patch" )
 
 distutils_enable_tests pytest
 
