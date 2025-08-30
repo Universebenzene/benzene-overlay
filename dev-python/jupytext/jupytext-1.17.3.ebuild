@@ -60,3 +60,7 @@ python_install_all() {
 	distutils-r1_python_install_all
 	mv "${ED%/}"/{usr/,}etc || die
 }
+
+python_test() {
+	epytest -o tmp_path_retention_policy=all -Wignore
+}
