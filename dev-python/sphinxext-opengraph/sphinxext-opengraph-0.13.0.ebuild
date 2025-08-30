@@ -30,7 +30,8 @@ BDEPEND="test? (
 "
 
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-design dev-python/furo dev-python/matplotlib
+distutils_enable_sphinx docs dev-python/sphinx-design dev-python/accessible-pygments \
+	dev-python/furo dev-python/matplotlib
 
 pkg_postinst() {
 	optfeature "generating social cards" dev-python/matplotlib
