@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,7 +16,7 @@ COMMON_DEPEND=">=dev-libs/glib-2.30
 	>=x11-libs/gtk+-3.2:3
 	x11-libs/libX11
 	alsa? ( media-libs/alsa-lib )
-	pulseaudio? ( media-sound/pulseaudio )"
+	pulseaudio? ( media-libs/libpulse )"
 RDEPEND="${COMMON_DEPEND}
 	dconf? ( gnome-base/dconf )"
 DEPEND="${COMMON_DEPEND}

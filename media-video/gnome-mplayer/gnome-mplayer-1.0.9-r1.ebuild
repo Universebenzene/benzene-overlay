@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -24,7 +24,7 @@ COMMON_DEPEND=">=dev-libs/glib-2.30
 	gnome? ( gnome-base/nautilus )
 	ipod? ( >=media-libs/libgpod-0.7 )
 	libnotify? ( >=x11-libs/libnotify-0.7 )
-	pulseaudio? ( >=media-sound/pulseaudio-0.9.14 )"
+	pulseaudio? ( >=media-libs/libpulse-0.9.14 )"
 RDEPEND="${COMMON_DEPEND}
 	>=media-video/mplayer-1.0_rc4_p20100101[libass]"
 DEPEND="${COMMON_DEPEND}
