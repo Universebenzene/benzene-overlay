@@ -33,6 +33,12 @@ DEPEND="${COMMON_DEPEND}
 
 DOCS="ChangeLog README DOCS/*.txt DOCS/tech/*.txt"
 
+src_prepare() {
+	sed -i 's/gtk_check_menu_item_get_active(menuitem_view_subtitles)/gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem_view_subtitles))/' src/gui.c || die
+	sed -i '/g_type_init();/a gdk_set_allowed_backends ("x11");' src/main.c || die
+	default
+}
+
 src_configure() {
 	# TODO: temporarily --disable-nemo only because it's untested and new feature in 1.0.9
 	append-flags -fcommon
