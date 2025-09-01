@@ -1039,10 +1039,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "pytest-remotedata"
 
-["dev-python/pytest-socket"]
-source = "pypi"
-use_max_tag = true
-pypi = "pytest-socket"
+#["dev-python/pytest-socket"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pytest-socket"
 
 ["dev-python/pytest-textual-snapshot"]
 source = "pypi"
