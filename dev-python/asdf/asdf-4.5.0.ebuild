@@ -41,6 +41,7 @@ BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 		${RDEPEND}
 		>=dev-python/sphinx-asdf-0.2.2[${PYTHON_USEDEP}]
 		dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
+		<dev-python/docutils-0.22[${PYTHON_USEDEP}]
 		dev-python/furo[${PYTHON_USEDEP}]
 		>=dev-python/mistune-3[${PYTHON_USEDEP}]
 		$(python_gen_cond_dep '
