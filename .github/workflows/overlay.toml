@@ -1149,7 +1149,7 @@ pypi = "sep-pjw"
 ["dev-python/sgp4"]
 source = "pypi"
 use_max_tag = true
-pypi = "sep-pjw"
+pypi = "sgp4"
 
 ["dev-python/sherpa"]
 source = "pypi"

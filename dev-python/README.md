@@ -60,7 +60,7 @@ dev-python/regions             | 0.10                                           
 dev-python/reproject           | 0.12.0; 0.15.0                                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sep                 | 1.4.0                                                |
 dev-python/sep-pjw             | 1.3.8                                                |
-dev-python/sgp4                | 2.22                                                 |
+dev-python/sgp4                | 2.25                                                 |
 dev-python/sherpa              | 4.15.0; 4.15.1-r1; 4.17.1                            | `XSPEC` support is not included while building. See [here](https://sherpa.readthedocs.io/en/latest/install.html#building-from-source) for more details to build with `XSPEC` manually.
 dev-python/skyfield            | 1.53                                                 |
 dev-python/spectral-cube       | 0.6.6                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
