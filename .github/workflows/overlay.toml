@@ -1694,10 +1694,10 @@ github = "sharkdp/diskus"
 #prefix = "v"
 #github = "elogind/elogind"
 
-["sys-libs/libsystemd"]
-source = "repology"
-repology = "systemd"
-repo = "gentoo"
+#["sys-libs/libsystemd"]
+#source = "repology"
+#repology = "systemd"
+#repo = "gentoo"
 
 #["www-plugins/adobe-flash"]
 
