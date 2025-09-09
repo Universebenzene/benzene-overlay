@@ -16,14 +16,9 @@ LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-BDEPEND=">=dev-python/setuptools-scm-6.4.2[${PYTHON_USEDEP}]
-	test? (
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND=">=dev-python/setuptools-scm-6.4.2[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGINS=( hypothesis pytest-{benchmark,timeout} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
