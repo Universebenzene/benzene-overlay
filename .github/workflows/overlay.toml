@@ -646,10 +646,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "ipfsspec"
 
-["dev-python/isal"]
-source = "pypi"
-use_max_tag = true
-pypi = "isal"
+#["dev-python/isal"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "isal"
 
 ["dev-python/jplephem"]
 source = "pypi"
