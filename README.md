@@ -222,7 +222,7 @@ dev-python/sphinx-autobuild             | 2021.3.14; 2024.4.16; 2025.8.25 |
 dev-python/sphinx-autosummary-accessors | 2025.3.1                        |
 dev-python/sphinx-book-theme            | 1.0.1; 1.1.4                    | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
 dev-python/sphinx-changelog             | 1.6.0                           |
-dev-python/sphinx-click                 | 6.0.0                           |
+dev-python/sphinx-click                 | 6.0.0; 6.1.0                    |
 dev-python/sphinx-codeautolink          | 0.17.5                          |
 dev-python/sphinx-collections           | 0.2.0                           | Doc building and testing behave strangly in sandbox (can't find sphinx plugins), so can't complete while merging
 dev-python/sphinx-design                | 0.6.1                           |
