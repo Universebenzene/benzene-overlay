@@ -755,6 +755,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "mkdocs-literate-nav"
 
+["dev-python/mkdocs-llmstxt"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocs-llmstxt"
+
 ["dev-python/mkdocs-section-index"]
 source = "pypi"
 use_max_tag = true
