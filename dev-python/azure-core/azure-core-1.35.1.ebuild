@@ -25,8 +25,6 @@ RDEPEND=">=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
 	tracing? ( dev-python/opentelemetry-api[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-trio[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/isodate[${PYTHON_USEDEP}]
 		dev-python/opentelemetry-sdk[${PYTHON_USEDEP}]
@@ -35,6 +33,7 @@ BDEPEND="test? (
 
 DOCS=( {CHANGELOG,CLIENT_LIBRARY_DEVELOPER,README}.md )
 
+EPYTEST_PLUGINS=( pytest-{asyncio,trio} )
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
