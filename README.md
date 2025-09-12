@@ -147,7 +147,7 @@ dev-python/f90nml                  | 1.4.5                                      
 dev-python/fastcache               | 1.1.0                                                      | Optional for yt
 dev-python/fast-zip-decryption     | 3.0.0                                                      | Optional for new ratarmount{,core}
 dev-python/firefly-viz             | 2.0.4                                                      | Optional for yt
-dev-python/firefly                 | 3.3.2                                                      | Optional for new yt
+dev-python/firefly                 | 3.4.0                                                      | Optional for new yt
 dev-python/flask-socketio          | 5.5.1                                                      | Optional for yt
 dev-python/fusepy                  | 3.0.1                                                      | Optional for old ratarmount
 dev-python/mfusepy                 | 3.0.0                                                      | Optional for new ratarmount
