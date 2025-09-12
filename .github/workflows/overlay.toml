@@ -687,10 +687,25 @@ source = "pypi"
 use_max_tag = true
 pypi = "libconf"
 
+["dev-python/markdownify"]
+source = "pypi"
+use_max_tag = true
+pypi = "markdownify"
+
 ["dev-python/markdown-callouts"]
 source = "pypi"
 use_max_tag = true
 pypi = "markdown-callouts"
+
+["dev-python/mdformat"]
+source = "pypi"
+use_max_tag = true
+pypi = "mdformat"
+
+["dev-python/mdformat-tables"]
+source = "pypi"
+use_max_tag = true
+pypi = "mdformat-tables"
 
 ["dev-python/memory-profiler"]
 source = "pypi"

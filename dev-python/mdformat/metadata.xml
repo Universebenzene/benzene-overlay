@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Mdformat is an opinionated Markdown formatter that can be used to
+		enforce a consistent style in Markdown files. Mdformat is a Unix-style
+		command-line tool as well as a Python library.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">mdformat</remote-id>
+		<remote-id type="github">hukkin/mdformat</remote-id>
+	</upstream>
+</pkgmetadata>

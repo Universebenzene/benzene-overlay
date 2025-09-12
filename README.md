@@ -159,6 +159,7 @@ dev-python/rapidgzip               | 0.15.2                                     
 dev-python/libconf                 | 2.0.1                                                      | Optional for yt
 dev-python/memory-profiler         | 0.61                                                       | Dropped by official portage. Test dependency for ccdproc
 dev-python/markdownify             | 1.2.0                                                      | Required by mkdocs-llmstxt
+dev-python/mdformat{,-tables}      | 0.7.22 / 1.0.0                                             | Required by mkdocs-llmstxt
 dev-python/miniballcpp             | 0.2.3                                                      | Optional for yt
 dev-python/msrest                  | 0.7.1                                                      | SunPy, h5pyd related
 dev-python/msrestazure             | 0.6.4\_p1                                                  | SunPy, h5pyd related
