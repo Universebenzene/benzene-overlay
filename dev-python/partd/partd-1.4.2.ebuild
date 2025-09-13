@@ -19,8 +19,7 @@ SLOT="0"
 KEYWORDS="amd64 arm64 ~riscv x86 ~amd64-linux ~x86-linux"
 IUSE="complete"
 
-RDEPEND="
-	dev-python/locket[${PYTHON_USEDEP}]
+RDEPEND="dev-python/locket[${PYTHON_USEDEP}]
 	dev-python/toolz[${PYTHON_USEDEP}]
 	complete? (
 		dev-python/blosc[${PYTHON_USEDEP}]
@@ -29,8 +28,7 @@ RDEPEND="
 		dev-python/pyzmq[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND="
-	>=dev-python/versioneer-0.20[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/versioneer-0.20[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/pandas-1.3[${PYTHON_USEDEP}]
 		dev-python/pyarrow[${PYTHON_USEDEP}]

@@ -687,6 +687,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "libconf"
 
+["dev-python/locket"]
+source = "pypi"
+use_max_tag = true
+pypi = "locket"
+
 ["dev-python/markdownify"]
 source = "pypi"
 use_max_tag = true
@@ -892,6 +897,11 @@ strip_release = true
 source = "pypi"
 use_max_tag = true
 pypi = "parfive"
+
+["dev-python/partd"]
+source = "pypi"
+use_max_tag = true
+pypi = "partd"
 
 ["dev-python/photutils"]
 source = "pypi"
@@ -1361,6 +1371,11 @@ pypi = "sphinxcontrib-youtube"
 source = "pypi"
 use_max_tag = true
 pypi = "sphinxext-opengraph"
+
+["dev-python/spur"]
+source = "pypi"
+use_max_tag = true
+pypi = "spur"
 
 ["dev-python/sqlcipher3"]
 source = "pypi"
