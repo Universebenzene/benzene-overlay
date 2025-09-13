@@ -35,7 +35,6 @@ RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/asyncssh[${PYTHON_USEDEP}]
 		dev-python/bokeh[${PYTHON_USEDEP}]
@@ -60,6 +59,7 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 "
 
 EPYTEST_XDIST=1
+EPYTEST_PLUGINS=( pytest-timeout )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/dask-sphinx-theme dev-python/numpydoc \
 	dev-python/sphinx-click \

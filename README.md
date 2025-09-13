@@ -45,7 +45,7 @@ dev-lang/gdl                                                                    
 dev-libs/libappindicator:3                                                           | 12.10.1\_p202007060                                                                                                                               | Dropped by official portage but required by several packages like SunloginClient, ToDesk and Icalingua
 dev-python/aioftp                                                                    | 0.26.2                                                                                                                                            |
 dev-python/corner                                                                    | 2.2.2; 2.2.3                                                                                                                                      |
-dev-python/dask                                                                      | 2024.4.1; 2025.7.0                                                                                                                                | Dropped by official portage
+dev-python/dask                                                                      | 2024.4.1; 2025.9.0                                                                                                                                | Dropped by official portage
 dev-python/dropbox                                                                   | 12.0.2                                                                                                                                            |
 dev-python/exifread                                                                  | 3.5.1                                                                                                                                             |
 dev-python/glfw                                                                      | 2.10.0                                                                                                                                            | Dependency for glue-vispy-viewer>=1.2.0
@@ -137,7 +137,7 @@ dev-python/bidict                  | 0.22.0; 0.23.1                             
 dev-python/check-manifest          | 0.49; 0.50                                                 | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.2.5                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec
-dev-python/distributed             | 2024.4.1; 2025.7.0                                         | Optional for arviz and spectral-cube
+dev-python/distributed             | 2024.4.1; 2025.9.0                                         | Optional for arviz and spectral-cube
 dev-python/dm-tree                 | 0.1.9                                                      | Required by new arviz
 dev-python/donfig                  | 0.8.1\_p1                                                  | Pulled in by zarr v3
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
@@ -157,6 +157,7 @@ dev-python/inflate64               | 1.0.3                                      
 dev-python/ipfsspec                | 0.6.0                                                      | Optional for new ratarmount{,core}
 dev-python/rapidgzip               | 0.15.2                                                     | Optional for new ratarmount{,core}
 dev-python/libconf                 | 2.0.1                                                      | Optional for yt
+dev-python/locket                  | 1.0.0                                                      | Dropped by official portage. Required by partd
 dev-python/memory-profiler         | 0.61                                                       | Dropped by official portage. Test dependency for ccdproc
 dev-python/markdownify             | 1.2.0                                                      | Required by mkdocs-llmstxt
 dev-python/mdformat{,-tables}      | 0.7.22 / 1.0.0                                             | Required by mkdocs-llmstxt
@@ -167,6 +168,7 @@ dev-python/multiformats            | 0.3.1\_p4                                  
 dev-python/multivolumefile         | 0.2.3                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/numcodecs               | 0.13.1; 0.15.1; 0.16.2                                     | Pulled in by zarr
 dev-python/oscrypto                | 1.3.0                                                      | Test dependency for python-pkcs11
+dev-python/partd                   | 1.4.2                                                      | Dropped by official portage. Required by dask
 dev-python/py7zr                   | 1.0.0                                                      | Optional for new ratarmount{,core}
 dev-python/pybcj                   | 1.0.6                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/pyfatfs                 | 1.1.0                                                      | Optional for new ratarmount{,core}
@@ -187,6 +189,7 @@ dev-python/s3fs                    | 2025.7.0; 2025.9.0                         
 dev-python/siosocks                | 0.3.0                                                      | Optional for aioftp
 dev-python/smbprotocol             | 1.15.0                                                     | Optional for new ratarmount{,core}
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
+dev-python/spur                    | 0.3.23                                                     | Dropped by official portage. Test dependency for locket
 dev-python/sqlcipher3              | 0.5.4                                                      | Optional for new ratarmount{,core}
 dev-python/sshfs                   | 2025.2.0                                                   | Optional for new ratarmount{,core}. For running test, you need to forcely unmask paramiko[server], e.g. `echo "dev-python/paramiko -server" >> /etc/portage/profile/package.use.mask"`
 dev-python/stone                   | 3.3.9                                                      | Required by python dropbox

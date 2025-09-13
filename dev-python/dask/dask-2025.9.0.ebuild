@@ -21,8 +21,6 @@ SRC_URI="
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~riscv ~x86"
-PROPERTIES="test_network"
-RESTRICT="test"
 
 RDEPEND=">=dev-python/click-8.1[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}]
@@ -38,10 +36,8 @@ RDEPEND=">=dev-python/click-8.1[${PYTHON_USEDEP}]
 		>=dev-python/importlib-metadata-4.13.0[${PYTHON_USEDEP}]
 	' 3.{10..11})
 "
-BDEPEND="dev-python/toolz[${PYTHON_USEDEP}]
-	>=dev-python/versioneer-0.29[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/versioneer-0.29[${PYTHON_USEDEP}]
 	test? (
-		app-arch/lz4
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/bokeh[${PYTHON_USEDEP}]
 		dev-python/boto3[${PYTHON_USEDEP}]
@@ -59,9 +55,6 @@ BDEPEND="dev-python/toolz[${PYTHON_USEDEP}]
 		dev-python/numba[${PYTHON_USEDEP}]
 		dev-python/numexpr[${PYTHON_USEDEP}]
 		dev-python/pyarrow[parquet,snappy,${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
@@ -80,6 +73,7 @@ BDEPEND="dev-python/toolz[${PYTHON_USEDEP}]
 #PATCHES=( "${FILESDIR}/${P}-test-pandas-2.0.patch" )
 
 EPYTEST_XDIST=1
+EPYTEST_PLUGINS=( pytest-{mock,rerunfailures,timeout} )
 distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
@@ -123,5 +117,5 @@ src_prepare() {
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 #	local -x DASK_DATAFRAME__QUERY_PLANNING=False
-	epytest -k 'not test_RandomState_only_funcs' -m 'not network and not slow and not gpu'
+	epytest -k 'not test_RandomState_only_funcs' -m 'not network and not slow and not gpu' -Werror::RuntimeWarning
 }
