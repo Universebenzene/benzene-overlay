@@ -1,4 +1,4 @@
-# Copyright 2020-2024 Gentoo Authors
+# Copyright 2020-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -10,9 +10,11 @@ MY_PN="com.${PN/-/.}"
 DESCRIPTION="Xunlei download"
 HOMEPAGE="https://www.xunlei.com"
 SRC_URI="
-	amd64? ( https://com-store-packages.uniontech.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_amd64.deb )
-	arm64? ( https://com-store-packages.uniontech.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_arm64.deb )
+	amd64? ( https://archive2.kylinos.cn/DEB/KYLIN_DEB/pool/all/${MY_PN}_${PV}_amd64.deb )
+	arm64? ( https://archive2.kylinos.cn/DEB/KYLIN_DEB/pool/all/${MY_PN}_${PV}_arm64.deb )
 "
+#	amd64? ( https://com-store-packages.uniontech.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_amd64.deb )
+#	arm64? ( https://com-store-packages.uniontech.com/appstore/pool/appstore/c/${MY_PN}/${MY_PN}_${PV}_arm64.deb )
 
 LICENSE="com.xunlei.download"
 SLOT="0"
