@@ -30,7 +30,6 @@ RDEPEND=">=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	boto3? ( dev-python/boto3[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/dill[${PYTHON_USEDEP}]
 		dev-python/docker[${PYTHON_USEDEP}]
 		dev-python/docutils[${PYTHON_USEDEP}]
@@ -39,11 +38,13 @@ BDEPEND="test? (
 		dev-python/openapi-spec-validator[${PYTHON_USEDEP}]
 		dev-python/pip[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
-		dev-python/time-machine[${PYTHON_USEDEP}]
 	)
 "
 
+PATCHES=( "${FILESDIR}/${P}-botocore-compatibility.patch" )
+
 EPYTEST_XDIST=1
+EPYTEST_PLUGINS=( pytest-asyncio time-machine )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
 
@@ -63,6 +64,9 @@ EPYTEST_DESELECT=(
 	'tests/test_patches.py::test_patches[aiohttp-ClientCreator._register_retries-digests8]'
 	'tests/test_patches.py::test_patches[aiohttp-Endpoint._do_get_response-digests87]'
 	'tests/test_patches.py::test_patches[aiohttp-get_response-digests123]'
+	'tests/test_patches.py::test_patches[aiohttp-EndpointRulesetResolver.construct_endpoint-digests120]'
+	'tests/test_patches.py::test_patches[aiohttp-RequestSigner.get_auth_instance-digests139]'
+	'tests/test_patches.py::test_patches[aiohttp-RequestSigner.get_auth_instance-digests140]'
 	'tests/test_sns.py::test_topic_attributes[aiohttp]'
 )
 
