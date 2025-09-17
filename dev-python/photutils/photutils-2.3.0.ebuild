@@ -41,22 +41,22 @@ REQUIRED_USE="intersphinx? ( doc )
 DEPEND=">=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.3[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.10[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.11.1[${PYTHON_USEDEP}]
 	all? (
-		dev-python/bottleneck[${PYTHON_USEDEP}]
+		>=dev-python/bottleneck-1.3.6[${PYTHON_USEDEP}]
 		>=dev-python/gwcs-0.20[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.7[${PYTHON_USEDEP}]
-		dev-python/rasterio[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.8[${PYTHON_USEDEP}]
+		>=dev-python/rasterio-1.3.7[${PYTHON_USEDEP}]
 		>=dev-python/regions-0.9[${PYTHON_USEDEP}]
-		>=dev-python/scikit-image-0.20[${PYTHON_USEDEP}]
-		dev-python/shapely[${PYTHON_USEDEP}]
-		dev-python/tqdm[${PYTHON_USEDEP}]
+		>=dev-python/scikit-image-0.21[${PYTHON_USEDEP}]
+		>=dev-python/shapely-2.0.0[${PYTHON_USEDEP}]
+		>=dev-python/tqdm-4.65[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
-	>=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]
+	>=dev-python/cython-3.1.0[${PYTHON_USEDEP}]
 	<dev-python/cython-4[${PYTHON_USEDEP}]
-	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1.3[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.9.1[${PYTHON_USEDEP},confv2]
@@ -115,11 +115,11 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.7"
+	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.8"
 	optfeature "perform aperture photometry using region objects" ">=dev-python/regions-0.9"
-	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.20"
-	optfeature "make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.19"
-	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" dev-python/bottleneck
-	optfeature "display optional progress bars" dev-python/tqdm
-	optfeature "converting source segments into polygon objects" dev-python/rasterio dev-python/shapely
+	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.21"
+	optfeature "make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.20"
+	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" ">=dev-python/bottleneck-1.3.6"
+	optfeature "display optional progress bars" ">=dev-python/tqdm-4.65"
+	optfeature "converting source segments into polygon objects" ">=dev-python/rasterio-1.3.7 >=dev-python/shapely-2.0.0"
 }
