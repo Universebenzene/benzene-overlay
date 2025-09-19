@@ -26,6 +26,8 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" )
 distutils_enable_tests pytest
 
 python_test() {
