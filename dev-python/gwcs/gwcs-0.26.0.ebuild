@@ -23,7 +23,6 @@ RDEPEND=">=dev-python/asdf-3.3.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-astropy-0.8.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-6.0[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.14.1[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]' python3_11)
 "
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 	doc? (
@@ -34,9 +33,9 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 		dev-python/furo[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
-	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=( pytest-doctestplus )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-asdf
 
