@@ -14,8 +14,7 @@ HOMEPAGE="http://zarr.readthedocs.io"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-#IUSE="examples optional remote"
-IUSE="optional remote"
+IUSE="examples optional remote"
 
 RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.26[${PYTHON_USEDEP}]
@@ -30,17 +29,19 @@ RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/flask-cors[${PYTHON_USEDEP}]
-		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
+		dev-python/numpydoc[${PYTHON_USEDEP}]
 		dev-python/rich[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 		dev-python/tomlkit[${PYTHON_USEDEP}]
+		dev-python/typer[${PYTHON_USEDEP}]
 		dev-python/universal-pathlib[${PYTHON_USEDEP}]
+		dev-libs/zfp[python]
 	)
 "
 
+EPYTEST_PLUGINS=( hypothesis pytest-asyncio )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/numpydoc \
 #	dev-python/sphinx-autoapi \
@@ -50,15 +51,15 @@ distutils_enable_tests pytest
 #	dev-python/sphinx-reredirects \
 #	dev-python/pydata-sphinx-theme
 
-#python_install_all() {
-#	if use examples; then
-#		docompress -x "/usr/share/doc/${PF}/notebooks"
-#		docinto notebooks
-#		dodoc -r notebooks/.
-#	fi
-#
-#	distutils-r1_python_install_all
-#}
+python_install_all() {
+	if use examples; then
+		docompress -x "/usr/share/doc/${PF}/examples"
+		docinto examples
+		dodoc -r examples/.
+	fi
+
+	distutils-r1_python_install_all
+}
 
 EPYTEST_IGNORE=(
 	# Ignore uv related tests
