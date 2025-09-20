@@ -1,0 +1,70 @@
+From: Debian Science Maintainers
+ <debian-science-maintainers@lists.alioth.debian.org>
+Date: Sat, 5 Oct 2019 11:45:42 +0000
+Subject: No embedded libs
+
+Build against system libraries: c-blosc, zlib, zstd. lz4
+
+Forwarded: https://github.com/zarr-developers/numcodecs/pull/249#issuecomment-6
+Bug: https://github.com/zarr-developers/numcodecs/issues/254
+---
+ MANIFEST.in |  2 +-
+ setup.py    | 11 ++++++-----
+ 2 files changed, 7 insertions(+), 6 deletions(-)
+
+diff --git a/MANIFEST.in b/MANIFEST.in
+index 41513ec..3dbdd71 100644
+--- a/MANIFEST.in
++++ b/MANIFEST.in
+@@ -1,4 +1,4 @@
+-recursive-include c-blosc *
++# recursive-include c-blosc *
+ recursive-include numcodecs *.pyx
+ recursive-include numcodecs *.pxd
+ include numcodecs/tests/package_with_entrypoint-0.1.dist-info/entry_points.txt
+diff --git a/setup.py b/setup.py
+index c27fad3..af715bf 100644
+--- a/setup.py
++++ b/setup.py
+@@ -127,12 +127,12 @@ def blosc_extension():
+     return [
+         Extension(
+             'numcodecs.blosc',
+-            sources=sources + blosc_sources,
++            sources=sources,  # + blosc_sources,
+             include_dirs=include_dirs,
+             define_macros=define_macros,
+             extra_compile_args=extra_compile_args,
+             extra_link_args=extra_link_args,
+-            extra_objects=extra_objects,
++            libraries=['blosc', 'z'],
+         ),
+     ]
+ 
+@@ -168,11 +168,11 @@ def zstd_extension():
+     return [
+         Extension(
+             'numcodecs.zstd',
+-            sources=sources + zstd_sources,
++            sources=sources,  # + zstd_sources,
+             include_dirs=include_dirs,
+             define_macros=define_macros,
+             extra_compile_args=extra_compile_args,
+-            extra_objects=extra_objects,
++            libraries=['zstd'],
+         ),
+     ]
+ 
+@@ -195,10 +195,11 @@ def lz4_extension():
+     return [
+         Extension(
+             'numcodecs.lz4',
+-            sources=sources + lz4_sources,
++            sources=sources,  # + lz4_sources,
+             include_dirs=include_dirs,
+             define_macros=define_macros,
+             extra_compile_args=extra_compile_args,
++            libraries=['lz4'],
+         ),
+     ]
+ 

@@ -1,0 +1,35 @@
+From: Antonio Valentino <antonio.valentino@tiscali.it>
+Date: Sat, 5 Feb 2022 08:55:16 +0000
+Subject: Enable snappy
+
+Forwarded: not-needed
+---
+ numcodecs/tests/test_blosc.py | 1 +
+ setup.py                      | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/numcodecs/tests/test_blosc.py b/numcodecs/tests/test_blosc.py
+index 52ef183..af7ad3d 100644
+--- a/numcodecs/tests/test_blosc.py
++++ b/numcodecs/tests/test_blosc.py
+@@ -136,6 +136,7 @@ def test_compress_complib(use_threads):
+         'lz4': 'LZ4',
+         'lz4hc': 'LZ4',
+         'blosclz': 'BloscLZ',
++        'snappy': 'Snappy',
+         'zlib': 'Zlib',
+         'zstd': 'Zstd',
+     }
+diff --git a/setup.py b/setup.py
+index b30232b..d798ebf 100644
+--- a/setup.py
++++ b/setup.py
+@@ -93,7 +93,7 @@ def blosc_extension():
+     include_dirs = [d for d in include_dirs if 'minizip' not in d]
+     define_macros += [
+         ('HAVE_LZ4', 1),
+-        # ('HAVE_SNAPPY', 1),
++        ('HAVE_SNAPPY', 1),
+         ('HAVE_ZLIB', 1),
+         ('HAVE_ZSTD', 1),
+     ]
