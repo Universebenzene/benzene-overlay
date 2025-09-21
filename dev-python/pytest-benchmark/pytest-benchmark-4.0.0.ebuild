@@ -33,7 +33,6 @@ BDEPEND="test? (
 		dev-python/freezegun[${PYTHON_USEDEP}]
 		dev-python/pygal[${PYTHON_USEDEP}]
 		dev-python/pygaljs[${PYTHON_USEDEP}]
-		dev-python/pytest-xdist[${PYTHON_USEDEP}]
 		dev-vcs/git
 		dev-vcs/mercurial[${PYTHON_USEDEP}]
 	)
@@ -41,6 +40,8 @@ BDEPEND="test? (
 
 PATCHES=( "${DISTDIR}/${P}-backport-232.patch" )
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" pytest-xdist )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-py3doc-enhanced-theme
 
