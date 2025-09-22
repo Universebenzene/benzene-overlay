@@ -18,11 +18,14 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/pytest-8[${PYTHON_USEDEP}]"
 BDEPEND="test? (
+		<dev-python/setuptools-80[${PYTHON_USEDEP}]
 		dev-python/cython[${PYTHON_USEDEP}]
 		dev-python/nox[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-py3doc-enhanced-theme dev-python/myst-parser
 
