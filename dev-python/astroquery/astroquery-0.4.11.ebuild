@@ -12,7 +12,7 @@ inherit distutils-r1 optfeature pypi
 DESCRIPTION="Collection of packages to access online astronomical resources"
 HOMEPAGE="https://astroquery.readthedocs.io"
 SRC_URI+=" doc? ( https://irsa.ipac.caltech.edu/data/SPITZER/Enhanced/SEIP/images/6/0095/60095931/4/60095931-14/60095931.60095931-14.IRAC.4.mosaic.fits )
-	test? ( https://github.com/astropy/astroquery/raw/refs/tags/v0.4.10/conftest.py -> ${P}-conftest.py )
+	test? ( https://github.com/astropy/astroquery/raw/refs/tags/v${PV}/conftest.py -> ${P}-conftest.py )
 "
 
 LICENSE="BSD"
@@ -39,23 +39,15 @@ RDEPEND=">=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND=">=dev-python/astropy-helpers-4.0.1[${PYTHON_USEDEP}]
-	<dev-python/setuptools-80.3.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.2[${PYTHON_USEDEP}]
-		dev-python/aiohttp[${PYTHON_USEDEP}]
-		dev-python/fsspec[${PYTHON_USEDEP}]
+		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
-		dev-python/pytest-astropy[${PYTHON_USEDEP}]
-		dev-python/pytest-dependency[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
-		dev-python/pytest-rerunfailures[${PYTHON_USEDEP}]
 		dev-python/boto3[${PYTHON_USEDEP}]
-		dev-python/flaky[${PYTHON_USEDEP}]
-		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/mocpy[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/photutils[${PYTHON_USEDEP}]
@@ -64,6 +56,7 @@ BDEPEND=">=dev-python/astropy-helpers-4.0.1[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-{astropy-header,dependency,doctestplus,mock,remotedata,rerunfailures,timeout} )
 distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
@@ -75,7 +68,8 @@ EPYTEST_DESELECT=(
 )
 
 python_prepare_all() {
-	sed -i -e '/auto_use/s/True/False/' setup.cfg || die
+	sed -i -e '/auto_use/s/True/False/' -e '/CoverageWarning/d' setup.cfg || die
+	rm -r astropy_helpers || die
 	DISTUTILS_ARGS=( --offline )
 	use doc && { use intersphinx || { eapply "${FILESDIR}"/${PN}-0.4.10-doc-irsa-offline.patch ; \
 		cp "${DISTDIR}"/*.fits docs/ipac/irsa || die ; } ; }
