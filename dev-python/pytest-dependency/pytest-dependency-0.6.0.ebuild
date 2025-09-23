@@ -23,6 +23,8 @@ RDEPEND=">=dev-python/pytest-3.7.0[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" )
 distutils_enable_tests pytest
 
 python_install_all() {
