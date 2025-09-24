@@ -20,10 +20,11 @@ RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 	>=dev-python/packaging-17.0[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		>=dev-python/pytest-remotedata-0.3.2[${PYTHON_USEDEP}]
 		dev-python/numpy[${PYTHON_USEDEP}]
 		dev-vcs/git
 	)
 "
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" pytest-remotedata )
 distutils_enable_tests pytest
