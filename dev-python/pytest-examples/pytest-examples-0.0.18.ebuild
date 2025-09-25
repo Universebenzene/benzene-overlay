@@ -25,6 +25,8 @@ RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 PATCHES=( "${FILESDIR}/${PN}-0.0.14-revert-use-of-ruff-module.patch" )
 #	"${FILESDIR}/${PN}-0.0.15-pytest-8.3.4-test-fix.patch"
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" )
 distutils_enable_tests pytest
 
 #python_install_all() {
