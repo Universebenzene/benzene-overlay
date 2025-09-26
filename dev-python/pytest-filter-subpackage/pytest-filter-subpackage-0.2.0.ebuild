@@ -20,8 +20,8 @@ RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
-"
+BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" pytest-doctestplus )
 distutils_enable_tests pytest
