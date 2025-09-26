@@ -51,8 +51,6 @@ BDEPEND="gtk? ( $(python_gen_any_dep 'dev-python/pygobject:3[${PYTHON_USEDEP}]')
 	dev-util/intltool
 "
 
-PATCHES=( "${FILESDIR}/${P}-enchant-provider.patch" )
-
 python_check_deps() {
 	use gtk || return 0
 	python_has_version "dev-python/pygobject:3[${PYTHON_USEDEP}]"
