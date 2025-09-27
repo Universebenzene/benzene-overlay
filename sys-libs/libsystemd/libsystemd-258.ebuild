@@ -219,6 +219,7 @@ src_unpack() {
 
 src_prepare() {
 	local PATCHES=(
+		"${FILESDIR}/systemd-258-shared-add-missing-alloc-util.patch"
 	)
 
 	if ! use vanilla; then
