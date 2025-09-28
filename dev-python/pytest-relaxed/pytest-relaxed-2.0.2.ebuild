@@ -19,6 +19,8 @@ RDEPEND=">=dev-python/pytest-7[${PYTHON_USEDEP}]
 	dev-python/decorator[${PYTHON_USEDEP}]
 "
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" )
 distutils_enable_tests pytest
 # require releases, which depends on semantic-version<2.7
 #distutils_enable_sphinx docs
