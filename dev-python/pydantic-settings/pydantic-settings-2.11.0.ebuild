@@ -23,13 +23,12 @@ RDEPEND=">=dev-python/pydantic-2.7.0[${PYTHON_USEDEP}]
 	yaml? ( >=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
-		dev-python/pytest-examples[${PYTHON_USEDEP}]
-		dev-python/pytest-mock[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-{examples,mock} )
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
@@ -42,6 +41,7 @@ EPYTEST_IGNORE=(
 
 EPYTEST_DESELECT=(
 	# ModuleNotFoundError: No module named 'azure'
-	tests/test_docs.py::test_docs_examples[docs/index.md:1905-1948]
-	tests/test_docs.py::test_docs_examples[docs/index.md:1956-1989]
+	tests/test_docs.py::test_docs_examples[docs/index.md:1928-1971]
+	tests/test_docs.py::test_docs_examples[docs/index.md:1977-2008]
+	tests/test_docs.py::test_docs_examples[docs/index.md:2018-2051]
 )
