@@ -16,7 +16,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/pytest-7.0.0[${PYTHON_USEDEP}]"
-BDEPEND="test? ( dev-python/pytest-xdist[${PYTHON_USEDEP}] )"
+RDEPEND=">=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" pytest-xdist )
 distutils_enable_tests pytest
