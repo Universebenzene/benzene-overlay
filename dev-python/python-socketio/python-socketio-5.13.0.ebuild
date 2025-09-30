@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -13,7 +13,7 @@ HOMEPAGE="https://python-socketio.readthedocs.io"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"	# bidict pytest-benchmark no x86
+KEYWORDS="~amd64 ~x86"
 IUSE="asyncio-client client"
 
 RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
@@ -25,11 +25,11 @@ RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
 	asyncio-client? ( >=dev-python/aiohttp-3.4[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
 		dev-python/uvicorn[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
