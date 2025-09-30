@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This package is a preview of pathlib functionality planned for a
+		future release of Python; specifically, it provides three ABCs that
+		can be used to implement path classes for non-local filesystems, such as
+		archive files and storage servers.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pathlib-abc</remote-id>
+		<remote-id type="github">barneygale/pathlib-abc</remote-id>
+	</upstream>
+</pkgmetadata>

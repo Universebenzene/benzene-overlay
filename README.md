@@ -169,6 +169,7 @@ dev-python/multivolumefile         | 0.2.3                                      
 dev-python/numcodecs               | 0.13.1; 0.15.1; 0.16.3                                     | Pulled in by zarr
 dev-python/oscrypto                | 1.3.0                                                      | Test dependency for python-pkcs11
 dev-python/partd                   | 1.4.2                                                      | Dropped by official portage. Required by dask
+dev-python/pathlib-abc             | 0.5.1                                                      | Pulled in by new upath
 dev-python/py7zr                   | 1.0.0                                                      | Optional for new ratarmount{,core}
 dev-python/pybcj                   | 1.0.6                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/pyfatfs                 | 1.1.0                                                      | Optional for new ratarmount{,core}
@@ -199,7 +200,7 @@ dev-python/colorspacious           | 1.1.2                                      
 dev-python/cmyt                    | 2.0.0; 2.0.2                                               | Pulled in by yt
 dev-python/unyt                    | 2.9.5; 3.0.4                                               | Pulled in by yt
 dev-python/uncompresspy            | 0.4.0                                                      | Optional for astropy>=7.1
-dev-python/universal-pathlib       | 0.2.6                                                      | Test dependency for zarr
+dev-python/universal-pathlib       | 0.3.0                                                      | Test dependency for zarr
 dev-python/webdav4                 | 0.10.0                                                     | Optional for new ratarmount{,core}
 dev-python/wsgidav                 | 4.3.3                                                      | Test dependency for webdav4
 dev-python/zict                    | 2.2.0; 3.0.0                                               | Pulled in by distributed

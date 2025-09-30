@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi optfeature
 
@@ -18,12 +18,15 @@ IUSE="examples"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/fsspec-2024.3.1[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/fsspec-2024.5.0[${PYTHON_USEDEP}]
+	>=dev-python/pathlib-abc-0.5.1[${PYTHON_USEDEP}]
+"
 BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 	test? (
 		dev-python/cheroot[${PYTHON_USEDEP}]
 		dev-python/fsspec[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
+		dev-python/pydantic-settings[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 		dev-python/smbprotocol[${PYTHON_USEDEP}]
@@ -40,6 +43,11 @@ EPYTEST_IGNORE=(
 	upath/tests/implementations/test_s3.py
 )
 
+EPYTEST_DESELECT=(
+	# gcsfs
+	'upath/tests/test_relative.py::test_protocol_storage_options_fs_preserved[gcs-storage_options2-gcs://bucket/foo/bar/baz.txt-gcs://bucket/foo]'
+)
+
 python_install_all() {
 	if use examples; then
 		docompress -x "/usr/share/doc/${PF}/notebooks"
@@ -48,6 +56,10 @@ python_install_all() {
 	fi
 
 	distutils-r1_python_install_all
+}
+
+python_test() {
+	epytest -o tmp_path_retention_policy=all
 }
 
 pkg_postinst() {
