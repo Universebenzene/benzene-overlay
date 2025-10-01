@@ -44,7 +44,6 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astrodendro[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/pyavm[${PYTHON_USEDEP}]
@@ -52,5 +51,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-mpl )
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-automodapi dev-python/sphinx-book-theme dev-python/numpydoc
