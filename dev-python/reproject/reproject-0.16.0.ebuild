@@ -40,7 +40,6 @@ DEPEND=">=dev-python/numpy-2:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	>=dev-python/astropy-healpix-1.0[${PYTHON_USEDEP}]
-	dev-python/cloudpickle[${PYTHON_USEDEP}]
 	>=dev-python/dask-2021.8[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2021.8[${PYTHON_USEDEP}]
 	>=dev-python/pillow-10.0[${PYTHON_USEDEP}]
@@ -58,10 +57,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/pyvo[${PYTHON_USEDEP}]
 	)
 	test? (
-		dev-python/pytest-arraydiff[${PYTHON_USEDEP}]
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/mpl-animators[${PYTHON_USEDEP}]
@@ -70,12 +65,15 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-{arraydiff,astropy-header,doctestplus,remotedata} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/pyvo
 
 python_prepare_all() {
 	use doc && { eapply "${FILESDIR}"/0002-${PN}-0.7.1-doc-use-local-fits.patch ; cp "${DISTDIR}"/*.fits* "${S}"/docs || die ; }
 #	sed -i "/NaNs/a \	ignore:Subclassing validator classes is not intended:DeprecationWarning" setup.cfg || die
+	use test && { sed -e "/# dimensions/a \    caplog.set_level(logging.INFO)" \
+					-e "/import pytest/a import logging" -i "${PN}"/interpolation/tests/test_core.py || die ; }
 
 	distutils-r1_python_prepare_all
 }

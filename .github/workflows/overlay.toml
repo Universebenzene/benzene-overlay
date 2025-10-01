@@ -903,6 +903,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "partd"
 
+["dev-python/pathlib-abc"]
+source = "pypi"
+use_max_tag = true
+pypi = "partd"
+
 ["dev-python/photutils"]
 source = "pypi"
 use_max_tag = true
