@@ -34,14 +34,12 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
 		dev-python/requests-mock[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,remotedata} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
