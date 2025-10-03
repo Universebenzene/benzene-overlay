@@ -44,9 +44,6 @@ RDEPEND=">dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
 BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/mpl-animators[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
@@ -55,6 +52,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 "
 PDEPEND="test? ( dev-python/specutils[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=( pytest-{doctestplus,mpl,remotedata} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	">=dev-python/sphinx-changelog-1.1.0" \
