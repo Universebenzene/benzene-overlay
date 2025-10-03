@@ -28,12 +28,9 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
-	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-	)
 "
 
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
