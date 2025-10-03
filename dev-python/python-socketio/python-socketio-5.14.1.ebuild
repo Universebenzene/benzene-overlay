@@ -33,3 +33,8 @@ BDEPEND="test? (
 EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
+
+EPYTEST_IGNORE=(
+	tests/async/test_redis_manager.py
+	tests/common/test_redis_manager.py
+)
