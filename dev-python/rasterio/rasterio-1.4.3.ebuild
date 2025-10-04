@@ -1,11 +1,11 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -40,7 +40,6 @@ BDEPEND=">=dev-python/cython-3.0.2[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		>=dev-python/boto3-1.2.4[${PYTHON_USEDEP}]
 		dev-python/fsspec[${PYTHON_USEDEP}]
-		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
@@ -49,6 +48,7 @@ BDEPEND=">=dev-python/cython-3.0.2[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( hypothesis )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-click dev-python/sphinx-rtd-theme
 
