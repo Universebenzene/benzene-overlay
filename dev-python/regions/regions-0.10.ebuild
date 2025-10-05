@@ -39,13 +39,9 @@ BDEPEND="${RDEPEND}
 		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
-	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
-	)
 "
 
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,remotedata} )
 distutils_enable_tests pytest
 
 python_prepare_all() {
