@@ -1114,10 +1114,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "pyvo"
 
-["dev-python/pyzstd"]
-source = "pypi"
-use_max_tag = true
-pypi = "pyzstd"
+#["dev-python/pyzstd"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "pyzstd"
 
 ["dev-python/radio-beam"]
 source = "pypi"
