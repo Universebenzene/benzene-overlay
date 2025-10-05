@@ -13,22 +13,19 @@ HOMEPAGE="https://textual.textualize.io"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/markdown-it-py-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/rich-13.3.3[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-4.2.2[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.19.2[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
 "
-BDEPEND="test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-xdist[${PYTHON_USEDEP}]
-		dev-python/linkify-it-py[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND="test? ( dev-python/linkify-it-py[${PYTHON_USEDEP}] )"
 
 #PATCHES=( "${FILESDIR}/${P}-fix_tests_with_pytest-asyncio_0.25.0.patch" )
 
+EPYTEST_PLUGINS=( pytest-{asyncio,textual-snapshot,xdist} )
+EPYTEST_PLUGIN_AUTOLOAD=1
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
