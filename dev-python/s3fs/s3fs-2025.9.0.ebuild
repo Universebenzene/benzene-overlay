@@ -24,7 +24,6 @@ RDEPEND=">=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP},awscli?,boto3?]
 	>=dev-python/fsspec-2024.12.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/xarray[${PYTHON_USEDEP}]
@@ -32,6 +31,7 @@ BDEPEND="test? (
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx-rtd-theme
 
