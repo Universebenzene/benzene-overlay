@@ -242,7 +242,7 @@ dev-python/sphinx-contributors          | 0.2.7                           |
 dev-python/sphinx-last-updated-by-git   | 0.3.8                           | Required by new sphinx-sitemap
 dev-python/sphinx-mdinclude             | 0.6.2                           |
 dev-python/sphinx-reredirects           | 1.0.0                           |
-dev-python/sphinx-sitemap               | 2.6.0; 2.8.0                    |
+dev-python/sphinx-sitemap               | 2.6.0; 2.9.0                    |
 dev-python/sphinx-py3doc-enhanced-theme | 2.4.0                           |
 dev-python/sphinxcontrib-globalsubs     | 0.1.2                           |
 dev-python/sphinxcontrib-srclink        | 0.2.4                           |
