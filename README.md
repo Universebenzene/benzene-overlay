@@ -143,7 +143,7 @@ dev-python/donfig                  | 0.8.1\_p1                                  
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
 dev-python/eventlet                | 0.33.3; 0.40.3                                             | Dropped by official portage. Required by firefly{,-viz}
 dev-python/ext4                    | 1.2                                                        | Optional for new ratarmount{,core} <- ipfsspec
-dev-python/f90nml                  | 1.4.5                                                      | Optional for yt
+dev-python/f90nml                  | 1.5                                                        | Optional for yt
 dev-python/fastcache               | 1.1.0                                                      | Optional for yt
 dev-python/fast-zip-decryption     | 3.0.0                                                      | Optional for new ratarmount{,core}
 dev-python/firefly-viz             | 2.0.4                                                      | Optional for yt
