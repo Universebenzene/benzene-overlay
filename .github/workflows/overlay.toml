@@ -1019,6 +1019,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pytest-arraydiff"
 
+["dev-python/pytest-asdf-plugin"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-asdf-plugin"
+
 ["dev-python/pytest-astropy-header"]
 source = "pypi"
 use_max_tag = true

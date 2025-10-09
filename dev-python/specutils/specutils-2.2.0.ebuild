@@ -25,7 +25,7 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/astropy-6.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-7.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-3.3.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-astropy-0.5[${PYTHON_USEDEP}]
 	>=dev-python/gwcs-0.22[${PYTHON_USEDEP}]
@@ -38,14 +38,10 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
-	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
-		dev-python/matplotlib[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=( pytest-{asdf-plugin,astropy-header,doctestplus,remotedata} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
