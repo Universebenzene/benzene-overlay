@@ -17,11 +17,6 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="trio"
 
 RDEPEND="trio? ( dev-python/trio[${PYTHON_USEDEP}] )"
-BDEPEND="test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-trio[${PYTHON_USEDEP}]
-		dev-python/trio[${PYTHON_USEDEP}]
-	)
-"
 
+EPYTEST_PLUGINS=( pytest-{asyncio,trio} )
 distutils_enable_tests pytest
