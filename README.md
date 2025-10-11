@@ -169,7 +169,7 @@ dev-python/multivolumefile         | 0.2.3                                      
 dev-python/numcodecs               | 0.13.1; 0.15.1; 0.16.3                                     | Pulled in by zarr
 dev-python/oscrypto                | 1.3.0                                                      | Test dependency for python-pkcs11
 dev-python/partd                   | 1.4.2                                                      | Dropped by official portage. Required by dask
-dev-python/pathlib-abc             | 0.5.1                                                      | Pulled in by new upath
+dev-python/pathlib-abc             | 0.5.1; 0.5.2                                               | Pulled in by new upath
 dev-python/py7zr                   | 1.0.0                                                      | Optional for new ratarmount{,core}
 dev-python/pybcj                   | 1.0.6                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/pyfatfs                 | 1.1.0                                                      | Optional for new ratarmount{,core}
