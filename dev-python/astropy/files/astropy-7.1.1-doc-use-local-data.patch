@@ -1,0 +1,456 @@
+--- a/docs/convolution/index.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/convolution/index.rst	2025-05-21 14:01:35.946712554 +0800
+@@ -34,8 +34,9 @@
+     from astropy.utils.data import get_pkg_data_filename
+     from scipy.ndimage import convolve as scipy_convolve
+ 
+-    # Load the data from data.astropy.org
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # Load the data from data.astropy.org. Use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+     hdu = fits.open(filename)[0]
+ 
+     # Scale the file to have reasonable numbers
+@@ -284,8 +285,9 @@
+    from astropy.utils.data import get_pkg_data_filename
+    from astropy.convolution import Gaussian2DKernel, interpolate_replace_nans
+ 
+-   # Load the data from data.astropy.org
+-   filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++   # Load the data from data.astropy.org. Use local fits if no network
++   try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++   except Exception: filename = 'gc_msx_e.fits'
+ 
+    hdu = fits.open(filename)[0]
+    img = hdu.data[50:90, 60:100] * 1e5
+@@ -353,8 +355,9 @@
+    from astropy.utils.data import get_pkg_data_filename
+    from astropy.convolution import Gaussian2DKernel, interpolate_replace_nans
+ 
+-   # Load the data from data.astropy.org
+-   filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++   # Load the data from data.astropy.org. Use local fits if no network
++   try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++   except Exception: filename = 'gc_msx_e.fits'
+ 
+    hdu = fits.open(filename)[0]
+    img = hdu.data[50:90, 60:100] * 1e5
+--- a/docs/convolution/non_normalized_kernels.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/convolution/non_normalized_kernels.rst	2025-05-21 14:01:35.946941178 +0800
+@@ -35,8 +35,9 @@
+     from astropy.convolution import convolve, convolve_fft
+ 
+ 
+-    # Load the data from data.astropy.org
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # Load the data from data.astropy.org. Use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+     hdu = fits.open(filename)[0]
+ 
+     # Scale the file to have reasonable numbers
+--- a/docs/modeling/parallel-fitting.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/modeling/parallel-fitting.rst	2025-05-21 14:01:35.947222961 +0800
+@@ -66,7 +66,8 @@
+     >>> from astropy.io import fits
+     >>> from astropy.utils.data import get_pkg_data_filename
+ 
+-    >>> filename = get_pkg_data_filename('l1448/l1448_13co.fits')  # doctest: +REMOTE_DATA
++    >>> try: filename = get_pkg_data_filename('l1448/l1448_13co.fits')  # doctest: +REMOTE_DATA
++    >>> except Exception: filename = 'l1448_13co.fits' # use local fits if no network
+     >>> with fits.open(filename) as hdulist:
+     ...     data = hdulist[0].data
+     ...     wcs = WCS(hdulist[0].header)  # doctest: +REMOTE_DATA
+--- a/docs/timeseries/analysis.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/timeseries/analysis.rst	2025-05-21 14:01:35.947350058 +0800
+@@ -137,7 +137,9 @@
+ 
+     from astropy.timeseries import TimeSeries
+     from astropy.utils.data import get_pkg_data_filename
+-    example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++    # use local fits if no network
++    try: example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++    except Exception: example_data = 'kplr010666592-2009131110544_slc.fits'
+     kepler = TimeSeries.read(example_data, format='kepler.fits', unit_parse_strict='silent')
+ 
+ (See :ref:`timeseries-io` for more details about reading in data). We can then
+@@ -191,7 +193,9 @@
+     from astropy.timeseries import aggregate_downsample
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++    # use local fits if no network
++    try: example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++    except Exception: example_data = 'kplr010666592-2009131110544_slc.fits'
+     kepler = TimeSeries.read(example_data, format='kepler.fits', unit_parse_strict='silent')
+ 
+     import warnings
+@@ -234,7 +238,9 @@
+    from astropy.timeseries import TimeSeries
+    from astropy.utils.data import get_pkg_data_filename
+ 
+-   example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++   # use local fits if no network
++   try: example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++   except Exception: example_data = 'kplr010666592-2009131110544_slc.fits'
+    kepler = TimeSeries.read(example_data, format='kepler.fits', unit_parse_strict='silent')
+ 
+ .. plot::
+@@ -273,7 +279,9 @@
+    from astropy.timeseries import TimeSeries
+    from astropy.utils.data import get_pkg_data_filename
+ 
+-   example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++   # use local fits if no network
++   try: example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++   except Exception: example_data = 'kplr010666592-2009131110544_slc.fits'
+    kepler = TimeSeries.read(example_data, format='kepler.fits', unit_parse_strict='silent')
+    kepler_folded = kepler.fold(period=2.2 * u.day, epoch_time='2009-05-02T20:53:40')
+ 
+--- a/docs/timeseries/index.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/timeseries/index.rst	2025-05-21 14:01:35.947476016 +0800
+@@ -37,7 +37,8 @@
+ source::
+ 
+     >>> from astropy.utils.data import get_pkg_data_filename
+-    >>> filename = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')  # doctest: +REMOTE_DATA
++    >>> try: filename = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')  # doctest: +REMOTE_DATA
++    >>> except Exception: filename = kplr010666592-2009131110544_slc.fits'  # Use local fits if no network
+ 
+ .. note::
+     The light curve provided here is handpicked for example purposes. For
+@@ -165,7 +166,9 @@
+    :nofigs:
+ 
+     from astropy.utils.data import get_pkg_data_filename
+-    filename = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++    except Exception: filename = 'kplr010666592-2009131110544_slc.fits'
+     from astropy.timeseries import TimeSeries
+     ts = TimeSeries.read(filename, format='kepler.fits', unit_parse_strict='silent')
+ 
+--- a/docs/timeseries/io.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/timeseries/io.rst	2025-05-21 14:01:35.947616044 +0800
+@@ -28,7 +28,9 @@
+    :nofigs:
+ 
+    from astropy.utils.data import get_pkg_data_filename
+-   example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++   # use local fits if no network
++   try: example_data = get_pkg_data_filename('timeseries/kplr010666592-2009131110544_slc.fits')
++   except Exception: example_data = 'kplr010666592-2009131110544_slc.fits'
+ 
+ .. note::
+     The light curve provided here is handpicked for example purposes. To get
+--- a/docs/visualization/rgb.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/rgb.rst	2025-05-21 14:01:35.947806847 +0800
+@@ -68,10 +68,13 @@
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    # Read in the three images downloaded from here:
+-    g_name = get_pkg_data_filename('visualization/reprojected_sdss_g.fits.bz2')
+-    r_name = get_pkg_data_filename('visualization/reprojected_sdss_r.fits.bz2')
+-    i_name = get_pkg_data_filename('visualization/reprojected_sdss_i.fits.bz2')
++    # Read in the three images downloaded from here, using local fits if no network:
++    try: g_name = get_pkg_data_filename('visualization/reprojected_sdss_g.fits.bz2')
++    except Exception: g_name = 'reprojected_sdss_g.fits.bz2'
++    try: r_name = get_pkg_data_filename('visualization/reprojected_sdss_r.fits.bz2')
++    except Exception: r_name = 'reprojected_sdss_r.fits.bz2'
++    try: i_name = get_pkg_data_filename('visualization/reprojected_sdss_i.fits.bz2')
++    except Exception: i_name = 'reprojected_sdss_i.fits.bz2'
+     g = fits.getdata(g_name)
+     r = fits.getdata(r_name)
+     i = fits.getdata(i_name)
+@@ -140,10 +143,13 @@
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    # Read in the three images downloaded from here:
+-    g_name = get_pkg_data_filename('visualization/reprojected_sdss_g.fits.bz2')
+-    r_name = get_pkg_data_filename('visualization/reprojected_sdss_r.fits.bz2')
+-    i_name = get_pkg_data_filename('visualization/reprojected_sdss_i.fits.bz2')
++    # Read in the three images downloaded from here, using local fits if no network:
++    try: g_name = get_pkg_data_filename('visualization/reprojected_sdss_g.fits.bz2')
++    except Exception: g_name = 'reprojected_sdss_g.fits.bz2'
++    try: r_name = get_pkg_data_filename('visualization/reprojected_sdss_r.fits.bz2')
++    except Exception: r_name = 'reprojected_sdss_r.fits.bz2'
++    try: i_name = get_pkg_data_filename('visualization/reprojected_sdss_i.fits.bz2')
++    except Exception: i_name = 'reprojected_sdss_i.fits.bz2'
+     g = fits.getdata(g_name)
+     r = fits.getdata(r_name)
+     i = fits.getdata(i_name)
+--- a/docs/visualization/wcsaxes/controlling_axes.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/controlling_axes.rst	2025-05-21 14:01:35.947972005 +0800
+@@ -18,7 +18,9 @@
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    filename = get_pkg_data_filename('l1448/l1448_13co.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('l1448/l1448_13co.fits')
++    except Exception: filename = 'l1448_13co.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+ 
+--- a/docs/visualization/wcsaxes/custom_frames.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/custom_frames.rst	2025-05-21 14:01:35.948134426 +0800
+@@ -18,7 +18,9 @@
+     from astropy.visualization.wcsaxes.frame import EllipticalFrame
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+ 
+@@ -46,7 +48,9 @@
+     from matplotlib import patheffects
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('allsky/allsky_rosat.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('allsky/allsky_rosat.fits')
++    except Exception: filename = 'allsky_rosat.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+ 
+@@ -108,7 +112,9 @@
+      from astropy.utils.data import get_pkg_data_filename
+      import matplotlib.pyplot as plt
+ 
+-     filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++     # use local fits if no network
++     try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++     except Exception: filename = 'gc_msx_e.fits'
+      hdu = fits.open(filename)[0]
+      wcs = WCS(hdu.header)
+ 
+--- a/docs/visualization/wcsaxes/images_contours.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/images_contours.rst	2025-05-21 14:01:35.948234698 +0800
+@@ -13,7 +13,9 @@
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+ 
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+--- a/docs/visualization/wcsaxes/index.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/index.rst	2025-05-21 14:01:35.948352125 +0800
+@@ -27,7 +27,9 @@
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+ 
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+--- a/docs/visualization/wcsaxes/initializing_axes.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/initializing_axes.rst	2025-05-21 14:01:35.948443598 +0800
+@@ -25,7 +25,9 @@
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+ 
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+--- a/docs/visualization/wcsaxes/overlaying_coordinate_systems.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/overlaying_coordinate_systems.rst	2025-05-21 14:01:35.948531452 +0800
+@@ -13,7 +13,9 @@
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+ 
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+--- a/docs/visualization/wcsaxes/overlays.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/overlays.rst	2025-05-21 14:01:35.948641450 +0800
+@@ -20,7 +20,9 @@
+     from astropy.utils.data import get_pkg_data_filename
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+ 
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+@@ -119,7 +121,9 @@
+     from astropy.utils.data import get_pkg_data_filename
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+ 
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+@@ -155,7 +159,9 @@
+     from astropy.utils.data import get_pkg_data_filename
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+ 
+@@ -232,7 +238,9 @@
+     from astropy.visualization.wcsaxes import Quadrangle
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+ 
+@@ -284,7 +292,9 @@
+     from matplotlib.patches import Rectangle
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+ 
+@@ -298,7 +308,9 @@
+    :include-source:
+    :align: center
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_bolocam_gps.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_bolocam_gps.fits')
++    except Exception: filename = 'gc_bolocam_gps.fits'
+     hdu = fits.open(filename)[0]
+     ax.contour(hdu.data, transform=ax.get_transform(WCS(hdu.header)),
+                levels=[1,2,3,4,5,6], colors='white')
+@@ -320,7 +332,9 @@
+     from astropy.utils.data import get_pkg_data_filename
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+ 
+@@ -369,7 +383,9 @@
+     from astropy.utils.data import get_pkg_data_filename
+     import matplotlib.pyplot as plt
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+ 
+--- a/docs/visualization/wcsaxes/slicing_datacubes.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/slicing_datacubes.rst	2025-05-21 14:01:35.948792640 +0800
+@@ -26,7 +26,9 @@
+     from astropy.wcs import WCS
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+-    filename = get_pkg_data_filename('l1448/l1448_13co.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('l1448/l1448_13co.fits')
++    except Exception: filename = 'l1448_13co.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+     image_data = hdu.data
+@@ -97,7 +99,9 @@
+     from astropy.wcs import WCS
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+-    filename = get_pkg_data_filename('l1448/l1448_13co.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('l1448/l1448_13co.fits')
++    except Exception: filename = 'l1448_13co.fits'
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+     image_data = hdu.data
+--- a/docs/visualization/wcsaxes/ticks_labels_grid.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/visualization/wcsaxes/ticks_labels_grid.rst	2025-05-21 14:01:35.948901496 +0800
+@@ -13,7 +13,9 @@
+     from astropy.io import fits
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    # use local fits if no network
++    try: filename = get_pkg_data_filename('galactic_center/gc_msx_e.fits')
++    except Exception: filename = 'gc_msx_e.fits'
+ 
+     hdu = fits.open(filename)[0]
+     wcs = WCS(hdu.header)
+--- a/docs/wcs/wcsapi.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/wcs/wcsapi.rst	2025-05-21 14:01:35.949043542 +0800
+@@ -55,7 +55,8 @@
+     >>> from astropy.wcs import WCS
+     >>> from astropy.utils.data import get_pkg_data_filename
+     >>> from astropy.io import fits
+-    >>> filename = get_pkg_data_filename('galactic_center/gc_2mass_k.fits')  # doctest: +REMOTE_DATA
++    >>> try: filename = get_pkg_data_filename('galactic_center/gc_2mass_k.fits')  # doctest: +REMOTE_DATA
++    >>> except Exception: filename = gc_2mass_k.fits'  # Use local fits if no network
+     >>> hdulist = fits.open(filename)  # doctest: +REMOTE_DATA
+     >>> hdu = hdulist[0]  # doctest: +REMOTE_DATA
+     >>> wcs = WCS(hdu.header)  # doctest: +REMOTE_DATA
+@@ -141,7 +142,8 @@
+ Let's now take a look at a WCS for a spectral cube (two celestial axes and one
+ spectral axis)::
+ 
+-    >>> filename = get_pkg_data_filename('l1448/l1448_13co.fits')  # doctest: +REMOTE_DATA
++    >>> try: filename = get_pkg_data_filename('l1448/l1448_13co.fits')  # doctest: +REMOTE_DATA
++    >>> except Exception: filename = 'l1448_13co.fits'  # Use local fits if no network
+     >>> hdulist = fits.open(filename)  # doctest: +REMOTE_DATA
+     >>> hdu = hdulist[0]  # doctest: +REMOTE_DATA
+     >>> wcs = WCS(hdu.header)  # doctest: +REMOTE_DATA
+@@ -246,7 +248,8 @@
+ any WCS object that conforms to the :class:`~astropy.wcs.wcsapi.BaseLowLevelWCS`
+ API. To demonstrate this, let's start off by reading in a spectral cube file::
+ 
+-    >>> filename = get_pkg_data_filename('l1448/l1448_13co.fits')  # doctest: +REMOTE_DATA
++    >>> try: filename = get_pkg_data_filename('l1448/l1448_13co.fits')  # doctest: +REMOTE_DATA
++    >>> except Exception: filename = 'l1448_13co.fits'  # Use local fits if no network
+     >>> wcs = WCS(fits.getheader(filename, ext=0))  # doctest: +REMOTE_DATA
+ 
+ The ``wcs`` object is an instance of :class:`~astropy.wcs.WCS` which conforms to the
+--- a/docs/wcs/wcstools.rst	2025-05-20 21:21:57.000000000 +0800
++++ b/docs/wcs/wcstools.rst	2025-05-21 14:01:35.949148486 +0800
+@@ -33,7 +33,9 @@
+     from astropy.wcs import WCS, FITSFixedWarning
+     from astropy.utils.data import get_pkg_data_filename
+ 
+-    filename = get_pkg_data_filename('tutorials/FITS-images/HorseHead.fits')
++    # use local data if no network
++    try: filename = get_pkg_data_filename('tutorials/FITS-images/HorseHead.fits')
++    except Exception: filename = 'HorseHead.fits'
+ 
+     hdu = fits.open(filename)[0]
+     with warnings.catch_warnings():

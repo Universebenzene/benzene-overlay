@@ -47,7 +47,7 @@ DEPEND=">=dev-libs/expat-2.5.0:0=
 	sys-libs/zlib:0=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2025.4.28.0.37.27[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2025.9.29.0.35.48[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
@@ -88,8 +88,6 @@ BDEPEND=">=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 		dev-python/objgraph[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
-		>=dev-python/pytest-astropy-0.10.0[${PYTHON_USEDEP}]
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/pyarrow[${PYTHON_USEDEP},parquet,snappy]
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/skyfield[${PYTHON_USEDEP}]
@@ -99,10 +97,8 @@ BDEPEND=">=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}/${PN}-6.0.0-system-configobj.patch"
-	"${FILESDIR}/${PN}-6.0.0-system-ply.patch"
-)
+PATCHES=( "${FILESDIR}/${PN}-6.0.0-system-configobj.patch" )
+#	"${FILESDIR}/${PN}-6.0.0-system-ply.patch"
 
 # TODO: Fix this
 # NameError: name 'disabled_intersphinx_mapping' is not defined
@@ -112,10 +108,12 @@ PATCHES=(
 #	dev-python/scipy \
 #	dev-python/pytest
 
+EPYTEST_PLUGINS=( hypothesis pytest-{arraydiff,astropy{,-header},doctestplus,filter-subpackage,mock,mpl,remotedata} )
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
 
 python_prepare_all() {
+	grep -rl astropy.extern.ply . | xargs sed -i "s#astropy.extern.ply#ply#g" || die
 	rm -r ${PN}/extern/{configobj,ply} || die
 	if use doc && ! use intersphinx; then
 		for ddv in "${DISTDIR}"/*-dv-*; do { cp ${ddv} "${S}"/docs/visualization/${ddv##*-dv-} || die ; } ; done
