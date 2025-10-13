@@ -888,6 +888,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "oldest-supported-numpy"
 
+["dev-python/optimagic"]
+source = "pypi"
+use_max_tag = true
+pypi = "optimagic"
+
 ["dev-python/oscrypto"]
 source = "archpkg"
 archpkg = "python-oscrypto"
@@ -937,6 +942,11 @@ pypi = "py7zr"
 source = "pypi"
 use_max_tag = true
 pypi = "pyavm"
+
+["dev-python/pybaum"]
+source = "pypi"
+use_max_tag = true
+pypi = "pybaum"
 
 ["dev-python/pybcj"]
 source = "pypi"

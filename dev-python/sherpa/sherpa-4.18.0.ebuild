@@ -7,12 +7,15 @@ DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
+TEST_PV="4.17.1"
+
 inherit distutils-r1 optfeature pypi virtualx
 
 DESCRIPTION="Modeling and fitting package for scientific data analysis"
 HOMEPAGE="https://sherpa.readthedocs.io"
 SRC_URI+=" https://github.com/sherpa/sherpa/raw/refs/tags/${PV}/setup.cfg -> ${P}-setup.cfg
-	test? ( https://github.com/sherpa/sherpa-test-data/archive/refs/tags/${PV}.tar.gz -> ${P}-testdata.tar.gz )
+	doc? ( https://github.com/sherpa/sherpa-test-data/archive/refs/tags/${TEST_PV}.tar.gz -> ${P}-testdata.tar.gz )
+	test? ( https://github.com/sherpa/sherpa-test-data/archive/refs/tags/${TEST_PV}.tar.gz -> ${P}-testdata.tar.gz )
 "
 
 LICENSE="GPL-3"
@@ -36,7 +39,9 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		dev-python/nbsphinx[${PYTHON_USEDEP}]
 		dev-python/arviz[${PYTHON_USEDEP}]
+		dev-python/astropy[${PYTHON_USEDEP}]
 		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
+		dev-python/optimagic[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 		sci-geosciences/xyzservices[${PYTHON_USEDEP}]
 		virtual/pandoc
@@ -46,8 +51,8 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/optimagic[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/typing-extensions[${PYTHON_USEDEP}]
 		dev-libs/libxml2:2
 		sci-astronomy/ds9-bin
 		sci-geosciences/xyzservices[${PYTHON_USEDEP}]
@@ -76,6 +81,10 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
+python_configure_all() {
+	append-flags -std=gnu17
+}
+
 #python_compile() {
 #	distutils-r1_python_compile
 #	cp "${S}"/extern/grplib-4.9/python/.libs/group.so "${BUILD_DIR}"/install/$(python_get_sitedir) || die
@@ -84,7 +93,8 @@ python_prepare_all() {
 
 python_compile_all() {
 	if use doc; then
-		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
+		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" \
+			PYTHONPATH="${BUILD_DIR}/install/$(python_get_sitedir):${WORKDIR}/sherpa-test-data-${TEST_PV}" \
 			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
@@ -102,12 +112,15 @@ python_install_all() {
 }
 
 python_test() {
-	PYTHONPATH="${WORKDIR}/sherpa-test-data-${PV}" virtx epytest --pyargs \
-		"${BUILD_DIR}/install/$(python_get_sitedir)/${PN}" --runslow --runzenodo
+	PYTHONPATH="${WORKDIR}/sherpa-test-data-${TEST_PV}" virtx epytest --pyargs \
+		"${BUILD_DIR}/install/$(python_get_sitedir)/${PN}" --runslow --runzenodo --runcores --runsession
 }
 
 pkg_postinst() {
+	optfeature "visualisation and analysis of sherpa.sim.MCMC results" dev-python/arviz
 	optfeature "reading and writing files in FITS format" dev-python/astropy
 	optfeature "visualisation of one-dimensional data or models, one- or two- dimensional error analysis, and the results of Monte-Carlo Markov Chain runs" dev-python/matplotlib
+	optfeature "the sherpa.optmethods.optoptimagic module which provides an interface to optimagic.minimize" dev-python/optimagic
+	optfeature "the sherpa.optmethods.optscipy module, which provides an interface to several optimizers from Scipy" dev-python/scipy
 	optfeature "interactive display and manipulation of two-dimensional images" sci-astronomy/ds9-bin
 }

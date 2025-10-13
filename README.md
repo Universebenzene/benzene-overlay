@@ -167,10 +167,12 @@ dev-python/msrestazure             | 0.6.4\_p1                                  
 dev-python/multiformats            | 0.3.1\_p4                                                  | Optional for new ratarmount{,core} <- ipfsspec. Dependencies like bases(base58) and multiformats-config are not included in this table. For more functions with pycryptodomex you need to add [parona-overlay](https://gitlab.com/Parona/parona-overlay)
 dev-python/multivolumefile         | 0.2.3                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/numcodecs               | 0.13.1; 0.15.1; 0.16.3                                     | Pulled in by zarr
+dev-python/optimagic               | 0.5.2                                                      | Optional for new sherpa
 dev-python/oscrypto                | 1.3.0                                                      | Test dependency for python-pkcs11
 dev-python/partd                   | 1.4.2                                                      | Dropped by official portage. Required by dask
 dev-python/pathlib-abc             | 0.5.1; 0.5.2                                               | Pulled in by new upath
 dev-python/py7zr                   | 1.0.0                                                      | Optional for new ratarmount{,core}
+dev-python/pybaum                  | 0.1.3                                                      | Optional for new sherpa <- optimagic
 dev-python/pybcj                   | 1.0.6                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/pyfatfs                 | 1.1.0                                                      | Optional for new ratarmount{,core}
 dev-python/pygaljs                 | 1.0.2                                                      | Optional for pytest-benchmark

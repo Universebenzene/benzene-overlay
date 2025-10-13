@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		optimagic is a Python package for numerical optimization.
+		It is a unified interface to optimizers from SciPy,
+		NlOpt and many other Python packages.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">optimagic</remote-id>
+		<remote-id type="github">optimagic-dev/optimagic</remote-id>
+	</upstream>
+</pkgmetadata>
