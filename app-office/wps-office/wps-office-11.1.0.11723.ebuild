@@ -47,6 +47,7 @@ RDEPEND="
 	dev-libs/libgcrypt:0
 	dev-libs/libgpg-error
 	dev-libs/libpcre:3
+	|| ( dev-libs/libxml2-compat:2 dev-libs/libxml2:2/0 )
 	media-libs/fontconfig:1.0
 	!system-freetype? ( media-libs/freetype-wps:2 )
 	system-freetype? ( media-libs/freetype:2 )
