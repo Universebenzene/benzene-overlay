@@ -238,6 +238,7 @@ dev-python/sphinx-documattcom-theme     | 1.1.1                           |
 dev-python/sphinx-examples              | 0.0.5                           |
 dev-python/sphinx-hoverxref             | 1.5.0                           |
 dev-python/sphinx-readable-theme        | 1.3.0                           |
+dev-python/sphinx-remove-toctrees       | 1.0.0\_p1                       |
 dev-python/sphinx-thebe                 | 0.2.1; 0.3.1                    |
 dev-python/sphinx-togglebutton          | 0.3.2                           |
 dev-python/sphinx-contributors          | 0.2.7                           |
@@ -250,7 +251,7 @@ dev-python/sphinxcontrib-globalsubs     | 0.1.2                           |
 dev-python/sphinxcontrib-srclink        | 0.2.4                           |
 dev-python/sphinxcontrib-youtube        | 1.2.0; 1.4.1                    | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
 dev-python/sphinxext-opengraph          | 0.13.0                          |
-dev-python/dask-sphinx-theme            | 3.0.6                           |
+dev-python/dask-sphinx-theme            | 4.0.0                           |
 dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.1.0            |
 dev-python/pydata-sphinx-theme          | 0.13.3-r1                       | Old version dropped by official portage, required by sunpy-sphinx-theme
 dev-python/mistune                      | 0.8.4-r1; 2.0.5                 | For sphinx-asdf and sphinx-mdinclude that depend on old version

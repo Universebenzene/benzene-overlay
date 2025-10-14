@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Improve your Sphinx build time by selectively removing TocTree objects
+		from pages. This is useful if your documentation uses auto-generated API
+		documentation, which generates a lot of stub pages.
+		This extension can be used to remove the sidebar links for just the pages
+		you specify, speed up the build considerably.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">sphinx-remove-toctrees</remote-id>
+		<remote-id type="github">executablebooks/sphinx-remove-toctrees</remote-id>
+	</upstream>
+</pkgmetadata>

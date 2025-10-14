@@ -1346,6 +1346,13 @@ source = "pypi"
 use_max_tag = true
 pypi = "sphinx-readable-theme"
 
+["dev-python/sphinx-remove-toctrees"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-remove-toctrees"
+from_pattern = "(.*).post(.*)"
+to_pattern = '\1_p\2'
+
 ["dev-python/sphinx-reredirects"]
 source = "pypi"
 use_max_tag = true
