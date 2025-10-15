@@ -19,7 +19,6 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 RDEPEND=">=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
-	>=dev-python/six-1.11.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.6.0[${PYTHON_USEDEP}]
 	aio? ( >=dev-python/aiohttp-3.0[${PYTHON_USEDEP}] )
 	tracing? ( dev-python/opentelemetry-api[${PYTHON_USEDEP}] )
