@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi virtualx
 
@@ -45,7 +45,6 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
 	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
 		dev-python/aplpy[${PYTHON_USEDEP}]
 		dev-python/bottleneck[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
@@ -68,6 +67,7 @@ PDEPEND="noviz? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-astropy-header )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
