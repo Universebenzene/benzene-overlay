@@ -36,7 +36,7 @@ dev-python/ginga               | 5.4.0                                          
 dev-python/glueviz             | 1.4.0 (glue-core: 1.17.1, 1.24.1; glue-qt: 0.4.0)    | Meta package, core package and qt package versions are all shown.
 dev-python/glue-vispy-viewers  | 1.1.0; 1.2.3                                         |
 dev-python/gwcs                | 0.26.0                                               | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
-dev-python/h5netcdf            | 1.7.0                                                |
+dev-python/h5netcdf            | 1.7.1                                                |
 dev-python/h5pyd               | 0.12.2; 0.18.0; 0.23.0                               |
 dev-python/healpy              | 1.16.6; 1.18.1                                       |
 dev-python/hvpy                | 1.1.0                                                | Test dependency and optional for sunpy.
