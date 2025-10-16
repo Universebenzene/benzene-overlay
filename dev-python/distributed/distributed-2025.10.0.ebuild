@@ -61,7 +61,7 @@ BDEPEND="dev-python/versioneer[${PYTHON_USEDEP}]
 EPYTEST_XDIST=1
 EPYTEST_PLUGINS=( pytest-timeout )
 distutils_enable_tests pytest
-distutils_enable_sphinx docs/source dev-python/dask-sphinx-theme dev-python/numpydoc \
+distutils_enable_sphinx docs/source ">=dev-python/dask-sphinx-theme-4.0.0" dev-python/numpydoc \
 	dev-python/sphinx-click \
 	dev-python/sphinx-design \
 	dev-python/memray
@@ -95,9 +95,9 @@ EPYTEST_DESELECT=(
 )
 
 python_prepare_all() {
-	use doc && { sed -i -e "/github/s/GH\#/GH\%s\#/" docs/source/conf.py || die ; \
-#		sed -i "/language\ = /s/None/'en'/" docs/source/conf.py || die ; \
-	}
+#	use doc && { sed -i -e "/github/s/GH\#/GH\%s\#/" docs/source/conf.py || die ; \
+##		sed -i "/language\ = /s/None/'en'/" docs/source/conf.py || die ; \
+#	}
 	sed -i -e '/--cov/d' pyproject.toml || die
 
 	distutils-r1_python_prepare_all
