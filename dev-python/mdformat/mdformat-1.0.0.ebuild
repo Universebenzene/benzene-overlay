@@ -20,3 +20,7 @@ RDEPEND=">=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/furo dev-python/accessible-pygments dev-python/myst-parser
+
+python_test() {
+	epytest -o tmp_path_retention_policy=all
+}
