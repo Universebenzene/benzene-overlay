@@ -38,4 +38,5 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-doctestplus )
 distutils_enable_tests pytest
