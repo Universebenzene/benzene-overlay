@@ -29,7 +29,6 @@ RDEPEND=">=dev-python/jinja2-2.9[${PYTHON_USEDEP}]
 	sys-libs/libunwind
 "
 BDEPEND="test? (
-		dev-python/pytest-textual-snapshot[${PYTHON_USEDEP}]
 		dev-python/ipython[${PYTHON_USEDEP}]
 		dev-python/setuptools[${PYTHON_USEDEP}]
 	)
@@ -38,6 +37,7 @@ BDEPEND="test? (
 #		dev-debug/gdb[lzma]
 #		llvm-core/lldb[lzma]
 
+EPYTEST_PLUGINS=( pytest-textual-snapshot syrupy )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-argparse dev-python/furo \
 	dev-python/accessible-pygments \
@@ -84,5 +84,5 @@ python_test() {
 	#mv src/_${PN}/_te{t,s}t.py || die
 	#mv src/{_,}${PN} || die
 	# https://gitlab.archlinux.org/archlinux/packaging/packages/memray/-/blob/main/PKGBUILD?ref_type=heads
-	epytest tests
+	epytest -o tmp_path_retention_policy=all
 }
