@@ -3,8 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
+DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
 #PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 
@@ -17,15 +16,13 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	dev-python/wheel[${PYTHON_USEDEP}]
-"
+BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]"
 
 distutils_enable_tests pytest
 
 python_prepare_all() {
 	# remove dep on pytest-cov
-	sed -i -e "/--cov/d" pytest.ini || die
+	sed -i -e "/--cov/d" pyproject.toml || die
 
 	distutils-r1_python_prepare_all
 }
