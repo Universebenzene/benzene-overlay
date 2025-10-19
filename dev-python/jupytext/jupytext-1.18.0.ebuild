@@ -12,8 +12,8 @@ DESCRIPTION="Jupyter notebooks as Markdown documents, Julia, Python or R scripts
 HOMEPAGE="https://jupytext.readthedocs.io"
 SRC_URI="https://github.com/mwouts/jupytext/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
 	$(pypi_wheel_url)
-	doc? ( https://github.com/mwouts/${PN}/raw/v1.16.0.rc0/jupyterlab/packages/jupyterlab-jupytext-extension/ui-tests/tests/jupytext-menu.spec.ts-snapshots/opened-jupytext-menu-jupytext-pair-notebook-jupytext-linux.png -> 1.16.0_rc0-opened-jupytext-menu-jupytext-pair-notebook-jupytext-linux.png )
 "
+#	doc? ( https://github.com/mwouts/${PN}/raw/v1.16.0.rc0/jupyterlab/packages/jupyterlab-jupytext-extension/ui-tests/tests/jupytext-menu.spec.ts-snapshots/opened-jupytext-menu-jupytext-pair-notebook-jupytext-linux.png -> 1.16.0_rc0-opened-jupytext-menu-jupytext-pair-notebook-jupytext-linux.png )
 
 LICENSE="MIT"
 SLOT="0"
@@ -27,7 +27,6 @@ RDEPEND=">=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
 "
 BDEPEND="test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/autopep8[${PYTHON_USEDEP}]
 		dev-python/black[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
@@ -41,13 +40,15 @@ BDEPEND="test? (
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/myst-parser
 
 EPYTEST_IGNORE=( tests/external/pre_commit )
 
 python_prepare_all() {
-	use doc && { cp {"${DISTDIR}"/1.16.0_rc0-,"${S}"/jupyterlab/packages/jupyterlab-jupytext-extension/ui-tests/tests/jupytext-menu.spec.ts-snapshots/}opened-jupytext-menu-jupytext-pair-notebook-jupytext-linux.png || die ; }
+#	use doc && { cp {"${DISTDIR}"/1.16.0_rc0-,"${S}"/jupyterlab/packages/jupyterlab-jupytext-extension/ui-tests/tests/jupytext-menu.spec.ts-snapshots/}opened-jupytext-menu-jupytext-pair-notebook-jupytext-linux.png || die ; }
+	use doc && { sed -i "/collaboration/s:docs/::" docs/faq.md || die ; }
 	distutils-r1_python_prepare_all
 }
 
