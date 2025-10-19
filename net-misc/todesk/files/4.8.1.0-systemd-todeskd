@@ -1,0 +1,18 @@
+#!/bin/sh
+
+export LIBVA_DRIVER_NAME="iHD"
+export LIBVA_DRIVERS_PATH="/opt/todesk/bin"
+/opt/todesk/bin/ToDesk_Service &
+
+watchdog() {
+    PID=$1
+    while(true); do
+        psidt=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt.*bin/ToDesk' | grep -v 'bin/ToDesk_S*' | grep -v $0 | awk '{print $1}')
+        psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt/todesk/bin/todesk-hold' | grep -v $0 | awk '{print $1}')
+        [[ -z $psidt ]] || [[ -z $psidr ]] || /bin/kill ${psidr}
+        [[ -n $psidt ]] || [[ -n $psidr ]] && /bin/systemd-notify WATCHDOG=1 || echo 0
+        sleep $(($WATCHDOG_USEC / 2000000))
+    done
+}
+
+watchdog $$

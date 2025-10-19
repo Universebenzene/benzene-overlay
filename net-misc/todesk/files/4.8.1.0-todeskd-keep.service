@@ -1,0 +1,17 @@
+[Unit]
+Description=ToDesk Daemon Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Environment="LIBVA_DRIVER_NAME=iHD"
+Environment="LIBVA_DRIVERS_PATH=/opt/todesk/bin"
+ExecStartPre=/opt/todesk/bin/starthold-todeskd-systemd
+ExecStart=/opt/todesk/bin/systemd-todeskd
+ExecStopPost=/opt/todesk/bin/stophold-todeskd-systemd
+Restart=on-watchdog
+WatchdogSec=2
+
+[Install]
+WantedBy=multi-user.target

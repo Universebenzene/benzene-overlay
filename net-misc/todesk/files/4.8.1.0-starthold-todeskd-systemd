@@ -1,0 +1,4 @@
+#!/bin/sh
+psidt=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt.*bin/ToDesk' | grep -v 'bin/ToDesk_S.*' | grep -v $0 | awk '{print $1}')
+psidr=$(ps -ef | tr -s " " | cut -d " " -f 2,8 | grep '/opt/todesk/bin/todesk-hold' | grep -v $0 | awk '{print $1}')
+[[ -n $psidt ]] || [[ -n $psidr ]] || /opt/todesk/bin/todesk-hold infinity &

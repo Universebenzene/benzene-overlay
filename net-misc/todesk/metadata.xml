@@ -7,7 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="fonts">Install the bundled Noto fonts for CJK users (Not needed if <pkg>media-fonts/noto-cjk</pkg> is already installed)</flag>
-		<flag name="keep-server">Keep todesk server available after quit the GUI client (only work on OpenRC system)</flag>
+		<flag name="keep-server">Keep todesk server available after quit the GUI client (may only work well on OpenRC system)</flag>
 	</use>
 </pkgmetadata>
 
