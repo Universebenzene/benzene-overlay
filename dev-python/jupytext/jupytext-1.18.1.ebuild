@@ -32,9 +32,9 @@ BDEPEND="test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/gitpython[${PYTHON_USEDEP}]
 		dev-python/isort[${PYTHON_USEDEP}]
+		dev-python/jupyter-server[${PYTHON_USEDEP}]
 		dev-python/myst-parser[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
-		dev-python/notebook[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}]
 		virtual/pandoc
 	)
