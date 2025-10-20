@@ -1435,9 +1435,12 @@ use_max_tag = true
 pypi = "sunpy-sphinx-theme"
 
 ["dev-python/sunpy"]
-source = "pypi"
-use_max_tag = true
-pypi = "sunpy"
+source = "repology"
+repology = "python:sunpy"
+repo = "nixpkgs unstable"
+#source = "pypi"
+#use_max_tag = true
+#pypi = "sunpy"
 
 ["dev-python/synphot"]
 source = "pypi"

@@ -42,7 +42,7 @@ dev-python/healpy              | 1.16.6; 1.18.1                                 
 dev-python/hvpy                | 1.1.0                                                | Test dependency and optional for sunpy.
 dev-python/imexam              | 0.9.1                                                | With [my issue](https://github.com/spacetelescope/imexam/issues/252) unsolved. [NOT COMPATIBLE WITH PY3.11 YET](https://github.com/spacetelescope/imexam/issues/256)
 dev-python/jplephem            | 2.23                                                 |
-dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                      | Old version for dev-python/asdf
+dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                      | For old versions of dev-python/asdf
 dev-python/mocpy               | 0.18.0                                               | Dependency cdshealpix are also in this overlay but not listed in this table
 dev-python/mpl-animator        | 1.2.4                                                |
 dev-python/mpl-scatter-density | 0.8                                                  | Glueviz releated.
@@ -68,7 +68,7 @@ dev-python/spectral-cube       | 0.6.6                                          
 dev-python/specutils           | 1.20.3; 2.2.0                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/specreduce          | 1.6.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Some images cannot be plotted if intersphinx is disabled.
 dev-python/starlink-pyast      | 0.2.1                                                | Starlink WCS library for ginga
-dev-python/sunpy               | 5.1.5; 6.1.1                                         | Doc building is really hard to run, so not supported right now.
+dev-python/sunpy               | 5.1.5; 6.1.1; 7.0.2                                         | Doc building is really hard to run, so not supported right now.
 dev-python/synphot             | 1.6.0                                                |
 dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.1.0                                 |
 
