@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=standalone
 PYPI_NO_NORMALIZE=1
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -26,12 +26,12 @@ RDEPEND=">=dev-python/sphinx-6.1[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 "
 BDEPEND="test? (
-		dev-python/pytest-regressions[${PYTHON_USEDEP}]
 		dev-python/myst-nb[${PYTHON_USEDEP}]
 		dev-python/sphinx-thebe[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-{datadir,regressions} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton \
 	dev-python/sphinx-examples \

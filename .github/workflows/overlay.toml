@@ -1678,7 +1678,10 @@ strip_release = true
 
 #["net-misc/sunloginclient"]
 
-#["net-misc/todesk"]
+["net-misc/todesk"]
+source = "aur"
+aur = "todesk-bin"
+strip_release = true
 
 #["net-misc/xunlei-download"]
 
