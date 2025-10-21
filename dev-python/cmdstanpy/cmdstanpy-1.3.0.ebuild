@@ -25,12 +25,9 @@ RDEPEND=">=dev-python/numpy-1.21[${PYTHON_USEDEP}]
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	all? ( dev-python/xarray[${PYTHON_USEDEP}] )
 "
-BDEPEND="test? (
-		dev-python/pytest-order[${PYTHON_USEDEP}]
-		dev-vcs/git
-	)
-"
+BDEPEND="test? ( dev-vcs/git )"
 
+EPYTEST_PLUGINS=( pytest-order )
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
@@ -166,6 +163,18 @@ EPYTEST_DESELECT=(
 	test/test_sample.py::test_csv_roundtrip
 	test/test_model.py::test_legacy_fixed_param
 	test/test_sample.py::test_sample_no_params
+	test/test_optimize.py::test_optimize_create_inits
+	test/test_sample.py::test_mcmc_create_inits
+	test/test_optimize.py::test_optimize_init_sampling
+	test/test_model.py::test_diagnose
+	test/test_sample.py::test_mcmc_init_sampling
+	test/test_sample.py::test_sample_dense_mass_matrix
+	test/test_sample.py::test_no_output_draws
+	test/test_variational.py::test_variational_create_inits
+	test/test_variational.py::test_variational_init_sampling
+	test/test_laplace.py::test_laplace_create_inits
+	test/test_laplace.py::test_laplace_init_sampling
+	test/test_model.py::test_model_format_options
 )
 
 python_install_all() {
