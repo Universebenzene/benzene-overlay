@@ -15,6 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/markdown-it-py-2.1.0[${PYTHON_USEDEP}]
+	dev-python/mdit-py-plugins[${PYTHON_USEDEP}]
 	>=dev-python/rich-14.2.0[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-4.2.2[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.19.2[${PYTHON_USEDEP}]
@@ -54,7 +55,7 @@ pkg_postinst() {
 	optfeature "suppor for go" ">=dev-python/tree-sitter-go-0.23.0"
 	optfeature "suppor for regex" ">=dev-python/tree-sitter-regex-0.24.0"
 	optfeature "suppor for xml" ">=dev-python/tree-sitter-xml-0.7.0"
-	optfeature "suppor for sql" ">=dev-python/tree-sitter-sql-0.3.0"
+	optfeature "suppor for sql" ">=dev-python/tree-sitter-sql-0.3.11"
 	optfeature "suppor for java" ">=dev-python/tree-sitter-java-0.23.0"
 	optfeature "suppor for bash" ">=dev-python/tree-sitter-bash-0.23.0"
 }
