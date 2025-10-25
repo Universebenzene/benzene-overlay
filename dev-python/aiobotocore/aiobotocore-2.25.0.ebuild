@@ -17,11 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="awscli boto3"
 PROPERTIES="test_network"
-RESTRICT="test"	# need pytest-asyncio<1
+RESTRICT="test"
 
 RDEPEND=">=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/botocore-1.39.9[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.40.46[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
@@ -38,13 +38,14 @@ BDEPEND="test? (
 		dev-python/openapi-spec-validator[${PYTHON_USEDEP}]
 		dev-python/pip[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
+		>=dev-python/anyio-4.11.0[${PYTHON_USEDEP}]
 	)
 "
 
-PATCHES=( "${FILESDIR}/${P}-botocore-compatibility.patch" )
+#PATCHES=( "${FILESDIR}/${P}-botocore-compatibility.patch" )
 
 EPYTEST_XDIST=1
-EPYTEST_PLUGINS=( pytest-asyncio time-machine )
+EPYTEST_PLUGINS=( anyio time-machine )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
 
