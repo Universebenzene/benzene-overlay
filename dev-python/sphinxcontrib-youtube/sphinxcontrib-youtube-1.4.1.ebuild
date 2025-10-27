@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -19,13 +19,10 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/sphinx-6.1[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-BDEPEND="test? (
-		dev-python/pytest-regressions[${PYTHON_USEDEP}]
-		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND="test? ( dev-python/beautifulsoup4[${PYTHON_USEDEP}] )"
 
 S="${WORKDIR}/youtube-${PV}"
 
+EPYTEST_PLUGINS=( pytest-{datadir,regressions} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/sphinx-design dev-python/pydata-sphinx-theme
