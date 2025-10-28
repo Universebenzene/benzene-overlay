@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -25,11 +25,8 @@ RDEPEND="<dev-python/sphinx-9[${PYTHON_USEDEP}]
 	theme-rtd? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	theme-sbt? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 "
-BDEPEND="test? (
-		dev-python/pytest-regressions[${PYTHON_USEDEP}]
-		dev-python/myst-parser[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND="test? ( dev-python/myst-parser[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=( pytest-{datadir,regressions} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/myst-parser
