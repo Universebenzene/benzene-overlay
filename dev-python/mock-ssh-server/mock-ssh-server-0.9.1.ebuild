@@ -16,7 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-python/paramiko[${PYTHON_USEDEP},server]"
+RDEPEND="dev-python/paramiko[${PYTHON_USEDEP},server(+)]"
 BDEPEND="test? ( virtual/openssh )"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
