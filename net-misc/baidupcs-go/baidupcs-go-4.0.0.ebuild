@@ -30,6 +30,7 @@ EGO_VENDOR=(
 	"github.com/urfave/cli v1.22.5"
 	"github.com/cpuguy83/go-md2man/v2 v2.0.0 github.com/cpuguy83/go-md2man"
 	"golang.org/x/sys v0.25.0 github.com/golang/sys"
+	"golang.org/x/net 3b0461eec859c4b73bb64fdc8285971fd33e3938 github.com/golang/net"
 )
 
 MY_PN="BaiduPCS-Go"
