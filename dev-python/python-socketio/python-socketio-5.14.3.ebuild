@@ -26,6 +26,7 @@ RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/msgpack[${PYTHON_USEDEP}]
+		dev-python/tornado[${PYTHON_USEDEP}]
 		dev-python/uvicorn[${PYTHON_USEDEP}]
 	)
 "
