@@ -4,8 +4,8 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
-PYPI_PN="PyAVM"
+#PYPI_NO_NORMALIZE=1
+#PYPI_PN="PyAVM"
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
@@ -24,4 +24,5 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? ( dev-python/pillow[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
