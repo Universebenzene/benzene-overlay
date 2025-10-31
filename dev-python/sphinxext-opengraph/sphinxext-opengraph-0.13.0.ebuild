@@ -29,6 +29,7 @@ BDEPEND="test? (
 	)
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-design dev-python/accessible-pygments \
 	dev-python/furo dev-python/matplotlib
