@@ -19,7 +19,7 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND="dev-python/numpy:=[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
 BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0[${PYTHON_USEDEP}]
@@ -28,25 +28,23 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
-	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/scipy[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/scipy[${PYTHON_USEDEP}] )
 "
 
 DOCS=( README.rst CHANGES.rst )
 
+EPYTEST_PLUGINS=( pytest-doctestplus )
 distutils_enable_tests pytest
 
 python_prepare_all() {
-	use doc && { cat "${FILESDIR}/${P}-setup.cfg" >> "${S}"/setup.cfg || die ; }
+	use doc && { cat "${FILESDIR}/${PN}-1.2.0-setup.cfg" >> "${S}"/setup.cfg || die ; }
 
 	distutils-r1_python_prepare_all
 }
 
-python_configure_all() {
-	append-flags -std=gnu17
-}
+#python_configure_all() {
+#	append-flags -std=gnu17
+#}
 
 python_compile_all() {
 	if use doc; then
