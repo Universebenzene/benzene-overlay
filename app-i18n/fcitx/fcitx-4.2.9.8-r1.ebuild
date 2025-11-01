@@ -1,7 +1,7 @@
-# Copyright 2003-2024 Gentoo Authors
+# Copyright 2003-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI="8"
 LUA_COMPAT=( lua5-{1..4} )
 
 inherit cmake gnome2-utils lua-single xdg-utils
