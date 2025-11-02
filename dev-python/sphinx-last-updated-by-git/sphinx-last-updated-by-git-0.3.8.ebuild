@@ -22,6 +22,7 @@ RDEPEND=">=dev-python/sphinx-1.8[${PYTHON_USEDEP}]
 	dev-vcs/git
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
