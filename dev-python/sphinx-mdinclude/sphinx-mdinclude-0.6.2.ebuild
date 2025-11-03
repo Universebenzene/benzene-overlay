@@ -1,10 +1,10 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 pypi
 
@@ -20,7 +20,7 @@ RDEPEND=">=dev-python/mistune-3.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.8[${PYTHON_USEDEP}]
 	>=dev-python/sphinx-6[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
