@@ -33,7 +33,7 @@ RDEPEND="
 	sci-astronomy/wcslib:0=
 	sci-libs/cfitsio:0=
 	sci-libs/gsl:0=
-	sys-libs/zlib:0=
+	virtual/zlib:0=
 	virtual/jpeg:0
 	x11-libs/cairo
 	${PYTHON_DEPS}"

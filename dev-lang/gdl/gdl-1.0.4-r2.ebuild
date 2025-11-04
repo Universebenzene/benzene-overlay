@@ -29,7 +29,7 @@ RDEPEND="
 	sci-libs/plplot:=[X,cxx,-dynamic,wxwidgets?]
 	sys-libs/ncurses:=
 	sys-libs/readline:=
-	sys-libs/zlib
+	virtual/zlib
 	x11-libs/libX11
 	fftw? ( sci-libs/fftw:3.0= )
 	glpk? ( sci-mathematics/glpk:= )

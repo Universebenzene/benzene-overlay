@@ -37,7 +37,7 @@ RDEPEND="dev-libs/nss
 		sys-apps/dbus
 		sys-apps/tcp-wrappers
 		sys-libs/libunwind
-		sys-libs/zlib[minizip]
+		virtual/zlib[minizip]
 		virtual/udev
 		x11-libs/libXcomposite
 		x11-libs/libXdamage

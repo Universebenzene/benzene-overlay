@@ -44,7 +44,7 @@ DEPEND=">=dev-libs/expat-2.5.0:0=
 	>=sci-astronomy/erfa-2.0:0=
 	>=sci-astronomy/wcslib-8.3:0=
 	>=sci-libs/cfitsio-4.2.0:0=
-	sys-libs/zlib:0=
+	virtual/zlib:0=
 "
 RDEPEND="${DEPEND}
 	>=dev-python/astropy-iers-data-0.2024.10.28.0.34.7[${PYTHON_USEDEP}]

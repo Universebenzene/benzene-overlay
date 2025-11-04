@@ -40,7 +40,7 @@ RDEPEND="dev-libs/nss
 		net-print/cups[dbus,ssl]
 		sys-apps/tcp-wrappers
 		sys-libs/libapparmor
-		sys-libs/zlib
+		virtual/zlib
 		virtual/krb5
 		virtual/udev
 		x11-libs/libXcomposite

@@ -25,7 +25,7 @@ RDEPEND="
 	dev-libs/libffi
 	dev-libs/openssl
 	net-misc/curl
-	sys-libs/zlib
+	virtual/zlib
 "
 
 S="${WORKDIR}"

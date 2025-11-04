@@ -43,7 +43,7 @@ RDEPEND="
 	dev-qt/qtxml:5
 	media-libs/libvorbis
 	media-libs/tiff:0
-	sys-libs/zlib
+	virtual/zlib
 	x11-libs/libX11
 	x11-libs/libXtst
 	ffmpeg? (
