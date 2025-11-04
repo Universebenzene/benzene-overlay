@@ -5,7 +5,8 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
-PYTHON_COMPAT=( python3_{{10..13},13t} pypy3 )
+PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
+#PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -21,6 +22,7 @@ KEYWORDS="~alpha amd64 arm arm64 ~hppa ~m68k ~mips ppc ppc64 ~riscv ~s390 ~sparc
 
 PATCHES=( "${FILESDIR}/${P}-fix-pytest.patch" )
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 python_test() {
