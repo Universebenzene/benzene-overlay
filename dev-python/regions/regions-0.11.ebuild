@@ -21,22 +21,22 @@ LICENSE="BSD"
 IUSE="all doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
-DEPEND=">=dev-python/numpy-1.23[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-5.1[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.0[${PYTHON_USEDEP}]
 	all? (
-		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.8[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${RDEPEND}
-	>=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
-	dev-python/extension-helpers[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
+	>=dev-python/cython-3.1.2[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1.3[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.9[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.8[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 "
