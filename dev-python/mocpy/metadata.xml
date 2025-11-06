@@ -16,6 +16,7 @@
 	</upstream>
 	<use>
 		<flag name="astropy_regions">MOC.from_astropy_regions support via <pkg>dev-python/regions</pkg>.</flag>
+		<flag name="plots">plots, used in fill and border or get_boundaries.</flag>
 		<flag name="query_fits">query FITS files by url via<pkg>dev-python/requests</pkg>.</flag>
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 	</use>

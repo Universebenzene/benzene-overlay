@@ -43,7 +43,7 @@ dev-python/hvpy                | 1.1.0                                          
 dev-python/imexam              | 0.9.1                                                | With [my issue](https://github.com/spacetelescope/imexam/issues/252) unsolved. [NOT COMPATIBLE WITH PY3.11 YET](https://github.com/spacetelescope/imexam/issues/256)
 dev-python/jplephem            | 2.23                                                 |
 dev-python/jsonschema          | 3.2.0-r1; 4.9.1                                      | For old versions of dev-python/asdf
-dev-python/mocpy               | 0.18.0                                               | Dependency cdshealpix are also in this overlay but not listed in this table
+dev-python/mocpy               | 0.19.0                                               | Dependency cdshealpix are also in this overlay but not listed in this table
 dev-python/mpl-animator        | 1.2.4                                                |
 dev-python/mpl-scatter-density | 0.8                                                  | Glueviz releated.
 dev-python/naima               | 0.10.3                                               |
