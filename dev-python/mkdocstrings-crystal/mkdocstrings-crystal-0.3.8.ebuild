@@ -19,8 +19,8 @@ RDEPEND=">=dev-python/jinja2-2.11.2[${PYTHON_USEDEP}]
 	>=dev-python/markdown-callouts-0.1.0[${PYTHON_USEDEP}]
 	>=dev-python/markupsafe-1.1.1[${PYTHON_USEDEP}]
 	>=dev-python/mkdocs-autorefs-0.3.1[${PYTHON_USEDEP}]
-	>=dev-python/mkdocstrings-0.19.0[${PYTHON_USEDEP}]
+	>=dev-python/mkdocstrings-0.30.0[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/pytest-golden[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=( pytest-golden )
 distutils_enable_tests pytest
