@@ -20,6 +20,7 @@ RESTRICT="test"
 
 RDEPEND=">=dev-python/sphinx-7.4[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/sphinx-sitemap \
 	dev-python/sphinx-documattcom-theme \
