@@ -61,7 +61,7 @@ CRATES="
 	pyo3-macros@0.26.0
 	pyo3@0.26.0
 	quick-error@2.0.1
-	quote@1.0.41
+	quote@1.0.42
 	rawpointer@0.2.1
 	rayon-core@1.13.0
 	rayon@1.11.0
@@ -75,7 +75,7 @@ CRATES="
 	simd-adler32@0.3.7
 	slab@0.4.11
 	stc-s@0.1.0
-	syn@2.0.108
+	syn@2.0.109
 	target-lexicon@0.13.3
 	thiserror-impl@1.0.69
 	thiserror-impl@2.0.17
