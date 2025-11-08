@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-python/sphinx-last-updated-by-git[${PYTHON_USEDEP}]"
 BDEPEND="test? ( dev-python/gitpython[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx-contributors \
 	dev-python/sphinxemoji \
