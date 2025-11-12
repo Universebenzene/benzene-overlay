@@ -41,7 +41,7 @@ EPYTEST_IGNORE=(
 
 EPYTEST_DESELECT=(
 	# ModuleNotFoundError: No module named 'azure'
-	tests/test_docs.py::test_docs_examples[docs/index.md:1928-1971]
-	tests/test_docs.py::test_docs_examples[docs/index.md:1977-2008]
-	tests/test_docs.py::test_docs_examples[docs/index.md:2018-2051]
+	tests/test_docs.py::test_docs_examples[docs/index.md:2172-2215]
+	tests/test_docs.py::test_docs_examples[docs/index.md:2221-2252]
+	tests/test_docs.py::test_docs_examples[docs/index.md:2262-2295]
 )
