@@ -53,8 +53,12 @@ python_compile_all() {
 
 python_test() {
 	epytest --remote-data
-		# docs/registry/index.rst::index.rst \
-		# docs/dal/index.rst::index.rst \
-		# docs/index.rst::index.rst \
-		# docs/io/uws.rst::uws.rst docs: stuck
 }
+
+EPYTEST_DESELECT=(
+	# Costs time
+	docs/registry/index.rst::index.rst
+	docs/dal/index.rst::index.rst
+	docs/index.rst::index.rst
+	docs/io/uws.rst::uws.rst
+)
