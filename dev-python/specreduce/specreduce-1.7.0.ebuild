@@ -40,10 +40,10 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/astropy-5.3[${PYTHON_USEDEP}]
 	dev-python/gwcs[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.10[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.10[${PYTHON_USEDEP}]
 	>=dev-python/specutils-1.9.1[${PYTHON_USEDEP}]
 	all? (
-		>=dev-python/matplotlib-3.7[${PYTHON_USEDEP}]
 		>=dev-python/photutils-1.0[${PYTHON_USEDEP}]
 		dev-python/synphot[${PYTHON_USEDEP}]
 	)
@@ -52,6 +52,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		dev-python/nbsphinx[${PYTHON_USEDEP}]
 		dev-python/photutils[${PYTHON_USEDEP}]
 		dev-python/synphot[${PYTHON_USEDEP}]
 	)
@@ -62,7 +63,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,remotedata} )
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,mock,remotedata} )
 distutils_enable_tests pytest
 # TODO: Fix this
 # NameError: name 'disabled_intersphinx_mapping' is not defined
