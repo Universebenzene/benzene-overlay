@@ -18,25 +18,25 @@ IUSE="doc intersphinx noviz viz viz_extra"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/numpy-1.8.0[${PYTHON_USEDEP}]
-	dev-python/astropy[${PYTHON_USEDEP}]
-	dev-python/casa-formats-io[${PYTHON_USEDEP}]
-	dev-python/dask[${PYTHON_USEDEP}]
-	dev-python/joblib[${PYTHON_USEDEP}]
-	dev-python/packaging[${PYTHON_USEDEP}]
-	>=dev-python/radio-beam-0.3.3[${PYTHON_USEDEP}]
-	dev-python/tqdm[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.24[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.1[${PYTHON_USEDEP}]
+	>=dev-python/casa-formats-io-0.1[${PYTHON_USEDEP}]
+	>=dev-python/dask-2025.1.1[${PYTHON_USEDEP}]
+	>=dev-python/joblib-1.3[${PYTHON_USEDEP}]
+	>=dev-python/packaging-19[${PYTHON_USEDEP}]
+	>=dev-python/radio-beam-0.3.5[${PYTHON_USEDEP}]
+	>=dev-python/tqdm-4.64[${PYTHON_USEDEP}]
 	noviz? (
-		dev-python/distributed[${PYTHON_USEDEP}]
-		dev-python/fsspec[${PYTHON_USEDEP}]
+		>=dev-python/distributed-2022.5[${PYTHON_USEDEP}]
+		>=dev-python/fsspec-2022.5[${PYTHON_USEDEP}]
 		>=dev-python/reproject-0.9.1[${PYTHON_USEDEP}]
-		dev-python/scipy[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.8.1[${PYTHON_USEDEP}]
 		<dev-python/zarr-3[${PYTHON_USEDEP}]
 	)
 	viz? (
-		dev-python/aplpy[${PYTHON_USEDEP}]
-		dev-python/matplotlib[${PYTHON_USEDEP}]
-		dev-python/reproject[${PYTHON_USEDEP}]
+		>=dev-python/aplpy-2.1[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.5.2[${PYTHON_USEDEP}]
+		>=dev-python/reproject-0.9.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -45,21 +45,18 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
 	test? (
-		dev-python/aplpy[${PYTHON_USEDEP}]
+		>=dev-python/aplpy-2.1[${PYTHON_USEDEP}]
 		dev-python/bottleneck[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/qtpy[${PYTHON_USEDEP},svg]
-		dev-python/regions[${PYTHON_USEDEP}]
+		>=dev-python/regions-0.7[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
-		<dev-python/zarr-3[${PYTHON_USEDEP}]
+		dev-python/zarr[${PYTHON_USEDEP}]
 	)
 "
-PDEPEND="noviz? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
-	viz? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
-	viz_extra? (
-		dev-python/glue-qt[${PYTHON_USEDEP}]
-		dev-python/yt[${PYTHON_USEDEP}]
-	)
+PDEPEND="noviz? ( >=dev-python/pvextractor-0.3[${PYTHON_USEDEP}] )
+	viz? ( >=dev-python/pvextractor-0.3[${PYTHON_USEDEP}] )
+	viz_extra? ( >=dev-python/glue-qt-0.1[${PYTHON_USEDEP}] )
 	test? (
 		dev-python/glue-qt[${PYTHON_USEDEP}]
 		dev-python/pvextractor[${PYTHON_USEDEP}]
@@ -67,7 +64,7 @@ PDEPEND="noviz? ( dev-python/pvextractor[${PYTHON_USEDEP}] )
 	)
 "
 
-EPYTEST_PLUGINS=( pytest-astropy-header )
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
