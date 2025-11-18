@@ -37,14 +37,12 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
 		dev-python/dust-extinction[${PYTHON_USEDEP}]
 		dev-python/specutils[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,remotedata} )
 distutils_enable_tests pytest
 # TODO: Fix this
 # NameError: name 'disabled_intersphinx_mapping' is not defined
