@@ -46,6 +46,7 @@ dev-libs/libappindicator:3                                                      
 dev-python/aioftp                                                                    | 0.27.2                                                                                                                                            |
 dev-python/corner                                                                    | 2.2.2; 2.2.3                                                                                                                                      |
 dev-python/dask                                                                      | 2024.4.1; 2025.10.0; 2025.11.0                                                                                                                    | Dropped by official portage
+dev-python/dask-image                                                                | 2025.11.0                                                                                                                                         |
 dev-python/dropbox                                                                   | 12.0.2                                                                                                                                            |
 dev-python/exifread                                                                  | 3.5.1                                                                                                                                             |
 dev-python/glfw                                                                      | 2.10.0                                                                                                                                            | Dependency for glue-vispy-viewer>=1.2.0
@@ -171,6 +172,7 @@ dev-python/optimagic               | 0.5.2                                      
 dev-python/oscrypto                | 1.3.0                                                      | Test dependency for old python-pkcs11
 dev-python/partd                   | 1.4.2                                                      | Dropped by official portage. Required by dask
 dev-python/pathlib-abc             | 0.5.1; 0.5.2                                               | Pulled in by new upath
+dev-python/pims                    | 0.7                                                        | Required by dask-image <- new reproject
 dev-python/py7zr                   | 1.0.0                                                      | Optional for new ratarmount{,core}
 dev-python/pybaum                  | 0.1.3                                                      | Optional for new sherpa <- optimagic
 dev-python/pybcj                   | 1.0.6                                                      | Optional for new ratarmount{,core} <- py7zr
@@ -189,6 +191,7 @@ dev-python/rasterio                | 1.3.8\_p2; 1.4.3                           
 dev-python/ratarmount              | 0.8.1; 0.14.2; 0.15.2; 1.0.0; 1.2.0                        | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
 dev-python/s3fs                    | 2025.9.0; 2025.10.0                                        | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks                | 0.3.0                                                      | Optional for aioftp
+dev-python/slicerator              | 1.1.0                                                      | Required by pims <- dask-image <- new reproject
 dev-python/smbprotocol             | 1.15.0                                                     | Optional for new ratarmount{,core}
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
 dev-python/spur                    | 0.3.23                                                     | Dropped by official portage. Test dependency for locket
