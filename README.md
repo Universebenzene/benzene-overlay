@@ -159,7 +159,7 @@ dev-python/rapidgzip               | 0.15.2                                     
 dev-python/libconf                 | 2.0.1                                                      | Optional for yt
 dev-python/locket                  | 1.0.0                                                      | Dropped by official portage. Required by partd
 dev-python/memory-profiler         | 0.61                                                       | Dropped by official portage. Test dependency for ccdproc
-dev-python/markdownify             | 1.2.0                                                      | Required by mkdocs-llmstxt
+dev-python/markdownify             | 1.2.2                                                      | Required by mkdocs-llmstxt
 dev-python/mdformat{,-tables}      | 1.0.0 / 1.0.0                                              | Required by mkdocs-llmstxt
 dev-python/miniballcpp             | 0.2.3                                                      | Optional for yt
 dev-python/msrest                  | 0.7.1                                                      | SunPy, h5pyd related
