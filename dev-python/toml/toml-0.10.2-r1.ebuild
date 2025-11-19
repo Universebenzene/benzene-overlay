@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{{11..14},{13..14}t} pypy3)
+PYTHON_COMPAT=( python3_{{11..14},{13..14}t} pypy3 )
 #PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} pypy3 )
 
 inherit distutils-r1
@@ -31,6 +31,7 @@ KEYWORDS="~alpha amd64 arm arm64 ~hppa ~loong ~m68k ~mips ppc ppc64 ~riscv ~s390
 
 DOCS=( README.rst )
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 python_prepare_all() {
