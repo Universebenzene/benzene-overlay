@@ -405,6 +405,11 @@ source = "archpkg"
 archpkg = "python-dask"
 strip_release = true
 
+["dev-python/dask-image"]
+source = "archpkg"
+archpkg = "python-dask"
+strip_release = true
+
 ["dev-python/distributed"]
 source = "archpkg"
 archpkg = "python-distributed"
@@ -918,6 +923,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "photutils"
 
+["dev-python/pims"]
+source = "pypi"
+use_max_tag = true
+pypi = "PIMS"
+
 ["dev-python/poetry-dynamic-versioning"]
 source = "archpkg"
 archpkg = "python-poetry-dynamic-versioning"
@@ -1220,6 +1230,11 @@ pypi = "siosocks"
 source = "pypi"
 use_max_tag = true
 pypi = "skyfield"
+
+["dev-python/slicerator"]
+source = "pypi"
+use_max_tag = true
+pypi = "slicerator"
 
 ["dev-python/smbprotocol"]
 source = "pypi"

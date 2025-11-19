@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -17,12 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/httpx-0.24.1[${PYTHON_USEDEP}]"
-BDEPEND="test? (
-		dev-python/pytest-tornasync[${PYTHON_USEDEP}]
-		dev-python/respx[${PYTHON_USEDEP}]
-	)
-"
 
+EPYTEST_PLUGINS=( pytest-tornasync respx )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source
 
