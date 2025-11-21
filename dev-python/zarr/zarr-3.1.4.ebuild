@@ -17,8 +17,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples optional remote"
 
 RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
+	>=dev-python/google-crc32c-0.14[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.26[${PYTHON_USEDEP}]
-	>=dev-python/numcodecs-0.14[${PYTHON_USEDEP},crc32c]
+	>=dev-python/numcodecs-0.14[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
 	optional? (
@@ -32,7 +33,6 @@ BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 		dev-python/flask-cors[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/numpydoc[${PYTHON_USEDEP}]
-		dev-python/rich[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 		dev-python/tomlkit[${PYTHON_USEDEP}]
 		dev-python/typer[${PYTHON_USEDEP}]
@@ -41,7 +41,7 @@ BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=( hypothesis pytest-asyncio )
+EPYTEST_PLUGINS=( hypothesis pytest-{asyncio,examples} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/numpydoc \
 #	dev-python/sphinx-autoapi \
@@ -62,8 +62,9 @@ python_install_all() {
 }
 
 EPYTEST_IGNORE=(
+	tests/test_docs.py
 	# Ignore uv related tests
-	tests/test_examples.py
+#	tests/test_examples.py
 #	tests/test_regression/test_v2_dtype_regression.py
 )
 
