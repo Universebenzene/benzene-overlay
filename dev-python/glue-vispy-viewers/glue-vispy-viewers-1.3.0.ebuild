@@ -18,7 +18,7 @@ IUSE="pyqt pyside"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/echo-0.6[${PYTHON_USEDEP}]
-	>=dev-python/glue-core-1.13.1[${PYTHON_USEDEP}]
+	>=dev-python/glue-core-1.17.0[${PYTHON_USEDEP}]
 	dev-python/glfw[${PYTHON_USEDEP}]
 	dev-python/imageio[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
@@ -26,17 +26,18 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/scipy[${PYTHON_USEDEP}]
 	>=dev-python/vispy-0.12.0[${PYTHON_USEDEP}]
 	pyqt? (
-		>=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]
+		>=dev-python/glue-qt-0.4.0[${PYTHON_USEDEP}]
 		dev-python/pyqt6[${PYTHON_USEDEP}]
 		dev-python/qtpy[${PYTHON_USEDEP},designer,gui]
 	)
 	pyside? (
-		>=dev-python/glue-qt-0.1.0[${PYTHON_USEDEP}]
+		>=dev-python/glue-qt-0.4.0[${PYTHON_USEDEP}]
 		dev-python/pyside:6[${PYTHON_USEDEP}]
 		dev-python/qtpy[${PYTHON_USEDEP},designer,gui]
 	)
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 python_test() {
