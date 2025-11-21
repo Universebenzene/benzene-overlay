@@ -35,6 +35,7 @@ BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
