@@ -151,6 +151,7 @@ dev-python/firefly-viz             | 2.0.4                                      
 dev-python/firefly                 | 3.4.1                                                      | Optional for new yt
 dev-python/flask-socketio          | 5.5.1                                                      | Optional for yt
 dev-python/fusepy                  | 3.0.1                                                      | Optional for old ratarmount
+dev-python/google-crc32c           | 1.7.1                                                      | Required by new numcodecs, zarr
 dev-python/mfusepy                 | 3.0.0                                                      | Optional for new ratarmount
 dev-python/heapdict                | 1.0.1                                                      | Pulled in by zict and distributed
 dev-python/indexed\-{bzip2,zstd}   | 1.7.0 / 1.6.1                                              | Optional for yt (ratarmount{,core})
@@ -167,7 +168,7 @@ dev-python/msrest                  | 0.7.1                                      
 dev-python/msrestazure             | 0.6.4\_p1                                                  | SunPy, h5pyd related
 dev-python/multiformats            | 0.3.1\_p4                                                  | Optional for new ratarmount{,core} <- ipfsspec. Dependencies like bases(base58) and multiformats-config are not included in this table. For more functions with pycryptodomex you need to add [parona-overlay](https://gitlab.com/Parona/parona-overlay)
 dev-python/multivolumefile         | 0.2.3                                                      | Optional for new ratarmount{,core} <- py7zr
-dev-python/numcodecs               | 0.13.1; 0.15.1; 0.16.3                                     | Pulled in by zarr
+dev-python/numcodecs               | 0.13.1; 0.15.1; 0.16.5                                     | Pulled in by zarr
 dev-python/optimagic               | 0.5.2                                                      | Optional for new sherpa
 dev-python/oscrypto                | 1.3.0                                                      | Test dependency for old python-pkcs11
 dev-python/partd                   | 1.4.2                                                      | Dropped by official portage. Required by dask

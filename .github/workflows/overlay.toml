@@ -586,6 +586,11 @@ pypi = "glymur"
 from_pattern = "(.*).post(.*)"
 to_pattern = '\1_p\2'
 
+["dev-python/google-crc32c"]
+source = "pypi"
+use_max_tag = true
+pypi = "google-crc32c"
+
 ["dev-python/gwcs"]
 source = "pypi"
 use_max_tag = true

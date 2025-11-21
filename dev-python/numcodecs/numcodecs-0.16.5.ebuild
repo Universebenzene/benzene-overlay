@@ -15,7 +15,7 @@ HOMEPAGE="http://numcodecs.readthedocs.io"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="crc32c examples msgpack zfpy"
+IUSE="crc32c examples google_crc32c msgpack zfpy"
 
 DEPEND="app-arch/lz4:=
 	app-arch/zstd:=
@@ -25,6 +25,7 @@ DEPEND="app-arch/lz4:=
 RDEPEND="${DEPEND}
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 	crc32c? ( >=dev-python/crc32c-2.7[${PYTHON_USEDEP}] )
+	google_crc32c? ( >=dev-python/google-crc32c-1.5[${PYTHON_USEDEP}] )
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	zfpy? ( dev-libs/zfp[python] )
 "
@@ -34,7 +35,6 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	doc? ( dev-libs/zfp[python] )
 	test? (
 		dev-libs/zfp[python]
-		dev-python/crc32c[${PYTHON_USEDEP}]
 		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
 		dev-python/pyzstd[${PYTHON_USEDEP}]
@@ -43,10 +43,11 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 PDEPEND="test? ( >=dev-python/zarr-3[${PYTHON_USEDEP}] )"
 
 PATCHES=(
-	"${FILESDIR}/0001-${P}-No-embedded-libs.patch"
-	"${FILESDIR}/0006-${P}-Enable-snappy.patch"
+	"${FILESDIR}/0001-${PN}-0.16.3-No-embedded-libs.patch"
+	"${FILESDIR}/0006-${PN}-0.16.3-Enable-snappy.patch"
 )
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc dev-python/pydata-sphinx-theme \
 	dev-python/crc32c \

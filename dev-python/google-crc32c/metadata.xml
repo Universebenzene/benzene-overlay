@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This package wraps the google/crc32c hardware-based implementation of the
+		CRC32C hashing algorithm.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">google-crc32c</remote-id>
+		<remote-id type="github">googleapis/python-crc32c</remote-id>
+	</upstream>
+</pkgmetadata>
