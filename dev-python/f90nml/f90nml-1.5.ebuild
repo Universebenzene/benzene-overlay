@@ -4,7 +4,8 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
+#PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -25,6 +26,7 @@ IUSE="yaml"
 
 RDEPEND="yaml? ( dev-python/pyyaml[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source
 
@@ -32,4 +34,9 @@ python_prepare_all() {
 	use test && { for ejs in "${DISTDIR}"/*-t-*; do { cp ${ejs} "${S}"/tests/${ejs##*-t-} || die ; } ; done ; \
 		touch "${S}"/tests/empty_file || die ; }
 	distutils-r1_python_prepare_all
+}
+
+python_install() {
+	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/tests || die
+	distutils-r1_python_install
 }
