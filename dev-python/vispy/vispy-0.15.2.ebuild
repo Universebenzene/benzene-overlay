@@ -81,6 +81,7 @@ BDEPEND=">=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 
 #PATCHES=( "${FILESDIR}/${PN}-0.15.1-qt6-backends-prior.patch" )
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/sphinx-gallery \
 	dev-python/sphinxcontrib-apidoc \
