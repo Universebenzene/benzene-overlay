@@ -38,34 +38,35 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-DEPEND=">=dev-libs/expat-2.5.0:0=
+DEPEND=">=dev-libs/expat-2.7.3:0=
 	>=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]
 	>=dev-python/pyerfa-2.0.1.1[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
 	>=sci-astronomy/wcslib-8.3:0=
-	>=sci-libs/cfitsio-4.5.0:0=
+	>=sci-libs/cfitsio-4.6.3:0=
 	virtual/zlib:=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2025.9.29.0.35.48[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2025.10.27.0.39.10[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
 	recommended? (
-		>=dev-python/matplotlib-3.6.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
+		>=dev-python/narwhals-1.42.0[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.9.2[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND=">=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 	<dev-python/cython-4.0.0[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.9.1[${PYTHON_USEDEP},confv2]
 		>=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}]
-		dev-python/sphinx-design[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-design-0.6.1[${PYTHON_USEDEP}]
 		>=dev-python/sphinxcontrib-globalsubs-0.1.1[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
 		>=dev-python/jinja2-3.1.3[${PYTHON_USEDEP}]
@@ -85,6 +86,7 @@ BDEPEND=">=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
 		>=dev-python/jplephem-2.15[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/mpmath[${PYTHON_USEDEP}]
+		dev-python/narwhals[${PYTHON_USEDEP}]
 		dev-python/objgraph[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		dev-python/pillow[${PYTHON_USEDEP}]
@@ -125,7 +127,7 @@ python_prepare_all() {
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/convolution/}gc_msx_e.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/modeling/}l1448_13co.fits || die
 		cp {"${DISTDIR}"/${PN}-dvw-,"${S}"/docs/wcs/}l1448_13co.fits || die
-		eapply "${FILESDIR}"/${P}-doc-use-local-data.patch
+		eapply "${FILESDIR}"/${PN}-7.1.1-doc-use-local-data.patch
 	fi
 
 	distutils-r1_python_prepare_all
@@ -182,6 +184,6 @@ the requests package)." dev-python/certifi
 	optfeature "automate testing and documentation builds" dev-python/tox
 	optfeature "testing Solar System coordinates" dev-python/skyfield
 	optfeature "testing satellite positions" dev-python/sgp4
-	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-10.0.1[parquet,snappy]"
+	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-14.0.2[parquet,snappy]"
 	optfeature "supports on-the-fly decompression of LZW-compressed files (typically “.Z” extension)" ">=dev-python/uncompresspy-0.4.0"
 }
