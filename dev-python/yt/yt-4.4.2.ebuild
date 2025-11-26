@@ -61,7 +61,6 @@ RDEPEND="${DEPEND}
 BDEPEND=">=dev-python/cython-3.0.3[${PYTHON_USEDEP}]
 	doc? ( virtual/pandoc )
 	test? (
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		dev-python/f90nml[${PYTHON_USEDEP}]
 		dev-python/firefly[${PYTHON_USEDEP}]
@@ -79,6 +78,7 @@ BDEPEND=">=dev-python/cython-3.0.3[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-mpl )
 distutils_enable_tests pytest
 distutils_enable_sphinx doc/source dev-python/sphinx-bootstrap-theme \
 	dev-python/nbsphinx \
