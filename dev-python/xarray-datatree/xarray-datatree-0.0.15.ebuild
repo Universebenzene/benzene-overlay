@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 optfeature pypi
 
@@ -27,6 +27,7 @@ BDEPEND="dev-python/check-manifest[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx-autosummary-accessors \
 	dev-python/sphinx-copybutton \
@@ -38,7 +39,7 @@ distutils_enable_sphinx docs/source dev-python/sphinx-autosummary-accessors \
 
 python_prepare_all() {
 	sed -i "/build-system/a build-backend = \"setuptools.build_meta\"" pyproject.toml || die
-	sed -i "s/HybridMappingProxy/FilteredMapping/g" datatree/datatree.py || die
+	sed -i -e  "/xarray.core.merge/s:core:structure:g" -e "s/HybridMappingProxy/FilteredMapping/g" datatree/datatree.py || die
 
 	distutils-r1_python_prepare_all
 }
