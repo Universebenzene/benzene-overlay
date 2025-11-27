@@ -12,6 +12,7 @@ DOCS_DEPEND="<dev-python/sphinx-7.2
 	dev-python/sphinxcontrib-spelling
 	dev-python/sphinx-book-theme
 	dev-python/numpydoc
+	dev-python/roman
 "
 DOCS_DIR="doc"
 
@@ -47,12 +48,12 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/pyarrow[${PYTHON_USEDEP}]
 		|| ( dev-python/pyqt6[${PYTHON_USEDEP}] dev-python/pyqt5[${PYTHON_USEDEP}] )
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-mpl )
 distutils_enable_tests pytest
 # needs sphinx>=8.1.3 in eclass
 #distutils_enable_sphinx doc "<dev-python/sphinx-7.2" dev-python/sphinx-automodapi \
