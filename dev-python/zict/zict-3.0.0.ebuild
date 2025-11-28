@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
 
@@ -15,12 +15,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-BDEPEND="test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-repeat[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-python/lmdb[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND="test? ( dev-python/lmdb[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=( pytest-{asyncio,repeat,timeout} )
 distutils_enable_tests pytest
