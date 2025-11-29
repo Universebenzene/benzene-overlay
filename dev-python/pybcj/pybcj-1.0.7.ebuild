@@ -8,10 +8,11 @@ DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
 #PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1
 
 DESCRIPTION="BCJ(Branch-Call-Jump) filter for python"
 HOMEPAGE="https://codeberg.org/miurahr/pybcj"
+SRC_URI="https://github.com/miurahr/pybcj/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="LGPL-2.1+"
 SLOT="0"

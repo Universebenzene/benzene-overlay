@@ -13,5 +13,6 @@
 	<upstream>
 		<remote-id type="pypi">pybcj</remote-id>
 		<remote-id type="codeberg">miurahr/pybcj</remote-id>
+		<remote-id type="github">miurahr/pybcj</remote-id>
 	</upstream>
 </pkgmetadata>
