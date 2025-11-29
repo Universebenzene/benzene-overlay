@@ -1015,9 +1015,9 @@ use_max_tag = true
 pypi = "pymoc"
 
 ["dev-python/pyppmd"]
-source = "pypi"
-use_max_tag = true
-pypi = "pyppmd"
+source = "archpkg"
+archpkg = "python-pyppmd"
+strip_release = true
 
 ["dev-python/pyqt5"]
 source = "repology"
