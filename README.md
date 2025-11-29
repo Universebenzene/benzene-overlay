@@ -155,7 +155,7 @@ dev-python/google-crc32c           | 1.7.1                                      
 dev-python/mfusepy                 | 3.0.0                                                      | Optional for new ratarmount
 dev-python/heapdict                | 1.0.1                                                      | Pulled in by zict and distributed
 dev-python/indexed\-{bzip2,zstd}   | 1.7.0 / 1.6.1                                              | Optional for yt (ratarmount{,core})
-dev-python/inflate64               | 1.0.3                                                      | Optional for new ratarmount{,core} <- py7zr
+dev-python/inflate64               | 1.0.4                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/ipfsspec                | 0.6.0                                                      | Optional for new ratarmount{,core}
 dev-python/rapidgzip               | 0.15.2                                                     | Optional for new ratarmount{,core}
 dev-python/libconf                 | 2.0.1                                                      | Optional for yt
