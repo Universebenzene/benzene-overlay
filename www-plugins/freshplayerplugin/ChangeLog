@@ -1,0 +1,11 @@
+*freshplayerplugin-0.3.9-r6
+::prototype99	better match upstream changes
+*freshplayerplugin-0.3.9-r5
+::prototype99	update dependency name
+*freshplayerplugin-0.3.9-r4
+::prototype99	migrate to cmake eclass, bump eapi
+*freshplayerplugin-0.3.9-r2
+::prototype99	fix jack dependency
+*freshplayerplugin-0.3.9-r1
+::gentoo		base ebuild
+::prototype99	add missing use flag dependency
