@@ -27,6 +27,7 @@ BDEPEND="test? ( dev-python/httpretty[${PYTHON_USEDEP}] )"
 
 S="${WORKDIR}/azure-activedirectory-library-for-python-${PV}"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/sphinx-rtd-theme
 
