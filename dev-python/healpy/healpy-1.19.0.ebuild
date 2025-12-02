@@ -39,9 +39,16 @@ BDEPEND=">=dev-python/cython-3[${PYTHON_USEDEP}]
 
 DOCS=( README.rst CHANGELOG.rst CITATION )
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
-src_test() {
-	rm -r lib/${PN} || die
-	distutils-r1_src_test
+python_test() {
+	cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/*-gnu.so lib/${PN} || die
+	epytest
+	rm lib/${PN}/*-gnu.so || die
 }
+
+#src_test() {
+#	rm -r lib/${PN} || die
+#	distutils-r1_src_test
+#}
