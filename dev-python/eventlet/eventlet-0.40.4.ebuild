@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 optfeature pypi
 
@@ -39,6 +39,7 @@ BDEPEND=">=dev-python/hatch-vcs-0.3[${PYTHON_USEDEP}]
 #	"${FILESDIR}/${PN}-0.33.2-python310.patch"
 #)
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx doc/source dev-python/sphinxcontrib-apidoc \
 	dev-python/py \
