@@ -17,16 +17,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-python/aiohttp[${PYTHON_USEDEP}]"
-BDEPEND="test? (
-		dev-python/pytest-aiohttp[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-	)
-"
+
+EPYTEST_PLUGINS=( pytest-{aiohttp,asyncio} )
+distutils_enable_tests pytest
 
 python_prepare_all() {
 	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/tests/}app.py || die ; }
 
 	distutils-r1_python_prepare_all
 }
-
-distutils_enable_tests pytest
