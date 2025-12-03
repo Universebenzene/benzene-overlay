@@ -205,7 +205,7 @@ dev-python/colorspacious           | 1.1.2                                      
 dev-python/cmyt                    | 2.0.0; 2.0.2                                               | Pulled in by yt
 dev-python/unyt                    | 2.9.5; 3.0.4                                               | Pulled in by yt
 dev-python/uncompresspy            | 0.4.1                                                      | Optional for astropy>=7.1
-dev-python/universal-pathlib       | 0.3.6                                                      | Test dependency for zarr
+dev-python/universal-pathlib       | 0.3.7                                                      | Test dependency for zarr
 dev-python/webdav4                 | 0.10.0                                                     | Optional for new ratarmount{,core}
 dev-python/wsgidav                 | 4.3.3                                                      | Test dependency for webdav4
 dev-python/zict                    | 2.2.0; 3.0.0                                               | Pulled in by distributed
