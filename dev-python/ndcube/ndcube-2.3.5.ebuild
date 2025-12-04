@@ -60,6 +60,7 @@ distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinxext-opengraph \
 	dev-python/sunpy-sphinx-theme \
 	">=dev-python/mpl-animators-1.0" \
+	dev-python/reproject \
 	">=dev-python/sunpy-5.0.0"
 
 python_prepare_all() {
