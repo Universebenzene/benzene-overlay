@@ -20,6 +20,7 @@ RDEPEND=">=dev-python/sphinx-4.0[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 # The doc needs to be built from a git repository
 #distutils_enable_sphinx docs --no-autodoc
