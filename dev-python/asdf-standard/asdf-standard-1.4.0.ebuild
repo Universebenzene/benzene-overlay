@@ -30,6 +30,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 PDEPEND="test? ( >=dev-python/asdf-3.0.0[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=( pytest-asdf-plugin )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs/source '>=dev-python/sphinx-asdf-0.1.4'
 
