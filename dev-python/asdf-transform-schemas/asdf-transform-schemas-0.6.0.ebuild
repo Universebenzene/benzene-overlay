@@ -30,6 +30,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 PDEPEND="test? ( <dev-python/asdf-3.0.0[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=( asdf )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs '>=dev-python/sphinx-asdf-0.1.3' dev-python/sphinx-astropy dev-python/numpy dev-python/toml
 
