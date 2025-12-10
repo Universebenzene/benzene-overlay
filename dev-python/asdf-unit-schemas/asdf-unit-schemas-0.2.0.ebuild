@@ -18,5 +18,6 @@ KEYWORDS="~amd64 ~x86"
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]"
 PDEPEND="test? ( dev-python/asdf[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
