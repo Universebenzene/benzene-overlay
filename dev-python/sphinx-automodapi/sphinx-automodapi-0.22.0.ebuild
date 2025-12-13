@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="rtd"
 PROPERTIES="test_network"
 RESTRICT="test"
-RDEPEND=">=dev-python/sphinx-4[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-5[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	rtd? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 "
