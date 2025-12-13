@@ -21,7 +21,7 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 DEPEND=">=sci-libs/gdal-2.1.0:=[aux-xml(+),jpeg,png,threads(+)]
-	dev-python/numpy[${PYTHON_USEDEP}]
+	>=dev-python/numpy-2:=[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}
 	dev-python/affine[${PYTHON_USEDEP}]
@@ -35,7 +35,7 @@ RDEPEND="${DEPEND}
 	plot? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/boto3-1.2.4[${PYTHON_USEDEP}] )
 "
-BDEPEND=">=dev-python/cython-3.0.2[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/cython-3.1.0[${PYTHON_USEDEP}]
 	test? (
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		>=dev-python/boto3-1.2.4[${PYTHON_USEDEP}]
