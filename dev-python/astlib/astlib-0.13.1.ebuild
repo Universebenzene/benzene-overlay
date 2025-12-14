@@ -32,6 +32,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 
 PATCHES=( "${FILESDIR}/${PN}-0.12.0-system-wcstools.patch" )
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 # already built in pypi source
 #distutils_enable_sphinx docs dev-python/sphinx-epytext dev-python/readthedocs-sphinx-ext dev-python/sphinx-rtd-theme
