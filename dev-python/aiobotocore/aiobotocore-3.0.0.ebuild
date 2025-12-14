@@ -15,7 +15,7 @@ SRC_URI="https://github.com/aio-libs/aiobotocore/archive/refs/tags/${PV}.tar.gz 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="awscli boto3"
+IUSE="httpx"
 PROPERTIES="test_network"
 RESTRICT="test"
 
@@ -26,8 +26,7 @@ RDEPEND=">=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.10.10[${PYTHON_USEDEP}]
-	awscli? ( app-admin/awscli[${PYTHON_USEDEP}] )
-	boto3? ( dev-python/boto3[${PYTHON_USEDEP}] )
+	httpx? ( >=dev-python/httpx-0.25.1[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
 		dev-python/dill[${PYTHON_USEDEP}]

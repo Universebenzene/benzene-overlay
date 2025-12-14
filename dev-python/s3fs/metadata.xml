@@ -10,7 +10,7 @@
 		<remote-id type="github">fsspec/s3fs</remote-id>
 	</upstream>
 	<use>
-		<flag name="awscli">Extra awscli support</flag>
-		<flag name="boto3">Extra boto3 support</flag>
+		<flag name="awscli">Extra awscli support via <pkg>app-admin/awscli</pkg></flag>
+		<flag name="boto3">Extra boto3 support via <pkg>dev-python/boto3</pkg></flag>
 	</use>
 </pkgmetadata>

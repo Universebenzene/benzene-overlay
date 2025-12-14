@@ -19,7 +19,7 @@ IUSE="awscli boto3"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP},awscli?,boto3?]
+RDEPEND=">=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2024.12.0[${PYTHON_USEDEP}]
 "

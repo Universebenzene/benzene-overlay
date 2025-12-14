@@ -10,7 +10,8 @@
 		<remote-id type="github">aio-libs/aiobotocore</remote-id>
 	</upstream>
 	<use>
-		<flag name="awscli">Extra require via <pkg>app-admin/awscli</pkg></flag>
-		<flag name="boto3">Extra require via <pkg>dev-python/boto3</pkg></flag>
+		<!--<flag name="awscli">Extra require via <pkg>app-admin/awscli</pkg></flag>
+		<flag name="boto3">Extra require via <pkg>dev-python/boto3</pkg></flag>-->
+		<flag name="httpx">Extra require via <pkg>dev-python/httpx</pkg></flag>
 	</use>
 </pkgmetadata>

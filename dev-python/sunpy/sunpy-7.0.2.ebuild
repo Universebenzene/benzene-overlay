@@ -53,7 +53,8 @@ RDEPEND="${DEPEND}
 	opencv? ( >=media-libs/opencv-4.8.0.74[${PYTHON_USEDEP},python] )
 	s3? (
 		>=dev-python/s3fs-2023.6.0[${PYTHON_USEDEP}]
-		>=dev-python/aiobotocore-2.6.0[${PYTHON_USEDEP},boto3]
+		>=dev-python/aiobotocore-2.6.0[${PYTHON_USEDEP}]
+		dev-python/boto3[${PYTHON_USEDEP}]
 	)
 	skimage? ( >=dev-python/scikit-image-0.21.0[${PYTHON_USEDEP}] )
 	timeseries? (
