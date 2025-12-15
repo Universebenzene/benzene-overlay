@@ -22,4 +22,5 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 "
 BDEPEND="test? ( dev-python/ccdproc[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
