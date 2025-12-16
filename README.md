@@ -151,7 +151,7 @@ dev-python/firefly-viz             | 2.0.4                                      
 dev-python/firefly                 | 3.4.1                                                      | Optional for new yt
 dev-python/flask-socketio          | 5.5.1                                                      | Optional for yt
 dev-python/fusepy                  | 3.0.1                                                      | Optional for old ratarmount
-dev-python/google-crc32c           | 1.7.1                                                      | Required by new numcodecs, zarr
+dev-python/google-crc32c           | 1.8.0                                                      | Required by new numcodecs, zarr
 dev-python/mfusepy                 | 3.0.0                                                      | Optional for new ratarmount
 dev-python/heapdict                | 1.0.1                                                      | Pulled in by zict and distributed
 dev-python/indexed\-{bzip2,zstd}   | 1.7.0 / 1.6.1                                              | Optional for yt (ratarmount{,core})
