@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 virtualx
 
@@ -34,6 +34,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	) )
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/numpydoc dev-python/aplpy
 
