@@ -33,10 +33,9 @@ IUSE="examples glfw io ipython-static pyglet pyqt5 +pyqt6 pyside2 pyside6 sdl2 w
 PROPERTIES="test_network"
 RESTRICT="test"
 REQUIRED_USE="|| ( pyglet pyqt5 pyqt6 pyside2 pyside6 sdl2 wx ) doc? ( pyqt5 )
-	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )
-	wx? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
+	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
 
-DEPEND="dev-python/numpy:=[${PYTHON_USEDEP}]"
+DEPEND=">=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	dev-python/freetype-py[${PYTHON_USEDEP}]
 	dev-python/hsluv[${PYTHON_USEDEP}]
@@ -53,13 +52,13 @@ RDEPEND="${DEPEND}
 	pyqt6? ( dev-python/pyqt6[${PYTHON_USEDEP},gui,testlib,widgets] )
 	pyside6? ( dev-python/pyside:6[${PYTHON_USEDEP},gui,testlib,widgets] )
 	sdl2? ( dev-python/pysdl2[${PYTHON_USEDEP}] )
-	wx? ( $(python_gen_cond_dep 'dev-python/wxpython[${PYTHON_USEDEP}]' python3_{10,11}) )
+	wx? ( dev-python/wxpython[${PYTHON_USEDEP}] )
 "
 #	pyside2? ( $(python_gen_cond_dep '
 #		dev-python/pyside2[${PYTHON_USEDEP},gui,testlib,widgets]
 #	' python3_{10,11}) )
 BDEPEND=">=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
-	>=dev-python/setuptools-scm-7.1[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-8.1[${PYTHON_USEDEP}]
 	doc? (
 		media-libs/fontconfig
 		virtual/opengl
