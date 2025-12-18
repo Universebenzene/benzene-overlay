@@ -30,16 +30,12 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 	)
-	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-		dev-python/healpy[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/healpy[${PYTHON_USEDEP}] )
 "
 
 PATCHES=( "${FILESDIR}"/${PN}-0.5-doc-use-local-fits.patch )
 
+EPYTEST_PLUGINS=( hypothesis pytest-{astropy-header,doctestplus} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
 
