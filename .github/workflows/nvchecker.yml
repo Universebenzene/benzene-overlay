@@ -43,8 +43,6 @@ jobs:
         emerge --verbose --quiet --jobs $(nproc) --autounmask y --autounmask-continue y \
         app-eselect/eselect-repository \
         app-portage/eix \
-        dev-python/lxml \
-        dev-python/zstandard \
         dev-vcs/git
 
     - name: checkout
@@ -87,7 +85,7 @@ jobs:
 
     - name: install depends
       run: |
-        pip install nvchecker jq zstandard lxml
+        pip install nvchecker[rpmrepo] jq
 
     - name: echo pkgs
       run: |

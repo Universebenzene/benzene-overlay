@@ -329,9 +329,9 @@ pypi = "bidict"
 
 ["dev-python/bokeh"]
 source = "rpmrepo"
-url = "https://download.opensuse.org/tumbleweed/repo/oss/"
+repo = "https://download.opensuse.org/tumbleweed/repo/oss/"
 pkg = "python313-bokeh"
-strip_release = true
+arch = "any"
 
 #["dev-python/bsddb3"]
 #source = "pypi"
