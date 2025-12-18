@@ -43,6 +43,7 @@ jobs:
         emerge --verbose --quiet --jobs $(nproc) --autounmask y --autounmask-continue y \
         app-eselect/eselect-repository \
         app-portage/eix \
+        dev-python/lxml \
         dev-python/zstandard \
         dev-vcs/git
 
