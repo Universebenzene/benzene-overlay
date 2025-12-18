@@ -87,7 +87,7 @@ jobs:
 
     - name: install depends
       run: |
-        pip install nvchecker jq
+        pip install nvchecker jq zstandard lxml
 
     - name: echo pkgs
       run: |
