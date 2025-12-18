@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 MY_PN="${PN/dm-}"
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 pypi
 
@@ -24,13 +24,14 @@ RDEPEND="!dev-python/dm-tree-bin
 	>=dev-python/wrapt-1.11.2[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-build/cmake
-	dev-cpp/abseil-cpp
+	dev-cpp/abseil-cpp:=
 	dev-python/pybind11[${PYTHON_USEDEP}]
 "
 
 # Encouraged by debian
 PATCHES=( "${FILESDIR}/${P}-Simplify-setup.py-by-using-pybind11.setup_helpers.Py.patch" )
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 python_test() {
