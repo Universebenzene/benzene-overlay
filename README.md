@@ -46,7 +46,7 @@ dev-libs/libappindicator:3                                                      
 dev-python/aioftp                                                                    | 0.27.2                                                                                                                                            |
 dev-python/bokeh                                                                     | 3.8.0                                                                                                                                             |
 dev-python/corner                                                                    | 2.2.2; 2.2.3                                                                                                                                      |
-dev-python/dask                                                                      | 2024.4.1; 2025.10.0; 2025.11.0                                                                                                                    | Dropped by official portage
+dev-python/dask                                                                      | 2024.4.1; 2025.10.0; 2025.12.0                                                                                                                    | Dropped by official portage
 dev-python/dask-image                                                                | 2025.11.0                                                                                                                                         |
 dev-python/dropbox                                                                   | 12.0.2                                                                                                                                            |
 dev-python/exifread                                                                  | 3.5.1                                                                                                                                             |
@@ -139,7 +139,7 @@ dev-python/bidict                  | 0.22.0; 0.23.1                             
 dev-python/check-manifest          | 0.49; 0.51                                                 | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.3.0                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec
-dev-python/distributed             | 2024.4.1; 2025.10.0; 2025.11.0                             | Optional for arviz and spectral-cube
+dev-python/distributed             | 2024.4.1; 2025.10.0; 2025.12.0                             | Optional for arviz and spectral-cube
 dev-python/dm-tree                 | 0.1.9                                                      | Required by new arviz
 dev-python/donfig                  | 0.8.1\_p1                                                  | Pulled in by zarr v3
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}

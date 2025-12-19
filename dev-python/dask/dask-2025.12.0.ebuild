@@ -31,12 +31,12 @@ RDEPEND=">=dev-python/click-8.1[${PYTHON_USEDEP}]
 	>=dev-python/partd-1.4.0[${PYTHON_USEDEP}]
 	dev-python/psutil[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-5.3.1[${PYTHON_USEDEP}]
-	>=dev-python/toolz-0.10.0[${PYTHON_USEDEP}]
+	>=dev-python/toolz-0.12.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/importlib-metadata-4.13.0[${PYTHON_USEDEP}]
 	' 3.{10..11})
 "
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-9[${PYTHON_USEDEP}]
 	test? (
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/bokeh[${PYTHON_USEDEP}]
@@ -119,5 +119,6 @@ src_prepare() {
 python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 #	local -x DASK_DATAFRAME__QUERY_PLANNING=False
-	epytest -k 'not test_RandomState_only_funcs' -m 'not network and not slow and not gpu' -Werror::RuntimeWarning
+	epytest -k 'not test_RandomState_only_funcs' -m 'not network and not slow and not gpu' \
+		-Werror::RuntimeWarning -Werror::dask.array.core.PerformanceWarning
 }
