@@ -30,8 +30,9 @@ RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
 	>=dev-python/puremagic-1.28[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 	gtk? (
-		dev-python/pycairo[${PYTHON_USEDEP}]
-		>=dev-python/pygobject-3.48.1[${PYTHON_USEDEP}]
+		>=dev-libs/gobject-introspection-1.84.0
+		>=dev-python/pycairo-1.27.0[${PYTHON_USEDEP}]
+		>=dev-python/pygobject-3.50.0[${PYTHON_USEDEP}]
 	)
 	pyside6? ( dev-python/pyside[${PYTHON_USEDEP}] )
 	qt5? ( dev-python/pyqt5[${PYTHON_USEDEP}] )
@@ -62,15 +63,17 @@ BDEPEND=">=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
+		dev-python/astlib[${PYTHON_USEDEP}]
+		dev-python/dask[${PYTHON_USEDEP}]
 		dev-python/photutils[${PYTHON_USEDEP}]
 		>dev-python/regions-0.5[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
-		dev-python/astlib[${PYTHON_USEDEP}]
+		<dev-python/zarr-3[${PYTHON_USEDEP}]
 	)
 "
 #		dev-python/starlink-pyast[${PYTHON_USEDEP}]
 
+EPYTEST_PLUGINS=( pytest-astropy-header )
 distutils_enable_tests pytest
 #distutils_enable_sphinx doc dev-python/sphinx-astropy dev-python/sphinx-rtd-theme
 
