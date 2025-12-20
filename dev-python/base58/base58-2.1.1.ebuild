@@ -17,6 +17,7 @@ KEYWORDS="~amd64 ~x86"
 BDEPEND="test? ( dev-python/pyhamcrest[${PYTHON_USEDEP}] )"
 
 #https://gitlab.com/bitcoin/gentoo/-/blob/master/dev-python/base58/files/2.1.1-test-no-benchmark.patch
-PATCHES=( "${FILESDIR}/${P}-test-no-benchmark.patch" )
+#PATCHES=( "${FILESDIR}/${P}-test-no-benchmark.patch" )
 
+EPYTEST_PLUGINS=( pytest-benchmark )
 distutils_enable_tests pytest
