@@ -17,12 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64"	# pytest-benchmark no x86
 
 BDEPEND="test? (
-		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-		dev-python/pytest-xdist[${PYTHON_USEDEP}]
-		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/sortedcollections[${PYTHON_USEDEP}]
+		dev-python/typing-extensions[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( hypothesis pytest-{benchmark,xdist} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/furo dev-python/sphinx-copybutton

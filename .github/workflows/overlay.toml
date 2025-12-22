@@ -955,9 +955,9 @@ use_max_tag = true
 pypi = "pvextractor"
 
 ["dev-python/py7zr"]
-source = "pypi"
-use_max_tag = true
-pypi = "py7zr"
+source = "archpkg"
+archpkg = "python-py7zr"
+strip_release = true
 
 ["dev-python/pyavm"]
 source = "pypi"
