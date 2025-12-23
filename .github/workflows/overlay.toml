@@ -1380,9 +1380,9 @@ from_pattern = "(.*).post(.*)"
 to_pattern = '\1_p\2'
 
 ["dev-python/sphinx-reredirects"]
-source = "pypi"
-use_max_tag = true
-pypi = "sphinx-reredirects"
+source = "archpkg"
+archpkg = "python-sphinx-reredirects"
+strip_release = true
 
 ["dev-python/sphinx-sitemap"]
 source = "pypi"
