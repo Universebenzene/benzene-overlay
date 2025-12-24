@@ -4,6 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
+PYPI_VERIFY_REPO=https://github.com/astropy/ccdproc
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
@@ -36,14 +37,10 @@ BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
-	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-remotedata[${PYTHON_USEDEP}]
-		dev-python/memory-profiler[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/memory-profiler[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,remotedata} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs --no-autodoc
 
