@@ -15,11 +15,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"	# bidict pytest-benchmark no x86
 
-RDEPEND=">=dev-python/flask-0.9[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/flask-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/python-socketio-5.12.0[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/redis[${PYTHON_USEDEP}] )"
+#BDEPEND="test? ( dev-python/redis[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
 
