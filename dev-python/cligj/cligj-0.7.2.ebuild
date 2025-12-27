@@ -4,7 +4,8 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
+#PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -16,4 +17,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/click-4.0[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
