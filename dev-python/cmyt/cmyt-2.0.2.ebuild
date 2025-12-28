@@ -19,10 +19,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 "
-BDEPEND="test? (
-		>=dev-python/pytest-mpl-0.13[${PYTHON_USEDEP}]
-		>=dev-python/colorspacious-1.1.2[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND="test? ( >=dev-python/colorspacious-1.1.2[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=( pytest-mpl )
 distutils_enable_tests pytest
