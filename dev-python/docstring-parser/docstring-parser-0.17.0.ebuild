@@ -4,6 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
+PYPI_VERIFY_REPO=https://github.com/rr-/docstring_parser
 PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
 #PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
 
@@ -16,4 +17,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
