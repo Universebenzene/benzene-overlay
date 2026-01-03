@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,8 +23,8 @@ RDEPEND=">=dev-python/requests-2.16.2[${PYTHON_USEDEP}]
 	>=dev-python/six-1.12.0[${PYTHON_USEDEP}]
 	>=dev-python/stone-2[${PYTHON_USEDEP}]
 "
-BDEPEND="test? ( dev-python/pytest-mock[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=( pytest-mock )
 distutils_enable_tests pytest
 
 python_prepare_all() {
