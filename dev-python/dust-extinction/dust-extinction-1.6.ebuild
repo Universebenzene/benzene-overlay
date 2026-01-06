@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,12 +20,9 @@ RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
-	test? (
-		dev-python/pytest-astropy-header[${PYTHON_USEDEP}]
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-	)
 "
 
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/matplotlib
 
