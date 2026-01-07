@@ -1,11 +1,11 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -20,22 +20,21 @@ IUSE="examples ipython plot s3"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-DEPEND=">=sci-libs/gdal-2.1.0:=[aux-xml(+),jpeg,png,threads(+)]
-	>=dev-python/numpy-2:=[${PYTHON_USEDEP}]
-"
+DEPEND=">=dev-python/numpy-2:=[${PYTHON_USEDEP}]
+	>=sci-libs/gdal-2.1.0:=[${PYTHON_USEDEP},aux-xml(+),jpeg(+),png,threads(+)]
+"	#965329
 RDEPEND="${DEPEND}
 	dev-python/affine[${PYTHON_USEDEP}]
 	dev-python/attrs[${PYTHON_USEDEP}]
 	dev-python/certifi[${PYTHON_USEDEP}]
-	>=dev-python/click-4.0[${PYTHON_USEDEP}]
-	dev-python/click-plugins[${PYTHON_USEDEP}]
+	>=dev-python/click-8.3[${PYTHON_USEDEP}]
 	>=dev-python/cligj-0.5[${PYTHON_USEDEP}]
 	dev-python/pyparsing[${PYTHON_USEDEP}]
 	ipython? ( >=dev-python/ipython-2.0[${PYTHON_USEDEP}] )
 	plot? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 	s3? ( >=dev-python/boto3-1.2.4[${PYTHON_USEDEP}] )
 "
-BDEPEND=">=dev-python/cython-3.1.0[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/cython-3.1[${PYTHON_USEDEP}]
 	test? (
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		>=dev-python/boto3-1.2.4[${PYTHON_USEDEP}]
@@ -43,8 +42,7 @@ BDEPEND=">=dev-python/cython-3.1.0[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
-		sci-libs/gdal:=[aux-xml(+),hdf5,jpeg,netcdf,png,threads(+)]
-		sci-libs/hdf5
+		sci-libs/gdal:=[${PYTHON_USEDEP},aux-xml(+),hdf5,jpeg(+),netcdf,png,threads(+)]
 	)
 "
 
