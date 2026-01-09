@@ -1,4 +1,4 @@
-# Copyright 2023-2025 Gentoo Authors
+# Copyright 2023-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,6 +20,7 @@ DEPEND=">=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 BDEPEND=">=dev-python/cython-3.1.1[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
 
