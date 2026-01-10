@@ -26,7 +26,7 @@ dev-python/astroscrappy        | 1.3.0                                          
 dev-python/atpy                | 0.9.7                                                | Old package, so the test phase may fail
 dev-python/ccdproc             | 2.5.1                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/casa-formats-io     | 0.3.0                                                |
-dev-python/cdflib              | 0.4.9; 1.3.6; 1.3.7                                  | SunPy releated.
+dev-python/cdflib              | 0.4.9; 1.3.6; 1.3.8                                  | SunPy releated.
 dev-python/drms                | 0.6.4; 0.9.0                                         | SunPy releated. `network-sandbox` FEATURE will be disabled if you enable `examples` flag for doc building
 dev-python/dust-extinction     | 1.6                                                  |
 dev-python/echo                | 0.11.1                                               | Glueviz releated.
