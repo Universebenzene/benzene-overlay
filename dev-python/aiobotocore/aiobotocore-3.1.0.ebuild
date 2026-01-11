@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,12 +19,13 @@ IUSE="httpx"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/aiohttp-3.9.2[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/aiohttp-3.12.0[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
 	>=dev-python/botocore-1.41.0[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.14.0[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.10.10[${PYTHON_USEDEP}]
 	httpx? ( >=dev-python/httpx-0.25.1[${PYTHON_USEDEP}] )
 "
