@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,9 +21,9 @@ DEPEND="dev-python/numpy:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 BDEPEND="${DEPEND}
 	dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	test? ( dev-python/hypothesis[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=( hypothesis )
 distutils_enable_tests pytest
 
 python_install_all() {
