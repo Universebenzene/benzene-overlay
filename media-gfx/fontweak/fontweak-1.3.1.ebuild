@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,6 +16,11 @@ KEYWORDS="~amd64 ~arm64"
 RDEPEND=">=virtual/jre-1.8"
 DEPEND=">=virtual/jdk-1.8"
 BDEPEND=">=dev-java/ant-1.10.14-r3"
+
+src_prepare() {
+	default
+	sed -i 's:1.7:1.8:g' nbproject/project.properties || die
+}
 
 src_compile() {
 	eant jar
