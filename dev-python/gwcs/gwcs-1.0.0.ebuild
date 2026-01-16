@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -29,7 +29,7 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP},confv2]
 		dev-python/sphinx-asdf[${PYTHON_USEDEP}]
-		dev-python/sphinx-tabs[${PYTHON_USEDEP}]
+		dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
 		dev-python/furo[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
@@ -45,4 +45,9 @@ python_compile_all() {
 			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
 		HTML_DOCS=( docs/_build/html/. )
 	fi
+}
+
+python_install() {
+	distutils-r1_python_install
+	rm -r "${ED%/}"/$(python_get_sitedir)/docs || die
 }
