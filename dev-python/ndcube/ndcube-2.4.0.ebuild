@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -31,17 +31,17 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples plotting reproject"
 
-RDEPEND=">dev-python/numpy-1.23.0[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.0.6[${PYTHON_USEDEP}]
-	>=dev-python/gwcs-0.18[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.8.0[${PYTHON_USEDEP}]
+RDEPEND=">dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.1.0[${PYTHON_USEDEP}]
+	>=dev-python/gwcs-0.21.0[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.12.0[${PYTHON_USEDEP}]
 	plotting? (
-		>=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
-		>=dev-python/mpl-animators-1.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.9.0[${PYTHON_USEDEP}]
+		>=dev-python/mpl-animators-1.2[${PYTHON_USEDEP}]
 	)
-	reproject? ( >=dev-python/reproject-0.7.1[${PYTHON_USEDEP}] )
+	reproject? ( >=dev-python/reproject-0.14[${PYTHON_USEDEP}] )
 "
-BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/dask[${PYTHON_USEDEP}]
@@ -52,16 +52,16 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 "
 PDEPEND="test? ( dev-python/specutils[${PYTHON_USEDEP}] )"
 
-EPYTEST_PLUGINS=( pytest-{doctestplus,mpl,remotedata} )
+EPYTEST_PLUGINS=( pytest-{asdf-plugin,doctestplus,mpl,remotedata} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi \
-	">=dev-python/sphinx-changelog-1.1.0" \
+	">=dev-python/sphinx-changelog-1.5.0" \
 	dev-python/sphinx-gallery \
 	dev-python/sphinxext-opengraph \
 	dev-python/sunpy-sphinx-theme \
-	">=dev-python/mpl-animators-1.0" \
+	">=dev-python/mpl-animators-1.2" \
 	dev-python/reproject \
-	">=dev-python/sunpy-5.0.0"
+	">=dev-python/sunpy-6.1.0"
 
 python_prepare_all() {
 	use doc && { eapply "${FILESDIR}"/${PN}-2.3.0-doc-use-local-fits.patch ; \
