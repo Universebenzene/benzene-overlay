@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,12 +21,13 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]
 	test? (
-		sci-libs/gdal[jpeg2k,python]
+		sci-libs/gdal[${PYTHON_USEDEP},jpeg2k,python]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 		media-libs/openjpeg:2
 	)
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/numpydoc dev-python/sphinx-rtd-theme
 
