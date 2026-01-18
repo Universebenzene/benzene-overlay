@@ -412,9 +412,9 @@ archpkg = "python-dask"
 strip_release = true
 
 ["dev-python/dask-image"]
-source = "archpkg"
-archpkg = "python-dask"
-strip_release = true
+source = "pypi"
+use_max_tag = true
+pypi = "dask-image"
 
 ["dev-python/distributed"]
 source = "archpkg"
