@@ -1,0 +1,18 @@
+From: Alexandre Detiste <tchet@debian.org>
+Subject: devendor liblzf
+Forwarded: not-needed
+
+--- a/setup.py
++++ b/setup.py
+@@ -13,8 +13,9 @@
+     license="BSD",
+     ext_modules=[Extension(
+         'lzf',
+-        ['lzf_module.c', 'lzf_c.c', 'lzf_d.c'],
+-        include_dirs=('.',),
++        ['lzf_module.c'],
++        include_dirs=['/usr/include'],
++        libraries=['lzf'],
+         extra_compile_args=['-Wall'])],
+     classifiers = [
+         "Development Status :: 4 - Beta",

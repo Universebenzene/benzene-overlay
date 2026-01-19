@@ -122,6 +122,11 @@ repo = "gentoo"
 
 #["dev-libs/libappindicator"]
 
+["dev-libs/liblzf"]
+source = "archpkg"
+archpkg = "liblzf"
+strip_release = true
+
 #["dev-python/imexam"]
 
 ["dev-python/abg-python"]
@@ -1124,6 +1129,12 @@ pypi = "pytest-textual-snapshot"
 source = "pypi"
 use_max_tag = true
 pypi = "python-jenkins"
+
+["dev-python/python-lzf"]
+source = "debianpkg"
+debianpkg = "python-lzf"
+suite = "sid"
+strip_release = true
 
 ["dev-python/python-pkcs11"]
 source = "archpkg"

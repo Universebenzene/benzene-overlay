@@ -43,6 +43,7 @@ app-text/qtspell                                                                
 dev-cpp/gtkspellmm                                                                   | 3.0.5                                                                                                                                             | Dependency for gimagereader[gtk]
 dev-lang/gdl                                                                         | 1.0.4-r2                                                                                                                                          | Allow `gdl` and the python module installed at the same time
 dev-libs/libappindicator:3                                                           | 12.10.1\_p202007060                                                                                                                               | Dropped by official portage but required by several packages like SunloginClient, ToDesk and Icalingua
+dev-libs/liblzf                                                                      | 3.6                                                                                                                                               |
 dev-python/aioftp                                                                    | 0.27.2                                                                                                                                            |
 dev-python/bokeh                                                                     | 3.8.0                                                                                                                                             |
 dev-python/corner                                                                    | 2.2.2; 2.2.3                                                                                                                                      |
@@ -184,6 +185,7 @@ dev-python/pykdtree                | 1.4.3                                      
 dev-python/pysquashfsimage         | 0.9.0\_p20240421181514                                     | Optional for new ratarmount{,core}
 dev-python/pytest-examples         | 0.0.18                                                     | Test dependency for pydantic-settings
 dev-python/pytest-textual-snapshot | 1.1.0-r1                                                   | Test dependency for new memray. Dependency syrupy is included but not listed in the table
+dev-python/python-lzf              | 0.2.6                                                      | Test dependency for pyfive (optional by new h5netcdf)
 dev-python/python-pkcs11           | 0.9.3                                                      | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
 dev-python/python-socketio         | 5.9.0; 5.16.0                                              | Optional for yt
 dev-python/python-xz               | 0.6.0                                                      | Optional for yt
