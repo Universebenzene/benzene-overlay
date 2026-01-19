@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -43,6 +43,7 @@ RDEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]
 	hdf5? ( dev-python/h5py[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/furo dev-python/accessible-pygments
 
