@@ -1010,6 +1010,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pyerfa"
 
+["dev-python/pyfive"]
+source = "pypi"
+use_max_tag = true
+pypi = "pyfive"
+
 ["dev-python/pyfatfs"]
 source = "pypi"
 use_max_tag = true

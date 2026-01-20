@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		pyfive is an open source library for reading HDF5 files written using pure Python (no C extensions).
+		The package is still in development and not all features of HDF5 files are supported.
+		pyfive aims to support the same API as h5py for reading files. Cases where a file uses a feature
+		that is supported by h5py but not pyfive are considered bug and should be reported in our Issues.
+		Writing HDF5 is not a goal of pyfive and portions of the API which apply only to writing will not be implemented.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pyfive</remote-id>
+		<remote-id type="github">NCAS-CMS/pyfive</remote-id>
+	</upstream>
+</pkgmetadata>
