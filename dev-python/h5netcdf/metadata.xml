@@ -14,4 +14,9 @@
 		<remote-id type="pypi">h5netcdf</remote-id>
 		<remote-id type="github">h5netcdf/h5netcdf</remote-id>
 	</upstream>
+	<use>
+		<flag name="h5py">h5py backend support via <pkg>dev-python/h5py</pkg></flag>
+		<flag name="h5pyd">h5pyd backend support via <pkg>dev-python/h5py</pkg></flag>
+		<flag name="pyfive">pyfive backend support via <pkg>dev-python/pyside</pkg></flag>
+	</use>
 </pkgmetadata>
