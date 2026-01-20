@@ -312,6 +312,11 @@ pypi = "asynctest"
 #use_max_tag = true
 #pypi = "atpy"
 
+["dev-python/autodocsumm"]
+source = "pypi"
+use_max_tag = true
+pypi = "autodocsumm"
+
 ["dev-python/azure-core"]
 source = "pypi"
 use_max_tag = true

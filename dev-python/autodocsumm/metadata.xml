@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This sphinx extension provides some useful extensions to the Sphinxs autodoc extension. Those are
+		It creates a Table of Contents in the style of the autosummary extension with methods,
+		classes, functions and attributes
+		As you can include the __init__ method documentation for via the autoclass_content configuration value,
+		we provide the autodata_content configuration value to include the documentation from the __call__ method
+		You can exclude the string representation of specific objects. E.g. if you have a large dictionary
+		using the not_document_data configuration value.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">autodocsumm</remote-id>
+		<remote-id type="github">Chilipp/autodocsumm</remote-id>
+	</upstream>
+</pkgmetadata>
