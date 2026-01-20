@@ -19,7 +19,7 @@ dev-python/asdf-astropy        | 0.2.1; 0.9.0                                   
 dev-python/astlib              | 0.11.10-r1; 0.13.1                                   | astLib WCS library for ginga
 dev-python/astrodendro         | 0.3.0; (live)                                        |
 dev-python/astroml             | 0.4.1; 1.0.2\_p1                                     |
-dev-python/astropy-healpix     | 0.5; 1.1.2                                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
+dev-python/astropy-healpix     | 0.5; 1.1.3                                           | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/astroplan           | 0.6; 0.10.1                                          | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Doc building may not complete, as it needs lots of online data.
 dev-python/astroquery          | 0.3.10; 0.4.11                                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/astroscrappy        | 1.3.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
