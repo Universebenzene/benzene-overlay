@@ -239,7 +239,7 @@ dev-python/sphinx-changelog             | 1.6.0                           |
 dev-python/sphinx-click                 | 6.0.0; 6.2.0                    |
 dev-python/sphinx-codeautolink          | 0.17.5                          |
 dev-python/sphinx-collections           | 0.3.1                           | Doc building and testing behave strangly in sandbox (can't find sphinx plugins), so can't complete while merging
-dev-python/sphinx-design                | 0.6.1                           |
+dev-python/sphinx-design                | 0.7.0                           |
 dev-python/sphinx-documatt-theme        | 0.0.6                           |
 dev-python/sphinx-documattcom-theme     | 1.1.1                           |
 dev-python/sphinx-examples              | 0.0.5                           |

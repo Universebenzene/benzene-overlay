@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="code-style rtd theme-furo theme-pydata theme-rtd theme-sbt"
 
-RDEPEND="<dev-python/sphinx-9[${PYTHON_USEDEP}]
+RDEPEND="<dev-python/sphinx-10[${PYTHON_USEDEP}]
 	code-style? ( dev-vcs/pre-commit )
-	rtd? ( <dev-python/myst-parser-4[${PYTHON_USEDEP}] )
+	rtd? ( >=dev-python/myst-parser-4[${PYTHON_USEDEP}] )
 	theme-furo? ( >=dev-python/furo-2024.7.18[${PYTHON_USEDEP}] )
 	theme-pydata? ( dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}] )
 	theme-rtd? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
