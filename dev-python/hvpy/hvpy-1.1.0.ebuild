@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
-inherit distutils-r1 optfeature pypi
+inherit distutils-r1 pypi
 
 DESCRIPTION="Helioviewer Python API Wrapper"
 HOMEPAGE="https://hvpy.readthedocs.io"
@@ -23,8 +23,8 @@ RDEPEND=">=dev-python/pydantic-2.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
-	test? ( dev-python/pytest-doctestplus[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=( pytest-doctestplus )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/sphinx-autodoc-typehints dev-python/sphinx-book-theme
