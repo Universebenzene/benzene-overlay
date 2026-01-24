@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -27,8 +27,7 @@ RDEPEND="dev-python/aiohttp[${PYTHON_USEDEP}]
 	<dev-python/pure-protobuf-3[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
-BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest-asyncio[${PYTHON_USEDEP}] )
-"
+BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
