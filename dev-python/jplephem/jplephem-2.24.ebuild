@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -29,7 +29,8 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 distutils_enable_tests unittest
 
 python_prepare_all() {
-	use test && { for ebsp in "${DISTDIR}"/*-t-*; do { cp ${ebsp} "${S}"/${ebsp##*-t-} || die ; } done ; }
+	use test && { sed -i "/jplephem 2.23/s:2.23:${PV}:" ${PN}/test.py || die ; \
+		for ebsp in "${DISTDIR}"/*-t-*; do { cp ${ebsp} "${S}"/${ebsp##*-t-} || die ; } done ; }
 
 	distutils-r1_python_prepare_all
 }
