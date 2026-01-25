@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+h5py h5pyd pyfive"
 
-RDEPEND="dev-python/packaging[${PYTHON_USEDEP}]
+RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 	h5py? ( dev-python/h5py[${PYTHON_USEDEP}] )
 	h5pyd? ( dev-python/h5pyd[${PYTHON_USEDEP}] )
 	pyfive? ( >=dev-python/pyfive-1.0.0[${PYTHON_USEDEP}] )
