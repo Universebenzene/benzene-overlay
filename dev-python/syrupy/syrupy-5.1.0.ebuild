@@ -1,4 +1,4 @@
-# Copyright 2023-2025 Gentoo Authors
+# Copyright 2023-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,6 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]"
+BDEPEND="test? (
+		dev-python/attrs[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+	)
+"
 
 EPYTEST_PLUGIN_LOAD_VIA_ENV=1
 EPYTEST_PLUGINS=( "${PN}" pytest-xdist )
