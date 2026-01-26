@@ -52,7 +52,7 @@ dev-python/dask-image                                                           
 dev-python/dropbox                                                                   | 12.0.2                                                                                                                                            |
 dev-python/exifread                                                                  | 3.5.1                                                                                                                                             |
 dev-python/glfw                                                                      | 2.10.0                                                                                                                                            | Dependency for glue-vispy-viewer>=1.2.0
-dev-python/glymur                                                                    | 0.12.0; 0.12.9\_p1; 0.13.2\_p1; 0.13.8; 0.14.0\_p2; 0.14.4                                                                                        |
+dev-python/glymur                                                                    | 0.12.0; 0.12.9\_p1; 0.13.2\_p1; 0.13.8; 0.14.0\_p2; 0.14.5                                                                                        |
 dev-python/hsluv                                                                     | 5.0.4                                                                                                                                             |
 [dev-python/memray](https://bloomberg.github.io/memray)                              | 1.10.0; [1.19.1](https://github.com/Universebenzene/benzene-overlay/blob/master/dev-python/memray/memray-1.19.1.ebuild)                                    | **BINARY WHEEL VERSIONS** are used to avoid npm building
 dev-python/nose                                                                      | 1.3.7\_p20221026-{r1,r2}                                                                                                                          | Dropped by official portage
@@ -227,7 +227,7 @@ dev-python/ablog                        | 0.11.12                         |
 dev-python/autodocsumm                  | 0.2.14                          |
 dev-python/jupyter-cache                | 0.6.1; 1.0.1                    |
 dev-python/jupyter-sphinx               | 0.5.3                           |
-dev-python/jupytext                     | 1.19.0                          | Build with wheel source to include Jupyter Lab Extenstion
+dev-python/jupytext                     | 1.19.1                          | Build with wheel source to include Jupyter Lab Extenstion
 dev-python/myst-nb                      | 0.17.2; 1.3.0                   |
 dev-python/myst-parser                  | 0.18.1-r1                       | Only for myst-nb that depends on old version
 dev-python/runnotebook                  | 0.3.1; (live)                   |
