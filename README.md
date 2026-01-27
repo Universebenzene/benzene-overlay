@@ -223,7 +223,7 @@ dev-python/zict                    | 2.2.0; 3.0.0                               
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
 dev-python/sphinx                       | 5.1.1; 7.1.2                    | 5 for old myst-parser and myst-nb; 7.1 for glue-qt doc <!-- sphinx>=6 <- copybutton <-doc- sphinx-thebe -doc-> myst-nb -> myst-parser(oldver needs sphinx<6) -->
-dev-python/ablog                        | 0.11.12                         |
+dev-python/ablog                        | 0.11.13                         |
 dev-python/autodocsumm                  | 0.2.14                          |
 dev-python/jupyter-cache                | 0.6.1; 1.0.1                    |
 dev-python/jupyter-sphinx               | 0.5.3                           |

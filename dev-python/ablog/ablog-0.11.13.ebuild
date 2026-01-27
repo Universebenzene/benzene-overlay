@@ -1,9 +1,10 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/sunpy/ablog
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
@@ -21,7 +22,7 @@ RDEPEND=">=dev-python/docutils-0.18[${PYTHON_USEDEP}]
 	>=dev-python/invoke-1.6.0[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
-	>=dev-python/sphinx-6.2.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-7.0.0[${PYTHON_USEDEP}]
 	>=dev-python/watchdog-2.1.0[${PYTHON_USEDEP}]
 	markdown? ( >=dev-python/myst-parser-0.17.0[${PYTHON_USEDEP}] )
 	notebook? (
@@ -41,6 +42,6 @@ EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/myst-parser dev-python/nbsphinx
 
-python_test() {
-	PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) epytest
-}
+#python_test() {
+#	PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) epytest
+#}
