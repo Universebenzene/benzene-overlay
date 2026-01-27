@@ -1,9 +1,10 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/Cadair/parfive
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 optfeature pypi
@@ -28,12 +29,10 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/aiofiles[${PYTHON_USEDEP}]
 		dev-python/aioftp[${PYTHON_USEDEP}]
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-		dev-python/pytest-localserver[${PYTHON_USEDEP}]
-		dev-python/pytest-socket[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-{asyncio,localserver,socket} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	dev-python/sphinx-autodoc-typehints \
