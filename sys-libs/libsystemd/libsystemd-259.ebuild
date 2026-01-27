@@ -219,6 +219,7 @@ src_unpack() {
 
 src_prepare() {
 	local PATCHES=(
+		"${FILESDIR}/systemd-259-vmspawn-use-indexed-loop.patch"
 	)
 
 	if ! use vanilla; then
