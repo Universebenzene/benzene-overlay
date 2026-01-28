@@ -176,7 +176,7 @@ dev-python/oscrypto                | 1.3.0                                      
 dev-python/partd                   | 1.4.2                                                      | Dropped by official portage. Required by dask
 dev-python/pathlib-abc             | 0.5.1; 0.5.2                                               | Pulled in by new upath
 dev-python/pims                    | 0.7                                                        | Required by dask-image <- new reproject
-dev-python/py7zr                   | 1.0.0                                                      | Optional for new ratarmount{,core}
+dev-python/py7zr                   | 1.0.0; 1.1.2                                               | Optional for new ratarmount{,core}
 dev-python/pybaum                  | 0.1.3                                                      | Optional for new sherpa <- optimagic
 dev-python/pybcj                   | 1.0.7                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/pyfatfs                 | 1.1.0                                                      | Optional for new ratarmount{,core}
