@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,4 +20,5 @@ RDEPEND=">=dev-python/mdformat-0.7.5[${PYTHON_USEDEP}]
 	>=dev-python/wcwidth-0.2.13[${PYTHON_USEDEP}]
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
