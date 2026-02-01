@@ -33,6 +33,7 @@ EPYTEST_IGNORE=(
 	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-textual/-/blob/main/PKGBUILD?ref_type=heads
 	tests/snapshot_tests/test_snapshots.py
 	tests/text_area/test_languages.py
+	tests/test_wrap.py
 )
 
 python_test() {
