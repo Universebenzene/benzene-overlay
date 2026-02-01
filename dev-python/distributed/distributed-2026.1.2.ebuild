@@ -15,9 +15,10 @@ SRC_URI="https://github.com/dask/distributed/archive/refs/tags/${PV}.tar.gz -> $
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"	# pyarrow, memray no x86
+PROPERTIES="test_network"
 RESTRICT="test"	# Test phase runs with fails
 
-RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/cloudpickle-3.0.0[${PYTHON_USEDEP}]
 	>=dev-python/dask-2025.7.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.10.3[${PYTHON_USEDEP}]
@@ -33,7 +34,7 @@ RDEPEND=">dev-python/click-8.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.5[${PYTHON_USEDEP}]
 	>=dev-python/zict-3.0.0[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-9[${PYTHON_USEDEP}]
 	test? (
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/asyncssh[${PYTHON_USEDEP}]
@@ -59,9 +60,10 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 
 EPYTEST_RERUNS=5
 EPYTEST_XDIST=1
-EPYTEST_PLUGINS=( flaky pytest-timeout )
+EPYTEST_PLUGINS=( pytest-timeout )
 distutils_enable_tests pytest
-distutils_enable_sphinx docs/source ">=dev-python/dask-sphinx-theme-4.0.0" dev-python/numpydoc \
+distutils_enable_sphinx docs/source ">=dev-python/dask-sphinx-theme-4.0.0" "<dev-python/sphinx-9" \
+	dev-python/numpydoc \
 	dev-python/sphinx-click \
 	dev-python/sphinx-design \
 	dev-python/memray
