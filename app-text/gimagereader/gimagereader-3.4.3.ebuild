@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -35,14 +35,14 @@ DEPEND=">=app-text/tesseract-3.04
 	)
 	qt5? (
 		app-text/qtspell[qt5]
-		app-text/poppler:=[qt5]
-		dev-libs/quazip:=[qt5]
+		<app-text/poppler-26.01.0:=[qt5]
+		<dev-libs/quazip-1.5:=[qt5]
 		dev-qt/qtimageformats:5
 	)
 	qt6? (
 		app-text/qtspell[qt6]
 		app-text/poppler:=[qt6]
-		dev-libs/quazip:=[qt6]
+		dev-libs/quazip:=[qt6(+)]
 		dev-qt/qtimageformats:6
 	)
 "
