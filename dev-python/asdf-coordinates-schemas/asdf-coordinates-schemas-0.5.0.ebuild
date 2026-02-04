@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -27,7 +27,6 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-asdf-0.1.3[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/furo[${PYTHON_USEDEP}]
-		>=dev-python/astropy-5.0.4[${PYTHON_USEDEP}]
 		dev-python/tomli[${PYTHON_USEDEP}]
 	)
 "
