@@ -130,7 +130,7 @@ Package name | Available version | Additional information
 dev-python/adal                    | 1.2.7                                                      | SunPy, h5pyd related
 dev-python/abg-python              | 1.1.5                                                      | Optional for yt
 dev-python/aggdraw                 | 1.3.16; 1.4.1                                              | Optional for ginga
-dev-python/aiobotocore             | 3.1.0                                                      | Pulled in by s3fs
+dev-python/aiobotocore             | 3.1.1                                                      | Pulled in by s3fs
 dev-python/aiohttp-retry           | 2.9.1                                                      | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/arviz                   | 0.17.1; 0.23.1                                             | Optional for corner.py.
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
