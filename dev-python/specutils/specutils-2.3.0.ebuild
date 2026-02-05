@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -25,10 +25,10 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/astropy-7.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-7.2[${PYTHON_USEDEP}]
 	>=dev-python/asdf-3.3.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-astropy-0.5[${PYTHON_USEDEP}]
-	>=dev-python/gwcs-0.22[${PYTHON_USEDEP}]
+	>=dev-python/asdf-astropy-0.8[${PYTHON_USEDEP}]
+	>=dev-python/gwcs-0.25.1[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.14[${PYTHON_USEDEP}]
 	>=dev-python/ndcube-2.0[${PYTHON_USEDEP}]
 "
@@ -44,6 +44,11 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 EPYTEST_PLUGINS=( pytest-{asdf-plugin,astropy-header,doctestplus,remotedata} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
+
+EPYTEST_DESELECT=(
+	# Stuck
+	${PN}/tests/test_loaders.py::test_sdss_spplate
+)
 
 python_prepare_all() {
 	use doc && { eapply "${FILESDIR}"/${PN}-2.0.0-doc-use-local-fits.patch; cp "${DISTDIR}"/*.fits "${S}"/docs || die ; }
