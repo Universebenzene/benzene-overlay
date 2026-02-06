@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -19,31 +19,17 @@ RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	doc? (
-		${RDEPEND}
-		>=dev-python/sphinx-asdf-0.1.4[${PYTHON_USEDEP}]
-		dev-python/furo[${PYTHON_USEDEP}]
-		dev-python/tomli[${PYTHON_USEDEP}]
-		media-gfx/graphviz
-	)
+	doc? ( media-gfx/graphviz )
 	test? ( >=dev-python/packaging-16.0[${PYTHON_USEDEP}] )
 "
 PDEPEND="test? ( >=dev-python/asdf-3.0.0[${PYTHON_USEDEP}] )"
 
 EPYTEST_PLUGINS=( pytest-asdf-plugin )
 distutils_enable_tests pytest
-#distutils_enable_sphinx docs/source '>=dev-python/sphinx-asdf-0.1.4'
+distutils_enable_sphinx docs/source '>=dev-python/sphinx-asdf-0.1.4' dev-python/furo
 
 python_prepare_all() {
 	use doc && { mkdir -p docs/_static || die ; }
 
 	distutils-r1_python_prepare_all
-}
-
-python_compile_all() {
-	if use doc; then
-		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
-		HTML_DOCS=( docs/build/html/. )
-	fi
 }
