@@ -20,19 +20,12 @@ RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
+	test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
 "
 
 EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/matplotlib
-
-#python_compile_all() {
-#	if use doc; then
-#		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-#			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
-#		HTML_DOCS=( docs/_build/html/. )
-#	fi
-#}
 
 python_test() {
 	use doc && local EPYTEST_IGNORE=( docs/_build )
