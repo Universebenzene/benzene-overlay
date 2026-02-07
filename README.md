@@ -187,7 +187,7 @@ dev-python/pytest-examples         | 0.0.18                                     
 dev-python/pytest-textual-snapshot | 1.1.0-r1                                                   | Test dependency for new memray. Dependency syrupy is included but not listed in the table
 dev-python/python-lzf              | 0.2.6                                                      | Test dependency for pyfive (optional by new h5netcdf)
 dev-python/python-pkcs11           | 0.9.3                                                      | Test and optional dependency for asyncssh. Recover from [GURU](https://gitweb.gentoo.org/repo/proj/guru.git/commit/?id=a6b3f15b1a76a2b066f9ff763fab5588bab902c6)
-dev-python/python-socketio         | 5.9.0; 5.16.0                                              | Optional for yt
+dev-python/python-socketio         | 5.9.0; 5.16.1                                              | Optional for yt
 dev-python/python-xz               | 0.6.0                                                      | Optional for yt
 dev-python/pyppmd                  | 1.2.0                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/pure-protobuf           | 2.3.0; 3.1.5                                               | Optional for new ratarmount{,core} <- ipfsspec
