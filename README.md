@@ -193,7 +193,7 @@ dev-python/pyppmd                  | 1.2.0                                      
 dev-python/pure-protobuf           | 2.3.0; 3.1.5                                               | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/rasterio                | 1.3.8\_p2; 1.5.0                                           | Optional for photutils. Dependencies are not all listed in the table
 dev-python/ratarmount              | 0.8.1; 0.14.2; 0.15.2; 1.0.0; 1.2.1                        | Optional for yt. Dependency ratarmountcore is also included in this overlay but not listed in the table
-dev-python/s3fs                    | 2025.10.0; 2025.12.0; 2026.1.0                             | Test dependency for zarr and astropy>=5.2
+dev-python/s3fs                    | 2025.12.0; 2026.1.0; 2026.2.0                              | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks                | 0.3.0                                                      | Optional for aioftp
 dev-python/slicerator              | 1.1.0                                                      | Required by pims <- dask-image <- new reproject
 dev-python/smbprotocol             | 1.15.0                                                     | Optional for new ratarmount{,core}

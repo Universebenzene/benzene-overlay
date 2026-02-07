@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,15 +15,12 @@ SRC_URI+=" doc? ( https://github.com/fsspec/s3fs/raw/${PV}/docs/source/conf.py -
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="awscli boto3"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/aiobotocore-2.7.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/aiobotocore-2.19.0[${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	>=dev-python/fsspec-2024.12.0[${PYTHON_USEDEP}]
-	awscli? ( app-admin/awscli[${PYTHON_USEDEP}] )
-	boto3? ( dev-python/boto3[${PYTHON_USEDEP}] )
 "
 BDEPEND="test? (
 		dev-python/dask[${PYTHON_USEDEP}]
