@@ -1,4 +1,4 @@
-# Copyright 2021-2025 Gentoo Authors
+# Copyright 2021-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -30,13 +30,10 @@ RDEPEND=">=dev-python/matplotlib-3.5.0[${PYTHON_USEDEP}]
 BDEPEND="${RDEPEND}
 	>=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
-	test? (
-		dev-python/pytest-doctestplus[${PYTHON_USEDEP}]
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
-		dev-python/astropy[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/astropy[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=( pytest-{doctestplus,mpl} )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/sphinx-changelog dev-python/sphinx-gallery \
 	dev-python/sunpy-sphinx-theme \
