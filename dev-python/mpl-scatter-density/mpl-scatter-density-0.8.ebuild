@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,12 +22,12 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.5.2[${PYTHON_USEDEP},qt6]
 	)
 "
 
+EPYTEST_PLUGINS=( pytest-mpl )
 PATCHES=( "${FILESDIR}/${P}-test-fix-new-matplotlib-qt6.patch" )
 
 distutils_enable_tests pytest
