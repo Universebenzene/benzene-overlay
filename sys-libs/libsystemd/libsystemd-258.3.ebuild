@@ -1,4 +1,4 @@
-# Copyright 2011-2025 Gentoo Authors
+# Copyright 2011-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -221,6 +221,7 @@ src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}/systemd-258-shared-add-missing-alloc-util.patch"
 		"${FILESDIR}/systemd-258.3-kernel-install-test.patch"
+		"${FILESDIR}/systemd-259-test-echo.patch"
 	)
 
 	if ! use vanilla; then

@@ -1,4 +1,4 @@
-# Copyright 2011-2025 Gentoo Authors
+# Copyright 2011-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,9 +23,9 @@ else
 	fi
 fi
 
-inherit bash-completion-r1 linux-info meson-multilib ninja-utils pam python-single-r1
+inherit branding linux-info meson-multilib ninja-utils pam python-single-r1
 
-inherit secureboot toolchain-funcs #systemd udev usr-ldscript
+inherit secureboot shell-completion toolchain-funcs #systemd udev usr-ldscript
 
 DESCRIPTION="A standalone package to provide libsystemd.so without systemd"
 HOMEPAGE="https://systemd.io/"
@@ -102,6 +102,7 @@ PEFILE_DEPEND='dev-python/pefile[${PYTHON_USEDEP}]'
 
 # baselayout-2.2 has /run
 RDEPEND="${COMMON_DEPEND}
+	elibc_musl? ( >=sys-libs/musl-1.2.5-r8 )
 	ukify? (
 		${PYTHON_DEPS}
 		$(python_gen_cond_dep "${PEFILE_DEPEND}")
@@ -219,12 +220,12 @@ src_unpack() {
 
 src_prepare() {
 	local PATCHES=(
-		"${FILESDIR}/systemd-258-shared-add-missing-alloc-util.patch"
+		"${FILESDIR}/systemd-259-test-echo.patch"
 	)
 
 	if ! use vanilla; then
 		PATCHES+=(
-			"${FILESDIR}/gentoo-journald-audit-r3.patch"
+			"${FILESDIR}/gentoo-journald-audit-r4.patch"
 		)
 	fi
 
@@ -248,10 +249,12 @@ multilib_src_configure() {
 		--localstatedir="${EPREFIX}/var"
 		# default is developer, bug 918671
 		-Dmode=release
-		-Dsupport-url="https://gentoo.org/support/"
+		-Dsupport-url="${BRANDING_OS_SUPPORT_URL}"
 		-Dpamlibdir="$(getpam_mod_dir)"
+		-Dlibc=$(usex elibc_musl musl glibc)
 		# avoid bash-completion dep
 		-Dbashcompletiondir="$(get_bashcompdir)"
+		-Dzshcompletiondir="$(get_zshcompdir)"
 		# make sure we get /bin:/sbin in PATH
 		$(meson_use split-usr)
 		$(meson_use split-usr split-bin)
