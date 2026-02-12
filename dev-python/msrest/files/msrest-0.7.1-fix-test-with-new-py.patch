@@ -1,0 +1,47 @@
+--- a/tests/test_auth.py	2022-06-07 12:30:52.000000000 +0800
++++ b/tests/test_auth.py	2026-02-11 16:21:49.040141954 +0800
+@@ -105,18 +105,14 @@
+ 
+     def test_apikey_auth(self):
+         auth = ApiKeyCredentials(
+-            in_headers={
+-                'testheader' : 'testheadervalue'
+-            }
++            in_headers={'testheader': 'testheadervalue'}
+         )
+         session = auth.signed_session()
+         prep_req = session.prepare_request(self.request)
+-        self.assertDictContainsSubset({'testheader' : 'testheadervalue'}, prep_req.headers)
++        assert prep_req.headers.get('testheader') == 'testheadervalue'
+ 
+         auth = ApiKeyCredentials(
+-            in_query={
+-                'testquery' : 'testparamvalue'
+-            }
++            in_query={'testquery': 'testparamvalue'}
+         )
+         session = auth.signed_session()
+         prep_req = session.prepare_request(self.request)
+@@ -126,19 +122,19 @@
+         auth = CognitiveServicesCredentials("mysubkey")
+         session = auth.signed_session()
+         prep_req = session.prepare_request(self.request)
+-        self.assertDictContainsSubset({'Ocp-Apim-Subscription-Key' : 'mysubkey'}, prep_req.headers)
++        assert prep_req.headers.get('Ocp-Apim-Subscription-Key') == 'mysubkey'
+ 
+     def test_eventgrid_auth(self):
+         auth = TopicCredentials("mytopickey")
+         session = auth.signed_session()
+         prep_req = session.prepare_request(self.request)
+-        self.assertDictContainsSubset({'aeg-sas-key' : 'mytopickey'}, prep_req.headers)
++        assert prep_req.headers.get('aeg-sas-key') == 'mytopickey'
+ 
+     def test_eventgrid_domain_auth(self):
+         auth = DomainCredentials("mydomainkey")
+         session = auth.signed_session()
+         prep_req = session.prepare_request(self.request)
+-        self.assertDictContainsSubset({'aeg-sas-key' : 'mydomainkey'}, prep_req.headers)
++        assert prep_req.headers.get('aeg-sas-key') == 'mydomainkey'
+ 
+ if __name__ == '__main__':
+     unittest.main()

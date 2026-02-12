@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -29,12 +29,14 @@ RDEPEND=">=dev-python/requests-oauthlib-0.5.0[${PYTHON_USEDEP}]
 
 BDEPEND="app-arch/unzip
 	test? (
-		dev-python/pytest-asyncio[${PYTHON_USEDEP}]
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/httpretty[${PYTHON_USEDEP}]
 	)
 "
 
+PATCHES=( "${FILESDIR}/${P}-fix-test-with-new-py.patch" )
+
+EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
 
 EPYTEST_IGNORE=(
