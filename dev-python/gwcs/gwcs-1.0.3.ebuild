@@ -37,7 +37,7 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 
 EPYTEST_PLUGINS=( pytest-doctestplus )
 distutils_enable_tests pytest
-#distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-asdf
+#distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-asdf dev-python/sphinx-inline-tabs dev-python/furo
 
 python_compile_all() {
 	if use doc; then
