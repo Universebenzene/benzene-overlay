@@ -1146,6 +1146,11 @@ debianpkg = "python-lzf"
 suite = "sid"
 strip_release = true
 
+["dev-python/python-neo-lzf"]
+source = "pypi"
+use_max_tag = true
+pypi = "python-neo-lzf"
+
 ["dev-python/python-pkcs11"]
 source = "archpkg"
 archpkg = "python-python-pkcs11"

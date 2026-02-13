@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This package is just a straight translation of the C api of liblzf to python.
+		It has two functions: compress() and decompress().
+		compress() accepts a string to compress and an optional maximum length for the
+		output. If it cannot compress the string down to the requested size is to
+		return None. The default behavior if no size is explicitly requested is to use
+		one less than the length of the input, so the caller must always be prepared
+		decompress() accepts a string and a size in which the uncompressed result must
+		fit. If the uncompressed version doesn't fit in the specified size then the
+		function returns None.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">python-neo-lzf</remote-id>
+		<remote-id type="github">FledgeXu/python-neo-lzf</remote-id>
+	</upstream>
+</pkgmetadata>
