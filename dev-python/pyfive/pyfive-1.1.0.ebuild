@@ -27,7 +27,7 @@ BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/netcdf4[${PYTHON_USEDEP}]
-		dev-python/python-lzf[${PYTHON_USEDEP}]
+		dev-python/python-neo-lzf[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 	)
 "
@@ -35,7 +35,7 @@ BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 EPYTEST_RERUNS=5
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-distutils_enable_sphinx doc dev-python/sphinx-rtd-theme dev-python/autodocsumm
+distutils_enable_sphinx doc dev-python/sphinx-rtd-theme dev-python/autodocsumm "<dev-python/sphinx-9"
 
 python_prepare_all() {
 	sed -i -e "/--cov/d" -e "/--html/d" pyproject.toml || die
