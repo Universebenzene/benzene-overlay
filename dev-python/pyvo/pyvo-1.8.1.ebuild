@@ -1,4 +1,4 @@
-# Copyright 2020-2025 Gentoo Authors
+# Copyright 2020-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -57,8 +57,12 @@ python_test() {
 
 EPYTEST_DESELECT=(
 	# Costs time
+	pyvo/discover/tests/test_imagediscovery.py::test_single_sia1
+	pyvo/discover/tests/test_imagediscovery.py::test_cone_and_spectral_point
+	pyvo/discover/tests/test_imagediscovery.py::test_servedby_elision
+	pyvo/discover/tests/test_imagediscovery.py::test_access_url_elision
+	pyvo/discover/tests/test_imagediscovery.py::test_cancelling
 	docs/registry/index.rst::index.rst
 	docs/dal/index.rst::index.rst
 	docs/index.rst::index.rst
-	docs/io/uws.rst::uws.rst
 )
