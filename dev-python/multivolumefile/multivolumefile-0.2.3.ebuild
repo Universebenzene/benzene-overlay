@@ -1,4 +1,4 @@
-# Copyright 2025 Gentoo Authors
+# Copyright 2025-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,11 +18,7 @@ LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-BDEPEND=">=dev-python/setuptools-scm-3.5.0[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
-		dev-python/hypothesis[${PYTHON_USEDEP}]
-	)
-"
+BDEPEND=">=dev-python/setuptools-scm-3.5.0[${PYTHON_USEDEP}]"
 
+EPYTEST_PLUGINS=( hypothesis pytest-timeout )
 distutils_enable_tests pytest
