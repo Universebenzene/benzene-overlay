@@ -38,17 +38,16 @@ RDEPEND=">=dev-python/numpy-1.17[${PYTHON_USEDEP}]
 	>=dev-python/qtpy-1.9[${PYTHON_USEDEP},designer,gui,quick,testlib]
 	>=dev-python/scipy-1.1[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-30.3.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		>=dev-python/importlib-metadata-3.6[${PYTHON_USEDEP}]
-	' python3_9)
 	qt? ( || (
 		dev-python/pyqt6[${PYTHON_USEDEP}]
 		>=dev-python/pyqt5-5.14[${PYTHON_USEDEP}]
 	) )
 "
+#	$(python_gen_cond_dep '
+#		>=dev-python/importlib-metadata-3.6[${PYTHON_USEDEP}]
+#	' python3_9)
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
-		dev-python/pyarrow[${PYTHON_USEDEP}]
 		|| ( dev-python/pyqt6[${PYTHON_USEDEP}] dev-python/pyqt5[${PYTHON_USEDEP}] )
 	)
 "
