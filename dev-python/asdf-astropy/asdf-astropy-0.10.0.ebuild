@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,7 +22,7 @@ RDEPEND=">=dev-python/asdf-3.3.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-coordinates-schemas-0.4[${PYTHON_USEDEP}]
 	>=dev-python/asdf-transform-schemas-0.6[${PYTHON_USEDEP}]
 	>=dev-python/astropy-5.3.0[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.26[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.26.4[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
