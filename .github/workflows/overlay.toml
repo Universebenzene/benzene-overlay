@@ -470,10 +470,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "dropboxdrivefs"
 
-["dev-python/dunamai"]
-source = "archpkg"
-archpkg = "python-dunamai"
-strip_release = true
+#["dev-python/dunamai"]
+#source = "archpkg"
+#archpkg = "python-dunamai"
+#strip_release = true
 
 ["dev-python/dust-extinction"]
 source = "pypi"

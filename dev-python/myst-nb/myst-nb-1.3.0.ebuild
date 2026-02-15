@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -34,8 +34,6 @@ RDEPEND="dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 "
 BDEPEND="test? (
-		dev-python/pytest-param-files[${PYTHON_USEDEP}]
-		dev-python/pytest-regressions[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 		dev-python/jupytext[${PYTHON_USEDEP}]
 		dev-python/ipywidgets[${PYTHON_USEDEP}]
@@ -49,6 +47,7 @@ BDEPEND="test? (
 
 S="${WORKDIR}/${MY_P}"
 
+EPYTEST_PLUGINS=( pytest-{datadir,param-files,regressions} )
 distutils_enable_tests pytest
 
 pkg_postinst() {
