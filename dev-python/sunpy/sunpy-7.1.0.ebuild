@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -25,26 +25,26 @@ RDEPEND="${DEPEND}
 	>=dev-python/packaging-23.2[${PYTHON_USEDEP}]
 	>=dev-python/parfive-2.1.0[${PYTHON_USEDEP},ftp]
 	>=dev-python/fsspec-2023.6.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.32.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.32.1[${PYTHON_USEDEP}]
 	asdf? (
 		>=dev-python/asdf-3.0.0[${PYTHON_USEDEP}]
 		>=dev-python/asdf-astropy-0.5.0[${PYTHON_USEDEP}]
 	)
 	dask? ( >=dev-python/dask-2023.6.0[${PYTHON_USEDEP}] )
-	image? ( >=dev-python/scipy-1.11.0[${PYTHON_USEDEP}] )
+	image? ( >=dev-python/scipy-1.12.0[${PYTHON_USEDEP}] )
 	jpeg2k? (
 		>=dev-python/glymur-0.13.0[${PYTHON_USEDEP}]
-		>dev-python/lxml-5.0.0[${PYTHON_USEDEP}]
+		>dev-python/lxml-5.0.1[${PYTHON_USEDEP}]
 	)
 	map? (
 		>=dev-python/contourpy-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.2.0[${PYTHON_USEDEP}]
-		>=dev-python/reproject-0.12.0[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.11.0[${PYTHON_USEDEP}]
+		>=dev-python/reproject-0.13.0[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.12.0[${PYTHON_USEDEP}]
 	)
 	net? (
-		>=dev-python/beautifulsoup4-4.13.0[${PYTHON_USEDEP}]
+		>=dev-python/beautifulsoup4-4.13.1[${PYTHON_USEDEP}]
 		>=dev-python/drms-0.7.1[${PYTHON_USEDEP}]
 		>=dev-python/python-dateutil-2.9.0[${PYTHON_USEDEP}]
 		>=dev-python/tqdm-4.66.0[${PYTHON_USEDEP}]
@@ -60,9 +60,9 @@ RDEPEND="${DEPEND}
 	timeseries? (
 		>=dev-python/cdflib-1.3.2[${PYTHON_USEDEP}]
 		>=dev-python/h5netcdf-1.2.0[${PYTHON_USEDEP}]
-		>=dev-python/h5py-3.9.0[${PYTHON_USEDEP}]
+		>=dev-python/h5py-3.10.0[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
-		>=dev-python/pandas-2.1.0[${PYTHON_USEDEP}]
+		>=dev-python/pandas-2.2.0[${PYTHON_USEDEP}]
 	)
 	visualization? (
 		>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
@@ -70,8 +70,8 @@ RDEPEND="${DEPEND}
 	)
 "
 
-BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
-	dev-python/extension-helpers[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-8.0.1[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1.3.0[${PYTHON_USEDEP}]
 	test? (
 		dev-python/asdf-astropy[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
@@ -98,6 +98,7 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 #		>=dev-python/pytest-xdist-3.0.2[${PYTHON_USEDEP}]
 
 EPYTEST_PLUGINS=( hypothesis pytest-{arraydiff,asdf-plugin,doctestplus,mock,mpl,remotedata} )
+: ${EPYTEST_TIMEOUT:=180}
 distutils_enable_tests pytest
 # Doc building is really hard to run. Might fix in far future
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sunpy-sphinx-theme
