@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -41,7 +41,7 @@ EPYTEST_IGNORE=(
 
 EPYTEST_DESELECT=(
 	# ModuleNotFoundError: No module named 'azure'
-	tests/test_docs.py::test_docs_examples[docs/index.md:2172-2215]
-	tests/test_docs.py::test_docs_examples[docs/index.md:2221-2252]
-	tests/test_docs.py::test_docs_examples[docs/index.md:2262-2295]
+	tests/test_docs.py::test_docs_examples[docs/index.md:2344-2387]
+	tests/test_docs.py::test_docs_examples[docs/index.md:2393-2424]
+	tests/test_docs.py::test_docs_examples[docs/index.md:2434-2467]
 )
