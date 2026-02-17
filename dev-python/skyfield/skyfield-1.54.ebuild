@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -11,15 +11,13 @@ inherit distutils-r1
 
 DESCRIPTION="Elegant astronomy for Python"
 HOMEPAGE="https://github.com/skyfielders/python-skyfield"
-SRC_URI="https://github.com/skyfielders/python-skyfield/archive/${PV}.tar.gz -> ${P}.gh.tar.gz
-	test? ( https://datacenter.iers.org/data/9/finals2000A.all -> ${P}-finals2000A.all )
-"
+SRC_URI="https://github.com/skyfielders/python-skyfield/archive/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
-PROPERTIES="test_network"
+#PROPERTIES="test_network"
 RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND=">dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
@@ -35,11 +33,17 @@ BDEPEND="test? (
 
 S="${WORKDIR}/python-${P}"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx documentation dev-python/pandas
 
+EPYTEST_IGNORE=(
+	# OSError when connection timed out
+	contrib/almanac2/test_almanac2.py
+)
+
 python_prepare_all() {
-	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/}finals2000A.all || die ; }
+	use test && { for cif in ci/*; do cp ${cif} ${cif#ci/}; done || die ; }
 
 	distutils-r1_python_prepare_all
 }

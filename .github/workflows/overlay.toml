@@ -1487,12 +1487,16 @@ use_max_tag = true
 pypi = "sunpy-sphinx-theme"
 
 ["dev-python/sunpy"]
-source = "repology"
-repology = "python:sunpy"
-repo = "nixpkgs unstable"
+#source = "repology"
+#repology = "python:sunpy"
+#repo = "nixpkgs unstable"
 #source = "pypi"
 #use_max_tag = true
 #pypi = "sunpy"
+source = "rpmrepo"
+repo = "https://download.opensuse.org/tumbleweed/repo/oss/"
+pkg = "python313-sunpy"
+arch = "x86_64"
 
 ["dev-python/synphot"]
 source = "pypi"
