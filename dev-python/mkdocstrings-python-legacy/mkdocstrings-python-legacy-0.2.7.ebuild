@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -31,6 +31,9 @@ RDEPEND=">=dev-python/mkdocstrings-0.28.3[${PYTHON_USEDEP}]
 "
 BDEPEND="test? ( dev-python/mkdocs-material[${PYTHON_USEDEP}] )"
 
+PATCHES=( "${FILESDIR}/${P}-fix-mkdocstrings-1.0.patch" )
+
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 #python_prepare_all() {

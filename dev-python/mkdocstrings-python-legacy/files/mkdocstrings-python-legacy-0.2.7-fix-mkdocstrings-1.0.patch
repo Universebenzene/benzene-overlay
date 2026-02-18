@@ -1,0 +1,78 @@
+From 7abf268858c49a7d5d41b85ccc9e91a7016c0769 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Timoth=C3=A9e=20Mazzucotelli?= <dev@pawamoy.fr>
+Date: Tue, 13 Jan 2026 16:06:20 +0100
+Subject: [PATCH] tests: Support testing under mkdocstrings 1.0
+
+Issue-10: https://github.com/mkdocstrings/python-legacy/issues/10
+---
+ src/mkdocstrings_handlers/python/handler.py | 6 +++---
+ tests/test_collector.py                     | 9 ++++++++-
+ tests/test_themes.py                        | 5 -----
+ 3 files changed, 11 insertions(+), 9 deletions(-)
+
+diff --git a/src/mkdocstrings_handlers/python/handler.py b/src/mkdocstrings_handlers/python/handler.py
+index 1366894..4b5a12a 100644
+--- a/src/mkdocstrings_handlers/python/handler.py
++++ b/src/mkdocstrings_handlers/python/handler.py
+@@ -46,8 +46,6 @@ class PythonHandler(BaseHandler):
+     fallback_config: ClassVar[dict] = {"docstring_style": "markdown", "filters": ["!.*"]}
+     """The configuration used when falling back to re-collecting an object to get its anchor.
+ 
+-    This configuration is used in [`Handlers.get_anchors`][mkdocstrings.Handlers.get_anchors].
+-
+     When trying to fix (optional) cross-references, the autorefs plugin will try to collect
+     an object with every configured handler until one succeeds. It will then try to get
+     an anchor for it. It's because objects can have multiple identifiers (aliases),
+@@ -185,6 +183,8 @@ def __init__(self, config: dict[str, Any], base_dir: Path, **kwargs: Any) -> Non
+             stdin=PIPE,
+             bufsize=-1,
+             env=env,
++            encoding="utf-8",
++            text=True,
+         )
+ 
+     def get_inventory_urls(self) -> list[tuple[str, dict[str, Any]]]:
+@@ -312,7 +312,7 @@ def teardown(self) -> None:
+         logger.debug("Tearing process down")
+         self.process.terminate()
+ 
+-    def render(self, data: CollectorItem, options: MutableMapping[str, Any]) -> str:
++    def render(self, data: CollectorItem, options: MutableMapping[str, Any]) -> str:  # type: ignore[override]
+         """Render the collected data into HTML."""
+         template = self.env.get_template(f"{data['category']}.html")
+ 
+diff --git a/tests/test_collector.py b/tests/test_collector.py
+index cc7c3c2..ce5e7df 100644
+--- a/tests/test_collector.py
++++ b/tests/test_collector.py
+@@ -30,6 +30,13 @@ def test_collect_result_error(retval: dict, exp_res: str) -> None:
+     with mock.patch("mkdocstrings_handlers.python.handler.json.loads") as m_loads:  # noqa: SIM117
+         with pytest.raises(CollectionError) as excinfo:  # noqa: PT012
+             m_loads.return_value = retval
+-            handler = get_handler({}, _FakeMkDocsConfig, theme="material")  # type: ignore[arg-type]
++            handler = get_handler(
++                {},
++                _FakeMkDocsConfig,  # type: ignore[arg-type]
++                theme="material",
++                custom_templates=None,
++                mdx=None,
++                mdx_config=None,
++            )
+             assert handler.collect("", {})
+             assert str(excinfo.value) == exp_res
+diff --git a/tests/test_themes.py b/tests/test_themes.py
+index bfd9b78..b6366ca 100644
+--- a/tests/test_themes.py
++++ b/tests/test_themes.py
+@@ -22,11 +22,6 @@
+ @pytest.mark.parametrize(
+     "module",
+     [
+-        "mkdocstrings.extension",
+-        "mkdocstrings.inventory",
+-        "mkdocstrings.loggers",
+-        "mkdocstrings.handlers.base",
+-        "mkdocstrings.handlers.rendering",
+         "mkdocstrings_handlers.python.handler",
+         "mkdocstrings_handlers.python.rendering",
+     ],
