@@ -1,4 +1,4 @@
-# Copyright 2023-2025 Gentoo Authors
+# Copyright 2023-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="einops numba"
 
-RDEPEND=">=dev-python/numpy-1.25[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.11[${PYTHON_USEDEP}]
-	>=dev-python/xarray-2023.06.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.13[${PYTHON_USEDEP}]
+	>=dev-python/xarray-2024.02.0[${PYTHON_USEDEP}]
 	einops? ( dev-python/einops[${PYTHON_USEDEP}] )
 	numba? ( >=dev-python/numba-0.55[${PYTHON_USEDEP}] )
 "
@@ -38,6 +38,7 @@ distutils_enable_sphinx docs/source dev-python/sphinx-copybutton \
 	dev-python/jupyter-sphinx \
 	dev-python/myst-nb \
 	dev-python/numpydoc \
+	dev-python/colorama \
 	dev-python/einops \
 	dev-python/matplotlib \
 	dev-python/numba
