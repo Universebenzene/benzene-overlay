@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,14 +15,18 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"	# bidict pytest-benchmark no x86
 
-RDEPEND=">=dev-python/flask-2.1.0[${PYTHON_USEDEP}]
+RDEPEND="dev-python/blinker[${PYTHON_USEDEP}]
+	dev-python/click[${PYTHON_USEDEP}]
+	dev-python/jinja2[${PYTHON_USEDEP}]
+	>=dev-python/flask-2.1.0[${PYTHON_USEDEP}]
 	>=dev-python/python-socketio-5.12.0[${PYTHON_USEDEP}]
+	dev-python/werkzeug[${PYTHON_USEDEP}]
 "
 #BDEPEND="test? ( dev-python/redis[${PYTHON_USEDEP}] )"
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-distutils_enable_sphinx docs
+distutils_enable_sphinx docs dev-python/furo
 
 #python_prepare_all() {
 #	use doc && { sed -i "/language\ = /s/None/'en'/" docs/conf.py || die ; }
