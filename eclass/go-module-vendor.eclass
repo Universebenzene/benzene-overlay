@@ -1,4 +1,4 @@
-# Copyright 2019-2024 Gentoo Authors
+# Copyright 2019-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: go-module-vendor.eclass
@@ -469,6 +469,7 @@ go-module-vendor_src_unpack() {
 }
 
 # @FUNCTION: _go-module-vendor_src_unpack_gosum
+# @INTERNAL
 # @DEPRECATED: none
 # @DESCRIPTION:
 # Populate a GOPROXY directory hierarchy with distfiles from EGO_SUM and
@@ -515,6 +516,7 @@ _go-module-vendor_src_unpack_gosum() {
 }
 
 # @FUNCTION: _go-module-vendor_gosum_synthesize_files
+# @INTERNAL
 # @DEPRECATED: none
 # @DESCRIPTION:
 # Given a path &  version, populate all Goproxy metadata files which aren't
@@ -543,6 +545,7 @@ _go-module-vendor_gosum_synthesize_files() {
 }
 
 # @FUNCTION: _go-module-vendor_src_unpack_verify_gosum
+# @INTERNAL
 # @DEPRECATED: none
 # @DESCRIPTION:
 # Validate the Go modules declared by EGO_SUM are sufficient to cover building
