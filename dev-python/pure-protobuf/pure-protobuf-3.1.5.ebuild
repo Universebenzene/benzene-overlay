@@ -1,4 +1,4 @@
-# Copyright 2024-2025 Gentoo Authors
+# Copyright 2024-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,14 +18,12 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]"
 BDEPEND="dev-python/poetry-dynamic-versioning[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-		dev-python/pydantic[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/pydantic[${PYTHON_USEDEP}] )
 "
 
 S="${WORKDIR}/protobuf-${PV}"
 
+EPYTEST_PLUGINS=( pytest-benchmark )
 distutils_enable_tests pytest
 
 python_prepare_all() {
