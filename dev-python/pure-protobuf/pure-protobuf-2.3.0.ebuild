@@ -1,10 +1,10 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1
 
@@ -16,12 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
-	test? ( dev-python/pytest-benchmark[${PYTHON_USEDEP}] )
-"
+BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/protobuf-${PV}"
 
+EPYTEST_PLUGINS=( pytest-benchmark )
 distutils_enable_tests pytest
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
