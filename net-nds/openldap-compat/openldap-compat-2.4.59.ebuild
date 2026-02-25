@@ -181,6 +181,13 @@ PATCHES=(
 
 	# fix some compiler warnings
 	"${FILESDIR}"/${MY_PN}-2.4.47-warnings.patch
+
+	# Atexit segfault
+	"${FILESDIR}"/${MY_PN}-2.4.59-atexit-fix.patch
+
+	# implicit function defs
+	"${FILESDIR}"/${MY_PN}-2.6.1-cloak.patch
+	"${FILESDIR}"/${MY_PN}-2.4.59-implicit-function.patch
 )
 
 openldap_filecount() {
@@ -406,8 +413,25 @@ build_contrib_module() {
 }
 
 src_configure() {
-	# connectionless ldap per bug #342439
-	append-cppflags -DLDAP_CONNECTIONLESS
+	if use experimental ; then
+		# connectionless ldap per bug #342439
+		# connectionless is a unsupported feature according to Howard Chu
+		# see https://bugs.openldap.org/show_bug.cgi?id=9739
+		# (see also bug #892009)
+		append-cppflags -DLDAP_CONNECTIONLESS
+	fi
+
+	# The configure scripts make some assumptions that aren't valid in newer GCC.
+	# https://bugs.gentoo.org/920380
+	append-flags $(test-flags-CC -Wno-error=implicit-int)
+	# conftest.c:113:16: error: passing argument 1 of 'pthread_detach' makes integer from pointer without a cast [-Wint-conversion]
+	append-flags $(test-flags-CC -Wno-error=int-conversion)
+	# error: passing argument 3 of ‘ldap_bv2rdn’ from incompatible pointer type [-Wincompatible-pointer-types]
+	# expected ‘char **’ but argument is of type ‘const char **’
+	append-flags $(test-flags-CC -Wno-error=incompatible-pointer-types)
+
+	# Revert language version to pre GCC 15
+	append-cflags $(test-flags-CC -std=gnu17)
 
 	multilib-minimal_src_configure
 }
