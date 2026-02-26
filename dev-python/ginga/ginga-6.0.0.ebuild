@@ -68,10 +68,10 @@ BDEPEND=">=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
 		dev-python/photutils[${PYTHON_USEDEP}]
 		>dev-python/regions-0.5[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
+		dev-python/starlink-pyast[${PYTHON_USEDEP}]
 		<dev-python/zarr-3[${PYTHON_USEDEP}]
 	)
 "
-#		dev-python/starlink-pyast[${PYTHON_USEDEP}]
 
 EPYTEST_PLUGINS=( pytest-astropy-header )
 distutils_enable_tests pytest
