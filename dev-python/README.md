@@ -67,7 +67,7 @@ dev-python/sherpa              | 4.15.0; 4.15.1-r1; 4.18.0                      
 dev-python/skyfield            | 1.54                                                 |
 dev-python/spectral-cube       | 0.6.7                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/specutils           | 1.20.3; 2.3.0                                        | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
-dev-python/specreduce          | 1.7.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Some images cannot be plotted if intersphinx is disabled.
+dev-python/specreduce          | 1.7.0; 1.8.0                                         | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building. Some images cannot be plotted if intersphinx is disabled.
 dev-python/starlink-pyast      | 4.0.1                                                | Starlink WCS library for ginga
 dev-python/sunpy               | 5.1.5; 6.1.1; 7.1.0                                  | Doc building is really hard to run, so not supported right now.
 dev-python/synphot             | 1.6.1                                                |
