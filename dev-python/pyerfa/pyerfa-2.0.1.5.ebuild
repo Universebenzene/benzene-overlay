@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -31,9 +31,9 @@ BDEPEND="${RDEPEND}
 		>=dev-python/sphinx-astropy-1.3[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
-	test? ( >=dev-python/pytest-doctestplus-0.7[${PYTHON_USEDEP}] )
 "
 
+EPYTEST_PLUGINS=( pytest-doctestplus )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
