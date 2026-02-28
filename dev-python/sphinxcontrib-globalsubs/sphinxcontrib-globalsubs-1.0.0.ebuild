@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,13 +14,7 @@ HOMEPAGE="https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"	# No usable test phases
 
-RDEPEND=">=dev-python/sphinx-9.0[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/sphinx-7.0[${PYTHON_USEDEP}]"
 
-#distutils_enable_tests nose
-
-#python_install() {
-#	distutils-r1_python_install
-#	rm -r "${ED%/}"/$(python_get_sitedir)/*-nspkg.pth || die
-#}
+distutils_enable_tests import-check
