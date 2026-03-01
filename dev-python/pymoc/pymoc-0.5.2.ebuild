@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-python/astropy[${PYTHON_USEDEP}]"
 BDEPEND="test? ( dev-python/healpy[${PYTHON_USEDEP}] )"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 pkg_postinst() {
