@@ -19,7 +19,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="code_style"
-RESTRICT="test"	# Test phase runs with fails
+#RESTRICT="test"	# Test phase runs with fails
 
 RDEPEND="dev-python/importlib-metadata[${PYTHON_USEDEP}]
 	dev-python/ipython[${PYTHON_USEDEP}]
@@ -35,15 +35,15 @@ RDEPEND="dev-python/importlib-metadata[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
-		dev-python/jupytext[${PYTHON_USEDEP}]
-		dev-python/ipywidgets[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
 		dev-python/nbdime[${PYTHON_USEDEP}]
-		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/sympy[${PYTHON_USEDEP}]
 	)
 "
+#		dev-python/jupytext[${PYTHON_USEDEP}]
+#		dev-python/ipywidgets[${PYTHON_USEDEP}]
+#		dev-python/pandas[${PYTHON_USEDEP}]
+#		dev-python/sympy[${PYTHON_USEDEP}]
 
 S="${WORKDIR}/${MY_P}"
 
