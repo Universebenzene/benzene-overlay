@@ -16,5 +16,11 @@
 	</upstream>
 	<use>
 		<flag name="all">further enhanced ArviZ with all of optional dependencies</flag>
+		<flag name="bokeh">bokeh plotting support</flag>
+		<flag name="h5netcdf">h5netcdf I/O support</flag>
+		<flag name="matplotlib">matplotlib plotting support</flag>
+		<flag name="netcdf4">netcdf4 I/O support</flag>
+		<flag name="plotly">plotly plotting support</flag>
+		<flag name="zarr">zarr I/O support</flag>
 	</use>
 </pkgmetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">arviz-base</remote-id>
+		<remote-id type="github">arviz-devs/arviz-base</remote-id>
+	</upstream>
+	<use>
+		<flag name="h5netcdf">h5netcdf support via <pkg>dev-python/h5netcdf</pkg></flag>
+		<flag name="netcdf4">netcdf4 support <pkg>dev-python/netcdf4</pkg></flag>
+		<flag name="zarr">zarr support <pkg>dev-python/zarr</pkg></flag>
+	</use>
+</pkgmetadata>

@@ -186,6 +186,21 @@ source = "pypi"
 use_max_tag = true
 pypi = "arviz"
 
+["dev-python/arviz-base"]
+source = "pypi"
+use_max_tag = true
+pypi = "arviz-base"
+
+["dev-python/arviz-stats"]
+source = "pypi"
+use_max_tag = true
+pypi = "arviz-stats"
+
+["dev-python/arviz-plots"]
+source = "pypi"
+use_max_tag = true
+pypi = "arviz-plots"
+
 #["dev-python/asciitree"]
 #source = "github"
 #use_max_tag = true

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">arviz-plots</remote-id>
+		<remote-id type="github">arviz-devs/arviz-plots</remote-id>
+	</upstream>
+	<use>
+		<flag name="bokeh">bokeh backend via <pkg>dev-python/bokeh</pkg></flag>
+		<flag name="matplotlib">matplotlib backend via <pkg>dev-python/matplotlib</pkg></flag>
+		<flag name="plotly">plotly backend</flag>
+	</use>
+</pkgmetadata>
