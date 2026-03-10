@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,7 +14,6 @@ HOMEPAGE="https://github.com/westurner/sphinxcontrib-srclinks"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"	# tree-sitter-languages, textual no x86
-RESTRICT="test"	# No usable test phases
 
 RDEPEND=">=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
@@ -23,7 +22,7 @@ RDEPEND=">=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/textual-0.28.0[${PYTHON_USEDEP}]
 "
 
-#distutils_enable_tests nose
+distutils_enable_tests import-check
 
 python_install() {
 	distutils-r1_python_install
