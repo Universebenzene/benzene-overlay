@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,9 +15,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="plugin"
-PROPERTIES="test_network"
-RESTRICT="test"
-RDEPEND=">=dev-python/dunamai-1.25.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/dunamai-1.26.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-2.11.1[${PYTHON_USEDEP}]
 	>=dev-python/tomlkit-0.4[${PYTHON_USEDEP}]
 	plugin? ( >=dev-python/poetry-1.2.0[${PYTHON_USEDEP}] )
@@ -30,4 +28,5 @@ BDEPEND="test? (
 	)
 "
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
