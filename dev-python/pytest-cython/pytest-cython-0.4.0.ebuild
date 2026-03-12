@@ -28,10 +28,8 @@ EPYTEST_PLUGINS=( "${PN}" )
 distutils_enable_tests pytest
 
 python_test() {
-	pushd tests/example-project || die
-	${EPYTHON} -m build -wn || die
-	cp build/lib*/pypackage/*-gnu.so src/pypackage || die
-	popd || die
+	${EPYTHON} -m build -wn tests/example-project || die
+	cp tests/example-project/{build/lib*/pypackage/*-gnu.so,src/pypackage} || die
 	PYTHONPATH="tests/example-project/src" epytest
 	rm -r tests/example-project/{build,dist,.pytest_cache,src/{*.egg-info,pypackage/*-gnu.so}} || die
 }
