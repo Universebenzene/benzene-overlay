@@ -16,12 +16,12 @@ CRATES="
 	base64@0.22.1
 	bincode@1.3.3
 	bitflags@1.3.2
-	bumpalo@3.19.1
+	bumpalo@3.20.2
 	byteorder@1.5.0
-	cc@1.2.53
-	cdshealpix@0.9.0
+	cc@1.2.56
+	cdshealpix@0.9.1
 	cfg-if@1.0.4
-	chrono@0.4.43
+	chrono@0.4.44
 	colorous@1.0.16
 	core-foundation-sys@0.8.7
 	crc32fast@1.5.0
@@ -31,23 +31,23 @@ CRATES="
 	either@1.15.0
 	equivalent@1.0.2
 	fdeflate@0.3.7
-	find-msvc-tools@0.1.8
-	flate2@1.1.8
+	find-msvc-tools@0.1.9
+	flate2@1.1.9
 	hashbrown@0.16.1
 	heck@0.5.0
 	iana-time-zone-haiku@0.1.2
-	iana-time-zone@0.1.64
+	iana-time-zone@0.1.65
 	indexmap@2.13.0
 	indoc@2.0.7
 	itertools@0.14.0
-	js-sys@0.3.85
+	js-sys@0.3.91
 	katex-doc@0.1.0
-	libc@0.2.180
+	libc@0.2.183
 	log@0.4.29
 	mapproj@0.4.0
 	matrixmultiply@0.3.10
-	memchr@2.7.6
-	memmap2@0.9.9
+	memchr@2.8.0
+	memmap2@0.9.10
 	memoffset@0.9.1
 	miniz_oxide@0.8.9
 	ndarray@0.17.2
@@ -61,15 +61,15 @@ CRATES="
 	numpy@0.27.1
 	once_cell@1.21.3
 	png@0.17.16
-	portable-atomic-util@0.2.4
-	portable-atomic@1.13.0
+	portable-atomic-util@0.2.5
+	portable-atomic@1.13.1
 	proc-macro2@1.0.106
 	pyo3-build-config@0.27.2
 	pyo3-ffi@0.27.2
 	pyo3-macros-backend@0.27.2
 	pyo3-macros@0.27.2
 	pyo3@0.27.2
-	quote@1.0.43
+	quote@1.0.45
 	rawpointer@0.2.1
 	rayon-core@1.13.0
 	rayon@1.11.0
@@ -81,27 +81,27 @@ CRATES="
 	serde_spanned@0.6.9
 	shlex@1.3.0
 	simd-adler32@0.3.8
-	syn@2.0.114
-	target-lexicon@0.13.4
+	syn@2.0.117
+	target-lexicon@0.13.5
 	thiserror-impl@2.0.18
 	thiserror@2.0.18
 	toml@0.8.23
 	toml_datetime@0.6.11
 	toml_edit@0.22.27
 	toml_write@0.1.2
-	unicode-ident@1.0.22
+	unicode-ident@1.0.24
 	unindent@0.2.4
-	wasm-bindgen-macro-support@0.2.108
-	wasm-bindgen-macro@0.2.108
-	wasm-bindgen-shared@0.2.108
-	wasm-bindgen@0.2.108
+	wasm-bindgen-macro-support@0.2.114
+	wasm-bindgen-macro@0.2.114
+	wasm-bindgen-shared@0.2.114
+	wasm-bindgen@0.2.114
 	windows-core@0.62.2
 	windows-implement@0.60.2
 	windows-interface@0.59.3
 	windows-link@0.2.1
 	windows-result@0.4.1
 	windows-strings@0.5.1
-	winnow@0.7.14
+	winnow@0.7.15
 "
 
 inherit cargo distutils-r1 pypi
