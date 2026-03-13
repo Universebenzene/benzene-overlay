@@ -1,4 +1,4 @@
-# Copyright 2025 Gentoo Authors
+# Copyright 2025-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -35,7 +35,8 @@ distutils_enable_tests pytest
 python_prepare_all() {
 	if use test; then
 		for tpy in "${DISTDIR}"/*-t-*; do { cp ${tpy} "${S}"/${tpy##*-t-} || die ; } ; done
-		has_version sys-fs/fuse:3 && { sed -i "s/fusermount/fusermount3/" tests/test_examples.py || die ; }
+		! has_version sys-fs/fuse:0 && { sed -i "s/fusermount/fusermount3/" tests/test_examples.py || die ; \
+		sed -i 's:"fuse", "fuse3":"fuse3", "fuse":' tests/test_struct_layout.py || die; }
 	fi
 	distutils-r1_python_prepare_all
 }
