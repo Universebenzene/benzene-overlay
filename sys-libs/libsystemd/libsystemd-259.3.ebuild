@@ -255,10 +255,7 @@ multilib_src_configure() {
 		-Dbashcompletiondir="$(get_bashcompdir)"
 		-Dzshcompletiondir="$(get_zshcompdir)"
 		# make sure we get /bin:/sbin in PATH
-		$(meson_use split-usr)
 		$(meson_use split-usr split-bin)
-		-Drootprefix="$(usex split-usr "${EPREFIX:-/}" "${EPREFIX}/usr")"
-		-Drootlibdir="${EPREFIX}/usr/$(get_libdir)"
 		# Disable compatibility with sysvinit
 		-Dsysvinit-path=
 		-Dsysvrcnd-path=
