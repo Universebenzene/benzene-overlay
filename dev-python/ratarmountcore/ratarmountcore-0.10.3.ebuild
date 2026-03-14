@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -30,6 +30,7 @@ SRC_URI+=" test? (
 		${GIT_TEST_URI}/nested-tar.tar -> ${P}-t-nested-tar.tar
 		${GIT_TEST_URI}/nested-tar-1M.ext4.bz2 -> ${P}-t-nested-tar-1M.ext4.bz2
 		${GIT_TEST_URI}/nested-tar-10M.ext4.bz2 -> ${P}-t-nested-tar-10M.ext4.bz2
+		${GIT_TEST_URI}/nested-without-execution-flag.zip -> ${P}-t-nested-without-execution-flag.zip
 		${GIT_TEST_URI}/single-file.tar -> ${P}-t-single-file.tar
 		${GIT_TEST_URI}/simple.bz2 -> ${P}-t-simple.bz2
 		${GIT_TEST_URI}/simple.gz -> ${P}-t-simple.gz
