@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="RunNotebook"
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -23,7 +23,6 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-RESTRICT="test"	# No usable test phases
 
 RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/jupyter[${PYTHON_USEDEP}]
@@ -31,7 +30,7 @@ RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 "
 
-#distutils_enable_tests nose
+distutils_enable_tests import-check
 distutils_enable_sphinx example/source dev-python/sphinx-bootstrap-theme dev-python/matplotlib dev-python/sympy
 
 python_prepare_all() {
