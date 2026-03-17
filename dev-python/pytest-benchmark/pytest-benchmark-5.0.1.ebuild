@@ -47,8 +47,9 @@ EPYTEST_DESELECT=(
 	tests/test_cli.py::test_help
 )
 
-#python_prepare_all() {
+python_prepare_all() {
 #	use test && { sed -i '/^    error$/d' pytest.ini || die ; }
-#
-#	distutils-r1_python_prepare_all
-#}
+	use test && { sed -i '/--nbmake/d' pytest.ini || die ; }
+
+	distutils-r1_python_prepare_all
+}
