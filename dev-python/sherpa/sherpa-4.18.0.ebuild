@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -38,7 +38,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
 		dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}]
 		dev-python/nbsphinx[${PYTHON_USEDEP}]
-		dev-python/arviz[${PYTHON_USEDEP}]
+		<dev-python/arviz-1[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/optimagic[${PYTHON_USEDEP}]
@@ -47,7 +47,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		virtual/pandoc
 	)
 	test? (
-		dev-python/arviz[${PYTHON_USEDEP}]
+		<dev-python/arviz-1[${PYTHON_USEDEP}]
 		dev-python/astropy[${PYTHON_USEDEP}]
 		>=dev-python/bokeh-3[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
@@ -59,6 +59,7 @@ BDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	)
 "
 
+EPYTEST_PLUGINS=()
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/sphinx-rtd-theme dev-python/nbsphinx
