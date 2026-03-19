@@ -19,11 +19,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/mkdocs-1.2[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/mkdocs-1.2[${PYTHON_USEDEP}]
+	>=dev-python/properdocs-1.6.5[${PYTHON_USEDEP}]
+"
 BDEPEND="test? (
 		>=dev-python/mechanicalsoup-0.12.0[${PYTHON_USEDEP}]
 		>=dev-python/mkdocs-material-6.1.5[${PYTHON_USEDEP}]
-		>=dev-python/testfixtures-6.15.0[${PYTHON_USEDEP}]
 	)
 "
 
