@@ -33,13 +33,14 @@ HOMEPAGE="https://systemd.io/"
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/2"
 IUSE="
-	acl apparmor audit boot cryptsetup +curl +dns-over-tls elfutils
-	fido2 +gcrypt gnutls homed +http idn +importd +kernel-install +kmod
-	+lz4 +lzma +openssl pam passwdqc pcre pkcs11 policykit pwquality qrcode
+	acl apparmor audit boot cryptsetup curl +dns-over-tls elfutils
+	fido2 +gcrypt gnutls homed idn importd +kernel-install +kmod +lz4 lzma
+	+openssl pam passwdqc pcre pkcs11 policykit pwquality qrcode remote
 	+resolvconf +seccomp selinux split-usr sysv-utils test tpm ukify vanilla xkb +zstd
 "
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
+	boot? ( kernel-install )
 	dns-over-tls? ( openssl )
 	fido2? ( cryptsetup openssl )
 	homed? ( cryptsetup pam openssl )
@@ -47,7 +48,7 @@ REQUIRED_USE="
 	?? ( passwdqc pwquality )
 	passwdqc? ( homed )
 	pwquality? ( homed )
-	boot? ( kernel-install )
+	remote? ( curl )
 	ukify? ( boot )
 "
 RESTRICT="!test? ( test )"
@@ -75,7 +76,7 @@ COMMON_DEPEND="
 	)
 	gcrypt? ( >=dev-libs/libgcrypt-1.4.5 )
 	gnutls? ( >=net-libs/gnutls-3.6.0:0= )
-	http? ( >=net-libs/libmicrohttpd-0.9.33:0=[epoll(+)] )
+	remote? ( >=net-libs/libmicrohttpd-0.9.33:0=[epoll(+)] )
 	idn? ( net-dns/libidn2 )
 	importd? (
 		app-arch/bzip2:0=
@@ -124,6 +125,7 @@ BDEPEND="
 	test? (
 		app-text/tree
 		dev-lang/perl
+		>=dev-libs/glib-2.22.0:2
 		sys-apps/dbus
 	)
 	app-text/docbook-xml-dtd:4.2
@@ -271,19 +273,18 @@ multilib_src_configure() {
 			$(meson_feature audit)
 			$(meson_feature boot bootloader)
 			-Dbpf-framework=disabled
-#			$(meson_feature cryptsetup libcryptsetup)
-			-Dlibcryptsetup=enabled
+			$(meson_feature cryptsetup libcryptsetup-plugins)
 			$(meson_feature curl libcurl)
 			$(meson_use dns-over-tls dns-over-tls)
 			$(meson_feature elfutils)
 			$(meson_feature fido2 libfido2)
 			$(meson_feature gcrypt)
 			$(meson_feature gnutls)
-			$(meson_feature http microhttpd)
 			$(meson_feature homed)
 			$(meson_use idn)
 			$(meson_feature importd)
 			$(meson_feature importd bzip2)
+			$(meson_feature importd sysupdate)
 			$(meson_feature importd zlib)
 			$(meson_use kernel-install)
 			$(meson_feature kmod)
@@ -297,10 +298,13 @@ multilib_src_configure() {
 			$(meson_feature policykit polkit)
 			$(meson_feature pwquality)
 			$(meson_feature qrcode qrencode)
+			$(meson_feature remote)
+			$(meson_feature remote microhttpd)
 			$(meson_feature seccomp)
 			$(meson_feature selinux)
 			$(meson_feature tpm tpm2)
 			$(meson_feature test dbus)
+			$(meson_feature test glib)
 			$(meson_feature ukify)
 			$(meson_feature xkb xkbcommon)
 		)
