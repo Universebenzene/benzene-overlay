@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -11,7 +11,7 @@ MY_PV="$(ver_cut 1).0$(ver_cut 2).$(ver_cut 3)"
 #MY_PV="$(ver_cut 1).$(ver_cut 2).0$(ver_cut 3)"
 MY_P="${PN}-${MY_PV}"
 
-inherit distutils-r1 pypi
+inherit distutils-r1 #pypi
 
 DESCRIPTION="Rebuild Sphinx documentation on changes, with live-reload in the browser"
 HOMEPAGE="https://github.com/executablebooks/sphinx-autobuild"
@@ -32,5 +32,6 @@ BDEPEND="test? ( dev-python/httpx[${PYTHON_USEDEP}] )"
 
 S="${WORKDIR}/${MY_P}"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs --no-autodoc
