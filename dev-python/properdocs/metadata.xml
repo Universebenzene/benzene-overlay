@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		ProperDocs is a fast, simple and downright gorgeous static site generator that's
+		geared towards building project documentation. Documentation source files are
+		written in Markdown, and configured with a single YAML configuration file. It is
+		designed to be easy to use and can be extended with third-party themes, plugins,
+		and Markdown extensions.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">properdocs</remote-id>
+		<remote-id type="github">properdocs/properdocs</remote-id>
+	</upstream>
+</pkgmetadata>

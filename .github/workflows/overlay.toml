@@ -974,6 +974,21 @@ source = "pypi"
 use_max_tag = true
 pypi = "pure-protobuf"
 
+["dev-python/properdocs"]
+source = "pypi"
+use_max_tag = true
+pypi = "properdocs"
+
+["dev-python/properdocs-theme-mkdocs"]
+source = "pypi"
+use_max_tag = true
+pypi = "properdocs-theme-mkdocs"
+
+["dev-python/properdocs-theme-readthedocs"]
+source = "pypi"
+use_max_tag = true
+pypi = "properdocs-theme-readthedocs"
+
 ["dev-python/pvextractor"]
 source = "pypi"
 use_max_tag = true
