@@ -28,11 +28,11 @@ BDEPEND="${DISTUTILS_DEPS}"
 
 distutils_enable_tests unittest
 
-src_prepare() {
-	default
-	use test && { for tpy in $(ls tests/[a-z]*.py); do { mv tests/{,test_}${tpy#tests/} || die ; } ; done ; }
-	distutils-r1_src_prepare
-}
+#src_prepare() {
+#	default
+#	use test && { for tpy in $(ls tests/[a-z]*.py); do { mv tests/{,test_}${tpy#tests/} || die ; } ; done ; }
+#	distutils-r1_src_prepare
+#}
 
 src_compile() {
 	python_foreach_impl esetup.py build_system -j $(makeopts_jobs "${MAKEOPTS}")
@@ -46,7 +46,7 @@ src_install() {
 python_test() {
 #	No module named 'sqlcipher3._sqlite3'
 	cp "build/lib.linux-${ARCH/amd64/x86_64}-c${EPYTHON/3./-3}/${PN}"/*.c${EPYTHON/3./-3}*.so "${PN}" || die
-	eunittest
+	eunittest -p '*.py'
 	rm "${PN}"/*.c${EPYTHON/3./-3}*.so || die
 }
 
