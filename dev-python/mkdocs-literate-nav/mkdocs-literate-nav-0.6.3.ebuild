@@ -16,7 +16,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/mkdocs-1.4.1[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/mkdocs-1.4.1[${PYTHON_USEDEP}]
+	>=dev-python/properdocs-1.6.5[${PYTHON_USEDEP}]
+"
 
 EPYTEST_PLUGINS=( pytest-golden )
 distutils_enable_tests pytest
