@@ -781,6 +781,11 @@ pypi = "miniballcpp"
 #prefix = "v"
 #github = "lepture/mistune"
 
+["dev-python/mkdocs-click"]
+source = "pypi"
+use_max_tag = true
+pypi = "mkdocs-click"
+
 ["dev-python/mkdocs-coverage"]
 source = "pypi"
 use_max_tag = true

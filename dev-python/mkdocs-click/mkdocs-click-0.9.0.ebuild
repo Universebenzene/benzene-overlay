@@ -1,0 +1,24 @@
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=hatchling
+PYPI_VERIFY_REPO=https://github.com/mkdocs/mkdocs-click
+PYTHON_COMPAT=( python3_{11..14} )
+
+inherit distutils-r1 pypi
+
+DESCRIPTION="MkDocs extension to generate documentation for Click command line applications"
+HOMEPAGE="https://github.com/mkdocs/mkdocs-click"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND=">=dev-python/click-8.1[${PYTHON_USEDEP}]
+	>=dev-python/markdown-3.3[${PYTHON_USEDEP}]
+"
+
+EPYTEST_PLUGINS=()
+distutils_enable_tests pytest

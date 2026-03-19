@@ -279,6 +279,7 @@ Package name | Available version        | Additional information
 ------------ | :---------------:        | ----------------------
 dev-python/docstring-parser             | 0.17.0          | Optional dependency of pytkdocs
 dev-python/markdown-callouts            | 0.3.0; 0.4.0    | mkdocstrings related (should be test depend)
+dev-python/mkdocs-click                 | 0.9.0           |
 dev-python/mkdocs-coverage              | 2.0.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-git-committers-plugin | 2.5.0           | mkdocstrings related (should be test depend)
 dev-python/mkdocs-jupyter               | 0.25.1          |
