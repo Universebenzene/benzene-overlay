@@ -1,4 +1,4 @@
-# Copyright 2019-2025 Gentoo Authors
+# Copyright 2019-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,10 +22,9 @@ REQUIRED_USE="intersphinx? ( doc )
 RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	>=dev-python/attrs-22.2.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-standard-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/asdf-transform-schemas-0.3[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.6.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 	>=dev-python/semantic-version-2.8[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]
@@ -37,18 +36,7 @@ RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	lz4? ( >=dev-python/lz4-0.10[${PYTHON_USEDEP}] )
 "
 BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
-	doc? (
-		${RDEPEND}
-		>=dev-python/sphinx-asdf-0.2.2[${PYTHON_USEDEP}]
-		dev-python/sphinx-inline-tabs[${PYTHON_USEDEP}]
-		<dev-python/docutils-0.22[${PYTHON_USEDEP}]
-		dev-python/furo[${PYTHON_USEDEP}]
-		>=dev-python/mistune-3[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep '
-			dev-python/tomli[${PYTHON_USEDEP}]
-		' python3_10)
-		media-gfx/graphviz
-	)
+	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/aiohttp[${PYTHON_USEDEP}]
 		dev-python/fsspec[${PYTHON_USEDEP}]
@@ -58,20 +46,13 @@ BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=( pytest-remotedata )
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-#distutils_enable_sphinx docs ">=dev-python/sphinx-asdf-0.2.2" dev-python/tomli
-
-python_compile_all() {
-	if use doc; then
-		VARTEXFONTS="${T}"/fonts MPLCONFIGDIR="${T}" PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
-			emake "SPHINXOPTS=$(usex intersphinx '' '-D disable_intersphinx=1')" -C docs html
-		HTML_DOCS=( docs/_build/html/. )
-	fi
-}
+distutils_enable_sphinx docs ">=dev-python/sphinx-asdf-0.2.2" dev-python/sphinx-inline-tabs dev-python/furo \
+	">=dev-python/mistune-3"
 
 python_test() {
-	epytest --remote-data -Werror::UserWarning
+	epytest -Werror::UserWarning #--remote-data
 }
 
 pkg_postinst() {
