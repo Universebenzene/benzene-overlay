@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,10 +14,11 @@ HOMEPAGE="https://sphinx-contributors.readthedocs.io"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-PROPERTIES="test_network"
-RESTRICT="test"
 
-RDEPEND=">=dev-python/sphinx-3[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/sphinx-7[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
+"
 
+EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs/source dev-python/furo
