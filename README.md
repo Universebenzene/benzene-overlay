@@ -289,6 +289,6 @@ dev-python/mkdocs-section-index         | 0.3.11          | mkdocstrings related
 dev-python/mkdocstrings-crystal         | 0.3.5; 0.3.9    |
 dev-python/mkdocstrings-python-legacy   | 0.2.4; 0.2.7    |
 dev-python/pytkdocs                     | 0.16.5          | Dependency of mkdocstrings-python-legacy
-dev-python/properdocs                   | 1.6.6           | Two theme packages (mkdocs, readthedocs) are also included but not listed here
+dev-python/properdocs                   | 1.6.7           | Two theme packages (mkdocs, readthedocs) are also included but not listed here
 
 <!--</details>-->
