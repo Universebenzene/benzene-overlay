@@ -9,13 +9,22 @@ inherit systemd desktop xdg
 
 DESCRIPTION="Web client of Project V for VMess, VLESS, SS, SSR, Trojan & Pingtunnel protocols"
 HOMEPAGE="https://github.com/v2rayA/v2rayA"
+#SRC_URI="
+#	amd64? ( https://apt.v2raya.org/static/${MY_PN}_linux_x64_${PV} -> ${P}-amd64 )
+#	x86? ( https://apt.v2raya.org/static/${MY_PN}_linux_x86_${PV} -> ${P}-x86 )
+#	arm64? ( https://apt.v2raya.org/static/${MY_PN}_linux_arm64_${PV} -> ${P}-arm64 )
+#	arm? ( https://apt.v2raya.org/static/${MY_PN}_linux_armv7_${PV} -> ${P}-arm )
+#	loong? ( https://apt.v2raya.org/static/${MY_PN}_linux_loongarch64_${PV} -> ${P}-loong )
+#	riscv? ( https://apt.v2raya.org/static/${MY_PN}_linux_riscv64_${PV} -> ${P}-riscv )
+#	https://github.com/v2rayA/v2rayA/archive/refs/tags/v${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz
+#"
 SRC_URI="
-	amd64? ( https://apt.v2raya.org/static/${MY_PN}_linux_x64_${PV} -> ${P}-amd64 )
-	x86? ( https://apt.v2raya.org/static/${MY_PN}_linux_x86_${PV} -> ${P}-x86 )
-	arm64? ( https://apt.v2raya.org/static/${MY_PN}_linux_arm64_${PV} -> ${P}-arm64 )
-	arm? ( https://apt.v2raya.org/static/${MY_PN}_linux_armv7_${PV} -> ${P}-arm )
-	loong? ( https://apt.v2raya.org/static/${MY_PN}_linux_loongarch64_${PV} -> ${P}-loong )
-	riscv? ( https://apt.v2raya.org/static/${MY_PN}_linux_riscv64_${PV} -> ${P}-riscv )
+	amd64? ( https://github.com/v2rayA/v2rayA/releases/download/v${PV}/${MY_PN}_linux_x64_${PV} -> ${P}-amd64 )
+	x86? ( https://github.com/v2rayA/v2rayA/releases/download/v${PV}/${MY_PN}_linux_x86_${PV} -> ${P}-x86 )
+	arm64? ( https://github.com/v2rayA/v2rayA/releases/download/v${PV}/${MY_PN}_linux_arm64_${PV} -> ${P}-arm64 )
+	arm? ( https://github.com/v2rayA/v2rayA/releases/download/v${PV}/${MY_PN}_linux_armv7_${PV} -> ${P}-arm )
+	loong? ( https://github.com/v2rayA/v2rayA/releases/download/v${PV}/${MY_PN}_linux_loongarch64_${PV} -> ${P}-loong )
+	riscv? ( https://github.com/v2rayA/v2rayA/releases/download/v${PV}/${MY_PN}_linux_riscv64_${PV} -> ${P}-riscv )
 	https://github.com/v2rayA/v2rayA/archive/refs/tags/v${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz
 "
 LICENSE="AGPL-3"
