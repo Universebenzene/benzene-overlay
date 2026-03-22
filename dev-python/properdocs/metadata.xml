@@ -16,4 +16,7 @@
 		<remote-id type="pypi">properdocs</remote-id>
 		<remote-id type="github">properdocs/properdocs</remote-id>
 	</upstream>
+	<use>
+		<flag name="i18n">Internationalization support via <pkg>dev-python/babel</pkg></flag>
+	</use>
 </pkgmetadata>

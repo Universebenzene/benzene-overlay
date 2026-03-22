@@ -16,7 +16,7 @@ SRC_URI="https://github.com/ProperDocs/properdocs/archive/refs/tags/v${PV}.tar.g
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="doc i18n"
 
 RDEPEND=">=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/ghp-import-1.0[${PYTHON_USEDEP}]
@@ -29,6 +29,7 @@ RDEPEND=">=dev-python/click-7.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-env-tag-0.1[${PYTHON_USEDEP}]
 	>=dev-python/platformdirs-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/watchdog-2.0[${PYTHON_USEDEP}]
+	i18n? ( >=dev-python/babel-2.9.0[${PYTHON_USEDEP}] )
 "
 BDEPEND="doc? (
 		dev-python/mkdocs-autorefs[${PYTHON_USEDEP}]
@@ -45,6 +46,7 @@ BDEPEND="doc? (
 PDEPEND="test? (
 		dev-python/properdocs-theme-mkdocs[${PYTHON_USEDEP}]
 		dev-python/properdocs-theme-readthedocs[${PYTHON_USEDEP}]
+		dev-python/babel[${PYTHON_USEDEP}]
 	)
 "
 
