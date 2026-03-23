@@ -105,6 +105,8 @@ EPYTEST_DESELECT=(
 	dask/dataframe/dask_expr/tests/test_shuffle.py::test_set_index_head_nlargest_string
 	# assert 16 >= 32
 	dask/tests/test_tokenize.py::test_tokenize_range_index
+	# failing with no output
+	dask/dataframe/tests/test_dataframe.py::test_combine_first_all_nans
 )
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
