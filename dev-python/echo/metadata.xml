@@ -11,5 +11,6 @@
 	</upstream>
 	<use>
 		<flag name="qt">Interfacing with Qt widgets</flag>
+		<flag name="vue">Vue/ipywidgets supoort via <pkg>dev-python/traitlets</pkg></flag>
 	</use>
 </pkgmetadata>
