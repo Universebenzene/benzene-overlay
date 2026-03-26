@@ -14,8 +14,9 @@
 		<remote-id type="github">zarr-developers/zarr-python</remote-id>
 	</upstream>
 	<use>
+		<flag name="cli">Extra cli support via <pkg>dev-python/typer</pkg></flag>
 		<flag name="jupyter">Extra jupyter support</flag>
-		<flag name="optional">Additional optional dependencies <pkg>dev-python/rich</pkg></flag>
+		<flag name="optional">Additional optional dependencies <pkg>dev-python/universal-pathlib</pkg></flag>
 		<flag name="remote">support for reading/writing to remote data stores via <pkg>dev-python/fsspec</pkg></flag>
 	</use>
 </pkgmetadata>
