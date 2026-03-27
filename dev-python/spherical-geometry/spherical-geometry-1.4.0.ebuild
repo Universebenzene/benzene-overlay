@@ -23,7 +23,9 @@ DEPEND=">=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]
 RDEPEND="${DEPEND}
 	wcs? ( >=dev-python/astropy-5.2.0[${PYTHON_USEDEP}] )
 "
-BDEPEND="test? ( dev-python/gwcs[${PYTHON_USEDEP}] )"
+BDEPEND=">=dev-python/setuptools-scm-3.6[${PYTHON_USEDEP}]
+	test? ( dev-python/gwcs[${PYTHON_USEDEP}] )
+"
 
 PATCHES=( "${FILESDIR}/${P}-fix-readme-typo.patch" )
 
