@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="aspect elasticsearch histogram"
 
-RDEPEND=">=dev-python/pytest-3.8[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pytest-8.1[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
 	aspect? ( dev-python/aspectlib[${PYTHON_USEDEP}] )
 	elasticsearch? ( dev-python/elasticsearch[${PYTHON_USEDEP}] )
