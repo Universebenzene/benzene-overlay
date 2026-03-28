@@ -1338,6 +1338,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "specutils"
 
+["dev-python/spherical-geometry"]
+source = "pypi"
+use_max_tag = true
+pypi = "spherical-geometry"
+
 ["dev-python/sphinx-asdf"]
 source = "pypi"
 use_max_tag = true
