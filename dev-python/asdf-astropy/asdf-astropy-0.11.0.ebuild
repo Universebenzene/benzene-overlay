@@ -21,7 +21,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 RDEPEND=">=dev-python/asdf-3.3.0[${PYTHON_USEDEP}]
 	>=dev-python/asdf-coordinates-schemas-0.4[${PYTHON_USEDEP}]
 	>=dev-python/asdf-transform-schemas-0.6[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.3.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.26.4[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
 "
@@ -33,8 +33,9 @@ BDEPEND=">=dev-python/setuptools-scm-3.4[${PYTHON_USEDEP}]
 		dev-python/tomli[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
-	test? ( dev-python/scipy[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/scipy-1.14.1[${PYTHON_USEDEP}] )
 "
+PDEPEND="test? ( >=dev-python/gwcs-0.22[${PYTHON_USEDEP}] )"
 
 EPYTEST_PLUGINS=( pytest-{asdf-plugin,astropy-header,doctestplus} )
 distutils_enable_tests pytest
