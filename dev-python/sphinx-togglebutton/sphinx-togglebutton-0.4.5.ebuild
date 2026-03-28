@@ -15,7 +15,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="sphinx"
-RESTRICT="test"	# No usable test phases
 
 RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/sphinx[${PYTHON_USEDEP}]
@@ -30,4 +29,4 @@ RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 	)
 "
 
-#distutils_enable_tests nose
+distutils_enable_tests import-check
