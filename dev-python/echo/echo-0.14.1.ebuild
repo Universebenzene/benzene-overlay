@@ -25,6 +25,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
+		dev-python/ipywidgets[${PYTHON_USEDEP}]
 		|| ( dev-python/pyqt6[${PYTHON_USEDEP}] dev-python/pyqt5[${PYTHON_USEDEP}] )
 		dev-python/qtpy[${PYTHON_USEDEP}]
 		dev-python/traitlets[${PYTHON_USEDEP}]
