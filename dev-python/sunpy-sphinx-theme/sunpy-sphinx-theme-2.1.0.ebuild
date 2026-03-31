@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,11 +14,10 @@ HOMEPAGE="https://github.com/sunpy/sunpy-sphinx-theme"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RESTRICT="test"	# No usable test phases
 
 RDEPEND="dev-python/sphinx[${PYTHON_USEDEP}]
 	dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-6.2[$PYTHON_USEDEP]"
 
-#distutils_enable_tests nose
+distutils_enable_tests import-check
