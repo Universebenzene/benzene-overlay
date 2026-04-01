@@ -1,0 +1,79 @@
+From b4d5abf4eb39df6827264737a639a8cbd6d31a47 Mon Sep 17 00:00:00 2001
+From: Carl Smedstad <carsme@archlinux.org>
+Date: Sun, 15 Mar 2026 17:31:10 +0100
+Subject: [PATCH] Fix duplicate Server header in moto mock server for aiohttp
+ >= 3.13
+
+aiohttp 3.13+ rejects HTTP responses with duplicate headers. The moto
+mock server produces duplicate Server headers because Python's
+BaseHTTPRequestHandler.send_response() adds one automatically and
+moto also sets "server: amazon.com" in its response headers.
+
+Use a custom WSGIRequestHandler that skips the automatic Server
+header, and a ThreadedMotoServer subclass that uses it.
+
+Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+---
+ tests/mock_server.py | 37 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 36 insertions(+), 1 deletion(-)
+
+diff --git a/tests/mock_server.py b/tests/mock_server.py
+index 60a1d67..a8d7600 100644
+--- a/tests/mock_server.py
++++ b/tests/mock_server.py
+@@ -8,6 +8,7 @@ import aiohttp.web
+ import pytest
+ from aiohttp.web import StreamResponse
+ from moto.server import ThreadedMotoServer
++from werkzeug.serving import WSGIRequestHandler, make_server
+ 
+ _proxy_bypass = {
+     "http": None,
+@@ -108,9 +109,43 @@ class AIOServer(multiprocessing.Process):
+         pytest.fail('unable to start and connect to aiohttp server')
+ 
+ 
++class _NoDupHeaderRequestHandler(WSGIRequestHandler):
++    """Prevent duplicate Server headers.
++
++    Python's BaseHTTPRequestHandler.send_response() automatically adds a
++    Server header, and moto also sets one ("amazon.com") in its response
++    headers. aiohttp >= 3.13 rejects responses with duplicate headers, so
++    override send_response to skip the automatic Server header.
++    """
++
++    def send_response(self, code, message=None):
++        self.log_request(code)
++        self.send_response_only(code, message)
++        self.send_header('Date', self.date_time_string())
++
++
++class _PatchedThreadedMotoServer(ThreadedMotoServer):
++    def _server_entry(self):
++        from moto.moto_server.werkzeug_app import (
++            DomainDispatcherApplication,
++            create_backend_app,
++        )
++
++        app = DomainDispatcherApplication(create_backend_app)
++        self._server = make_server(
++            self._ip_address,
++            self._port,
++            app,
++            True,
++            request_handler=_NoDupHeaderRequestHandler,
++        )
++        self._server_ready_event.set()
++        self._server.serve_forever()
++
++
+ @pytest.fixture
+ async def moto_server(server_scheme):
+-    server = ThreadedMotoServer(port=0)
++    server = _PatchedThreadedMotoServer(port=0)
+     try:
+         server.start()
+         host, port = server.get_host_and_port()
+-- 
+2.53.0
+

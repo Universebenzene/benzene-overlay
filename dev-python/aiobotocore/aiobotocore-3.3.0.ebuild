@@ -21,7 +21,7 @@ RESTRICT="test"
 
 RDEPEND=">=dev-python/aiohttp-3.12.0[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/botocore-1.41.0[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.42.62[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
@@ -42,7 +42,7 @@ BDEPEND="test? (
 	)
 "
 
-#PATCHES=( "${FILESDIR}/${P}-botocore-compatibility.patch" )
+PATCHES=( "${FILESDIR}/${P}-fix-duplicate-server-header.patch" )
 
 EPYTEST_XDIST=1
 EPYTEST_PLUGINS=( anyio time-machine )
