@@ -258,7 +258,7 @@ dev-python/sphinx-sitemap               | 2.6.0; 2.9.0                    |
 dev-python/sphinx-py3doc-enhanced-theme | 2.4.0                           |
 dev-python/sphinxcontrib-globalsubs     | 0.1.2; 1.1.0                    |
 dev-python/sphinxcontrib-srclink        | 0.2.4                           |
-dev-python/sphinxcontrib-youtube        | 1.2.0; 1.4.1                    | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
+dev-python/sphinxcontrib-youtube        | 1.2.0; 1.5.0                    | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
 dev-python/sphinxext-opengraph          | 0.13.0                          |
 dev-python/dask-sphinx-theme            | 4.0.0                           |
 dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.1.0            |
