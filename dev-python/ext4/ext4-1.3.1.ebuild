@@ -1,0 +1,62 @@
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_EXT=1
+DISTUTILS_USE_PEP517=standalone
+PYPI_VERIFY_REPO=https://github.com/Eeems/python-ext4
+PYTHON_COMPAT=( python3_{11..13} )
+
+inherit distutils-r1 pypi
+
+DESCRIPTION="Library for read only interactions with an ext4 filesystem"
+HOMEPAGE="https://github.com/Eeems/python-ext4"
+SRC_URI+=" test? (
+		https://github.com/Eeems/python-ext4/raw/refs/tags/v${PV}/test.py -> ${P}-test.py
+		https://github.com/Eeems/python-ext4/raw/refs/tags/v${PV}/_test_image.sh -> ${P}-test-image.sh
+	)
+"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="test"
+PROPERTIES="test? ( interactive )"
+RESTRICT="!test? ( test )"
+
+RDEPEND=">=dev-python/cachetools-6.0.0[${PYTHON_USEDEP}]
+	>=dev-python/crcmod-1.7[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.15.0[${PYTHON_USEDEP}] ' python3_11)
+"
+BDEPEND=">=dev-python/setuptools-77.0.3[${PYTHON_USEDEP}]
+	>=dev-python/nuitka-4.0.6[${PYTHON_USEDEP}]
+"
+
+#python_prepare_all() {
+#	#if use test; then
+#	#	# https://github.com/Eeems/python-ext4/blob/main/test.sh
+#	#	install -Dm644 "${FILESDIR}"/${P}-test.txt "${T}"/txt_tmp/test.txt || die
+#	#	dd if=/dev/zero of=test.ext4.tmp count=1024 bs=1024 || die
+#	#	mkfs.ext4 test.ext4.tmp -d "${T}"/txt_tmp || die
+#	#	echo -n F > test.ext4 || die
+#	#	cat test.ext4.tmp >> test.ext4 || die
+#	#fi
+#	use test && { bash "${DISTDIR}"/${P}-test-image.sh || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
+
+src_test() {
+	ewarn
+	ewarn "For running test, you should execute the following commands with root privilege first:"
+	ewarn "# cd ${S}"
+	ewarn "# bash "${DISTDIR}"/${P}-test-image.sh"
+	ewarn
+	read -p "   Press ENTER after executed those commands above... " -t 30 IMAGES || die "Please run the script before testing"
+	distutils-r1_src_test
+}
+
+python_test() {
+	${EPYTHON} "${DISTDIR}"/${P}-test.py || die "Tests failed with ${EPYTHON}"
+}
