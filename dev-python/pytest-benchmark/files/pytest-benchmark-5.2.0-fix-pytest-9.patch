@@ -1,0 +1,22 @@
+From d5c2f7ef9d0bbd67d8bafac1e2a454c8aa95af10 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ionel=20Cristian=20M=C4=83rie=C8=99?= <contact@ionelmc.ro>
+Date: Sun, 9 Nov 2025 18:15:09 +0200
+Subject: [PATCH] Add support for pytest 9.0. Fixes #295.
+
+---
+ src/pytest_benchmark/cli.py          |   2 +-
+ 1 files changed, 1 insertions(+), 1 deletion(-)
+
+diff --git a/src/pytest_benchmark/cli.py b/src/pytest_benchmark/cli.py
+index 0d1e9db..b206e7b 100644
+--- a/src/pytest_benchmark/cli.py
++++ b/src/pytest_benchmark/cli.py
+@@ -116,7 +116,7 @@ def make_parser():
+ 
+ class HookDispatch:
+     def __init__(self, *, root, **kwargs):
+-        _, _, config = locate_config(invocation_dir=root, args=())
++        _, _, config, *_ = locate_config(invocation_dir=root, args=())
+         conftest_file = pathlib.Path('conftest.py')
+         if conftest_file.exists():
+             self.conftest = pathlib.import_path(

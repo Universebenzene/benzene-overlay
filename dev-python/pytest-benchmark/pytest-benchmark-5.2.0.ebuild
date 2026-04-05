@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
@@ -36,6 +35,8 @@ BDEPEND="test? (
 		dev-vcs/mercurial[${PYTHON_USEDEP}]
 	)
 "
+
+PATCHES=( "${FILESDIR}/${P}-fix-pytest-9.patch" )
 
 EPYTEST_PLUGIN_LOAD_VIA_ENV=1
 EPYTEST_PLUGINS=( "${PN}" pytest-xdist )
