@@ -1,10 +1,10 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 WX_GTK_VER="3.2-gtk3"
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit cmake flag-o-matic python-r1 toolchain-funcs virtualx wxwidgets
 
@@ -14,7 +14,7 @@ SRC_URI="https://github.com/gnudatalanguage/${PN}/releases/download/v${PV}/${PN}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86" #~amd64-linux ~x86-linux"
 IUSE="+eigen fftw glpk graphicsmagick gshhs hdf hdf5 +imagemagick netcdf
 	openmp png proj postscript python shapelib tiff udunits wxwidgets
 "
@@ -26,7 +26,7 @@ RDEPEND="
 	media-libs/libpng:=
 	net-libs/libtirpc:=
 	sci-libs/gsl:=
-	sci-libs/plplot:=[X,cxx,-dynamic,wxwidgets?]
+	sci-libs/plplot:=[X,cxx,dynamic,latex,wxwidgets?]
 	sys-libs/ncurses:=
 	sys-libs/readline:=
 	virtual/zlib:=
@@ -145,7 +145,7 @@ src_compile() {
 }
 
 src_test() {
-	virtx cmake_src_test
+	PLPLOT_DRV_DIR=src/plplotdriver virtx cmake_src_test
 }
 
 src_install() {
