@@ -66,7 +66,10 @@ BDEPEND="
 	python? ( app-admin/chrpath )
 "
 
-PATCHES=( "${FILESDIR}"/${PN}-1.0.4-cmake.patch )
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.0.4-cmake.patch
+	"${FILESDIR}"/${PN}-1.0.4-r3-musl.patch
+)
 DOCS=( AUTHORS HACKING NEWS PYTHON.txt README README.md )
 
 S="${WORKDIR}/${PN}-v${PV}"
@@ -80,7 +83,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	use wxwidgets && setup-wxwidgets unicode
 	use hdf5 && has_version sci-libs/hdf5[mpi] && export CXX=mpicxx
 
 	# remove bundled antlr
@@ -94,6 +96,7 @@ src_prepare() {
 }
 
 src_configure() {
+	use wxwidgets && setup-wxwidgets unicode
 	# -Werror=strict-aliasing
 	# https://bugs.gentoo.org/930966
 	# https://github.com/gnudatalanguage/gdl/issues/1852
