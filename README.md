@@ -261,7 +261,7 @@ dev-python/sphinxcontrib-srclink        | 0.2.4                           |
 dev-python/sphinxcontrib-youtube        | 1.2.0; 1.5.0                    | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
 dev-python/sphinxext-opengraph          | 0.13.0                          |
 dev-python/dask-sphinx-theme            | 4.0.0                           |
-dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.1.0            |
+dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.1.1            |
 dev-python/pydata-sphinx-theme          | 0.13.3-r1                       | Old version dropped by official portage, required by sunpy-sphinx-theme
 dev-python/mistune                      | 0.8.4-r1; 2.0.5                 | For sphinx-asdf and sphinx-mdinclude that depend on old version
 dev-python/nbconvert                    | 6.4.5                           | Depends on old mistune
