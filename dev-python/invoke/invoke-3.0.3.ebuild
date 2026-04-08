@@ -23,6 +23,8 @@ RDEPEND="dev-python/fluidity[${PYTHON_USEDEP}]
 "
 BDEPEND="test? ( dev-python/icecream[${PYTHON_USEDEP}] )"
 
+PATCHES=( "${FILESDIR}/${P}-fix-mock-pty-ioctl-wrapping.patch" )
+
 EPYTEST_PLUGINS=( pytest-relaxed )
 distutils_enable_tests pytest
 distutils_enable_sphinx sites/docs
