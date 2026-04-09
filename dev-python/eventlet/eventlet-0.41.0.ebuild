@@ -43,6 +43,7 @@ BDEPEND=">=dev-python/hatch-vcs-0.3[${PYTHON_USEDEP}]
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx doc/source dev-python/sphinxcontrib-apidoc \
+	dev-python/mysqlclient \
 	dev-python/py \
 	dev-python/pyopenssl \
 	dev-python/psycopg:2 \
