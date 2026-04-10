@@ -29,7 +29,7 @@ dev-python/casa-formats-io     | 0.3.0                                          
 dev-python/cdflib              | 0.4.9; 1.3.6; 1.3.8                                  | SunPy releated.
 dev-python/drms                | 0.6.4; 0.9.0                                         | SunPy releated. `network-sandbox` FEATURE will be disabled if you enable `examples` flag for doc building
 dev-python/dust-extinction     | 1.7                                                  |
-dev-python/echo                | 0.14.1                                               | Glueviz releated.
+dev-python/echo                | 0.15.0                                               | Glueviz releated.
 dev-python/extension-helpers   | 1.4.0                                                |
 dev-python/fast-histogram      | 0.14                                                 | Glueviz releated.
 dev-python/ginga               | 6.0.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
@@ -72,6 +72,6 @@ dev-python/spherical-geometry  | 1.4.0                                          
 dev-python/starlink-pyast      | 4.0.1                                                | Starlink WCS library for ginga
 dev-python/sunpy               | 5.1.5; 6.1.1; 7.1.0                                  | Doc building is really hard to run, so not supported right now.
 dev-python/synphot             | 1.7.0                                                |
-dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.1.0                                 |
+dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.1.1                                 |
 
 <!--dev-python/montage-wrapper     | 0.9.9                                                |-->
