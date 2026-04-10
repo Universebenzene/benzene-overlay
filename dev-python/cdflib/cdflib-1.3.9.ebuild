@@ -12,6 +12,7 @@ CDFLIB_TEST_URI="https://lasp.colorado.edu/maven/sdc/public/data/sdc/web/cdflib_
 DOCS_BUILDER="mkdocs"
 DOCS_DEPEND="dev-python/mkdocstrings-python
 	dev-python/mkdocs-material-extensions
+	dev-python/black
 "
 
 inherit distutils-r1 docs optfeature pypi
