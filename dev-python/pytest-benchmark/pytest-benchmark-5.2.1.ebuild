@@ -36,7 +36,7 @@ BDEPEND="test? (
 	)
 "
 
-PATCHES=( "${FILESDIR}/${P}-fix-pytest-9.patch" )
+PATCHES=( "${FILESDIR}/${PN}-5.2.0-fix-pytest-9.patch" )
 
 EPYTEST_PLUGIN_LOAD_VIA_ENV=1
 EPYTEST_PLUGINS=( "${PN}" pytest-xdist )
