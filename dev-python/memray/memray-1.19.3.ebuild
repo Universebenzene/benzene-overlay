@@ -1,17 +1,18 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 pypi
 
 DESCRIPTION="A memory profiler for Python applications"
 HOMEPAGE="https://bloomberg.github.io/memray"
 SRC_URI="https://github.com/bloomberg/memray/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
+	$(python_gen_useflags python3_14)? ( $(pypi_wheel_url ${PN} ${PV} "cp314" "cp314-manylinux2014_x86_64.manylinux_2_17_x86_64") )
 	$(python_gen_useflags python3_13)? ( $(pypi_wheel_url ${PN} ${PV} "cp313" "cp313-manylinux2014_x86_64.manylinux_2_17_x86_64") )
 	$(python_gen_useflags python3_12)? ( $(pypi_wheel_url ${PN} ${PV} "cp312" "cp312-manylinux2014_x86_64.manylinux_2_17_x86_64") )
 	$(python_gen_useflags python3_11)? ( $(pypi_wheel_url ${PN} ${PV} "cp311" "cp311-manylinux2014_x86_64.manylinux_2_17_x86_64") )
@@ -39,18 +40,16 @@ BDEPEND="test? (
 
 EPYTEST_PLUGINS=( pytest-textual-snapshot syrupy )
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-argparse dev-python/furo \
-	dev-python/accessible-pygments \
-	dev-python/ipython
+distutils_enable_sphinx docs dev-python/sphinx-argparse dev-python/furo dev-python/ipython
 
-EPYTEST_IGNORE=(
-	## E   ModuleNotFoundError: No module named 'tests.test_exercise
-	## docs/tutorials
-	# https://gitlab.archlinux.org/archlinux/packaging/packages/memray/-/blob/main/PKGBUILD?ref_type=heads
-	tests/test_tui_reporter.py
-	tests/integration/test_attach.py
-	tests/integration/test_greenlet.py
-)
+#EPYTEST_IGNORE=(
+#	## E   ModuleNotFoundError: No module named 'tests.test_exercise
+#	## docs/tutorials
+#	# https://gitlab.archlinux.org/archlinux/packaging/packages/memray/-/blob/main/PKGBUILD?ref_type=heads
+#	tests/test_tui_reporter.py
+#	tests/integration/test_attach.py
+#	tests/integration/test_greenlet.py
+#)
 
 #EPYTEST_DESELECT=(
 #	# Stucked tests
@@ -59,7 +58,10 @@ EPYTEST_IGNORE=(
 #)
 
 python_compile() {
-	if use $(python_gen_useflags python3_13); then
+	if use $(python_gen_useflags python3_14); then
+		local _pytag="cp314"
+		local _abitag="cp314-manylinux2014_x86_64.manylinux_2_17_x86_64"
+	elif use $(python_gen_useflags python3_13); then
 		local _pytag="cp313"
 		local _abitag="cp313-manylinux2014_x86_64.manylinux_2_17_x86_64"
 	elif use $(python_gen_useflags python3_12); then
