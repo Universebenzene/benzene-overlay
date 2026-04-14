@@ -277,7 +277,7 @@ dev-python/nbconvert                    | 6.4.5                           | Depe
 
 Package name | Available version        | Additional information
 ------------ | :---------------:        | ----------------------
-dev-python/docstring-parser             | 0.17.0          | Optional dependency of pytkdocs
+dev-python/docstring-parser             | 0.18.0          | Optional dependency of pytkdocs
 dev-python/markdown-callouts            | 0.3.0; 0.4.0    | mkdocstrings related (should be test depend)
 dev-python/mkdocs-click                 | 0.9.0           |
 dev-python/mkdocs-coverage              | 2.0.0           | mkdocstrings related (should be test depend)
