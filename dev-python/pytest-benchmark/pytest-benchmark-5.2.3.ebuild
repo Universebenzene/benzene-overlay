@@ -36,17 +36,17 @@ BDEPEND="test? (
 	)
 "
 
-PATCHES=( "${FILESDIR}/${PN}-5.2.0-fix-pytest-9.patch" )
+#PATCHES=( "${FILESDIR}/${PN}-5.2.0-fix-pytest-9.patch" )
 
 EPYTEST_PLUGIN_LOAD_VIA_ENV=1
 EPYTEST_PLUGINS=( "${PN}" pytest-xdist )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/furo
 
-EPYTEST_DESELECT=(
-	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-pytest-benchmark/-/blob/main/PKGBUILD
-	tests/test_cli.py::test_help
-)
+#EPYTEST_DESELECT=(
+#	# https://gitlab.archlinux.org/archlinux/packaging/packages/python-pytest-benchmark/-/blob/main/PKGBUILD
+#	tests/test_cli.py::test_help
+#)
 
 python_prepare_all() {
 #	use test && { sed -i '/^    error$/d' pytest.ini || die ; }
