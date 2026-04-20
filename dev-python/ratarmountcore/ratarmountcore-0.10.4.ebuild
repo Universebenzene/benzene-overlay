@@ -53,7 +53,7 @@ SRC_URI+=" test? (
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+7z +bzip2 colors ext4 +fat fsspec fsspec-backends full full-ssh git +gzip +rar sqlar squashfs +xz +zip +zstd"
+IUSE="+7z +bzip2 colors ext4 +fat fsspec fsspec-backends full full-ssh git +gzip lzo +rar sqlar squashfs +xz +zip +zstd"
 REQUIRED_USE="full? ( 7z bzip2 fat fsspec-backends git gzip rar squashfs xz zip zstd )"
 
 RDEPEND="sys-fs/fuse
@@ -92,6 +92,7 @@ RDEPEND="sys-fs/fuse
 		>=dev-python/indexed-gzip-1.7[${PYTHON_USEDEP}]
 		>=dev-python/rapidgzip-0.15.0[${PYTHON_USEDEP}]
 	)
+	lzo? ( >=dev-python/python-lzo-1.0[${PYTHON_USEDEP}] )
 	rar? ( >=dev-python/rarfile-4.0[${PYTHON_USEDEP}] )
 	sqlar? (
 		dev-python/cryptography[${PYTHON_USEDEP}]
@@ -100,7 +101,6 @@ RDEPEND="sys-fs/fuse
 	squashfs? (
 		>=dev-python/isal-1.0[${PYTHON_USEDEP}]
 		>=dev-python/pysquashfsimage-0.9.0[${PYTHON_USEDEP}]
-		>=dev-python/python-lzo-1.0[${PYTHON_USEDEP}]
 		>=dev-python/lz4-4.0.0[${PYTHON_USEDEP}]
 		>=dev-python/zstandard-0.23.0[${PYTHON_USEDEP}]
 	)

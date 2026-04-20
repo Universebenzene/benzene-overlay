@@ -3,7 +3,7 @@
 
 EAPI=8
 
-CORE_VER="0.10.3"
+CORE_VER="0.10.4"
 
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
@@ -98,12 +98,12 @@ SRC_URI+=" test? (
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="colors ext4 fsspec full git sqlar squashfs"
+IUSE="colors ext4 fsspec full git lzo sqlar squashfs"
 PROPERTIES="test_privileged"
 RESTRICT="test"
 
 RDEPEND=">=dev-python/mfusepy-3.0[${PYTHON_USEDEP}]
-	>=dev-python/ratarmountcore-0.10.0[${PYTHON_USEDEP},7z,bzip2,colors?,ext4?,fat,full?,git?,gzip,rar,sqlar?,squashfs?,xz,zip,zstd]
+	>=dev-python/ratarmountcore-0.10.0[${PYTHON_USEDEP},7z,bzip2,colors?,ext4?,fat,full?,git?,gzip,lzo?,rar,sqlar?,squashfs?,xz,zip,zstd]
 	colors? ( dev-python/rich-argparse[${PYTHON_USEDEP}] )
 	fsspec? ( >=dev-python/ratarmountcore-0.10.0[${PYTHON_USEDEP},fsspec-backends] )
 "

@@ -20,6 +20,7 @@
 		<flag name="full-ssh">Include most ssh functions with <pkg>dev-python/sshfs</pkg></flag>
 		<flag name="git">Add extra support for git</flag>
 		<flag name="gzip">Add extra support for gzip</flag>
+		<flag name="lzo">Add extra support for lzo via <pkg>dev-python/python-lzo</pkg></flag>
 		<flag name="rar">Add extra support for rar</flag>
 		<flag name="sqlar">Add extra support for sqlar</flag>
 		<flag name="squashfs">Add extra support for squashfs</flag>
