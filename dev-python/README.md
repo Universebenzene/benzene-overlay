@@ -34,7 +34,7 @@ dev-python/extension-helpers   | 1.4.0                                          
 dev-python/fast-histogram      | 0.14                                                 | Glueviz releated.
 dev-python/ginga               | 6.0.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/glueviz             | 1.4.0 (glue-core: 1.17.1, 1.25.0; glue-qt: 0.4.2)    | Meta package. Core package and qt package versions are all shown.
-dev-python/glue-vispy-viewers  | 1.1.0; 1.3.0                                         |
+dev-python/glue-vispy-viewers  | 1.1.0; 1.4.0                                         |
 dev-python/gwcs                | 1.0.3                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/h5netcdf            | 1.8.1                                                |
 dev-python/h5pyd               | 0.12.2; 0.18.0; 0.23.0                               |
