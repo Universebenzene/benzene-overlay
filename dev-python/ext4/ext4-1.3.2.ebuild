@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
-PYPI_VERIFY_REPO=https://github.com/Eeems/python-ext4
+#PYPI_VERIFY_REPO=https://github.com/Eeems/python-ext4
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
@@ -53,7 +53,7 @@ src_test() {
 	ewarn "# cd ${S}"
 	ewarn "# bash "${DISTDIR}"/${P}-test-image.sh"
 	ewarn
-	read -p "   Press ENTER after executed those commands above... " -t 30 IMAGES || die "Please run the script before testing"
+	read -p "   Press ENTER after executing those commands above... " -t 40 IMAGES || die "Please run the test-image script before testing"
 	distutils-r1_src_test
 }
 
