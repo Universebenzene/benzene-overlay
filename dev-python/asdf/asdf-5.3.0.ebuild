@@ -14,7 +14,7 @@ HOMEPAGE="https://asdf.readthedocs.io"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="all doc http intersphinx lz4"
+IUSE="all http intersphinx lz4"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )
 	all? ( http lz4 )"
@@ -46,7 +46,7 @@ BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=()
+EPYTEST_PLUGINS=( syrupy )
 distutils_enable_tests pytest
 distutils_enable_sphinx docs ">=dev-python/sphinx-asdf-0.2.2" dev-python/sphinx-inline-tabs dev-python/furo \
 	">=dev-python/mistune-3"
