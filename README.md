@@ -237,7 +237,7 @@ dev-python/sphinx-autosummary-accessors | 2025.3.1                        |
 dev-python/sphinx-book-theme            | 1.0.1; 1.2.0                    | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
 dev-python/sphinx-changelog             | 1.6.0                           |
 dev-python/sphinx-click                 | 6.0.0; 6.2.0                    |
-dev-python/sphinx-codeautolink          | 0.17.5                          |
+dev-python/sphinx-codeautolink          | 0.18.0                          |
 dev-python/sphinx-collections           | 0.3.1                           | Doc building and testing behave strangly in sandbox (can't find sphinx plugins), so can't complete while merging
 dev-python/sphinx-design                | 0.7.0                           |
 dev-python/sphinx-documatt-theme        | 0.0.6                           |
