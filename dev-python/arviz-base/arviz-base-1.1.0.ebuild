@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="h5netcdf netcdf4 zarr"
 
 RDEPEND=">=dev-python/numpy-2[${PYTHON_USEDEP}]
+	>=dev-python/lazy-loader-0.4[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-3.10[${PYTHON_USEDEP}]
 	>=dev-python/xarray-2024.11.0[${PYTHON_USEDEP}]
 	h5netcdf? ( dev-python/h5netcdf[${PYTHON_USEDEP},h5py] )
@@ -40,4 +41,5 @@ distutils_enable_sphinx docs/source dev-python/sphinx-copybutton \
 	dev-python/numpydoc \
 	dev-python/h5netcdf \
 	dev-python/h5py \
-	dev-python/linkify-it-py
+	dev-python/linkify-it-py \
+	dev-python/tinycss2

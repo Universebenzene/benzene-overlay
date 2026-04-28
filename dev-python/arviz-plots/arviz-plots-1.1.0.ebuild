@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bokeh matplotlib plotly"
 
-RDEPEND=">=dev-python/arviz-base-1.0[${PYTHON_USEDEP}]
-	>=dev-python/arviz-stats-1.0[${PYTHON_USEDEP},xarray]
+RDEPEND=">=dev-python/arviz-base-1.1[${PYTHON_USEDEP}]
+	>=dev-python/arviz-stats-1.1[${PYTHON_USEDEP},xarray]
 	bokeh? ( >=dev-python/bokeh-3.4[${PYTHON_USEDEP}] )
 	matplotlib? ( >=dev-python/matplotlib-3.9[${PYTHON_USEDEP}] )
 	plotly? (
@@ -28,8 +28,8 @@ RDEPEND=">=dev-python/arviz-base-1.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/bokeh[${PYTHON_USEDEP}]
-		dev-python/einops[${PYTHON_USEDEP}]
 		|| ( dev-python/h5netcdf[${PYTHON_USEDEP},h5py] dev-python/netcdf4[${PYTHON_USEDEP}] )
+		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/plotly[${PYTHON_USEDEP}]
 		dev-python/webcolors[${PYTHON_USEDEP}]
 	)
