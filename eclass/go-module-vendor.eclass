@@ -9,7 +9,7 @@
 # William Hubbs <williamh@gentoo.org>
 # Robin H. Johnson <robbat2@gentoo.org>
 # Ryan Qian <i@bitbili.net>
-# @SUPPORTED_EAPIS: 7 8
+# @SUPPORTED_EAPIS: 7 8 9
 # @BLURB: basic eclass for building software written as go modules
 # @DESCRIPTION:
 # This eclass provides basic settings and functions needed by all software
@@ -55,7 +55,7 @@
 # @CODE
 
 case ${EAPI} in
-	7|8) ;;
+	7|8|9) ;;
 	*) die "${ECLASS}: EAPI ${EAPI:-0} not supported" ;;
 esac
 
@@ -176,7 +176,7 @@ declare -A -g _GOMODULE_GOSUM_REVERSE_MAP
 # If set to a non-null value before inherit, the Go part of the
 # ebuild will be considered optional. No dependencies will be added and
 # no phase functions will be exported. You will need to set BDEPEND and
-# call go-module-vendor_src_unpack in your ebuild.
+# call go-module-vendor_src_unpack and go-module-vendor_src_configure in your ebuild.
 
 # @FUNCTION: ego
 # @USAGE: [<args>...]
@@ -431,12 +431,11 @@ go-module-vendor_setup_vendor() {
 
 # @FUNCTION: go-module-vendor_src_unpack
 # @DESCRIPTION:
-# Sets up GOFLAGS for the system and then unpacks based on the following rules:
+# Unpacks based on the following rules:
 # 1. If EGO_SUM is set, unpack the base tarball(s) and set up the
 #    local go proxy.  This mode is deprecated.
 # 2. Otherwise, if EGO_VENDOR is set, bail out, as this functionality was removed.
 # 3. Otherwise, call go-module-vendor_setup_vendor to set the vendor directory from tarball.
-# Set compile env via go-env.
 go-module-vendor_src_unpack() {
 	if [[ "${#EGO_SUM[@]}" -gt 0 ]]; then
 		eqawarn "QA Notice: This ebuild uses EGO_SUM which is deprecated"
@@ -452,7 +451,9 @@ go-module-vendor_src_unpack() {
 		go-module-vendor_setup_vendor
 	fi
 
-	go-env_set_compile_environment
+	case ${EAPI} in
+		7|8) go-env_set_compile_environment ;;
+	esac
 }
 
 # @FUNCTION: _go-module-vendor_src_unpack_gosum
@@ -581,8 +582,21 @@ go-module-vendor_live_vendor() {
 	popd >& /dev/null || die
 }
 
+# @FUNCTION: go-module-vendor_src_configure
+# @DESCRIPTION:
+# Sets up the environment to build Go code for the target system. If manually
+# calling this from your own src_configure, do it between handling build flags
+# and invoking another build system.
+go-module-vendor_src_configure() {
+	go-env_set_compile_environment
+}
+
 fi
 
 if [[ ! ${GO_OPTIONAL} ]]; then
 	EXPORT_FUNCTIONS src_unpack
+	case ${EAPI} in
+		7|8) ;;
+		*) EXPORT_FUNCTIONS src_configure ;;
+	esac
 fi
