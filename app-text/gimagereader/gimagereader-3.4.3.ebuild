@@ -14,11 +14,11 @@ SRC_URI="https://github.com/manisandro/gImageReader/releases/download/v${PV}/${P
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtk qt5 qt6 +scanner"
+IUSE="gtk qt5 qt6" #+scanner"
 REQUIRED_USE="^^ ( gtk qt5 qt6 )"
 
 DEPEND=">=app-text/tesseract-3.04
-	scanner? ( media-gfx/sane-backends )
+	media-gfx/sane-backends
 	app-text/podofo:=
 	virtual/jpeg
 	app-text/djvu
