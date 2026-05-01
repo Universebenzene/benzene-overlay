@@ -19,10 +19,10 @@ IUSE="cli examples optional remote"
 
 RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 	>=dev-python/google-crc32c-0.14[${PYTHON_USEDEP}]
-	>=dev-python/numpy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-2[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.14[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.12[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.13[${PYTHON_USEDEP}]
 	cli? ( dev-python/typer[${PYTHON_USEDEP}] )
 	optional? ( dev-python/universal-pathlib[${PYTHON_USEDEP}] )
 	remote? ( >=dev-python/fsspec-2023.10.0[${PYTHON_USEDEP}] )
