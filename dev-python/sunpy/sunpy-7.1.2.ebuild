@@ -54,7 +54,7 @@ RDEPEND="${DEPEND}
 	s3? (
 		>=dev-python/s3fs-2023.6.0[${PYTHON_USEDEP}]
 		>=dev-python/aiobotocore-2.6.0[${PYTHON_USEDEP}]
-		dev-python/boto3[${PYTHON_USEDEP}]
+		>=dev-python/boto3-1.31.17[${PYTHON_USEDEP}]
 	)
 	skimage? ( >=dev-python/scikit-image-0.21.0[${PYTHON_USEDEP}] )
 	timeseries? (
