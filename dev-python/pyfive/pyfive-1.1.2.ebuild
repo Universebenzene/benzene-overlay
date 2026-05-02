@@ -18,7 +18,9 @@ KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/numpy-2[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/numpy-2[${PYTHON_USEDEP}]
+	dev-python/typing-extensions[${PYTHON_USEDEP}]
+"
 BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 	test? (
 		dev-python/dask[${PYTHON_USEDEP}]
@@ -35,7 +37,7 @@ BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
 EPYTEST_RERUNS=5
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-distutils_enable_sphinx doc dev-python/sphinx-rtd-theme dev-python/autodocsumm "<dev-python/sphinx-9"
+distutils_enable_sphinx doc dev-python/sphinx-rtd-theme dev-python/autodocsumm
 
 python_prepare_all() {
 	sed -i -e "/--cov/d" -e "/--html/d" pyproject.toml || die
