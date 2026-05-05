@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		Dunamai is a Python 3.5+ library and command line tool for
+		producing dynamic, standards-compliant version strings,
+		derived from tags in your version control system.
+		This facilitates uniquely identifying nightly or per-commit
+		builds in continuous integration and releasing new versions
+		of your software simply by creating a tag.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">dunamai</remote-id>
+		<remote-id type="github">mtkennerly/dunamai</remote-id>
+	</upstream>
+</pkgmetadata>
