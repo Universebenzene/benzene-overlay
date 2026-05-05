@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 pypi
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://flask-socketio.readthedocs.io"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"	# bidict pytest-benchmark no x86
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-python/blinker[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
