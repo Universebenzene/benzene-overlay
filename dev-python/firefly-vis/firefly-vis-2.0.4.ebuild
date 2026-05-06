@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYPI_NO_NORMALIZE=1
 PYPI_PN="${PN^}"
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 pypi
 
@@ -15,8 +15,7 @@ HOMEPAGE="https://github.com/ageller/Firefly"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"	# bidict pytest-benchmark no x86
-RESTRICT="test"	# No usable test phases
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/h5py[${PYTHON_USEDEP}]
@@ -28,4 +27,4 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/abg-python-1.0.5[${PYTHON_USEDEP}]
 "
 
-#distutils_enable_tests nose
+distutils_enable_tests import-check
