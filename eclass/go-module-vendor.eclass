@@ -65,7 +65,7 @@ _GO_MODULE_ECLASS=1
 inherit edo toolchain-funcs go-env
 
 if [[ ! ${GO_OPTIONAL} ]]; then
-	BDEPEND=">=dev-lang/go-1.20:="
+	BDEPEND=">=dev-lang/go-1.24.11:="
 
 	# Workaround for pkgcheck false positive: https://github.com/pkgcore/pkgcheck/issues/214
 	# MissingUnpackerDep: version ...: missing BDEPEND="app-arch/unzip"
