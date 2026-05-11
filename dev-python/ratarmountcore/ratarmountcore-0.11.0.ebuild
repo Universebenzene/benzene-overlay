@@ -46,6 +46,18 @@ SRC_URI+=" test? (
 		${GIT_TEST_URI}/tar-with-300-folders-with-1000-files-0B-files.tar.bz2 -> ${P}-t-tar-with-300-folders-with-1000-files-0B-files.tar.bz2
 		${GIT_TEST_URI}/two-large-files-32Ki-lines-each-1023B.7z -> ${P}-t-two-large-files-32Ki-lines-each-1023B.7z
 		${GIT_TEST_URI}/triple-compressed-nested-tar.tgz.tgz.gz -> ${P}-t-triple-compressed-nested-tar.tgz.tgz.gz
+		${GIT_TEST_URI}/ar-GNU.ar -> ${P}-t-ar-GNU.ar
+		${GIT_TEST_URI}/ar-bsdtar.ar -> ${P}-t-ar-bsdtar.ar
+		${GIT_TEST_URI}/ar-llvm-19-bsd.ar -> ${P}-t-ar-llvm-19-bsd.ar
+		${GIT_TEST_URI}/ar-llvm-19-coff.ar -> ${P}-t-ar-llvm-19-coff.ar
+		${GIT_TEST_URI}/ar-llvm-19-gnu.ar -> ${P}-t-ar-llvm-19-gnu.ar
+		${GIT_TEST_URI}/ar-llvm-19-darwin.ar -> ${P}-t-ar-llvm-19-darwin.ar
+		${GIT_TEST_URI}/ar-llvm-19-thin.ar -> ${P}-t-ar-llvm-19-thin.ar
+		${GIT_TEST_URI}/ar-GCC-main.a -> ${P}-t-ar-GCC-main.a
+		${GIT_TEST_URI}/ar-GNU-truncated.ar -> ${P}-t-ar-GNU-truncated.ar
+		${GIT_TEST_URI}/example.pdf -> ${P}-t-example.pdf
+		${GIT_TEST_URI}/testpkg_0.0.1_all.deb -> ${P}-t-testpkg_0.0.1_all.deb
+		${GIT_TEST_URI}/save_page_we.html -> ${P}-t-save_page_we.html
 		https://github.com/mxmlnkn/ratarmount/raw/core-v${PV}/core/tests/helpers.py -> ${P}-t-helpers.py
 	)
 "
@@ -53,8 +65,8 @@ SRC_URI+=" test? (
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+7z +bzip2 colors ext4 +fat fsspec fsspec-backends full full-ssh git +gzip lzo +rar sqlar squashfs +xz +zip +zstd"
-REQUIRED_USE="full? ( 7z bzip2 fat fsspec-backends git gzip rar squashfs xz zip zstd )"
+IUSE="+7z +bzip2 colors ext4 +fat fsspec fsspec-backends full full-ssh git +gzip lzo pdf +rar sqlar squashfs +xz +zip +zstd"
+REQUIRED_USE="full? ( 7z bzip2 fat fsspec-backends git gzip pdf rar squashfs xz zip zstd )"
 
 RDEPEND="sys-fs/fuse
 	7z? (
@@ -93,6 +105,10 @@ RDEPEND="sys-fs/fuse
 		>=dev-python/rapidgzip-0.15.0[${PYTHON_USEDEP}]
 	)
 	lzo? ( >=dev-python/python-lzo-1.0[${PYTHON_USEDEP}] )
+	pdf? (
+		dev-python/pypdf[${PYTHON_USEDEP}]
+		>=dev-python/pillow-8.0.0[${PYTHON_USEDEP}]
+	)
 	rar? ( >=dev-python/rarfile-4.0[${PYTHON_USEDEP}] )
 	sqlar? (
 		dev-python/cryptography[${PYTHON_USEDEP}]
@@ -118,6 +134,8 @@ BDEPEND="test? (
 		dev-python/indexed-zstd[${PYTHON_USEDEP}]
 		dev-python/python-xz[${PYTHON_USEDEP}]
 		dev-python/py7zr[${PYTHON_USEDEP}]
+		dev-python/pypdf[${PYTHON_USEDEP}]
+		dev-python/pillow[${PYTHON_USEDEP}]
 		dev-python/cryptography[${PYTHON_USEDEP}]
 		dev-python/sqlcipher3[${PYTHON_USEDEP}]
 		dev-python/rapidgzip[${PYTHON_USEDEP}]
