@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
-#PYPI_VERIFY_REPO=https://github.com/Eeems/python-ext4
+PYPI_VERIFY_REPO=https://github.com/Eeems/python-ext4
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
