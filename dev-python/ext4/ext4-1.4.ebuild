@@ -25,7 +25,7 @@ IUSE="test"
 PROPERTIES="test? ( interactive )"
 RESTRICT="!test? ( test )"
 
-RDEPEND=">=dev-python/cachetools-6.0.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/cachetools-7.1.1[${PYTHON_USEDEP}]
 	>=dev-python/crcmod-1.7[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/typing-extensions-4.15.0[${PYTHON_USEDEP}] ' python3_11)
 "
@@ -53,7 +53,7 @@ src_test() {
 	ewarn "# cd ${S}"
 	ewarn "# bash "${DISTDIR}"/${P}-test-image.sh"
 	ewarn
-	read -p "   Press ENTER after executing those commands above... " -t 40 IMAGES || die "Please run the test-image script before testing"
+	read -p "   Press ENTER after executing those commands above... " -t 60 IMAGES || die "Please run the test-image script before testing"
 	distutils-r1_src_test
 }
 
