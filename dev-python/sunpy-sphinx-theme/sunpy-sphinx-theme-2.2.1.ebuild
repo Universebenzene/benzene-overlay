@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/sphinx-7.3.0[${PYTHON_USEDEP}]
 	dev-python/pydata-sphinx-theme[${PYTHON_USEDEP}]
+	>=dev-python/sphinxext-opengraph-0.13[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-6.2[$PYTHON_USEDEP]"
 

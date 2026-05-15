@@ -72,6 +72,6 @@ dev-python/spherical-geometry  | 1.4.0                                          
 dev-python/starlink-pyast      | 4.0.1                                                | Starlink WCS library for ginga
 dev-python/sunpy               | 5.1.5; 6.1.1; 7.1.2                                  | Doc building is really hard to run, so not supported right now.
 dev-python/synphot             | 1.7.0                                                |
-dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.1.1                                 |
+dev-python/sunpy-sphinx-theme  | 1.2.42; 2.0.2; 2.2.1                                 |
 
 <!--dev-python/montage-wrapper     | 0.9.9                                                |-->
