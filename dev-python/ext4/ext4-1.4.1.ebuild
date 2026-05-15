@@ -53,7 +53,7 @@ src_test() {
 	ewarn "# cd ${S}"
 	ewarn "# bash "${DISTDIR}"/${P}-test-image.sh"
 	ewarn
-	read -p "   Press ENTER after executing those commands above... " -t 60 IMAGES || die "Please run the test-image script before testing"
+	read -p "   Press ENTER after executing those commands above... " -t 60 || die "Please run the test-image script before testing"
 	distutils-r1_src_test
 }
 
