@@ -64,5 +64,5 @@ python_install_all() {
 }
 
 python_test() {
-	epytest -o tmp_path_retention_policy=all -Wignore
+	epytest -o tmp_path_retention_policy=all #-Wignore
 }
