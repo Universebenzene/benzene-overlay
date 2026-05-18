@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,7 +15,7 @@ SRC_URI="standard? ( ${SRC_COM}/${PN}-full.jar -> ${P}-full.jar )
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86" #~amd64-linux ~x86-linux"
 IUSE="+standard extra"
 REQUIRED_USE="^^ ( standard extra )"
 
