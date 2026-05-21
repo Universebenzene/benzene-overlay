@@ -64,12 +64,14 @@ BDEPEND=">=dev-python/cython-3.0.0[${PYTHON_USEDEP}]
 		virtual/opengl
 	)
 	test? (
-		dev-python/imageio[${PYTHON_USEDEP}]
 		dev-python/meshio[${PYTHON_USEDEP}]
 		dev-python/networkx[${PYTHON_USEDEP}]
 		dev-python/numpydoc[${PYTHON_USEDEP}]
 		dev-python/pyopengl[${PYTHON_USEDEP}]
-		dev-python/pyqt5[${PYTHON_USEDEP},gui,testlib,widgets]
+		|| (
+			dev-python/pyqt6[${PYTHON_USEDEP},gui,testlib,widgets]
+			dev-python/pyqt5[${PYTHON_USEDEP},gui,testlib,widgets]
+		)
 		dev-python/scipy[${PYTHON_USEDEP}]
 		dev-python/sphinx-gallery[${PYTHON_USEDEP}]
 		media-libs/fontconfig
