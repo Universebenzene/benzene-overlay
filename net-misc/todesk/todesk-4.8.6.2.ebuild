@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -9,7 +9,7 @@ MY_P="${PN}-v${PV}"
 
 DESCRIPTION="Remote control and team work"
 HOMEPAGE="https://www.todesk.com"
-SRC_URI="amd64? ( https://dl.todesk.com/linux/${MY_P}-amd64.deb )"
+SRC_URI="amd64? ( https://web.archive.org/web/20260329112316/https://dl.todesk.com/linux/${MY_P}-amd64.deb )"
 
 RESTRICT="mirror"
 LICENSE="ToDesk"
@@ -35,13 +35,13 @@ src_install() {
 
 	exeinto /opt/${PN}/bin
 	use keep-server && { dosym -r /usr/bin/sleep /opt/${PN}/bin/${PN}-hold ; \
-		newexe {"${FILESDIR}"/${PV}-,}starthold-todeskd-systemd ; \
-		newexe {"${FILESDIR}"/${PV}-,}systemd-todeskd ; \
+		newexe {"${FILESDIR}"/4.8.1.0-,}starthold-todeskd-systemd ; \
+		newexe {"${FILESDIR}"/4.8.1.0-,}systemd-todeskd ; \
 		doexe "${FILESDIR}"/stophold-todeskd-systemd ;
 	}
 
 	newinitd "${FILESDIR}"/$(usex keep-server "${PN}d-alone-4.3.0.0.initd" "${PN}d-4.3.0.0.initd") ${PN}d
-	use keep-server && systemd_newunit "${FILESDIR}"/${PV}-${PN}d-keep.service ${PN}d.service || \
+	use keep-server && systemd_newunit "${FILESDIR}"/4.8.1.0-${PN}d-keep.service ${PN}d.service || \
 		systemd_dounit etc/systemd/system/${PN}d.service
 
 	exeinto /opt/bin
