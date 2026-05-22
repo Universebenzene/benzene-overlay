@@ -1075,6 +1075,11 @@ source = "repology"
 repology = "python:pyqt5"
 repo = "gentoo"
 
+["dev-python/pyqt5-sip"]
+source = "archpkg"
+repology = "python-pyqt5-sip"
+strip_release = true
+
 ["dev-python/pyregion"]
 source = "pypi"
 use_max_tag = true
