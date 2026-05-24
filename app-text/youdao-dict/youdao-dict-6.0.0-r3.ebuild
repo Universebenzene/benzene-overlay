@@ -21,7 +21,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 DEPEND=""
 RDEPEND="${DEPEND}
 	x11-themes/hicolor-icon-theme
-	dev-python/pyqt5[${PYTHON_USEDEP},webkit,declarative]
+	dev-python/pyqt5[${PYTHON_USEDEP},declarative,multimedia,webkit]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/python-xlib[${PYTHON_USEDEP}]
 	dev-python/pygobject[${PYTHON_USEDEP}]
