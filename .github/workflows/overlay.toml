@@ -1476,6 +1476,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "sphinxcontrib-globalsubs"
 
+["dev-python/sphinxcontrib-googleanalytics"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinxcontrib-googleanalytics"
+
 ["dev-python/sphinxcontrib-srclinks"]
 source = "pypi"
 use_max_tag = true

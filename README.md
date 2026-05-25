@@ -221,48 +221,49 @@ dev-python/zict                    | 2.2.0; 3.0.0                               
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-dev-python/sphinx                       | 5.1.1; 7.1.2                    | 5 for old myst-parser and myst-nb; 7.1 for glue-qt doc <!-- sphinx>=6 <- copybutton <-doc- sphinx-thebe -doc-> myst-nb -> myst-parser(oldver needs sphinx<6) -->
-dev-python/ablog                        | 0.11.13                         |
-dev-python/autodocsumm                  | 0.2.15                          |
-dev-python/jupyter-cache                | 0.6.1; 1.0.1                    |
-dev-python/jupyter-sphinx               | 0.5.3                           |
-dev-python/jupytext                     | 1.19.3                          | Build with wheel source to include Jupyter Lab Extenstion
-dev-python/myst-nb                      | 0.17.2; 1.4.0                   |
-dev-python/myst-parser                  | 0.18.1-r1                       | Only for myst-nb that depends on old version
-dev-python/runnotebook                  | 0.3.1; (live)                   |
-dev-python/sphinx-astropy               | 1.11                            | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
-dev-python/sphinx-asdf                  | 0.1.3; 0.1.4; 0.3.0; 0.4.0      |
-dev-python/sphinx-autobuild             | 2021.3.14; 2024.4.16; 2025.8.25 |
-dev-python/sphinx-autosummary-accessors | 2025.3.1                        |
-dev-python/sphinx-book-theme            | 1.0.1; 1.2.0                    | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
-dev-python/sphinx-changelog             | 1.6.0                           |
-dev-python/sphinx-click                 | 6.0.0; 6.2.0                    |
-dev-python/sphinx-codeautolink          | 0.18.1                          |
-dev-python/sphinx-collections           | 0.3.1                           | Doc building and testing behave strangly in sandbox (can't find sphinx plugins), so can't complete while merging
-dev-python/sphinx-design                | 0.7.0                           |
-dev-python/sphinx-documatt-theme        | 0.0.6                           |
-dev-python/sphinx-documattcom-theme     | 1.1.1                           |
-dev-python/sphinx-examples              | 0.0.5                           |
-dev-python/sphinx-hoverxref             | 1.5.0                           |
-dev-python/sphinx-readable-theme        | 1.3.0                           |
-dev-python/sphinx-remove-toctrees       | 1.0.0\_p1                       |
-dev-python/sphinx-thebe                 | 0.2.1; 0.3.1                    |
-dev-python/sphinx-togglebutton          | 0.4.5                           |
-dev-python/sphinx-contributors          | 0.3.0                           |
-dev-python/sphinx-last-updated-by-git   | 0.3.8                           | Required by new sphinx-sitemap
-dev-python/sphinx-mdinclude             | 0.6.2                           |
-dev-python/sphinx-reredirects           | 1.0.0; 1.1.0                    |
-dev-python/sphinx-sitemap               | 2.6.0; 2.9.0                    |
-dev-python/sphinx-py3doc-enhanced-theme | 2.4.0                           |
-dev-python/sphinxcontrib-globalsubs     | 0.1.2; 1.1.0                    |
-dev-python/sphinxcontrib-srclink        | 0.2.4                           |
-dev-python/sphinxcontrib-youtube        | 1.2.0; 1.5.0                    | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
-dev-python/sphinxext-opengraph          | 0.13.0                          |
-dev-python/dask-sphinx-theme            | 4.0.0                           |
-dev-python/sunpy-sphinx-theme           | 1.2.42; 2.0.2; 2.2.2            |
-dev-python/pydata-sphinx-theme          | 0.13.3-r1                       | Old version dropped by official portage, required by sunpy-sphinx-theme
-dev-python/mistune                      | 0.8.4-r1; 2.0.5                 | For sphinx-asdf and sphinx-mdinclude that depend on old version
-dev-python/nbconvert                    | 6.4.5                           | Depends on old mistune
+dev-python/sphinx                        | 5.1.1; 7.1.2                    | 5 for old myst-parser and myst-nb; 7.1 for glue-qt doc <!-- sphinx>=6 <- copybutton <-doc- sphinx-thebe -doc-> myst-nb -> myst-parser(oldver needs sphinx<6) -->
+dev-python/ablog                         | 0.11.13                         |
+dev-python/autodocsumm                   | 0.2.15                          |
+dev-python/jupyter-cache                 | 0.6.1; 1.0.1                    |
+dev-python/jupyter-sphinx                | 0.5.3                           |
+dev-python/jupytext                      | 1.19.3                          | Build with wheel source to include Jupyter Lab Extenstion
+dev-python/myst-nb                       | 0.17.2; 1.4.0                   |
+dev-python/myst-parser                   | 0.18.1-r1                       | Only for myst-nb that depends on old version
+dev-python/runnotebook                   | 0.3.1; (live)                   |
+dev-python/sphinx-astropy                | 1.11                            | See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python#information-for-astropy-related-packages) for more information.
+dev-python/sphinx-asdf                   | 0.1.3; 0.1.4; 0.3.0; 0.4.0      |
+dev-python/sphinx-autobuild              | 2021.3.14; 2024.4.16; 2025.8.25 |
+dev-python/sphinx-autosummary-accessors  | 2025.3.1                        |
+dev-python/sphinx-book-theme             | 1.0.1; 1.2.0                    | `network-sandbox` FEATURE will be disabled if you enable `doc` flag for newest version.
+dev-python/sphinx-changelog              | 1.6.0                           |
+dev-python/sphinx-click                  | 6.0.0; 6.2.0                    |
+dev-python/sphinx-codeautolink           | 0.18.1                          |
+dev-python/sphinx-collections            | 0.3.1                           | Doc building and testing behave strangly in sandbox (can't find sphinx plugins), so can't complete while merging
+dev-python/sphinx-design                 | 0.7.0                           |
+dev-python/sphinx-documatt-theme         | 0.0.6                           |
+dev-python/sphinx-documattcom-theme      | 1.1.1                           |
+dev-python/sphinx-examples               | 0.0.5                           |
+dev-python/sphinx-hoverxref              | 1.5.0                           |
+dev-python/sphinx-readable-theme         | 1.3.0                           |
+dev-python/sphinx-remove-toctrees        | 1.0.0\_p1                       |
+dev-python/sphinx-thebe                  | 0.2.1; 0.3.1                    |
+dev-python/sphinx-togglebutton           | 0.4.5                           |
+dev-python/sphinx-contributors           | 0.3.0                           |
+dev-python/sphinx-last-updated-by-git    | 0.3.8                           | Required by new sphinx-sitemap
+dev-python/sphinx-mdinclude              | 0.6.2                           |
+dev-python/sphinx-reredirects            | 1.0.0; 1.1.0                    |
+dev-python/sphinx-sitemap                | 2.6.0; 2.9.0                    |
+dev-python/sphinx-py3doc-enhanced-theme  | 2.4.0                           |
+dev-python/sphinxcontrib-globalsubs      | 0.1.2; 1.1.0                    |
+dev-python/sphinxcontrib-googleanalytics | 0.5                             |
+dev-python/sphinxcontrib-srclink         | 0.2.4                           |
+dev-python/sphinxcontrib-youtube         | 1.2.0; 1.5.0                    | `network-sandbox` FEATURE will be disabled if you enable demo videos for doc building in version 1.2.0.
+dev-python/sphinxext-opengraph           | 0.13.0                          |
+dev-python/dask-sphinx-theme             | 4.0.0                           |
+dev-python/sunpy-sphinx-theme            | 1.2.42; 2.0.2; 2.2.2            |
+dev-python/pydata-sphinx-theme           | 0.13.3-r1                       | Old version dropped by official portage, required by sunpy-sphinx-theme
+dev-python/mistune                       | 0.8.4-r1; 2.0.5                 | For sphinx-asdf and sphinx-mdinclude that depend on old version
+dev-python/nbconvert                     | 6.4.5                           | Depends on old mistune
 
 <!--</details>-->
 
