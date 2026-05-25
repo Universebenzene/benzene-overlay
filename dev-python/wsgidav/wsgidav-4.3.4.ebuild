@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,9 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-python/defusedxml[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/bcrypt-4.0[${PYTHON_USEDEP}]
+	dev-python/defusedxml[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/json5[${PYTHON_USEDEP}]
+	dev-python/passlib[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
 
@@ -31,4 +33,6 @@ BDEPEND="test? (
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-distutils_enable_sphinx docs/source dev-python/furo
+distutils_enable_sphinx docs/source dev-python/sphinxcontrib-googleanalytics \
+	dev-python/sphinxcontrib-mermaid \
+	dev-python/furo
