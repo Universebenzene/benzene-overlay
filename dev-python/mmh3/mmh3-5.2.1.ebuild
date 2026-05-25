@@ -6,8 +6,8 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/hajimes/mmh3
-PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
-#PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
+PYTHON_COMPAT=( python3_{{11..15},{13..15}t} )
+#PYTHON_COMPAT=( python3_{{11..12},{13..15}{,t}} )
 
 inherit distutils-r1 pypi
 
