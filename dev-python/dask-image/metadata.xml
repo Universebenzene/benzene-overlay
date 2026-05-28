@@ -9,4 +9,7 @@
 		<remote-id type="pypi">dask-image</remote-id>
 		<remote-id type="github">dask/dask-image</remote-id>
 	</upstream>
+	<use>
+		<flag name="dataframe">Optional datafram support</flag>
+	</use>
 </pkgmetadata>
