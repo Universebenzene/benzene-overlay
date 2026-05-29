@@ -29,6 +29,7 @@ RDEPEND="
 	sys-libs/readline:=
 	virtual/zlib:=
 	x11-libs/libX11
+	eigen? ( dev-cpp/eigen:= )
 	fftw? ( sci-libs/fftw:3.0= )
 	glpk? ( sci-mathematics/glpk:= )
 	gshhs? (
@@ -57,9 +58,7 @@ RDEPEND="
 	udunits? ( sci-libs/udunits )
 	wxwidgets? ( x11-libs/wxGTK:${WX_GTK_VER}=[X] )
 "
-DEPEND="${RDEPEND}
-	eigen? ( dev-cpp/eigen:3 )
-"
+DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
 	python? ( app-admin/chrpath )
