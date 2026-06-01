@@ -1,0 +1,28 @@
+# Copyright 2023-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=hatchling
+PYPI_VERIFY_REPO=https://github.com/syrupy-project/syrupy
+PYTHON_COMPAT=( python3_{11..14} )
+
+inherit distutils-r1 pypi
+
+DESCRIPTION="Pytest Snapshot Test Utility"
+HOMEPAGE="https://tophat.github.io/syrupy"
+
+LICENSE="Apache-2.0"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+
+RDEPEND=">=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]"
+BDEPEND="test? (
+		dev-python/attrs[${PYTHON_USEDEP}]
+		dev-python/pydantic[${PYTHON_USEDEP}]
+	)
+"
+
+EPYTEST_PLUGIN_LOAD_VIA_ENV=1
+EPYTEST_PLUGINS=( "${PN}" hypothesis pytest-xdist )
+distutils_enable_tests pytest
