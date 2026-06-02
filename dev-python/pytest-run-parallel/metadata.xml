@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		This pytest plugin takes a set of tests that would be normally be run serially
+		and execute them in parallel.
+		The main goal of pytest-run-parallel is to discover thread-safety issues that
+		could exist when using C libraries, this is of vital importance after PEP703,
+		which provides a path for a CPython implementation without depending on the
+		Global Interpreter Lock (GIL), thus allowing for proper parallelism in programs
+		that make use of the CPython interpreter.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pytest-run-parallel</remote-id>
+		<remote-id type="github">Quansight-Labs/pytest-run-parallel</remote-id>
+	</upstream>
+	<use>
+		<flag name="psutil">Identifying the number of logical cores available to the testing process via <pkg>dev-python/psutil</pkg></flag>
+	</use>
+</pkgmetadata>
