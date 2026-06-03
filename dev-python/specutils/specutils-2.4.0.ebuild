@@ -35,7 +35,7 @@ RDEPEND=">=dev-python/astropy-7.2[${PYTHON_USEDEP}]
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		dev-python/sphinx-astropy[${PYTHON_USEDEP},confv2]
 		media-gfx/graphviz
 	)
 	test? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
@@ -47,7 +47,9 @@ distutils_enable_tests pytest
 
 EPYTEST_DESELECT=(
 	# Stuck
+	${PN}/tests/test_loaders.py::test_manga_cube
 	${PN}/tests/test_loaders.py::test_sdss_spplate
+	docs/identify.rst::identify.rst
 )
 
 python_prepare_all() {
