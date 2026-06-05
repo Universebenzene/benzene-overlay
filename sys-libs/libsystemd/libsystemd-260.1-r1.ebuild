@@ -34,7 +34,7 @@ LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/2"
 IUSE="
 	acl apparmor audit boot cryptsetup curl +dns-over-tls elfutils
-	fido2 +gcrypt gnutls homed idn importd +kernel-install +kmod +lz4 lzma
+	fido2 +gcrypt gnutls homed idn importd +kernel-install +kmod +lz4 lzma +libarchive
 	+openssl pam passwdqc pcre pkcs11 policykit pwquality qrcode remote
 	+resolvconf +seccomp selinux split-usr sysv-utils test tpm ukify vanilla xkb +zstd
 "
@@ -44,7 +44,7 @@ REQUIRED_USE="
 	dns-over-tls? ( openssl )
 	fido2? ( cryptsetup openssl )
 	homed? ( cryptsetup pam openssl )
-	importd? ( curl lzma openssl )
+	importd? ( curl libarchive lzma openssl )
 	?? ( passwdqc pwquality )
 	passwdqc? ( homed )
 	pwquality? ( homed )
@@ -83,6 +83,7 @@ COMMON_DEPEND="
 		virtual/zlib:=
 	)
 	kmod? ( >=sys-apps/kmod-15:0= )
+	libarchive? ( >=app-arch/libarchive-3.0:0= )
 	lz4? ( >=app-arch/lz4-0_p131:0= )
 	lzma? ( >=app-arch/xz-utils-5.0.5-r1:0= )
 	openssl? ( >=dev-libs/openssl-3.0.0:0= )
@@ -304,6 +305,7 @@ multilib_src_configure() {
 			$(meson_feature importd sysupdate)
 			$(meson_feature importd zlib)
 			$(meson_use kernel-install)
+			$(meson_native_use_feature libarchive)
 			$(meson_feature kmod)
 			$(meson_feature lz4)
 			$(meson_feature lzma xz)
