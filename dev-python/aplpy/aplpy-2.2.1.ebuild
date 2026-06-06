@@ -1,4 +1,4 @@
-# Copyright 2020-2025 Gentoo Authors
+# Copyright 2020-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
-inherit distutils-r1 optfeature pypi
+inherit distutils-r1 pypi
 
 DESCRIPTION="Astronomical Plotting Library in Python"
 HOMEPAGE="https://aplpy.github.com"
@@ -19,12 +19,12 @@ IUSE="doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
-	>=dev-python/astropy-5.0[${PYTHON_USEDEP}]
-	>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.23[${PYTHON_USEDEP}]
+	>=dev-python/astropy-7.0[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.8[${PYTHON_USEDEP}]
 	>=dev-python/reproject-0.9[${PYTHON_USEDEP}]
 	>=dev-python/pyregion-2.2[${PYTHON_USEDEP}]
-	>=dev-python/pillow-9.0[${PYTHON_USEDEP}]
+	>=dev-python/pillow-9.2[${PYTHON_USEDEP}]
 	>=dev-python/pyavm-0.9.6[${PYTHON_USEDEP}]
 	>=dev-python/shapely-2.0[${PYTHON_USEDEP}]
 	>=dev-python/scikit-image-0.20[${PYTHON_USEDEP}]
