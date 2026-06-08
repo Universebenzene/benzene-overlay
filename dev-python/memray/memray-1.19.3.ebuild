@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 pypi
 
@@ -15,7 +15,6 @@ SRC_URI="https://github.com/bloomberg/memray/archive/refs/tags/v${PV}.tar.gz -> 
 	$(python_gen_useflags python3_14)? ( $(pypi_wheel_url ${PN} ${PV} "cp314" "cp314-manylinux2014_x86_64.manylinux_2_17_x86_64") )
 	$(python_gen_useflags python3_13)? ( $(pypi_wheel_url ${PN} ${PV} "cp313" "cp313-manylinux2014_x86_64.manylinux_2_17_x86_64") )
 	$(python_gen_useflags python3_12)? ( $(pypi_wheel_url ${PN} ${PV} "cp312" "cp312-manylinux2014_x86_64.manylinux_2_17_x86_64") )
-	$(python_gen_useflags python3_11)? ( $(pypi_wheel_url ${PN} ${PV} "cp311" "cp311-manylinux2014_x86_64.manylinux_2_17_x86_64") )
 "
 #	$(python_gen_useflags python3_10)? ( $(pypi_wheel_url ${PN} ${PV} "cp310" "cp310-manylinux_2_12_x86_64.manylinux2010_x86_64") )
 
@@ -67,9 +66,6 @@ python_compile() {
 	elif use $(python_gen_useflags python3_12); then
 		local _pytag="cp312"
 		local _abitag="cp312-manylinux2014_x86_64.manylinux_2_17_x86_64"
-	elif use $(python_gen_useflags python3_11); then
-		local _pytag="cp311"
-		local _abitag="cp311-manylinux2014_x86_64.manylinux_2_17_x86_64"
 	#elif use $(python_gen_useflags python3_10); then
 	#	local _pytag="cp310"
 	#	local _abitag="cp310-manylinux_2_12_x86_64.manylinux2010_x86_64"
