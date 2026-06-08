@@ -20,7 +20,7 @@ RESTRICT="test
 	intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/astropy-4.2[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/astropy-5.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	all? (
 		dev-python/defusedxml[${PYTHON_USEDEP}]
@@ -39,7 +39,8 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,remotedata} )
+EPYTEST_PLUGINS=( pytest-{astropy{,-header},doctestplus,remotedata} )
+: ${EPYTEST_TIMEOUT:=30}
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
@@ -52,17 +53,5 @@ python_compile_all() {
 }
 
 python_test() {
-	epytest --remote-data
+	epytest --remote-data --run-slow -Werror::astropy.utils.exceptions.AstropyDeprecationWarning
 }
-
-EPYTEST_DESELECT=(
-	# Costs time
-	pyvo/discover/tests/test_imagediscovery.py::test_single_sia1
-	pyvo/discover/tests/test_imagediscovery.py::test_cone_and_spectral_point
-	pyvo/discover/tests/test_imagediscovery.py::test_servedby_elision
-	pyvo/discover/tests/test_imagediscovery.py::test_access_url_elision
-	pyvo/discover/tests/test_imagediscovery.py::test_cancelling
-	docs/registry/index.rst::index.rst
-	docs/dal/index.rst::index.rst
-	docs/index.rst::index.rst
-)
