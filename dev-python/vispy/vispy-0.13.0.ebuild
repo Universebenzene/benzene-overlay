@@ -1,11 +1,11 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 DATA_COM="5a3db8447d3e13ed402545662f20f5ff191a6d42"
 DATA_DATE="20190506"
