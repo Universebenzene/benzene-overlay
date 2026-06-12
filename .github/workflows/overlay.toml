@@ -1568,10 +1568,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "toml"
 
-["dev-python/tree-sitter-languages"]
-source = "pypi"
-use_max_tag = true
-pypi = "tree-sitter-languages"
+#["dev-python/tree-sitter-languages"]
+#source = "pypi"
+#use_max_tag = true
+#pypi = "tree-sitter-languages"
 
 ["dev-python/typing-validation"]
 source = "pypi"
