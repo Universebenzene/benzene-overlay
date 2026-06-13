@@ -575,6 +575,11 @@ source = "archpkg"
 archpkg = "python-fluidity"
 strip_release = true
 
+["dev-python/fs"]
+source = "archpkg"
+archpkg = "python-fs"
+strip_release = true
+
 ["dev-python/fusepy"]
 source = "pypi"
 use_max_tag = true
