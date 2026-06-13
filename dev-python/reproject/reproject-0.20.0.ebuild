@@ -1,10 +1,11 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/astropy/reproject
 PYTHON_COMPAT=( python3_{11..13} )
 
 TMASS_IM_URI="https://irsa.ipac.caltech.edu:443/cgi-bin/2MASS/IM"
@@ -51,10 +52,10 @@ RDEPEND="${DEPEND}
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.1[${PYTHON_USEDEP}]
-	>=dev-python/extension-helpers-1[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		dev-python/sphinx-astropy[${PYTHON_USEDEP},confv2]
 		dev-python/pyvo[${PYTHON_USEDEP}]
 	)
 	test? (
