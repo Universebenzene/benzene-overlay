@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 #pypi
 
@@ -25,10 +25,9 @@ RDEPEND=">=app-arch/brotli-1.2.0[python,${PYTHON_USEDEP}]
 	>=dev-python/pybcj-1.0.6[${PYTHON_USEDEP}]
 	>=dev-python/pycryptodomex-3.20.0[${PYTHON_USEDEP}]
 	dev-python/pyppmd[${PYTHON_USEDEP}]
-	>=dev-python/backports-zstd-1.0.0[${PYTHON_USEDEP}]
 	dev-python/texttable[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '>=dev-python/backports-zstd-1.0.0[${PYTHON_USEDEP}]' python3_{11..13})
 "
-#	$(python_gen_cond_dep '>=dev-python/backports-zstd-1.0.0[${PYTHON_USEDEP}]' python3_{11..13})
 BDEPEND=">=dev-python/setuptools-scm-9.2.0[${PYTHON_USEDEP}]
 	test? (
 		app-arch/p7zip
