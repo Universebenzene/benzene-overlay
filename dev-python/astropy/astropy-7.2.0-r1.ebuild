@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -13,7 +13,8 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Core functionality for performing astrophysics with Python"
 HOMEPAGE="https://astropy.org"
-SRC_URI+=" doc? (
+SRC_URI+=" https://github.com/astropy/astropy/commit/26ec157c57f1bb9468f992466cf886b6f0eb556a.patch -> ${PF}-fix-redefined.patch
+	doc? (
 		${DATA_URI}/tutorials/FITS-Header/input_file.fits -> ${PN}-eo-input_file.fits
 		${DATA_URI}/tutorials/FITS-images/HorseHead.fits -> ${PN}-eo-HorseHead.fits
 		${DATA_URI}/tutorials/FITS-tables/chandra_events.fits -> ${PN}-eo-chandra_events.fits
@@ -99,7 +100,10 @@ BDEPEND=">=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
 	)
 "
 
-PATCHES=( "${FILESDIR}/${PN}-6.0.0-system-configobj.patch" )
+PATCHES=(
+	"${FILESDIR}/${PN}-6.0.0-system-configobj.patch"
+	"${DISTDIR}/${PF}-fix-redefined.patch"
+)
 #	"${FILESDIR}/${PN}-6.0.0-system-ply.patch"
 
 # TODO: Fix this
