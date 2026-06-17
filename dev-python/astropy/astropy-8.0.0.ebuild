@@ -5,6 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/astropy/astropy
 PYTHON_COMPAT=( python3_{11..13} )
 
 DATA_URI="http://www.astropy.org/astropy-data"
@@ -13,8 +14,7 @@ inherit distutils-r1 optfeature pypi
 
 DESCRIPTION="Core functionality for performing astrophysics with Python"
 HOMEPAGE="https://astropy.org"
-SRC_URI+=" https://github.com/astropy/astropy/commit/26ec157c57f1bb9468f992466cf886b6f0eb556a.patch -> ${PF}-fix-redefined.patch
-	doc? (
+SRC_URI+=" doc? (
 		${DATA_URI}/tutorials/FITS-Header/input_file.fits -> ${PN}-eo-input_file.fits
 		${DATA_URI}/tutorials/FITS-images/HorseHead.fits -> ${PN}-eo-HorseHead.fits
 		${DATA_URI}/tutorials/FITS-tables/chandra_events.fits -> ${PN}-eo-chandra_events.fits
@@ -41,22 +41,22 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-libs/expat-2.7.3:0=
 	>=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]
-	>=dev-python/pyerfa-2.0.1.1[${PYTHON_USEDEP}]
+	>=dev-python/pyerfa-2.0.1.3[${PYTHON_USEDEP}]
 	>=sci-astronomy/erfa-2.0:0=
 	>=sci-astronomy/wcslib-8.3:0=
-	>=sci-libs/cfitsio-4.6.3:0=
+	>=sci-libs/cfitsio-4.6.4:0=
 	virtual/zlib:=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2025.10.27.0.39.10[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2026.6.1.17.39.59[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
-	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
+	>=dev-python/packaging-25.0[${PYTHON_USEDEP}]
 	recommended? (
-		>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.8.4[${PYTHON_USEDEP}]
 		>=dev-python/narwhals-1.42.0[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.9.2[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.13[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND=">=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
@@ -65,6 +65,7 @@ BDEPEND=">=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
+		<dev-python/sphinx-9[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-astropy-1.9.1[${PYTHON_USEDEP},confv2]
 		>=dev-python/sphinx-changelog-1.2.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-design-0.6.1[${PYTHON_USEDEP}]
@@ -100,10 +101,7 @@ BDEPEND=">=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}/${PN}-6.0.0-system-configobj.patch"
-	"${DISTDIR}/${PF}-fix-redefined.patch"
-)
+PATCHES=( "${FILESDIR}/${PN}-6.0.0-system-configobj.patch" )
 #	"${FILESDIR}/${PN}-6.0.0-system-ply.patch"
 
 # TODO: Fix this
@@ -158,7 +156,7 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "power a variety of features in several modules" ">=dev-python/scipy-1.9.2"
+	optfeature "power a variety of features in several modules" ">=dev-python/scipy-1.13"
 	optfeature "read/write Table objects from/to HDF5 files" dev-python/h5py
 	optfeature "read Table objects from HTML files" dev-python/beautifulsoup4
 	optfeature "read Table objects from HTML files using the pandas reader" dev-python/html5lib
@@ -174,7 +172,7 @@ default indexing engine" dev-python/sortedcontainers
 	optfeature "discovery of entry points which are used to insert fitters into astropy.modeling.fitting" dev-python/setuptools
 	optfeature "the ‘kraft-burrows-nousek’ interval in poisson_conf_interval" dev-python/mpmath
 	optfeature "Enables the serialization of various Astropy classes into a portable, hierarchical, human-readable \
-representation" ">=dev-python/asdf-astropy-0.3"
+representation" ">=dev-python/asdf-astropy-0.7.0"
 	optfeature "Improves the performance of sigma-clipping and other functionality that may require computing statistics \
 on arrays with NaN values." dev-python/bottleneck
 	optfeature "downloading files from HTTPS or FTP+TLS sites in case Python is not able to locate up-to-date root CA \
@@ -188,6 +186,6 @@ the requests package)." dev-python/certifi
 	optfeature "automate testing and documentation builds" dev-python/tox
 	optfeature "testing Solar System coordinates" dev-python/skyfield
 	optfeature "testing satellite positions" dev-python/sgp4
-	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-14.0.2[parquet,snappy]"
+	optfeature "reading/writing Table objects from/to Parquet files." ">=dev-python/pyarrow-16.0[parquet,snappy]"
 	optfeature "supports on-the-fly decompression of LZW-compressed files (typically “.Z” extension)" ">=dev-python/uncompresspy-0.4.0"
 }
