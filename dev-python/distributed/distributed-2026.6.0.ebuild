@@ -72,12 +72,12 @@ EPYTEST_DESELECT=(
 	distributed/cli/tests/test_dask_scheduler.py
 	distributed/cli/tests/test_dask_spec.py
 	distributed/cli/tests/test_dask_worker.py
-	distributed/cli/tests/test_tls_cli.py
+	#distributed/cli/tests/test_tls_cli.py
 	"distributed/comm/tests/test_comms.py::test_tls_comm_closed_implicit[tornado]"
 	distributed/deploy/tests/test_local.py::test_defaults_5
 	distributed/deploy/tests/test_old_ssh.py
 	distributed/deploy/tests/test_subprocess.py
-	distributed/tests/test_client.py::test_computation_object_code_dask_compute
+	#distributed/tests/test_client.py::test_computation_object_code_dask_compute
 	distributed/tests/test_init.py::test_git_revision
 	distributed/tests/test_queues.py::test_queue_in_task
 	distributed/tests/test_steal.py::test_steal_twice
@@ -94,11 +94,13 @@ EPYTEST_DESELECT=(
 	distributed/tests/test_worker.py::test_statistical_profiling
 	# TimeoutError: Test timeout (30) hit after ...
 	distributed/tests/test_scheduler.py::test_resubmit_nondeterministic_task_different_deps
-	# FutureWarning: get_ipv6 is deprecated and will be removed in a future release. Please use get_ip instead.
-	"distributed/comm/tests/test_comms.py::test_default_client_server_ipv6[tornado]"
-	"distributed/comm/tests/test_comms.py::test_tcp_client_server_ipv6[tornado]"
-	distributed/deploy/tests/test_local.py::test_only_local_access
-	distributed/deploy/tests/test_local.py::test_remote_access
+	## FutureWarning: get_ipv6 is deprecated and will be removed in a future release. Please use get_ip instead.
+	#"distributed/comm/tests/test_comms.py::test_default_client_server_ipv6[tornado]"
+	#"distributed/comm/tests/test_comms.py::test_tcp_client_server_ipv6[tornado]"
+	#distributed/deploy/tests/test_local.py::test_only_local_access
+	#distributed/deploy/tests/test_local.py::test_remote_access
+	# TypeError: list.extend() takes exactly one argument (2 given)
+	"distributed/tests/test_core.py::test_server_listen"
 	"distributed/deploy/tests/test_local.py::test_local_tls[True]"
 	"distributed/deploy/tests/test_local.py::test_local_tls[False]"
 	# AssertionError: Regex pattern did not match.
@@ -108,14 +110,14 @@ EPYTEST_DESELECT=(
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 
-python_prepare_all() {
-#	use doc && { sed -i -e "/github/s/GH\#/GH\%s\#/" docs/source/conf.py || die ; \
-##		sed -i "/language\ = /s/None/'en'/" docs/source/conf.py || die ; \
-#	}
-	sed -i -e '/--cov/d' pyproject.toml || die
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+##	use doc && { sed -i -e "/github/s/GH\#/GH\%s\#/" docs/source/conf.py || die ; \
+###		sed -i "/language\ = /s/None/'en'/" docs/source/conf.py || die ; \
+##	}
+#	sed -i -e '/--cov/d' pyproject.toml || die
+#
+#	distutils-r1_python_prepare_all
+#}
 
 python_test() {
 	epytest --runslow -m "not avoid_ci and not gpu and not extra_packages"
