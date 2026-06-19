@@ -4,6 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/sunpy/drms
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 pypi
@@ -20,12 +21,11 @@ RESTRICT="test
 	examples? ( network-sandbox )"
 REQUIRED_USE="examples? ( doc )"
 
-RDEPEND=">=dev-python/numpy-1.23.5[${PYTHON_USEDEP}]
-	>=dev-python/pandas-1.5.1[${PYTHON_USEDEP}]
-	>=dev-python/packaging-23.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.2.0[${PYTHON_USEDEP}]
 "
 
-BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? ( dev-python/astropy[${PYTHON_USEDEP}] )
 "
