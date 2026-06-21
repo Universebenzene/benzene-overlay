@@ -68,7 +68,7 @@ COMMON_DEPEND="
 		>=sys-libs/libxcrypt-4.4.0
 	)
 	elibc_musl? (
-		>=sys-libs/musl-1.2.5-r8
+		>=sys-libs/musl-1.2.6
 		virtual/libcrypt
 	)
 	fido2? (
