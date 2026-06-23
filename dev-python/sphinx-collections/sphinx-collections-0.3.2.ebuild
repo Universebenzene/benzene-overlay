@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,6 +15,8 @@ SRC_URI="https://github.com/useblocks/sphinx-collections/archive/refs/tags/${PV}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+PROPERTIES="test_network"
+RESTRICT="test"
 
 RDEPEND=">=dev-python/sphinx-4.0[${PYTHON_USEDEP}]
 	>=dev-python/gitpython-3.1[${PYTHON_USEDEP}]
@@ -23,6 +25,5 @@ RDEPEND=">=dev-python/sphinx-4.0[${PYTHON_USEDEP}]
 "
 
 EPYTEST_PLUGINS=()
-EPYTEST_XDIST=1
 distutils_enable_tests pytest
 distutils_enable_sphinx docs
