@@ -15,8 +15,8 @@ SRC_URI="https://github.com/miurahr/py7zr/archive/refs/tags/v${PV}.tar.gz -> ${P
 LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-PROPERTIES="test_network"
-RESTRICT="test"
+#PROPERTIES="test_network"
+#RESTRICT="test"
 
 RDEPEND=">=app-arch/brotli-1.2.0[python,${PYTHON_USEDEP}]
 	>=dev-python/inflate64-1.0.4[${PYTHON_USEDEP}]
@@ -36,9 +36,9 @@ BDEPEND=">=dev-python/setuptools-scm-9.2.0[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=( pytest-{benchmark,httpserver,timeout} )
+EPYTEST_PLUGINS=( pytest-{benchmark,httpserver,remotedata,timeout} )
 distutils_enable_tests pytest
 
 python_test() {
-	epytest -o tmp_path_retention_policy=all --run-slow
+	epytest -o tmp_path_retention_policy=all --remote-data --run-slow
 }
