@@ -36,6 +36,7 @@ BDEPEND="test? (
 		dev-python/myst-parser[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
 		dev-python/notebook[${PYTHON_USEDEP}]
+		dev-python/pandas[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}]
 		virtual/pandoc
 	)
@@ -43,7 +44,8 @@ BDEPEND="test? (
 
 EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/myst-parser
+distutils_enable_sphinx docs dev-python/sphinx-reredirects dev-python/myst-parser
+#distutils_enable_sphinx docs dev-python/sphinx-copybutton dev-python/myst-parser
 
 EPYTEST_IGNORE=( tests/external/pre_commit )
 
