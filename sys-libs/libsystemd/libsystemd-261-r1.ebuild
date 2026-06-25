@@ -203,6 +203,7 @@ src_unpack() {
 
 src_prepare() {
 	local PATCHES=(
+		"${FILESDIR}/261-gcc-bpf.patch"
 	)
 
 	if ! use vanilla; then
