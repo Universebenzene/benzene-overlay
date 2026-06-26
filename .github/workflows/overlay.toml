@@ -485,11 +485,6 @@ source = "pypi"
 use_max_tag = true
 pypi = "dropboxdrivefs"
 
-["dev-python/dunamai"]
-source = "archpkg"
-archpkg = "python-dunamai"
-strip_release = true
-
 ["dev-python/dust-extinction"]
 source = "pypi"
 use_max_tag = true
@@ -1557,11 +1552,6 @@ arch = "x86_64"
 source = "pypi"
 use_max_tag = true
 pypi = "synphot"
-
-["dev-python/syrupy"]
-source = "pypi"
-use_max_tag = true
-pypi = "syrupy"
 
 ["dev-python/textual"]
 source = "archpkg"
