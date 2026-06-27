@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/astropy/reproject
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 TMASS_IM_URI="https://irsa.ipac.caltech.edu:443/cgi-bin/2MASS/IM"
 
@@ -74,8 +74,8 @@ distutils_enable_tests pytest
 python_prepare_all() {
 	use doc && { eapply "${FILESDIR}"/0002-${PN}-0.7.1-doc-use-local-fits.patch ; cp "${DISTDIR}"/*.fits* "${S}"/docs || die ; }
 #	sed -i "/NaNs/a \	ignore:Subclassing validator classes is not intended:DeprecationWarning" setup.cfg || die
-	use test && { sed -e "/# dimensions/a \    caplog.set_level(logging.INFO)" \
-					-e "/import pytest/a import logging" -i "${PN}"/interpolation/tests/test_core.py || die ; }
+#	use test && { sed -e "/# dimensions/a \    caplog.set_level(logging.INFO)" \
+#					-e "/import pytest/a import logging" -i "${PN}"/interpolation/tests/test_core.py || die ; }
 
 	distutils-r1_python_prepare_all
 }
