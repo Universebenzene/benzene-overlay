@@ -20,11 +20,12 @@ RDEPEND=">=dev-python/bcrypt-4.0[${PYTHON_USEDEP}]
 	dev-python/defusedxml[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	dev-python/json5[${PYTHON_USEDEP}]
-	dev-python/passlib[${PYTHON_USEDEP}]
+	dev-python/libpass[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 "
 
-BDEPEND="test? (
+BDEPEND="doc? ( media-gfx/graphviz )
+	test? (
 		dev-python/cheroot[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/webtest[${PYTHON_USEDEP}]
