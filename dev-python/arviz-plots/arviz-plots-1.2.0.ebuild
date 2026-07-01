@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bokeh matplotlib plotly"
 
-RDEPEND=">=dev-python/arviz-base-1.1[${PYTHON_USEDEP}]
-	>=dev-python/arviz-stats-1.1[${PYTHON_USEDEP},xarray]
+RDEPEND=">=dev-python/arviz-base-1.2[${PYTHON_USEDEP}]
+	>=dev-python/arviz-stats-1.2[${PYTHON_USEDEP},xarray]
 	bokeh? ( >=dev-python/bokeh-3.4[${PYTHON_USEDEP}] )
 	matplotlib? ( >=dev-python/matplotlib-3.9[${PYTHON_USEDEP}] )
 	plotly? (

@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -41,5 +41,4 @@ distutils_enable_sphinx docs/source dev-python/sphinx-copybutton \
 	dev-python/numpydoc \
 	dev-python/h5netcdf \
 	dev-python/h5py \
-	dev-python/linkify-it-py \
-	dev-python/tinycss2
+	dev-python/linkify-it-py
