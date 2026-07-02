@@ -201,6 +201,7 @@ src_unpack() {
 
 src_prepare() {
 	local PATCHES=(
+		"${FILESDIR}/systemd-260.2-networkd-resolve-hook.patch"
 	)
 
 	if ! use vanilla; then
