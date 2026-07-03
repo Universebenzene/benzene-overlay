@@ -28,7 +28,6 @@ RDEPEND=">=dev-python/contourpy-1.2[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/colorama[${PYTHON_USEDEP}]
 	test? (
-		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
 		dev-python/json5[${PYTHON_USEDEP}]
 		dev-python/networkx[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
@@ -38,7 +37,6 @@ BDEPEND="dev-python/colorama[${PYTHON_USEDEP}]
 		dev-python/requests-unixsocket[${PYTHON_USEDEP}]
 		dev-python/selenium[${PYTHON_USEDEP}]
 		dev-python/toml[${PYTHON_USEDEP}]
-		dev-python/typing-extensions[${PYTHON_USEDEP}]
 		dev-vcs/git
 		net-libs/nodejs[npm]
 	)
