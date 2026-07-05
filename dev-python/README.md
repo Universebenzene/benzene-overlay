@@ -5,7 +5,7 @@ Note: Build with `-O3` flag is not recommended. As this will cause some bug with
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-dev-python/astropy             | 5.0.8; 5.3.4; 6.0.1; 6.1.7; 8.0.0                    | Versions below 5.3 are included but masked. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy#note-for-astropy) for more details. wcslib>=8.1 is included in this overlay for astropy>=6.0.0
+dev-python/astropy             | 5.0.8; 5.3.4; 6.0.1; 6.1.7; 8.0.1                    | Versions below 5.3 are included but masked. See [here](https://github.com/Universebenzene/benzene-overlay/tree/master/dev-python/astropy#note-for-astropy) for more details. wcslib>=8.1 is included in this overlay for astropy>=6.0.0
 dev-python/astroalign          | 2.6.2                                                |
 dev-python/astropy-iers-data   | 0.2026.6.22.1.23.34                                  | Required by astropy>=6.0.0
 dev-python/astropy-helpers     | 2.0.11; 3.0.2; 3.1.1; 4.0.1-r1                       | With patches for better doc building. Same as the [AUR](https://aur.archlinux.org/packages/python-astropy-helpers) ones
@@ -62,7 +62,7 @@ dev-python/regions             | 0.12                                           
 dev-python/reproject           | 0.12.0; 0.21.0                                       | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
 dev-python/sep                 | 1.4.0                                                |
 dev-python/sep-pjw             | 1.3.8                                                |
-dev-python/sgp4                | 2.26                                                 |
+dev-python/sgp4                | 2.27                                                 |
 dev-python/sherpa              | 4.15.0; 4.15.1-r1; 4.18.0                            | `XSPEC` support is not included while building. See [here](https://sherpa.readthedocs.io/en/latest/install.html#building-from-source) for more details to build with `XSPEC` manually.
 dev-python/skyfield            | 1.54                                                 |
 dev-python/spectral-cube       | 0.6.7                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building
