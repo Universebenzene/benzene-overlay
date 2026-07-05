@@ -48,7 +48,7 @@ DEPEND=">=dev-libs/expat-2.7.3:0=
 	virtual/zlib:=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2026.6.1.17.39.59[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2026.6.22.1.23.34[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
