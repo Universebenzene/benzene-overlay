@@ -197,7 +197,7 @@ dev-python/ratarmount              | 0.8.1; 0.14.2; 0.15.2; 1.0.0; 1.3.0        
 dev-python/s3fs                    | 2026.3.0; 2026.4.0; 2026.6.0                               | Test dependency for zarr and astropy>=5.2
 dev-python/siosocks                | 0.3.0                                                      | Optional for aioftp
 dev-python/slicerator              | 1.1.0                                                      | Required by pims <- dask-image <- new reproject
-dev-python/smbprotocol             | 1.16.1                                                     | Optional for new ratarmount{,core}
+dev-python/smbprotocol             | 1.17.0                                                     | Optional for new ratarmount{,core}
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
 dev-python/spur                    | 0.3.23                                                     | Dropped by official portage. Test dependency for locket
 dev-python/sqlcipher3              | 0.5.4; 0.6.0                                               | Optional for new ratarmount{,core}
