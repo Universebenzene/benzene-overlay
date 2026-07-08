@@ -5,6 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/sunpy/sunpy
 PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 pypi
@@ -21,57 +22,57 @@ RESTRICT="test"
 
 DEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-6.1.0[${PYTHON_USEDEP}]
-	>=dev-python/packaging-23.2[${PYTHON_USEDEP}]
-	>=dev-python/parfive-2.1.0[${PYTHON_USEDEP},ftp]
-	>=dev-python/fsspec-2023.6.0[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.32.1[${PYTHON_USEDEP}]
+	>=dev-python/astropy-7.0.0[${PYTHON_USEDEP}]
+	>=dev-python/packaging-24.1[${PYTHON_USEDEP}]
+	>=dev-python/parfive-2.2.0[${PYTHON_USEDEP},ftp]
+	>=dev-python/fsspec-2024.9.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.33.0[${PYTHON_USEDEP}]
 	asdf? (
-		>=dev-python/asdf-3.0.0[${PYTHON_USEDEP}]
-		>=dev-python/asdf-astropy-0.5.0[${PYTHON_USEDEP}]
+		>=dev-python/asdf-3.3.0[${PYTHON_USEDEP}]
+		>=dev-python/asdf-astropy-0.7.0[${PYTHON_USEDEP}]
 	)
-	dask? ( >=dev-python/dask-2023.6.0[${PYTHON_USEDEP}] )
-	image? ( >=dev-python/scipy-1.12.0[${PYTHON_USEDEP}] )
+	dask? ( >=dev-python/dask-2024.6.0[${PYTHON_USEDEP}] )
+	image? ( >=dev-python/scipy-1.14.0[${PYTHON_USEDEP}] )
 	jpeg2k? (
-		>=dev-python/glymur-0.13.0[${PYTHON_USEDEP}]
-		>dev-python/lxml-5.0.1[${PYTHON_USEDEP}]
+		>=dev-python/glymur-0.14.0[${PYTHON_USEDEP}]
+		>dev-python/lxml-5.3.0[${PYTHON_USEDEP}]
 	)
 	map? (
-		>=dev-python/contourpy-1.1.0[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
+		>=dev-python/contourpy-1.3.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.10.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.2.0[${PYTHON_USEDEP}]
-		>=dev-python/reproject-0.13.0[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.12.0[${PYTHON_USEDEP}]
+		>=dev-python/reproject-0.14.0[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.14.0[${PYTHON_USEDEP}]
 	)
 	net? (
 		>=dev-python/beautifulsoup4-4.13.1[${PYTHON_USEDEP}]
-		>=dev-python/drms-0.7.1[${PYTHON_USEDEP}]
+		>=dev-python/drms-0.8.0[${PYTHON_USEDEP}]
 		>=dev-python/python-dateutil-2.9.0[${PYTHON_USEDEP}]
-		>=dev-python/tqdm-4.66.0[${PYTHON_USEDEP}]
+		>=dev-python/tqdm-4.67.0[${PYTHON_USEDEP}]
 		>=dev-python/zeep-4.3.0[${PYTHON_USEDEP}]
 	)
 	opencv? ( >=media-libs/opencv-4.8.0.74[${PYTHON_USEDEP},python] )
 	s3? (
-		>=dev-python/s3fs-2023.6.0[${PYTHON_USEDEP}]
-		>=dev-python/aiobotocore-2.6.0[${PYTHON_USEDEP}]
-		>=dev-python/boto3-1.31.17[${PYTHON_USEDEP}]
+		>=dev-python/s3fs-2024.9.0[${PYTHON_USEDEP}]
+		>=dev-python/aiobotocore-2.14.0[${PYTHON_USEDEP}]
+		>=dev-python/boto3-1.35.0[${PYTHON_USEDEP}]
 	)
-	skimage? ( >=dev-python/scikit-image-0.21.0[${PYTHON_USEDEP}] )
+	skimage? ( >=dev-python/scikit-image-0.24.0[${PYTHON_USEDEP}] )
 	timeseries? (
 		>=dev-python/cdflib-1.3.2[${PYTHON_USEDEP}]
-		>=dev-python/h5netcdf-1.2.0[${PYTHON_USEDEP}]
-		>=dev-python/h5py-3.10.0[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
-		>=dev-python/pandas-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/h5netcdf-1.4.0[${PYTHON_USEDEP}]
+		>=dev-python/h5py-3.12.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.10.0[${PYTHON_USEDEP}]
+		>=dev-python/pandas-2.3.0[${PYTHON_USEDEP}]
 	)
 	visualization? (
-		>=dev-python/matplotlib-3.8.0[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.10.0[${PYTHON_USEDEP}]
 		>=dev-python/mpl-animators-1.2.0[${PYTHON_USEDEP}]
 	)
 "
 
 BDEPEND=">=dev-python/setuptools-scm-8.0.1[${PYTHON_USEDEP}]
-	>=dev-python/extension-helpers-1.3.0[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
 	test? (
 		dev-python/asdf-astropy[${PYTHON_USEDEP}]
 		dev-python/beautifulsoup4[${PYTHON_USEDEP}]
@@ -80,10 +81,12 @@ BDEPEND=">=dev-python/setuptools-scm-8.0.1[${PYTHON_USEDEP}]
 		dev-python/drms[${PYTHON_USEDEP}]
 		dev-python/glymur[${PYTHON_USEDEP}]
 		dev-python/h5netcdf[${PYTHON_USEDEP}]
-		>=dev-python/jplephem-2.19[${PYTHON_USEDEP}]
+		dev-python/ipywidgets[${PYTHON_USEDEP}]
+		>=dev-python/jplephem-2.23[${PYTHON_USEDEP}]
 		dev-python/lxml[${PYTHON_USEDEP}]
 		dev-python/mpl-animators[${PYTHON_USEDEP}]
 		dev-python/reproject[${PYTHON_USEDEP}]
+		>=dev-python/responses-0.26.0[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
@@ -97,7 +100,7 @@ BDEPEND=">=dev-python/setuptools-scm-8.0.1[${PYTHON_USEDEP}]
 #		>=dev-python/pytest-astropy-0.11.0[${PYTHON_USEDEP}]
 #		>=dev-python/pytest-xdist-3.0.2[${PYTHON_USEDEP}]
 
-EPYTEST_PLUGINS=( hypothesis pytest-{arraydiff,asdf-plugin,doctestplus,mock,mpl,remotedata} )
+EPYTEST_PLUGINS=( hypothesis pytest-{arraydiff,asdf-plugin,astropy,doctestplus,mock,mpl,remotedata,run-parallel} )
 : ${EPYTEST_TIMEOUT:=180}
 distutils_enable_tests pytest
 # Doc building is really hard to run. Might fix in far future
