@@ -122,5 +122,5 @@ python_test() {
 	local -x PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 #	local -x DASK_DATAFRAME__QUERY_PLANNING=False
 	epytest -k 'not test_RandomState_only_funcs' -m 'not network and not slow and not gpu' \
-		-Werror::RuntimeWarning -Werror::dask.array.core.PerformanceWarning
+		-Werror::RuntimeWarning -Werror::dask.array.core.PerformanceWarning -o tmp_path_retention_policy=all
 }
