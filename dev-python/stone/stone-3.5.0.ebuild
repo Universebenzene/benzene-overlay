@@ -4,13 +4,13 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{11..15} )
 
 inherit distutils-r1 pypi
 
 DESCRIPTION="The Official API Spec Language for Dropbox API V2"
 HOMEPAGE="https://www.dropbox.com/developers https://github.com/dropbox/stone"
-SRC_URI+=" https://github.com/dropbox/stone/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+#SRC_URI="https://github.com/dropbox/stone/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
