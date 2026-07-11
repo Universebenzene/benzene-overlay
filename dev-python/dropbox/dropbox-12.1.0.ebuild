@@ -28,7 +28,6 @@ EPYTEST_PLUGINS=( pytest-mock )
 distutils_enable_tests pytest
 
 python_prepare_all() {
-	sed -i '/pytest-runner/d' setup.py || die
 	use test && { cp {"${DISTDIR}"/${P}-,"${S}"/test/}test_dropbox_unit.py || die ;
 		sed -i 's/import mock/from unittest import mock/' test/test_dropbox_unit.py || die ;
 	}
