@@ -1,12 +1,12 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
 PYPI_VERIFY_REPO=https://github.com/rr-/docstring_parser
-PYTHON_COMPAT=( python3_{{11..14},{13..14}t} )
-#PYTHON_COMPAT=( python3_{{11..12},{13..14}{,t}} )
+PYTHON_COMPAT=( python3_{{11..15},{13..15}t} )
+#PYTHON_COMPAT=( python3_{{11..12},{13..15}{,t}} )
 
 inherit distutils-r1 pypi
 
