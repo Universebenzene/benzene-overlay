@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -49,13 +49,15 @@ RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
 	)
 	tk? ( dev-python/pycairo[${PYTHON_USEDEP}] )
 	web? (
-		dev-python/pycairo[${PYTHON_USEDEP}]
-		dev-python/tornado[${PYTHON_USEDEP}]
+		>=dev-python/pycairo-1.28.0[${PYTHON_USEDEP}]
+		>=dev-python/websockets-16.0[${PYTHON_USEDEP}]
+		>=media-gfx/cairosvg-2.9.0[${PYTHON_USEDEP}]
 	)
 "
 #	$(python_gen_cond_dep '>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]' python3_10)
 #	pyside2? ( $(python_gen_cond_dep 'dev-python/pyside2[${PYTHON_USEDEP}]' python3_{10,11}) )
-BDEPEND=">=dev-python/setuptools-scm-7[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-10.0.5[${PYTHON_USEDEP}]
+	>=dev-python/babel-2.10[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
