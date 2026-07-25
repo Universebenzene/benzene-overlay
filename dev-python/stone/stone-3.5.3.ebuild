@@ -19,8 +19,8 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/jinja2-3.0.3[${PYTHON_USEDEP}]
 	>=dev-python/packaging-21.0[${PYTHON_USEDEP}]
-	>=dev-python/ply-3.4[${PYTHON_USEDEP}]
 "
+BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]"
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
