@@ -19,7 +19,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/markdown-it-py-1.0.0[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/markdown-it-py-1.0[${PYTHON_USEDEP}]
 	dev-python/mdit-py-plugins[${PYTHON_USEDEP}]
 	dev-python/nbformat[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
