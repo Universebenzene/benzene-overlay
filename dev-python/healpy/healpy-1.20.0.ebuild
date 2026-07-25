@@ -19,7 +19,7 @@ PROPERTIES="test_network"
 RESTRICT="test"
 IUSE="all"
 
-DEPEND=">=dev-python/numpy-2.0.0_rc1[${PYTHON_USEDEP}]
+DEPEND=">=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]
 	>sci-astronomy/healpix-3.82:=[cxx]
 	>=sci-libs/cfitsio-4.5.0:=
 	sci-libs/libsharp:=
@@ -34,7 +34,7 @@ RDEPEND="${DEPEND}
 BDEPEND=">=dev-python/cython-3[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]
 	virtual/pkgconfig
-	test? ( dev-python/requests[${PYTHON_USEDEP}] )
+	test? ( dev-python/scipy[${PYTHON_USEDEP}] )
 "
 
 DOCS=( README.rst CHANGELOG.rst CITATION )
@@ -42,13 +42,13 @@ DOCS=( README.rst CHANGELOG.rst CITATION )
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
-python_test() {
-	cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/*-gnu.so lib/${PN} || die
-	epytest
-	rm lib/${PN}/*-gnu.so || die
-}
-
-#src_test() {
-#	rm -r lib/${PN} || die
-#	distutils-r1_src_test
+#python_test() {
+#	cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/*-gnu.so lib/${PN} || die
+#	epytest
+#	rm lib/${PN}/*-gnu.so || die
 #}
+
+src_test() {
+	rm -r lib/${PN} || die
+	distutils-r1_src_test
+}
