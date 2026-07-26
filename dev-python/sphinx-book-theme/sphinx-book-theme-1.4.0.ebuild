@@ -21,8 +21,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="code_style"
 RESTRICT="doc? ( network-sandbox )"
 
-RDEPEND=">=dev-python/sphinx-7.0[${PYTHON_USEDEP}]
-	>=dev-python/pydata-sphinx-theme-0.16.1[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-8.2[${PYTHON_USEDEP}]
+	>=dev-python/pydata-sphinx-theme-0.20.0[${PYTHON_USEDEP}]
 	code_style? ( dev-vcs/pre-commit )
 "
 BDEPEND="test? (
