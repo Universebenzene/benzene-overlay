@@ -23,8 +23,8 @@ REQUIRED_USE="intersphinx? ( doc )"
 #	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
 
 RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
-	>=dev-python/astropy-6.0.1[${PYTHON_USEDEP}]
-	>=dev-python/pillow-11.1.0[${PYTHON_USEDEP}]
+	>=dev-python/astropy-7.2[${PYTHON_USEDEP}]
+	>=dev-python/pillow-12.3.0[${PYTHON_USEDEP}]
 	>=dev-python/qtpy-2.4.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
 	>=dev-python/puremagic-1.28[${PYTHON_USEDEP}]
@@ -43,9 +43,10 @@ RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.8[${PYTHON_USEDEP}]
 		>=dev-python/python-dateutil-2.8.2[${PYTHON_USEDEP}]
 		>=dev-python/python-magic-0.4.15[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.11.4[${PYTHON_USEDEP}]
+		>=dev-python/pyvo-1.5[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.16[${PYTHON_USEDEP}]
 		>=media-libs/opencv-4.5.4.58[${PYTHON_USEDEP},python]
-		dev-python/photutils[${PYTHON_USEDEP}]
+		>=dev-python/photutils-1.13[${PYTHON_USEDEP}]
 	)
 	tk? ( dev-python/pycairo[${PYTHON_USEDEP}] )
 	web? (
@@ -75,7 +76,7 @@ BDEPEND=">=dev-python/setuptools-scm-10.0.5[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=( pytest-astropy-header )
+#EPYTEST_PLUGINS=( pytest-astropy-header )
 distutils_enable_tests pytest
 #distutils_enable_sphinx doc dev-python/sphinx-astropy dev-python/sphinx-rtd-theme
 
