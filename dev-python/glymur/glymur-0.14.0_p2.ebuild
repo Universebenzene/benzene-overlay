@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,7 +7,7 @@ MY_PV=$(ver_cut 1-3)post$(ver_cut 5)
 MY_P=${PN}-${MY_PV}
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -25,7 +25,7 @@ RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
-		sci-libs/gdal[jpeg2k,python]
+		sci-libs/gdal[${PYTHON_USEDEP},jpeg2k,python]
 		dev-python/scikit-image[${PYTHON_USEDEP}]
 		media-libs/openjpeg:2
 	)
