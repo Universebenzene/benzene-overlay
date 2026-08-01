@@ -5,6 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/astropy/astropy-healpix
 PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 optfeature pypi
@@ -22,20 +23,21 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-python/numpy-2.0.0:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-5[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.1[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
-	dev-python/extension-helpers[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1.3[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-astropy-1.11[${PYTHON_USEDEP},confv2]
 	)
 	test? ( dev-python/healpy[${PYTHON_USEDEP}] )
 "
 
 PATCHES=( "${FILESDIR}"/${PN}-0.5-doc-use-local-fits.patch )
 
-EPYTEST_PLUGINS=( hypothesis pytest-{astropy-header,doctestplus} )
+#EPYTEST_PLUGINS=( hypothesis pytest-{astropy-header,doctestplus} )
+EPYTEST_PLUGINS=( hypothesis pytest-astropy-header )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy dev-python/astropy
 
