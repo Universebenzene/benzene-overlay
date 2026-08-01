@@ -22,7 +22,7 @@ RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 	>=dev-python/numpy-2[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.14[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
-	>=dev-python/typing-extensions-4.13[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.14[${PYTHON_USEDEP}]
 	cli? ( dev-python/typer[${PYTHON_USEDEP}] )
 	optional? ( dev-python/universal-pathlib[${PYTHON_USEDEP}] )
 	remote? ( >=dev-python/fsspec-2023.10.0[${PYTHON_USEDEP}] )
@@ -70,8 +70,10 @@ EPYTEST_IGNORE=(
 EPYTEST_DESELECT=(
 	# Ignore uv related tests
 	'tests/test_examples.py::test_scripts_can_run[script_path0]'
+	'tests/test_examples.py::test_scripts_can_run[script_path1]'
+	'tests/test_examples.py::test_scripts_can_run[script_path2]'
 )
 
 python_test() {
-	epytest --run-slow-hypothesis #-Werror::zarr.core.dtype.common.UnstableSpecificationWarning
+	epytest tests --run-slow-hypothesis #-Werror::zarr.core.dtype.common.UnstableSpecificationWarning
 }
