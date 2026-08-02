@@ -18,16 +18,16 @@ KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND="dev-python/cloudpickle[${PYTHON_USEDEP}]
-	dev-python/joblib[${PYTHON_USEDEP}]
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/pandas[${PYTHON_USEDEP}]
-	dev-python/plotly[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/cloudpickle-2.2[${PYTHON_USEDEP}]
+	>=dev-python/joblib-1.1[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.26[${PYTHON_USEDEP}]
+	>=dev-python/pandas-2.1[${PYTHON_USEDEP}]
+	>=dev-python/plotly-5.14[${PYTHON_USEDEP}]
 	>=dev-python/pybaum-0.1.2[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.2.1[${PYTHON_USEDEP}]
-	>=dev-python/sqlalchemy-1.3[${PYTHON_USEDEP}]
-	dev-python/annotated-types[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.11[${PYTHON_USEDEP}]
+	>=dev-python/sqlalchemy-2.0[${PYTHON_USEDEP}]
+	>=dev-python/annotated-types-0.4[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.5[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 	test? (
