@@ -4,7 +4,6 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYPI_NO_NORMALIZE=1
 PYTHON_COMPAT=( python3_{{11..15},{13..15}t} )
 #PYTHON_COMPAT=( python3_{{11..12},{13..15}{,t}} )
 
@@ -19,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-RDEPEND=">=dev-python/pytest-4.6[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/pytest-5.0[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]"
