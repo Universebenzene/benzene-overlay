@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		A pytest plugin to skip tests marked as @pytest.mark.slow or @pytest.mark.hugemem by default.
+		Include the slow tests with --slow/--run-slow, or memory-intensive tests with --hugemem/--run-hugemem.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pytest-skip-slow</remote-id>
+		<remote-id type="github">okken/pytest-skip-slow</remote-id>
+	</upstream>
+</pkgmetadata>

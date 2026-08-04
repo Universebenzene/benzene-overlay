@@ -1165,6 +1165,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pytest-run-parallel"
 
+["dev-python/pytest-skip-slow"]
+source = "pypi"
+use_max_tag = true
+pypi = "pytest-skip-slow"
+
 #["dev-python/pytest-socket"]
 #source = "pypi"
 #use_max_tag = true

@@ -185,6 +185,7 @@ dev-python/pygaljs                 | 1.0.2                                      
 dev-python/pykdtree                | 1.4.3                                                      | Optional for yt
 dev-python/pysquashfsimage         | 0.9.0\_p20240421181514                                     | Optional for new ratarmount{,core}
 dev-python/pytest-examples         | 0.0.18                                                     | Test dependency for pydantic-settings
+dev-python/pytest-skip-slow        | 1.1.0                                                      | Dependency for new pytest-astropy
 dev-python/pytest-textual-snapshot | 1.1.0-r1                                                   | Test dependency for new memray. Dependency syrupy is included but not listed in the table
 dev-python/python-lzf              | 0.2.6                                                      | Test dependency for pyfive (optional by new h5netcdf)
 dev-python/python-neo-lzf          | 0.3.5                                                      | Test dependency for new pyfive (optional by new h5netcdf)
