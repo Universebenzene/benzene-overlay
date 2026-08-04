@@ -9,7 +9,7 @@ dev-python/astropy             | 5.0.8; 5.3.4; 6.0.1; 6.1.7; 8.0.1              
 dev-python/astroalign          | 2.6.2                                                |
 dev-python/astropy-iers-data   | 0.2026.8.3.0.53.6                                    | Required by astropy>=6.0.0
 dev-python/astropy-helpers     | 2.0.11; 3.0.2; 3.1.1; 4.0.1-r1                       | With patches for better doc building. Same as the [AUR](https://aur.archlinux.org/packages/python-astropy-helpers) ones
-dev-python/pytest-astropy      | 0.8.0; 0.11.0                                        | Test plugins for astropy. Dependencies are also in this overlay but not listed in this table
+dev-python/pytest-astropy      | 0.12.0                                               | Test plugins for astropy. Dependencies are also in this overlay but not listed in this table
 dev-python/pytest-asdf-plugin  | 0.2.0                                                |
 dev-python/sphinx-astropy      | 1.11                                                 | Modules for building docs of astropy related packages. Dependencies are also in this overlay but not listed in this table
 dev-python/sphinx-asdf         | 0.1.3; 0.1.4; 0.3.0; 0.5.0                           |
