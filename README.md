@@ -189,7 +189,7 @@ dev-python/pytest-skip-slow        | 1.1.0                                      
 dev-python/pytest-textual-snapshot | 1.1.0-r1                                                   | Test dependency for new memray. Dependency syrupy is included but not listed in the table
 dev-python/python-lzf              | 0.2.6                                                      | Test dependency for pyfive (optional by new h5netcdf)
 dev-python/python-neo-lzf          | 0.3.5                                                      | Test dependency for new pyfive (optional by new h5netcdf)
-dev-python/python-socketio         | 5.9.0; 5.16.3                                              | Optional for yt
+dev-python/python-socketio         | 5.9.0; 5.16.4                                              | Optional for yt
 dev-python/python-xz               | 0.6.0                                                      | Optional for yt
 dev-python/pyppmd                  | 1.2.0                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/pure-protobuf           | 2.3.0; 3.1.5                                               | Optional for new ratarmount{,core} <- ipfsspec
