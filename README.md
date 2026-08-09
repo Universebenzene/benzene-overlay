@@ -202,7 +202,7 @@ dev-python/smbprotocol             | 1.17.0                                     
 dev-python/sortedcollections       | 2.1.0                                                      | Test dependency for bidict>=0.23.0
 dev-python/spur                    | 0.3.23                                                     | Dropped by official portage. Test dependency for locket
 dev-python/sqlcipher3              | 0.5.4; 0.6.0                                               | Optional for new ratarmount{,core}
-dev-python/sshfs                   | 2025.11.0                                                  | Optional for new ratarmount{,core}. <!--For running test, you need to forcely unmask paramiko[server], e.g. `echo "dev-python/paramiko -server" >> /etc/portage/profile/package.use.mask"`-->
+dev-python/sshfs                   | 2026.8.0                                                   | Optional for new ratarmount{,core}. <!--For running test, you need to forcely unmask paramiko[server], e.g. `echo "dev-python/paramiko -server" >> /etc/portage/profile/package.use.mask"`-->
 dev-python/stone                   | 3.3.9; 3.5.4                                               | Required by python dropbox
 dev-python/textual                 | 8.2.8                                                      | Pulled in by memray>=1.11. Dependency tree-sitter-languages is included but not listed in the table
 dev-python/typing-validation       | 1.2.12; 2.2.1                                              | Optional for new ratarmount{,core} <- ipfsspec
