@@ -57,8 +57,8 @@ RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
 "
 #	$(python_gen_cond_dep '>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]' python3_10)
 #	pyside2? ( $(python_gen_cond_dep 'dev-python/pyside2[${PYTHON_USEDEP}]' python3_{10,11}) )
-BDEPEND=">=dev-python/setuptools-scm-10.0.5[${PYTHON_USEDEP}]
-	>=dev-python/babel-2.10[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-10.2.0[${PYTHON_USEDEP}]
+	>=dev-python/babel-2.18.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		dev-python/sphinx-astropy[${PYTHON_USEDEP}]
