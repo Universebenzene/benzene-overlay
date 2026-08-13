@@ -19,7 +19,7 @@ Doc/sphinx and Doc/MkDocs related packages are listed in separate tables [here](
 
 Package name | Available version | Additional information
 ------------ | :---------------: | ----------------------
-[app-editors/formiko](https://github.com/ondratu/formiko)                            | [1.5.0](https://github.com/Universebenzene/benzene-overlay/blob/master/app-editors/formiko/formiko-1.5.0.ebuild); (live)                                   |
+[app-editors/formiko](https://github.com/ondratu/formiko)                            | 1.5.0; [2.0.0](https://github.com/Universebenzene/benzene-overlay/blob/master/app-editors/formiko/formiko-2.0.0.ebuild); (live)                            |
 app-i18n/fcitx                                                                       | 4.2.9.8-r1                                                                                                                                        | Slot 4 with modified icon name in order to be able to install along with fcitx:5. For more support for installing fcitx4 along with 5, try [benzene-testlay](https://github.com/Universebenzene/benzene-testlay).
 app-i18n/fcitx-configtool                                                            | 0.4.10                                                                                                                                            | Slot 4 dropped by official portage
 app-i18n/fcitx-qt5                                                                   | 1.2.5                                                                                                                                             | Dropped by official portage
