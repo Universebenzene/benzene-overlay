@@ -21,7 +21,7 @@ RDEPEND=">=dev-python/numpy-2[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.13[${PYTHON_USEDEP}]
 	numba? ( dev-python/xarray-einstats[${PYTHON_USEDEP},einops,numba] )
 	xarray? (
-		>=dev-python/arviz-base-1.2[${PYTHON_USEDEP}]
+		>=dev-python/arviz-base-1.3.0[${PYTHON_USEDEP}]
 		>=dev-python/xarray-2024.11.0[${PYTHON_USEDEP}]
 		dev-python/xarray-einstats[${PYTHON_USEDEP}]
 	)

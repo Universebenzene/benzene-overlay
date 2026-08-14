@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bokeh matplotlib plotly"
 
-RDEPEND=">=dev-python/arviz-base-1.2[${PYTHON_USEDEP}]
-	>=dev-python/arviz-stats-1.2[${PYTHON_USEDEP},xarray]
+RDEPEND=">=dev-python/arviz-base-1.3.0[${PYTHON_USEDEP}]
+	>=dev-python/arviz-stats-1.3.0[${PYTHON_USEDEP},xarray]
 	bokeh? ( >=dev-python/bokeh-3.4[${PYTHON_USEDEP}] )
 	matplotlib? ( >=dev-python/matplotlib-3.9[${PYTHON_USEDEP}] )
 	plotly? (

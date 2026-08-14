@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="bokeh h5netcdf matplotlib netcdf4 plotly zarr"
 
-RDEPEND=">=dev-python/arviz-base-1.2.0[${PYTHON_USEDEP},h5netcdf?,netcdf4?,zarr?]
-	>=dev-python/arviz-plots-1.2.0[${PYTHON_USEDEP},bokeh?,matplotlib?,plotly?]
-	>=dev-python/arviz-stats-1.2.0[${PYTHON_USEDEP},xarray]
+RDEPEND=">=dev-python/arviz-base-1.3.0[${PYTHON_USEDEP},h5netcdf?,netcdf4?,zarr?]
+	>=dev-python/arviz-plots-1.3.0[${PYTHON_USEDEP},bokeh?,matplotlib?,plotly?]
+	>=dev-python/arviz-stats-1.3.0[${PYTHON_USEDEP},xarray]
 "
 
 EPYTEST_PLUGINS=()
