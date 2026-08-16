@@ -17,10 +17,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
-#PROPERTIES="test_network"
+PROPERTIES="test_network"
 RESTRICT="test"	# Test phase runs with fails
 
-RDEPEND=">dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/certifi-2017.4.17[${PYTHON_USEDEP}]
 	>=dev-python/jplephem-2.13[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/sgp4-2.13[${PYTHON_USEDEP}]
@@ -37,16 +37,16 @@ EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx documentation dev-python/pandas
 
-EPYTEST_IGNORE=(
-	# OSError when connection timed out
-	contrib/almanac2/test_almanac2.py
-)
+#EPYTEST_IGNORE=(
+#	# OSError when connection timed out
+#	contrib/almanac2/test_almanac2.py
+#)
 
-python_prepare_all() {
-	use test && { for cif in ci/*; do cp ${cif} ${cif#ci/}; done || die ; }
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+#	use test && { for cif in ci/*; do cp ${cif} ${cif#ci/}; done || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
 
 python_install_all() {
 	if use examples; then
@@ -56,4 +56,11 @@ python_install_all() {
 	fi
 
 	distutils-r1_python_install_all
+}
+
+python_test() {
+	pushd ci || die
+	PYTHONPATH="${BUILD_DIR}"/install/$(python_get_sitedir) \
+		assay --batch skyfield.tests || die "Tests failed with ${EPYTHON}"
+	popd || die
 }
