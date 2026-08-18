@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{11..13} )
 
-inherit distutils-r1 desktop optfeature pypi xdg
+inherit distutils-r1 desktop optfeature pypi virtualx xdg
 
 DESCRIPTION="A scientific image viewer and toolkit"
 HOMEPAGE="https://ejeschke.github.io/ginga"
@@ -68,6 +68,9 @@ BDEPEND=">=dev-python/setuptools-scm-10.2.0[${PYTHON_USEDEP}]
 	test? (
 		dev-python/astlib[${PYTHON_USEDEP}]
 		dev-python/dask[${PYTHON_USEDEP}]
+		>=dev-libs/gobject-introspection-1.84.0
+		>=dev-python/pycairo-1.27.0[${PYTHON_USEDEP}]
+		>=dev-python/pygobject-3.50.0[${PYTHON_USEDEP}]
 		dev-python/photutils[${PYTHON_USEDEP}]
 		>dev-python/regions-0.5[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
@@ -98,6 +101,10 @@ python_install_all() {
 	distutils-r1_python_prepare_all
 	doicon -s scalable ${PN}/icons/${PN}.svg
 	domenu ${PN}.desktop
+}
+
+python_test() {
+	virtx epytest
 }
 
 pkg_postinst() {
