@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{11..15} )
 
 inherit distutils-r1 pypi
 
@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/westurner/sphinxcontrib-srclinks"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"	# tree-sitter-languages, textual no x86
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-python/pytest-8.0.0[${PYTHON_USEDEP}]
 	>=dev-python/jinja2-3.0.0[${PYTHON_USEDEP}]
