@@ -23,6 +23,7 @@ EGO_VENDOR=(
 	"github.com/qjfoidnh/Baidu-Login v1.4.1"
 	"github.com/astaxie/beego v1.12.3"
 	"github.com/qjfoidnh/baidu-tools v1.2.0"
+	"github.com/rs/dnscache fc85eb66452986f2b90924307b210377c8d85fd6"
 	"github.com/bitly/go-simplejson v0.5.0"
 	"github.com/tidwall/gjson v1.18.0"
 	"github.com/tidwall/match v1.1.1"
@@ -31,6 +32,7 @@ EGO_VENDOR=(
 	"github.com/cpuguy83/go-md2man/v2 v2.0.0 github.com/cpuguy83/go-md2man"
 	"golang.org/x/sys v0.25.0 github.com/golang/sys"
 	"golang.org/x/net 3b0461eec859c4b73bb64fdc8285971fd33e3938 github.com/golang/net"
+	"golang.org/x/sync cd5d95a43a6e21273425c7ae415d3df9ea832eeb github.com/golang/sync"
 )
 
 MY_PN="BaiduPCS-Go"
