@@ -22,7 +22,7 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~arm ~arm64 ~loong ~riscv ~x86"
 
 RDEPEND="app-alternatives/v2ray-geoip
-	app-alternatives/v2ray-geosit
+	app-alternatives/v2ray-geosite
 "
 
 S="${WORKDIR}"
