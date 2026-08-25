@@ -137,7 +137,7 @@ dev-python/arviz                   | 0.17.1; 0.23.4; 1.3.0                      
 dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
 dev-python/aspectlib               | 2.0.0                                                      | Optional for pytest-benchmark
 dev-python/azure-core              | 1.26.3; 1.41.0                                             | Required by new msrest
-dev-python/bidict                  | 0.22.0; 0.23.1                                             | Optional for yt
+dev-python/bidict                  | 0.22.0; 0.24.0                                             | Optional for yt
 dev-python/check-manifest          | 0.49; 0.51                                                 | Dropped by official portage. Build dependency for xarray-datatree
 dev-python/cmdstanpy               | 1.0.8; 1.3.0                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec

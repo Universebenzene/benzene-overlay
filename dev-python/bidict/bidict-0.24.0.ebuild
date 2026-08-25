@@ -3,8 +3,8 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+DISTUTILS_USE_PEP517=uv-build
+PYTHON_COMPAT=( python3_{11..15} )
 
 inherit distutils-r1
 
@@ -22,6 +22,8 @@ BDEPEND="test? (
 	)
 "
 
-EPYTEST_PLUGINS=( hypothesis pytest-{benchmark,xdist} )
+#EPYTEST_PLUGINS=( hypothesis pytest-{benchmark,xdist} )
+EPYTEST_PLUGINS=( hypothesis )
+EPYTEST_XDIST=1
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/furo dev-python/sphinx-copybutton
