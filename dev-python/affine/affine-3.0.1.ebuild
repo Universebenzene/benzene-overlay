@@ -14,7 +14,7 @@ HOMEPAGE="https://github.com/rasterio/affine"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-RDEPEND="dev-python/attrs[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/attrs-21.3.0[${PYTHON_USEDEP}]"
 BDEPEND="test? ( dev-python/numpy[${PYTHON_USEDEP}] )"
 
 EPYTEST_PLUGINS=()
