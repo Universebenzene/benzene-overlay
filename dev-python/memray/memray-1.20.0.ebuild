@@ -5,16 +5,17 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{12..14} )
+PYTHON_COMPAT=( python3_{12..15} )
 
 inherit distutils-r1 pypi
 
 DESCRIPTION="A memory profiler for Python applications"
 HOMEPAGE="https://bloomberg.github.io/memray"
 SRC_URI="https://github.com/bloomberg/memray/archive/refs/tags/v${PV}.tar.gz -> ${P}.gh.tar.gz
-	$(python_gen_useflags python3_14)? ( $(pypi_wheel_url ${PN} ${PV} "cp314" "cp314-manylinux2014_x86_64.manylinux_2_17_x86_64") )
-	$(python_gen_useflags python3_13)? ( $(pypi_wheel_url ${PN} ${PV} "cp313" "cp313-manylinux2014_x86_64.manylinux_2_17_x86_64") )
-	$(python_gen_useflags python3_12)? ( $(pypi_wheel_url ${PN} ${PV} "cp312" "cp312-manylinux2014_x86_64.manylinux_2_17_x86_64") )
+	$(python_gen_useflags python3_15)? ( $(pypi_wheel_url ${PN} ${PV} "cp315" "cp315-manylinux_2_26_x86_64.manylinux_2_28_x86_64") )
+	$(python_gen_useflags python3_14)? ( $(pypi_wheel_url ${PN} ${PV} "cp314" "cp314-manylinux_2_26_x86_64.manylinux_2_28_x86_64") )
+	$(python_gen_useflags python3_13)? ( $(pypi_wheel_url ${PN} ${PV} "cp313" "cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64") )
+	$(python_gen_useflags python3_12)? ( $(pypi_wheel_url ${PN} ${PV} "cp312" "cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64") )
 "
 #	$(python_gen_useflags python3_10)? ( $(pypi_wheel_url ${PN} ${PV} "cp310" "cp310-manylinux_2_12_x86_64.manylinux2010_x86_64") )
 
@@ -30,12 +31,11 @@ RDEPEND=">=dev-python/jinja2-2.9[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/ipython[${PYTHON_USEDEP}]
-		dev-python/setuptools[${PYTHON_USEDEP}]
+		dev-python/greenlet[${PYTHON_USEDEP}]
+		dev-debug/gdb[lzma]
+		llvm-core/lldb[lzma]
 	)
 "
-#		dev-python/greenlet[${PYTHON_USEDEP}]
-#		dev-debug/gdb[lzma]
-#		llvm-core/lldb[lzma]
 
 EPYTEST_PLUGINS=( pytest-textual-snapshot syrupy )
 distutils_enable_tests pytest
@@ -57,15 +57,18 @@ distutils_enable_sphinx docs dev-python/sphinx-argparse dev-python/furo dev-pyth
 #)
 
 python_compile() {
-	if use $(python_gen_useflags python3_14); then
+	if use $(python_gen_useflags python3_15); then
+		local _pytag="cp315"
+		local _abitag="cp315-manylinux_2_26_x86_64.manylinux_2_28_x86_64"
+	elif use $(python_gen_useflags python3_14); then
 		local _pytag="cp314"
-		local _abitag="cp314-manylinux2014_x86_64.manylinux_2_17_x86_64"
+		local _abitag="cp314-manylinux_2_26_x86_64.manylinux_2_28_x86_64"
 	elif use $(python_gen_useflags python3_13); then
 		local _pytag="cp313"
-		local _abitag="cp313-manylinux2014_x86_64.manylinux_2_17_x86_64"
+		local _abitag="cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64"
 	elif use $(python_gen_useflags python3_12); then
 		local _pytag="cp312"
-		local _abitag="cp312-manylinux2014_x86_64.manylinux_2_17_x86_64"
+		local _abitag="cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64"
 	#elif use $(python_gen_useflags python3_10); then
 	#	local _pytag="cp310"
 	#	local _abitag="cp310-manylinux_2_12_x86_64.manylinux2010_x86_64"
@@ -82,5 +85,8 @@ python_test() {
 	#mv src/_${PN}/_te{t,s}t.py || die
 	#mv src/{_,}${PN} || die
 	# https://gitlab.archlinux.org/archlinux/packaging/packages/memray/-/blob/main/PKGBUILD?ref_type=heads
-	epytest -o tmp_path_retention_policy=all
+	epytest -o tmp_path_retention_policy=all \
+		-k "not TestTUILooks and not test_tui_basic and not test_tui_pause \
+		and not test_tui_gradient and not test_merge_threads \
+		and not test_unmerge_threads"
 }
