@@ -999,6 +999,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pvextractor"
 
+["dev-python/py-cpuinfo"]
+source = "pypi"
+use_max_tag = true
+pypi = "py-cpuinfo2"
+
 ["dev-python/py7zr"]
 source = "archpkg"
 archpkg = "python-py7zr"
