@@ -1,10 +1,11 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYPI_VERIFY_REPO=https://github.com/radio-astro-tools/radio-beam
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 pypi
 
@@ -18,10 +19,12 @@ IUSE="all doc intersphinx"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
-RDEPEND=">=dev-python/numpy-1.8.0[${PYTHON_USEDEP}]
-	dev-python/astropy[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
-	all? ( dev-python/matplotlib[${PYTHON_USEDEP}] )
+RDEPEND=">=dev-python/numpy-1.24[${PYTHON_USEDEP}]
+	>=dev-python/astropy-6.1[${PYTHON_USEDEP}]
+	>=dev-python/packaging-19[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.8[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-62.3.3[${PYTHON_USEDEP}]
+	>=dev-python/matplotlib-3.5[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	doc? (
@@ -42,7 +45,7 @@ python_compile_all() {
 	fi
 }
 
-python_test() {
-	use doc && local EPYTEST_IGNORE=( docs/_build )
-	epytest
-}
+#python_test() {
+#	use doc && local EPYTEST_IGNORE=( docs/_build )
+#	epytest
+#}
