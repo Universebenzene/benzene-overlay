@@ -627,10 +627,10 @@ source = "pypi"
 use_max_tag = true
 pypi = "gwcs"
 
-["dev-python/h5netcdf"]
+["dev-python/h5json"]
 source = "pypi"
 use_max_tag = true
-pypi = "h5netcdf"
+pypi = "h5json"
 
 ["dev-python/h5pyd"]
 source = "pypi"
