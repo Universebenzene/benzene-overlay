@@ -26,6 +26,7 @@ RDEPEND=">=dev-python/numpy-1.22[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 	>=dev-python/semantic-version-2.8[${PYTHON_USEDEP}]
+	>=dev-python/typing-extensions-4.16[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '
 		>=dev-python/importlib-metadata-4.11.4[${PYTHON_USEDEP}]
 	' python3_10)
