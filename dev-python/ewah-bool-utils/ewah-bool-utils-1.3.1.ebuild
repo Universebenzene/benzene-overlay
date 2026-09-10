@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_EXT=1
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=meson-python
 PYTHON_COMPAT=( python3_{11..15} )
 
 inherit distutils-r1 pypi
@@ -32,16 +32,16 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
-python_compile_all() {
-#	ModuleNotFoundError: No module named 'ewah_bool_utils.ewah_bool_wrap'
-	use doc && [[ -d ${PN//-/_} ]] && { mv {,_}${PN//-/_} || die ; }
-	sphinx_compile_all
-	[[ -d _${PN//-/_} ]] && { mv {_,}${PN//-/_} || die ; }
-}
-
-python_test() {
-#	ModuleNotFoundError: No module named 'ewah_bool_utils.ewah_bool_wrap'
-	[[ -d ${PN//-/_} ]] && { mv {,_}${PN//-/_} || die ; }
-	epytest
-	[[ -d _${PN//-/_} ]] && { mv {_,}${PN//-/_} || die ; }
-}
+#python_compile_all() {
+##	ModuleNotFoundError: No module named 'ewah_bool_utils.ewah_bool_wrap'
+#	use doc && [[ -d ${PN//-/_} ]] && { mv {,_}${PN//-/_} || die ; }
+#	sphinx_compile_all
+#	[[ -d _${PN//-/_} ]] && { mv {_,}${PN//-/_} || die ; }
+#}
+#
+#python_test() {
+##	ModuleNotFoundError: No module named 'ewah_bool_utils.ewah_bool_wrap'
+#	[[ -d ${PN//-/_} ]] && { mv {,_}${PN//-/_} || die ; }
+#	epytest
+#	[[ -d _${PN//-/_} ]] && { mv {_,}${PN//-/_} || die ; }
+#}
