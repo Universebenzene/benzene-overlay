@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/Starlink/starlink-pyast
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{11..15} )
 
 inherit distutils-r1 pypi
 
@@ -26,5 +26,5 @@ BDEPEND=">=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]
 "
 
 python_test() {
-	${EPYTHON} src/starlink/ast/test/test.py || die "Tests failed with ${EPYTHON}"
+	eunittest -s src/starlink/ast/test -p test.py
 }
