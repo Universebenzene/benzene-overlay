@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{11..15} )
 
 MY_PN="PySquashfsImage"
 COMMIT="e637b26b3bc6268dd589fa1439fecf99e49a565b"
