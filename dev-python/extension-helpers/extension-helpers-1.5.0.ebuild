@@ -15,12 +15,13 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/setuptools-40.2[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/setuptools-64[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/tomli-1.0.0[${PYTHON_USEDEP}]' python3_10)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	test? (
 		dev-python/build[${PYTHON_USEDEP}]
+		dev-python/cython[${PYTHON_USEDEP}]
 		dev-python/pip[${PYTHON_USEDEP}]
 	)
 "

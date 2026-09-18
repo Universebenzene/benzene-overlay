@@ -30,7 +30,7 @@ dev-python/cdflib              | 0.4.9; 1.3.6; 1.3.12                           
 dev-python/drms                | 0.6.4; 0.9.1                                         | SunPy releated. `network-sandbox` FEATURE will be disabled if you enable `examples` flag for doc building
 dev-python/dust-extinction     | 1.7                                                  |
 dev-python/echo                | 0.15.0                                               | Glueviz releated.
-dev-python/extension-helpers   | 1.4.0                                                |
+dev-python/extension-helpers   | 1.5.0                                                |
 dev-python/fast-histogram      | 0.14                                                 | Glueviz releated.
 dev-python/ginga               | 7.4.0                                                | `network-sandbox` FEATURE will be disabled if you enable intersphinx linking for doc building.
 dev-python/glueviz             | 1.4.0 (glue-core: 1.17.1, 1.26.0; glue-qt: 0.4.2)    | Meta package. Core package and qt package versions are all shown.
