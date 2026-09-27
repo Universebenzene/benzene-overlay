@@ -12,6 +12,7 @@
 	<use>
 		<!--<flag name="awscli">Extra require via <pkg>app-admin/awscli</pkg></flag>
 		<flag name="boto3">Extra require via <pkg>dev-python/boto3</pkg></flag>-->
-		<flag name="httpx">Extra require via <pkg>dev-python/httpx</pkg></flag>
+		<flag name="httpx">Recommended httpx backend</flag>
+		<flag name="httpx2">Recommended httpx backend with Pydantic's fork <pkg>dev-python/httpx2</pkg></flag>
 	</use>
 </pkgmetadata>
