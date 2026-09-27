@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/NCAS-CMS/pyfive
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 pypi
 
@@ -19,6 +19,7 @@ PROPERTIES="test_network"
 RESTRICT="test"
 
 RDEPEND=">=dev-python/numpy-2[${PYTHON_USEDEP}]
+	dev-python/fsspec[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
