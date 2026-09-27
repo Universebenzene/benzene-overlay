@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
 PYPI_VERIFY_REPO=https://github.com/zarr-developers/zarr-python
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 pypi
 
@@ -16,9 +16,12 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cli examples optional remote"
+#PROPERTIES="test_network"
+#RESTRICT="test"
 
 RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
-	>=dev-python/google-crc32c-0.14[${PYTHON_USEDEP}]
+	>=dev-python/google-crc32c-1.5[${PYTHON_USEDEP}]
+	>=dev-python/msgspec-0.19[${PYTHON_USEDEP}]
 	>=dev-python/numpy-2[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.14[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
@@ -60,14 +63,16 @@ python_install_all() {
 	distutils-r1_python_install_all
 }
 
-EPYTEST_IGNORE=(
-	tests/test_docs.py
-	# Ignore uv related tests
-#	tests/test_examples.py
-#	tests/test_regression/test_v2_dtype_regression.py
-)
+#EPYTEST_IGNORE=(
+#	tests/test_docs.py
+#	# Ignore uv related tests
+##	tests/test_examples.py
+##	tests/test_regression/test_v2_dtype_regression.py
+#)
 
 EPYTEST_DESELECT=(
+	# Need network & obstore
+	'tests/test_docs.py::test_documentation_examples[user-guide/storage.md:storage]'
 	# Ignore uv related tests
 	'tests/test_examples.py::test_scripts_can_run[script_path0]'
 	'tests/test_examples.py::test_scripts_can_run[script_path1]'
