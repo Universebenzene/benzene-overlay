@@ -1465,6 +1465,11 @@ source = "archpkg"
 archpkg = "python-sphinx-reredirects"
 strip_release = true
 
+["dev-python/sphinx-selective-exclude"]
+source = "pypi"
+use_max_tag = true
+pypi = "sphinx-selective-exclude"
+
 ["dev-python/sphinx-sitemap"]
 source = "pypi"
 use_max_tag = true
