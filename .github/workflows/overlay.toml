@@ -1226,6 +1226,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "pyvo"
 
+["dev-python/pyx"]
+source = "archpkg"
+archpkg = "python-pyx"
+strip_release = true
+
 #["dev-python/pyzstd"]
 #source = "pypi"
 #use_max_tag = true

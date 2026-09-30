@@ -67,6 +67,7 @@ dev-python/pytest-benchmark                                                     
 dev-python/pytest-cython                                                             | 0.2.2; 0.3.1; 0.4.0                                                                                                                               |
 dev-python/pytest-dependency                                                         | 0.6.1                                                                                                                                             |
 dev-python/pytest-run-parallel                                                       | 0.10.0                                                                                                                                            |
+dev-python/pyx                                                                       | 0.17                                                                                                                                              | Dropped by official portage
 dev-python/api4jenkins                                                               | 2.2.0                                                                                                                                             |
 dev-python/python-jenkins                                                            | 1.8.3; (live)                                                                                                                                     | Dependency multi\_key\_dict is also included but not listed here
 dev-python/vispy                                                                     | 0.13.0; 0.16.2                                                                                                                                    |
@@ -257,7 +258,7 @@ dev-python/sphinx-contributors           | 0.3.0                           |
 dev-python/sphinx-last-updated-by-git    | 0.3.8                           | Required by new sphinx-sitemap
 dev-python/sphinx-mdinclude              | 0.6.2                           |
 dev-python/sphinx-reredirects            | 1.0.0; 1.1.0                    |
-dev-python/sphinx-selective-exclude      | 1.0.3                           | Doc & test dep for pyx
+dev-python/sphinx-selective-exclude      | 1.0.3-r2                        | Doc & test dep for pyx
 dev-python/sphinx-sitemap                | 2.6.0; 2.9.0                    |
 dev-python/sphinx-py3doc-enhanced-theme  | 2.4.0                           |
 dev-python/sphinxcontrib-globalsubs      | 0.1.2; 1.1.0                    |
