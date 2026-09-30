@@ -1,0 +1,13 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -54,8 +54,8 @@ packages = [
+ readme = {file= ["README.md"], content-type = "text/markdown"}
+ 
+ [build-system]
+-requires = ["setuptools >= 77.0.3", "nuitka>=4.0.6"]
+-build-backend = "nuitka.distutils.Build"
++requires = ["setuptools", "wheel"]
++build-backend = "setuptools.build_meta"
+ 
+ [tool.ruff]
+ exclude = [".venv", "build"]
