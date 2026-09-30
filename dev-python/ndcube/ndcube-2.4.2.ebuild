@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/sunpy/ndcube
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 pypi
 
@@ -42,7 +42,7 @@ RDEPEND=">dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 	)
 	reproject? ( >=dev-python/reproject-0.14[${PYTHON_USEDEP}] )
 "
-BDEPEND=">=dev-python/setuptools-scm-8.0.0[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-8.0.1[${PYTHON_USEDEP}]
 	doc? ( media-gfx/graphviz )
 	test? (
 		dev-python/dask[${PYTHON_USEDEP}]
@@ -65,7 +65,7 @@ distutils_enable_sphinx docs dev-python/sphinx-automodapi \
 	">=dev-python/sunpy-6.1.0"
 
 python_prepare_all() {
-	use doc && { eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch ; \
+	use doc && { eapply "${FILESDIR}"/${PN}-2.4.1-doc-use-local-fits.patch ; \
 		for fdat in "${DISTDIR}"/*-d-*; do { cp ${fdat} "${S}"/examples/${fdat##*-d-} || die ; } ; done ; \
 		cp "${DISTDIR}"/HorseHead.fits examples || die ; }
 
