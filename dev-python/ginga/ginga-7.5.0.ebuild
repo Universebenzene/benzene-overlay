@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 desktop optfeature pypi virtualx xdg
 
@@ -23,7 +23,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 #	pyside2? ( || ( $(python_gen_useflags python3_{10,11}) ) )"	# pyside2 about to be dropped
 
 RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
-	>=dev-python/astropy-7.2[${PYTHON_USEDEP}]
+	>=dev-python/astropy-7.2.1[${PYTHON_USEDEP}]
 	>=dev-python/pillow-12.3.0[${PYTHON_USEDEP}]
 	>=dev-python/qtpy-2.4.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
@@ -57,7 +57,7 @@ RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
 "
 #	$(python_gen_cond_dep '>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]' python3_10)
 #	pyside2? ( $(python_gen_cond_dep 'dev-python/pyside2[${PYTHON_USEDEP}]' python3_{10,11}) )
-BDEPEND=">=dev-python/setuptools-scm-10.2.0[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-10.2.1[${PYTHON_USEDEP}]
 	>=dev-python/babel-2.18.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
