@@ -30,11 +30,11 @@ EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 distutils_enable_sphinx docs dev-python/sphinx-automodapi dev-python/numpydoc
 
-python_prepare_all() {
-	use doc && { sed -i "/casa_io_formats.image_to_dask/s/_io_formats/_formats_io/" docs/index.rst || die ; }
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+#	use doc && { sed -i "/casa_io_formats.image_to_dask/s/_io_formats/_formats_io/" docs/index.rst || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
 
 python_compile_all() {
 #	No module named 'casa_formats_io._casa_chunking'
