@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -8,7 +8,7 @@ MY_P="${PN}-${MY_PV}"
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1
 
@@ -23,7 +23,7 @@ IUSE="examples ipython plot s3"
 PROPERTIES="test_network"
 RESTRICT="test"
 
-DEPEND=">=sci-libs/gdal-2.1.0:=[aux-xml(+),jpeg,png,threads(+)]
+DEPEND=">=sci-libs/gdal-2.1.0:=[${PYTHON_USEDEP},aux-xml(+),jpeg(+),png,threads(+)]
 	dev-python/numpy[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}
@@ -45,7 +45,7 @@ BDEPEND=">=dev-python/cython-3.0.2[${PYTHON_USEDEP}]
 		dev-python/hypothesis[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
-		sci-libs/gdal:=[aux-xml(+),hdf5,jpeg,netcdf,png,threads(+)]
+		sci-libs/gdal:=[${PYTHON_USEDEP},aux-xml(+),hdf5,jpeg(+),netcdf,png,threads(+)]
 		sci-libs/hdf5
 	)
 "
