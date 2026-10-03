@@ -1,0 +1,16 @@
+[Unit]
+Description=check running sunloginclinet loop
+Requires=network-online.target
+After=network-online.target
+
+
+[Service]
+Type=simple
+ExecStart=sh -c '/opt/awesun/bin/awesun_daemon -m server -name awesun >/dev/null 2>&1 & /opt/awesun/bin/awesun --mod=service'
+KillMode=control-group
+Restart=always
+RestartSec=5
+
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="check running sunloginclinet loop"
+command="/opt/awesun/bin/awesun_daemon"
+command_args="-m server -name awesun"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
+	need net
+	before runsunloginclient
+}
