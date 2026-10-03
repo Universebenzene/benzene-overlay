@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -78,7 +78,11 @@ RDEPEND="
 	x11-libs/libXtst
 	libsystemd? ( virtual/libsystemd )
 "
-BDEPEND="app-arch/p7zip"
+BDEPEND="|| (
+		>=app-arch/7zip-24.09[symlink(+)]
+		app-arch/p7zip
+	)
+"
 
 S="${WORKDIR}"
 
