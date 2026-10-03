@@ -1800,7 +1800,10 @@ source = "aur"
 aur = "ossutil"
 strip_release = true
 
-#["net-misc/sunloginclient"]
+["net-misc/sunloginclient"]
+source = "aur"
+aur = "sunloginclient"
+strip_release = true
 
 ["net-misc/todesk"]
 source = "aur"
