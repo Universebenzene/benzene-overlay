@@ -147,7 +147,7 @@ dev-python/distributed             | 2024.4.1; 2025.10.0; 2026.8.0              
 dev-python/dm-tree                 | 0.1.9                                                      | Required by new arviz
 dev-python/donfig                  | 0.8.1\_p1                                                  | Pulled in by zarr v3
 dev-python/dropboxdrivefs          | 1.4.1                                                      | Optional for new ratarmount{,core}
-dev-python/eventlet                | 0.33.3; 0.41.0                                             | Dropped by official portage. Required by firefly{,-viz}
+dev-python/eventlet                | 0.33.3; 0.41.2                                             | Dropped by official portage. Required by firefly{,-viz}
 dev-python/ext4                    | 1.2.4; 1.4.1{,-r1}                                         | Optional for new ratarmount{,core} <- ipfsspec.  `-r1` for patched version building without `dev-python/nuitka`
 dev-python/f90nml                  | 1.5                                                        | Optional for yt
 dev-python/fastcache               | 1.1.0                                                      | Optional for yt
