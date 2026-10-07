@@ -231,7 +231,7 @@ dev-python/ablog                         | 0.11.13                         |
 dev-python/autodocsumm                   | 0.2.15                          |
 dev-python/jupyter-cache                 | 0.6.1; 1.0.1                    |
 dev-python/jupyter-sphinx                | 0.5.3                           |
-dev-python/jupytext                      | 1.19.5                          | Build with wheel source to include Jupyter Lab Extenstion
+dev-python/jupytext                      | 1.19.6                          | Build with wheel source to include Jupyter Lab Extenstion
 dev-python/myst-nb                       | 0.17.2; 1.4.0                   |
 dev-python/myst-parser                   | 0.18.1-r1                       | Only for myst-nb that depends on old version
 dev-python/nbsphinx                      | 0.9.8                           | Added here as PYTHON\_COMPAT in main tree is old

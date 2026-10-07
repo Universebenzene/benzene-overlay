@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 pypi
 
@@ -31,11 +31,11 @@ BDEPEND="test? (
 		dev-python/black[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
 		dev-python/gitpython[${PYTHON_USEDEP}]
+		dev-python/ipykernel[${PYTHON_USEDEP}]
 		dev-python/isort[${PYTHON_USEDEP}]
 		dev-python/jupyter-server[${PYTHON_USEDEP}]
 		dev-python/myst-parser[${PYTHON_USEDEP}]
 		dev-python/nbconvert[${PYTHON_USEDEP}]
-		dev-python/notebook[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-gallery-0.8[${PYTHON_USEDEP}]
 		virtual/pandoc
