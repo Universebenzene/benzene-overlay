@@ -38,7 +38,12 @@ python_prepare_all() {
 #	sphinx_compile_all
 #	[[ -d _${PN//-/_} ]] && { mv {_,}${PN//-/_} || die ; }
 #}
-#
+
+python_install() {
+	rm -r "${BUILD_DIR}"/install/$(python_get_sitedir)/tests || die
+	distutils-r1_python_install
+}
+
 #python_test() {
 ##	ModuleNotFoundError: No module named 'ewah_bool_utils.ewah_bool_wrap'
 #	[[ -d ${PN//-/_} ]] && { mv {,_}${PN//-/_} || die ; }
