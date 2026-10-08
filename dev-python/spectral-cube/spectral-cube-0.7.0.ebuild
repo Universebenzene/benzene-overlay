@@ -4,6 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/radio-astro-tools/spectral-cube
 PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 pypi virtualx
@@ -14,7 +15,7 @@ HOMEPAGE="https://spectral-cube.readthedocs.io"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"	# no x86 KEYWORD for yt, glueviz
-IUSE="doc intersphinx noviz viz viz_extra"
+IUSE="doc intersphinx noviz viz viz-extra"
 RESTRICT="intersphinx? ( network-sandbox )"
 REQUIRED_USE="intersphinx? ( doc )"
 
@@ -24,7 +25,7 @@ RDEPEND=">=dev-python/numpy-1.24[${PYTHON_USEDEP}]
 	>=dev-python/dask-2025.1.1[${PYTHON_USEDEP}]
 	>=dev-python/joblib-1.3[${PYTHON_USEDEP}]
 	>=dev-python/packaging-19[${PYTHON_USEDEP}]
-	>=dev-python/radio-beam-0.3.5[${PYTHON_USEDEP}]
+	>=dev-python/radio-beam-0.3.10[${PYTHON_USEDEP}]
 	>=dev-python/tqdm-4.64[${PYTHON_USEDEP}]
 	noviz? (
 		>=dev-python/distributed-2022.5[${PYTHON_USEDEP}]
@@ -56,7 +57,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 "
 PDEPEND="noviz? ( >=dev-python/pvextractor-0.3[${PYTHON_USEDEP}] )
 	viz? ( >=dev-python/pvextractor-0.3[${PYTHON_USEDEP}] )
-	viz_extra? ( >=dev-python/glue-qt-0.1[${PYTHON_USEDEP}] )
+	viz-extra? ( >=dev-python/glue-qt-0.1[${PYTHON_USEDEP}] )
 	test? (
 		dev-python/glue-qt[${PYTHON_USEDEP}]
 		dev-python/pvextractor[${PYTHON_USEDEP}]
@@ -68,11 +69,11 @@ EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus} )
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
 
-python_prepare_all() {
-	sed -e 's/glue.viewers.image.qt/glue_qt.viewers.image/' \
-		-e "s/glue.app.qt/glue_qt.app/" -i spectral_cube/spectral_cube.py || die
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+#	sed -e 's/glue.viewers.image.qt/glue_qt.viewers.image/' \
+#		-e "s/glue.app.qt/glue_qt.app/" -i spectral_cube/spectral_cube.py || die
+#	distutils-r1_python_prepare_all
+#}
 
 python_compile_all() {
 	if use doc; then

@@ -22,6 +22,6 @@
 		<flag name="intersphinx">Enable intersphinx while doc building.</flag>
 		<flag name="noviz">More dependency for non-visualization support</flag>
 		<flag name="viz">More dependency for visualization support</flag>
-		<flag name="viz_extra">Even more extra dependency for visualization support</flag>
+		<flag name="viz-extra">Even more extra dependency for visualization support</flag>
 	</use>
 </pkgmetadata>
