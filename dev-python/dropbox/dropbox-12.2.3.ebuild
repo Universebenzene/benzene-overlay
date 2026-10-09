@@ -27,8 +27,8 @@ distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
 
 EPYTEST_IGNORE=( test/integration )
 
-python_prepare_all() {
-	use test && { sed -i 's/import mock/from unittest import mock/' test/unit/test_dropbox_unit.py || die ; }
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+#	use test && { sed -i 's/import mock/from unittest import mock/' test/unit/test_dropbox_unit.py || die ; }
+#
+#	distutils-r1_python_prepare_all
+#}
