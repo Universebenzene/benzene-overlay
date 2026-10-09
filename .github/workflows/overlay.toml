@@ -1076,13 +1076,13 @@ archpkg = "python-pyppmd"
 strip_release = true
 
 ["dev-python/pyqt5"]
-source = "repology"
-repology = "python:pyqt5"
-repo = "gentoo"
+source = "archpkg"
+archpkg = "python-pyqt5"
+strip_release = true
 
 ["dev-python/pyqt5-sip"]
 source = "archpkg"
-repology = "python-pyqt5-sip"
+archpkg = "python-pyqt5-sip"
 strip_release = true
 
 ["dev-python/pyregion"]
