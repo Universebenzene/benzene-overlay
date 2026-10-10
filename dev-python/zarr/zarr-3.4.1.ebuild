@@ -23,7 +23,7 @@ RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 	>=dev-python/google-crc32c-1.5[${PYTHON_USEDEP}]
 	>=dev-python/msgspec-0.19[${PYTHON_USEDEP}]
 	>=dev-python/numpy-2[${PYTHON_USEDEP}]
-	>=dev-python/numcodecs-0.14[${PYTHON_USEDEP}]
+	>=dev-python/numcodecs-0.16[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.14[${PYTHON_USEDEP}]
 	cli? ( dev-python/typer[${PYTHON_USEDEP}] )
@@ -31,8 +31,8 @@ RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 	remote? ( >=dev-python/fsspec-2023.10.0[${PYTHON_USEDEP}] )
 "
 BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
+	>=dev-python/setuptools-scm-9[${PYTHON_USEDEP}]
 	test? (
-		dev-python/flask-cors[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/numpydoc[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
