@@ -5,8 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{{11..15},{13..15}t} )
-#PYTHON_COMPAT=( python3_{{11..12},{13..15}{,t}} )
+PYTHON_COMPAT=( python3_{12,{13..15}{,t}} )
 
 inherit distutils-r1 pypi
 
@@ -22,7 +21,6 @@ DEPEND="app-arch/zstd"
 BDEPEND="dev-python/cython[${PYTHON_USEDEP}]"
 
 EPYTEST_PLUGINS=()
-: ${EPYTEST_TIMEOUT:=180}
 distutils_enable_tests pytest
 
 python_prepare_all() {
@@ -31,7 +29,9 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
-src_test() {
-	$(tc-getCC) ${CFLAGS} indexed_zstd/libzstd-seek/tests/gen_seekable.c -o gen_seekable -lzstd || die
-	GEN_SEEKABLE="${S}/gen_seekable" distutils-r1_src_test
+python_test() {
+	if [[ ! -f 'gen_seekable' ]]; then
+		$(tc-getCC) ${CFLAGS} indexed_zstd/libzstd-seek/tests/gen_seekable.c -o gen_seekable -lzstd || die
+	fi
+	GEN_SEEKABLE="${S}/gen_seekable" epytest -m "not heavy and not reference"
 }
