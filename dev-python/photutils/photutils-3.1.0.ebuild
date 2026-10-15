@@ -5,6 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
+PYPI_VERIFY_REPO=https://github.com/astropy/photutils
 PYTHON_COMPAT=( python3_{12..14} )
 
 DATA_COM="8c97b4f"
@@ -38,47 +39,45 @@ REQUIRED_USE="intersphinx? ( doc )
 
 DEPEND=">=dev-python/numpy-2.0[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-6.1.4[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.13[${PYTHON_USEDEP}]
+	>=dev-python/astropy-7.0[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.15.0[${PYTHON_USEDEP}]
 	all? (
 		>=dev-python/bottleneck-1.4[${PYTHON_USEDEP}]
-		>=dev-python/gwcs-0.20[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.9[${PYTHON_USEDEP}]
+		>=dev-python/gwcs-0.22[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.10[${PYTHON_USEDEP}]
 		>=dev-python/rasterio-1.4[${PYTHON_USEDEP}]
-		>=dev-python/regions-0.9[${PYTHON_USEDEP}]
-		>=dev-python/scikit-image-0.23[${PYTHON_USEDEP}]
-		>=dev-python/shapely-2.0[${PYTHON_USEDEP}]
-		>=dev-python/tqdm-4.66[${PYTHON_USEDEP}]
+		>=dev-python/regions-0.10[${PYTHON_USEDEP}]
+		>=dev-python/shapely-2.1[${PYTHON_USEDEP}]
+		>=dev-python/tqdm-4.67[${PYTHON_USEDEP}]
 	)
 "
-BDEPEND=">=dev-python/setuptools-scm-8.1[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-8.2[${PYTHON_USEDEP}]
 	>=dev-python/cython-3.1.2[${PYTHON_USEDEP}]
 	<dev-python/cython-4[${PYTHON_USEDEP}]
-	>=dev-python/extension-helpers-1.3[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.15.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
-		>=dev-python/sphinx-astropy-1.9.1[${PYTHON_USEDEP},confv2]
-		>=dev-python/sphinx-design-0.6[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-astropy-1.11[${PYTHON_USEDEP},confv2]
+		>=dev-python/sphinx-design-0.7[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-reredirects-1.1[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
-		dev-python/scikit-image[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		$(python_gen_cond_dep 'dev-python/tomli[${PYTHON_USEDEP}]' python3_10)
 		media-gfx/graphviz
 	)
 	test? (
 		dev-python/bottleneck[${PYTHON_USEDEP}]
-		dev-python/scikit-image[${PYTHON_USEDEP}]
-		dev-python/regions[${PYTHON_USEDEP}]
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
 		dev-python/rasterio[${PYTHON_USEDEP}]
+		dev-python/regions[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		dev-python/tqdm[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,remotedata} )
+EPYTEST_PLUGINS=( pytest-{asdf-plugin,astropy-header,doctestplus,remotedata} )
 distutils_enable_tests pytest
 # TODO: Fix this
 # NameError: name 'disabled_intersphinx_mapping' is not defined
@@ -97,6 +96,8 @@ distutils_enable_tests pytest
 python_prepare_all() {
 	use local-datasets && { eapply "${FILESDIR}/"${P}-datasets-use-local.patch; mkdir -p ${PN}/datasets/data ; \
 		for ldata in "${DISTDIR}"/*-d-*; do { cp ${ldata} "${S}"/${PN}/datasets/data/${ldata##*-d-} || die ; } ; done ; }
+	use doc && { eapply "${FILESDIR}/"${P}-doc-use-local.patch; \
+		for docf in "${DISTDIR}"/*-d-{i,h}*; do { cp ${docf} "${S}"/docs/user_guide/${docf##*-d-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
 }
 
@@ -113,12 +114,12 @@ python_test() {
 }
 
 pkg_postinst() {
-	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.9"
-	optfeature "perform aperture photometry using region objects" ">=dev-python/regions-0.9"
-	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.23"
-	optfeature "make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.20"
+	optfeature "power a variety of plotting features (e.g., plotting apertures)" ">=dev-python/matplotlib-3.10"
+	optfeature "perform aperture photometry using region objects" ">=dev-python/regions-0.10"
+#	optfeature "deblending segmented sources" ">=dev-python/scikit-image-0.23"
+	optfeature "make_gwcs to create a simple celestial gwcs object" ">=dev-python/gwcs-0.22"
 	optfeature "improves the performance of sigma clipping and other functionality that may require computing statistics on arrays with NaN values" ">=dev-python/bottleneck-1.4"
-	optfeature "display optional progress bars" ">=dev-python/tqdm-4.66"
+	optfeature "display optional progress bars" ">=dev-python/tqdm-4.67"
 	optfeature "convert source segments into polygon objects" ">=dev-python/rasterio-1.4"
-	optfeature "converting source segments into polygon objects" ">=dev-python/rasterio-1.3.7 >=dev-python/shapely-2.0"
+	optfeature "converting source segments into polygon objects" ">=dev-python/rasterio-1.3.7 >=dev-python/shapely-2.1"
 }

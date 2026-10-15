@@ -1,0 +1,75 @@
+--- a/photutils/datasets/load.py	2026-10-14 06:45:47.935285000 +0800
++++ b/photutils/datasets/load.py	2026-10-14 12:00:12.239540413 +0800
+@@ -153,8 +153,12 @@
+     hdu : `~astropy.io.fits.ImageHDU`
+         The 4.5 micron Spitzer image in a FITS image HDU.
+     """
+-    path = _get_path('spitzer_example_image.fits', location='remote',
+-                     show_progress=show_progress)
++    try:
++        path = _get_path('spitzer_example_image.fits', location='remote',
++                         show_progress=show_progress)
++    except (URLError, HTTPError):   # timeout or not found
++        path = _get_path('spitzer_example_image.fits', location='local',
++                         show_progress=show_progress)
+     return _load_fits_as_imagehdu(path)
+ 
+ 
+@@ -178,8 +182,12 @@
+         The catalog of sources, with Galactic coordinates, 4.5 micron
+         fluxes, and magnitudes in the four IRAC channels.
+     """
+-    path = _get_path('spitzer_example_catalog.xml', location='remote',
+-                     show_progress=show_progress)
++    try:
++        path = _get_path('spitzer_example_catalog.xml', location='remote',
++                         show_progress=show_progress)
++    except Exception:   # timeout or not found
++        path = _get_path('spitzer_example_catalog.xml', location='local',
++                         show_progress=show_progress)
+     return Table.read(path)
+ 
+ 
+@@ -220,7 +228,10 @@
+         raise ValueError(msg)
+ 
+     filepath = f'irac_ch{channel}_flight.fits'
+-    path = _get_path(filepath, location='remote', show_progress=show_progress)
++    try:
++        path = _get_path(filepath, location='remote', show_progress=show_progress)
++    except Exception:   # timeout or not found
++        path = _get_path(filepath, location='local', show_progress=show_progress)
+     return _load_fits_as_imagehdu(path)
+ 
+ 
+@@ -246,8 +257,12 @@
+     hdu : `~astropy.io.fits.ImageHDU`
+         The M67 image in a FITS image HDU.
+     """
+-    path = _get_path('M6707HH.fits', location='remote',
+-                     show_progress=show_progress)
++    try:
++        path = _get_path('M6707HH.fits', location='remote',
++                         show_progress=show_progress)
++    except Exception:   # timeout or not found
++        path = _get_path('M6707HH.fits', location='local',
++                         show_progress=show_progress)
+     return _load_fits_as_imagehdu(path)
+ 
+ 
+@@ -269,7 +284,12 @@
+     hdu : `~astropy.io.fits.ImageHDU`
+         A FITS image HDU containing the simulated HST star image.
+     """
+-    path = _get_path('hst_wfc3ir_f160w_simulated_starfield.fits',
+-                     location='photutils-datasets',
+-                     show_progress=show_progress)
++    try:
++        path = _get_path('hst_wfc3ir_f160w_simulated_starfield.fits',
++                         location='photutils-datasets',
++                         show_progress=show_progress)
++    except Exception:   # timeout or not found
++        path = _get_path('hst_wfc3ir_f160w_simulated_starfield.fits',
++                         location='local',
++                         show_progress=show_progress)
+     return _load_fits_as_imagehdu(path)
