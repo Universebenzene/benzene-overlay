@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{12..14} )
+PYTHON_COMPAT=( python3_{12..15} )
 PYTHON_REQ_USE="threads(+)"
 
 inherit distutils-r1
@@ -37,7 +37,7 @@ RDEPEND="
 	>=dev-python/packaging-23.0[${PYTHON_USEDEP}]
 	>=dev-python/pygments-2.14[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.30.0[${PYTHON_USEDEP}]
-	>=dev-python/roman-numerals-py-1.0.0[${PYTHON_USEDEP}]
+	>=dev-python/roman-numerals-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/snowballstemmer-2.2[${PYTHON_USEDEP}]
 	>=dev-python/sphinxcontrib-applehelp-1.0.7[${PYTHON_USEDEP}]
 	>=dev-python/sphinxcontrib-devhelp-1.0.6[${PYTHON_USEDEP}]
