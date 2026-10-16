@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/xarray-contrib/sphinx-autosummary-accessors
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..15} )
 
 inherit distutils-r1 pypi
 
@@ -16,10 +16,16 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="<dev-python/sphinx-9[${PYTHON_USEDEP}]
+RDEPEND=">=dev-python/sphinx-6[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
-BDEPEND=">=dev-python/setuptools-scm-7.0[${PYTHON_USEDEP}]"
+BDEPEND=">=dev-python/setuptools-scm-8.0[${PYTHON_USEDEP}]"
 
 distutils_enable_tests import-check
-distutils_enable_sphinx docs dev-python/sphinx-rtd-theme
+distutils_enable_sphinx docs dev-python/pydata-sphinx-theme
+
+python_prepare_all() {
+	use doc && { sed -i -e "/pixi/d" docs/conf.py || die ; }
+
+	distutils-r1_python_prepare_all
+}
