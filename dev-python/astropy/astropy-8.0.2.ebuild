@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/astropy/astropy
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 DATA_URI="http://www.astropy.org/astropy-data"
 
@@ -48,7 +48,7 @@ DEPEND=">=dev-libs/expat-2.7.3:0=
 	virtual/zlib:=
 "
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-iers-data-0.2026.6.22.1.23.34[${PYTHON_USEDEP}]
+	>=dev-python/astropy-iers-data-0.2026.9.28.0.59.37[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
 	dev-python/ply[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-6.0.0[${PYTHON_USEDEP}]
@@ -112,7 +112,7 @@ PATCHES=( "${FILESDIR}/${PN}-6.0.0-system-configobj.patch" )
 #	dev-python/scipy \
 #	dev-python/pytest
 
-EPYTEST_PLUGINS=( hypothesis pytest-{arraydiff,astropy{,-header},doctestplus,filter-subpackage,mock,mpl,remotedata} )
+EPYTEST_PLUGINS=( hypothesis pytest-{arraydiff,astropy-header,doctestplus,filter-subpackage,mock,mpl,remotedata,run-parallel,skip-slow} )
 EPYTEST_XDIST=1
 distutils_enable_tests pytest
 
@@ -151,7 +151,7 @@ python_compile_all() {
 
 python_test() {
 	pushd "${BUILD_DIR}/install/$(python_get_sitedir)" || die
-	epytest --remote-data --run-slow
+	epytest --remote-data --slow
 	popd || die
 }
 
