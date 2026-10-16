@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 #pypi
 
@@ -30,7 +30,7 @@ RDEPEND=">=app-arch/brotli-1.2.0[python,${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-9.2.0[${PYTHON_USEDEP}]
 	test? (
-		app-arch/p7zip
+		|| ( >=app-arch/7zip-24.09[symlink(+)] app-arch/p7zip )
 		dev-python/requests[${PYTHON_USEDEP}]
 		dev-python/py-cpuinfo[${PYTHON_USEDEP}]
 	)
