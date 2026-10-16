@@ -19,7 +19,7 @@ IUSE="httpx httpx2"
 
 RDEPEND=">=dev-python/aiohttp-3.14.0[${PYTHON_USEDEP}]
 	>=dev-python/aioitertools-0.5.1[${PYTHON_USEDEP}]
-	>=dev-python/botocore-1.43.66[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.43.101[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	>=dev-python/multidict-6.0.0[${PYTHON_USEDEP}]
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
