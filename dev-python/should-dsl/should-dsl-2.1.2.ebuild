@@ -4,8 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{{11..15},{13..15}t} )
-#PYTHON_COMPAT=( python3_{{11..12},{13..15}{,t}} )
+PYTHON_COMPAT=( python3_{12,{13..15}{,t}} )
 
 COMMIT="ded0323344f21311f366ffc711b65245aafc11f1"
 
