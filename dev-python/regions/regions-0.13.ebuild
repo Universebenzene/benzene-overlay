@@ -27,27 +27,27 @@ RESTRICT="test
 REQUIRED_USE="intersphinx? ( doc )"
 DEPEND=">=dev-python/numpy-2.0:=[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-6.1.7[${PYTHON_USEDEP}]
+	>=dev-python/astropy-7.0[${PYTHON_USEDEP}]
 	all? (
-		>=dev-python/matplotlib-3.9[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.10[${PYTHON_USEDEP}]
 		>=dev-python/shapely-2.1[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${RDEPEND}
 	>=dev-python/cython-3.1.2[${PYTHON_USEDEP}]
-	>=dev-python/extension-helpers-1.3[${PYTHON_USEDEP}]
+	>=dev-python/extension-helpers-1.4[${PYTHON_USEDEP}]
 	>=dev-python/setuptools-scm-8.2[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
 		>=dev-python/sphinx-astropy-1.9[${PYTHON_USEDEP},confv2]
-		>=dev-python/sphinx-design-0.6[${PYTHON_USEDEP}]
-		>=dev-python/matplotlib-3.9[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-design-0.7[${PYTHON_USEDEP}]
 		dev-python/shapely[${PYTHON_USEDEP}]
 		media-gfx/graphviz
 	)
 	test? (
 		dev-python/gwcs[${PYTHON_USEDEP}]
 		dev-python/matplotlib[${PYTHON_USEDEP}]
+		dev-python/shapely[${PYTHON_USEDEP}]
 	)
 "
 
@@ -56,7 +56,7 @@ distutils_enable_tests pytest
 
 python_prepare_all() {
 	use doc && { cp "${DISTDIR}"/*.fits* docs/_static || die ; }
-	use intersphinx || eapply "${FILESDIR}"/${P}-doc-use-local-fits.patch
+	use intersphinx || eapply "${FILESDIR}"/${PN}-0.12-doc-use-local-fits.patch
 	distutils-r1_python_prepare_all
 }
 
