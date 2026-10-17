@@ -94,9 +94,9 @@ distutils_enable_tests pytest
 #}
 
 python_prepare_all() {
-	use local-datasets && { eapply "${FILESDIR}/"${P}-datasets-use-local.patch; mkdir -p ${PN}/datasets/data ; \
+	use local-datasets && { eapply "${FILESDIR}/"${PN}-3.1.0-datasets-use-local.patch; mkdir -p ${PN}/datasets/data ; \
 		for ldata in "${DISTDIR}"/*-d-*; do { cp ${ldata} "${S}"/${PN}/datasets/data/${ldata##*-d-} || die ; } ; done ; }
-	use doc && { eapply "${FILESDIR}/"${P}-doc-use-local.patch; \
+	use doc && { eapply "${FILESDIR}/"${PN}-3.1.0-doc-use-local.patch; \
 		for docf in "${DISTDIR}"/*-d-{i,h}*; do { cp ${docf} "${S}"/docs/user_guide/${docf##*-d-} || die ; } ; done ; }
 	distutils-r1_python_prepare_all
 }
