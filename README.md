@@ -210,7 +210,7 @@ dev-python/textual                 | 8.2.8                                      
 dev-python/typing-validation       | 1.2.12; 2.2.1                                              | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/colorspacious           | 1.1.2                                                      | Pulled in by cmyt. Dropped by official portage
 dev-python/cmyt                    | 2.0.0; 2.0.4                                               | Pulled in by yt
-dev-python/unyt                    | 2.9.5; 3.0.4; 3.1.0                                        | Pulled in by yt
+dev-python/unyt                    | 2.9.5; 3.0.4; 3.2.0                                        | Pulled in by yt
 dev-python/uncompresspy            | 0.4.1                                                      | Optional for astropy>=7.1
 dev-python/universal-pathlib       | 0.3.10                                                     | Test dependency for zarr
 dev-python/webdav4                 | 0.11.0                                                     | Optional for new ratarmount{,core}
