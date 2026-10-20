@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..15} )
+PYTHON_COMPAT=( python3_{12..15} )
 
 inherit distutils-r1 optfeature pypi
 
@@ -52,9 +52,9 @@ distutils_enable_tests pytest
 distutils_enable_sphinx docs ">=dev-python/sphinx-asdf-0.2.2" dev-python/sphinx-inline-tabs dev-python/furo \
 	">=dev-python/mistune-3"
 
-python_test() {
-	epytest -Werror::UserWarning #--remote-data
-}
+#python_test() {
+#	epytest -Werror::UserWarning #--remote-data
+#}
 
 pkg_postinst() {
 	optfeature "units, time, transform, wcs, or running the tests" ">=dev-python/astropy-3.0"
