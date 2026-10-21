@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/spacetelescope/synphot_refactor
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 optfeature pypi
 
@@ -24,11 +24,11 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 DEPEND=">=dev-python/numpy-2.0.0[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
-	>=dev-python/astropy-6[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.9[${PYTHON_USEDEP}]
+	>=dev-python/astropy-7[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.14[${PYTHON_USEDEP}]
 	all? (
 		dev-python/dust-extinction[${PYTHON_USEDEP}]
-		>=dev-python/specutils-1.10[${PYTHON_USEDEP}]
+		>=dev-python/specutils-2[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
@@ -63,7 +63,7 @@ python_compile_all() {
 
 python_test() {
 	cp "${BUILD_DIR}"/install/$(python_get_sitedir)/${PN}/*.so ${PN} || die
-	epytest --remote-data=any
+	epytest --remote-data
 	rm ${PN}/*.so || die
 }
 
