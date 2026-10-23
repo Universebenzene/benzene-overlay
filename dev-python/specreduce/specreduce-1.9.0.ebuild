@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/astropy/specreduce
-PYTHON_COMPAT=( python3_{11..13} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 DATA_COM="dcba1c6"
 DATA_URI="https://github.com/astropy/specreduce-data/raw/${DATA_COM}/specreduce_data/reference_data"
