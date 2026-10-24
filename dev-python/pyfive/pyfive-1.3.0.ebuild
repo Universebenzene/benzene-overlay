@@ -20,6 +20,7 @@ RESTRICT="test"
 
 RDEPEND=">=dev-python/numpy-2[${PYTHON_USEDEP}]
 	dev-python/fsspec[${PYTHON_USEDEP}]
+	>=dev-python/numcodecs-0.16.5[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
 "
 BDEPEND=">=dev-python/setuptools-scm-8[${PYTHON_USEDEP}]
@@ -42,10 +43,10 @@ distutils_enable_sphinx doc dev-python/sphinx-rtd-theme dev-python/autodocsumm
 
 python_prepare_all() {
 	sed -i -e "/--cov/d" -e "/--html/d" pyproject.toml || die
-	sed -e '/stringtochar(months)/s:(months):(months, encoding="ascii"):' \
-		-e '/stringtochar(months_m)/s:(months_m):(months_m, encoding="ascii"):' \
-		-e '/stringtochar(numbers)/s:(numbers):(numbers, encoding="ascii"):' \
-		-e '/stringtochar(np/s:S8"):S8"), encoding="ascii":' -i tests/test_vlen_str.py || die
+#	sed -e '/stringtochar(months)/s:(months):(months, encoding="ascii"):' \
+#		-e '/stringtochar(months_m)/s:(months_m):(months_m, encoding="ascii"):' \
+#		-e '/stringtochar(numbers)/s:(numbers):(numbers, encoding="ascii"):' \
+#		-e '/stringtochar(np/s:S8"):S8"), encoding="ascii":' -i tests/test_vlen_str.py || die
 	use doc && { sed -i "s/intersphinx/disabled_intersphinx/" doc/gensidebar.py || die ; }
 
 	distutils-r1_python_prepare_all
