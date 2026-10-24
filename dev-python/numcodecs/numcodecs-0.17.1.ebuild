@@ -42,8 +42,8 @@ BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 PDEPEND="test? ( >=dev-python/zarr-3[${PYTHON_USEDEP}] )"
 
 PATCHES=(
-	"${FILESDIR}/0001-${P}-Allow-building-against-a-system-Zlib.patch"
-	"${FILESDIR}/0002-${P}-Re-add-Snappy-to-tests.patch"
+	"${FILESDIR}/0001-${P}-Drop-the-extra-licenses.patch"
+	"${FILESDIR}/0002-${PN}-0.17.0-Re-add-Snappy-to-tests.patch"
 )
 
 EPYTEST_PLUGINS=()

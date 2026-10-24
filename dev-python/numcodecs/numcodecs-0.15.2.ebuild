@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 pypi
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://numcodecs.readthedocs.io"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="crc32c examples google_crc32c msgpack zfpy"
+IUSE="crc32c examples msgpack zfpy"
 
 DEPEND="app-arch/lz4:=
 	app-arch/zstd:=
@@ -23,39 +23,43 @@ DEPEND="app-arch/lz4:=
 	>dev-python/numpy-2[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
+	dev-python/deprecated[${PYTHON_USEDEP}]
 	crc32c? ( >=dev-python/crc32c-2.7[${PYTHON_USEDEP}] )
-	google_crc32c? ( >=dev-python/google-crc32c-1.5[${PYTHON_USEDEP}] )
 	msgpack? ( dev-python/msgpack[${PYTHON_USEDEP}] )
 	zfpy? ( dev-libs/zfp[python] )
 "
 BDEPEND=">=dev-python/setuptools-scm-6.2[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
 	dev-python/py-cpuinfo[${PYTHON_USEDEP}]
-	doc? ( dev-libs/zfp[python] )
+	doc? (
+		dev-libs/zfp[python]
+		dev-python/crc32c[${PYTHON_USEDEP}]
+		>=dev-python/zarr-3[${PYTHON_USEDEP}]
+	)
 	test? (
 		dev-libs/zfp[python]
+		dev-python/crc32c[${PYTHON_USEDEP}]
 		dev-python/importlib-metadata[${PYTHON_USEDEP}]
 		dev-python/msgpack[${PYTHON_USEDEP}]
-		dev-python/pyzstd[${PYTHON_USEDEP}]
 	)
 "
-PDEPEND="test? ( >=dev-python/zarr-3[${PYTHON_USEDEP}] )"
+PDEPEND="test? (
+		>=dev-python/zarr-3[${PYTHON_USEDEP}]
+		<dev-python/zarr-3.1.0[${PYTHON_USEDEP}]
+	)
+"
 
 PATCHES=(
-	"${FILESDIR}/0001-${PN}-0.16.3-No-embedded-libs.patch"
+	"${FILESDIR}/0001-${P}-No-embedded-libs.patch"
 	"${FILESDIR}/0006-${PN}-0.16.3-Enable-snappy.patch"
 )
 
-EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
-distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc dev-python/pydata-sphinx-theme \
-	dev-python/crc32c \
-	">=dev-python/zarr-3"
+distutils_enable_sphinx docs dev-python/sphinx-issues dev-python/numpydoc dev-python/pydata-sphinx-theme
 
 python_prepare_all() {
 	use test && { sed -i "s/--cov=numcodecs --cov-report xml //" pyproject.toml || die ; }
-	sed -i "/None = None/a import zfpy as _zfpy" ${PN}/zfpy.py || die
+	sed -i "/] = None/a import zfpy as _zfpy" ${PN}/zfpy.py || die
 	rm -r c-blosc || die
 
 	distutils-r1_python_prepare_all
@@ -81,6 +85,10 @@ python_install_all() {
 
 	distutils-r1_python_install_all
 }
+
+#python_test() {
+#	epytest "${BUILD_DIR}"
+#}
 
 python_test() {
 #	E   ImportError: cannot import name 'blosc' from partially initialized module 'numcodecs'
