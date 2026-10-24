@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="optional remote"
 
 RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.26[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.25[${PYTHON_USEDEP}]
 	>=dev-python/numcodecs-0.14[${PYTHON_USEDEP},crc32c]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.9[${PYTHON_USEDEP}]
@@ -36,7 +36,6 @@ BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]
 		dev-python/moto[${PYTHON_USEDEP}]
 		dev-python/rich[${PYTHON_USEDEP}]
 		dev-python/s3fs[${PYTHON_USEDEP}]
-		dev-python/tomlkit[${PYTHON_USEDEP}]
 		dev-python/universal-pathlib[${PYTHON_USEDEP}]
 	)
 "
@@ -60,12 +59,6 @@ distutils_enable_tests pytest
 #	distutils-r1_python_install_all
 #}
 
-EPYTEST_IGNORE=(
-	# Ignore uv related tests
-	tests/test_examples.py
-#	tests/test_regression/test_v2_dtype_regression.py
-)
-
 python_test() {
-	epytest --run-slow-hypothesis #-Werror::zarr.core.dtype.common.UnstableSpecificationWarning
+	epytest --run-slow-hypothesis
 }
