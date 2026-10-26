@@ -201,6 +201,11 @@ source = "pypi"
 use_max_tag = true
 pypi = "arviz-plots"
 
+["dev-python/asciitree"]
+source = "pypi"
+use_max_tag = true
+pypi = "asciitree"
+
 #["dev-python/asciitree"]
 #source = "github"
 #use_max_tag = true

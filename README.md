@@ -136,7 +136,7 @@ dev-python/aggdraw                 | 1.3.16; 1.4.1                              
 dev-python/aiobotocore             | 3.3.0; 3.9.2                                               | Pulled in by s3fs
 dev-python/aiohttp-retry           | 2.9.1                                                      | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/arviz                   | 0.17.1; 0.23.4; 1.3.0                                      | Optional for corner.py. Dependency arviz-{base,stats,plots} are included but not listed in the table
-dev-python/asciitree               | 0.3.3                                                      | Pulled in by zarr
+dev-python/asciitree               | 0.3.3; 1.0.0                                               | Pulled in by zarr
 dev-python/aspectlib               | 2.0.0                                                      | Optional for pytest-benchmark
 dev-python/azure-core              | 1.26.3; 1.41.0                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.24.1                                             | Optional for yt
