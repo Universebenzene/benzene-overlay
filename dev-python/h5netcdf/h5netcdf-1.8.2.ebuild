@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 optfeature pypi
 
@@ -19,15 +19,15 @@ IUSE="+h5py h5pyd pyfive"
 RDEPEND="dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
 	h5py? ( dev-python/h5py[${PYTHON_USEDEP}] )
-	h5pyd? ( dev-python/h5pyd[${PYTHON_USEDEP}] )
-	pyfive? ( >=dev-python/pyfive-1.0.0[${PYTHON_USEDEP}] )
+	h5pyd? ( >=dev-python/h5pyd-1.0.0[${PYTHON_USEDEP}] )
+	pyfive? ( >=dev-python/pyfive-1.2.0[${PYTHON_USEDEP}] )
 "
 BDEPEND=">=dev-python/setuptools-scm-7.0[${PYTHON_USEDEP}]
 	test? (
 		dev-python/netcdf4[${PYTHON_USEDEP}]
 		dev-python/h5py[${PYTHON_USEDEP}]
 		dev-python/h5pyd[${PYTHON_USEDEP}]
-		>=dev-python/pyfive-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pyfive-1.2.0[${PYTHON_USEDEP}]
 		>=sci-libs/hdf5-1.12.1
 	)
 "
