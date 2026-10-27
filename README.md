@@ -214,7 +214,7 @@ dev-python/unyt                    | 2.9.5; 3.0.4; 3.2.0                        
 dev-python/uncompresspy            | 0.4.1                                                      | Optional for astropy>=7.1
 dev-python/universal-pathlib       | 0.3.10                                                     | Test dependency for zarr
 dev-python/webdav4                 | 0.11.0                                                     | Optional for new ratarmount{,core}
-dev-python/wsgidav                 | 4.3.5                                                      | Test dependency for webdav4
+dev-python/wsgidav                 | 4.4.0                                                      | Test dependency for webdav4
 dev-python/zict                    | 2.2.0; 3.0.0                                               | Pulled in by distributed
 
 <!--</details>-->

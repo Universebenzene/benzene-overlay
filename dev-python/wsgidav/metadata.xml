@@ -9,4 +9,9 @@
 		<remote-id type="pypi">WsgiDAV</remote-id>
 		<remote-id type="github">mar10/wsgidav</remote-id>
 	</upstream>
+	<use>
+		<flag name="bcrypt">Support for password with bcrypt hashes via <pkg>dev-python/bcrypt</pkg></flag>
+		<flag name="htpasswd">htpasswd and htdigest domain controllers support via <pkg>dev-python/libpass</pkg></flag>
+		<flag name="pam">PAM support via <pkg>dev-python/python-pam</pkg></flag>
+	</use>
 </pkgmetadata>
