@@ -23,7 +23,7 @@ RDEPEND=">=dev-python/donfig-0.8[${PYTHON_USEDEP}]
 	>=dev-python/google-crc32c-1.5[${PYTHON_USEDEP}]
 	>=dev-python/msgspec-0.19[${PYTHON_USEDEP}]
 	>=dev-python/numpy-2[${PYTHON_USEDEP}]
-	>=dev-python/numcodecs-0.16[${PYTHON_USEDEP}]
+	>=dev-python/numcodecs-0.16.6[${PYTHON_USEDEP}]
 	>=dev-python/packaging-22.0[${PYTHON_USEDEP}]
 	>=dev-python/typing-extensions-4.14[${PYTHON_USEDEP}]
 	cli? ( dev-python/typer[${PYTHON_USEDEP}] )
