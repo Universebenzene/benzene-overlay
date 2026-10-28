@@ -24,7 +24,7 @@ REQUIRED_USE="intersphinx? ( doc )"
 
 RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
 	>=dev-python/astropy-7.2.1[${PYTHON_USEDEP}]
-	>=dev-python/pillow-12.3.0[${PYTHON_USEDEP}]
+	>=dev-python/pillow-13.0.0[${PYTHON_USEDEP}]
 	>=dev-python/qtpy-2.4.1[${PYTHON_USEDEP}]
 	>=dev-python/packaging-23.1[${PYTHON_USEDEP}]
 	>=dev-python/puremagic-1.28[${PYTHON_USEDEP}]
@@ -45,6 +45,7 @@ RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
 		>=dev-python/python-magic-0.4.15[${PYTHON_USEDEP}]
 		>=dev-python/pyvo-1.9.0[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.16[${PYTHON_USEDEP}]
+		>=dev-python/sep-1.4[${PYTHON_USEDEP}]
 		>=media-libs/opencv-4.5.4.58[${PYTHON_USEDEP},python]
 		>=dev-python/photutils-1.13[${PYTHON_USEDEP}]
 	)
@@ -57,7 +58,7 @@ RDEPEND=">=dev-python/numpy-1.26[${PYTHON_USEDEP}]
 "
 #	$(python_gen_cond_dep '>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]' python3_10)
 #	pyside2? ( $(python_gen_cond_dep 'dev-python/pyside2[${PYTHON_USEDEP}]' python3_{10,11}) )
-BDEPEND=">=dev-python/setuptools-scm-10.2.1[${PYTHON_USEDEP}]
+BDEPEND=">=dev-python/setuptools-scm-10.2.3[${PYTHON_USEDEP}]
 	>=dev-python/babel-2.18.0[${PYTHON_USEDEP}]
 	doc? (
 		${RDEPEND}
@@ -74,6 +75,7 @@ BDEPEND=">=dev-python/setuptools-scm-10.2.1[${PYTHON_USEDEP}]
 		dev-python/photutils[${PYTHON_USEDEP}]
 		>dev-python/regions-0.5[${PYTHON_USEDEP}]
 		dev-python/scipy[${PYTHON_USEDEP}]
+		>=dev-python/sep-1.4[${PYTHON_USEDEP}]
 		dev-python/starlink-pyast[${PYTHON_USEDEP}]
 		<dev-python/zarr-3[${PYTHON_USEDEP}]
 	)
