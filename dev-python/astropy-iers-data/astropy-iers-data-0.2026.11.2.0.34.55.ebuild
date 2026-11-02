@@ -4,6 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=hatchling
+PYPI_VERIFY_REPO=https://github.com/astropy/astropy-iers-data
 PYTHON_COMPAT=( python3_{12,{13..15}{,t}} )
 
 inherit distutils-r1 pypi
