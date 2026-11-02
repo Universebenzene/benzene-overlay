@@ -4,12 +4,12 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..15} )
 
 inherit distutils-r1
 
 DESCRIPTION="Sphinx extension for collecting external data for Sphinx build"
-HOMEPAGE="https://sphinxcontrib-youtube.readthedocs.io"
+HOMEPAGE="https://sphinx-collections.readthedocs.io"
 SRC_URI="https://github.com/useblocks/sphinx-collections/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
