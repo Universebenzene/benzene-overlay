@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..15} )
 
 inherit distutils-r1 pypi
 
@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND=">=dev-python/sphinx-7[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 "
+BDEPEND="<dev-python/flit-core-4[${PYTHON_USEDEP}]"
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
