@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="asyncio-client client"
 
 RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
-	>=dev-python/python-engineio-4.13.2[${PYTHON_USEDEP}]
+	>=dev-python/python-engineio-4.15.1[${PYTHON_USEDEP}]
 	client? (
 		>=dev-python/requests-2.21.0[${PYTHON_USEDEP}]
 		>=dev-python/websocket-client-0.54.0[${PYTHON_USEDEP}]
@@ -26,7 +26,6 @@ RDEPEND=">=dev-python/bidict-0.21.0[${PYTHON_USEDEP}]
 "
 BDEPEND="test? (
 		dev-python/msgpack[${PYTHON_USEDEP}]
-		dev-python/tornado[${PYTHON_USEDEP}]
 		dev-python/uvicorn[${PYTHON_USEDEP}]
 	)
 "
