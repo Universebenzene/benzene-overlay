@@ -555,6 +555,11 @@ source = "archpkg"
 archpkg = "python-feedgen"
 strip_release = true
 
+["dev-python/fields"]
+source = "archpkg"
+archpkg = "python-fields"
+strip_release = true
+
 ["dev-python/firefly-vis"]
 source = "pypi"
 use_max_tag = true
