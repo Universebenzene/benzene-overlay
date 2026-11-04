@@ -1,0 +1,33 @@
+From 74710421be26ffe9ea4cb8aacfaba8315ac66f8c Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Tom=C3=A1=C5=A1=20Hrn=C4=8Diar?= <thrnciar@redhat.com>
+Date: Wed, 25 Mar 2026 17:17:11 +0100
+Subject: [PATCH] fix: replace deprecated path parameter in
+ pytest_ignore_collect
+
+The (path: py.path.local) argument was removed in pytest 9, replaced
+by (collection_path: pathlib.Path). Update parameter name and use
+pathlib.Path.name instead of py.path.local.basename.
+
+Made-with: Cursor
+---
+ conftest.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/conftest.py b/conftest.py
+index 68e639f..2d83cf1 100644
+--- a/conftest.py
++++ b/conftest.py
+@@ -1,8 +1,8 @@
+ import sys
+ PY3 = sys.version_info[0] >= 3
+ 
+-def pytest_ignore_collect(path, config):
+-    basename = path.basename
++def pytest_ignore_collect(collection_path, config):
++    basename = collection_path.name
+ 
+     if not PY3 and "py3" in basename or PY3 and "py2" in basename or 'pytest' in basename:
+         return True
+-- 
+2.56.0
+

@@ -152,6 +152,7 @@ dev-python/ext4                    | 1.2.4; 1.4.1{,-r1}                         
 dev-python/f90nml                  | 1.5                                                        | Optional for yt
 dev-python/fastcache               | 1.1.0                                                      | Optional for yt
 dev-python/fast-zip-decryption     | 3.0.0                                                      | Optional for new ratarmount{,core}
+dev-python/fields                  | 5.0.0-r3                                                   | Dropped by official portage. Required by aspectlib
 dev-python/firefly-viz             | 2.0.4                                                      | Optional for yt
 dev-python/firefly                 | 3.6.0                                                      | Optional for new yt
 dev-python/flask-socketio          | 5.7.0                                                      | Optional for yt

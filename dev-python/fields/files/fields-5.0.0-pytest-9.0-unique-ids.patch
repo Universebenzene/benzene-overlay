@@ -1,0 +1,10 @@
+--- a/tests/test_fields.py
++++ b/tests/test_fields.py
+@@ -34,7 +34,7 @@ def pickler(request):
+     return request.param
+ 
+ 
+-@fixture(params=[pickle.loads, cPickle.loads])
++@fixture(params=[pickle.loads, cPickle.loads], ids=['pickle', 'cPickle'])
+ def unpickler(request):
+     return request.param
