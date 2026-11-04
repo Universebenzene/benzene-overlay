@@ -155,7 +155,7 @@ dev-python/fast-zip-decryption     | 3.0.0                                      
 dev-python/fields                  | 5.0.0-r3                                                   | Dropped by official portage. Required by aspectlib
 dev-python/firefly-viz             | 2.0.4                                                      | Optional for yt
 dev-python/firefly                 | 3.6.0                                                      | Optional for new yt
-dev-python/flask-socketio          | 5.7.0                                                      | Optional for yt
+dev-python/flask-socketio          | 5.7.2                                                      | Optional for yt
 dev-python/fusepy                  | 3.0.1                                                      | Optional for old ratarmount
 dev-python/google-crc32c           | 1.9.0                                                      | Required by new numcodecs, zarr
 dev-python/mfusepy                 | 3.0.0; 3.1.1                                               | Optional for new ratarmount

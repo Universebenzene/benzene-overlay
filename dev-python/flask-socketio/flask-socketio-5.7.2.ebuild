@@ -19,7 +19,7 @@ RDEPEND="dev-python/blinker[${PYTHON_USEDEP}]
 	dev-python/click[${PYTHON_USEDEP}]
 	dev-python/jinja2[${PYTHON_USEDEP}]
 	>=dev-python/flask-2.1.0[${PYTHON_USEDEP}]
-	>=dev-python/python-socketio-5.12.0[${PYTHON_USEDEP}]
+	>=dev-python/python-socketio-5.18.0[${PYTHON_USEDEP}]
 	dev-python/werkzeug[${PYTHON_USEDEP}]
 "
 #BDEPEND="test? ( dev-python/redis[${PYTHON_USEDEP}] )"
