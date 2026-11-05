@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=setuptools
 MY_PN="${PN/dm-}"
-PYTHON_COMPAT=( python3_{11..15} )
+PYTHON_COMPAT=( python3_{12..15} )
 
 inherit distutils-r1 pypi
 
@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="!dev-python/dm-tree-bin
 	>=dev-python/absl-py-0.6.1[${PYTHON_USEDEP}]
 	>=dev-python/attrs-18.2.0[${PYTHON_USEDEP}]
-	>=dev-python/numpy-1.21.2[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.26.0[${PYTHON_USEDEP}]
 	>=dev-python/wrapt-1.11.2[${PYTHON_USEDEP}]
 "
 BDEPEND="dev-build/cmake
