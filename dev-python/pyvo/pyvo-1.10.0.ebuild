@@ -39,7 +39,7 @@ BDEPEND="dev-python/setuptools-scm[${PYTHON_USEDEP}]
 	)
 "
 
-EPYTEST_PLUGINS=( pytest-{astropy{,-header},doctestplus,remotedata} )
+EPYTEST_PLUGINS=( pytest-{astropy-header,doctestplus,remotedata,skip-slow} )
 : ${EPYTEST_TIMEOUT:=30}
 distutils_enable_tests pytest
 #distutils_enable_sphinx docs dev-python/sphinx-astropy
@@ -53,5 +53,5 @@ python_compile_all() {
 }
 
 python_test() {
-	epytest --remote-data --run-slow -Werror::astropy.utils.exceptions.AstropyDeprecationWarning
+	epytest --remote-data --slow -Werror::astropy.utils.exceptions.AstropyDeprecationWarning
 }
