@@ -7,7 +7,7 @@ MY_PN="sphinx_reredirects"
 MY_PV=1.0.0
 
 DISTUTILS_USE_PEP517=standalone
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..15} )
 
 inherit distutils-r1 pypi
 
