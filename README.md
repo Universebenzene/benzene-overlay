@@ -141,7 +141,7 @@ dev-python/aspectlib               | 2.0.0                                      
 dev-python/azure-core              | 1.26.3; 1.41.0                                             | Required by new msrest
 dev-python/bidict                  | 0.22.0; 0.24.1                                             | Optional for yt
 dev-python/check-manifest          | 0.49; 0.51                                                 | Dropped by official portage. Build dependency for xarray-datatree
-dev-python/cmdstanpy               | 1.0.8; 1.3.0                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
+dev-python/cmdstanpy               | 1.0.8; 1.3.2                                               | Test dependency for arviz. Dependency stanio is included but not listed in the table
 dev-python/dag-cbor                | 0.3.3                                                      | Optional for new ratarmount{,core} <- ipfsspec
 dev-python/distributed             | 2024.4.1; 2025.10.0; 2026.8.0                              | Optional for arviz and spectral-cube
 dev-python/dm-tree                 | 0.1.10                                                     | Required by new arviz

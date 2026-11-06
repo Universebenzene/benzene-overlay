@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1
 
@@ -39,6 +39,8 @@ EPYTEST_IGNORE=(
 EPYTEST_DESELECT=(
 	# E ValueError: No CmdStan installation found, run command "install_cmdstan"or (re)activate your conda environment!
 	test/test_cmdstan_args.py::test_args_sig_figs
+	test/test_deprecations.py::test_optimize_positional_seed
+	test/test_install_cmdstan.py::test_is_version_available
 	test/test_laplace.py::test_laplace_from_opt_csv
 	test/test_laplace.py::test_laplace_from_csv
 	test/test_laplace.py::test_laplace_runs_opt
