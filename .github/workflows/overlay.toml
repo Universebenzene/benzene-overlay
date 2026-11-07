@@ -1035,9 +1035,12 @@ use_max_tag = true
 pypi = "pybcj"
 
 ["dev-python/pycryptodomex"]
-source = "repology"
-repology = "python:pycryptodome"
-repo = "gentoo"
+source = "pypi"
+use_max_tag = true
+pypi = "pycryptodomex"
+#source = "repology"
+#repology = "python:pycryptodome"
+#repo = "gentoo"
 
 #["dev-python/pydata-sphinx-theme"]
 #source = "github"
