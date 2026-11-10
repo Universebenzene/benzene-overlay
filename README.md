@@ -163,7 +163,7 @@ dev-python/heapdict                | 1.0.1                                      
 dev-python/indexed\-{bzip2,zstd}   | 1.7.0 / 1.6.1; 1.7.2                                       | Optional for yt (ratarmount{,core})
 dev-python/inflate64               | 1.0.4                                                      | Optional for new ratarmount{,core} <- py7zr
 dev-python/ipfsspec                | 0.6.0                                                      | Optional for new ratarmount{,core}
-dev-python/rapidgzip               | 0.16.1                                                     | Optional for new ratarmount{,core}
+dev-python/rapidgzip               | 0.16.2                                                     | Optional for new ratarmount{,core}
 dev-python/libconf                 | 2.0.1                                                      | Optional for yt
 dev-python/locket                  | 1.0.0                                                      | Dropped by official portage. Required by partd
 dev-python/memory-profiler         | 0.61                                                       | Dropped by official portage. Test dependency for ccdproc
