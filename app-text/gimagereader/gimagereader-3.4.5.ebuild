@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..15} )
 
 inherit cmake gnome2-utils python-any-r1 xdg
 
@@ -30,7 +30,7 @@ DEPEND=">=app-text/tesseract-3.04
 		dev-cpp/gtksourceviewmm:=
 		dev-cpp/cairomm:0
 		dev-libs/json-glib
-		dev-cpp/libxmlpp:2.6
+		dev-cpp/libxmlpp:5.0=
 		dev-cpp/gtkspellmm
 	)
 	qt5? (
