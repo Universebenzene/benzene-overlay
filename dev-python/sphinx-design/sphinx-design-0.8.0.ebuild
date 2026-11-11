@@ -25,7 +25,12 @@ RDEPEND="<dev-python/sphinx-10[${PYTHON_USEDEP}]
 	theme-rtd? ( dev-python/sphinx-rtd-theme[${PYTHON_USEDEP}] )
 	theme-sbt? ( dev-python/sphinx-book-theme[${PYTHON_USEDEP}] )
 "
-BDEPEND="test? ( dev-python/myst-parser[${PYTHON_USEDEP}] )"
+BDEPEND="test? (
+		dev-python/myst-parser[${PYTHON_USEDEP}]
+		dev-python/rcssmin[${PYTHON_USEDEP}]
+		dev-python/tinycss2[${PYTHON_USEDEP}]
+	)
+"
 
 EPYTEST_PLUGINS=( pytest-{datadir,regressions} )
 distutils_enable_tests pytest
