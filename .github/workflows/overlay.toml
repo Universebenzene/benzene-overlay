@@ -481,9 +481,9 @@ use_max_tag = true
 pypi = "drms"
 
 ["dev-python/dropbox"]
-source = "pypi"
-use_max_tag = true
-pypi = "dropbox"
+source = "archpkg"
+archpkg = "python-dropbox"
+strip_release = true
 
 ["dev-python/dropboxdrivefs"]
 source = "pypi"
@@ -1279,6 +1279,11 @@ pypi = "ratarmount"
 source = "pypi"
 use_max_tag = true
 pypi = "ratarmountcore"
+
+["dev-python/rcssmin"]
+source = "pypi"
+use_max_tag = true
+pypi = "rcssmin"
 
 ["dev-python/regions"]
 source = "pypi"
