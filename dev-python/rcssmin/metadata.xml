@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>universebenzene@sina.com</email>
+		<name>Astro Benzene</name>
+	</maintainer>
+	<longdescription lang="en">
+		RCSSmin is a CSS minifier written in python.
+		The minifier is based on the semantics of the YUI compressor,
+		which itself is based on the rule list by Isaac Schlueter.
+		This module is a re-implementation aiming for speed instead of
+		maximum compression, so it can be used at runtime (rather than
+		during a preprocessing step). RCSSmin does syntactical compression
+		only (removing spaces, comments and possibly semicolons).
+		It does not provide semantic compression (like removing empty blocks,
+		collapsing redundant properties etc). It does, however, support
+		various CSS hacks (by keeping them working as intended).
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">rcssmin</remote-id>
+		<remote-id type="github">ndparker/rcssmin</remote-id>
+	</upstream>
+</pkgmetadata>
