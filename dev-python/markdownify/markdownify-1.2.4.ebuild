@@ -4,8 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{{11..15},{13..15}t} )
-#PYTHON_COMPAT=( python3_{{11..12},{13..15}{,t}} )
+PYTHON_COMPAT=( python3_{12,{13..15}{,t}} )
 
 inherit distutils-r1
 
@@ -17,9 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-python/beautifulsoup4-4.9[${PYTHON_USEDEP}]
-	>=dev-python/six-1.15[${PYTHON_USEDEP}]
-"
+RDEPEND=">=dev-python/beautifulsoup4-4.9[${PYTHON_USEDEP}]"
+#	>=dev-python/six-1.15[${PYTHON_USEDEP}]
 BDEPEND=">=dev-python/setuptools-scm-3.4.3[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/python-${P}"
