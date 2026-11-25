@@ -1866,6 +1866,11 @@ source = "aur"
 aur = "aladin"
 strip_release = true
 
+["sci-astronomy/ds9"]
+source = "aur"
+aur = "ds9"
+strip_release = true
+
 #["sci-astronomy/astrometry"]
 #source = "github"
 #use_max_tag = true
