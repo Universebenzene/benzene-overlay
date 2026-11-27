@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO=https://github.com/fsspec/universal_pathlib
-PYTHON_COMPAT=( python3_{11..14} )
+PYTHON_COMPAT=( python3_{12..14} )
 
 inherit distutils-r1 pypi optfeature
 
@@ -16,8 +16,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
-PROPERTIES="test_network"
-RESTRICT="test"
+#PROPERTIES="test_network"
+#RESTRICT="test"
 
 RDEPEND=">=dev-python/fsspec-2024.5.0[${PYTHON_USEDEP}]
 	>=dev-python/pathlib-abc-0.5.1[${PYTHON_USEDEP}]
@@ -45,10 +45,10 @@ EPYTEST_IGNORE=(
 	upath/tests/implementations/test_s3.py
 )
 
-EPYTEST_DESELECT=(
-	# gcsfs
-	'upath/tests/test_relative.py::test_protocol_storage_options_fs_preserved[gcs-storage_options2-gcs://bucket/foo/bar/baz.txt-gcs://bucket/foo]'
-)
+#EPYTEST_DESELECT=(
+#	# gcsfs
+#	'upath/tests/test_relative.py::test_protocol_storage_options_fs_preserved[gcs-storage_options2-gcs://bucket/foo/bar/baz.txt-gcs://bucket/foo]'
+#)
 
 python_install_all() {
 	if use examples; then
